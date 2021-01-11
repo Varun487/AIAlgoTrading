@@ -61,7 +61,7 @@ git pull origin main
 ###### All members are from Semester 6  Pes University EC Campus
 1. Varun Seshu - PES2201800074
 2. Hritik Shanbhag - PES2201800082
-3. Disha
+3. Disha - PES2201800109
 4. Samrudhi
 
 # Future prospects
