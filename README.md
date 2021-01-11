@@ -62,7 +62,7 @@ git pull origin main
 1. Varun Seshu - PES2201800074
 2. Hritik Shanbhag - PES2201800082
 3. Disha Venkatesh - PES2201800109
-4. Samrudhi 
+4. Samrudhi R Rao - PES2201800126
 
 # Future prospects
 
