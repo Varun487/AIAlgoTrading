@@ -21,7 +21,7 @@ To build a platform for creating, backtesting and paper trading new automated st
 ## Strategies
 ###### This is the heart of the project
 
-* Strategies read data from the database and can use multiple indicators, machine learning models or a combination to generate orders according to the rules mentioned in the strategy.
+* Strategies read data from the database and can use multiple indicators, machine learning models, or a combination to generate orders according to the rules mentioned in the strategy.
 
 * There may be multiple strategies created and deployed in this service.
 
