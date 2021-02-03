@@ -50,11 +50,13 @@ To build a platform for creating, backtesting and paper trading new automated st
 2. cd into the directory via `cd <directory_name>` 
 3. run these commands to initialize the project: 
 ```
-git init
+git init -b main
 
 git remote add origin "git@github.com:Varun487/CapstoneProject_AITradingPlatform.git"
 
 git pull origin main
+
+pip3 install -r requirements.txt
 ```
 
 # Project members
