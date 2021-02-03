@@ -4,7 +4,7 @@
 
 To build a platform for creating, backtesting and paper trading new automated strategies on real-time, minute scale data with the help of AI models.
 
-# Microservices in the project
+# Components in the project
 
 ## Data Feeder
 
@@ -12,11 +12,11 @@ To build a platform for creating, backtesting and paper trading new automated st
 
 * Perform very fast, basic calculations on the raw data.
 
-## Time Series Database
+## Database
 
-* We use a time series database to store the data from the data feeder. 
+* We use a database to store the data from the data feeder. 
 
-* We also use it to perform more complex calulations (such as indicators) very quickly at a large scale for all stocks whose data has been sent from the data feeder.
+* We also use it to perform more complex calculations (such as indicators) very quickly at a large scale for all stocks whose data has been sent from the data feeder.
 
 ## Strategies
 ###### This is the heart of the project
@@ -29,7 +29,7 @@ To build a platform for creating, backtesting and paper trading new automated st
 
 * This service helps in building Strategies. It allows us test how a strategy would have performed over past data over previous weeks, months and years.
 
-* It take a parameterised strategy and data over the period of the back test as input. It generates orders over the previous data according to the strategy's rules and outputs a detailed report on the performance of the strategy.
+* It takes a parameterised strategy and data over the period of the back test as input. It generates orders over the previous data according to the strategy's rules and outputs a detailed report on the performance of the strategy.
 
 ## Paper Trader
 
@@ -52,7 +52,7 @@ To build a platform for creating, backtesting and paper trading new automated st
 ```
 git init
 
-git remote add origin "git@github.com:Varun487/CapstoneProject_TradingSystem.git"
+git remote add origin "git@github.com:Varun487/CapstoneProject_AITradingPlatform.git"
 
 git pull origin main
 ```
