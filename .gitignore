@@ -139,3 +139,4 @@ cython_debug/
 
 # Capstone Project stuff
 .idea/
+migrations/
