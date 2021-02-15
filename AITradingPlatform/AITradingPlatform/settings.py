@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'rest_framework',
     # project apps
     'DataFeeder',
+    'Strategies',
+    'BackTester',
+    'PaperTrader',
 ]
 
 MIDDLEWARE = [
