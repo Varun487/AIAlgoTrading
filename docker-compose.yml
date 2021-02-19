@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  rest_api:
+    build: .
+    # Run 'docker-compose up' twice
+    # Run 'docker-compose run rest_api python AITradingPlatform/manage.py createsuperuser' to create a superuser
+    # Run 'docker-compose up'
+    command: bash -c "python AITradingPlatform/manage.py migrate && python AITradingPlatform/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
