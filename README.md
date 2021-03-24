@@ -86,7 +86,7 @@ This project can be pursued in the future to build a fully integrated trading sy
 __PROJECT PHASE 1__ *-> Deadline BY MARCH END* 
 1. CONFIG WORK
    - Upload the prs and presentation `DONE`
-   - Update diary `TO BE CONFIRMED`
+   - Update diary `DONE`
    - Update Whatsapp group description `DONE`
    - FILL WEEKLY PROGRESS PAGE
         - Physical printout - get it signed on monday
