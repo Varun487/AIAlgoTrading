@@ -85,8 +85,9 @@ This project can be pursued in the future to build a fully integrated trading sy
 # TODO
 __PROJECT PHASE 1__ *-> Deadline BY MARCH END* 
 1. CONFIG WORK
-   - Upload the prs and presentation
-   - Update diary and Whatsapp group description
+   - Upload the prs and presentation `DONE`
+   - Update diary `TO BE CONFIRMED`
+   - Update Whatsapp group description `DONE`
    - FILL WEEKLY PROGRESS PAGE
         - Physical printout - get it signed on monday
    - 2 Research papers per person 
@@ -94,23 +95,28 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
    - Build all docker containers and run it locally
         - DB Setup `DONE`
             - Connect Postgres container to REST API `DONE`
-            - persistent storage for db `DONE`
+            - Persistent storage for db `DONE`
                 - Can start and stop containers without affecting data `DONE`
                 - Data independent of containers `DONE`
                 - Data independent of images `DONE`
                 - Data independent of change in code `DONE`
-        - Rest Api
-            - Automate create superuser
-            - Run django in a production environment
+        - Rest Api `DONE`
         - Server
-            - Nginx
-            - SSL Certification
-   - Host the REST API
-   - Decide deployment workflow
-   - Make a deployment script
+            - Setup Nginx server
+            - Make it serve django files
+   - Run Django in a Production environment on the VM 
+        - SSL certification
+        - Host the REST API
+        - Decide deployment workflow
+        - Make a deployment script
    - Make a basic Hello world page for the API docs 
 2. DATAFEEDER WORK
 3. MODELS WORK
 4. BACKTESTER WORK
 5. PAPER TRADER
 6. UI WORK
+
+__PROJECT PHASE 2__ *-> Deadline BY JULY END* 
+1. Build models
+2. Achieve consistent profitability
+3. Write papers, see if you can publish them
