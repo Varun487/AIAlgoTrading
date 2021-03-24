@@ -101,6 +101,8 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
                 - Data independent of images `DONE`
                 - Data independent of change in code `DONE`
         - Rest Api `DONE`
+            - Set up Django project `DONE`
+            - Create example APIs for POC `DONE`
         - Server
             - Setup Nginx server
             - Make it serve django files
