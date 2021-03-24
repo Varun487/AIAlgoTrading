@@ -8,7 +8,7 @@ from .serializers import ExampleDataFeederSerializer
 
 @api_view(['GET', ])
 def api_index(req, slug):
-    print("slug:", slug)
+    print("Example Data Feeder Model slug:", slug)
 
     try:
         name = ExampleDataFeederModel.objects.get(name=slug)

@@ -14,9 +14,6 @@ services:
 
   rest_api:
     build: .
-    # Run 'docker-compose up' twice
-    # Run 'docker-compose run rest_api python AITradingPlatform/manage.py createsuperuser' to create a superuser
-    # Run 'docker-compose up'
     command: bash -c "python AITradingPlatform/manage.py migrate && python AITradingPlatform/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code

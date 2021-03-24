@@ -8,7 +8,7 @@ from .serializers import ExamplePaperTraderSerializer
 
 @api_view(['GET', ])
 def api_index(req, slug):
-    print("slug:", slug)
+    print("Example Paper Trader Model slug:", slug)
 
     try:
         name = ExamplePaperTraderModel.objects.get(name=slug)

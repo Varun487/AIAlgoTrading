@@ -8,7 +8,7 @@ from .serializers import ExampleBackTesterSerializer
 
 @api_view(['GET', ])
 def api_index(req, slug):
-    print("slug:", slug)
+    print("Example Back Tester Model slug:", slug)
 
     try:
         name = ExampleBackTesterModel.objects.get(name=slug)

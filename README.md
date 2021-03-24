@@ -57,7 +57,18 @@ git remote add origin "git@github.com:Varun487/CapstoneProject_AITradingPlatform
 git pull origin main
 
 docker-compose up
-
+```
+4. To start the project run and all containers:
+```
+docker-compose up -d
+```
+5. To stop all running containers in project:
+```
+docker-compose down
+```
+5. To create a super user for the database
+```
+docker-compose run rest_api python AITradingPlatform/manage.py createsuperuser
 ```
 
 # Project members
@@ -81,8 +92,13 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
    - 2 Research papers per person 
      - __CERTIFIED__ from ma'am
    - Build all docker containers and run it locally
-        - DB
-            - persistent storage for db
+        - DB Setup `DONE`
+            - Connect Postgres container to REST API `DONE`
+            - persistent storage for db `DONE`
+                - Can start and stop containers without affecting data `DONE`
+                - Data independent of containers `DONE`
+                - Data independent of images `DONE`
+                - Data independent of change in code `DONE`
         - Rest Api
             - Automate create superuser
             - Run django in a production environment

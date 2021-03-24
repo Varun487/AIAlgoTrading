@@ -8,7 +8,7 @@ from .serializers import ExampleStrategiesSerializer
 
 @api_view(['GET', ])
 def api_index(req, slug):
-    print("slug:", slug)
+    print("Example Strategies Model slug:", slug)
 
     try:
         name = ExampleStrategiesModel.objects.get(name=slug)
