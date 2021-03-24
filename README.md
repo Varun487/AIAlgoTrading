@@ -107,6 +107,7 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
             - Setup Nginx server
             - Make it serve django files
    - Run Django in a Production environment on the VM 
+        - Buy a domain
         - SSL certification
         - Host the REST API
         - Decide deployment workflow
