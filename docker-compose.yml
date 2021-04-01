@@ -14,7 +14,7 @@ services:
 
   rest_api:
     build: .
-    command: bash -c "python AITradingPlatform/manage.py migrate && python AITradingPlatform/manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python3 AITradingPlatform/manage.py makemigrations BackTester && python3 AITradingPlatform/manage.py makemigrations DataFeeder && python3 AITradingPlatform/manage.py makemigrations DataFeeder && python3 AITradingPlatform/manage.py makemigrations PaperTrader && python3 AITradingPlatform/manage.py makemigrations Strategies && python3 AITradingPlatform/manage.py migrate && python3 AITradingPlatform/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
