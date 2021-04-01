@@ -118,6 +118,8 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
 4. BACKTESTER WORK
 5. PAPER TRADER
 6. UI WORK
+7. Build a simple Non-AI Strategy
+8. Build a simple AI Strategy
 
 __PROJECT PHASE 2__ *-> Deadline BY JULY END* 
 1. Build models
