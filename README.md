@@ -124,4 +124,4 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
 __PROJECT PHASE 2__ *-> Deadline BY JULY END* 
 1. Build models
 2. Achieve consistent profitability
-3. Write papers, see if you can publish them
+3. Write papers, see if you can publish them.
