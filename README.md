@@ -85,24 +85,11 @@ This project can be pursued in the future to build a fully integrated trading sy
 # TODO
 __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
 1. CONFIG WORK
-   - Upload the prs and presentation `DONE`
-   - Update diary `DONE`
-   - Update Whatsapp group description `DONE`
    - FILL WEEKLY PROGRESS PAGE
         - Physical printout - get it signed on monday
    - 2 Research papers per person
      - __CERTIFIED__ from ma'am
    - Build all docker containers and run it locally
-        - DB Setup `DONE`
-            - Connect Postgres container to REST API `DONE`
-            - Persistent storage for db `DONE`
-                - Can start and stop containers without affecting data `DONE`
-                - Data independent of containers `DONE`
-                - Data independent of images `DONE`
-                - Data independent of change in code `DONE`
-        - Rest Api `DONE`
-            - Set up Django project `DONE`
-            - Create example APIs for POC `DONE`
         - Server
             - Setup Nginx server
             - Make it serve django files
