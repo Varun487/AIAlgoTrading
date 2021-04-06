@@ -89,6 +89,8 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
         - Physical printout - get it signed on monday
    - 2 Research papers per person
      - __CERTIFIED__ from ma'am
+   - HDL Design doc complete
+   - Review 3 PPT
    - Build all docker containers and run it locally
         - Server
             - Setup Nginx server
