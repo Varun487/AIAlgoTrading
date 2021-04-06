@@ -99,7 +99,6 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
         - Host the REST API
         - Decide deployment workflow
         - Make a deployment script
-   - Make a basic Hello world page for the API docs
 2. DATAFEEDER WORK
 3. MODELS WORK
 4. BACKTESTER WORK
