@@ -92,7 +92,7 @@ __PROJECT PHASE 1__ *-> Deadline BY MARCH END*
    - Build all docker containers and run it locally
         - Server
             - Setup Nginx server
-            - Make it serve django files
+            - Make it serve Django files
    - Run Django in a Production environment on the VM
         - Buy a domain
         - SSL certification
