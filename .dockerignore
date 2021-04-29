@@ -3,7 +3,6 @@
 venv/
 __pycache__
 migrations/
-UI/
 postgres-data/
 .gitignore
 README

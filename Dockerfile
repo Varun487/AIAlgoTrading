@@ -1,9 +1,15 @@
 FROM python:3
 
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
-WORKDIR /code
+ENV MICRO_SERVICE=/home/app/microservice
 
-COPY . /code/
+RUN mkdir -p $MICRO_SERVICE
+RUN mkdir -p $MICRO_SERVICE/staticfiles
+
+WORKDIR $MICRO_SERVICE
+
+COPY . $MICRO_SERVICE
 
 RUN pip install -r requirements.txt

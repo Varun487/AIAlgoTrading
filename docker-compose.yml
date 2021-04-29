@@ -1,23 +1,38 @@
 version: "3.3"
 
 services:
+
+
   db:
     image: postgres
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
+
   rest_api:
     build: .
-    command: bash -c "python3 AITradingPlatform/manage.py makemigrations BackTester && python3 AITradingPlatform/manage.py makemigrations DataFeeder && python3 AITradingPlatform/manage.py makemigrations DataFeeder && python3 AITradingPlatform/manage.py makemigrations PaperTrader && python3 AITradingPlatform/manage.py makemigrations Strategies && python3 AITradingPlatform/manage.py migrate && python3 AITradingPlatform/manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python3 AITradingPlatform/manage.py makemigrations DataFeeder
+      && python3 AITradingPlatform/manage.py makemigrations BackTester
+      && python3 AITradingPlatform/manage.py makemigrations PaperTrader
+      && python3 AITradingPlatform/manage.py makemigrations Strategies
+      && python3 AITradingPlatform/manage.py migrate
+      && echo yes | python3 AITradingPlatform/manage.py collectstatic
+      && python3 AITradingPlatform/manage.py runserver 0.0.0.0:8000
+      "
+# && gunicorn sampleApp.wsgi:application --bind 0.0.0.0:${APP_PORT}
     volumes:
-      - .:/code
+      - .:/home/app/microservice
     ports:
       - "8000:8000"
     depends_on:
       - db
+
+#  server:
+#    build: ./nginx
+#    ports:
+#      - 1300:80
+#    depends_on:
+#      - rest_api
+#    restart: "on-failure"
