@@ -107,6 +107,8 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 4. BACKTESTER WORK ![FEATUREINCOMPLETE]
 5. PAPER TRADER ![FEATUREINCOMPLETE]
 6. UI WORK ![FEATUREINCOMPLETE]
+7. Build a simple BB test strategy ![FEATUREINCOMPLETE]
+8. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE]
 9. Build Strategies ![FEATUREINCOMPLETE]
    - 4 Strategies which perform better than sectoral market indices
 10. Write papers, see if you can publish them ![DOCINCOMPLETE]
