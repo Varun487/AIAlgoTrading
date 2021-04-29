@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV MICRO_SERVICE=/home/app/microservice
 
 RUN mkdir -p $MICRO_SERVICE
-RUN mkdir -p $MICRO_SERVICE/staticfiles
+RUN mkdir -p $MICRO_SERVICE/static
 
 WORKDIR $MICRO_SERVICE
 

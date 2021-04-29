@@ -142,3 +142,4 @@ cython_debug/
 migrations/
 postgres-data/
 staticfiles/
+AITradingPlatform/staticfiles/
