@@ -22,6 +22,7 @@ services:
       && python3 AITradingPlatform/manage.py runserver 0.0.0.0:8000
       "
 # && gunicorn sampleApp.wsgi:application --bind 0.0.0.0:${APP_PORT}
+# && python3 AITradingPlatform/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/home/app/microservice
     ports:
