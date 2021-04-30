@@ -22,21 +22,21 @@ services:
       && echo yes | python3 manage.py collectstatic
       && gunicorn AITradingPlatform.wsgi:application --bind 0.0.0.0:8000
       "
-# && python3 manage.py runserver 0.0.0.0:8000
-# && gunicorn sampleApp.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/home/app/microservice
-    ports:
-      - "8000:8000"
+    expose:
+      - 8000
+#    ports:
+#      - "8000:8000"
     depends_on:
       - db
 
-#  server:
-#    build: ./nginx
-#    ports:
-#      - 1300:80
-#    volumes:
-#      - ./AITradingPlatform/staticfiles:/home/app/microservice/static
-#    depends_on:
-#      - rest_api
-#    restart: "on-failure"
+  server:
+    build: ./nginx
+    ports:
+      - 1300:80
+    volumes:
+      - ./AITradingPlatform/staticfiles/:/home/app/microservice/static/
+    depends_on:
+      - rest_api
+    restart: "on-failure"
