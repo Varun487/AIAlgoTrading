@@ -92,10 +92,12 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
         - Physical printout??
    - 2 Research papers per person ![INCOMPLETE]
      - __CERTIFIED__ from ma'am
-   - Build all docker containers and run it locally ![INCOMPLETE]
-        - Server ![INCOMPLETE]
-            - Setup Nginx server
-            - Make it serve Django files
+   - Build all docker containers and run it locally ![DONE]
+        - REST API  ![DONE]
+        - DB  ![DONE]
+        - Server ![DONE]
+            - Setup Nginx server ![DONE]
+            - Make it serve Django files ![DONE]
    - Run Django in a Production environment on the VM ![INCOMPLETE]
         - Buy a domain
         - SSL certification
