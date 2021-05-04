@@ -46,29 +46,45 @@ To build a platform for creating, backtesting and paper trading new automated st
 
 # To replicate this project on your computer
 
-1. Make a new directory.
-2. cd into the directory via `cd <directory_name>`
-3. run these commands to initialize the project:
+1. run these commands to initialize the project:
 ```
-git init -b main
+git clone "git@github.com:Varun487/CapstoneProject_AITradingPlatform.git"
 
-git remote add origin "git@github.com:Varun487/CapstoneProject_AITradingPlatform.git"
+cd CapstoneProject_AITradingPlatform
 
-git pull origin main
+docker-compose -f docker-compose.prod.yml rm
 
-docker-compose up
+docker-compose -f docker-compose.prod.yml up --build
 ```
-4. To start the project run and all containers:
+2. To start the production server and run all containers:
 ```
-docker-compose up -d
+docker-compose -f docker-compose.prod.yml up
 ```
-5. To stop all running containers in project:
+3. To stop all running containers in production:
 ```
-docker-compose down
+docker-compose -f docker-compose.prod.yml down
 ```
-5. To create a super user for the database
+4. Run in production with fresh build:
 ```
-docker-compose run rest_api python AITradingPlatform/manage.py createsuperuser
+docker-compose -f docker-compose.dev.yml rm
+docker-compose -f docker-compose.dev.yml up --build
+```
+5. To start the development server and run all containers:
+```
+docker-compose -f docker-compose.prod.yml up
+```
+6. To stop all running containers in development:
+```
+docker-compose -f docker-compose.prod.yml down
+```
+7. Run in development with fresh build:
+```
+docker-compose -f docker-compose.dev.yml rm
+docker-compose -f docker-compose.dev.yml up --build
+```
+8. To create a super user for the database
+```
+docker-compose -f docker-compose.prod.yml run rest_api python AITradingPlatform/manage.py createsuperuser
 ```
 
 # Project members
@@ -98,39 +114,14 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
         - Server ![DONE]
             - Setup Nginx server ![DONE]
             - Make it serve Django files ![DONE]
+    - Separate development and production environments ![DONE]
 2. DATAFEEDER WORK ![FEATUREINCOMPLETE]
     - DB ![DONE]
         - Company ![DONE]
-          - Name
-          - Ticker
-          - Sector
         - Time stamp ![DONE]
-          - Minute 
-          - Hour
-          - Date
-          - Month
-          - Year
         - Immutable Data ![DONE]
-          - Open
-          - High
-          - Low
-          - Close
-          - Volume
-          - Company id
-          - Time Stamp id
         - Calculated Candle stick Data ![DONE]
-          - Open
-          - High
-          - Low
-          - Close
-          - Volume
-          - Company id
-          - Time Stamp id
         - Indicators ![DONE]
-          - SMA 
-          - Std. Dev 
-          - Company id
-          - Time Stamp id
     - Sourcing functions ![INCOMPLETE]
         - On demand (functions) ![INCOMPLETE]
           - Parameters

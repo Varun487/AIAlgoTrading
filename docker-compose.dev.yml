@@ -2,14 +2,12 @@ version: "3.3"
 
 services:
 
-
   db:
     image: postgres
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
-
 
   rest_api:
     build: .
@@ -20,22 +18,11 @@ services:
       && python3 manage.py makemigrations Strategies
       && python3 manage.py migrate
       && echo yes | python3 manage.py collectstatic
-      && gunicorn AITradingPlatform.wsgi:application --bind 0.0.0.0:8000
+      && python3 manage.py runserver 0.0.0.0:8000
       "
     volumes:
       - .:/home/app/microservice
-    expose:
-      - 8000
+    ports:
+      - "1300:8000"
     depends_on:
       - db
-
-
-  server:
-    build: ./nginx
-    ports:
-      - 1300:80
-    volumes:
-      - ./AITradingPlatform/staticfiles/:/home/app/microservice/static/
-    depends_on:
-      - rest_api
-    restart: "on-failure"
