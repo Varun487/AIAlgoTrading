@@ -85,35 +85,35 @@ This project can be pursued in the future to build a fully integrated trading sy
 # TODO
 __PROJECT PHASE 1__ *-> COMPLETE BEFORE ESA BEGINS*
 1. Final presentation ![DOCINCOMPLETE]
+2. FILL WEEKLY PROGRESS PAGE ![DOCINCOMPLETE]
+    - Physical printout ??
+3. 2 Research papers per person ![DOCINCOMPLETE]
+    - __CERTIFIED__ from ma'am
 
 __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
-1. CONFIG WORK ![FEATUREINCOMPLETE] 
-   - FILL WEEKLY PROGRESS PAGE ![INCOMPLETE]
-        - Physical printout??
-   - 2 Research papers per person ![INCOMPLETE]
-     - __CERTIFIED__ from ma'am
+1. CONFIG WORK ![FEATURECOMPLETE] 
    - Build all docker containers and run it locally ![DONE]
         - REST API  ![DONE]
         - DB  ![DONE]
         - Server ![DONE]
             - Setup Nginx server ![DONE]
             - Make it serve Django files ![DONE]
-   - Run Django in a Production environment on the VM ![INCOMPLETE]
-        - Buy a domain
-        - SSL certification
-        - Host the REST API
-        - Decide deployment workflow
-        - Make a deployment script
 2. DATAFEEDER WORK ![FEATUREINCOMPLETE]
 3. MODELS WORK ![FEATUREINCOMPLETE]
 4. BACKTESTER WORK ![FEATUREINCOMPLETE]
 5. PAPER TRADER ![FEATUREINCOMPLETE]
 6. UI WORK ![FEATUREINCOMPLETE]
 7. Build a simple BB test strategy ![FEATUREINCOMPLETE]
-8. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE]
-9. Build Strategies ![FEATUREINCOMPLETE]
+8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
+    - Buy a domain ![DONE]
+    - SSL certification
+    - Host the REST API
+    - Decide deployment workflow
+    - Make a deployment script
+9. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE]
+10. Build Strategies ![FEATUREINCOMPLETE]
    - 4 Strategies which perform better than sectoral market indices
-10. Write papers, see if you can publish them ![DOCINCOMPLETE]
+11. Write papers, see if you can publish them ![DOCINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
