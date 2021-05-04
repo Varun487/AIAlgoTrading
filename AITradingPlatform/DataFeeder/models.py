@@ -31,6 +31,25 @@ class ImmutableData(models.Model):
     timestamp = models.ForeignKey(to=TimeStamp, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.timestamp + "_" + self.company + "_" + self.close
+        return self.timestamp + "_" + self.company
 
+class CalculatedCandleStick(models.Model):
+    open = models.FloatField()
+    high = models.FloatField()
+    low = models.FloatField()
+    close = models.FloatField()
+    volume = models.IntegerField()
+    company = models.ForeignKey(to=Company, on_delete=models.CASCADE)
+    timestamp = models.ForeignKey(to=TimeStamp, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.timestamp + "_" + self.company
+
+class Indicators(models.Model):
+    sma = models.FloatField()
+    stddev = models.FloatField()
+    company = models.ForeignKey(to=Company, on_delete=models.CASCADE)
+    timestamp = models.ForeignKey(to=TimeStamp, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.timestamp + "_" + self.company

@@ -99,18 +99,18 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
             - Setup Nginx server ![DONE]
             - Make it serve Django files ![DONE]
 2. DATAFEEDER WORK ![FEATUREINCOMPLETE]
-    - DB ![INCOMPLETE]
-        - Company ![INCOMPLETE]
+    - DB ![DONE]
+        - Company ![DONE]
           - Name
           - Ticker
           - Sector
-        - Time stamp ![INCOMPLETE]
+        - Time stamp ![DONE]
           - Minute 
           - Hour
           - Date
           - Month
           - Year
-        - Immutable Data ![INCOMPLETE]
+        - Immutable Data ![DONE]
           - Open
           - High
           - Low
@@ -118,7 +118,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
           - Volume
           - Company id
           - Time Stamp id
-        - Calculated Candle stick Data ![INCOMPLETE]
+        - Calculated Candle stick Data ![DONE]
           - Open
           - High
           - Low
@@ -126,7 +126,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
           - Volume
           - Company id
           - Time Stamp id
-        - Indicators ![INCOMPLETE]
+        - Indicators ![DONE]
           - SMA 
           - Std. Dev 
           - Company id
