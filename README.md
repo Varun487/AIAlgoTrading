@@ -92,13 +92,62 @@ __PROJECT PHASE 1__ *-> COMPLETE BEFORE ESA BEGINS*
 
 __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 1. CONFIG WORK ![FEATURECOMPLETE] 
-   - Build all docker containers and run it locally ![DONE]
+    - Build all docker containers and run it locally ![DONE]
         - REST API  ![DONE]
         - DB  ![DONE]
         - Server ![DONE]
             - Setup Nginx server ![DONE]
             - Make it serve Django files ![DONE]
 2. DATAFEEDER WORK ![FEATUREINCOMPLETE]
+    - DB ![INCOMPLETE]
+        - Company ![INCOMPLETE]
+          - Name
+          - Ticker
+          - Sector
+        - Time stamp ![INCOMPLETE]
+          - Minute 
+          - Hour
+          - Date
+          - Month
+          - Year
+        - Immutable Data ![INCOMPLETE]
+          - Open
+          - High
+          - Low
+          - Close
+          - Volume
+          - Company id
+          - Time Stamp id
+        - Calculated Candle stick Data ![INCOMPLETE]
+          - Open
+          - High
+          - Low
+          - Close
+          - Volume
+          - Company id
+          - Time Stamp id
+        - Indicators ![INCOMPLETE]
+          - SMA 
+          - Std. Dev 
+          - Company id
+          - Time Stamp id
+    - Sourcing functions ![INCOMPLETE]
+        - On demand (functions) ![INCOMPLETE]
+          - Parameters
+            - Company `List`
+            - time period for data collection 
+            - Provider - AlphaVantage / Yahoo Finance
+          - Calculate indicators
+          - Push to DB
+        - Real time ![INCOMPLETE]
+          - Call on demand function in an infinite loop
+    - Indicators calc functions ![INCOMPLETE]
+        - Parameters
+          - Company
+          - time periods `List`
+        - SMA ![INCOMPLETE]
+        - Std Dev ![INCOMPLETE]
+        - Different candle stick time periods ![INCOMPLETE]
 3. MODELS WORK ![FEATUREINCOMPLETE]
 4. BACKTESTER WORK ![FEATUREINCOMPLETE]
 5. PAPER TRADER ![FEATUREINCOMPLETE]
@@ -112,7 +161,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
     - Make a deployment script
 9. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE]
 10. Build Strategies ![FEATUREINCOMPLETE]
-   - 4 Strategies which perform better than sectoral market indices
+    - 4 Strategies which perform better than sectoral market indices
 11. Write papers, see if you can publish them ![DOCINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
