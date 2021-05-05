@@ -122,6 +122,18 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
         - Immutable Data ![DONE]
         - Calculated Candle stick Data ![DONE]
         - Indicators ![DONE]
+    - REST API Functions ![INCOMPLETE]
+      - Company ![INCOMPLETE]
+        - List all companies in DB
+        - Get a particular company's details
+        - Add a company
+        - Delete a company
+      - Time Stamp ![INCOMPLETE]
+        - All time stamps in DB
+        - Add a time stamp
+        - Delete a time stamp
+      - Immutable data and calculated data ![INCOMPLETE]
+      - Indicators ![INCOMPLETE]
     - Sourcing functions ![INCOMPLETE]
         - On demand (functions) ![INCOMPLETE]
           - Parameters
