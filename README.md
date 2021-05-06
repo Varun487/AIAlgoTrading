@@ -107,7 +107,7 @@ __PROJECT PHASE 1__ *-> COMPLETE BEFORE ESA BEGINS*
     - __CERTIFIED__ from ma'am
 
 __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
-1. CONFIG WORK ![FEATURECOMPLETE] 
+1. CONFIG WORK ![FEATURECOMPLETE] `VARUN`
     - Build all docker containers and run it locally ![DONE]
         - REST API  ![DONE]
         - DB  ![DONE]
@@ -116,25 +116,34 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
             - Make it serve Django files ![DONE]
     - Separate development and production environments ![DONE]
 2. DATAFEEDER WORK ![FEATUREINCOMPLETE]
-    - DB ![DONE]
+    - DB ![DONE] `SAMRUDHI`
         - Company ![DONE]
         - Time stamp ![DONE]
         - Immutable Data ![DONE]
         - Calculated Candle stick Data ![DONE]
         - Indicators ![DONE]
-    - REST API Functions ![INCOMPLETE]
-      - Company ![INCOMPLETE]
-        - List all companies in DB
-        - Get a particular company's details
-        - Add a company
-        - Delete a company
-      - Time Stamp ![INCOMPLETE]
+    - REST API endpoints ![INCOMPLETE] 
+      - Company ![INCOMPLETE] `DISHA`
+        - List all companies in DB ![DONE] 
+        - Get a particular company's details 
+		- Filter company according name, sector, ticker 
+        - Add a company 
+        - Delete a company 
+      - Time Stamp ![INCOMPLETE] `SAMRUDHI`
         - All time stamps in DB
         - Add a time stamp
         - Delete a time stamp
-      - Immutable data and calculated data ![INCOMPLETE]
-      - Indicators ![INCOMPLETE]
-    - Sourcing functions ![INCOMPLETE]
+      - Immutable data and Calculated data![INCOMPLETE] `HRITIK`
+	  	- Filter according to open, high, low, close, volume, company, time period values
+	  - Indicators ![INCOMPLETE] `VARUN`
+	    - Filter according to company, time period values
+	  - Sourcing data ![INCOMPLETE] `VARUN`
+	  	- Ondemand data api call -> List of companies, time period, provider
+		- Add a company to real time list
+		- Remove a comapny from real time list
+	  - Derived candle stick data ![INCOMPLETE] `SAMRUDHI`
+	    - Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
+    - Sourcing functions ![INCOMPLETE] `VARUN`
         - On demand (functions) ![INCOMPLETE]
           - Parameters
             - Company `List`
@@ -144,13 +153,26 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
           - Push to DB
         - Real time ![INCOMPLETE]
           - Call on demand function in an infinite loop
-    - Indicators calc functions ![INCOMPLETE]
+    - Indicators calc functions ![INCOMPLETE] `DISHA`
         - Parameters
           - Company
-          - time periods `List`
+          - time periods `Start data and end date`
+		  - Push to DB
         - SMA ![INCOMPLETE]
         - Std Dev ![INCOMPLETE]
-        - Different candle stick time periods ![INCOMPLETE]
+	- Indicators `derived` calc functions ![INCOMPLETE] `HRITIK`
+	    - Parameters
+          - Company
+          - time periods `Start data and end date`
+		  - aggregation time period `List`
+        - SMA ![INCOMPLETE]
+        - Std Dev ![INCOMPLETE]
+    - Different `derived` candle stick time periods ![INCOMPLETE] `SAMRUDHI`
+		- Parameters
+          - Company
+          - time periods `Start data and end date`
+		  - aggregation time period `List`
+	- Add all REST APIs to API docs page ![INCOMPLETE] `VARUN`
 3. MODELS WORK ![FEATUREINCOMPLETE]
 4. BACKTESTER WORK ![FEATUREINCOMPLETE]
 5. PAPER TRADER ![FEATUREINCOMPLETE]
@@ -162,8 +184,8 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
     - Host the REST API
     - Decide deployment workflow
     - Make a deployment script
-9. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE]
-10. Build Strategies ![FEATUREINCOMPLETE]
+9. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE] 
+10. Build Strategies ![FEATUREINCOMPLETE] 
     - 4 Strategies which perform better than sectoral market indices
 11. Write papers, see if you can publish them ![DOCINCOMPLETE]
 
