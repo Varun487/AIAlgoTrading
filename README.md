@@ -115,14 +115,14 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
             - Setup Nginx server ![DONE]
             - Make it serve Django files ![DONE]
     - Separate development and production environments ![DONE]
-2. DATAFEEDER WORK ![FEATUREINCOMPLETE]
+2. DATAFEEDER WORK ![COMPONENTINCOMPLETE]
     - DB ![SAMRUDHICOMPLETE]
         - Company ![DONE]
         - Time stamp ![DONE]
         - Immutable Data ![DONE]
         - Calculated Candle stick Data ![DONE]
         - Indicators ![DONE]
-    - REST API endpoints ![INCOMPLETE] 
+    - REST API endpoints ![FEATUREINCOMPLETE] 
       - Company ![DISHAINCOMPLETE]
         - List all companies in DB ![DONE] 
         - Get a particular company's details 
@@ -173,10 +173,10 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
           - time periods `Start data and end date`
 		  - aggregation time period `List`
 	- Add all REST APIs to API docs page ![VARUNINCOMPLETE]
-3. MODELS WORK ![FEATUREINCOMPLETE]
-4. BACKTESTER WORK ![FEATUREINCOMPLETE]
-5. PAPER TRADER ![FEATUREINCOMPLETE]
-6. UI WORK ![FEATUREINCOMPLETE]
+3. MODELS WORK ![COMPONENTINCOMPLETE]
+4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
+5. PAPER TRADER ![COMPONENTINCOMPLETE]
+6. UI WORK ![COMPONENTINCOMPLETE]
 7. Build a simple BB test strategy ![FEATUREINCOMPLETE]
 8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
     - Buy a domain ![DONE]
@@ -209,6 +209,9 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 
 [FEATUREINCOMPLETE]: https://img.shields.io/badge/FEATURE-INCOMPLETE-red
 [FEATURECOMPLETE]: https://img.shields.io/badge/FEATURE-COMPLETE-brightgreen
+
+[COMPONENTINCOMPLETE]: https://img.shields.io/badge/COMPONENT-INCOMPLETE-red
+[COMPONENTCOMPLETE]: https://img.shields.io/badge/COMPONENT-COMPLETE-brightgreen
 
 [MEETINGINCOMPLETE]: https://img.shields.io/badge/MEETING-INCOMPLETE-red
 
