@@ -147,8 +147,9 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
         - On demand (functions)
           - Parameters
             - Company `List`
-            - time period for data collection 
+            - data collection window `Start Datetime and End Datetime`
             - Provider - AlphaVantage / Yahoo Finance
+			- Candle stick time period
           - Calculate indicators
           - Push to DB
         - Real time
@@ -173,11 +174,103 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
           - time periods `Start data and end date`
 		  - aggregation time period `List`
 	- Add all REST APIs to API docs page ![VARUNINCOMPLETE]
-3. MODELS WORK ![COMPONENTINCOMPLETE]
+	- Automated testing ![VARUNINCOMPLETE]
+3. STRATEGIES WORK ![COMPONENTINCOMPLETE]
+	- DB ![DISHAINCOMPLETE]
+		- Strategy
+			- Name
+			- Description
+			- Companies/Sector
+		- Orders
+			- Order type `BUY/SELL`
+			- Company
+			- TimeStamp
+			- Order category `Market/Limit`
+			- Take profit `Can be Blank`
+			- Stop loss
+			- Strategy name
+			- Order Owner
+			- Profit/Loss `Blank in the beginning`
+	- Strategies ![VARUNINCOMPLETE]
+		- Simple Bollinger bands strategy
+			- Data
+				- Close price
+				- SMA
+				- 2 sigma above and below SMA
+			- Rules
+				- If stock price > 2 sigma above SMA `SHORT`
+				- If stock price crosses SMA `GET OUT OF ALL POSITIONS`
+				- If stock price < 2 sigma above SMA `BUY`
+	- REST API END POINTS ![FEATUREINCOMPLETE]
+		- View all strategies ![SAMRUDHIINCOMPLETE]
+		- View all orders ![HRITIKINCOMPLETE]
+		- Filter orders according to Profit / Loss, Strategy name, TimeStamp, Order owner, Order type, Company, Order Category, Stop loss, Take profit ![SAMRUDHIINCOMPLETE]
+	- Automated testing ![VARUNINCOMPLETE]
 4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
+	- DB ![HRITIKINCOMPLETE]
+		- BackTestReport
+			- Initial account size
+			- Max Risk %
+			- Final account size
+			- Start date time
+			- End date time
+			- Total Profit / Loss
+			- Order ids `List`
+	- Back testing `Only for historical data` 
+		- Get Req data from DB ![VARUNINCOMPLETE]
+			- Source data if not present
+			- Calc Indicators if not present
+		- Call the strategy function with data ![SAMRUDHIINCOMPLETE]
+		- Evaluate orders `according to future` ![DISHAINCOMPLETE]
+			- Order owner
+			- Profit / Loss
+			- Push orders to DB
+		- Generate report ![SAMRUDHIINCOMPLETE]
+			- Eval Total Profit / Loss, final account size according to all orders performance, Initial account, Start date, etc.
+			- Push report to DB
+		- REST API ![DISHAINCOMPLETE]
+			- View all reports
+			- Filter reports according to strategy, risk %, Account size, etc.
+	- Automated testing ![VARUNINCOMPLETE]
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
+	- Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
+		- Get all paper trader orders
+		- Evaluate loss / profit of order according to latest company data `Update in DB`
+		- After order is completed, change owner `Update in DB`
+	- Genrating orders `Runs every min` ![VARUNINCOMPLETE]
+		- Get latest data of all companies
+		- Run all strategies on all relevant data `Returns orders`
+		- Set Profit / Loss and owner fileds of orders
+		- Push orders to DB
+	- REST APIs ![HRITIKINCOMPLETE]
+		- Get all current paper traded orders
+		- Filter orders according to all relevant criteria
 6. UI WORK ![COMPONENTINCOMPLETE]
-7. Build a simple BB test strategy ![FEATUREINCOMPLETE]
+	- Login `Django Auth`
+	- Top banner - just with name -> Menu button
+	- Strategies Tab is selected on default `Home page`
+	- Side navbar 
+		- Tabs
+			- Strategies
+			- Back tests
+			- Paper trades
+	- Strategies Tab
+		- All strategies and descriptions listed
+			- Click on a strategy
+				- List all back tests made in strategy 
+				- List all orders currently paper traded 
+				- Visualization of orders paper traded on strategy `Update each min`
+	- Back tests Tab
+	- Paper trades Tab
+7. Test the simple BB strategy `Integration testing` ![FEATUREINCOMPLETE]
+	- Run multiple back tests
+	- Test all paper trades
+	- Run for different companies in different sectors
+
+### VERSION 1.0 LAUNCH!
+
+---
+
 8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
     - Buy a domain ![DONE]
     - SSL certification
