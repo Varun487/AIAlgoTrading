@@ -1,6 +1,6 @@
 # Capstone Project - AI Trading Platform
 
-### What is the project ?
+### What is the project?
 
 To build a platform for creating, backtesting and paper trading new automated strategies on real-time, minute scale data with the help of AI models.
 
