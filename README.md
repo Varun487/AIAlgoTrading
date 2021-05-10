@@ -123,9 +123,9 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
-	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
+	- [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
 6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
-	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)
+	- [Link to UI README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)
 7. Test the simple BB strategy `Integration testing` `Automated tests` ![FEATUREINCOMPLETE]
 	- Datafeeder ![SAMRUDHIINCOMPLETE]
 		- Adding new companies `source`
