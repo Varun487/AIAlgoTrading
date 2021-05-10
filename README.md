@@ -125,43 +125,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
 6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
-	- Login `Django Auth` ![HRITIKINCOMPLETE]
-	- Top banner - just with name -> Menu button ![VARUNINCOMPLETE]
-	- Strategies Tab is selected on default `Home page` ![SAMRUDHIINCOMPLETE]
-	- Side navbar ![DISHAINCOMPLETE]
-		- Tabs
-			- Strategies
-			- Back tests
-			- Paper trades
-	- Strategies Tab ![SAMRUDHIINCOMPLETE]
-		- All strategies and descriptions listed `cards`
-			- Click on a strategy
-				- List all back tests made in strategy `Links`
-				- List all orders currently paper traded `Links`
-				- Visualizations `Update each min` `Toggle b/w companies`
-					- Company data
-					- Indicators
-					- Live orders
-					- Visualization of past orders of strategy
-					- Visualization of model predictions `if any`
-				- Description
-				- ML Models description `if used`
-	- Back tests Tab ![VARUNINCOMPLETE]
-		- All listed back tests report `card`
-			- Filter according to all backtest attributes
-		- Click on a report
-			- List all attr of back test
-				- Strategy description
-			- Visualization
-				- Account growth over time
-				- Visualization of all orders
-				- Visulaization of company data and indicators
-				- Visualization of model predictions `if any`
-			- List all orders made in backtest `table`
-	- Paper trades Tab ![DISHAINCOMPLETE]
-		- List all orders being paper traded `Live update each min` 
-			- Filter according to attr 
-		- Visualize orders `Update according to filter`
+	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)
 7. Test the simple BB strategy `Integration testing` `Automated tests` ![FEATUREINCOMPLETE]
 	- Datafeeder ![SAMRUDHIINCOMPLETE]
 		- Adding new companies `source`

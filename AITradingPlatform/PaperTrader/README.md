@@ -12,8 +12,10 @@
 
 ## PAPERTRADER  WORK
 
+---
 
- ### Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
+
+### Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
 		- Get all paper trader orders
 		- Evaluate loss / profit of order according to latest company data `Update in DB`
 		- After order is completed, change owner `Update in DB`
