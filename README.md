@@ -108,9 +108,6 @@ __PROJECT PHASE 1__ *-> COMPLETE BEFORE ESA BEGINS*
 
 __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 
-__TODAY'S WORK - 10/5/2021__
-* BREAKDOWN README INTO MULTIPLE FILES
-
 1. CONFIG WORK ![VARUNCOMPLETE]
     - Build all docker containers and run it locally ![DONE]
         - REST API  ![DONE]
@@ -120,65 +117,6 @@ __TODAY'S WORK - 10/5/2021__
             - Make it serve Django files ![DONE]
     - Separate development and production environments ![DONE]
 2. DATAFEEDER WORK ![COMPONENTINCOMPLETE]
-    - DB ![SAMRUDHICOMPLETE]
-        - Company ![DONE]
-        - Time stamp ![DONE]
-        - Immutable Data ![DONE]
-        - Calculated Candle stick Data ![DONE]
-        - Indicators ![DONE]
-    - REST API endpoints ![FEATUREINCOMPLETE] 
-      - Company ![DISHAINCOMPLETE]
-        - List all companies in DB ![DONE] 
-        - Get a particular company's details 
-		- Filter company according name, sector, ticker 
-        - Add a company 
-        - Delete a company 
-      - Time Stamp ![SAMRUDHIINCOMPLETE]
-        - All time stamps in DB
-        - Add a time stamp
-        - Delete a time stamp
-      - Immutable data and Calculated data![HRITIKINCOMPLETE]
-	  	- Filter according to open, high, low, close, volume, company, time period values
-	  - Indicators ![VARUNINCOMPLETE]
-	    - Filter according to company, time period values
-	  - Sourcing data ![VARUNINCOMPLETE]
-	  	- Ondemand data api call -> List of companies, time period, provider
-		- Add a company to real time list
-		- Remove a comapny from real time list
-	  - Derived candle stick data ![SAMRUDHIINCOMPLETE]
-	    - Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
-    - Sourcing functions ![VARUNINCOMPLETE]
-        - On demand (functions)
-          - Parameters
-            - Company `List`
-            - data collection window `Start Datetime and End Datetime`
-            - Provider - AlphaVantage / Yahoo Finance
-			- Candle stick time period
-          - Calculate indicators
-          - Push to DB
-        - Real time
-          - Call on demand function in an infinite loop
-    - Indicators calc functions ![DISHAINCOMPLETE]
-        - Parameters
-          - Company
-          - time periods `Start data and end date`
-		  - Push to DB
-        - SMA 
-        - Std Dev 
-	- Indicators `derived` calc functions ![HRITIKINCOMPLETE]
-	    - Parameters
-          - Company
-          - time periods `Start data and end date`
-		  - aggregation time period `List`
-        - SMA 
-        - Std Dev 
-    - Different `derived` candle stick time periods ![SAMRUDHIINCOMPLETE]
-		- Parameters
-          - Company
-          - time periods `Start data and end date`
-		  - aggregation time period `List`
-	- Add all REST APIs to API docs page ![VARUNINCOMPLETE]
-	- Automated testing ![VARUNINCOMPLETE]
 3. STRATEGIES WORK ![COMPONENTINCOMPLETE]
 	- DB ![DISHAINCOMPLETE]
 		- Strategy
