@@ -123,18 +123,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
-	- Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
-		- Get all paper trader orders
-		- Evaluate loss / profit of order according to latest company data `Update in DB`
-		- After order is completed, change owner `Update in DB`
-	- Genrating orders `Runs every min` ![VARUNINCOMPLETE]
-		- Get latest data of all companies
-		- Run all strategies on all relevant data `Returns orders`
-		- Set Profit / Loss and owner fileds of orders
-		- Push orders to DB
-	- REST APIs ![HRITIKINCOMPLETE]
-		- Get all current paper traded orders
-		- Filter orders according to all relevant criteria
+	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
 6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
 	- Login `Django Auth` ![HRITIKINCOMPLETE]
 	- Top banner - just with name -> Menu button ![VARUNINCOMPLETE]
