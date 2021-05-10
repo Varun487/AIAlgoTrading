@@ -119,63 +119,9 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 2. DATAFEEDER WORK ![COMPONENTINCOMPLETE]
 	- [Link to Datafeeder README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/DataFeeder)
 3. STRATEGIES WORK ![COMPONENTINCOMPLETE]
-	- DB ![DISHAINCOMPLETE]
-		- Strategy
-			- Name
-			- Description
-			- Companies/Sector
-		- Orders
-			- Order type `BUY/SELL`
-			- Company
-			- TimeStamp
-			- Order category `Market/Limit`
-			- Take profit `Can be Blank`
-			- Stop loss
-			- Strategy name
-			- Order Owner
-			- Profit/Loss `Blank in the beginning`
-	- Strategies ![VARUNINCOMPLETE]
-		- Simple Bollinger bands strategy
-			- Data
-				- Close price
-				- SMA
-				- 2 sigma above and below SMA
-			- Rules
-				- If stock price > 2 sigma above SMA `SHORT`
-				- If stock price crosses SMA `GET OUT OF ALL POSITIONS`
-				- If stock price < 2 sigma above SMA `BUY`
-	- REST API END POINTS ![FEATUREINCOMPLETE]
-		- View all strategies ![SAMRUDHIINCOMPLETE]
-		- View all orders ![HRITIKINCOMPLETE]
-		- Filter orders according to Profit / Loss, Strategy name, TimeStamp, Order owner, Order type, Company, Order Category, Stop loss, Take profit ![SAMRUDHIINCOMPLETE]
-	- Automated testing ![VARUNINCOMPLETE]
+	- [Link to Strategies README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/Strategies)
 4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
-	- DB ![HRITIKINCOMPLETE]
-		- BackTestReport
-			- Initial account size
-			- Max Risk %
-			- Final account size
-			- Start date time
-			- End date time
-			- Total Profit / Loss
-			- Order ids `List`
-			- Strategy
-	- Back testing `Only for historical data` 
-		- Get Req data from DB ![VARUNINCOMPLETE]
-			- Source data if not present
-			- Calc Indicators if not present
-		- Call the strategy function with data ![SAMRUDHIINCOMPLETE]
-		- Evaluate orders `according to future` ![DISHAINCOMPLETE]
-			- Order owner
-			- Profit / Loss
-			- Push orders to DB
-		- Generate report ![SAMRUDHIINCOMPLETE]
-			- Eval Total Profit / Loss, final account size according to all orders performance, Initial account, Start date, etc.
-			- Push report to DB
-		- REST API ![DISHAINCOMPLETE]
-			- View all reports
-			- Filter reports according to strategy, risk %, Account size, etc.
-	- Automated testing ![VARUNINCOMPLETE]
+	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
 	- Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
 		- Get all paper trader orders
