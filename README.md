@@ -46,13 +46,13 @@ To build a platform for creating, backtesting and paper trading new automated st
 
 # To replicate this project on your computer
 
+## Backend 
+
 1. run these commands to initialize the project:
 ```
 git clone "git@github.com:Varun487/CapstoneProject_AITradingPlatform.git"
 
 cd CapstoneProject_AITradingPlatform
-
-docker-compose -f docker-compose.prod.yml rm
 
 docker-compose -f docker-compose.prod.yml up --build
 ```
@@ -85,6 +85,38 @@ docker-compose -f docker-compose.dev.yml up --build
 8. To create a super user for the database
 ```
 docker-compose -f docker-compose.prod.yml run rest_api python AITradingPlatform/manage.py createsuperuser
+```
+
+## Frontend
+
+
+1. Install `npm`
+2. Install `firebase-tools` npm package
+```
+npm install -g firebase-tools
+```
+2. Navigate to `ai-trading-platform-ui` folder
+```
+cd ./AITradingPlatform/UI/ai-trading-platform-ui
+```
+3. Run the following commands in `ai-trading-platform-ui` folder
+2. Install required modules 
+```
+npm install
+```
+4. Start Vue js dev server
+```
+npm run serve
+```
+5. Start firebase development server
+```
+npm run build
+firebase serve
+```
+6. Deploy UI to firebase
+```
+npm run build
+firebase deploy
 ```
 
 # Project members
