@@ -14,26 +14,28 @@
 
 ---
 
-
 ### Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
-		- Get all paper trader orders
-		- Evaluate loss / profit of order according to latest company data `Update in DB`
-		- After order is completed, change owner `Update in DB`
+
+- Get all paper trader orders
+- Evaluate loss / profit of order according to latest company data `Update in DB`
+- After order is completed, change owner `Update in DB`
 
 ---
 
-
 ### Genrating orders `Runs every min` ![VARUNINCOMPLETE]
-		- Get latest data of all companies
-		- Run all strategies on all relevant data `Returns orders`
-		- Set Profit / Loss and owner fileds of orders
-		- Push orders to DB
+
+- Get latest data of all companies
+- Run all strategies on all relevant data `Returns orders`
+- Set Profit / Loss and owner fileds of orders
+- Push orders to DB
+
 ---
 
 
 ### REST APIs ![HRITIKINCOMPLETE]
-		- Get all current paper traded orders
-		- Filter orders according to all relevant criteria
+
+- Get all current paper traded orders
+- Filter orders according to all relevant criteria
 
 ---
 

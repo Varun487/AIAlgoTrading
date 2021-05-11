@@ -141,7 +141,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 	- UI ![VARUNINCOMPLETE]
 		- Test whether all buttons, nav, visualizations work
 
-### VERSION 1.0 LAUNCH!
+### VERSION 1.0 LAUNCH !
 
 ---
 

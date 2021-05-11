@@ -8,50 +8,72 @@
 
 # TODO v1.0
 
----
-
-## UI  WORK
+## UI  WORK `Vue js`
 
 ---
 
-### UI WORK `Vue js` ![COMPONENTINCOMPLETE]
-	- Login `Django Auth` ![HRITIKINCOMPLETE]
-	- Top banner - just with name -> Menu button ![VARUNINCOMPLETE]
-	- Strategies Tab is selected on default `Home page` ![SAMRUDHIINCOMPLETE]
-	- Side navbar ![DISHAINCOMPLETE]
-		- Tabs
-			- Strategies
-			- Back tests
-			- Paper trades
-	- Strategies Tab ![SAMRUDHIINCOMPLETE]
-		- All strategies and descriptions listed `cards`
-			- Click on a strategy
-				- List all back tests made in strategy `Links`
-				- List all orders currently paper traded `Links`
-				- Visualizations `Update each min` `Toggle b/w companies`
-					- Company data
-					- Indicators
-					- Live orders
-					- Visualization of past orders of strategy
-					- Visualization of model predictions `if any`
-				- Description
-				- ML Models description `if used`
-	- Back tests Tab ![VARUNINCOMPLETE]
-		- All listed back tests report `card`
-			- Filter according to all backtest attributes
-		- Click on a report
-			- List all attr of back test
-				- Strategy description
-			- Visualization
-				- Account growth over time
-				- Visualization of all orders
-				- Visulaization of company data and indicators
-				- Visualization of model predictions `if any`
-			- List all orders made in backtest `table`
-	- Paper trades Tab ![DISHAINCOMPLETE]
-		- List all orders being paper traded `Live update each min` 
-			- Filter according to attr 
-		- Visualize orders `Update according to filter`
+### Login ![HRITIKINCOMPLETE]
+
+- Uses `Django Auth`
+
+---
+
+### Top banner ![VARUNINCOMPLETE]
+
+- Name of platform
+- Menu button to show sidenavbar 
+
+---
+
+### Side navbar ![DISHAINCOMPLETE]
+
+- Tabs
+	- Strategies
+	- Back tests
+	- Paper trades
+
+---
+
+### Strategies Tab ![SAMRUDHIINCOMPLETE]
+
+- selected on default `Home page`
+- All strategies and descriptions listed `cards`
+- Click on a strategy
+	- List all back tests made in strategy `Links`
+	- List all orders currently paper traded `Links`
+	- Visualizations `Update each min` `Toggle b/w companies`
+		- Company data
+		- Indicators
+		- Live orders
+		- Visualization of past orders of strategy
+		- Visualization of model predictions `if any`
+	- Description
+	- ML Models description `if used`
+
+---
+
+### Back tests Tab ![VARUNINCOMPLETE]
+
+- All listed back tests report `card`
+- Filter according to all backtest attributes
+- Click on a report
+	- List all attr of back test
+	- Strategy description
+	- Visualizations
+		- Account growth over time
+		- Visualization of all orders
+		- Visulaization of company data and indicators
+		- Visualization of model predictions `if any`
+	- List all orders made in backtest `table`
+
+---
+
+### Paper trades Tab ![DISHAINCOMPLETE]
+
+- List all orders being paper traded `Live update each min` 
+	- Filter according to attr 
+- Visualize orders `Update according to filter`
+
 ---
 
 ### Automated testing ![VARUNINCOMPLETE]

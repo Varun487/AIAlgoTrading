@@ -11,12 +11,13 @@
 
 # TODO v1.0
 
-## STRATEGUES WORK
+## STRATEGIES WORK
 
 ---
 
 ### DB ![DISHAINCOMPLETE]
-Strategy
+
+- Strategy
 	- Name
 	- Description
 	- Companies/Sector
@@ -34,6 +35,7 @@ Strategy
 ---
 
 ### Strategies ![VARUNINCOMPLETE]
+
 - Simple Bollinger bands strategy
 	- Data
 		- Close price
@@ -47,9 +49,10 @@ Strategy
 ---
 
 ### REST API END POINTS ![FEATUREINCOMPLETE]
+
 - View all strategies ![SAMRUDHIINCOMPLETE]
 - View all orders ![HRITIKINCOMPLETE]
-- Filter orders according to Profit / Loss, Strategy name, TimeStamp, Order owner, Order type, Company, Order Category, Stop loss, Take profit ![SAMRUDHIINCOMPLETE]
+- Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
 
 ---
 

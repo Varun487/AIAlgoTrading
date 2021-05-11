@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from .models import ExampleDataFeederModel, Company
 from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer
 
+# REST Api Views
 
 @api_view(['GET', ])
 def api_index(req, slug):
@@ -28,3 +29,4 @@ def api_list_companies(req):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     return Response(ListCompaniesSerializer(companies, many=True).data)
+

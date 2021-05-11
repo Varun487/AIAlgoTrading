@@ -26,7 +26,8 @@
 	
 ---
 
-### Back testing `Only for historical data` 
+### Back testing `Only for historical data` ![FEATUREINCOMPLETE]
+
 - Get Req data from DB ![VARUNINCOMPLETE]
 	- Source data if not present
 	- Calc Indicators if not present
