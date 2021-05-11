@@ -148,6 +148,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
             - Setup Nginx server ![DONE]
             - Make it serve Django files ![DONE]
     - Separate development and production environments ![DONE]
+	- Add custom domain to firebase for UI ![DONE]
 2. DATAFEEDER WORK ![COMPONENTINCOMPLETE]
 	- [Link to Datafeeder README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/DataFeeder)
 3. STRATEGIES WORK ![COMPONENTINCOMPLETE]
