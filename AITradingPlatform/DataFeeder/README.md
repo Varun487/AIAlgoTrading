@@ -30,36 +30,31 @@
 - List all companies in DB ![DONE] 
 - Get a particular company's details 
 - Filter company according name, sector, ticker 
-- Add a company 
-- Delete a company 
 
 #### Time Stamp ![SAMRUDHIINCOMPLETE]
 
 - All time stamps in DB
-- Add a time stamp
-- Delete a time stamp
+- Filter time stamp according to attr
 
 #### Immutable data and Calculated data![HRITIKINCOMPLETE]
 
-- Filter according to open, high, low, close, volume, company, time period values
+- List immutable data in DB
+	- Filter according to open, high, low, close, volume, company, time period values
 
 #### Indicators ![VARUNINCOMPLETE]
 
-- Filter according to company, time period values
+- List indicator data
+	- Filter according to company, time period values
 
-#### Sourcing data ![VARUNINCOMPLETE]
+#### Derived candle stick data ![VARUNINCOMPLETE]
 
-- Ondemand data api call -> List of companies, time period, provider
-- Add a company to real time list
-- Remove a comapny from real time list
-
-#### Derived candle stick data ![SAMRUDHIINCOMPLETE]
-
-- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
+- List derived data
+	- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
 
 ---
 
 ### Sourcing functions ![VARUNINCOMPLETE]
+
 - On demand (functions)
     - Parameters
     	- Company `List`
