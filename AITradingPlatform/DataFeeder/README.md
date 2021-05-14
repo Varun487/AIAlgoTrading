@@ -30,13 +30,16 @@
 - List all companies in DB ![DONE] 
 - Get a particular company's details 
 - Filter company according name, sector, ticker 
+- Add a company
+- Delete a company
+- Modify attr of a company
 
 #### Time Stamp ![SAMRUDHIINCOMPLETE]
 
 - All time stamps in DB
 - Filter time stamp according to attr
 
-#### Immutable data and Calculated data![HRITIKINCOMPLETE]
+#### Immutable data ![HRITIKINCOMPLETE]
 
 - List immutable data in DB
 	- Filter according to open, high, low, close, volume, company, time period values
@@ -46,7 +49,7 @@
 - List indicator data
 	- Filter according to company, time period values
 
-#### Derived candle stick data ![VARUNINCOMPLETE]
+#### Derived candle stick data ![SAMRUDHIINCOMPLETE]
 
 - List derived data
 	- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
@@ -55,17 +58,27 @@
 
 ### Sourcing functions ![VARUNINCOMPLETE]
 
-- On demand (functions)
-    - Parameters
-    	- Company `List`
-        - data collection window `Start Datetime and End Datetime`
-        - Provider - AlphaVantage / Yahoo Finance
-		- Candle stick time period
-    - Calculate indicators
-    - Push to DB
+- On demand (function) ![INCOMPLETE]
+    - Parameters ![DONE]
+    	- Company `List` ![DONE]
+        - data collection window `Start Datetime and End Datetime` ![DONE]
+        - Provider - AlphaVantage / Yahoo Finance ![DONE]
+		- Candle stick time period ![DONE]
+    - Handle bad requests ![DONE]
+	- Get data ![INCOMPLETE]
+		- Yahoo finance ![DONE]
+			- Daily time period ![DONE]
+			- Within time window ![DONE]
+			- For all companies in list ![DONE]
+				- Inform if company data not found ![DONE]
+			- Push to DB ![DONE]
+				- Resolve time stamp schema change ![DONE]
+				- Check if data not in DB before inserting data ![DONE]
+		- AlphaVantage ![INCOMPLETE]
+    - Calculate indicators 
 
-- Real time
-    - Call on demand function in an infinite loop
+- Real time 
+    - Call on demand function as a cron job / daemon job
 
 ---
 
@@ -74,9 +87,9 @@
 - Parameters
   - Company
   - time periods `Start data and end date`
-  - Push to DB
-    - SMA 
-    - Std Dev 
+- Push to DB
+- SMA 
+- Std Dev 
 
 ---
 
@@ -86,8 +99,8 @@
   - Company
   - time periods `Start data and end date`
   - aggregation time period `List`
-    - SMA 
-    - Std Dev 
+- SMA 
+- Std Dev 
 
 ---
 
