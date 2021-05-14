@@ -2,8 +2,8 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .models import ExampleDataFeederModel, Company
-from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer
+from .models import ExampleDataFeederModel, Company, TimeStamp
+from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, TimeStampSerializer
 
 # REST Api Views
 
@@ -29,4 +29,15 @@ def api_list_companies(req):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     return Response(ListCompaniesSerializer(companies, many=True).data)
+
+@api_view(['GET', ])
+def api_list_timestamps(req):
+
+    try:
+        timestamp = TimeStamp.objects.all()
+        print("Time Stamp: ", timestamp)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    return Response(TimeStampSerializer(timestamp, many=True).data)
 

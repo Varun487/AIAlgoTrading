@@ -18,7 +18,9 @@ class TimeStamp(models.Model):
     date_time = models.DateTimeField()
 
     def __str__(self):
-        return self.date_time
+        return str(self.date_time)
+        #return str(self.date_time.strftime("%Y%m%d-%H:%M:%S")
+        #return self.date_time   ---error
 
 class ImmutableData(models.Model):
     open = models.FloatField()
@@ -42,6 +44,7 @@ class CalculatedCandleStick(models.Model):
     timestamp = models.ForeignKey(to=TimeStamp, on_delete=models.CASCADE)
 
     def __str__(self):
+        
         return self.timestamp + "_" + self.company
 
 class Indicators(models.Model):
