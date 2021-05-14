@@ -132,3 +132,9 @@ def api_get_data_on_demand(req):
 		# 	res['data_not_found'].append(company)
 
 	return JsonResponse(res)
+
+#@api_view(['GET', ])
+#def calcderievedindiactor(req):
+
+
+
