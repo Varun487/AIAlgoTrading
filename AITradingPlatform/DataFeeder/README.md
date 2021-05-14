@@ -64,8 +64,9 @@
         - data collection window `Start Datetime and End Datetime` ![DONE]
         - Provider - AlphaVantage / Yahoo Finance ![DONE]
 		- Candle stick time period ![DONE]
+		- slice ![DONE]
     - Handle bad requests ![DONE]
-	- Get data ![INCOMPLETE]
+	- Get data ![DONE]
 		- Yahoo finance ![DONE]
 			- Daily time period ![DONE]
 			- Within time window ![DONE]
@@ -74,8 +75,12 @@
 			- Push to DB ![DONE]
 				- Resolve time stamp schema change ![DONE]
 				- Check if data not in DB before inserting data ![DONE]
-		- AlphaVantage ![INCOMPLETE]
-    - Calculate indicators 
+		- AlphaVantage ![DONE]
+	  		- Modify req & check if req is correct ![DONE]
+			- Source data from AlphaVantage with parameters ![DONE]
+			- Push to DB ![DONE]
+			  - Check if data not in DB before inserting data ![DONE]
+    - Calculate / Source indicators data ![INCOMPLETE]
 
 - Real time 
     - Call on demand function as a cron job / daemon job
