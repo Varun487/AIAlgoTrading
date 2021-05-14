@@ -75,8 +75,7 @@
 			- Source data from AlphaVantage with parameters ![DONE]
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
-    - Calculate / Source indicators data ![INCOMPLETE]
-
+		- Call Indicator functions on derived data
 - Real time 
     - Call on demand function as a cron job / daemon job
 
@@ -93,7 +92,7 @@
 
 ---
 
-### Indicators `derived` calc functions ![HRITIKINCOMPLETE]
+### Derive Indicator values for different time periods ![HRITIKINCOMPLETE]
 
 - Parameters
   - Company

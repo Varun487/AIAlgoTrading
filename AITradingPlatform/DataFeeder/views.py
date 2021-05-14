@@ -90,8 +90,6 @@ def api_get_data_on_demand(req):
 
 			# collect AlphaVantage data
 			else:
-				print(f'Alpha {company}')
-				print(f'{environ["API_KEY"]}')
 
 				url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY_EXTENDED&symbol={company}&interval={req_body["time_period"]}&slice={req_body["slice"]}&adjusted=false&apikey={environ["API_KEY"]}'
 
@@ -120,8 +118,6 @@ def api_get_data_on_demand(req):
 						volume=df.Volume[i],
 						time_period=req_body['time_period'],
 					).save()
-				# else:
-				# 	print(f'data already exists for {company} at {df.index[i]}')
 
 			res['collected_data'].append(company)
 
