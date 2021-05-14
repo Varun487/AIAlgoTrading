@@ -75,9 +75,8 @@
 			- Source data from AlphaVantage with parameters ![DONE]
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
-		- Call Indicator functions on derived data ![INCOMPLETE]
-- Real time 
-    - Call on demand function as a cron job / daemon job
+- Real time `Only Yahoo! Finance` ![INCOMPLETE]
+    - Call on demand function as a cron job every 24hrs ![INCOMPLETE]
 
 ---
 
@@ -88,7 +87,8 @@
   - time periods `Start data and end date`
 - Push to DB
 - SMA 
-- Std Dev 
+- Std Dev
+- Call Indicator functions on sourced data ![INCOMPLETE]
 
 ---
 
