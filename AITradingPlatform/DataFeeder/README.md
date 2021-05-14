@@ -34,11 +34,6 @@
 - Delete a company
 - Modify attr of a company
 
-#### Time Stamp ![SAMRUDHIINCOMPLETE]
-
-- All time stamps in DB
-- Filter time stamp according to attr
-
 #### Immutable data ![HRITIKINCOMPLETE]
 
 - List immutable data in DB
@@ -109,12 +104,13 @@
 
 ---
 
-### Different `derived` candle stick time periods ![SAMRUDHIINCOMPLETE]
+### Derive candle sticks for different time periods ![SAMRUDHIINCOMPLETE]
 
 - Parameters
   - Company
-  - time periods `Start data and end date`
+  - time window `Start data and end date`
   - aggregation time period `List`
+- Push to DB
 
 ---
 
