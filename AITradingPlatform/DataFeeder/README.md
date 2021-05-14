@@ -75,13 +75,13 @@
 			- Source data from AlphaVantage with parameters ![DONE]
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
-		- Call Indicator functions on derived data
+		- Call Indicator functions on derived data ![INCOMPLETE]
 - Real time 
     - Call on demand function as a cron job / daemon job
 
 ---
 
-### Indicators calc functions ![DISHAINCOMPLETE]
+### Indicators calc functions ![VARUNINCOMPLETE]
 
 - Parameters
   - Company
@@ -113,11 +113,11 @@
 
 ---
 
-### Add all REST APIs to API docs page ![VARUNINCOMPLETE]
+### Add all REST APIs to API docs page ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE]
+### Automated testing ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
