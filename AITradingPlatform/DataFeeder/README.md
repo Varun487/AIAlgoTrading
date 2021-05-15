@@ -53,7 +53,7 @@
 
 ### Sourcing functions ![VARUNINCOMPLETE]
 
-- On demand (function) ![INCOMPLETE]
+- On demand (function) ![DONE]
     - Parameters ![DONE]
     	- Company `List` ![DONE]
         - data collection window `Start Datetime and End Datetime` ![DONE]
@@ -76,7 +76,12 @@
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
 - Real time `Only Yahoo! Finance` ![INCOMPLETE]
-    - Call on demand function as a cron job every 24hrs ![INCOMPLETE]
+    - Create a python script to get latest data on all companies present in DB through Yahoo finance ![INCOMPLETE]
+	  - Get all companies from DB ![INCOMPLETE]
+	  - Filter to get all companies from Yahoo! finance
+	  - Get data from last collected till today for each company
+		- push to DB
+	- Run the script as a cron job every 24hrs 
 
 ---
 
@@ -88,7 +93,7 @@
 - Push to DB
 - SMA 
 - Std Dev
-- Call Indicator functions on sourced data ![INCOMPLETE]
+- Call Indicator functions on sourced data 
 
 ---
 
