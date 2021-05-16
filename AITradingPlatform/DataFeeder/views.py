@@ -5,7 +5,6 @@ from datetime import datetime
 import json
 import pandas_datareader.data as web
 from os import environ
-import requests
 from pandas_datareader._utils import RemoteDataError
 
 from rest_framework import status
@@ -121,16 +120,13 @@ def api_get_data_on_demand(req):
 
 			res['collected_data'].append(company)
 
-		except RemoteDataError:
-			res['data_not_found'].append(company)
-
-		# except:
+		# except RemoteDataError:
 		# 	res['data_not_found'].append(company)
+
+		except:
+			res['data_not_found'].append(company)
 
 	return JsonResponse(res)
 
 #@api_view(['GET', ])
 #def calcderievedindiactor(req):
-
-
-
