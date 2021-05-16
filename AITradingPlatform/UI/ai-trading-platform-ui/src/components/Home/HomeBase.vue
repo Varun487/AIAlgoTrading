@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>Welcome to our capstone project - The AI Algorithmic trading system</h1>
 	<h1>A beautiful UI is coming soon!</h1>
   </div>
@@ -7,10 +7,7 @@
 
 <script>
 export default {
-  name: 'Base',
-  props: {
-    msg: String
-  }
+  name: 'HomeBase',
 }
 </script>
 
