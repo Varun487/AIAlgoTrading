@@ -136,14 +136,16 @@
 		- REST API title ![DONE]
 		- Note ![DONE]
 		- List of endpoints overview ![DONE]
-		- Endpoint card ![INCOMPLETE]
-			- Get / Post, endpoint link
-			- Stickers for `new`, `depricated`, `updated`, `bug`
-			- Descritpiton of endpoint function
-			- Descritpiton of endpoint parameters
-			- Sample request
+		- Endpoint Description ![INCOMPLETE]
+			- Get / Post, endpoint link ![DONE]
+			- Descripiton of endpoint function ![DONE]
+			- Descripiton of endpoint parameters ![INCOMPLETE]
+			- Sample request body
 			- Sample correct output
 			- Sample failed output
+		- Stickers for `new`, `depricated`, `updated`, `bug`
+			- Add to endpoint overview
+			- Add to endpoint description
 		- Fix links in endpoints overview list
 
 ---

@@ -3,13 +3,15 @@
     <Title />
     <Note />
     <EndpointsOverviewList />
+    <EndpointsDescriptionList />
   </div>
 </template>
 
 <script>
 import Title from "./Title.vue";
-import EndpointsOverviewList from "./EndpointsOverviewList.vue";
 import Note from "./Note.vue";
+import EndpointsOverviewList from "./EndpointsOverviewList.vue";
+import EndpointsDescriptionList from "./EndpointsDescriptionList.vue";
 
 export default {
   name: "RestApiBase",
@@ -17,6 +19,7 @@ export default {
     Title,
     Note,
     EndpointsOverviewList,
+    EndpointsDescriptionList,
   },
 };
 </script>
