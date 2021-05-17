@@ -53,7 +53,7 @@
 
 ### Sourcing functions ![VARUNINCOMPLETE]
 
-- On demand (function) ![INCOMPLETE]
+- On demand (function) ![DONE]
     - Parameters ![DONE]
     	- Company `List` ![DONE]
         - data collection window `Start Datetime and End Datetime` ![DONE]
@@ -75,7 +75,18 @@
 			- Source data from AlphaVantage with parameters ![DONE]
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
-	- Calculate indicators on sourced data
+	- Calculate indicators on sourced data ![DONE]
+		- Separate `ondemand` function and api ![DONE]
+		  - Remove naive datetimes ![DONE]
+		  - Suppress pandas warning ![DONE]
+		  - Make sure df is in ascending order of dates ![DONE]
+		- Make functions which take a dataframe as input and calculate indicators ![DONE]
+		  - SMA ![DONE]
+		  - Standard dev. ![DONE]
+		- Push indicators calculated to DB ![DONE]
+	- Cannot uniquely identify indicator data ![BUGFIXED]
+	
+
 - Real time `Only Yahoo! Finance` 
     - Create a python script to get latest data on all companies present in DB through Yahoo finance 
 	  - Get all companies from DB 
@@ -88,9 +99,10 @@
 
 ### Indicators calc functions ![VARUNINCOMPLETE]
 
-- Parameters
+- Parameters ![INCOMPLETE]
   - Company
-  - time periods `Start data and end date`
+  - time window `Start data and end date`
+  - time period
 - Push to DB
 - SMA 
 - Std Dev
@@ -136,10 +148,11 @@
 		- REST API title ![DONE]
 		- Note ![DONE]
 		- List of endpoints overview ![DONE]
-		- Endpoint Description ![INCOMPLETE]
+		- SITE NOT RENDERING PROPERLY IN PRODUCTION!!! ![BUG]
+		- Endpoint Description
 			- Get / Post, endpoint link ![DONE]
 			- Descripiton of endpoint function ![DONE]
-			- Descripiton of endpoint parameters ![INCOMPLETE]
+			- Descripiton of endpoint parameters
 			- Sample request body
 			- Sample correct output
 			- Sample failed output
