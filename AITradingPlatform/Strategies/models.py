@@ -1,16 +1,9 @@
 from django.db import models
+from DataFeeder.models import Company
 
 # Create your models here.
 class ExampleStrategiesModel(models.Model):
     name = models.CharField(max_length=50, blank=False)
-
-    def __str__(self):
-        return self.name
-
-class Company(models.Model):
-    name = models.CharField(max_length=200, blank=False)
-    ticker = models.CharField(max_length=100, blank=False)
-    sector = models.CharField(max_length=500, blank=False)
 
     def __str__(self):
         return self.name
@@ -24,10 +17,10 @@ class Strategy(models.Model):
         return f"Strategy: {self.name}, Description: {self.desc}"
 
 class Orders(models.Model):
-    ORD_TYPE = ['Buy','Sell'] #[('B','Buy'),('S','Sell')]
-    ORD_CAT = ['Market','Limit'] #[('M','Market'),('L','Limit')]
-    ORD_OWN = ['Back Tester','Paper Trader'] #[('BT','Back Tester'),('PT','Paper Trader')]
-    PROFIT_LOSS = ['Profit','Loss'] #[('P','Profit'),('L','Loss')]
+    ORD_TYPE = [('B','Buy'),('S','Sell')] #['Buy','Sell']
+    ORD_CAT = [('M','Market'),('L','Limit')] #['Market','Limit']
+    ORD_OWN = [('BT','Back Tester'),('PT','Paper Trader')] #['Back Tester','Paper Trader']
+    PROFIT_LOSS = [('P','Profit'),('L','Loss')] #['Profit','Loss']
     order_type = models.CharField(max_length=4, choices=ORD_TYPE, default='Default')
     order_category = models.CharField(max_length=6, choices=ORD_CAT, default='Default')
     order_owner = models.CharField(max_length=15, choices=ORD_OWN, default='Default')
