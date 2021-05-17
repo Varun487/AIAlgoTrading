@@ -39,10 +39,23 @@
 - List immutable data in DB
 	- Filter according to open, high, low, close, volume, company, time period values
 
-#### Indicators ![VARUNINCOMPLETE]
+#### Indicators ![VARUNCOMPLETE]
 
-- List indicator data
-	- Filter according to company, time period values
+- List indicator data ![DONE]
+  - Create an endpoint `indicatorsdata/` ![DONE]
+  - Handle edge cases ![DONE]
+  	- Return `Invalid request` message if wrong parameters passed to req ![DONE]
+	- Return `No data present that fits all conditions` message if no data found ![DONE]
+  - Validate request parameters ![DONE]
+  - Filter according all attr ![DONE]
+	- Name ![DONE]
+	- Value `Range` ![DONE]
+	- Column ![DONE]
+	- indicator time period ![DONE]
+	- Candle Stick ![DONE]
+	  - company `ticker` ![DONE]
+	  - time_stamp `range` ![DONE]
+	  - time_period ![DONE]
 
 #### Derived candle stick data ![SAMRUDHIINCOMPLETE]
 
@@ -51,7 +64,7 @@
 
 ---
 
-### Sourcing functions ![VARUNINCOMPLETE]
+### Sourcing historical data on demand ![VARUNCOMPLETE]
 
 - On demand (function) ![DONE]
     - Parameters ![DONE]
@@ -85,7 +98,11 @@
 		  - Standard dev. ![DONE]
 		- Push indicators calculated to DB ![DONE]
 	- Cannot uniquely identify indicator data ![BUGFIXED]
-	
+
+---
+
+### Sourcing data real time ![VARUNINCOMPLETE]
+
 
 - Real time `Only Yahoo! Finance` 
     - Create a python script to get latest data on all companies present in DB through Yahoo finance 
@@ -93,20 +110,8 @@
 	  - Filter to get all companies from Yahoo! finance
 	  - Get data from last collected till today for each company
 		- push to DB
-	- Run the script as a cron job every 24hrs 
-
----
-
-### Indicators calc functions ![VARUNINCOMPLETE]
-
-- Parameters ![INCOMPLETE]
-  - Company
-  - time window `Start data and end date`
-  - time period
-- Push to DB
-- SMA 
-- Std Dev
-
+	- Run the script as a cron job every 24hrs
+	
 ---
 
 ### Derive Indicator values for different time periods ![HRITIKINCOMPLETE]
