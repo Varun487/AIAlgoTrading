@@ -75,8 +75,14 @@
 			- Source data from AlphaVantage with parameters ![DONE]
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
-- Real time `Only Yahoo! Finance` ![INCOMPLETE]
-    - Call on demand function as a cron job every 24hrs ![INCOMPLETE]
+	- Calculate indicators on sourced data
+- Real time `Only Yahoo! Finance` 
+    - Create a python script to get latest data on all companies present in DB through Yahoo finance 
+	  - Get all companies from DB 
+	  - Filter to get all companies from Yahoo! finance
+	  - Get data from last collected till today for each company
+		- push to DB
+	- Run the script as a cron job every 24hrs 
 
 ---
 
@@ -88,7 +94,6 @@
 - Push to DB
 - SMA 
 - Std Dev
-- Call Indicator functions on sourced data ![INCOMPLETE]
 
 ---
 
@@ -113,7 +118,35 @@
 
 ---
 
-### Add all REST APIs to API docs page ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
+### Add all REST APIs to API docs page ![VARUNINCOMPLETE] 
+
+- Setup website ![DONE]
+	- Change title ![DONE]
+	- Add a different favicon ![DONE]
+	- Refactor webapp, decide organization of componets, routers and views ![DONE]
+	- Add Vuex ![DONE]
+	- Fix navbar ![DONE]
+		- Add a title ![DONE]
+		- Sepaprate links component ![DONE]
+		- CSS and format for all links + navbar ![DONE]
+	- Make the favicon have a transparent background ![DONE]
+- Create API Docs page ![INCOMPLETE]
+	- Decide format for page and each API ![DONE]
+	- Build components for api page ![INCOMPLETE]
+		- REST API title ![DONE]
+		- Note ![DONE]
+		- List of endpoints overview ![DONE]
+		- Endpoint Description ![INCOMPLETE]
+			- Get / Post, endpoint link ![DONE]
+			- Descripiton of endpoint function ![DONE]
+			- Descripiton of endpoint parameters ![INCOMPLETE]
+			- Sample request body
+			- Sample correct output
+			- Sample failed output
+		- Stickers for `new`, `depricated`, `updated`, `bug`
+			- Add to endpoint overview
+			- Add to endpoint description
+		- Fix links in endpoints overview list
 
 ---
 

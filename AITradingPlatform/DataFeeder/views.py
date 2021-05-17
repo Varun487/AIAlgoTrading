@@ -132,7 +132,7 @@ def api_get_data_on_demand(req):
 @api_view(['GET', ])
 def calcderievedindiactor(req):
 	data=ImmutableData.objects.all()
-	return(data)
+	
 
 
 
