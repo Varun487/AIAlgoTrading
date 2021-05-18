@@ -33,4 +33,3 @@ class Orders(models.Model):
 
     def __str__(self):
         return f"Order Type: {self.order_type}, Order Owner: {self.order_owner}, Profit: {self.profit}, Strategy: {self.strategy.name}"
-
