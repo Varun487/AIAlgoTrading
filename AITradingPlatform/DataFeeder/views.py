@@ -2,6 +2,7 @@ import pandas as pd
 from django.http import JsonResponse
 
 from datetime import datetime
+from datetime import timedelta
 import json
 import pandas_datareader.data as web
 from os import environ
@@ -132,3 +133,34 @@ def api_get_data_on_demand(req):
 		# 	res['data_not_found'].append(company)
 
 	return JsonResponse(res)
+
+@api_view(['POST', ])
+def api_derive_candle_stick(req):
+	
+	req_body = json.loads(req.body)
+
+	companies = 'companies' in req_body and type(req_body['companies']) == list
+	time_period = 'time_period' in req_body and req_body['time_period'] in ['daily', '60min', '30min', '15min', '10min', '5min', '1min']
+
+	start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
+	end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
+	
+	company_obj = Company.objects.get(ticker=company)
+
+	#for i in ImmutableData.objects.all().filter(company=company_obj, time_stamp=start_dt, time=req_body["time_period"]):
+		#if time_period !=time:
+			 
+
+	days = (end_dt - start_dt).days
+
+	def get_date(n):
+		return datetime.strftime(start_dt + timedelta(days=n), '%Y-%m-%d %H:%M:%S')
+	
+    
+	for n in range(0, days, time_period):
+
+		yield get_date(n)
+
+
+
+	

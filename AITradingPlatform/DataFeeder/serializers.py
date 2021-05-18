@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ExampleDataFeederModel, Company, TimeStamp
+from .models import ExampleDataFeederModel, Company
 
 class ExampleDataFeederSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,7 +11,4 @@ class ListCompaniesSerializer(serializers.ModelSerializer):
         model = Company
         fields = ['name', 'ticker', 'sector']
 
-class TimeStampSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TimeStamp
-        fields = ['date_time']
+
