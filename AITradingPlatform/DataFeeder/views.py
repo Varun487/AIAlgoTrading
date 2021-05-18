@@ -1,18 +1,21 @@
+import pandas as pd
 from django.http import JsonResponse
 
 from datetime import datetime
 from datetime import timedelta
 import json
+import pandas_datareader.data as web
+from os import environ
 
 from django.utils.timezone import make_aware
+from pandas_datareader._utils import RemoteDataError
+
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .models import ExampleDataFeederModel, Company, Indicators
+from .models import ExampleDataFeederModel, Company, ImmutableData, Indicators
 from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer
-
-from .utils import get_data_on_demand
 
 
 # REST Api Views
@@ -61,8 +64,8 @@ def api_get_data_on_demand(req):
 
     # check if correct date and time
     try:
-        start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
-        end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+        start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
+        end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
     except:
         return JsonResponse(res)
 
@@ -76,13 +79,60 @@ def api_get_data_on_demand(req):
     res['data_not_found'] = []
     res['provider'] = req_body['provider']
 
-    # Get data on demand
-    res['collected_data'], res['data_not_found'] = get_data_on_demand(req_body['companies'], req_body['provider'],
-                                                                      start_dt, end_dt, req_body['time_period'],
-                                                                      req_body['slice'])
+    # collect data per company
+    for company in req_body['companies']:
+
+        try:
+            # company must exist in DB to collect data
+            company_obj = Company.objects.get(ticker=company)
+
+            # collect yahoo finance data
+            if req_body['provider'] == 'Yahoo':
+
+                # collect data
+                df = web.DataReader(f"{company}", 'yahoo', start_dt, end_dt)
+
+            # collect AlphaVantage data
+            else:
+
+                url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY_EXTENDED&symbol={company}&interval={req_body["time_period"]}&slice={req_body["slice"]}&adjusted=false&apikey={environ["API_KEY"]}'
+
+                df = pd.read_csv(url)
+                df['time'] = pd.to_datetime(df['time'])
+
+                df = df[start_dt <= df.time]
+                df = df[df.time <= end_dt]
+                df.set_index('time', inplace=True)
+
+                for col in df.columns:
+                    df.rename(columns={col: col.capitalize()}, inplace=True)
+
+            # Process dataframe to send to DB
+            for i in range(len(df)):
+
+                # Put collected data in DB if not already present
+                if not ImmutableData.objects.all().filter(company=company_obj, time_stamp=df.index[i],
+                                                          time_period=req_body["time_period"]):
+                    ImmutableData(
+                        time_stamp=df.index[i],
+                        company=company_obj,
+                        open=df.Open[i],
+                        high=df.High[i],
+                        low=df.Low[i],
+                        close=df.Close[i],
+                        volume=df.Volume[i],
+                        time_period=req_body['time_period'],
+                    ).save()
+
+            res['collected_data'].append(company)
+
+        except RemoteDataError:
+            res['data_not_found'].append(company)
+
+    # except:
+    # 	res['data_not_found'].append(company)
 
     return JsonResponse(res)
-
 
 @api_view(['POST', ])
 def api_get_indicators_data(req):
@@ -172,7 +222,11 @@ def api_derive_candle_stick(req):
 		return datetime.strftime(start_dt + timedelta(days=n), '%Y-%m-%d %H:%M:%S')
 	
     
-	for n in range(0, days, time_period):
+	for n in range(0, days):
 
 		yield get_date(n)
 
+@api_view(['GET', ])
+def calcderievedindiactor(req):
+    data = ImmutableData.objects.all()
+    df = pd.read_csv(data)
