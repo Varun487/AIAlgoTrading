@@ -199,6 +199,14 @@ def api_get_indicators_data(req):
 
     return JsonResponse(res)
 
+
+@api_view(['GET', ])
+def calcderievedindiactor(req):
+    data = ImmutableData.objects.all()
+    df = pd.read_csv(data)
+
+
+
 @api_view(['POST', ])
 def api_derive_candle_stick(req):
 	
@@ -207,12 +215,15 @@ def api_derive_candle_stick(req):
 	companies = 'companies' in req_body and type(req_body['companies']) == list
 	time_period = 'time_period' in req_body and req_body['time_period'] in ['daily', '60min', '30min', '15min', '10min', '5min', '1min']
 
-	start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
-	end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
+	try:
+        start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
+        end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+    except:
+        return JsonResponse(res)
 	
 	company_obj = Company.objects.get(ticker=company)
 
-	#for i in ImmutableData.objects.all().filter(company=company_obj, time_stamp=start_dt, time=req_body["time_period"]):
+	#for i in ImmutableData.objects.all().filter(company=company_obj, time_stamp=start_dt):
 		#if time_period !=time:
 			 
 
@@ -222,11 +233,6 @@ def api_derive_candle_stick(req):
 		return datetime.strftime(start_dt + timedelta(days=n), '%Y-%m-%d %H:%M:%S')
 	
     
-	for n in range(0, days):
-
+	for n in range(0, days, time_period):
+        
 		yield get_date(n)
-
-@api_view(['GET', ])
-def calcderievedindiactor(req):
-    data = ImmutableData.objects.all()
-    df = pd.read_csv(data)
