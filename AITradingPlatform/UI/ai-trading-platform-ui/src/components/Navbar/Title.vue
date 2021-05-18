@@ -1,0 +1,19 @@
+<template>
+	<h1>AI ALGO TRADER</h1>
+</template>
+
+<script>
+export default {
+  name: "Title",
+};
+</script>
+
+<style scoped>
+h1{
+	text-align: center;
+	margin: 0px;
+	padding: 10px;
+	padding-bottom: 0px;
+	opacity: 90%;
+}
+</style>

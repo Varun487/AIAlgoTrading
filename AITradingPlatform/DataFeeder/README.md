@@ -39,10 +39,23 @@
 - List immutable data in DB
 	- Filter according to open, high, low, close, volume, company, time period values
 
-#### Indicators ![VARUNINCOMPLETE]
+#### Indicators ![VARUNCOMPLETE]
 
-- List indicator data
-	- Filter according to company, time period values
+- List indicator data ![DONE]
+  - Create an endpoint `indicatorsdata/` ![DONE]
+  - Handle edge cases ![DONE]
+  	- Return `Invalid request` message if wrong parameters passed to req ![DONE]
+	- Return `No data present that fits all conditions` message if no data found ![DONE]
+  - Validate request parameters ![DONE]
+  - Filter according all attr ![DONE]
+	- Name ![DONE]
+	- Value `Range` ![DONE]
+	- Column ![DONE]
+	- indicator time period ![DONE]
+	- Candle Stick ![DONE]
+	  - company `ticker` ![DONE]
+	  - time_stamp `range` ![DONE]
+	  - time_period ![DONE]
 
 #### Derived candle stick data ![SAMRUDHIINCOMPLETE]
 
@@ -51,9 +64,9 @@
 
 ---
 
-### Sourcing functions ![VARUNINCOMPLETE]
+### Sourcing historical data on demand ![VARUNCOMPLETE]
 
-- On demand (function) ![INCOMPLETE]
+- On demand (function) ![DONE]
     - Parameters ![DONE]
     	- Company `List` ![DONE]
         - data collection window `Start Datetime and End Datetime` ![DONE]
@@ -75,25 +88,33 @@
 			- Source data from AlphaVantage with parameters ![DONE]
 			- Push to DB ![DONE]
 			  - Check if data not in DB before inserting data ![DONE]
-    - Calculate / Source indicators data ![INCOMPLETE]
-
-- Real time 
-    - Call on demand function as a cron job / daemon job
-
----
-
-### Indicators calc functions ![DISHAINCOMPLETE]
-
-- Parameters
-  - Company
-  - time periods `Start data and end date`
-- Push to DB
-- SMA 
-- Std Dev 
+	- Calculate indicators on sourced data ![DONE]
+		- Separate `ondemand` function and api ![DONE]
+		  - Remove naive datetimes ![DONE]
+		  - Suppress pandas warning ![DONE]
+		  - Make sure df is in ascending order of dates ![DONE]
+		- Make functions which take a dataframe as input and calculate indicators ![DONE]
+		  - SMA ![DONE]
+		  - Standard dev. ![DONE]
+		- Push indicators calculated to DB ![DONE]
+	- Cannot uniquely identify indicator data ![BUGFIXED]
 
 ---
 
-### Indicators `derived` calc functions ![HRITIKINCOMPLETE]
+### Sourcing data real time ![VARUNINCOMPLETE]
+
+
+- Real time `Only Yahoo! Finance` 
+    - Create a python script to get latest data on all companies present in DB through Yahoo finance 
+	  - Get all companies from DB 
+	  - Filter to get all companies from Yahoo! finance
+	  - Get data from last collected till today for each company
+		- push to DB
+	- Run the script as a cron job every 24hrs
+	
+---
+
+### Derive Indicator values for different time periods ![HRITIKINCOMPLETE]
 
 - Parameters
   - Company
@@ -114,11 +135,40 @@
 
 ---
 
-### Add all REST APIs to API docs page ![VARUNINCOMPLETE]
+### Add all REST APIs to API docs page ![VARUNINCOMPLETE] 
+
+- Setup website ![DONE]
+	- Change title ![DONE]
+	- Add a different favicon ![DONE]
+	- Refactor webapp, decide organization of componets, routers and views ![DONE]
+	- Add Vuex ![DONE]
+	- Fix navbar ![DONE]
+		- Add a title ![DONE]
+		- Sepaprate links component ![DONE]
+		- CSS and format for all links + navbar ![DONE]
+	- Make the favicon have a transparent background ![DONE]
+- Create API Docs page ![INCOMPLETE]
+	- Decide format for page and each API ![DONE]
+	- Build components for api page ![INCOMPLETE]
+		- REST API title ![DONE]
+		- Note ![DONE]
+		- List of endpoints overview ![DONE]
+		- SITE NOT RENDERING PROPERLY IN PRODUCTION!!! ![BUG]
+		- Endpoint Description
+			- Get / Post, endpoint link ![DONE]
+			- Descripiton of endpoint function ![DONE]
+			- Descripiton of endpoint parameters
+			- Sample request body
+			- Sample correct output
+			- Sample failed output
+		- Stickers for `new`, `depricated`, `updated`, `bug`
+			- Add to endpoint overview
+			- Add to endpoint description
+		- Fix links in endpoints overview list
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE]
+### Automated testing ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red

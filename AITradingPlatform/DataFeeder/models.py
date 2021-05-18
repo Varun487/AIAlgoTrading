@@ -44,10 +44,11 @@ class CalculatedCandleStick(models.Model):
 
 
 class Indicators(models.Model):
-    sma = models.FloatField()
-    stddev = models.FloatField()
-    company = models.ForeignKey(to=Company, on_delete=models.CASCADE)
-    time_stamp = models.DateTimeField()
+    name = models.CharField(max_length=20, default='Default')
+    value = models.FloatField(default=0.0)
+    column = models.CharField(max_length=20, default='Default')
+    indicator_time_period = models.IntegerField(default=0)
+    candle_stick = models.ForeignKey(to=ImmutableData, on_delete=models.DO_NOTHING, blank=True)
 
     def __str__(self):
-        return self.company.name
+        return f"Indicator: {self.name}, {self.candle_stick}"
