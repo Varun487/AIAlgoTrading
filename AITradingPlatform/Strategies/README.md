@@ -15,7 +15,7 @@
 
 ---
 
-### DB ![DISHAINCOMPLETE]
+### DB ![DISHACOMPLETE]
 
 - Strategy
 	- Name
@@ -40,11 +40,11 @@
 	- Data
 		- Close price
 		- SMA
-		- 2 sigma above and below SMA
+		- `n` sigma above and below SMA
 	- Rules
-		- If stock price > 2 sigma above SMA `SHORT`
+		- If stock price > `n` sigma above SMA `SHORT`
 		- If stock price crosses SMA `GET OUT OF ALL POSITIONS`
-		- If stock price < 2 sigma above SMA `BUY`
+		- If stock price < `n` sigma above SMA `BUY`
 
 ---
 
