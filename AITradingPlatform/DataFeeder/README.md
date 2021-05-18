@@ -30,47 +30,55 @@
 - List all companies in DB ![DONE] 
 - Get a particular company's details 
 - Filter company according name, sector, ticker 
-- Add a company 
-- Delete a company 
+- Add a company
+- Delete a company
+- Modify attr of a company
 
-#### Time Stamp ![SAMRUDHIINCOMPLETE]
+#### Immutable data ![HRITIKINCOMPLETE]
 
-- All time stamps in DB
-- Add a time stamp
-- Delete a time stamp
-
-#### Immutable data and Calculated data![HRITIKINCOMPLETE]
-
-- Filter according to open, high, low, close, volume, company, time period values
+- List immutable data in DB
+	- Filter according to open, high, low, close, volume, company, time period values
 
 #### Indicators ![VARUNINCOMPLETE]
 
-- Filter according to company, time period values
-
-#### Sourcing data ![VARUNINCOMPLETE]
-
-- Ondemand data api call -> List of companies, time period, provider
-- Add a company to real time list
-- Remove a comapny from real time list
+- List indicator data
+	- Filter according to company, time period values
 
 #### Derived candle stick data ![SAMRUDHIINCOMPLETE]
 
-- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
+- List derived data
+	- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
 
 ---
 
 ### Sourcing functions ![VARUNINCOMPLETE]
-- On demand (functions)
-    - Parameters
-    	- Company `List`
-        - data collection window `Start Datetime and End Datetime`
-        - Provider - AlphaVantage / Yahoo Finance
-		- Candle stick time period
-    - Calculate indicators
-    - Push to DB
 
-- Real time
-    - Call on demand function in an infinite loop
+- On demand (function) ![INCOMPLETE]
+    - Parameters ![DONE]
+    	- Company `List` ![DONE]
+        - data collection window `Start Datetime and End Datetime` ![DONE]
+        - Provider - AlphaVantage / Yahoo Finance ![DONE]
+		- Candle stick time period ![DONE]
+		- slice ![DONE]
+    - Handle bad requests ![DONE]
+	- Get data ![DONE]
+		- Yahoo finance ![DONE]
+			- Daily time period ![DONE]
+			- Within time window ![DONE]
+			- For all companies in list ![DONE]
+				- Inform if company data not found ![DONE]
+			- Push to DB ![DONE]
+				- Resolve time stamp schema change ![DONE]
+				- Check if data not in DB before inserting data ![DONE]
+		- AlphaVantage ![DONE]
+	  		- Modify req & check if req is correct ![DONE]
+			- Source data from AlphaVantage with parameters ![DONE]
+			- Push to DB ![DONE]
+			  - Check if data not in DB before inserting data ![DONE]
+    - Calculate / Source indicators data ![INCOMPLETE]
+
+- Real time 
+    - Call on demand function as a cron job / daemon job
 
 ---
 
@@ -79,9 +87,9 @@
 - Parameters
   - Company
   - time periods `Start data and end date`
-  - Push to DB
-    - SMA 
-    - Std Dev 
+- Push to DB
+- SMA 
+- Std Dev 
 
 ---
 
@@ -91,17 +99,18 @@
   - Company
   - time periods `Start data and end date`
   - aggregation time period `List`
-    - SMA 
-    - Std Dev 
+- SMA 
+- Std Dev 
 
 ---
 
-### Different `derived` candle stick time periods ![SAMRUDHIINCOMPLETE]
+### Derive candle sticks for different time periods ![SAMRUDHIINCOMPLETE]
 
 - Parameters
   - Company
-  - time periods `Start data and end date`
+  - time window `Start data and end date`
   - aggregation time period `List`
+- Push to DB
 
 ---
 
