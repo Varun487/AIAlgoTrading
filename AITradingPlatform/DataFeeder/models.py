@@ -48,7 +48,7 @@ class Indicators(models.Model):
     value = models.FloatField(default=0.0)
     column = models.CharField(max_length=20, default='Default')
     indicator_time_period = models.IntegerField(default=0)
-    candle_stick = models.ForeignKey(to=ImmutableData, on_delete=models.DO_NOTHING, blank=True)
+    candle_stick = models.ForeignKey(to=ImmutableData, on_delete=models.CASCADE, blank=True)
 
     def __str__(self):
         return f"Indicator: {self.name}, {self.candle_stick}"
