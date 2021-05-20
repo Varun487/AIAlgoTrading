@@ -135,7 +135,7 @@
 
 ---
 
-### Add all REST APIs to API docs page ![VARUNINCOMPLETE] 
+### Add all REST APIs to API docs page ![VARUNCOMPLETE] 
 
 - Setup website ![DONE]
 	- Change title ![DONE]
@@ -147,24 +147,23 @@
 		- Sepaprate links component ![DONE]
 		- CSS and format for all links + navbar ![DONE]
 	- Make the favicon have a transparent background ![DONE]
-- Create API Docs page ![INCOMPLETE]
+- Create API Docs page ![DONE]
 	- Decide format for page and each API ![DONE]
 	- Build components for api page ![DONE]
 		- REST API title ![DONE]
 		- Note ![DONE]
 		- List of endpoints overview ![DONE]
 		- SITE NOT RENDERING PROPERLY IN PRODUCTION!!! ![BUGFIXED]
-	- Endpoint Description ![INCOMPLETE]
+	- Endpoint Description ![DONE]
 		- Get / Post, endpoint link ![DONE]
 		- Descripiton of endpoint function ![DONE]
-		- Descripiton of endpoint parameters ![INCOMPLETE]
-		- Sample request body
-		- Sample correct output
-		- Sample failed output
-	- Stickers for `new`, `depricated`, `updated`, `bug`
-		- Add to endpoint overview
-		- Add to endpoint description
-	- Fix links in endpoints overview list
+		- Descripiton of endpoint parameters ![DONE]
+		- Sample correct request url ![DONE]
+		- Sample correct request body ![DONE]
+		- Sample correct output ![DONE]
+		- Sample failed output ![DONE]
+		- Fix all endpoints description items ![DONE]
+	- Fix links in endpoints overview list ![DONE]
 
 ---
 
