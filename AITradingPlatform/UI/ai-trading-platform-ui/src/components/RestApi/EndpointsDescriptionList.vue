@@ -26,16 +26,22 @@ export default {
           link: "https://aialgotrader.xyz/api/",
           description:
             "An example api to test the working of the Data Feeder component of the project.",
+          parameters: [],
         },
         {
           type: "GET",
           code: "/datafeeder/listcompanies/",
           link: "https://aialgotrader.xyz/api/",
+          description: "Returns all companies data present in the database.",
+          parameters: [],
         },
         {
           type: "POST",
           code: "/datafeeder/dataondemand/",
           link: "https://aialgotrader.xyz/api/",
+          description:
+            "Sources data (historical) on demand from Yahoo! finance or AlphaVantage.",
+          parameters: [],
         },
       ],
       StrategiesApis: [
@@ -43,6 +49,9 @@ export default {
           type: "GET",
           code: "/strategies/hello-strategies",
           link: "https://aialgotrader.xyz/api/",
+          description:
+            "An example api to test the working of the Strategies component of the project.",
+          parameters: [],
         },
       ],
       BackTesterApis: [
@@ -50,6 +59,9 @@ export default {
           type: "GET",
           code: "/backtester/hello-backtester",
           link: "https://aialgotrader.xyz/api/",
+          description:
+            "An example api to test the working of the Back tester component of the project.",
+          parameters: [],
         },
       ],
       PaperTraderApis: [
@@ -57,6 +69,9 @@ export default {
           type: "GET",
           code: "/papertrader/hello-papertrader",
           link: "https://aialgotrader.xyz/api/",
+          description:
+            "An example api to test the working of the Paper Trader component of the project.",
+          parameters: [],
         },
       ],
     };

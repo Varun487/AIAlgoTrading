@@ -149,22 +149,22 @@
 	- Make the favicon have a transparent background ![DONE]
 - Create API Docs page ![INCOMPLETE]
 	- Decide format for page and each API ![DONE]
-	- Build components for api page ![INCOMPLETE]
+	- Build components for api page ![DONE]
 		- REST API title ![DONE]
 		- Note ![DONE]
 		- List of endpoints overview ![DONE]
-		- SITE NOT RENDERING PROPERLY IN PRODUCTION!!! ![BUG]
-		- Endpoint Description
-			- Get / Post, endpoint link ![DONE]
-			- Descripiton of endpoint function ![DONE]
-			- Descripiton of endpoint parameters
-			- Sample request body
-			- Sample correct output
-			- Sample failed output
-		- Stickers for `new`, `depricated`, `updated`, `bug`
-			- Add to endpoint overview
-			- Add to endpoint description
-		- Fix links in endpoints overview list
+		- SITE NOT RENDERING PROPERLY IN PRODUCTION!!! ![BUGFIXED]
+	- Endpoint Description ![INCOMPLETE]
+		- Get / Post, endpoint link ![DONE]
+		- Descripiton of endpoint function ![DONE]
+		- Descripiton of endpoint parameters ![INCOMPLETE]
+		- Sample request body
+		- Sample correct output
+		- Sample failed output
+	- Stickers for `new`, `depricated`, `updated`, `bug`
+		- Add to endpoint overview
+		- Add to endpoint description
+	- Fix links in endpoints overview list
 
 ---
 

@@ -12,7 +12,7 @@
         {{ api.description }} 
         <br />
 
-		
+		<h4>Parameters: </h4>
 
       </li>
     </ul>
@@ -36,13 +36,13 @@ export default {
 
 <style scoped>
 h2 {
-  opacity: 90%;
+  opacity: 0.9;
   padding-top: 20px;
 }
 
 a {
   color: #3291ff;
-  opacity: 80%;
+  opacity: 0.8;
   font-size: 13px;
 }
 
@@ -51,7 +51,7 @@ ul {
 }
 
 hr {
-  opacity: 20%;
+  opacity: 0.2;
 }
 
 .DescItem {

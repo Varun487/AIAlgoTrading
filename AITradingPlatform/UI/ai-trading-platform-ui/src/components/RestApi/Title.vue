@@ -11,6 +11,6 @@ export default {
 <style scoped>
 h1{
 	text-align: center;
-	opacity: 90%;
+	opacity: 0.9;
 }
 </style>
