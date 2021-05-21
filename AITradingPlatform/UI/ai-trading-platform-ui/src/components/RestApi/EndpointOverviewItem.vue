@@ -26,12 +26,12 @@ export default {
 
 <style scoped>
 h3 {
-  opacity: 90%;
+  opacity: 0.9;
 }
 
 a{
 	color: #3291FF;
-	opacity: 80%;
+	opacity: 0.8;
 	font-size: 13px;
 }
 </style>

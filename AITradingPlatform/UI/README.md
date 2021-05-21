@@ -76,6 +76,12 @@
 
 ---
 
+### REST API Docs page ![VARUNINCOMPLETE]
+
+- Ensure it is updated to include all APIs.
+
+---
+
 ### Automated testing ![VARUNINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen

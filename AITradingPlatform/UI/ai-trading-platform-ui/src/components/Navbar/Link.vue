@@ -19,12 +19,12 @@ export default {
 	text-decoration: none;
 	padding: 10px;
 	font-size: 20px;
+	opacity: 0.5;
 	color: white;
-	opacity: 50%;
 }
 
 .router-link-exact-active{
-	opacity: 100%;
+	opacity: 1.0;
 }
 
 </style>

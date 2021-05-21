@@ -21,34 +21,34 @@ export default {
     return {
       DataFeederLinks: [
         {
-          code: "GET /datafeeder/hello-datafeeder",
-          link: "https://aialgotrader.xyz/api/",
+          code: "GET /datafeeder/{string}",
+          link: "#example-datafeeder",
         },
         {
           code: "GET /datafeeder/listcompanies/",
-          link: "https://aialgotrader.xyz/api/",
+          link: "#list-companies",
         },
         {
           code: "POST /datafeeder/dataondemand/",
-          link: "https://aialgotrader.xyz/api/",
+          link: "#data-ondemand",
         },
       ],
       StrategiesLinks: [
         {
-          code: "GET /strategies/hello-strategies",
-          link: "https://aialgotrader.xyz/api/",
+          code: "GET /strategies/{string}",
+          link: "#example-strategies",
         },
       ],
       BackTesterLinks: [
         {
-          code: "GET /backtester/hello-backtester",
-          link: "https://aialgotrader.xyz/api/",
+          code: "GET /backtester/{string}",
+          link: "#example-backtester",
         },
       ],
       PaperTraderLinks: [
         {
-          code: "GET /papertrader/hello-papertrader",
-          link: "https://aialgotrader.xyz/api/",
+          code: "GET /papertrader/{string}",
+          link: "#example-papertrader",
         },
       ],
     };

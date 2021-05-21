@@ -27,6 +27,6 @@ export default {
 }
 
 .separator{
-	opacity: 10%;
+	opacity: 0.2;
 }
 </style>
