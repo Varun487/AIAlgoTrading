@@ -198,7 +198,19 @@ def api_get_indicators_data(req):
 
     return JsonResponse(res)
 
-@api_view(['GET', ])
+@api_view(['POST', ])
 def calcderievedindiactor(req):
+    
+    req_body = json.loads(req.body)
+    # print("req_body: ", req_body)
+
+    # creating default response
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    print(req_body)
     data = ImmutableData.objects.all()
     df = pd.read_csv(data)
+
+
+    return JsonResponse(res)
+	

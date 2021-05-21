@@ -139,6 +139,7 @@ cython_debug/
 
 # Capstone Project stuff
 .idea/
+.vscode/
 migrations/
 postgres-data/
 staticfiles/

@@ -120,6 +120,8 @@
   - Company
   - time periods `Start data and end date`
   - aggregation time period `List`
+  - indicator name
+	
 - SMA 
 - Std Dev 
 
