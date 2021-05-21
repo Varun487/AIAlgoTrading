@@ -16,6 +16,7 @@ class Company(models.Model):
     def __str__(self):
         return self.name
 
+
 class ImmutableData(models.Model):
     open = models.FloatField()
     high = models.FloatField()
