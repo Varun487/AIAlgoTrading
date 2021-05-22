@@ -119,16 +119,16 @@
 
 ---
 
-### Derive Indicator values for different time periods ![HRITIKINCOMPLETE]
+### Derive Indicator values for different time periods ![HRITIKCOMPLETE]
 
-- Parameters
-  - Company
-  - time periods `Start data and end date`
-  - aggregation time period `List`
-  - indicator name
+- Parameters ![DONE]
+  - Company  ![DONE]
+  - time periods `Start data and end date` ![DONE]
+  - aggregation time period `List` ![DONE]
+  - indicator name ![DONE]
 	
-- SMA 
-- Std Dev 
+- SMA ![DONE]
+- Std Dev ![DONE]
 
 ---
 
