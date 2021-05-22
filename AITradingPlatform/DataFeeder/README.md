@@ -57,11 +57,16 @@
 	  - time_stamp `range` ![DONE]
 	  - time_period ![DONE]
 
-#### Derived candle stick data ![SAMRUDHIINCOMPLETE]
+#### Derived candle stick data ![SAMRUDHICOMPLETE]
 
 - List derived data
-	- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
-
+  - Create an endpoint `getcandlestick/` ![DONE]
+  - Validate the req_body ![DONE]
+  - Filter according to ![DONE]
+	- company ![DONE]
+	- time period ![DONE]
+	- aggregation time periods list values ![DONE]
+	
 ---
 
 ### Sourcing historical data on demand ![VARUNCOMPLETE]
@@ -125,13 +130,26 @@
 
 ---
 
-### Derive candle sticks for different time periods ![SAMRUDHIINCOMPLETE]
+### Derive candle sticks for different time periods ![SAMRUDHICOMPLETE]
 
-- Parameters
-  - Company
-  - time window `Start data and end date`
-  - aggregation time period `List`
-- Push to DB
+- Parameters ![DONE]
+  - Company  ![DONE]
+  - time window `Start data and end date` ![DONE]
+  - aggregation time period `List` ![DONE]
+
+- Validate the req_body ![DONE]
+- Call ondemand func ![DONE]
+- get immutable data from db  ![DONE]
+  - filter acc to company, start date, end date, original_time_period ![DONE]
+- tumbling window on calculate_time_period ![DONE]
+  - oldest open price ![DONE]
+  - latest close price ![DONE]
+  - maximum of high price ![DONE]
+  - minimum of low price ![DONE]
+  - addition of volume ![DONE]
+
+- Push to DB ![DONE]
+  - if not already present ![DONE]
 
 ---
 
