@@ -20,7 +20,7 @@
 
 ### Top banner ![VARUNINCOMPLETE]
 
-- Name of platform
+- Name of platform ![DONE]
 - Menu button to show sidenavbar 
 
 ---
@@ -73,6 +73,12 @@
 - List all orders being paper traded `Live update each min` 
 	- Filter according to attr 
 - Visualize orders `Update according to filter`
+
+---
+
+### REST API Docs page ![VARUNINCOMPLETE]
+
+- Ensure it is updated to include all APIs.
 
 ---
 

@@ -14,6 +14,6 @@ h1{
 	margin: 0px;
 	padding: 10px;
 	padding-bottom: 0px;
-	opacity: 90%;
+	opacity: 0.9;
 }
 </style>

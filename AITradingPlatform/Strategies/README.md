@@ -17,11 +17,11 @@
 
 ### DB ![DISHACOMPLETE]
 
-- Strategy
+- Strategy ![DONE]
 	- Name
 	- Description
 	- Companies/Sector
-- Orders
+- Orders ![DONE]
 	- Order type `BUY/SELL`
 	- Company
 	- TimeStamp
@@ -34,22 +34,33 @@
 
 ---
 
-### Strategies ![VARUNINCOMPLETE]
+### Strategies ![VARUNCOMPLETE]
 
-- Simple Bollinger bands strategy
-	- Data
-		- Close price
-		- SMA
-		- `n` sigma above and below SMA
-	- Rules
-		- If stock price > `n` sigma above SMA `SHORT`
-		- If stock price crosses SMA `GET OUT OF ALL POSITIONS`
-		- If stock price < `n` sigma above SMA `BUY`
+- Simple Bollinger bands strategy ![DONE]
+  - Create input DF given input parameters ![DONE]
+	- Get data from DB according to parameters from DB ![DONE]
+		- Create empty df ![DONE]
+		- Source if data missing ![DONE]
+		- Calculate indicator values ![DONE]
+		- Push to DB after sourcing or calculation ![DONE]
+	- Create df consisting of ![DONE]
+		- column data ![DONE]
+		- SMA with given time period ![DONE]
+		- SMA + sigma*std dev. ![DONE]
+		- SMA - sigma*std dev. ![DONE]
+  - Rules to generate orders ![DONE]
+	- If stock price > `n` sigma above SMA `SHORT`
+	- If stock price crosses SMA `GET OUT OF ALL POSITIONS`
+	- If stock price < `n` sigma above SMA `BUY`
+  - REST API to run strategy ![DONE]
+  	- validate parameters ![DONE]
+	- json return value ![DONE]
 
 ---
 
 ### REST API END POINTS ![FEATUREINCOMPLETE]
 
+- Run a strategy, generate orders ![VARUNCOMPLETE]
 - View all strategies ![SAMRUDHIINCOMPLETE]
 - View all orders ![HRITIKINCOMPLETE]
 - Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]

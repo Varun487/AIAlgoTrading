@@ -28,9 +28,9 @@
 
 ### Back testing `Only for historical data` ![FEATUREINCOMPLETE]
 
-- Get Req data from DB ![VARUNINCOMPLETE]
-	- Source data if not present
-	- Calc Indicators if not present
+- Get Req data from DB ![VARUNCOMPLETE]
+	- Source data if not present ![DONE]
+	- Calc Indicators if not present ![DONE]
 - Call the strategy function with data ![SAMRUDHIINCOMPLETE]
 - Evaluate orders `according to future` ![DISHAINCOMPLETE]
 	- Order owner

@@ -22,7 +22,7 @@
 
 ---
 
-### Genrating orders `Runs every min` ![VARUNINCOMPLETE]
+### Generating orders `Runs every min` ![VARUNINCOMPLETE]
 
 - Get latest data of all companies
 - Run all strategies on all relevant data `Returns orders`
