@@ -411,7 +411,7 @@ def api_derive_candle_stick(req):
         print("Line number: ", line_number)
         res = {'status': 'Not Enough data'}
         return JsonResponse(res)
-
+    res={'status':'Candle Sticks have been derived'}
     return JsonResponse(res)
 
 @api_view(['POST', ])
