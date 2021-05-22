@@ -20,7 +20,7 @@
 
 ### Top banner ![VARUNINCOMPLETE]
 
-- Name of platform
+- Name of platform ![DONE]
 - Menu button to show sidenavbar 
 
 ---

@@ -39,6 +39,7 @@ class CalculatedCandleStick(models.Model):
     volume = models.IntegerField()
     company = models.ForeignKey(to=Company, on_delete=models.CASCADE)
     time_stamp = models.DateTimeField()
+    time_period = models.CharField(default='daily', max_length=10)
 
     def __str__(self):
         return self.company.name

@@ -57,11 +57,16 @@
 	  - time_stamp `range` ![DONE]
 	  - time_period ![DONE]
 
-#### Derived candle stick data ![SAMRUDHIINCOMPLETE]
+#### Derived candle stick data ![SAMRUDHICOMPLETE]
 
 - List derived data
-	- Filter according to open, high, low, close, volume, company, time period, aggregation time periods list values
-
+  - Create an endpoint `getcandlestick/` ![DONE]
+  - Validate the req_body ![DONE]
+  - Filter according to ![DONE]
+	- company ![DONE]
+	- time period ![DONE]
+	- aggregation time periods list values ![DONE]
+	
 ---
 
 ### Sourcing historical data on demand ![VARUNCOMPLETE]
@@ -105,13 +110,13 @@
 
 
 - Real time `Only Yahoo! Finance` 
-    - Create a python script to get latest data on all companies present in DB through Yahoo finance 
+    - Create a python script to get the latest data on all companies present in DB through Yahoo finance 
 	  - Get all companies from DB 
-	  - Filter to get all companies from Yahoo! finance
-	  - Get data from last collected till today for each company
-		- push to DB
+	  - Filter to get all companies from Yahoo! finance 
+	  - Get data from last collected till today for each company 
+		- push to DB 
 	- Run the script as a cron job every 24hrs
-	
+
 ---
 
 ### Derive Indicator values for different time periods ![HRITIKINCOMPLETE]
@@ -127,13 +132,26 @@
 
 ---
 
-### Derive candle sticks for different time periods ![SAMRUDHIINCOMPLETE]
+### Derive candle sticks for different time periods ![SAMRUDHICOMPLETE]
 
-- Parameters
-  - Company
-  - time window `Start data and end date`
-  - aggregation time period `List`
-- Push to DB
+- Parameters ![DONE]
+  - Company  ![DONE]
+  - time window `Start data and end date` ![DONE]
+  - aggregation time period `List` ![DONE]
+
+- Validate the req_body ![DONE]
+- Call ondemand func ![DONE]
+- get immutable data from db  ![DONE]
+  - filter acc to company, start date, end date, original_time_period ![DONE]
+- tumbling window on calculate_time_period ![DONE]
+  - oldest open price ![DONE]
+  - latest close price ![DONE]
+  - maximum of high price ![DONE]
+  - minimum of low price ![DONE]
+  - addition of volume ![DONE]
+
+- Push to DB ![DONE]
+  - if not already present ![DONE]
 
 ---
 
@@ -170,6 +188,8 @@
 ---
 
 ### Automated testing ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
+- Build infra for UI and other testing ![VARUNINCOMPLETE] 
+- Complete writing all tests ![DISHAINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red

@@ -7,5 +7,5 @@ urlpatterns = [
     path('indicatorsdata/', views.api_get_indicators_data, name='api_get_indicator_data'),
     path('derivedindicatorcalc/',views.calcderievedindiactor,name='calcderievedindiactor'),
     path('<slug>/', views.api_index, name='api_index'),
-
+    
 ]
