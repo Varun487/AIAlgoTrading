@@ -105,13 +105,13 @@
 
 
 - Real time `Only Yahoo! Finance` 
-    - Create a python script to get latest data on all companies present in DB through Yahoo finance 
+    - Create a python script to get the latest data on all companies present in DB through Yahoo finance 
 	  - Get all companies from DB 
-	  - Filter to get all companies from Yahoo! finance
-	  - Get data from last collected till today for each company
-		- push to DB
+	  - Filter to get all companies from Yahoo! finance 
+	  - Get data from last collected till today for each company 
+		- push to DB 
 	- Run the script as a cron job every 24hrs
-	
+
 ---
 
 ### Derive Indicator values for different time periods ![HRITIKINCOMPLETE]
@@ -168,6 +168,8 @@
 ---
 
 ### Automated testing ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
+- Build infra for UI and other testing ![VARUNINCOMPLETE] 
+- Complete writing all tests ![DISHAINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
