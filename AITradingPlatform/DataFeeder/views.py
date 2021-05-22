@@ -1,12 +1,16 @@
 import json
+
 from datetime import datetime
 
 import pandas as pd
+
 from django.http import JsonResponse
 from django.utils.timezone import make_aware
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
+
 
 from .utils import get_data_on_demand, calc_indicators, push_indicators_to_db
 
@@ -150,17 +154,84 @@ def api_get_indicators_data(req):
 
 @api_view(['POST', ])
 def calcderievedindiactor(req):
-    
+    allowed_slices = [f'year{year}month{month}' for year in range(1, 3) for month in range(1, 13)]
     req_body = json.loads(req.body)
     # print("req_body: ", req_body)
     # creating default response
     res = {'status': 'invalid request, please check the documentation for this request here'}
     # print(req_body)
 
-    # data=
-    #  get_data_on_demand(companies, provider, start_dt, end_dt, time_period, slice)
-    #  calc_indicators(df, time_period, column)
-    # # push_indicators_to_db(df, name, company_obj, indicator_time_period, company_time_period, column)
+    # checking validity of post req body
+
+    valid_companies = 'company' in req_body and type(req_body['company']) == str
+    valid_provider ='provider' in req_body and type(req_body['provider'])==str
+    valid_time_period = 'time_period' in req_body and req_body['time_period'] in ['daily', '60min', '30min', '15min',
+                                                                                '10min', '5min', '1min']
+    try:
+        start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
+        end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+    except:
+        return JsonResponse(res)
+    valid_slice = 'slice' in req_body and req_body['slice'] in allowed_slices
+    valid_column = 'column' in req_body and req_body['column'] in ['Open', 'High', 'Low', 'Close', 'Volume']
+    valid_indicator_time_period = 'indicator_time_period' in req_body and type(req_body['indicator_time_period']) == int
+    valid_name='name' in req_body and req_body['name'] in ['SMA','Std_Dev','BB_down','BB_up']
+
+    if not (valid_name and valid_slice and valid_column and valid_companies and valid_indicator_time_period and valid_provider):
+        return JsonResponse(res)
+
+    res['validation_status'] ="sucess"
+
+    # getting data into database
+
+    res['status'] = "sucess"
+    start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
+    end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+    res['collected_data'], res['data_not_found'] = get_data_on_demand([req_body['company']], req_body['provider'],
+                                                                      start_dt, end_dt, req_body['time_period'],
+                                                                      req_body['slice'])
+    # retrieval of data from database
+
+    company_obj = Company.objects.filter(ticker=req_body['company'])[0]
+    data = ImmutableData.objects.filter(company=company_obj, time_period=req_body['time_period'],
+                                              time_stamp__range=[start_dt,end_dt])
+    # data1 = ImmutableData.objects.all().filter(company=company_obj, time_period=req_body['time_period'],
+    #                                           time_stamp=req_body['time_stamp'])[0]
+    # print(data1)
+    res['retrieval_status'] = "sucess"
+
+    # converting into dataframe
+
+    time_stamp =[]
+    column = []
+
+    for candlestick in data:
+        print(candlestick.time_stamp, eval(f"candlestick.{req_body['column'].lower()}"))
+        time_stamp.append(candlestick.time_stamp)
+        column.append(eval(f"candlestick.{req_body['column'].lower()}"))
+    df = pd.DataFrame(columns=["time_stamp", req_body['column']])
+    df['time_stamp']= time_stamp
+    df[req_body['column']]= column
+
+    res['convert_dataframe_status'] = "sucess"
+
+
+
+    # calculating indicators
+
+    df = calc_indicators(df, req_body['indicator_time_period'], req_body['column'])
+    df.set_index('time_stamp',inplace=True)
+    print(df)
+    res['calculated_indicators_status'] = "sucess"
+
+
+    # pushing to database
+
+    push_indicators_to_db(df, f'{req_body["name"]}_{req_body["column"]}_{req_body["indicator_time_period"]}',
+                          company_obj,req_body["indicator_time_period"], req_body['time_period'], req_body["column"])
+
+    res['pushed_status'] = "sucess"
+
 
     return JsonResponse(res)
 	
