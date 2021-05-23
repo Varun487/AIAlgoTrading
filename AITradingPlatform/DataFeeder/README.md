@@ -34,10 +34,10 @@
 - Delete a company
 - Modify attr of a company
 
-#### Immutable data ![HRITIKINCOMPLETE]
+#### Immutable data ![HRITIKCOMPLETE]
 
-- List immutable data in DB
-	- Filter according to open, high, low, close, volume, company, time period values
+- List immutable data in DB ![DONE] 
+	- Filter according to open, high, low, close, volume, company, time period values ![DONE] 
 
 #### Indicators ![VARUNCOMPLETE]
 

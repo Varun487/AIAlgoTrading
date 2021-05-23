@@ -7,5 +7,20 @@ class ExampleBackTesterModel(models.Model):
     def __str__(self):
         return self.name
 
+class Backtest(models.Model):
+    start_date = models.Model.DateTimeField()
+    end_date = models.DateTimeField()
+    risk = models.FloatField()
+    profit_loss = models.FloatFeild()
+    initial_account_size = models.FloatField()
+    final_account_size = models.FloatField()
+
+    def __str__(self):
+        return self.final_account_size
+
+
+
+
+
 
 

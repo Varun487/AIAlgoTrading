@@ -31,7 +31,8 @@ from rest_framework.decorators import api_view
 from .utils import get_data_on_demand, calc_indicators, push_indicators_to_db
 
 from .models import ExampleDataFeederModel, Company, ImmutableData, Indicators, CalculatedCandleStick
-from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, CandleStickSerializer
+from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, CandleStickSerializer,ImmutableDataSerializer
+
 from .utils import get_data_on_demand
 
 
@@ -219,7 +220,7 @@ def api_get_indicators_data(req):
 
 
 @api_view(['POST', ])
-def calcderievedindiactor(req):
+def api_calcderievedindiactor(req):
 
     allowed_slices = [f'year{year}month{month}' for year in range(1, 3) for month in range(1, 13)]
     req_body = json.loads(req.body)
@@ -467,3 +468,44 @@ def api_get_candlestick_data(req):
         }
 
     return JsonResponse(res)
+
+
+@api_view(['POST', ])
+def api_listimmutable(req):
+
+    req_body = json.loads(req.body)
+    print(req_body)
+    # create response if request not valid
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    # checking validity of post req body
+
+    valid_company = 'company' in req_body and type(req_body['company']) == str
+    valid_time_period = 'time_period' in req_body and req_body['time_period'] in ['daily', '60min', '30min', '15min',
+                                                                                  '10min', '5min', '1min']
+    if not (valid_company and valid_time_period):
+        res = {'status': 'Invalid request body'}
+        return JsonResponse(res)
+
+    res['validation_status']="sucess"
+
+    # filtering immutable data according to parameters
+
+    start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
+    end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+    company_obj = Company.objects.filter(ticker=req_body['company'])[0]
+
+    res['company'] = ListCompaniesSerializer(company_obj).data
+
+    immutable = ImmutableData.objects.all().filter(company=company_obj,time_period=req_body['time_period'],time_stamp__range=[start_dt,end_dt])
+    print(immutable)
+
+    res['immutable'] = ImmutableDataSerializer(immutable, many=True).data
+
+    res['filtering status'] = "sucess"
+
+
+
+    return JsonResponse(res)
+
+
