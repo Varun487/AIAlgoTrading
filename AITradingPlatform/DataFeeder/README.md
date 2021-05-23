@@ -111,10 +111,10 @@
 
 - Create a test cron job ![DONE]
 	- Runs every 24 hrs ![DONE]
-- Refactor files
-- Create a python script to get the latest data on all companies present in DB through Yahoo finance
-  	- Get all companies from DB
-	- Filter to get all companies from Yahoo! finance
+- Refactor files ![DONE]
+- Create a python script to get the latest data on all companies present in DB through Yahoo finance ![INCOMPLETE]
+  	- Get all companies from DB ![DONE]
+	- Filter to get all companies from Yahoo! finance ![INCOMPLETE]
 	- Get data from last collected till today for each company
 	- Calculate Indicators
 	- Push data + indicators to DB

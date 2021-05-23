@@ -73,11 +73,11 @@ docker-compose -f docker-compose.dev.yml up --build
 ```
 5. To create a super user for the database
 ```
-docker-compose -f docker-compose.dev.yml run rest_api python AITradingPlatform/manage.py createsuperuser
+docker-compose -f docker-compose.dev.yml run rest_api python3 AITradingPlatform/manage.py createsuperuser
 ```
 6. To test the running of the periodic script (real-time data sourcing and paper trading)
 ```
-docker-compose -f docker-compose.dev.yml run rest_api python periodic_job.py
+docker-compose -f docker-compose.dev.yml run rest_api python3 cron/periodic_job.py
 ```
 
 ###### NOTE: To run in production, the commands are the same, but the file is changed to `docker-compose.prod.yml`
