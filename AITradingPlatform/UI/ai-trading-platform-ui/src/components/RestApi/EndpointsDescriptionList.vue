@@ -127,6 +127,161 @@ export default {
     "status": "Invalid request, please check the documentation for the correct request format."
 }`,
         },
+        {
+          type: "POST",
+          code: "/datafeeder/derivecandle/",
+          link: "derive-candle",
+          description:
+            "Deriving the candlestick for a particular time range.",
+          parameters: [
+            {
+              name: "company",
+              type: "Array of Strings",
+              desc:
+                "An array of strings mentioning the stock tickers to collect data from",
+            },
+            {
+              name: "start_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start collecting data for the list of stock tickers provided above.",
+            },
+            {
+              name: "end_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end collecting data for the list of stock tickers provided above.",
+            },
+            {
+              name: "provider",
+              type: "String",
+              desc:
+                "Data provider to source data from. Can only take values of 'Yahoo' and 'Alpha'",
+            },
+            {
+              name: "original_time_period",
+              type: "String",
+              desc:
+                "Mentions the time period of data to be collected. If sourcing from Yahoo finance, then value has to be 'daily'. Else, if sourcing from Alpha Vantage, can take any of the following values ['1min', '5min', '15min', '30min', '60min']",
+            },
+            {
+              name: "calculate_time_period",
+              type: "Int",
+              desc:
+                "Mentions the aggregation time period or time window of the candle stick.",
+            },
+      {
+              name: "slice",
+              type: "String",
+              desc: "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+            },
+          ],
+          req_url: "/datafeeder/derivecandle/",
+          req_body: `{
+    "company": "TCS.BO",
+    "start_date": "2021-04-1 00:00:00",
+    "end_date": "2021-04-30 00:00:00",
+    "provider": "Yahoo",
+    "original_time_period": "daily",
+    "calculate_time_period": 7,
+    "slice": "year1month1"
+}`,
+          correct_output: `{
+    "status": "Candle Sticks have been derived"
+}`,
+          failed_output: `{
+    "status": "invalid request, please check the documentation for this request here"
+}`,
+        },
+        {
+          type: "POST",
+          code: "/datafeeder/getderivecandlestick/",
+          link: "get-derive-candlestick",
+          description:
+            "Lists the derived data in candlestick table.",
+          parameters: [
+            {
+              name: "company",
+              type: "Array of Strings",
+              desc:
+                "An array of strings mentioning the stock tickers to collect data from",
+            },
+            {
+              name: "start_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start collecting data for the list of stock tickers provided above.",
+            },
+            {
+              name: "end_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end collecting data for the list of stock tickers provided above.",
+            },
+            {
+              name: "provider",
+              type: "String",
+              desc:
+                "Data provider to source data from. Can only take values of 'Yahoo' and 'Alpha'",
+            },
+            {
+              name: "original_time_period",
+              type: "String",
+              desc:
+                "Mentions the time period of data to be collected. If sourcing from Yahoo finance, then value has to be 'daily'. Else, if sourcing from Alpha Vantage, can take any of the following values ['1min', '5min', '15min', '30min', '60min']",
+            },
+            {
+              name: "calculate_time_period",
+              type: "Int",
+              desc:
+                "Mentions the aggregation time period or time window of the candle stick.",
+            },
+      {
+              name: "slice",
+              type: "String",
+              desc: "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+            },
+          ],
+          req_url: "/datafeeder/getderivecandlestick/",
+          req_body: `{
+    "company": "TCS.BO",
+    "start_date": "2021-04-1 00:00:00",
+    "end_date": "2021-04-30 00:00:00",
+    "provider": "Yahoo",
+    "original_time_period": "daily",
+    "calculate_time_period": 7,
+    "slice": "year1month1"
+}`,
+          correct_output: `{
+    "status": "valid",
+    "company": {
+        "name": "TCS BSE",
+        "ticker": "TCS.BO",
+        "sector": "Tech"
+    },
+    "data": [
+        {
+            "open": 3190.0,
+            "low": 3146.0,
+            "high": 3358.800048828125,
+            "close": 3217.75,
+            "volume": 1606737,
+            "company": {
+                "id": 2,
+                "name": "TCS BSE",
+                "ticker": "TCS.BO",
+                "sector": "Tech"
+            },
+            "time_stamp": "2021-04-12T00:00:00Z",
+            "time_period": "daily_7"
+        }
+    ]
+}`,
+          failed_output: `{
+    "error": "No data present that fits all conditions. Please try sourcing the data or computing 
+              indicators."
+}`,
+        },
       ],
       StrategiesApis: [
         {
