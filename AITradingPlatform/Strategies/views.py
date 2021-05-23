@@ -84,3 +84,17 @@ def api_run_strategy(req):
             }
 
     return JsonResponse(res)
+
+@api_view(['POST', ])
+def api_vieworders(req):
+    req_body = json.loads(req.body)
+    # print(req_body)
+
+    # Check req validity
+    res = {
+        "error": "invalid request, please check the documentation for the correct request format"
+    }
+    # checking validity of post req body
+
+    return JsonResponse(res)
+
