@@ -25,3 +25,10 @@ class CandleStickSerializer(serializers.ModelSerializer):
         model = CalculatedCandleStick
         fields = ['open', 'low', 'high', 'close', 'volume', 'company', 'time_stamp', 'time_period']
         depth = 1
+
+class ImmutableDataSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ImmutableData
+        fields = ['open', 'low', 'high', 'close', 'volume', 'company', 'time_stamp', 'time_period']
+        depth = 1
+
