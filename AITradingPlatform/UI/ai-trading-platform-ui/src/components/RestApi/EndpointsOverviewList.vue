@@ -32,6 +32,18 @@ export default {
           code: "POST /datafeeder/dataondemand/",
           link: "#data-ondemand",
         },
+		{
+          code: "POST /datafeeder/derivecandle/",
+          link: "#derive-candle",
+        },
+		{
+          code: "POST /datafeeder/getderivecandlestick/",
+          link: "#get-derive-candlestick",
+        },
+		{
+          code: "POST /datafeeder/derivedindicatorcalc/",
+          link: "#derived-indicator-calc",
+        },
       ],
       StrategiesLinks: [
         {
