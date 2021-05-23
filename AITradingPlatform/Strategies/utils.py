@@ -115,13 +115,13 @@ def simple_bollinger_bands_strategy(company, provider, start_dt, end_dt, candle_
 
     df = df[df.Orders != "FLAT"]
 
-    # for i in range(len(df)):
-    #     time_stamp = df.index[i]
-    #     price = df[column][i]
-    #     sma = df[f'SMA_{column}_{indicator_time_period}'][i]
-    #     up_band = df[f'BB_up_1_{column}_{indicator_time_period}'][i]
-    #     down_band = df[f'BB_down_1_{column}_{indicator_time_period}'][i]
-    #     order = df['Orders'][i]
-    #     print(time_stamp, price, sma, up_band, down_band, order)
+    for i in range(len(df)):
+        time_stamp = df.index[i]
+        price = df[column][i]
+        sma = df[f'SMA_{column}_{indicator_time_period}'][i]
+        up_band = df[f'BB_up_1_{column}_{indicator_time_period}'][i]
+        down_band = df[f'BB_down_1_{column}_{indicator_time_period}'][i]
+        order = df['Orders'][i]
+        print(time_stamp, price, sma, up_band, down_band, order)
 
     return collected_data, data_not_found, df

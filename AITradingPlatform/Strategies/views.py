@@ -27,7 +27,7 @@ def api_index(req, slug):
 def api_run_strategy(req):
 
     req_body = json.loads(req.body)
-    print(req_body)
+    # print(req_body)
 
     # Check req validity
     res = {
