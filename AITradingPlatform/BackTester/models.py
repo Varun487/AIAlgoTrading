@@ -17,10 +17,3 @@ class Backtest(models.Model):
 
     def __str__(self):
         return self.final_account_size
-
-
-
-
-
-
-

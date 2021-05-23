@@ -1,0 +1,12 @@
+2021-05-23 17:30:01.205112: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: TCS BSE>, <Company: TCS NSE>, <Company: Apple Inc.>]>
+ Execution success!
+2021-05-23 17:31:01.530897: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: TCS BSE>, <Company: TCS NSE>, <Company: Apple Inc.>]>
+ Execution success!
+2021-05-23 17:32:01.840907: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: TCS BSE>, <Company: TCS NSE>, <Company: Apple Inc.>]>
+ Execution success!

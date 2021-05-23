@@ -1,40 +1,23 @@
-
 import json
-
-from datetime import datetime
-
 import sys
-
-
-import pandas as pd
-
-from django.http import JsonResponse
-
-import operator
-from django.db.models import Max, Min, Sum
 from datetime import datetime
-from datetime import timedelta
-import json
-import pandas_datareader.data as web
 from os import environ
 
+import pandas as pd
+import pandas_datareader.data as web
+from django.db.models import Max, Min, Sum
+from django.http import JsonResponse
 from django.utils.timezone import make_aware
 from pandas_datareader._utils import RemoteDataError
-
 from rest_framework import status
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
-
-
-
-
-from .utils import get_data_on_demand, calc_indicators, push_indicators_to_db
+from rest_framework.response import Response
 
 from .models import ExampleDataFeederModel, Company, ImmutableData, Indicators, CalculatedCandleStick
-from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, CandleStickSerializer,ImmutableDataSerializer
-
+from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, \
+    CandleStickSerializer, ImmutableDataSerializer
+from .utils import calc_indicators, push_indicators_to_db
 from .utils import get_data_on_demand
-
 
 
 # REST Api Views

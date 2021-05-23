@@ -15,7 +15,10 @@ services:
 
   rest_api:
     build: .
-    command: bash -c "cd AITradingPlatform
+    environment:
+      - API_KEY=9IJF3E893E4E2Q2M
+    command: bash -c "cron
+      && cd AITradingPlatform
       && python3 manage.py makemigrations DataFeeder
       && python3 manage.py makemigrations BackTester
       && python3 manage.py makemigrations PaperTrader
