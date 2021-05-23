@@ -12,6 +12,7 @@ class Company(models.Model):
     name = models.CharField(max_length=200, blank=False)
     ticker = models.CharField(max_length=100, blank=False)
     sector = models.CharField(max_length=500, blank=False)
+    data_provider = models.CharField(max_length=100, blank=False, default="Yahoo")
 
     def __str__(self):
         return self.name

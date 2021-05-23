@@ -48,44 +48,40 @@ To build a platform for creating, backtesting and paper trading new automated st
 
 ## Backend 
 
+### Development server
+
 1. run these commands to initialize the project:
 ```
 git clone "git@github.com:Varun487/CapstoneProject_AITradingPlatform.git"
 
 cd CapstoneProject_AITradingPlatform
 
-docker-compose -f docker-compose.prod.yml up --build
+docker-compose -f docker-compose.dev.yml up --build
 ```
 2. To start the production server and run all containers:
 ```
-docker-compose -f docker-compose.prod.yml up
+docker-compose -f docker-compose.dev.yml up
 ```
-3. To stop all running containers in production:
+3. To stop all running containers:
 ```
-docker-compose -f docker-compose.prod.yml down
+docker-compose -f docker-compose.dev.yml down
 ```
-4. Run in production with fresh build:
+4. Run with fresh build:
 ```
-docker-compose -f docker-compose.dev.yml rm
+docker-compose -f docker-compose.dev.yml down
 docker-compose -f docker-compose.dev.yml up --build
 ```
-5. To start the development server and run all containers:
+5. To create a super user for the database
 ```
-docker-compose -f docker-compose.prod.yml up
+docker-compose -f docker-compose.dev.yml run rest_api python AITradingPlatform/manage.py createsuperuser
 ```
-6. To stop all running containers in development:
+6. To test the running of the periodic script (real-time data sourcing and paper trading)
 ```
-docker-compose -f docker-compose.prod.yml down
+docker-compose -f docker-compose.dev.yml run rest_api python periodic_job.py
 ```
-7. Run in development with fresh build:
-```
-docker-compose -f docker-compose.dev.yml rm
-docker-compose -f docker-compose.dev.yml up --build
-```
-8. To create a super user for the database
-```
-docker-compose -f docker-compose.prod.yml run rest_api python AITradingPlatform/manage.py createsuperuser
-```
+
+###### NOTE: To run in production, the commands are the same, but the file is changed to `docker-compose.prod.yml`
+
 
 ## Frontend
 

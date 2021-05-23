@@ -1,0 +1,2 @@
+# 0 0 * * * python3 /home/app/microservice/cron/periodic_job.py
+*/1 * * * * python3 /home/app/microservice/cron/periodic_job.py
