@@ -197,18 +197,26 @@
 ---
 
 ### Update REST API docs page with all DataFeeder APIs
-
-
-![VARUNINCOMPLETE] ![DISHAINCOMPLETE] ![HRITIKINCOMPLETE] ![SAMRUDHIINCOMPLETE]
+- ![VARUNINCOMPLETE]
+- ![DISHAINCOMPLETE]
+- ![HRITIKINCOMPLETE]
+- ![SAMRUDHIINCOMPLETE]
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
-- Build infra for UI and other testing ![VARUNINCOMPLETE] 
-- Complete writing all tests ![DISHAINCOMPLETE]
+### Automated testing ![ALLINCOMPLETE]
+- Build infra for UI, REST API and code block testing ![VARUNINCOMPLETE] 
+- Complete writing all tests for all functions, REST APIs and UI
+  - ![VARUNINCOMPLETE]
+  - ![DISHAINCOMPLETE]
+  - ![HRITIKINCOMPLETE]
+  - ![SAMRUDHIINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
+
+[ALLINCOMPLETE]: https://img.shields.io/badge/ALL-INCOMPLETE-red
+[ALLCOMPLETE]: https://img.shields.io/badge/ALL-COMPLETE-brightgreen
 
 [VARUNINCOMPLETE]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
 [VARUNCOMPLETE]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen
