@@ -62,7 +62,7 @@
 
 - Run a strategy, generate orders ![VARUNCOMPLETE]
 - View all strategies ![SAMRUDHIINCOMPLETE]
-- View all orders ![HRITIKINCOMPLETE]
+- View all orders ![HRITIKCOMPLETE]
 - Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
 
 ---

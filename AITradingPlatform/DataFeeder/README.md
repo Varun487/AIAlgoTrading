@@ -131,9 +131,13 @@
   - time periods `Start data and end date` ![DONE]
   - aggregation time period `List` ![DONE]
   - indicator name ![DONE]
-	
-- SMA ![DONE]
-- Std Dev ![DONE]
+
+-	Validate the req_body ![DONE]
+- Calculating indicator SMA ![DONE]
+- Calculating indicator Std Dev ![DONE] 
+- Push to DB ![DONE]
+
+
 
 ---
 
