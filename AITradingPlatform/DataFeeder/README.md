@@ -23,9 +23,9 @@
 
 ---
 
-### REST API endpoints ![FEATUREINCOMPLETE] 
+### REST API endpoints ![FEATURECOMPLETE] 
 
-#### Company ![DISHAINCOMPLETE]
+#### Company ![DISHACOMPLETE]
 
 - List all companies in DB ![DONE] 
 - Get a particular company's details 
