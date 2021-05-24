@@ -61,7 +61,7 @@
 ### REST API END POINTS ![FEATUREINCOMPLETE]
 
 - Run a strategy, generate orders ![VARUNCOMPLETE]
-- View all strategies ![SAMRUDHIINCOMPLETE]
+- View all strategies ![SAMRUDHICOMPLETE]
 - View all orders ![HRITIKCOMPLETE]
 - Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
 

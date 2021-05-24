@@ -50,7 +50,11 @@ export default {
           code: "GET /strategies/{string}",
           link: "#example-strategies",
         },
-		{
+        {
+          code: "POST /strategies/getstrategies/",
+          link: "#get-strategies/",
+        },
+        {
           code: "POST /strategies/runstrategy/",
           link: "#run-strategy",
         },

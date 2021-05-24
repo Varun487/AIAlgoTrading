@@ -1,12 +1,11 @@
-from rest_framework import serializers
-from .models import ExampleDataFeederModel, Company, Indicators, ImmutableData, CalculatedCandleStick
+from rest_framework import fields, serializers
+from .models import ExampleDataFeederModel, Company, Indicators, CalculatedCandleStick
 
 
 class ExampleDataFeederSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExampleDataFeederModel
         fields = ['name']
-
 
 class ListCompaniesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,10 +24,3 @@ class CandleStickSerializer(serializers.ModelSerializer):
         model = CalculatedCandleStick
         fields = ['open', 'low', 'high', 'close', 'volume', 'company', 'time_stamp', 'time_period']
         depth = 1
-
-class ImmutableDataSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ImmutableData
-        fields = ['open', 'low', 'high', 'close', 'volume', 'company', 'time_stamp', 'time_period']
-        depth = 1
-

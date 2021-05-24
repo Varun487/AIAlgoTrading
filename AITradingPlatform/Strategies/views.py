@@ -87,8 +87,11 @@ def api_run_strategy(req):
     return JsonResponse(res)
 
 
-@api_view(['POST', ])
+@api_view(['GET', ])
 def api_get_strategy(req):
+    res = {
+            "error": "invalid request, please check the documentation for the correct request format"
+        }
 
     res = {'status': 'valid'}
     res['data'] = []
@@ -102,38 +105,6 @@ def api_get_strategy(req):
         }
 
     return JsonResponse(res)
-    # req_body = json.loads(req.body)
-    # print(req_body)
-    #
-    # # Check req validity
-    # res = {
-    #     "error": "invalid request, please check the documentation for the correct request format"
-    # }
-    # # checking validity of post req body
-    # try:
-    #     valid_name = 'name' in req_body and type(req_body['name']) == str
-    # except:
-    #     return JsonResponse(res)
-    #
-    # # Return invalid request
-    # if not valid_name:
-    #     return JsonResponse(res)
-    #
-    # res = {'status': 'valid'}
-    # res['data'] = []
-    #
-    # data = Strategy.objects.filter(
-    #     name=req_body['name'],
-    # )
-    # res['data'] = StrategySerializer(data, many=True).data
-    #
-    # # if filtered data is empty
-    # if not data:
-    #     res = {
-    #         'error': 'No data present in the db.'
-    #     }
-    #
-    # return JsonResponse(res)
 
 
 @api_view(['GET', ])
