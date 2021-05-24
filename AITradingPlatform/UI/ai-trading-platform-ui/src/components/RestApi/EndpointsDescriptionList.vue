@@ -136,9 +136,8 @@ export default {
           parameters: [
             {
               name: "company",
-              type: "Array of Strings",
-              desc:
-                "An array of strings mentioning the stock tickers to collect data from",
+              type: "String",
+              desc: "A String mentioning the stock ticker to collect data from",
             },
             {
               name: "start_date",
@@ -202,9 +201,8 @@ export default {
           parameters: [
             {
               name: "company",
-              type: "Array of Strings",
-              desc:
-                "An array of strings mentioning the stock tickers to collect data from",
+              type: "String",
+              desc: "A String mentioning the stock ticker to collect data from",
             },
             {
               name: "start_date",
@@ -443,6 +441,29 @@ export default {
           failed_output: `{}`,
         },
         {
+          type: "GET",
+          code: "/strategies/getstrategies/",
+          link: "get-strategies/",
+          description: "Returns all the Strategies in the db.",
+          parameters: false,
+          req_url: "/strategies/getstrategies/",
+          req_body: ``,
+          correct_output: `{
+    "status": "valid",
+    "data": [
+        {
+            "name": "Simple Bollinger Bands Strategy",
+            "desc": "Bollinger Bands consist of three bands—an upper, middle and lower band—that are 
+                      used to spotlight extreme short-term prices in a security.",
+            "sector": "Tech"
+        }
+    ]
+}`,
+          failed_output: `res = {
+            'error': 'No data present in the db.'
+        }`,
+        },
+        {
           type: "POST",
           code: "/strategies/runstrategy",
           link: "run-strategy",
@@ -455,19 +476,19 @@ export default {
               desc:
                 "Enter the name of the strategy to run. The only accepted value as of now is 'Simple Bollinger Bands Strategy'.",
             },
-			{
+            {
               name: "candle_stick_data",
               type: "JSON object",
               desc:
                 "Contains data about the candlesticks to source and run the strategy on.",
             },
-			{
+            {
               name: "indicators_data",
               type: "JSON object",
               desc:
                 "Contains data about the indicators to calculate and run the strategy on.",
             },
-			{
+            {
               name: "company",
               type: "String",
               desc:
@@ -503,7 +524,7 @@ export default {
               desc:
                 "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
             },
-			{
+            {
               name: "column",
               type: "String",
               desc:
@@ -514,10 +535,11 @@ export default {
               type: "Integer",
               desc: "The time period of the indicator to run the strategy on.",
             },
-			{
+            {
               name: "sigma",
               type: "Integer",
-              desc: "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
+              desc:
+                "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
             },
           ],
           req_url: "/strategies/runstrategy",

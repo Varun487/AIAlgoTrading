@@ -32,6 +32,9 @@
 	- Source data if not present ![DONE]
 	- Calc Indicators if not present ![DONE]
 - Call the strategy function with data ![SAMRUDHIINCOMPLETE]
+  - get strategy name
+  - get start and end date
+  - call the strategy
 - Evaluate orders `according to future` ![DISHAINCOMPLETE]
 	- Order owner
 	- Profit / Loss
