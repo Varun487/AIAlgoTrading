@@ -106,19 +106,21 @@
 
 ---
 
-### Sourcing data real time ![VARUNINCOMPLETE]
+### Sourcing data real time ![VARUNCOMPLETE]
 `Only Yahoo! Finance`
 
 - Create a test cron job ![DONE]
 	- Runs every 24 hrs ![DONE]
 - Refactor files ![DONE]
-- Create a python script to get the latest data on all companies present in DB through Yahoo finance ![INCOMPLETE]
-  	- Get all companies from DB ![DONE]
-	- Filter to get all companies from Yahoo! finance ![INCOMPLETE]
-	- Get data from last collected till today for each company
-	- Calculate Indicators
-	- Push data + indicators to DB
-- Run the script as a cron job every 24hrs
+- Create a python script to get the latest data on all companies present in DB through Yahoo finance ![DONE]
+  - Get all companies from DB ![DONE]
+  - Filter to get all companies from Yahoo! finance ![DONE]
+  - Get data from last collected till today for each company ![DONE]
+    - Collect immutable data ![DONE]
+  - Calculate Indicators ![DONE]
+	- Default indicators after sourcing ![DONE]
+  - Push data + indicators to DB ![DONE]
+- Run the script as a cron job every 24hrs ![DONE]
 
 ---
 
@@ -129,9 +131,13 @@
   - time periods `Start data and end date` ![DONE]
   - aggregation time period `List` ![DONE]
   - indicator name ![DONE]
-	
-- SMA ![DONE]
-- Std Dev ![DONE]
+
+-	Validate the req_body ![DONE]
+- Calculating indicator SMA ![DONE]
+- Calculating indicator Std Dev ![DONE] 
+- Push to DB ![DONE]
+
+
 
 ---
 
@@ -158,7 +164,7 @@
 
 ---
 
-### Add all REST APIs to API docs page ![VARUNCOMPLETE] 
+### Create REST API docs page ![VARUNCOMPLETE] 
 
 - Setup website ![DONE]
 	- Change title ![DONE]
@@ -190,12 +196,27 @@
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE] ![DISHAINCOMPLETE]
-- Build infra for UI and other testing ![VARUNINCOMPLETE] 
-- Complete writing all tests ![DISHAINCOMPLETE]
+### Update REST API docs page with all DataFeeder APIs
+- ![VARUNCOMPLETE]
+- ![DISHAINCOMPLETE]
+- ![HRITIKINCOMPLETE]
+- ![SAMRUDHIINCOMPLETE]
+
+---
+
+### Automated testing ![ALLINCOMPLETE]
+- Build infra for UI, REST API and code block testing ![VARUNINCOMPLETE] 
+- Complete writing all tests for all functions, REST APIs and UI
+  - ![VARUNINCOMPLETE]
+  - ![DISHAINCOMPLETE]
+  - ![HRITIKINCOMPLETE]
+  - ![SAMRUDHIINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
+
+[ALLINCOMPLETE]: https://img.shields.io/badge/ALL-INCOMPLETE-red
+[ALLCOMPLETE]: https://img.shields.io/badge/ALL-COMPLETE-brightgreen
 
 [VARUNINCOMPLETE]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
 [VARUNCOMPLETE]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen

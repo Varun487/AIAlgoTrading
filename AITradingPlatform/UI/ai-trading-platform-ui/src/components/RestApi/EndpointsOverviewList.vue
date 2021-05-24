@@ -32,17 +32,17 @@ export default {
           code: "POST /datafeeder/dataondemand/",
           link: "#data-ondemand",
         },
-		{
+        {
           code: "POST /datafeeder/derivecandle/",
           link: "#derive-candle",
         },
-		{
+        {
           code: "POST /datafeeder/getderivecandlestick/",
           link: "#get-derive-candlestick",
         },
-		{
-          code: "POST /datafeeder/derivedindicatorcalc/",
-          link: "#derived-indicator-calc",
+        {
+          code: "POST /datafeeder/indicatorsdata/",
+          link: "#indicators-data",
         },
       ],
       StrategiesLinks: [
@@ -53,6 +53,10 @@ export default {
         {
           code: "POST /strategies/getstrategies/",
           link: "#get-strategies/",
+        }
+		    {
+          code: "POST /strategies/runstrategy/",
+          link: "#run-strategy",
         },
       ],
       BackTesterLinks: [

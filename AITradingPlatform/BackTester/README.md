@@ -13,7 +13,7 @@
 
 ---
 
-### DB ![HRITIKINCOMPLETE]
+### DB ![HRITIKCOMPLETE]
 - BackTestReport
 	- Initial account size
 	- Max Risk %
