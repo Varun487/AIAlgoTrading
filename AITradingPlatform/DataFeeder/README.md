@@ -138,7 +138,6 @@
 - Push to DB ![DONE]
 
 
-
 ---
 
 ### Derive candle sticks for different time periods ![SAMRUDHICOMPLETE]
@@ -199,14 +198,14 @@
 ### Update REST API docs page with all DataFeeder APIs
 - ![VARUNCOMPLETE]
 - ![DISHAINCOMPLETE]
-- ![HRITIKINCOMPLETE]
+- ![HRITIKCOMPLETE]
 - ![SAMRUDHICOMPLETE]
 
 ---
 
 ### Automated testing ![ALLINCOMPLETE]
 - Build infra for UI, REST API and code block testing ![VARUNINCOMPLETE] 
-- Complete writing all tests for all functions, REST APIs and UI
+- Complete writing all tests for all functions, REST APIs and UI 
   - ![VARUNINCOMPLETE]
   - ![DISHAINCOMPLETE]
   - ![HRITIKINCOMPLETE]

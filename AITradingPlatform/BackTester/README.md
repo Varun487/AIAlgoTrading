@@ -22,7 +22,6 @@
 	- End date time
 	- Total Profit / Loss
 	- Order ids `List`
-	- Strategy
 	
 ---
 
@@ -45,6 +44,8 @@
 - REST API ![DISHAINCOMPLETE]
 	- View all reports
 	- Filter reports according to strategy, risk %, Account size, etc.
+	- View all orders ![HRITIKCOMPLETE]
+	- Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
 
 ---
 

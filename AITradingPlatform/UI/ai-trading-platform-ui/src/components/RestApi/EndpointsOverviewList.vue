@@ -79,7 +79,7 @@ export default {
           link: "#example-strategies",
         },
         {
-          code: "POST /strategies/getstrategies/",
+          code: "GET /strategies/getstrategies/",
           link: "#get-strategies/",
         },
         {

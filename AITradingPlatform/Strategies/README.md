@@ -58,20 +58,32 @@
 
 ---
 
-### REST API END POINTS ![FEATUREINCOMPLETE]
+### REST API END POINTS ![FEATURECOMPLETE]
 
 - Run a strategy, generate orders ![VARUNCOMPLETE]
 - View all strategies ![SAMRUDHICOMPLETE]
-- View all orders ![HRITIKCOMPLETE]
-- Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE]
+### Update REST API docs page with all Strategies APIs ![FEATURECOMPLETE]
+- ![VARUNCOMPLETE]
+- ![SAMRUDHICOMPLETE]
+
+---
+
+### Automated testing ![ALLINCOMPLETE]
+- Complete writing all tests for all functions, REST APIs and UI 
+  - ![VARUNINCOMPLETE]
+  - ![DISHAINCOMPLETE]
+  - ![HRITIKINCOMPLETE]
+  - ![SAMRUDHIINCOMPLETE]
 
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
+
+[ALLINCOMPLETE]: https://img.shields.io/badge/ALL-INCOMPLETE-red
+[ALLCOMPLETE]: https://img.shields.io/badge/ALL-COMPLETE-brightgreen
 
 [VARUNINCOMPLETE]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
 [VARUNCOMPLETE]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen
