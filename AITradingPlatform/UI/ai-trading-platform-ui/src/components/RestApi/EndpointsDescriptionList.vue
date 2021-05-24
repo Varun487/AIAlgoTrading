@@ -708,7 +708,185 @@ export default {
           failed_output: `{
     "status": "Invalid request, please check the documentation for the correct request format."
 }`,
+        },
+        {
+          type: "POST",
+          code: "/datafeeder/companydetails/",
+          link: "company-details",
+          description: "Returns a particular company's details that is present in the database.",
+          parameters: [
+            {
+              name: "company",
+              type: "String",
+              desc:
+                "A string mentioning the stock ticker to collect data from",
+            },
+            
+          ],
+          req_url: "/datafeeder/companydetails/",
+          req_body: `{
+    "company": "TCS.BO"
+}`,
+          correct_output: `[
+    {
+        "status": "valid",
+        "company": {
+            "name": "TCS BSE",
+            "ticker": "TCS.BO",
+            "sector": "Tech"
+    }
+]`,
+          failed_output: `{'error': 'No such data present. Please enter a valid company name.'}`,
+        },
+        
+        {
+          type: "POST",
+          code: "/datafeeder/filtercompany/",
+          link: "filter-company",
+          description: "Filters companies according to the sector.",
+          parameters: [
+            {
+              name: "sector",
+              type: "String",
+              desc:
+                "A string mentioning the sector according to which the data is filtered",
+            },
+          ],
+          req_url: "/datafeeder/filtercompany/",
+          req_body: `{
+    "sector": "Tech"
+}`,
+          correct_output: `{
+    "status": "valid",
+    "data": [
+        {
+            "name": "Apple",
+            "ticker": "AAPL",
+            "sector": "Tech"
+        },
+        {
+            "name": "TCS BSE",
+            "ticker": "TCS.BO",
+            "sector": "Tech"
+        },
+        {
+            "name": "TCS NSE",
+            "ticker": "TCS.NS",
+            "sector": "Tech"
+        },
+        {
+            "name": "Microsoft",
+            "ticker": "MC",
+            "sector": "Tech"
         }
+    ]
+}`,
+          failed_output: `{
+    'status': 'invalid'
+}`,
+        },
+        {
+          type: "POST",
+          code: "/datafeeder/addcompany/",
+          link: "add-company",
+          description: "Adds a new company to the database if it doesn't already exist.",
+          parameters: [
+            {
+              name: "name",
+              type: "String",
+              desc: "A string mentioning the name of the company.",
+            },
+            {
+              name: "sector",
+              type: "String",
+              desc: "A string mentioning the sector of the company.",
+            },
+            {
+              name: "ticker",
+              type: "String",
+              desc: "A string mentioning the stock ticker of the company.",
+            },
+          ],
+          req_url: "/datafeeder/addcompany/",
+          req_body: `{
+    "name": "TCS BSE",
+    "sector": "Tech",
+    "ticker": "TCS.BO"
+    
+}`,
+          correct_output: `{
+    'status': 'Valid request. Company added successfully.'
+}`,
+          failed_output: `{
+    'status': 'Invalid request. Company already exists in Database.'
+}`,
+        },
+        {
+          type: "POST",
+          code: "/datafeeder/deletecompany/",
+          link: "delete-company",
+          description: "Deletes a company from the database if it exists.",
+          parameters: [
+            {
+              name: "company",
+              type: "String",
+              desc: "A string mentioning the stock ticker to collect data from",
+            },
+          ],
+          req_url: "/datafeeder/deletecompany/",
+          req_body: `{
+    "company": MS"
+}`,
+          correct_output: `{
+    'data_deleted': 'success'
+}`,
+          failed_output: `{
+    'error': 'No such data present. Please enter a valid company ticker.'
+}`,
+        },
+        {
+          type: "POST",
+          code: "/datafeeder/modifycompanyattr/",
+          link: "modify-company-attr",
+          description:
+            "Modifies the attributes of a company if it exists in the database.",
+          parameters: [
+            {
+              name: "name",
+              type: "String",
+              desc: "A string mentioning the name of the company to modify attributes.",
+            },
+            {
+              name: "new_name",
+              type: "String",
+              desc: "A string mentioning the updated name of the company.",
+            },
+            {
+              name: "new_sector",
+              type: "String",
+              desc: "A string mentioning the updated sector of the company.",
+            },
+            {
+              name: "new_ticker",
+              type: "String",
+              desc: "A string mentioning the updated stock ticker of the company.",
+            },
+          ],
+          req_url: "/datafeeder/indicatorsdata/",
+          req_body: `{
+    "name": "TCS BSE",
+    "new_name": "TCS BSE",
+    "new_sector": "Tech",
+    "new_ticker": "TCS",
+}`,
+          correct_output: `{
+   'update': 'success'
+}`,
+          failed_output: `{
+    'data':'Invalid request. Company does not exist in Database.'
+}`,
+        }
+
         
         
         
