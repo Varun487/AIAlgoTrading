@@ -28,11 +28,11 @@
 #### Company ![DISHACOMPLETE]
 
 - List all companies in DB ![DONE] 
-- Get a particular company's details 
-- Filter company according name, sector, ticker 
-- Add a company
-- Delete a company
-- Modify attr of a company
+- Get a particular company's details ![DONE]
+- Filter company according name, sector, ticker ![DONE]
+- Add a company ![DONE]
+- Delete a company ![DONE]
+- Modify attr of a company ![DONE]
 
 #### Immutable data ![HRITIKCOMPLETE]
 
