@@ -23,7 +23,7 @@
 
 ---
 
-### REST API endpoints ![FEATUREINCOMPLETE] 
+### REST API endpoints ![FEATURECOMPLETE] 
 
 #### Company ![DISHACOMPLETE]
 
@@ -198,7 +198,7 @@
 
 ### Update REST API docs page with all DataFeeder APIs
 - ![VARUNCOMPLETE]
-- ![DISHAINCOMPLETE]
+- ![DISHACOMPLETE]
 - ![HRITIKINCOMPLETE]
 - ![SAMRUDHIINCOMPLETE]
 
