@@ -1,12 +1,504 @@
-2021-05-23 17:30:01.205112: CRON JOB EXECUTED
+2021-05-24 12:01:01.898781: CRON JOB EXECUTED
  Django stand alone app setup successful!
- <QuerySet [<Company: TCS BSE>, <Company: TCS NSE>, <Company: Apple Inc.>]>
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
  Execution success!
-2021-05-23 17:31:01.530897: CRON JOB EXECUTED
+2021-05-24 12:02:01.697933: CRON JOB EXECUTED
  Django stand alone app setup successful!
- <QuerySet [<Company: TCS BSE>, <Company: TCS NSE>, <Company: Apple Inc.>]>
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
  Execution success!
-2021-05-23 17:32:01.840907: CRON JOB EXECUTED
+2021-05-24 12:03:01.296778: CRON JOB EXECUTED
  Django stand alone app setup successful!
- <QuerySet [<Company: TCS BSE>, <Company: TCS NSE>, <Company: Apple Inc.>]>
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:04:01.892368: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:05:01.776608: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:06:01.446926: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:07:01.414075: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:08:01.114928: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:09:01.788630: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:10:01.487548: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:11:01.182674: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:12:01.817143: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:13:01.530545: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:14:01.248076: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:15:01.928931: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:16:01.575468: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:17:01.246293: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:18:01.064383: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:19:01.705142: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:20:01.380703: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:21:02.029083: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:22:01.695119: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:23:01.406020: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:24:01.091998: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:25:01.768251: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:26:01.431140: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:27:01.106909: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:28:01.762547: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:29:01.408782: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:30:01.073542: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:31:01.710177: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:32:02.263964: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:33:01.641588: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:34:01.334455: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:35:01.108266: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:36:01.771370: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:37:01.452564: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:38:01.099339: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:39:01.839017: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:40:01.500290: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:41:01.172806: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:42:01.931755: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:43:01.582228: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:44:01.249309: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:45:01.900549: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: TCS BSE>]>
+ Execution success!
+2021-05-24 12:46:01.602607: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:47:01.301089: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 12:48:01.945674: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 12:49:01.618185: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 12:50:01.403716: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 12:51:01.075571: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:52:01.765474: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:53:01.436095: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:54:01.094912: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:55:01.850066: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:56:01.752063: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 12:57:01.458990: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:58:01.115836: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 12:59:01.751059: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 13:00:01.428489: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 13:01:01.095746: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 13:02:01.747224: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>]>
+ Execution success!
+2021-05-24 13:03:01.441236: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:04:01.121323: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:05:01.844243: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:06:01.561096: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:07:01.363305: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:09:01.564946: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:10:01.520109: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:11:01.426479: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:12:01.209311: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:13:01.198258: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:14:01.917851: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:15:01.931720: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:16:01.813182: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:17:02.165831: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:18:01.269748: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:19:02.257941: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:20:01.501132: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:21:01.482522: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:22:01.431970: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:23:01.824999: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:24:01.728906: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:25:01.856667: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:26:01.742602: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:27:01.831701: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:28:02.011687: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:29:02.005646: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:30:02.062989: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:31:02.146040: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:32:01.315824: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:33:01.644942: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:34:01.518638: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:35:01.692502: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:36:01.706425: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:37:01.822760: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>]>
+ Execution success!
+2021-05-24 13:38:01.922429: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:39:01.841919: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:40:01.793011: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:41:01.912599: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:42:01.189973: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:43:01.993744: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:44:01.355654: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:45:01.556988: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:46:01.535212: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:47:01.784109: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:48:01.890709: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:49:01.458247: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:50:02.023618: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:51:01.600144: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:52:01.165576: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:53:01.730781: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:54:01.300249: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:55:01.871600: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:56:01.443672: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:57:02.014249: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:58:01.582550: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 13:59:01.157138: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:00:01.727629: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:01:01.305122: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:02:01.904351: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:03:01.469288: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:04:01.045860: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:05:01.776343: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:06:01.482424: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
+ Execution success!
+2021-05-24 14:07:01.179128: CRON JOB EXECUTED
+ Django stand alone app setup successful!
+ <QuerySet [<Company: Apple>, <Company: TCS BSE>, <Company: TCS NSE>, <Company: Microsoft>, <Company: Savlon>]>
  Execution success!

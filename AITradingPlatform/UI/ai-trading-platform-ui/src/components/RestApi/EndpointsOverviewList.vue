@@ -50,6 +50,10 @@ export default {
           code: "GET /strategies/{string}",
           link: "#example-strategies",
         },
+        {
+          code: "POST /strategies/getstrategies/",
+          link: "#get-strategies/",
+        },
       ],
       BackTesterLinks: [
         {

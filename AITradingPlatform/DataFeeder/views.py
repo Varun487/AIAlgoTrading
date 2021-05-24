@@ -14,8 +14,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .models import ExampleDataFeederModel, Company, ImmutableData, Indicators, CalculatedCandleStick
-from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, \
-    CandleStickSerializer, ImmutableDataSerializer
+from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, CandleStickSerializer
 from .utils import calc_indicators, push_indicators_to_db
 from .utils import get_data_on_demand
 
@@ -43,6 +42,169 @@ def api_list_companies(req):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     return Response(ListCompaniesSerializer(companies, many=True).data)
+
+
+@api_view(['POST', ])
+def api_company_details(req):
+    req_body = json.loads(req.body)
+
+    # creating default response
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    # validate request parameters
+    valid_company = 'company' in req_body and type(req_body['company']) == str
+
+    # check request validity
+    if not valid_company:
+        return JsonResponse(res)
+    print(res)
+    # verify whether company exits in db
+    try:
+        company_obj = Company.objects.get(ticker=req_body['company'])  # name or ticker
+        res = {'status': 'valid'}
+        res['company'] = ListCompaniesSerializer(company_obj).data  # line can be commented
+        res['data'] = []
+
+        # filter data for request
+        data = Company.objects.filter(ticker=company_obj)
+        res['data'] = ListCompaniesSerializer(data, many=True).data
+
+    except Company.DoesNotExist:
+        res = {'error': 'No such data present. Please enter a valid company name.'}
+        return JsonResponse(res)
+
+    return JsonResponse(res)
+
+
+@api_view(['POST', ])
+def api_filter_company(req):
+    req_body = json.loads(req.body)
+
+    # creating default response
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    # validate request parameters
+    valid_sector = 'sector' in req_body and type(req_body['sector']) == str
+
+    # check request validity
+    if not (valid_sector):
+        return JsonResponse(res)
+
+    if 'sector' in req_body:
+        try:
+            company_obj = Company.objects.filter(sector=req_body['sector'])
+            print(company_obj)
+            res = {'status': 'valid'}
+            res['data'] = ListCompaniesSerializer(company_obj,many=True).data
+        except:
+            res = {'status': 'invalid'}
+
+    return JsonResponse(res)
+
+
+
+@api_view(['POST', ])
+def api_add_company(req):
+    req_body = json.loads(req.body)
+
+    # creating default response
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    # validate post request parameters
+    valid_name = 'name' in req_body and type(req_body['name']) == str
+    valid_sector = 'sector' in req_body and type(req_body['sector']) == str
+    valid_ticker = 'ticker' in req_body and type(req_body['ticker']) == str
+
+    # check request validity
+    if not (valid_name and valid_sector and valid_ticker):
+        return JsonResponse(res)
+
+    # verify if company already exists in DB
+    if not Company.objects.filter(name=req_body['name'], sector=req_body['sector'], ticker=req_body['ticker']):
+        Company(
+            name=req_body['name'],
+            sector=req_body['sector'],
+            ticker=req_body['ticker'],
+        ).save()
+        res = {'status': 'Valid request. Company added successfully.'}
+        return JsonResponse(res)
+    else:
+        res = {'status': 'Invalid request. Company already exists in Database.'}
+        return JsonResponse(res)
+
+
+@api_view(['POST', ])
+def api_delete_company(req):
+    req_body = json.loads(req.body)
+
+    # creating default response
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    # validate request parameters
+    valid_company = 'company' in req_body and type(req_body['company']) == str
+
+    # check request validity
+    if not valid_company:
+        return JsonResponse(res)
+
+
+    res['data_deleted'] = []
+    try:
+        company_obj = Company.objects.get(ticker=req_body['company'])
+        res['data'] = company_obj
+        company_obj.delete()
+        res = {'status': 'valid'}
+        res = {'data_deleted': 'success'}
+    except:
+        res = {'data_deleted': 'fail'}
+        res = {'error': 'No such data present. Please enter a valid company ticker.'}
+
+    return JsonResponse(res)
+
+
+@api_view(['POST', ])
+def api_modify_company_attr(req):
+    req_body = json.loads(req.body)
+
+    # creating default response
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+
+    # validate post request parameters
+    valid_n = "name" in req_body and type(req_body['name']) == str
+    valid_name = 'new_name' in req_body and type(req_body['new_name']) == str
+    valid_sector = 'new_sector' in req_body and type(req_body['new_sector']) == str
+    valid_ticker = 'new_ticker' in req_body and type(req_body['new_ticker']) == str
+
+    # check request validity
+    if not (valid_name and valid_sector and valid_ticker and valid_n):
+        return JsonResponse(res)
+
+    # verify if company exists
+    try:
+        company_obj = Company.objects.filter(name=req_body['name'])
+        new_name = req_body['new_name']
+        new_sector = req_body['new_sector']
+        new_ticker = req_body['new_ticker']
+        print(company_obj)
+        # check for modification and update model object
+        if 'new_name' in req_body:
+            company_obj.update(name=new_name)
+        if 'new_sector' in req_body:
+            company_obj.update(sector=new_sector)
+        if 'new_ticker' in req_body:
+            company_obj.update(ticker=new_ticker)
+
+        res = {'status': 'valid'}
+        res = {'update': 'success'}
+        #res['data'] = ListCompaniesSerializer(company_obj).data
+    except:
+        res = {'status': 'invalid'}
+        res = {'update': 'fail'}
+        res = {'data':'Invalid request. Company does not exist in Database.'}
+
+    return JsonResponse(res)
+
 
 
 @api_view(['POST', ])

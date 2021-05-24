@@ -136,9 +136,9 @@ export default {
           parameters: [
             {
               name: "company",
-              type: "Array of Strings",
+              type: "String",
               desc:
-                "An array of strings mentioning the stock tickers to collect data from",
+                "A String mentioning the stock ticker to collect data from",
             },
             {
               name: "start_date",
@@ -202,9 +202,9 @@ export default {
           parameters: [
             {
               name: "company",
-              type: "Array of Strings",
+              type: "String",
               desc:
-                "An array of strings mentioning the stock tickers to collect data from",
+                "A String mentioning the stock ticker to collect data from",
             },
             {
               name: "start_date",
@@ -303,6 +303,30 @@ export default {
     "name": "hello-strategies"
 }`,
           failed_output: `{}`,
+        },
+        {
+          type: "GET",
+          code: "/strategies/getstrategies/",
+          link: "get-strategies/",
+          description:
+            "Returns all the Strategies in the db.",
+          parameters: false,
+          req_url: "/strategies/getstrategies/",
+          req_body: ``,
+          correct_output: `{
+    "status": "valid",
+    "data": [
+        {
+            "name": "Simple Bollinger Bands Strategy",
+            "desc": "Bollinger Bands consist of three bands—an upper, middle and lower band—that are 
+                      used to spotlight extreme short-term prices in a security.",
+            "sector": "Tech"
+        }
+    ]
+}`,
+          failed_output: `res = {
+            'error': 'No data present in the db.'
+        }`,
         },
       ],
       BackTesterApis: [
