@@ -14,7 +14,7 @@
 
 ---
 
-### DB 
+### DB ![HRITIKINCOMPLETE]
 
 - PaperTradeOrder
 	- Order `Foreign key`
@@ -23,37 +23,40 @@
 		- column
 		- indicator_time_period
 		- sigma
+	- Percentage change
 
 ---
 
-### Tracks live orders `Runs every min` ![SAMRUDHIINCOMPLETE] ![DISHAINCOMPLETE]
+### Tracks live orders `Runs every day` ![DISHAINCOMPLETE]
 
-- Get all paper trader orders
-- Evaluate loss / profit of order according to latest company data `Update in DB`
-- After order is completed, change owner `Update in DB`
+- Get all paper trader live orders
+- Evaluate loss / profit of order according to latest company data `Always evaluate according to close price`
+- If order is completed, set live order flag to 0 `Update in DB`
 
 ---
 
-### Generating orders `Runs every min` ![VARUNINCOMPLETE]
+### Generating orders `Runs every day` ![VARUNINCOMPLETE]
 
 - Get latest data of all companies ![DONE]
 - Calculate derived data
 - Calculate strategy specific indicators
 - Run all strategies on all relevant data `Returns orders`
-- Set Profit / Loss and owner fileds of orders
-- Push orders to DB
+- Set order attributes and push to DB
+- Set PaperTrader order attributes and push to DB
 
 ---
 
 
-### REST APIs ![HRITIKINCOMPLETE]
+### REST APIs ![SAMRUDHIINCOMPLETE]
 
 - Get all current paper traded orders
-- Filter orders according to all relevant criteria
+	- Filter orders according to all relevant criteria
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE]
+### Update REST API docs page with all DataFeeder APIs
+- ![SAMRUDHIINCOMPLETE]
+
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red

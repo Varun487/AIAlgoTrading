@@ -195,7 +195,7 @@
 
 ---
 
-### Update REST API docs page with all DataFeeder APIs
+### Update REST API docs page with all DataFeeder APIs ![FEATURECOMPLETE]
 - ![VARUNCOMPLETE]
 - ![DISHACOMPLETE]
 - ![HRITIKCOMPLETE]
