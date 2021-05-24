@@ -23,7 +23,7 @@
 
 ---
 
-### REST API endpoints ![FEATUREINCOMPLETE] 
+### REST API endpoints ![FEATURECOMPLETE] 
 
 #### Company ![DISHACOMPLETE]
 
