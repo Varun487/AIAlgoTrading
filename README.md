@@ -128,10 +128,9 @@ This project can be pursued in the future to build a fully integrated trading sy
 
 # TODO
 __PROJECT PHASE 1__ *-> COMPLETE BEFORE ESA BEGINS*
-1. Final presentation ![DOCINCOMPLETE]
-2. FILL WEEKLY PROGRESS PAGE ![DOCINCOMPLETE]
-    - Physical printout ??
-3. 2 Research papers per person ![DOCINCOMPLETE]
+1. Final presentation ![DOCCOMPLETE]
+2. FILL WEEKLY PROGRESS PAGE ![DOCCOMPLETE]
+3. 2 Research papers per person ![DOCCOMPLETE]
     - __CERTIFIED__ from ma'am
 
 __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
@@ -155,35 +154,20 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 	- [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
 6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
 	- [Link to UI README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)
-7. Test the simple BB strategy `Integration testing` `Automated tests` ![FEATUREINCOMPLETE]
-	- Datafeeder ![SAMRUDHIINCOMPLETE]
-		- Adding new companies `source`
-		- Adding new indicators `calculate`
-	- Strategies ![HRITIKINCOMPLETE]
-		- Different companies data
-		- Analyze all orders generated
-	- Back tester ![VARUNINCOMPLETE]
-		- Conduct multiple backtests with diff parameters
-	- Paper trader ![DISHAINCOMPLETE]
-		- Orders Update
-		- Orders generated
-	- UI ![VARUNINCOMPLETE]
-		- Test whether all buttons, nav, visualizations work
 
 ### VERSION 1.0 LAUNCH !
 
 ---
 
-8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
+7. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
     - Buy a domain ![DONE]
     - SSL certification
     - Host the REST API
     - Decide deployment workflow
     - Make a deployment script
-9. Build a simple LSTM predictions test strategy ![FEATUREINCOMPLETE] 
-10. Build Strategies ![FEATUREINCOMPLETE] 
+8. Build Strategies ![FEATUREINCOMPLETE] 
     - 4 Strategies which perform better than sectoral market indices
-11. Write papers, see if you can publish them ![DOCINCOMPLETE]
+9. Write papers, see if you can publish them ![DOCINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
