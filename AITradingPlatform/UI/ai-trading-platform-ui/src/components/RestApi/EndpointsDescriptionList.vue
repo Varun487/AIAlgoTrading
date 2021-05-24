@@ -99,10 +99,11 @@ export default {
               desc:
                 "Mentions the time period of data to be collected. If sourcing from Yahoo finance, then value has to be 'daily'. Else, if sourcing from Alpha Vantage, can take any of the following values ['1min', '5min', '15min', '30min', '60min']",
             },
-			{
+            {
               name: "slice",
               type: "String",
-              desc: "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+              desc:
+                "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
             },
           ],
           req_url: "/datafeeder/dataondemand/",
@@ -131,8 +132,7 @@ export default {
           type: "POST",
           code: "/datafeeder/derivecandle/",
           link: "derive-candle",
-          description:
-            "Deriving the candlestick for a particular time range.",
+          description: "Deriving the candlestick for a particular time range.",
           parameters: [
             {
               name: "company",
@@ -170,10 +170,11 @@ export default {
               desc:
                 "Mentions the aggregation time period or time window of the candle stick.",
             },
-      {
+            {
               name: "slice",
               type: "String",
-              desc: "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+              desc:
+                "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
             },
           ],
           req_url: "/datafeeder/derivecandle/",
@@ -197,8 +198,7 @@ export default {
           type: "POST",
           code: "/datafeeder/getderivecandlestick/",
           link: "get-derive-candlestick",
-          description:
-            "Lists the derived data in candlestick table.",
+          description: "Lists the derived data in candlestick table.",
           parameters: [
             {
               name: "company",
@@ -236,10 +236,11 @@ export default {
               desc:
                 "Mentions the aggregation time period or time window of the candle stick.",
             },
-      {
+            {
               name: "slice",
               type: "String",
-              desc: "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+              desc:
+                "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
             },
           ],
           req_url: "/datafeeder/getderivecandlestick/",
@@ -282,6 +283,143 @@ export default {
               indicators."
 }`,
         },
+        {
+          type: "POST",
+          code: "/datafeeder/indicatorsdata/",
+          link: "indicators-data",
+          description:
+            "Lists the indicators data present in the database after filtering according to conditions provided.",
+          parameters: [
+            {
+              name: "name",
+              type: "String",
+              desc:
+                "The name of the indicator in the form {name}_{column}_{time_period}. example: 'SMA_Close_5'",
+            },
+            {
+              name: "value_range_lower",
+              type: "Integer",
+              desc: "The lower value of range of indicator values to return.",
+            },
+            {
+              name: "value_range_higher",
+              type: "Integer",
+              desc: "The higher value of range of indicator values to return.",
+            },
+            {
+              name: "column",
+              type: "String",
+              desc:
+                "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
+            },
+            {
+              name: "indicator_time_period",
+              type: "Integer",
+              desc: "The time period of the indicator to list.",
+            },
+            {
+              name: "company",
+              type: "String",
+              desc:
+                "Stock ticker of company for which you want to list indicator data.",
+            },
+            {
+              name: "candle_stick_period",
+              type: "String",
+              desc:
+                "Mentions the time period of original immutable data collected for the company. Can take values in ['1min', '5min', '15min', '30min', '60min', 'daily']",
+            },
+            {
+              name: "start_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes beginning the datetime for listing indicators data.",
+            },
+            {
+              name: "end_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the last datetime for listing indicators data.",
+            },
+          ],
+          req_url: "/datafeeder/indicatorsdata/",
+          req_body: `{
+    "name": "SMA_Close_5",
+    "value_range_lower": 3000,
+    "value_range_higher": 4000,
+    "column": "Close",
+    "indicator_time_period": 5,
+    "company": "TCS.NS",
+    "candle_stick_period": "daily",
+    "start_date": "2021-05-1 00:00:00",
+    "end_date": "2021-05-20 00:00:00"
+}`,
+          correct_output: `{
+    "status": "valid",
+    "indicator": "SMA_Close_5",
+    "company": {
+        "name": "TCS NSE",
+        "ticker": "TCS.NS",
+        "sector": "Technology"
+    },
+    "data": [
+        {
+            "value": 3084.050048828125,
+            "name": "SMA_Close_5",
+            "column": "Close",
+            "indicator_time_period": 5,
+            "candle_stick": {
+                "id": 590,
+                "open": 3100.0,
+                "high": 3124.0,
+                "low": 3078.0,
+                "close": 3088.800048828125,
+                "volume": 2098538,
+                "time_stamp": "2021-05-18T00:00:00Z",
+                "time_period": "daily",
+                "company": 2
+            }
+        },
+        {
+            "value": 3075.930029296875,
+            "name": "SMA_Close_5",
+            "column": "Close",
+            "indicator_time_period": 5,
+            "candle_stick": {
+                "id": 591,
+                "open": 3084.0,
+                "high": 3118.0,
+                "low": 3067.10009765625,
+                "close": 3082.0,
+                "volume": 1986041,
+                "time_stamp": "2021-05-19T00:00:00Z",
+                "time_period": "daily",
+                "company": 2
+            }
+        },
+        {
+            "value": 3070.410009765625,
+            "name": "SMA_Close_5",
+            "column": "Close",
+            "indicator_time_period": 5,
+            "candle_stick": {
+                "id": 592,
+                "open": 3067.10009765625,
+                "high": 3088.800048828125,
+                "low": 3052.10009765625,
+                "close": 3060.0,
+                "volume": 2329027,
+                "time_stamp": "2021-05-20T00:00:00Z",
+                "time_period": "daily",
+                "company": 2
+            }
+        }
+    ]
+}`,
+          failed_output: `{
+    "error": "No data present that fits all conditions. Please try sourcing the data or computing indicators."
+}`,
+        },
       ],
       StrategiesApis: [
         {
@@ -303,6 +441,113 @@ export default {
     "name": "hello-strategies"
 }`,
           failed_output: `{}`,
+        },
+        {
+          type: "POST",
+          code: "/strategies/runstrategy",
+          link: "run-strategy",
+          description:
+            "Executes code to source data and calculate indicators then run a strategy on that data to generate orders.",
+          parameters: [
+            {
+              name: "strategy",
+              type: "String",
+              desc:
+                "Enter the name of the strategy to run. The only accepted value as of now is 'Simple Bollinger Bands Strategy'.",
+            },
+			{
+              name: "candle_stick_data",
+              type: "JSON object",
+              desc:
+                "Contains data about the candlesticks to source and run the strategy on.",
+            },
+			{
+              name: "indicators_data",
+              type: "JSON object",
+              desc:
+                "Contains data about the indicators to calculate and run the strategy on.",
+            },
+			{
+              name: "company",
+              type: "String",
+              desc:
+                "Mentions the stock ticker on which to run the strategy and generate orders.",
+            },
+            {
+              name: "start_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start running the stategy for the stock ticker.",
+            },
+            {
+              name: "end_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end running of the stategy for the stock ticker.",
+            },
+            {
+              name: "provider",
+              type: "String",
+              desc:
+                "Data provider to source data from. Can only take values of 'Yahoo' and 'Alpha'",
+            },
+            {
+              name: "time_period",
+              type: "String",
+              desc:
+                "Mentions the time period of data to be collected. If sourcing from Yahoo finance, then value has to be 'daily'. Else, if sourcing from Alpha Vantage, can take any of the following values ['1min', '5min', '15min', '30min', '60min']",
+            },
+            {
+              name: "slice",
+              type: "String",
+              desc:
+                "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+            },
+			{
+              name: "column",
+              type: "String",
+              desc:
+                "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
+            },
+            {
+              name: "time_period",
+              type: "Integer",
+              desc: "The time period of the indicator to run the strategy on.",
+            },
+			{
+              name: "sigma",
+              type: "Integer",
+              desc: "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
+            },
+          ],
+          req_url: "/strategies/runstrategy",
+          req_body: `{
+    "strategy": "Simple Bollinger Bands Strategy",
+    "candlestick_data": {
+        "company": "TCS.BO",
+        "provider": "Yahoo",
+        "start_date": "2021-05-1 00:00:00",
+        "end_date": "2021-05-20 00:00:00",
+        "time_period": "daily",
+        "slice": "year1month1"
+    },
+    "indicators_data": {
+        "column": "Close",
+        "time_period": 5,
+        "sigma": 1
+    }
+}`,
+          correct_output: `{
+    "status": "success, orders created",
+    "strategy": "Simple Bollinger Bands Strategy",
+    "collected_data": [
+        "TCS.BO"
+    ],
+    "data_not_collected": []
+}`,
+          failed_output: `{
+    "error": "invalid request, please check the documentation for the correct request format"
+}`,
         },
       ],
       BackTesterApis: [
