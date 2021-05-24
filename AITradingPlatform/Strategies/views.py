@@ -7,8 +7,9 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.utils.timezone import make_aware
 
-from .models import ExampleStrategiesModel, Strategy
-from .serializers import ExampleStrategiesSerializer, StrategySerializer
+from .models import ExampleStrategiesModel, Strategy , Orders
+
+from .serializers import ExampleStrategiesSerializer, StrategySerializer , OrdersSerializer
 from .utils import simple_bollinger_bands_strategy
 
 @api_view(['GET', ])
@@ -87,21 +88,6 @@ def api_run_strategy(req):
 
 
 @api_view(['POST', ])
-def api_vieworders(req):
-    req_body = json.loads(req.body)
-    # print(req_body)
-
-    # Check req validity
-    res = {
-        "error": "invalid request, please check the documentation for the correct request format"
-    }
-    # checking validity of post req body
-
-    return JsonResponse(res)
-
-
-
-@api_view(['POST', ])
 def api_get_strategy(req):
 
     res = {'status': 'valid'}
@@ -148,4 +134,19 @@ def api_get_strategy(req):
     #     }
     #
     # return JsonResponse(res)
+
+
+@api_view(['GET', ])
+def api_get_orders(req):
+    try:
+        orders = Orders.objects.all()
+        print("Orders:", orders)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    return Response(OrdersSerializer(orders, many=True).data)
+
+
+
+
 
