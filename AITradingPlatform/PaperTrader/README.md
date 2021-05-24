@@ -24,7 +24,9 @@
 
 ### Generating orders `Runs every min` ![VARUNINCOMPLETE]
 
-- Get latest data of all companies
+- Get latest data of all companies ![DONE]
+- Calculate derived data
+- Calculate strategy specific indicators
 - Run all strategies on all relevant data `Returns orders`
 - Set Profit / Loss and owner fileds of orders
 - Push orders to DB

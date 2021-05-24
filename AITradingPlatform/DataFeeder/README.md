@@ -106,19 +106,21 @@
 
 ---
 
-### Sourcing data real time ![VARUNINCOMPLETE]
+### Sourcing data real time ![VARUNCOMPLETE]
 `Only Yahoo! Finance`
 
 - Create a test cron job ![DONE]
 	- Runs every 24 hrs ![DONE]
 - Refactor files ![DONE]
-- Create a python script to get the latest data on all companies present in DB through Yahoo finance ![INCOMPLETE]
-  	- Get all companies from DB ![DONE]
-	- Filter to get all companies from Yahoo! finance ![INCOMPLETE]
-	- Get data from last collected till today for each company
-	- Calculate Indicators
-	- Push data + indicators to DB
-- Run the script as a cron job every 24hrs
+- Create a python script to get the latest data on all companies present in DB through Yahoo finance ![DONE]
+  - Get all companies from DB ![DONE]
+  - Filter to get all companies from Yahoo! finance ![DONE]
+  - Get data from last collected till today for each company ![DONE]
+    - Collect immutable data ![DONE]
+  - Calculate Indicators ![DONE]
+	- Default indicators after sourcing ![DONE]
+  - Push data + indicators to DB ![DONE]
+- Run the script as a cron job every 24hrs ![DONE]
 
 ---
 
