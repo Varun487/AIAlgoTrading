@@ -44,6 +44,34 @@ export default {
           code: "POST /datafeeder/indicatorsdata/",
           link: "#indicators-data",
         },
+		{
+          code: "POST /datafeeder/derivedindicatorcalc/",
+          link: "#derived-indicator-calc",
+        },
+		{
+          code: "POST /datafeeder/listimmutable/",
+          link: "#list-immutable",
+        },
+		{
+          code: "POST /datafeeder/companydetails/",
+          link: "#company-details",
+        },
+		{
+          code: "POST /datafeeder/filtercompany/",
+          link: "#filter-company",
+        },
+		{
+          code: "POST /datafeeder/addcompany/",
+          link: "#add-company",
+        },
+		{
+          code: "POST /datafeeder/deletecompany/",
+          link: "#delete-company",
+        },
+		{
+          code: "POST /datafeeder/modifycompanyattr/",
+          link: "#modify-company-attr",
+        },
       ],
       StrategiesLinks: [
         {
@@ -57,6 +85,10 @@ export default {
         {
           code: "POST /strategies/runstrategy/",
           link: "#run-strategy",
+        },
+		{
+          code: "GET /strategies/getorders/",
+          link: "#get-orders",
         },
       ],
       BackTesterLinks: [
