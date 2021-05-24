@@ -17,12 +17,17 @@
 - BackTestReport
 	- Initial account size
 	- Max Risk %
-	- Final account size
+	- Risk ratio `Stoploss, Takeprofit`
 	- Start date time
 	- End date time
-	- Total Profit / Loss
-	- Order ids `List`
-	
+	- Companies `List`
+	- Strategy
+		- column
+		- indicator_time_period
+		- sigma
+	- Final account size
+	- Total Profit / Loss	
+
 ---
 
 ### Back testing `Only for historical data` ![FEATUREINCOMPLETE]
@@ -30,17 +35,21 @@
 - Get Req data from DB ![VARUNCOMPLETE]
 	- Source data if not present ![DONE]
 	- Calc Indicators if not present ![DONE]
+
 - Call the strategy function with data ![SAMRUDHIINCOMPLETE]
   - get strategy name
   - get start and end date
   - call the strategy
+
 - Evaluate orders `according to future` ![DISHAINCOMPLETE]
 	- Order owner
 	- Profit / Loss
 	- Push orders to DB
+
 - Generate report ![SAMRUDHIINCOMPLETE]
 	- Eval Total Profit / Loss, final account size according to all orders performance, Initial account, Start date, etc.
 	- Push report to DB
+
 - REST API ![DISHAINCOMPLETE]
 	- View all reports
 	- Filter reports according to strategy, risk %, Account size, etc.

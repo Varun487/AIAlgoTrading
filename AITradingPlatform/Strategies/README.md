@@ -21,15 +21,14 @@
 	- Name
 	- Description
 	- Companies/Sector
+
 - Orders ![DONE]
 	- Order type `BUY/SELL`
 	- Company
 	- TimeStamp
-	- Order category `Market/Limit`
-	- Take profit `Can be Blank`
-	- Stop loss
-	- Strategy name
-	- Order Owner
+	- Order category `Limit order`
+	- Order Owner `Flag which tells whether it's a backtest order or a paper trade order`
+	- Backtest report id `Foreign key - blank in case of a paper traded order`
 	- Profit/Loss `Blank in the beginning`
 
 ---
