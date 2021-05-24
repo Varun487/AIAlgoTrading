@@ -53,8 +53,8 @@ export default {
         {
           code: "POST /strategies/getstrategies/",
           link: "#get-strategies/",
-        }
-		    {
+        },
+        {
           code: "POST /strategies/runstrategy/",
           link: "#run-strategy",
         },
