@@ -164,7 +164,7 @@
 
 ---
 
-### Add all REST APIs to API docs page ![VARUNCOMPLETE] 
+### Create REST API docs page ![VARUNCOMPLETE] 
 
 - Setup website ![DONE]
 	- Change title ![DONE]
@@ -193,6 +193,10 @@
 		- Sample failed output ![DONE]
 		- Fix all endpoints description items ![DONE]
 	- Fix links in endpoints overview list ![DONE]
+
+---
+
+### Update REST API docs page with all DataFeeder APIs ![VARUNINCOMPLETE] ![DISHAINCOMPLETE] ![HRITIKINCOMPLETE] ![SAMRUDHIINCOMPLETE]
 
 ---
 
