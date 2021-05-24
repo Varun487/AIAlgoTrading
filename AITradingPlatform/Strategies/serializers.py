@@ -15,6 +15,5 @@ class StrategySerializer(serializers.ModelSerializer):
 class OrdersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Orders
-        fields = ['ORD_TYPE', 'ORD_CAT', 'ORD_OWN', 'PROFIT_LOSS', ' order_type', ' order_category', ' order_owner'
-                 ,'strategy', 'company', 'time_stamp', 'profit', 'stop_loss', 'profit_loss']
+        fields = [' order_type', ' order_category', 'company', 'time_stamp', 'profit_loss']
         depth = 1

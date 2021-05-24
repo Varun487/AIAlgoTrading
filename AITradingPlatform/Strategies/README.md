@@ -2,7 +2,7 @@
 
 ###### This is the heart of the project
 
-![COMPONENTINCOMPLETE]
+![COMPONENTCOMPLETE]
 
 * Strategies read data from the database and can use multiple indicators, machine learning models, or a combination to generate orders according to the rules mentioned in the strategy.
 
@@ -27,8 +27,6 @@
 	- Company
 	- TimeStamp
 	- Order category `Limit order`
-	- Order Owner `Flag which tells whether it's a backtest order or a paper trade order`
-	- Backtest report id `Foreign key - blank in case of a paper traded order`
 	- Profit/Loss `Blank in the beginning`
 
 ---
@@ -68,21 +66,9 @@
 - ![VARUNCOMPLETE]
 - ![SAMRUDHICOMPLETE]
 
----
-
-### Automated testing ![ALLINCOMPLETE]
-- Complete writing all tests for all functions, REST APIs and UI 
-  - ![VARUNINCOMPLETE]
-  - ![DISHAINCOMPLETE]
-  - ![HRITIKINCOMPLETE]
-  - ![SAMRUDHIINCOMPLETE]
-
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
-
-[ALLINCOMPLETE]: https://img.shields.io/badge/ALL-INCOMPLETE-red
-[ALLCOMPLETE]: https://img.shields.io/badge/ALL-COMPLETE-brightgreen
 
 [VARUNINCOMPLETE]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
 [VARUNCOMPLETE]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen

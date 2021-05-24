@@ -1,6 +1,6 @@
 # DATAFEEDER v1.0
 
-![COMPONENTINCOMPLETE]
+![COMPONENTCOMPLETE]
 
 * Used to source real-time minute scale data from over 5000 stocks in the stock market.
 
@@ -197,25 +197,13 @@
 
 ### Update REST API docs page with all DataFeeder APIs
 - ![VARUNCOMPLETE]
-- ![DISHAINCOMPLETE]
+- ![DISHACOMPLETE]
 - ![HRITIKCOMPLETE]
 - ![SAMRUDHICOMPLETE]
 
----
-
-### Automated testing ![ALLINCOMPLETE]
-- Build infra for UI, REST API and code block testing ![VARUNINCOMPLETE] 
-- Complete writing all tests for all functions, REST APIs and UI 
-  - ![VARUNINCOMPLETE]
-  - ![DISHAINCOMPLETE]
-  - ![HRITIKINCOMPLETE]
-  - ![SAMRUDHIINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
-
-[ALLINCOMPLETE]: https://img.shields.io/badge/ALL-INCOMPLETE-red
-[ALLCOMPLETE]: https://img.shields.io/badge/ALL-COMPLETE-brightgreen
 
 [VARUNINCOMPLETE]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
 [VARUNCOMPLETE]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen

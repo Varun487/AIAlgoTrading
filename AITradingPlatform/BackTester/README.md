@@ -13,7 +13,12 @@
 
 ---
 
-### DB ![HRITIKCOMPLETE]
+### DB ![HRITIKINCOMPLETE]
+
+- BackTestOrder
+	- Order `Foreign key`
+	- Backtest report `Foreign key`
+
 - BackTestReport
 	- Initial account size
 	- Max Risk %
@@ -26,11 +31,11 @@
 		- indicator_time_period
 		- sigma
 	- Final account size
-	- Total Profit / Loss	
+	- Total Profit / Loss
 
 ---
 
-### Back testing `Only for historical data` ![FEATUREINCOMPLETE]
+### Back testing `Historical data` ![FEATUREINCOMPLETE]
 
 - Get Req data from DB ![VARUNCOMPLETE]
 	- Source data if not present ![DONE]
@@ -50,20 +55,36 @@
 	- Eval Total Profit / Loss, final account size according to all orders performance, Initial account, Start date, etc.
 	- Push report to DB
 
-- REST API ![DISHAINCOMPLETE]
-	- View all reports
-	- Filter reports according to strategy, risk %, Account size, etc.
-	- View all orders ![HRITIKCOMPLETE]
-	- Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
+### REST API ![FEATUREINCOMPLETE]
+
+- View all reports
+- Filter reports according to strategy, risk %, Account size, etc.
+- View all orders ![HRITIKCOMPLETE]
+- Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
 
 ---
 
-### Automated testing ![VARUNINCOMPLETE]
+### Update REST API docs page with all Backtester APIs ![FEATUREINCOMPLETE]
+- ![VARUNINCOMPLETE]
+- ![SAMRUDHIINCOMPLETE]
+- ![DISHAINCOMPLETE]
+- ![HRITIKINCOMPLETE]
 
+---
+
+### Automated testing ![FEATUREINCOMPLETE]
+- Complete writing all tests for all functions, REST APIs and UI 
+  - ![VARUNINCOMPLETE]
+  - ![DISHAINCOMPLETE]
+  - ![HRITIKINCOMPLETE]
+  - ![SAMRUDHIINCOMPLETE]
 
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
+
+[ALLINCOMPLETE]: https://img.shields.io/badge/ALL-INCOMPLETE-red
+[ALLCOMPLETE]: https://img.shields.io/badge/ALL-COMPLETE-brightgreen
 
 [VARUNINCOMPLETE]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
 [VARUNCOMPLETE]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen

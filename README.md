@@ -144,9 +144,9 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
             - Make it serve Django files ![DONE]
     - Separate development and production environments ![DONE]
 	- Add custom domain to firebase for UI ![DONE]
-2. DATAFEEDER WORK ![COMPONENTINCOMPLETE]
+2. DATAFEEDER WORK ![COMPONENTCOMPLETE]
 	- [Link to Datafeeder README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/DataFeeder)
-3. STRATEGIES WORK ![COMPONENTINCOMPLETE]
+3. STRATEGIES WORK ![COMPONENTCOMPLETE]
 	- [Link to Strategies README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/Strategies)
 4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
@@ -154,20 +154,32 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 	- [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
 6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
 	- [Link to UI README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)
+7. Automated testing ![FEATUREINCOMPLETE]
+    - Build Infra, decide and setup tools 
+    - DataFeeder 
+      - Complete writing tests for all functions, REST APIs
+    - Strategies 
+      - Complete writing tests for all functions, REST APIs 
+    - BackTester 
+      - Complete writing tests for all functions, REST APIs 
+    - PaperTrader 
+      - Complete writing tests for all functions, REST APIs 
+    - UI 
+      - Complete writing tests for all UI components
 
 ### VERSION 1.0 LAUNCH !
 
 ---
 
-7. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
+8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
     - Buy a domain ![DONE]
     - SSL certification
     - Host the REST API
     - Decide deployment workflow
     - Make a deployment script
-8. Build Strategies ![FEATUREINCOMPLETE] 
+9. Build Strategies ![FEATUREINCOMPLETE] 
     - 4 Strategies which perform better than sectoral market indices
-9. Write papers, see if you can publish them ![DOCINCOMPLETE]
+10. Write papers, see if you can publish them ![DOCINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red

@@ -10,7 +10,19 @@
 
 ---
 
-## PAPERTRADER  WORK
+## PAPERTRADER WORK
+
+---
+
+### DB 
+
+- PaperTradeOrder
+	- Order `Foreign key`
+	- Live order `Flag`
+	- Strategy
+		- column
+		- indicator_time_period
+		- sigma
 
 ---
 

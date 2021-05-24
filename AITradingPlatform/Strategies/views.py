@@ -116,8 +116,3 @@ def api_get_orders(req):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     return Response(OrdersSerializer(orders, many=True).data)
-
-
-
-
-
