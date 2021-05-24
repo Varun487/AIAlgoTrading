@@ -197,7 +197,7 @@
 
 ### Update REST API docs page with all DataFeeder APIs
 - ![VARUNCOMPLETE]
-- ![DISHAINCOMPLETE]
+- ![DISHACOMPLETE]
 - ![HRITIKCOMPLETE]
 - ![SAMRUDHICOMPLETE]
 
