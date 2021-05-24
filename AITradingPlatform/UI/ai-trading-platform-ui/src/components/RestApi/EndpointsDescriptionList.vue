@@ -871,19 +871,11 @@ export default {
           code: "/strategies/getorders/",
           link: "get-orders",
           description:
-            "An example api to test the working of the Strategies component of the project.",
-          parameters: [
-            {
-              name: "string",
-              type: "String",
-              desc: "Enter any string in the url above",
-            },
-          ],
+            "List all the orders",
+          parameters:false,
           req_url: "/strategies/getorders/",
           req_body: ``,
-          correct_output: `{
-    "name": "hello-strategies"
-}`,
+          correct_output: `[]`,
           failed_output: `{}`,
         }
       ],
