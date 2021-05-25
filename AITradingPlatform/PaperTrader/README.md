@@ -60,6 +60,7 @@
 
 ### Update REST API docs page with all DataFeeder APIs
 - ![SAMRUDHIINCOMPLETE]
+- ![HRITIKINCOMPLETE]
 
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
