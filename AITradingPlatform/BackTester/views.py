@@ -46,7 +46,9 @@ def api_get_orders(req):
         return JsonResponse(res)
 
     company_obj = Company.objects.get(ticker=req_body['company'])[0]
+    # print( company_obj)
     strategy_obj = Strategy.objects.get(name=req_body['strategy'])[0]
+    # print(strategy_obj)
 
     # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj)
 
