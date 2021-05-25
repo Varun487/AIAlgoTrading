@@ -13,7 +13,7 @@
 
 ---
 
-### DB ![HRITIKINCOMPLETE]
+### DB ![HRITIKCOMPLETE]
 
 - BackTestOrder
 	- Order `Foreign key`
@@ -50,6 +50,7 @@
   		- call the strategy ![DONE]
 	
 	- Evaluate orders and generate report ![SAMRUDHIINCOMPLETE]
+	    - Validate all the parameters
 		- Call strategy function
 		- Orders wise evaluation
 		  - profit / loss per order `Determined by when you get out of position + Risk ratio`
