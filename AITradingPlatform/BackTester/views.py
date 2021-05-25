@@ -3,8 +3,11 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
-from .models import ExampleBackTesterModel
-from .serializers import ExampleBackTesterSerializer
+from .models import ExampleBackTesterModel ,BackTestOrder, BackTestReport
+from Strategies.models import Orders, Strategy
+from DataFeeder.models import Company
+from .serializers import ExampleBackTesterSerializer, BackTestReportSerializer, BackTestOrderSerializer
+from datetime import datetime
 
 
 @api_view(['GET', ])
@@ -18,6 +21,7 @@ def api_index(req, slug):
 
     return Response(ExampleBackTesterSerializer(name).data)
 
+
 @api_view(['POST', ])
 def api_get_orders(req):
     req_body = json.loads(req.body)
@@ -26,7 +30,32 @@ def api_get_orders(req):
     res = {'status': 'invalid request, please check the documentation for this request here'}
 
     # checking validity of post req body
+    valid_order = 'order' in req_body and type(req_body['order']) == str
+    valid_backtestreport = 'backtestreport' in req_body and type(req_body['backtestreport']) == str
+    valid_company = 'company' in req_body and type(req_body['company']) == str
+    valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
 
+    if not (valid_order and valid_backtestreport and valid_company and  valid_strategy):
+        return JsonResponse(res)
+
+    # check if correct date and time
+    try:
+        start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
+        end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
+    except:
+        return JsonResponse(res)
+
+    company_obj = Company.objects.get(ticker=req_body['company'])[0]
+    strategy_obj = Strategy.objects.get(name=req_body['strategy'])[0]
+
+    # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj)
+
+    backtestreport_obj = BackTestReport.objects.filter(company=company_obj, strategy=strategy_obj)
+
+    backtestorder_obj = BackTestOrder.objects.filter(order=req['order'], backtestreport=backtestreport_obj,
+                                                     account_size=req['account_size'])
+
+    res['backtestorder'] = BackTestReportSerializer(backtestorder_obj, many=True).data
 
     return JsonResponse(res)
 
