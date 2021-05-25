@@ -13,7 +13,7 @@
 
 ---
 
-### DB ![HRITIKINCOMPLETE]
+### DB ![HRITIKCOMPLETE]
 
 - BackTestOrder
 	- Order `Foreign key`

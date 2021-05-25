@@ -14,7 +14,7 @@
 
 ---
 
-### DB ![HRITIKINCOMPLETE]
+### DB ![HRITIKCOMPLETE]
 
 - PaperTradeOrder
 	- Order `Foreign key`
