@@ -17,3 +17,12 @@ class OrdersSerializer(serializers.ModelSerializer):
         model = Orders
         fields = [' order_type', ' order_category', 'company', 'time_stamp', 'profit_loss']
         depth = 1
+
+class BackTestReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BackTestReport
+        fields = [' order_type', ' order_category', 'company', 'time_stamp', 'profit_loss']
+        depth = 1
+
+
+

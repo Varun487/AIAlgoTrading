@@ -107,12 +107,4 @@ def api_get_strategy(req):
     return JsonResponse(res)
 
 
-@api_view(['GET', ])
-def api_get_orders(req):
-    try:
-        orders = Orders.objects.all()
-        print("Orders:", orders)
-    except:
-        return Response(status=status.HTTP_404_NOT_FOUND)
 
-    return Response(OrdersSerializer(orders, many=True).data)
