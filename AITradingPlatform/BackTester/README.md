@@ -68,7 +68,8 @@
 ### REST APIs ![FEATUREINCOMPLETE]
 
 - Run backtest ![SAMRUDHIINCOMPLETE]
-- View all reports ![DISHAINCOMPLETE]
+- View reports ![DISHAINCOMPLETE]
+	- View all backtest reports
 	- Filter reports according to strategy, risk %, Account size, etc.
 - View all orders ![HRITIKINCOMPLETE]
 	- Filter orders according to all orders attributes
