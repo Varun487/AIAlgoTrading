@@ -18,6 +18,7 @@
 - BackTestOrder
 	- Order `Foreign key`
 	- Backtest report `Foreign key`
+	- Account size
 
 - BackTestReport
 	- Initial account size
@@ -25,7 +26,7 @@
 	- Risk ratio `Stoploss, Takeprofit`
 	- Start date time
 	- End date time
-	- Companies `List`
+	- Company
 	- Strategy
 		- column
 		- indicator_time_period
@@ -37,35 +38,44 @@
 
 ### Back testing `Historical data` ![FEATUREINCOMPLETE]
 
-- Get Req data from DB ![VARUNCOMPLETE]
-	- Source data if not present ![DONE]
-	- Calc Indicators if not present ![DONE]
+- Run Backtest 
 
-- Call the strategy function with data ![SAMRUDHIINCOMPLETE]
-  - get strategy name
-  - get start and end date
-  - call the strategy
+	- Get Req data from DB ![VARUNCOMPLETE]
+		- Source data if not present ![DONE]
+		- Calc Indicators if not present ![DONE]
 
-- Evaluate orders `according to future` ![DISHAINCOMPLETE]
-	- Order owner
-	- Profit / Loss
-	- Push orders to DB
+	- Call the strategy function with data ![VARUNCOMPLETE]
+  		- get strategy name ![DONE]
+  		- get start and end date ![DONE]
+  		- call the strategy ![DONE]
+	
+	- Evaluate orders and generate report ![SAMRUDHIINCOMPLETE]
+		- Call strategy function
+		- Orders wise evaluation
+		  - profit / loss per order `Determined by when you get out of position + Risk ratio`
+		  - Set order owner
+		  - Account size after each order
+		  - Quantity `According to Max risk %`
+	  	- Report wise eval
+		  - total Profit / Loss
+		  - final account size
+		- Push report to DB
+		- Push orders to DB
+		- Push BackTestOrder to DB
 
-- Generate report ![SAMRUDHIINCOMPLETE]
-	- Eval Total Profit / Loss, final account size according to all orders performance, Initial account, Start date, etc.
-	- Push report to DB
+---
 
-### REST API ![FEATUREINCOMPLETE]
+### REST APIs ![FEATUREINCOMPLETE]
 
-- View all reports
-- Filter reports according to strategy, risk %, Account size, etc.
-- View all orders ![HRITIKCOMPLETE]
-- Filter orders according to all orders attributes ![SAMRUDHIINCOMPLETE]
+- Run backtest ![SAMRUDHIINCOMPLETE]
+- View all reports ![DISHAINCOMPLETE]
+	- Filter reports according to strategy, risk %, Account size, etc.
+- View all orders ![HRITIKINCOMPLETE]
+	- Filter orders according to all orders attributes
 
 ---
 
 ### Update REST API docs page with all Backtester APIs ![FEATUREINCOMPLETE]
-- ![VARUNINCOMPLETE]
 - ![SAMRUDHIINCOMPLETE]
 - ![DISHAINCOMPLETE]
 - ![HRITIKINCOMPLETE]
@@ -74,7 +84,6 @@
 
 ### Automated testing ![FEATUREINCOMPLETE]
 - Complete writing all tests for all functions, REST APIs and UI 
-  - ![VARUNINCOMPLETE]
   - ![DISHAINCOMPLETE]
   - ![HRITIKINCOMPLETE]
   - ![SAMRUDHIINCOMPLETE]

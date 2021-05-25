@@ -74,15 +74,6 @@
 	- Filter according to attr 
 - Visualize orders `Update according to filter`
 
----
-
-### REST API Docs page ![VARUNINCOMPLETE]
-
-- Ensure it is updated to include all APIs.
-
----
-
-### Automated testing ![VARUNINCOMPLETE]
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red

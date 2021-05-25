@@ -28,6 +28,8 @@
 	- TimeStamp
 	- Order category `Limit order`
 	- Profit/Loss `Blank in the beginning`
+	- Quantity
+	- Price bought / sold
 
 ---
 
