@@ -12,8 +12,8 @@ class ExampleBackTesterModel(models.Model):
 class BackTestReport(models.Model):
     start_date_time = models.DateTimeField()
     end_date_time = models.DateTimeField()
-    risk_ratio = [('S', 'Stoploss'), ('T', 'Takeprofit')]
     max_risk = models.FloatField()
+    risk_ratio = models.CharField(max_length=10, default='10:10')
     initial_account_size = models.FloatField()
     final_account_size = models.FloatField()
     total_profit_loss = models.FloatField()
