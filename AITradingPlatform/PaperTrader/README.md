@@ -19,11 +19,14 @@
 - PaperTradeOrder
 	- Order `Foreign key`
 	- Live order `Flag`
-	- Strategy
-		- column
-		- indicator_time_period
-		- sigma
+	- Strategy `Foreign key to PaperTradeStrategies`
 	- Percentage change
+
+- PaperTradeStrategies
+	- Strategy `Foreign key to strategy`
+	- column
+	- indicator time period
+	- sigma
 
 ---
 
@@ -47,10 +50,11 @@
 ---
 
 
-### REST APIs ![SAMRUDHIINCOMPLETE]
+### REST APIs ![FEATUREINCOMPLETE]
 
-- Get all current paper traded orders
+- Get all current paper traded orders ![SAMRUDHIINCOMPLETE]
 	- Filter orders according to all relevant criteria
+- List all Strategies being paper traded ![HRITIKINCOMPLETE]
 
 ---
 
