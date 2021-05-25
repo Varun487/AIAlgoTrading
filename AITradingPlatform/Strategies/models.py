@@ -34,6 +34,7 @@ class Orders(models.Model):
     company = models.ForeignKey(to=Company, on_delete=models.CASCADE, default=0)
     time_stamp = models.DateTimeField(default=make_aware(datetime.strptime('2021-05-1 00:00:00', '%Y-%m-%d %H:%M:%S')))
     profit_loss = models.CharField(max_length=6, choices=PROFIT_LOSS, blank=True)
+    quantity = models.IntegerField()
 
     def __str__(self):
         return f"Order Type: {self.order_type}, Company: {self.company}, TimeStamp: {self.time_stamp}"

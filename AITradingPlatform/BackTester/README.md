@@ -50,18 +50,19 @@
   		- call the strategy ![DONE]
 	
 	- Evaluate orders and generate report ![SAMRUDHIINCOMPLETE]
-	    - Validate all the parameters
-		- Call strategy function
+	    - Validate all the parameters ![DONE]
+		- Call strategy function ![DONE]
 		- Orders wise evaluation
 		  - profit / loss per order `Determined by when you get out of position + Risk ratio`
 		  - Set order owner
-		  - Account size after each order
 		  - Quantity `According to Max risk %`
+		  - Account size after each order
+		  
 	  	- Report wise eval
 		  - total Profit / Loss
 		  - final account size
-		- Push report to DB
-		- Push orders to DB
+		- Push report to DB - BackTestReport
+		- Push orders to DB - In strategies
 		- Push BackTestOrder to DB
 
 ---
