@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-05-24 16:54:02.294974: CRON JOB EXECUTED
  Django stand alone app setup successful!
  No data for AAPL in DB. No data sourced.
@@ -868,3 +869,5 @@
  Collected data for TCS.NS from 2021-05-15 00:00:00+00:00 to 2021-05-25 00:00:00+00:00 and pushed to DB.
  No data for TCS.BO in DB. No data sourced.
  Execution success!
+=======
+>>>>>>> 386714fbbeda975036c82daa5ebf032e7eabb8e0

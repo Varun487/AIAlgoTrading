@@ -18,6 +18,4 @@ def api_index(req, slug):
     return Response(ExampleBackTesterSerializer(name).data)
 
 
-@api_view(['POST', ])
-def api_get_orders(req):
 
