@@ -14,7 +14,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .models import ExampleDataFeederModel, Company, ImmutableData, Indicators, CalculatedCandleStick
-from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, CandleStickSerializer
+from .serializers import ExampleDataFeederSerializer, ListCompaniesSerializer, IndicatorsSerializer, CandleStickSerializer, ImmutableDataSerializer
+
 from .utils import calc_indicators, push_indicators_to_db
 from .utils import get_data_on_demand
 
@@ -640,7 +641,7 @@ def api_listimmutable(req):
     end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
     company_obj = Company.objects.filter(ticker=req_body['company'])[0]
 
-    res['company'] = ListCompaniesSerializer(company_obj).data
+    #res['company'] = ListCompaniesSerializer(company_obj).data
 
     immutable = ImmutableData.objects.all().filter(company=company_obj,time_period=req_body['time_period'],time_stamp__range=[start_dt,end_dt])
     print(immutable)

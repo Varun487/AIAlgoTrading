@@ -16,6 +16,9 @@ class PaperTradedStrategies(models.Model):
     time_period = models.IntegerField()
     sigma = models.IntegerField()
 
+    def __str__(self):
+        return f"Strategy: {self.strategy}, Column: {self.column}, Time_period: {self.time_period}, Sigma: {self.sigma}"
+
 
 class PaperTradeOrder(models.Model):
     order = models.ForeignKey(to=Orders, on_delete=models.CASCADE)
