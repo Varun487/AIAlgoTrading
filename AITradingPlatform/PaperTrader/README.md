@@ -24,6 +24,7 @@
 
 - PaperTradeStrategies
 	- Strategy `Foreign key to strategy`
+	- Company
 	- column
 	- indicator time period
 	- sigma
