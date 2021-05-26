@@ -18,10 +18,29 @@
 
 ---
 
-### Top banner ![VARUNINCOMPLETE]
+### Top banner ![VARUNCOMPLETE]
 
 - Name of platform ![DONE]
-- Menu button to show sidenavbar 
+- Menu button to show sidenavbar ![DONE]
+	- Basic menu button ![DONE]
+	- Menu button change on click ![DONE]
+	- Top banner should remain fixed to page ![DONE]
+	- Make content come below top banner ![DONE]
+	- Build an empty side navbar ![DONE]
+		- toggle navbar on click ![DONE]
+		- Spacing between tabs ![DONE]
+		- Eliminate space b/w sidenav and top banner ![DONE]
+		- Fix REST API Links positions ![DONE]
+		- Move all content right on click ![DONE]
+	- Add home tab ![DONE]
+		- icon ![DONE]
+		- backlight on select ![DONE]
+	- Add About tab ![DONE]
+		- icon ![DONE]
+		- backlight on select ![DONE]
+	- Add REST API Docs tab ![DONE]
+		- icon ![DONE]
+		- backlight on select ![DONE]
 
 ---
 

@@ -5,14 +5,19 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    // flavor: "",
+    sidenavtoggle: false,
   },
   mutations: {
-    // change(state, flavor) {
-    //   state.flavor = flavor;
-    // },
+    flipSideNavToggle(state) {
+      state.sidenavtoggle = !state.sidenavtoggle;
+    },
+  },
+  actions: {
+    flipSideNavToggle({ commit }) {
+      commit("flipSideNavToggle");
+    },
   },
   getters: {
-    // flavor: (state) => state.flavor,
+    getSideNavToggle: (state) => state.sidenavtoggle,
   },
 });
