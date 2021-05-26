@@ -28,7 +28,7 @@ class PaperTradeOrder(models.Model):
     strategy = models.ForeignKey(to=PaperTradedStrategies, on_delete=models.CASCADE)
     live_order = models.BooleanField(default=False)
     price_bought = models.FloatField(default=0.0)
-    percentage_change = models.FloatField()
+    percentage_change = models.FloatField(default=0.0)
 
     def __str__(self):
         return f"Order: {self.order}, Strategy: {self.strategy}, Live_order: {self.live_order}"

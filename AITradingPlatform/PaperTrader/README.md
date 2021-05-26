@@ -34,20 +34,21 @@
 ### Tracks live orders `Runs every day` ![DISHAINCOMPLETE]
 
 - Get all paper trader live orders
-- Evaluate loss / profit of order according to latest company data `Always evaluate according to close price`
-- If order is completed, set live order flag to 0 `Update in DB`
+- If price_bought of paper_trade order == 0.0 -> set price bought as the company's current close price
+- Evaluate loss / profit of order according to latest company data, percentage change `Always evaluate according to close price`
+- If order is GET_OUT_OF_ALL_POSITIONS, set live order flag to 0 `Update in DB`
 
 ---
 
-### Generating orders `Runs every day` ![VARUNINCOMPLETE]
+### Generating orders `Runs every day` ![VARUNCOMPLETE]
 
 - Fix cron import paths ![DONE]
 - Get latest data of all companies ![DONE]
-- Calculate derived data
-- Calculate strategy specific indicators
-- Run all strategies on all relevant data `Returns orders`
-- Set order attributes and push to DB
-- Set PaperTrader order attributes and push to DB
+- Calculate derived data ![DONE]
+- Calculate strategy specific indicators ![DONE]
+- Run all strategies on all relevant data `Returns orders` ![DONE]
+- Set order attributes and push to DB ![DONE]
+- Set PaperTrader order attributes and push to DB ![DONE]
 
 ---
 

@@ -28,7 +28,7 @@ try:
     # Get required models
     from DataFeeder.models import Company, ImmutableData
     from DataFeeder.utils import get_data_on_demand
-    from PaperTrader.models import PaperTradedStrategies
+    from PaperTrader.models import PaperTradedStrategies, PaperTradeOrder
     from Strategies.models import Orders
     from Strategies.utils import simple_bollinger_bands_strategy
 
@@ -72,8 +72,6 @@ try:
 
     print(" PAPERTRADER - TRACK ORDERS REAL TIME", file=log)
     print(file=log)
-
-
 
     print(file=log)
     print(" ----- ----- ----- ----- -----", file=log)
@@ -122,7 +120,15 @@ try:
                         time_stamp=now_dt
                     ).save()
 
-                print(df)
+                order = Orders.objects.get(order_type=ord_type, order_category='M', company=company_obj, time_stamp=now_dt, profit_loss=0.0, quantity=0)
+
+                if not PaperTradeOrder.objects.filter(order=order):
+                    PaperTradeOrder(
+                        order=order,
+                        strategy=strategy,
+                        live_order=True,
+                    ).save()
+
                 print(f" NEW Order generated for {strategy.company} on {now_dt}, using Paper Traded Strategy {strategy.name}", file=log)
 
     print(file=log)
