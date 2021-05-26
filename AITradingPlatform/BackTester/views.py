@@ -35,7 +35,7 @@ def api_get_orders(req):
     valid_company = 'company' in req_body and type(req_body['company']) == str
     valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
 
-    if not (valid_order and valid_backtestreport and valid_company and  valid_strategy):
+    if not (valid_order and valid_backtestreport and valid_company and valid_strategy):
         return JsonResponse(res)
 
     # check if correct date and time
@@ -50,7 +50,7 @@ def api_get_orders(req):
     strategy_obj = Strategy.objects.get(name=req_body['strategy'])[0]
     # print(strategy_obj)
 
-    # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj)
+    # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj).data
 
     backtestreport_obj = BackTestReport.objects.filter(company=company_obj, strategy=strategy_obj)
 
@@ -58,6 +58,7 @@ def api_get_orders(req):
                                                      account_size=req['account_size'])
 
     res['backtestorder'] = BackTestReportSerializer(backtestorder_obj, many=True).data
+    res["Listing_Status"] = "Sucess"
 
     return JsonResponse(res)
 

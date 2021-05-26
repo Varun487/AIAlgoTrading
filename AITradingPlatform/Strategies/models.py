@@ -27,7 +27,6 @@ class Strategy(models.Model):
 class Orders(models.Model):
     ORD_TYPE = [('B', 'Buy'), ('S', 'Sell'), ('G', 'Get out of all positions')]  # ['Buy','Sell']
     ORD_CAT = [('M', 'Market'), ('L', 'Limit')]  # ['Market','Limit']
-    ORD_OWN = [('BT', 'Back Tester'), ('PT', 'Paper Trader')]  # ['Back Tester','Paper Trader']
     PROFIT_LOSS = [('P', 'Profit'), ('L', 'Loss')]  # ['Profit','Loss']
     order_type = models.CharField(max_length=4, choices=ORD_TYPE, default='Default')
     order_category = models.CharField(max_length=6, choices=ORD_CAT, default='Default')
