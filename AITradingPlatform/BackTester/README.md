@@ -71,7 +71,7 @@
 - View reports ![DISHAINCOMPLETE]
 	- View all backtest reports
 	- Filter reports according to strategy, risk %, Account size, etc.
-- View all orders ![HRITIKCOMPLETE] "testing required"
+- View all orders ![HRITIKINCOMPLETE] `testing required`
 	- Filter orders according to all orders attributes
 
 ---

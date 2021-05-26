@@ -57,7 +57,7 @@
 
 - Get all current paper traded orders ![SAMRUDHIINCOMPLETE]
 	- Filter orders according to all relevant criteria
-- List all Strategies being paper traded ![HRITIKINCOMPLETE] `Testing with dummy data remaining`
+- List all Strategies being paper traded ![HRITIKINCOMPLETE] `Testing required`
 
 ---
 
