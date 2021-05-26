@@ -41,6 +41,7 @@
 
 ### Generating orders `Runs every day` ![VARUNINCOMPLETE]
 
+- Fix cron import paths ![DONE]
 - Get latest data of all companies ![DONE]
 - Calculate derived data
 - Calculate strategy specific indicators
@@ -55,7 +56,7 @@
 
 - Get all current paper traded orders ![SAMRUDHIINCOMPLETE]
 	- Filter orders according to all relevant criteria
-- List all Strategies being paper traded ![HRITIKCOMPLETE] "testing required"
+- List all Strategies being paper traded ![HRITIKINCOMPLETE] `Testing with dummy data remaining`
 
 ---
 

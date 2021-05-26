@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rest_framework',
     # project apps
-    'AITradingPlatform.DataFeeder',
-    # 'AITradingPlatform.Strategies',
-    # 'AITradingPlatform.BackTester',
-    # 'AITradingPlatform.PaperTrader',
+    'DataFeeder',
+    'Strategies',
+    'BackTester',
+    'PaperTrader',
 ]
 
 MIDDLEWARE = [
