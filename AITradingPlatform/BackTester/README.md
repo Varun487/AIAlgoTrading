@@ -36,7 +36,7 @@
 
 ---
 
-### Back testing `Historical data` ![FEATUREINCOMPLETE]
+### Back testing `Historical data` ![FEATURECOMPLETE]
 
 - Run Backtest 
 
