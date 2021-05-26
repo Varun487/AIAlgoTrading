@@ -97,6 +97,7 @@ hr {
 
 .desc-item {
   padding: 20px;
+  padding-top: 100px;
 }
 
 table {

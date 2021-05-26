@@ -500,7 +500,7 @@ def api_derive_candle_stick(req):
         for i in range(0, data.count(), n):
             data1 = data.all()[i:n+i]
             open.append(data1.values('open')[0])
-            close.append(data1.values('low')[data1.count()-1])
+            close.append(data1.values('close')[data1.count()-1])
             high.append(data1.aggregate(Max('high')))
             low.append(data1.aggregate(Min('low')))
             volume.append(data1.aggregate(Sum('volume')))

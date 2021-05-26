@@ -25,16 +25,14 @@ class Strategy(models.Model):
 
 
 class Orders(models.Model):
-    ORD_TYPE = [('B', 'Buy'), ('S', 'Sell'), ('G', 'Get out of all positions')]  # ['Buy','Sell']
+    ORD_TYPE = [('B', 'Buy'), ('S', 'Short'), ('G', 'Get out of all positions')]  # ['Buy','Sell']
     ORD_CAT = [('M', 'Market'), ('L', 'Limit')]  # ['Market','Limit']
-    ORD_OWN = [('BT', 'Back Tester'), ('PT', 'Paper Trader')]  # ['Back Tester','Paper Trader']
-    PROFIT_LOSS = [('P', 'Profit'), ('L', 'Loss')]  # ['Profit','Loss']
     order_type = models.CharField(max_length=4, choices=ORD_TYPE, default='Default')
     order_category = models.CharField(max_length=6, choices=ORD_CAT, default='Default')
     company = models.ForeignKey(to=Company, on_delete=models.CASCADE, default=0)
     time_stamp = models.DateTimeField(default=make_aware(datetime.strptime('2021-05-1 00:00:00', '%Y-%m-%d %H:%M:%S')))
-    profit_loss = models.CharField(max_length=6, choices=PROFIT_LOSS, blank=True)
-    quantity = models.IntegerField()
+    profit_loss = models.FloatField(max_length=6, blank=True, default=0.0)
+    quantity = models.IntegerField(default=0)
 
     def __str__(self):
         return f"Order Type: {self.order_type}, Company: {self.company}, TimeStamp: {self.time_stamp}"
