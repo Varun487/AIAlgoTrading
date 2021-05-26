@@ -75,7 +75,7 @@
 - View reports ![DISHAINCOMPLETE]
 	- View all backtest reports
 	- Filter reports according to strategy, risk %, Account size, etc.
-- View all orders ![HRITIKCOMPLETE] "testing required"
+- View all orders ![HRITIKINCOMPLETE] `testing required`
 	- Filter orders according to all orders attributes
 
 ---
@@ -84,14 +84,6 @@
 - ![SAMRUDHIINCOMPLETE]
 - ![DISHAINCOMPLETE]
 - ![HRITIKINCOMPLETE]
-
----
-
-### Automated testing ![FEATUREINCOMPLETE]
-- Complete writing all tests for all functions, REST APIs and UI 
-  - ![DISHAINCOMPLETE]
-  - ![HRITIKINCOMPLETE]
-  - ![SAMRUDHIINCOMPLETE]
 
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
