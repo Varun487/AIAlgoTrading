@@ -81,14 +81,6 @@
 - ![DISHAINCOMPLETE]
 - ![HRITIKINCOMPLETE]
 
----
-
-### Automated testing ![FEATUREINCOMPLETE]
-- Complete writing all tests for all functions, REST APIs and UI 
-  - ![DISHAINCOMPLETE]
-  - ![HRITIKINCOMPLETE]
-  - ![SAMRUDHIINCOMPLETE]
-
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
 [INCOMPLETE]: https://img.shields.io/badge/INCOMPLETE-red
