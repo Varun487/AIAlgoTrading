@@ -310,6 +310,7 @@ def api_generate_report(req):
     res = {'status': "Valid"}
 
     return JsonResponse(res)
+
 def api_get_orders(req):
     req_body = json.loads(req.body)
     print(req_body)
