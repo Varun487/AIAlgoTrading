@@ -28,7 +28,7 @@ def api_list_strategy(req):
 
     strategies_obj = PaperTradedStrategies.objects.all()
     if not strategies_obj:
-        res['Error'] = "No data in Data Base"
+        return JsonResponse(res)
 
     res['Strategies'] = PaperTradedStrategiesSerializer(strategies_obj, many=True).data
     res['Listing_Status'] = "Sucess"
