@@ -17,6 +17,15 @@ from Strategies.models import Strategy, Orders
 
 from DataFeeder.models import Company, ImmutableData, Indicators
 from DataFeeder.utils import get_data_on_demand, push_indicators_to_db
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from django.http import JsonResponse
+from .models import ExampleBackTesterModel ,BackTestOrder, BackTestReport
+from Strategies.models import Orders, Strategy
+from DataFeeder.models import Company
+from .serializers import ExampleBackTesterSerializer, BackTestReportSerializer, BackTestOrderSerializer
+from datetime import datetime
 
 
 @api_view(['GET', ])
@@ -103,16 +112,19 @@ def api_generate_report(req):
     df['order_owner'] = None
     df['profit'] = None
     df['quantity'] = None
-    df['acc_size'] = None
     df['price'] = None
+    df['acc_size'] = None
     flag = 0
     pos = []
+    calc = 0
+    calc_b = 0
     for i in range(len(df)):
 
         flag += 1
         pos.append(i)
 
         price = 0
+
 
         if (df['Orders'][i] == "GET_OUT_OF_ALL_POSITIONS"):
             pos.pop()
@@ -135,8 +147,11 @@ def api_generate_report(req):
             for k in close_get_out_position[0].values():
                 close_get_out_position1.append(k)
             close_price1 = close_get_out_position1[0]
-            df['quantity'][i] = int((initial_acc - (max_risk * initial_acc)) / close_price1)
+
             df['price'][i] = 0
+
+
+
 
             for j in range(len(pos)):
                 date = df.index[pos[j]].to_pydatetime()
@@ -168,36 +183,49 @@ def api_generate_report(req):
                 for k in close[0].values():
                     close1.append(k)
                 close_price =close1[0]
-                df['quantity'][pos[j]] = int((initial_acc - (max_risk * initial_acc)) / close_price)
+
                 price = 0
+
                 if (df['Orders'][pos[j]] == "SHORT") :
                     # print("short")
                     # print(df[column][i],df[column][pos[j]], (df[column][i] - df[column][pos[j]]))
-                    price = float((df[column][i] - close_price) * -1)
+                    price = float((close_price1 - close_price) * -1)
                     df['price'][pos[j]] = price
                     if price > 0:
                         df['profit'][pos[j]] = "Profit"
                     if price < 0:
                         df['profit'][pos[j]] = "Loss"
                     if pos[j] == 0:
-                        df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price ) + initial_acc
+                        df['quantity'][pos[j]] = int(((max_risk * initial_acc) / 100) / close_price)
+                        #df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price ) + initial_acc
+                        df['acc_size'][pos[j]] = initial_acc
+                        calc += price * df['quantity'][pos[j]]
                     else:
-                        df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price) + df['acc_size'][pos[j] - 1]
+                        df['quantity'][pos[j]] = int(((max_risk * df['acc_size'][pos[j] - 1]) / 100) / close_price)
+                        #df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price) + df['acc_size'][pos[j] - 1]
+                        df['acc_size'][pos[j]] = df['acc_size'][pos[j] - 1]
+                        calc += price * df['quantity'][pos[j]]
                 if (df['Orders'][pos[j]] == "BUY") :
                     # print("buy")
                     # print(df[column][i],df[column][pos[j]], (df[column][i] - df[column][pos[j]]))
-                    price = float(df[column][i] - close_price)
+                    price = float(close_price1 - close_price)
                     df['price'][pos[j]] = price
                     if price > 0:
                         df['profit'][pos[j]] = "Profit"
                     if price < 0:
                         df['profit'][pos[j]] = "Loss"
                     if pos[j] == 0:
-                        df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price ) + initial_acc
+                        df['quantity'][pos[j]] = int(((max_risk * initial_acc) / 100) / close_price)
+                        #df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price ) + initial_acc
+                        df['acc_size'][pos[j]] = initial_acc - (close_price * df['quantity'][pos[j]])
+                        calc_b += price + close_price
                     else:
-                        df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price) + df['acc_size'][pos[j] - 1]
+                        df['quantity'][pos[j]] = int(((max_risk * df['acc_size'][pos[j] - 1]) / 100) / close_price)
+                        #df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price) + df['acc_size'][pos[j] - 1]
+                        df['acc_size'][pos[j]] = df['acc_size'][pos[j] - 1] - (close_price * df['quantity'][pos[j]])
+                        calc_b += (price + close_price) * df['quantity'][pos[j]]
 
-            df['acc_size'][i] = df['quantity'][i] + df['acc_size'][i - 1]
+            #df['acc_size'][i] = df['acc_size'][i - 1]
 
             flag = 0
             pos.clear()
@@ -206,34 +234,25 @@ def api_generate_report(req):
             df['order_owner'] = "Bactester"
             # print(df.iloc[i])
 
-        Orders(
+            # print(calc)
+            df['quantity'][i] = 0
+            if (df['Orders'][i - 1] == "SHORT"):
+                df['acc_size'][i] = calc + df['acc_size'][i - 1]
 
-            order_type = df['Orders'][i],
-            order_category = 'Limit',
-            company = company_obj,
-            time_stamp = df.index[i].to_pydatetime(),
-            profit_loss = df['price'][i],
-            quantity = df['quantity'][i],
-            ).save()
-        order_obj = Orders.objects.get(order_type = df['Orders'][i])
-        backtest_obj = BackTestReport.objects.get(company=company_obj, start_date_time= start_dt, end_date_time= end_dt, max_risk = max_risk, risk_ratio = risk_ratio,\
-                                               initial_account_size = initial_acc, final_account_size = final_acc_size,total_profit_loss = total_PF,strategy = strategy_obj)
-        BackTestOrder(
-            order=order_obj,
-            backtestreport = backtest_obj,
-            account_size = df['acc_size'][i]
-        )
+            if (df['Orders'][i - 1] == "BUY"):
+                df['acc_size'][i] = calc_b + df['acc_size'][i - 1]
 
 
     final_acc_size = df['acc_size'][len(df)-1]
     total_PF = df['acc_size'][len(df)-1] - initial_acc
-    print(total_PF,final_acc_size)
+
 
     # print(df.columns.tolist())
-    print(df)
+    print(df.head(5))
 
-    if not BackTestReport.objects.all().filter(company=company_obj, start_date_time= start_dt, end_date_time= end_dt, max_risk = max_risk, risk_ratio = risk_ratio,\
-                                               initial_account_size = initial_acc, final_account_size = final_acc_size,total_profit_loss = total_PF,strategy = strategy_obj):
+    if not BackTestReport.objects.filter(company=company_obj, start_date_time= start_dt, end_date_time= end_dt, max_risk = max_risk, risk_ratio = risk_ratio,\
+                                               initial_account_size = initial_acc, final_account_size = final_acc_size,total_profit_loss = total_PF,strategy = strategy_obj,\
+                                         indicator_time_period=indicator_time_period,sigma = sigma ):
         BackTestReport(
             start_date_time=start_dt,
             end_date_time = end_dt,
@@ -244,7 +263,37 @@ def api_generate_report(req):
             total_profit_loss = total_PF,
             company = company_obj,
             strategy = strategy_obj,
+            column = column,
+            indicator_time_period=indicator_time_period,
+            sigma = sigma,
         ).save()
+
+    for i in range(len(df)):
+        if not Orders.objects.filter(order_type = df['Orders'][i][0], order_category = 'M', company = company_obj, time_stamp = df.index[i].to_pydatetime(), \
+                                     profit_loss = df['price'][i], quantity = df['quantity'][i]):
+
+            Orders(
+
+                order_type = df['Orders'][i][0],
+                order_category = 'M',
+                company = company_obj,
+                time_stamp = df.index[i].to_pydatetime(),
+                profit_loss = df['price'][i],
+                quantity = df['quantity'][i],
+                ).save()
+
+        order_obj = Orders.objects.get(order_type = df['Orders'][i][0],order_category = 'M', company = company_obj, time_stamp = df.index[i].to_pydatetime(), \
+                                     profit_loss = df['price'][i], quantity = df['quantity'][i])
+        backtest_obj = BackTestReport.objects.get(company=company_obj, start_date_time= start_dt, end_date_time= end_dt, max_risk = max_risk, risk_ratio = risk_ratio,\
+                                               initial_account_size = initial_acc, final_account_size = final_acc_size,total_profit_loss = total_PF,strategy = strategy_obj)
+
+        if not BackTestOrder.objects.filter(order=order_obj, backtestreport = backtest_obj, account_size = df['acc_size'][i]):
+            BackTestOrder(
+                order=order_obj,
+                backtestreport = backtest_obj,
+                account_size = df['acc_size'][i]
+            ).save()
+
     # if not Indicators.objects.all().filter(column=column,indicator_time_period= indicator_time_period):
     #     Indicators(
     #         name=
@@ -261,3 +310,42 @@ def api_generate_report(req):
     res = {'status': "Valid"}
 
     return JsonResponse(res)
+def api_get_orders(req):
+    req_body = json.loads(req.body)
+    print(req_body)
+    # create response if request not valid
+    res = {'status': 'invalid request, please check the documentation for this request here'}
+
+    # checking validity of post req body
+    valid_order = 'order' in req_body and type(req_body['order']) == str
+    valid_backtestreport = 'backtestreport' in req_body and type(req_body['backtestreport']) == str
+    valid_company = 'company' in req_body and type(req_body['company']) == str
+    valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
+
+    if not (valid_order and valid_backtestreport and valid_company and valid_strategy):
+        return JsonResponse(res)
+
+    # check if correct date and time
+    try:
+        start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
+        end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
+    except:
+        return JsonResponse(res)
+
+    company_obj = Company.objects.get(ticker=req_body['company'])[0]
+    # print( company_obj)
+    strategy_obj = Strategy.objects.get(name=req_body['strategy'])[0]
+    # print(strategy_obj)
+
+    # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj).data
+
+    backtestreport_obj = BackTestReport.objects.filter(company=company_obj, strategy=strategy_obj)
+
+    backtestorder_obj = BackTestOrder.objects.filter(order=req['order'], backtestreport=backtestreport_obj,
+                                                     account_size=req['account_size'])
+
+    res['backtestorder'] = BackTestReportSerializer(backtestorder_obj, many=True).data
+    res["Listing_Status"] = "Sucess"
+
+    return JsonResponse(res)
+

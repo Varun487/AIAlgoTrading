@@ -28,9 +28,9 @@
 	- End date time
 	- Company
 	- Strategy
-		- column
-		- indicator_time_period
-		- sigma
+	- column
+	- indicator_time_period
+	- sigma
 	- Final account size
 	- Total Profit / Loss
 
@@ -49,31 +49,33 @@
   		- get start and end date ![DONE]
   		- call the strategy ![DONE]
 	
-	- Evaluate orders and generate report ![SAMRUDHIINCOMPLETE]
+	- Evaluate orders and generate report ![SAMRUDHICOMPLETE]
 	    - Validate all the parameters ![DONE]
 		- Call strategy function ![DONE]
-		- Orders wise evaluation
-		  - profit / loss per order `Determined by when you get out of position + Risk ratio`
-		  - Set order owner
-		  - Quantity `According to Max risk %`
-		  - Account size after each order
+		- Orders wise evaluation ![DONE]
+		  - profit / loss per order `Determined by when you get out of position` ![DONE]
+		  - Set order owner ![DONE]
+		  - Quantity `According to Max risk %` ![DONE]
+		  - Account size after each order ![DONE]
 		  
-	  	- Report wise eval
-		  - total Profit / Loss
-		  - final account size
-		- Push report to DB - BackTestReport
-		- Push orders to DB - In strategies
-		- Push BackTestOrder to DB
+	  	- Report wise eval ![DONE]
+		  - total Profit / Loss ![DONE]
+		  - final account size ![DONE]
+		- Push report to DB - BackTestReport ![DONE]
+		- Push orders to DB - In strategies ![DONE]
+		- Push BackTestOrder to DB ![DONE]
+	
+ 
 
 ---
 
 ### REST APIs ![FEATUREINCOMPLETE]
 
-- Run backtest ![SAMRUDHIINCOMPLETE]
+- Run backtest ![SAMRUDHICOMPLETE]
 - View reports ![DISHAINCOMPLETE]
 	- View all backtest reports
 	- Filter reports according to strategy, risk %, Account size, etc.
-- View all orders ![HRITIKINCOMPLETE]
+- View all orders ![HRITIKCOMPLETE] "testing required"
 	- Filter orders according to all orders attributes
 
 ---
