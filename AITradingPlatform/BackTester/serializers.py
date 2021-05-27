@@ -15,7 +15,7 @@ class BackTestReportSerializer(serializers.ModelSerializer):
 class BackTestOrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = BackTestOrder
-        fields = [' order', 'backtestreport', 'account_size']
+        fields = ['order', 'backtestreport', 'account_size']
         depth = 1
 
 
