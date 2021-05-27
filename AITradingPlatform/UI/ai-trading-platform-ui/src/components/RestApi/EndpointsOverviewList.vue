@@ -101,6 +101,14 @@ export default {
           link: "#generate-report",
         },
         {
+          code: "GET /backtester/viewallreports",
+          link: "#view-all-reports",
+        },
+        {
+          code: "GET /backtester/filterreport",
+          link: "#filter-report",
+        },
+        {
           code: "GET /backtester/getorders/",
           link: "#get-orders",
         },
