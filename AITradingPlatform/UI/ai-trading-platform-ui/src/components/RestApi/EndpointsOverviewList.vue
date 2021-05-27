@@ -122,6 +122,11 @@ export default {
           code: "GET /papertrader/getstrategies",
           link: "#get-strategies",
         },
+        {
+          code: "GET /papertrader/getpapertradeorders",
+          link: "#get-papertrade-orders",
+        },
+
       ],
     };
   },

@@ -1533,6 +1533,62 @@ export default {
 }`,
           failed_output: `{}`,
         },
+        {
+          type: "POST",
+          code: "/papertrader/getpapertradeorders/",
+          link: "get-papertrade-orders",
+          description:
+            "Returns all the paper traded orders according to the paper traded strategies and live orders status.",
+          parameters: [
+            {
+              name: "strategy",
+              type: "String",
+              desc: "The name of the Paper Traded Strategy",
+            },
+            {
+              name: "live_order",
+              type: "Boolean",
+              desc: "The status of the Paper Traded Order. Can take values in [true, false]",
+            },
+          ],
+          req_url: "/papertrader/getpapertradeorders/",
+          req_body: `{
+    "strategy": "Simple_Bollinger_Bands_Strategy_Close_5_1_Apple",
+    "live_order": true
+}`,
+          correct_output: `{
+    "status": "valid",
+    "data": [
+        {
+            "order": {
+                "id": 38,
+                "order_type": "S",
+                "order_category": "M",
+                "time_stamp": "2021-05-07T00:00:00Z",
+                "profit_loss": 94.39990234375,
+                "quantity": 6,
+                "company": 3
+            },
+            "strategy": {
+                "id": 2,
+                "column": "Close",
+                "time_period": 5,
+                "sigma": 1,
+                "name": "Simple_Bollinger_Bands_Strategy_Close_5_1_Apple",
+                "strategy": 1,
+                "company": 1
+            },
+            "live_order": true,
+            "price_bought": 2.0,
+            "percentage_change": 2.0
+        }
+    ]
+}`,
+          failed_output: `{
+    'error': 'No data present that fits all conditions. Please try sourcing the data 
+              or computing indicators.'
+}`,
+        },
       ],
     };
   },
