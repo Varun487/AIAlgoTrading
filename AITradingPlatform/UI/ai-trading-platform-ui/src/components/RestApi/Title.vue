@@ -1,5 +1,5 @@
 <template>
-	<h1>REST API v1.0.0</h1>
+	<h1>REST API v0.1.0</h1>
 </template>
 
 <script>

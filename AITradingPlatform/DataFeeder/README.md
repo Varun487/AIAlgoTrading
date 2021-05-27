@@ -1,4 +1,4 @@
-# DATAFEEDER v1.0
+# DATAFEEDER v0.1.0
 
 ![COMPONENTCOMPLETE]
 
@@ -6,7 +6,7 @@
 
 * Perform very fast, basic calculations on the raw data.
 
-# TODO v1.0
+# TODO 
 
 
 ## DATAFEEDER WORK

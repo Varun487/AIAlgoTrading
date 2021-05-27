@@ -1,4 +1,4 @@
-# STRATEGIES v1.0
+# STRATEGIES v0.1.0
 
 ###### This is the heart of the project
 
@@ -9,7 +9,7 @@
 * There may be multiple strategies created and deployed in this service.
 
 
-# TODO v1.0
+# TODO 
 
 ## STRATEGIES WORK
 

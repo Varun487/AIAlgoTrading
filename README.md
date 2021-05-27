@@ -148,7 +148,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 	- [Link to Datafeeder README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/DataFeeder)
 3. STRATEGIES WORK ![COMPONENTCOMPLETE]
 	- [Link to Strategies README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/Strategies)
-4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
+4. BACKTESTER WORK ![COMPONENTCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
 	- [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
@@ -166,17 +166,16 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
       - Complete writing tests for all functions, REST APIs 
     - UI 
       - Complete writing tests for all UI components
-
-### VERSION 1.0 LAUNCH !
-
----
-
 8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
     - Buy a domain ![DONE]
     - SSL certification
     - Host the REST API
     - Decide deployment workflow
     - Make a deployment script
+
+### VERSION 1.0 LAUNCH !
+
+---
 9. Build Strategies ![FEATUREINCOMPLETE] 
     - 4 Strategies which perform better than sectoral market indices
 10. Write papers, see if you can publish them ![DOCINCOMPLETE]

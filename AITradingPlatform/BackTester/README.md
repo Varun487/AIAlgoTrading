@@ -1,12 +1,12 @@
-# BACKTESTER v1.0
+# BACKTESTER v0.1.0
 
-![COMPONENTINCOMPLETE]
+![COMPONENTCOMPLETE]
 
 * This service helps in building Strategies. It allows us test how a strategy would have performed over past data over previous weeks, months and years.
 
 * It takes a parameterised strategy and data over the period of the back test as input. It generates orders over the previous data according to the strategy's rules and outputs a detailed report on the performance of the strategy.
 
-# TODO v1.0
+# TODO 
 
 
 ## BACKTESTER WORK
@@ -38,8 +38,7 @@
 
 ### Back testing `Historical data` ![FEATURECOMPLETE]
 
-- Run Backtest 
-
+- Run Backtest
 	- Get Req data from DB ![VARUNCOMPLETE]
 		- Source data if not present ![DONE]
 		- Calc Indicators if not present ![DONE]
@@ -69,21 +68,21 @@
 
 ---
 
-### REST APIs ![FEATUREINCOMPLETE]
+### REST APIs ![FEATURECOMPLETE]
 
 - Run backtest ![SAMRUDHICOMPLETE]
-- View reports ![DISHAINCOMPLETE]
-	- View all backtest reports
-	- Filter reports according to strategy, risk %, Account size, etc.
-- View all orders ![HRITIKINCOMPLETE] `testing required`
+- View reports ![DISHACOMPLETE]
+	- View all backtest reports ![DONE]
+	- Filter reports according to strategy, risk %, Account size, etc. ![DONE]
+- View all orders ![HRITIKCOMPLETE] `testing required`
 	- Filter orders according to all orders attributes
 
 ---
 
-### Update REST API docs page with all Backtester APIs ![FEATUREINCOMPLETE]
-- ![SAMRUDHIINCOMPLETE]
-- ![DISHAINCOMPLETE]
-- ![HRITIKINCOMPLETE]
+### Update REST API docs page with all Backtester APIs ![FEATURECOMPLETE]
+- ![SAMRUDHICOMPLETE]
+- ![DISHACOMPLETE]
+- ![HRITIKCOMPLETE]
 
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen

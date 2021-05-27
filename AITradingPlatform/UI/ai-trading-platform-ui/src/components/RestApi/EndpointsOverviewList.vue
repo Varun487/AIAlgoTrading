@@ -44,31 +44,31 @@ export default {
           code: "POST /datafeeder/indicatorsdata/",
           link: "#indicators-data",
         },
-		{
+        {
           code: "POST /datafeeder/derivedindicatorcalc/",
           link: "#derived-indicator-calc",
         },
-		{
+        {
           code: "POST /datafeeder/listimmutable/",
           link: "#list-immutable",
         },
-		{
+        {
           code: "POST /datafeeder/companydetails/",
           link: "#company-details",
         },
-		{
+        {
           code: "POST /datafeeder/filtercompany/",
           link: "#filter-company",
         },
-		{
+        {
           code: "POST /datafeeder/addcompany/",
           link: "#add-company",
         },
-		{
+        {
           code: "POST /datafeeder/deletecompany/",
           link: "#delete-company",
         },
-		{
+        {
           code: "POST /datafeeder/modifycompanyattr/",
           link: "#modify-company-attr",
         },
@@ -86,10 +86,6 @@ export default {
           code: "POST /strategies/runstrategy/",
           link: "#run-strategy",
         },
-		{
-          code: "GET /strategies/getorders/",
-          link: "#get-orders",
-        },
       ],
       BackTesterLinks: [
         {
@@ -97,14 +93,34 @@ export default {
           link: "#example-backtester",
         },
         {
+          code: "GET /strategies/getorders/",
+          link: "#get-orders",
+        },
+        {
           code: "GET /backtester/generatereport/",
           link: "#generate-report",
+        },
+        {
+          code: "GET /backtester/viewallreports",
+          link: "#view-all-reports",
+        },
+        {
+          code: "GET /backtester/filterreport",
+          link: "#filter-report",
+        },
+        {
+          code: "GET /backtester/getorders/",
+          link: "#get-orders",
         },
       ],
       PaperTraderLinks: [
         {
           code: "GET /papertrader/{string}",
           link: "#example-papertrader",
+        },
+        {
+          code: "GET /papertrader/getstrategies",
+          link: "#get-strategies",
         },
       ],
     };
