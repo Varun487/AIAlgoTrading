@@ -38,8 +38,7 @@
 
 ### Back testing `Historical data` ![FEATURECOMPLETE]
 
-- Run Backtest 
-
+- Run Backtest
 	- Get Req data from DB ![VARUNCOMPLETE]
 		- Source data if not present ![DONE]
 		- Calc Indicators if not present ![DONE]
@@ -69,12 +68,12 @@
 
 ---
 
-### REST APIs ![FEATUREINCOMPLETE]
+### REST APIs ![FEATURECOMPLETE]
 
 - Run backtest ![SAMRUDHICOMPLETE]
-- View reports ![DISHAINCOMPLETE]
-	- View all backtest reports
-	- Filter reports according to strategy, risk %, Account size, etc.
+- View reports ![DISHACOMPLETE]
+	- View all backtest reports ![DONE]
+	- Filter reports according to strategy, risk %, Account size, etc. ![DONE]
 - View all orders ![HRITIKCOMPLETE] `testing required`
 	- Filter orders according to all orders attributes
 

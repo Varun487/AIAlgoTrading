@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view
 from django.utils.timezone import make_aware
 
 from .models import ExampleBackTesterModel, BackTestReport, BackTestOrder
-from .serializers import ExampleBackTesterSerializer
+from .serializers import ExampleBackTesterSerializer, ViewReportsSerializer
 from Strategies.utils import simple_bollinger_bands_strategy
 from Strategies.models import Strategy, Orders
 
@@ -360,3 +360,75 @@ def api_get_orders(req):
     except:
 
         return JsonResponse(res)
+
+
+@api_view(['GET', ])
+def api_view_all_reports(req):
+    try:
+        reports = BackTestReport.objects.all()
+        print("Reports: ", reports)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    return Response(ViewReportsSerializer(reports, many=True).data)
+
+
+@api_view(['POST', ])
+def api_filter_report(req):
+
+    req_body = json.loads(req.body)
+
+    # creating default response
+    res = {'status': 'Invalid request, please check the documentation for the appropriate request here'}
+
+    # verify whether date and time are correct
+    try:
+        valid_start_date_time = make_aware(datetime.strptime(req_body['start_date_time'], '%Y-%m-%d %H:%M:%S'))
+        valid_end_date_time = make_aware(datetime.strptime(req_body['end_date_time'], '%Y-%m-%d %H:%M:%S'))
+    except:
+        return JsonResponse(res)
+
+    # validate request parameters
+    try:
+        valid_risk_ratio = 'risk_ratio' in req_body and type(req_body['risk_ratio']) == str
+        valid_max_risk = 'max_risk' in req_body and type(req_body['max_risk']) == float
+        valid_initial_account_size = 'initial_account_size' in req_body and type(req_body['initial_account_size']) == float
+        valid_column = 'column' in req_body and type(req_body['column']) == str
+        valid_indicator_time_period = 'indicator_time_period' in req_body and type(req_body['indicator_time_period']) == int
+        valid_sigma = 'sigma' in req_body and type(req_body['sigma']) == int
+        valid_company = 'company' in req_body and type(req_body['company']) == str
+        valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
+    except:
+        return JsonResponse(res)
+
+    # check validity of request
+    if not (valid_start_date_time and valid_end_date_time and valid_risk_ratio and valid_max_risk and
+             valid_initial_account_size and valid_company and valid_strategy and valid_column and
+            valid_indicator_time_period and valid_sigma):
+        return JsonResponse(res)
+
+    company_obj = Company.objects.filter(ticker=req_body['company'])[0]
+    strategy_obj = Strategy.objects.filter(name=req_body['strategy'])[0]
+
+    data = BackTestReport.objects.filter(
+        start_date_time=valid_start_date_time,
+        end_date_time=valid_end_date_time,
+        risk_ratio=req_body['risk_ratio'],
+        max_risk=req_body['max_risk'],
+        initial_account_size=req_body['initial_account_size'],
+        company=company_obj,
+        strategy=strategy_obj,
+        column=req_body['column'],
+        indicator_time_period=req_body['indicator_time_period'],
+        sigma=req_body['sigma'],
+    )
+
+    res['status'] = 'Valid request'
+    res['data'] = ViewReportsSerializer(data, many=True).data
+
+    if not data:
+        res = {
+            'error': 'No data present that fits all conditions.'
+        }
+
+    return JsonResponse(res)
