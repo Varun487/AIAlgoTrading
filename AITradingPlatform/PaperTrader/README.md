@@ -63,7 +63,7 @@
 
 ### Update REST API docs page with all PaperTrader APIs
 - ![SAMRUDHIINCOMPLETE]
-- ![HRITIKINCOMPLETE]
+- ![HRITIKCOMPLETE]
 
 
 [DONE]: https://img.shields.io/badge/DONE-brightgreen
