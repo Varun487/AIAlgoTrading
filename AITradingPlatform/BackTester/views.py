@@ -311,16 +311,25 @@ def api_generate_report(req):
 
     return JsonResponse(res)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5bc70b5e418fe3100c3cb3eab870bce6a322a996
 @api_view(['POST', ])
 def api_get_orders(req):
+
     req_body = json.loads(req.body)
+
     print(req_body)
+
     # create response if request not valid
     res = {'status': 'invalid request, please check the documentation for this request here'}
 
     # checking validity of post req body
+<<<<<<< HEAD
     # valid_order = 'order' in req_body and type(req_body['order']) == str
+=======
+>>>>>>> 5bc70b5e418fe3100c3cb3eab870bce6a322a996
 
     valid_company = 'company' in req_body and type(req_body['company']) == str
     valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
@@ -336,6 +345,7 @@ def api_get_orders(req):
 
     # check if correct date and time
     try:
+<<<<<<< HEAD
         start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
         end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
     except:
@@ -367,3 +377,34 @@ def api_get_orders(req):
 
 
 
+=======
+        start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
+        end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+    except:
+        return JsonResponse(res)
+
+    company_obj = Company.objects.get(ticker=req_body['company'])
+    strategy_obj = Strategy.objects.get(name=req_body['strategy'])
+
+    try:
+
+        backtestreport_obj = BackTestReport.objects.filter(company=company_obj, strategy=strategy_obj,
+                                                       column=req_body['column'],
+                                                       indicator_time_period=req_body['indicator_time_period'],
+                                                       sigma=req_body['sigma'], max_risk=req_body['max_risk'],
+                                                       start_date_time=start_dt, end_date_time=end_dt)[0]
+
+        backtestorder_obj = BackTestOrder.objects.filter(backtestreport=backtestreport_obj)
+
+        res = {}
+
+        res['backtestorders'] = BackTestOrderSerializer(backtestorder_obj, many=True).data
+
+        res["status"] = "Sucess"
+
+        return JsonResponse(res)
+
+    except:
+
+        return JsonResponse(res)
+>>>>>>> 5bc70b5e418fe3100c3cb3eab870bce6a322a996
