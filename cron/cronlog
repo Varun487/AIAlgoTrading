@@ -10025,3 +10025,1067 @@
 
 =======
 >>>>>>> 5bc70b5e418fe3100c3cb3eab870bce6a322a996
+2021-05-27 09:00:01.930783: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:01:01.814571: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:02:01.379248: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:03:01.678418: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:04:01.738581: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:05:01.542377: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:06:01.499372: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:07:01.378886: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:08:02.093419: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:09:01.669021: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:10:01.490887: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:11:01.667948: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:12:01.321981: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:13:01.542217: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:14:01.932929: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:15:01.237681: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:16:01.627553: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:17:01.890950: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:18:01.933804: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:19:02.092290: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:20:02.029712: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:21:01.259876: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:22:01.205236: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:23:02.096018: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:24:01.773242: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:25:01.499654: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:26:01.534297: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:27:02.040419: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:28:02.005694: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:29:01.286863: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:30:01.168982: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:31:01.226048: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:32:01.281465: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:33:01.369500: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:34:01.344589: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:35:01.345473: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:36:01.694077: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
+2021-05-27 09:37:01.421810: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ No data for AAPL in DB. No data sourced.
+ Collected data for TCS.NS from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-17 00:00:00+00:00 to 2021-05-27 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
