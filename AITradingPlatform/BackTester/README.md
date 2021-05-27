@@ -1,4 +1,4 @@
-# BACKTESTER v1.0
+# BACKTESTER v0.1.0
 
 ![COMPONENTINCOMPLETE]
 
@@ -6,7 +6,7 @@
 
 * It takes a parameterised strategy and data over the period of the back test as input. It generates orders over the previous data according to the strategy's rules and outputs a detailed report on the performance of the strategy.
 
-# TODO v1.0
+# TODO 
 
 
 ## BACKTESTER WORK

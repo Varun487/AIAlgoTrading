@@ -1,4 +1,4 @@
-# UI v1.0
+# UI v0.1.0
 
 ![COMPONENTINCOMPLETE]
 
@@ -6,7 +6,7 @@
 
 * It allows the user flexibility to create, back test, paper trade and deploy new strategies on real-time data from the stock market.
 
-# TODO v1.0
+# TODO 
 
 ## UI  WORK `Vue js`
 
