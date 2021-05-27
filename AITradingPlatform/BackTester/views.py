@@ -54,7 +54,7 @@ def api_generate_report(req):
 
     try:
         valid_risk_ratio = 'risk_ratio' in req_body and type(req_body['risk_ratio']) == str
-        valid_max_risk = 'max_ratio' in req_body and type(req_body['max_risk']) == float
+        valid_max_risk = 'max_risk' in req_body and type(req_body['max_risk']) == float
         valid_initial_acc = 'initial_acc' in req_body and type(req_body['initial_acc']) == float
         valid_strategy = 'strategy' in req_body and req_body['strategy'] in ['Simple Bollinger Bands Strategy']
         valid_company = type(req_body['candlestick_data']['company']) == str
@@ -311,7 +311,10 @@ def api_generate_report(req):
 
     return JsonResponse(res)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 307c5c44da100b40458687b58c8c91370b3f0823
 def api_get_orders(req):
     req_body = json.loads(req.body)
     print(req_body)

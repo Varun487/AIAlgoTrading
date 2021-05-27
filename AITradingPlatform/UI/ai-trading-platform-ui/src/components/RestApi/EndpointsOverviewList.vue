@@ -93,10 +93,17 @@ export default {
           code: "GET /backtester/{string}",
           link: "#example-backtester",
         },
+<<<<<<< HEAD
          {
           code: "GET /strategies/getorders/",
           link: "#get-orders",
         }
+=======
+        {
+          code: "GET /backtester/generatereport/",
+          link: "#generate-report",
+        },
+>>>>>>> 307c5c44da100b40458687b58c8c91370b3f0823
       ],
       PaperTraderLinks: [
         {
