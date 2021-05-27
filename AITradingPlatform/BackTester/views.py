@@ -310,42 +310,54 @@ def api_generate_report(req):
     res = {'status': "Valid"}
 
     return JsonResponse(res)
+
+
 def api_get_orders(req):
     req_body = json.loads(req.body)
     print(req_body)
     # create response if request not valid
     res = {'status': 'invalid request, please check the documentation for this request here'}
 
-    # checking validity of post req body
-    valid_order = 'order' in req_body and type(req_body['order']) == str
-    valid_backtestreport = 'backtestreport' in req_body and type(req_body['backtestreport']) == str
-    valid_company = 'company' in req_body and type(req_body['company']) == str
-    valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
-
-    if not (valid_order and valid_backtestreport and valid_company and valid_strategy):
-        return JsonResponse(res)
-
-    # check if correct date and time
-    try:
-        start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
-        end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
-    except:
-        return JsonResponse(res)
-
-    company_obj = Company.objects.get(ticker=req_body['company'])[0]
-    # print( company_obj)
-    strategy_obj = Strategy.objects.get(name=req_body['strategy'])[0]
-    # print(strategy_obj)
-
-    # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj).data
-
-    backtestreport_obj = BackTestReport.objects.filter(company=company_obj, strategy=strategy_obj)
-
-    backtestorder_obj = BackTestOrder.objects.filter(order=req['order'], backtestreport=backtestreport_obj,
-                                                     account_size=req['account_size'])
-
-    res['backtestorder'] = BackTestReportSerializer(backtestorder_obj, many=True).data
-    res["Listing_Status"] = "Sucess"
-
+    # # checking validity of post req body
+    # # valid_order = 'order' in req_body and type(req_body['order']) == str
+    #
+    # valid_company = 'company' in req_body and type(req_body['company']) == str
+    # valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
+    # valid_column = 'column' in req_body and req_body['column'] in ['Open', 'High', 'Low', 'Close', 'Volume']
+    # valid_indicator_time_period = 'indicator_time_period' in req_body and type(req_body['indicator_time_period']) == int
+    # valid_sigma = 'sigma' in req_body and type(req_body['sigma']) == int
+    # valid_max_risk = 'max_risk' in req_body and type(req_body['max_risk']) == float
+    #
+    # if not (valid_column and valid_company and valid_strategy and valid_indicator_time_period and valid_sigma
+    #         and valid_max_risk):
+    #
+    #     return JsonResponse(res)
+    #
+    # # check if correct date and time
+    # try:
+    #     start_dt = datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S')
+    #     end_dt = datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S')
+    # except:
+    #     return JsonResponse(res)
+    #
+    # company_obj = Company.objects.get(ticker=req_body['company'])[0]
+    # # print( company_obj)
+    # strategy_obj = Strategy.objects.get(name=req_body['strategy'])[0]
+    # # print(strategy_obj)
+    #
+    # # res['backtestreport'] = BackTestReportSerializer(company_obj, strategy_obj).data
+    #
+    # backtestreport_obj = BackTestReport.objects.filter(company=company_obj, strategy=strategy_obj,
+    #                                                    column=req_body['column'],
+    #                                                    indicator_time_period=req_body['indicator_time_period'],
+    #                                                    sigma=req_body['sigma'], max_risk=req_body['max_risk'],
+    #                                                    start_date=start_dt, end_date=end_dt)
+    #
+    # backtestorder_obj = BackTestOrder.objects.filter(backtestreport=backtestreport_obj)
+    #
+    # res['backtestorder'] = BackTestOrderSerializer(backtestorder_obj, many=True).data
+    #
+    # res["Listing_Status"] = "Sucess"
+    #
     return JsonResponse(res)
 

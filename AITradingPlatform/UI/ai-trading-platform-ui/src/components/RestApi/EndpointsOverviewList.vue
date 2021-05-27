@@ -85,17 +85,18 @@ export default {
         {
           code: "POST /strategies/runstrategy/",
           link: "#run-strategy",
-        },
-		{
-          code: "GET /strategies/getorders/",
-          link: "#get-orders",
-        },
+        }
+		    
       ],
       BackTesterLinks: [
         {
           code: "GET /backtester/{string}",
           link: "#example-backtester",
         },
+         {
+          code: "GET /strategies/getorders/",
+          link: "#get-orders",
+        }
       ],
       PaperTraderLinks: [
         {
