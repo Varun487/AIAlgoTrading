@@ -1,6 +1,6 @@
 # BACKTESTER v0.1.0
 
-![COMPONENTINCOMPLETE]
+![COMPONENTCOMPLETE]
 
 * This service helps in building Strategies. It allows us test how a strategy would have performed over past data over previous weeks, months and years.
 
@@ -79,9 +79,9 @@
 
 ---
 
-### Update REST API docs page with all Backtester APIs ![FEATUREINCOMPLETE]
+### Update REST API docs page with all Backtester APIs ![FEATURECOMPLETE]
 - ![SAMRUDHICOMPLETE]
-- ![DISHAINCOMPLETE]
+- ![DISHACOMPLETE]
 - ![HRITIKCOMPLETE]
 
 

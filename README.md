@@ -148,7 +148,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 	- [Link to Datafeeder README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/DataFeeder)
 3. STRATEGIES WORK ![COMPONENTCOMPLETE]
 	- [Link to Strategies README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/Strategies)
-4. BACKTESTER WORK ![COMPONENTINCOMPLETE]
+4. BACKTESTER WORK ![COMPONENTCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
 5. PAPER TRADER ![COMPONENTINCOMPLETE]
 	- [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)

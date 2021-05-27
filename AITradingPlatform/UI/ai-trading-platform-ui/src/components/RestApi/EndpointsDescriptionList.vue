@@ -1197,30 +1197,30 @@ export default {
           req_url: "/backtester/viewallreports",
           req_body: ``,
           correct_output: `{
-            "start_date_time": "2021-05-01T00:00:00Z",
-            "end_date_time": "2021-05-20T00:00:00Z",
-            "risk_ratio": "10:10",
-            "max_risk": 2.0,
-            "initial_account_size": 1000000.0,
-            "final_account_size": 1001073.9985351562,
-            "total_profit_loss": 1073.99853515625,
-            "company": {
-                  "id": 1,
-                  "name": "TCS BSE",
-                  "ticker": "TCS.BO",
-                  "sector": "Technology",
-                  "data_provider": "Yahoo"
-              },
-            "strategy": {
-                  "id": 1,
-                  "name": "Simple Bollinger Bands Strategy",
-                  "desc": "Follows a simple algorithm:\r\n\r\nIf stock price > 'n' sigma above SMA, then create a  'SHORT' order\r\nIf stock price crosses SMA, then 'GET OUT OF ALL CURRENT POSITIONS'\r\nIf stock price < 'n' sigma above SMA, then create a  'BUY' order\r\nelse Don't create any order",
-                  "sector": "All"
-              },
-            "column": "Close",
-            "indicator_time_period": 5,
-            "sigma": 1
-          }`,
+    "start_date_time": "2021-05-01T00:00:00Z",
+    "end_date_time": "2021-05-20T00:00:00Z",
+    "risk_ratio": "10:10",
+    "max_risk": 2.0,
+    "initial_account_size": 1000000.0,
+    "final_account_size": 1001073.9985351562,
+    "total_profit_loss": 1073.99853515625,
+    "company": {
+        "id": 1,
+        "name": "TCS BSE",
+        "ticker": "TCS.BO",
+        "sector": "Technology",
+        "data_provider": "Yahoo"
+    },
+    "strategy": {
+        "id": 1,
+        "name": "Simple Bollinger Bands Strategy",
+        "desc": "Follows a simple algorithm:\r\n\r\nIf stock price > 'n' sigma above SMA, then create a  'SHORT' order\r\nIf stock price crosses SMA, then 'GET OUT OF ALL CURRENT POSITIONS'\r\nIf stock price < 'n' sigma above SMA, then create a  'BUY' order\r\nelse Don't create any order",
+        "sector": "All"
+    },
+    "column": "Close",
+    "indicator_time_period": 5,
+    "sigma": 1
+}`,
           failed_output: `{}`,
         },
         {
@@ -1229,41 +1229,48 @@ export default {
           link: "filter-report",
           description:
             "Returns backtest reports that are filtered according to start date, end date, risk ratio, max risk, initial account size, final account size, total profit loss, company, strategy",
-          parameters:[
+          parameters: [
             {
               name: "start_date_time",
               type: "Date time string",
-              desc: "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start collecting data for the list of stock tickers.",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start collecting data for the list of stock tickers.",
             },
             {
               name: "end_date_time",
               type: "Date time string",
-              desc: "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end collecting data for the list of stock tickers.",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end collecting data for the list of stock tickers.",
             },
             {
               name: "risk_ratio",
               type: "String",
-              desc: "The risk ratio marks the prospective reward an investor can earn for every rupee they risk on an investment.",
+              desc:
+                "The risk ratio marks the prospective reward an investor can earn for every rupee they risk on an investment.",
             },
             {
               name: "max_risk",
               type: "Float",
-              desc: "The max risk risk percent is the one where the investor risks no more than the max risk percent of their available capital on any single trade.",
+              desc:
+                "The max risk risk percent is the one where the investor risks no more than the max risk percent of their available capital on any single trade.",
             },
             {
               name: "initial_account_size",
               type: "Float",
-              desc: "It is the initial account balance before the order get generated.",
+              desc:
+                "It is the initial account balance before the order get generated.",
             },
             {
               name: "final_account_size",
               type: "Float",
-              desc: "It is the final account balance after the order is generated.",
+              desc:
+                "It is the final account balance after the order is generated.",
             },
             {
               name: "total_profit_loss",
               type: "Float",
-              desc: "Indicates whether the order generated resulted in a profit or a loss. The order generated by using the strategy.",
+              desc:
+                "Indicates whether the order generated resulted in a profit or a loss. The order generated by using the strategy.",
             },
             {
               name: "company",
@@ -1273,39 +1280,43 @@ export default {
             {
               name: "strategy",
               type: "String",
-              desc: "A string mentioning the name of the strategy associated with the order. The only accepted value as of now is 'Simple Bollinger Bands Strategy'.",
+              desc:
+                "A string mentioning the name of the strategy associated with the order. The only accepted value as of now is 'Simple Bollinger Bands Strategy'.",
             },
             {
               name: "column",
               type: "String",
-              desc: "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
+              desc:
+                "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
             },
             {
               name: "indicator_time_period ",
               type: "String",
-              desc: "A string mentioning the name of the strategy stored in the database.",
+              desc:
+                "A string mentioning the name of the strategy stored in the database.",
             },
             {
               name: "sigma ",
               type: "String",
-              desc: "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
+              desc:
+                "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
             },
           ],
           req_url: "/backtester/filterreport",
           req_body: `{
-            "start_date_time": "2021-05-01 00:00:00",
-            "end_date_time": "2021-05-20 00:00:00",
-            "risk_ratio": "10:10",
-            "max_risk": 2.0,
-            "initial_account_size": 1000000.0,
-            "company": "TCS.BO",
-            "strategy": "Simple Bollinger Bands Strategy",
-            "column": "Close",
-            "indicator_time_period": 5,
-            "sigma": 1
-          }`,
+    "start_date_time": "2021-05-01 00:00:00",
+    "end_date_time": "2021-05-20 00:00:00",
+    "risk_ratio": "10:10",
+    "max_risk": 2.0,
+    "initial_account_size": 1000000.0,
+    "company": "TCS.BO",
+    "strategy": "Simple Bollinger Bands Strategy",
+    "column": "Close",
+    "indicator_time_period": 5,
+    "sigma": 1
+}`,
           correct_output: `{
-          "status": "Valid request",
+    "status": "Valid request",
     "data": [
         {
             "start_date_time": "2021-05-01T00:00:00Z",
@@ -1331,8 +1342,12 @@ export default {
             "column": "Close",
             "indicator_time_period": 5,
             "sigma": 1
-          }`,
-          failed_output: `{'status':'Invalid request, please check the documentation for the appropriate request here'}`,
+        }
+    ]
+}`,
+          failed_output: `{
+	'status':'Invalid request, please check the documentation for the appropriate request here'
+}`,
         },
         {
           type: "GET",
@@ -1489,7 +1504,7 @@ export default {
           link: "get-strategies",
           description:
             "An api for  listing all currently  papertraded strategies",
-          parameters:false,
+          parameters: false,
           req_url: "/papertrader/getstrategies/",
           req_body: ``,
           correct_output: `{
