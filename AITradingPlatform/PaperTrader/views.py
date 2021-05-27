@@ -30,7 +30,8 @@ def api_list_strategy(req):
     if not strategies_obj:
         return JsonResponse(res)
 
+
     res['Strategies'] = PaperTradedStrategiesSerializer(strategies_obj, many=True).data
-    res['Listing_Status'] = "Sucess"
+    res['status'] = "Sucess"
 
     return JsonResponse(res)

@@ -11,5 +11,6 @@ class ExamplePaperTraderSerializer(serializers.ModelSerializer):
 class PaperTradedStrategiesSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaperTradedStrategies
-        fields = ['order', 'strategy', 'live_order']
+        fields = ['strategy', 'company','column','time_period','sigma','name']
+        depth =1
 

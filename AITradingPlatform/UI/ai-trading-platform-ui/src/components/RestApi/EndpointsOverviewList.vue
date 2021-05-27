@@ -110,6 +110,10 @@ export default {
           code: "GET /papertrader/{string}",
           link: "#example-papertrader",
         },
+        {
+          code: "GET /papertrader/getstrategies",
+          link: "#get-strategies",
+        },
       ],
     };
   },

@@ -1336,6 +1336,41 @@ export default {
 }`,
           failed_output: `{}`,
         },
+        {
+          type: "GET",
+          code: "/papertrader/getstrategies",
+          link: "get-strategies",
+          description:
+            "An api for  listing all currently  papertraded strategies",
+          parameters:false,
+          req_url: "/papertrader/getstrategies/",
+          req_body: ``,
+          correct_output: `{
+    "status": "Sucess",
+    "Strategies": [
+        {
+            "strategy": {
+                "id": 1,
+                "name": "Simple Bollinger Bands Strategy",
+                "desc": "jhvweifhawigf/DJ/uv/P;JQHidasb;ojWKCBDJL",
+                "sector": "all"
+            },
+            "company": {
+                "id": 3,
+                "name": "tcs bse",
+                "ticker": "TCS.BO",
+                "sector": "tech",
+                "data_provider": "Yahoo"
+            },
+            "column": "Close",
+            "time_period": 5,
+            "sigma": 1,
+            "name": "tcs bse bb close 5 1"
+        }
+    ]
+}`,
+          failed_output: `{}`,
+        },
       ],
     };
   },
