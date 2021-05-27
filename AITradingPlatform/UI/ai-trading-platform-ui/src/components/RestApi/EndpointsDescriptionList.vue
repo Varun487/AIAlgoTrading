@@ -1228,7 +1228,7 @@ export default {
           code: "/backtester/filterreport/",
           link: "filter-report",
           description:
-            "Returns backtest reports that are filtered according to start date, end date, risk ratio, max risk, initial account size, final account size, total profit loss, company, strategy",
+            "Returns backtest reports that are filtered according to start date, end date, risk ratio, max risk, initial account size, final account size, total profit loss, company, strategy, column, indicator time period, sigma.",
           parameters: [
             {
               name: "start_date_time",
@@ -1291,13 +1291,13 @@ export default {
             },
             {
               name: "indicator_time_period ",
-              type: "String",
+              type: "Integer",
               desc:
-                "A string mentioning the name of the strategy stored in the database.",
+                "A number mentioning the name of the strategy stored in the database.",
             },
             {
               name: "sigma ",
-              type: "String",
+              type: "Integer",
               desc:
                 "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
             },
