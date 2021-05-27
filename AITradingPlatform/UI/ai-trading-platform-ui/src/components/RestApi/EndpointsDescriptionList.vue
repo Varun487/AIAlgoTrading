@@ -470,15 +470,14 @@ export default {
             {
               name: "indicator_time_period",
               type: "Integer",
-              desc:
-                "An integer mentioning the indicator time period",
+              desc: "An integer mentioning the indicator time period",
             },
             {
               name: "name",
               type: "Array of Strings",
               desc:
                 "An array of strings  that can take values ['SMA','Std_Dev','BB_down','BB_up']",
-            }
+            },
           ],
           req_url: "/datafeeder/derivedindicatorcalc/",
           req_body: `{
@@ -533,14 +532,13 @@ export default {
               desc:
                 "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end collecting data for the list of stock tickers provided above.",
             },
-            
+
             {
               name: "time_period",
               type: "String",
               desc:
                 "Mentions the time period of data to be collected. If sourcing from Yahoo finance, then value has to be 'daily'. Else, if sourcing from Alpha Vantage, can take any of the following values ['1min', '5min', '15min', '30min', '60min']",
-            }
-            
+            },
           ],
           req_url: "/datafeeder/listimmutable/",
           req_body: `{
@@ -713,15 +711,14 @@ export default {
           type: "POST",
           code: "/datafeeder/companydetails/",
           link: "company-details",
-          description: "Returns a particular company's details that is present in the database.",
+          description:
+            "Returns a particular company's details that is present in the database.",
           parameters: [
             {
               name: "company",
               type: "String",
-              desc:
-                "A string mentioning the stock ticker to collect data from",
+              desc: "A string mentioning the stock ticker to collect data from",
             },
-            
           ],
           req_url: "/datafeeder/companydetails/",
           req_body: `{
@@ -738,7 +735,7 @@ export default {
 ]`,
           failed_output: `{'error': 'No such data present. Please enter a valid company name.'}`,
         },
-        
+
         {
           type: "POST",
           code: "/datafeeder/filtercompany/",
@@ -789,7 +786,8 @@ export default {
           type: "POST",
           code: "/datafeeder/addcompany/",
           link: "add-company",
-          description: "Adds a new company to the database if it doesn't already exist.",
+          description:
+            "Adds a new company to the database if it doesn't already exist.",
           parameters: [
             {
               name: "name",
@@ -854,7 +852,8 @@ export default {
             {
               name: "name",
               type: "String",
-              desc: "A string mentioning the name of the company to modify attributes.",
+              desc:
+                "A string mentioning the name of the company to modify attributes.",
             },
             {
               name: "new_name",
@@ -869,7 +868,8 @@ export default {
             {
               name: "new_ticker",
               type: "String",
-              desc: "A string mentioning the updated stock ticker of the company.",
+              desc:
+                "A string mentioning the updated stock ticker of the company.",
             },
           ],
           req_url: "/datafeeder/indicatorsdata/",
@@ -885,12 +885,7 @@ export default {
           failed_output: `{
     'data':'Invalid request. Company does not exist in Database.'
 }`,
-        }
-
-        
-        
-        
-
+        },
       ],
       StrategiesApis: [
         {
@@ -1044,18 +1039,6 @@ export default {
     "error": "invalid request, please check the documentation for the correct request format"
 }`,
         },
-        {
-          type: "GET",
-          code: "/strategies/getorders/",
-          link: "get-orders",
-          description:
-            "List all the orders",
-          parameters:false,
-          req_url: "/strategies/getorders/",
-          req_body: ``,
-          correct_output: `[]`,
-          failed_output: `{}`,
-        }
       ],
       BackTesterApis: [
         {
@@ -1202,6 +1185,133 @@ export default {
 }`,
           failed_output: `{
     "error": "invalid request, please check the documentation for this request here"
+}`,
+        },
+        {
+          type: "GET",
+          code: "/backtester/getorders/",
+          link: "get-orders",
+          description: "Lists all backtested orders of a particular report",
+          parameters: [
+            {
+              name: "strategy",
+              type: "String",
+              desc:
+                "Enter the name of the strategy backtested in the report. The only accepted value as of now is 'Simple Bollinger Bands Strategy'.",
+            },
+            {
+              name: "company",
+              type: "String",
+              desc:
+                "Mentions the stock ticker on which to run the strategy and generate orders.",
+            },
+            {
+              name: "start_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start running the stategy for the stock ticker.",
+            },
+            {
+              name: "end_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end running of the stategy for the stock ticker.",
+            },
+            {
+              name: "column",
+              type: "String",
+              desc:
+                "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
+            },
+            {
+              name: "indicator_time_period",
+              type: "Integer",
+              desc: "The time period of the indicator to run the strategy on.",
+            },
+            {
+              name: "sigma",
+              type: "Integer",
+              desc:
+                "The standard deviations above and below the SMA to consider while running the backtest for 'Simple Bollinger Bands Strategy'.",
+            },
+            {
+              name: "max_risk",
+              type: "Float",
+              desc: "The max risk percent of the backtest report.",
+            },
+          ],
+          req_url: "/backtester/getorders/",
+          req_body: `{
+    "company": "TCS.BO",
+    "start_date": "2021-05-1 00:00:00",
+    "end_date": "2021-05-20 00:00:00",
+    "strategy":"Simple Bollinger Bands Strategy",
+    "column": "Close",
+    "indicator_time_period":5,
+    "sigma":1,
+    "max_risk":2.0
+}`,
+          correct_output: `{
+    "backtestorders": [
+        {
+            "order": {
+                "id": 18,
+                "order_type": "G",
+                "order_category": "M",
+                "time_stamp": "2021-05-12T00:00:00Z",
+                "profit_loss": 0.0,
+                "quantity": 0,
+                "company": 1
+            },
+            "backtestreport": {
+                "id": 2,
+                "start_date_time": "2021-05-01T00:00:00Z",
+                "end_date_time": "2021-05-20T00:00:00Z",
+                "max_risk": 2.0,
+                "risk_ratio": "10:10",
+                "initial_account_size": 1000000.0,
+                "final_account_size": 1001073.9985351562,
+                "total_profit_loss": 1073.99853515625,
+                "column": "Close",
+                "indicator_time_period": 5,
+                "sigma": 1,
+                "company": 1,
+                "strategy": 1
+            },
+            "account_size": 1001001.0991210938
+        },
+        {
+            "order": {
+                "id": 19,
+                "order_type": "B",
+                "order_category": "M",
+                "time_stamp": "2021-05-14T00:00:00Z",
+                "profit_loss": 12.14990234375,
+                "quantity": 6,
+                "company": 1
+            },
+            "backtestreport": {
+                "id": 2,
+                "start_date_time": "2021-05-01T00:00:00Z",
+                "end_date_time": "2021-05-20T00:00:00Z",
+                "max_risk": 2.0,
+                "risk_ratio": "10:10",
+                "initial_account_size": 1000000.0,
+                "final_account_size": 1001073.9985351562,
+                "total_profit_loss": 1073.99853515625,
+                "column": "Close",
+                "indicator_time_period": 5,
+                "sigma": 1,
+                "company": 1,
+                "strategy": 1
+            },
+            "account_size": 982582.298828125
+        },
+    ],
+    "status": "Sucess"
+}`,
+          failed_output: `{
+    "status": "invalid request, please check the documentation for the correct reqiest format"
 }`,
         },
       ],
