@@ -53,9 +53,9 @@
 ---
 
 
-### REST APIs ![FEATUREINCOMPLETE]
+### REST APIs ![FEATURECOMPLETE]
 
-- Get all current paper traded orders ![SAMRUDHIINCOMPLETE]
+- Get all current paper traded orders ![SAMRUDHICOMPLETE]
 	- Filter orders according to all relevant criteria
 - List all Strategies being paper traded ![HRITIKCOMPLETE] 
 
