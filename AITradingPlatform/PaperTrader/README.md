@@ -61,7 +61,7 @@
 
 ---
 
-### Update REST API docs page with all PaperTrader APIs
+### Update REST API docs page with all PaperTrader APIs ![FEATUREINCOMPLETE]
 - ![SAMRUDHIINCOMPLETE]
 - ![HRITIKCOMPLETE]
 
