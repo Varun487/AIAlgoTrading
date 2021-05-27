@@ -1078,6 +1078,132 @@ export default {
 }`,
           failed_output: `{}`,
         },
+        {
+          type: "POST",
+          code: "/backtester/generatereport/",
+          link: "generate-report",
+          description:
+            "It takes a parameterised strategy and data over the period of the back test as input. It generates orders over the previous data according to the strategy's rules and pushes the report to the db.",
+          parameters: [
+            {
+              name: "risk_ratio",
+              type: "String",
+              desc:
+                "The risk ratio marks the prospective reward an investor can earn for every rupee they risk on an investment.",
+            },
+            {
+              name: "max_risk",
+              type: "float",
+              desc:
+                "The max risk risk percent is the one where the investor risks no more than the max risk percent of their available capital on any single trade.",
+            },
+            {
+              name: "initial_acc",
+              type: "float",
+              desc:
+                "It is the initial account balance before the order get generated. It is assummed to be in rupees.",
+            },
+
+            {
+              name: "strategy",
+              type: "String",
+              desc:
+                "Enter the name of the strategy to run. The only accepted value as of now is 'Simple Bollinger Bands Strategy'.",
+            },
+            {
+              name: "candle_stick_data",
+              type: "JSON object",
+              desc:
+                "Contains data about the candlesticks to source and run the strategy on.",
+            },
+            {
+              name: "indicators_data",
+              type: "JSON object",
+              desc:
+                "Contains data about the indicators to calculate and run the strategy on.",
+            },
+            {
+              name: "company",
+              type: "String",
+              desc:
+                "Mentions the stock ticker on which to run the strategy and generate orders.",
+            },
+            {
+              name: "start_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to start running the stategy for the stock ticker.",
+            },
+            {
+              name: "end_date",
+              type: "Date time string",
+              desc:
+                "A string in the format of yyyy-mm-dd hh:MM:ss. It denotes the datetime to end running of the stategy for the stock ticker.",
+            },
+            {
+              name: "provider",
+              type: "String",
+              desc:
+                "Data provider to source data from. Can only take values of 'Yahoo' and 'Alpha'",
+            },
+            {
+              name: "time_period",
+              type: "String",
+              desc:
+                "Mentions the time period of data to be collected. If sourcing from Yahoo finance, then value has to be 'daily'. Else, if sourcing from Alpha Vantage, can take any of the following values ['1min', '5min', '15min', '30min', '60min']",
+            },
+            {
+              name: "slice",
+              type: "String",
+              desc:
+                "Is applicable only for Alpha vantage, can take values in range('year1month1' to 'year1month12') and range('year2month1' to 'year2month12'). Even though the slice is not required for Yahoo Finance, it must be present and take a valid value for the request to be valid",
+            },
+            {
+              name: "column",
+              type: "String",
+              desc:
+                "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
+            },
+            {
+              name: "time_period",
+              type: "Integer",
+              desc: "The time period of the indicator to run the strategy on.",
+            },
+            {
+              name: "sigma",
+              type: "Integer",
+              desc:
+                "The standard deviations above and below the SMA to consider while running the 'Simple Bollinger Bands Strategy'.",
+            },
+          ],
+          req_url: "/backtester/generatereport/",
+          req_body: `{
+    "risk_ratio" : "10:10",
+    "max_risk" : 2,
+    "initial_acc" : 1000000,
+    "strategy": "Simple Bollinger Bands Strategy",
+    "candlestick_data": {
+        "company": "TCS.NS",
+        "provider": "Yahoo",
+        "start_date": "2021-05-1 00:00:00",
+        "end_date": "2021-05-20 00:00:00",
+        "time_period": "daily",
+        "slice": "year1month1"
+    },
+    "indicators_data": {
+        "column": "Close",
+        "time_period": 5,
+        "sigma": 1
+    }
+    
+}`,
+          correct_output: `{
+    "status": "Valid"
+}`,
+          failed_output: `{
+    "error": "invalid request, please check the documentation for this request here"
+}`,
+        },
       ],
       PaperTraderApis: [
         {
