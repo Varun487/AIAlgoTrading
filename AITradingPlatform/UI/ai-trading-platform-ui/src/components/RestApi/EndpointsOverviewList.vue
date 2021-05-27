@@ -96,6 +96,10 @@ export default {
           code: "GET /backtester/{string}",
           link: "#example-backtester",
         },
+        {
+          code: "GET /backtester/generatereport/",
+          link: "#generate-report",
+        },
       ],
       PaperTraderLinks: [
         {
