@@ -316,7 +316,7 @@ def api_get_orders(req):
 
     req_body = json.loads(req.body)
 
-    print(req_body)
+    # print(req_body)
 
     # create response if request not valid
     res = {'status': 'invalid request, please check the documentation for this request here'}
