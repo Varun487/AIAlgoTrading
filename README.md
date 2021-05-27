@@ -166,17 +166,16 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
       - Complete writing tests for all functions, REST APIs 
     - UI 
       - Complete writing tests for all UI components
-
-### VERSION 1.0 LAUNCH !
-
----
-
 8. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
     - Buy a domain ![DONE]
     - SSL certification
     - Host the REST API
     - Decide deployment workflow
     - Make a deployment script
+
+### VERSION 1.0 LAUNCH !
+
+---
 9. Build Strategies ![FEATUREINCOMPLETE] 
     - 4 Strategies which perform better than sectoral market indices
 10. Write papers, see if you can publish them ![DOCINCOMPLETE]
