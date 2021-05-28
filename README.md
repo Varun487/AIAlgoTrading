@@ -173,7 +173,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
     - Decide deployment workflow
     - Make a deployment script
 
-### VERSION 1.0 LAUNCH !
+### VERSION 0.1.0 LAUNCH !
 
 ---
 9. Build Strategies ![FEATUREINCOMPLETE] 

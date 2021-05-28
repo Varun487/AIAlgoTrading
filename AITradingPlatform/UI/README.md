@@ -11,7 +11,6 @@
 ## UI  WORK `Vue js`
 
 ---
-
 ### Login ![HRITIKINCOMPLETE]
 
 - Uses `Django Auth`
@@ -20,6 +19,7 @@
 
 ### Top banner ![VARUNCOMPLETE]
 
+- Present in all paths ![DONE]
 - Name of platform ![DONE]
 - Menu button to show sidenavbar ![DONE]
 	- Basic menu button ![DONE]
@@ -41,15 +41,10 @@
 	- Add REST API Docs tab ![DONE]
 		- icon ![DONE]
 		- backlight on select ![DONE]
-
----
-
-### Side navbar ![DISHAINCOMPLETE]
-
-- Tabs
-	- Strategies
+- Side navbar Tabs ![DONE]
+	- Strategies ![DONE]
 	- Back tests ![DONE]
-	- Paper trades
+	- Paper trades ![DONE]
 
 ---
 
@@ -93,7 +88,7 @@
 
 ### Paper trades Tab ![DISHAINCOMPLETE]
 
-- List all orders being paper traded `Live update each min` 
+- List all orders being paper traded `Live update each day`
 	- Filter according to attr 
 - Visualize orders `Update according to filter`
 
