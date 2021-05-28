@@ -48,7 +48,7 @@
 
 - Tabs
 	- Strategies
-	- Back tests
+	- Back tests ![DONE]
 	- Paper trades
 
 ---
@@ -73,7 +73,11 @@
 
 ### Back tests Tab ![VARUNINCOMPLETE]
 
-- All listed back tests report `card`
+- Add a backtest tab in side nav bar ![DONE]
+- Create a sample backtests page ![DONE]
+- Discuss exactly how page is going to look and work
+- Decide all REST APIs needed
+- All listed back tests reports `card`
 - Filter according to all backtest attributes
 - Click on a report
 	- List all attr of back test
