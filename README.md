@@ -150,7 +150,7 @@ __PROJECT PHASE 2__ *-> COMPLETE BY JULY END*
 	- [Link to Strategies README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/Strategies)
 4. BACKTESTER WORK ![COMPONENTCOMPLETE]
 	- [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
-5. PAPER TRADER ![COMPONENTINCOMPLETE]
+5. PAPER TRADER ![COMPONENTCOMPLETE]
 	- [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
 6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
 	- [Link to UI README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)

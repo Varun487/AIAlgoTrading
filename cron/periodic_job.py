@@ -73,6 +73,100 @@ try:
     print(" PAPERTRADER - TRACK ORDERS REAL TIME", file=log)
     print(file=log)
 
+    # Get all paper trader live orders
+    lpt_order_obj = PaperTradeOrder.objects.filter(live_order=True)
+
+    # print(lpt_order_obj)
+
+    # Decide when to close orders
+
+    for lpt_order in lpt_order_obj:
+        if lpt_order.order.order_type == "G":
+            # get_out_strategy = lpt_order.strategy
+            # print(get_out_strategy)
+            # print(PaperTradeOrder.objects.filter(live_order=True, strategy=lpt_order.strategy))
+
+            for pt_order_dead in PaperTradeOrder.objects.filter(live_order=True, strategy=lpt_order.strategy):
+                pt_order_dead.live_order = False
+                pt_order_dead.save()
+
+            print(f" Success: Got out of all positions for {lpt_order.strategy}.", file=log)
+
+    # Get all paper trader live orders
+    lpt_order_obj = PaperTradeOrder.objects.filter(live_order=True)
+
+    if not lpt_order_obj:
+        print("No live paper trader order exist in the database.", file=log)
+
+    now_dt = make_aware(datetime.now())
+    now_dt = now_dt.replace(hour=0, minute=0, second=0, microsecond=0)
+
+    # If price_bought of paper_trade order == 0.0 -> set price bought as the company's current close price
+    for lpt_order in lpt_order_obj:
+        # print(lpt_order)
+
+        company = Company.objects.get(ticker=lpt_order.order.company.ticker)
+        # print(company)
+
+        candle_stick = ImmutableData.objects.get(company=company, time_stamp=now_dt)
+        # print(candle_stick)
+
+        # print(lpt_order.price_bought)
+
+        if lpt_order.price_bought == 0.0:
+            price_bought = candle_stick.close
+            # print(candle_stick.time_stamp)
+            # print(candle_stick.close)
+
+            try:
+                lpt_order.price_bought = price_bought
+                lpt_order.save()
+                # print(lpt_order)
+                print(" Success: price_bought parameter set for live paper trade order. ", file=log)
+
+            except:
+                print(" Failed: price_bought parameter not set for live paper trade order. ", file=log)
+
+        else:
+
+            # Evaluate profit / loss of order according to latest company data
+            try:
+
+                current_price = candle_stick.close
+
+                pl_diff = 0.0
+                percent_diff = 0.0
+
+                if lpt_order.order.order_type == 'B':
+                    pl_diff = float(current_price - lpt_order.price_bought)
+                    percent_diff = float((pl_diff / lpt_order.price_bought) * 100)
+
+                elif lpt_order.order.order_type == 'S':
+                    pl_diff = float((current_price - lpt_order.price_bought) * -1)
+                    percent_diff = float((pl_diff / lpt_order.price_bought) * 100)
+
+                # print(current_price)
+                # print(lpt_order.price_bought)
+                # print(pl_diff)
+                # print(percent_diff)
+                # print(Orders.objects.get(id=lpt_order.order.id))
+
+                order = Orders.objects.get(id=lpt_order.order.id)
+                order.profit_loss = pl_diff
+                order.save()
+
+                lpt_order.percentage_change = percent_diff
+                lpt_order.save()
+
+                # print(lpt_order)
+                print(f" Success: profit_loss parameter set for live paper trade order {order}. ", file=log)
+                print(f" Success: percentage_change parameter set for live paper trade order {order}. ", file=log)
+
+            except:
+                print(f" Failed: profit_loss parameter not set for live paper trade order {order}. ", file=log)
+                print(f" Failed: percentage_change parameter not set for live paper trade order {order}. ", file=log)
+
+
     print(file=log)
     print(" ----- ----- ----- ----- -----", file=log)
     print(file=log)
@@ -117,7 +211,8 @@ try:
                         order_type=ord_type,
                         order_category='M',
                         company=company_obj,
-                        time_stamp=now_dt
+                        time_stamp=now_dt,
+                        quantity=1,
                     ).save()
 
                 order = Orders.objects.get(order_type=ord_type, order_category='M', company=company_obj, time_stamp=now_dt, profit_loss=0.0, quantity=0)

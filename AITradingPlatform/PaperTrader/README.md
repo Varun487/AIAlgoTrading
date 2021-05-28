@@ -1,6 +1,6 @@
 # PAPERTRADER v0.1.0
 
-![COMPONENTINCOMPLETE]
+![COMPONENTCOMPLETE]
 
 * This is used to test strategies in real-time market scenarios after a strategy has performed well in back testing.
 
@@ -31,12 +31,14 @@
 
 ---
 
-### Tracks live orders `Runs every day` ![DISHAINCOMPLETE]
+### Tracks live orders `Runs every day` ![DISHACOMPLETE]
 
-- Get all paper trader live orders
-- If price_bought of paper_trade order == 0.0 -> set price bought as the company's current close price
-- Evaluate loss / profit of order according to latest company data, percentage change `Always evaluate according to close price`
-- If order is GET_OUT_OF_ALL_POSITIONS, set live order flag to 0 `Update in DB`
+- Get all paper trader live orders ![DONE]
+- If price_bought of paper_trade order == 0.0 -> set price bought as the company's current close price ![DONE]
+- Evaluate loss / profit of order according to latest company data, percentage change `Always evaluate according to close price` ![DONE]
+  - update profit / loss value ![DONE]
+  - Update % change ![DONE]
+- If order is GET_OUT_OF_ALL_POSITIONS, set all previous live orders flags to 0 `Update in DB` ![DONE]
 
 ---
 
