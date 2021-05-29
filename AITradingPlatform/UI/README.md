@@ -41,10 +41,6 @@
 	- Add REST API Docs tab ![DONE]
 		- icon ![DONE]
 		- backlight on select ![DONE]
-- Side navbar Tabs ![DONE]
-	- Strategies ![DONE]
-	- Back tests ![DONE]
-	- Paper trades ![DONE]
 
 ---
 
@@ -70,9 +66,10 @@
 
 - Add a backtest tab in side nav bar ![DONE]
 - Create a sample backtests page ![DONE]
-- Discuss exactly how page is going to look and work
+- install axios ![DONE]
+- Decide exactly how page is going to look and work
 - Decide all REST APIs needed
-- All listed back tests reports `card`
+- All listed back tests reports `card` `Arrange according to returns`
 - Filter according to all backtest attributes
 - Click on a report
 	- List all attr of back test
