@@ -10,7 +10,7 @@
         <label><b>Password</b></label>        
         <input type="Password" name="Password" id="Password" >    
         <br><br>    
-        <input type="button" name="log_button" id="log_button" value="Log In">       
+        <input type="button" name="log_button" id="log_button" value="Log In" @click="login">       
         <br><br>    
         <input type="checkbox" id="check"><span>Remember me</span>     
     </form>     
@@ -21,8 +21,13 @@
 <script>
 export default {
   name: "LoginBase",
+  methods: {
+      login() {
+        
+      },
+    },
+  }
   
-};
 </script>
 
 
