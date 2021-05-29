@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import HomeBase from '@/components/Login/Login.vue'
+import LoginBase from '@/components/Login/LoginBase.vue'
 
 export default {
   name: 'Login',

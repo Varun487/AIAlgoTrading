@@ -18,6 +18,15 @@
 </body>    
 </template> 
 
+<script>
+export default {
+  name: "LoginBase",
+  
+};
+</script>
+
+
+
 
 
 <style scoped> 
