@@ -1,5 +1,5 @@
 <template>
-<body>
+
     <div class="login"> 
     <h1>Login Form</h1> 
     <br><br>
@@ -15,7 +15,7 @@
         <input type="checkbox" id="check"><span>Remember me</span>     
     </form>     
     </div>
-</body>    
+   
 </template> 
 
 <script>
@@ -33,14 +33,15 @@ export default {
 .login{  
         width: 382px;  
         overflow: hidden;
-        
+        margin: auto;  
+        margin: 20 300 300 450px;
         padding: 80px;  
         background: #000000;  
         border-radius: 15px ; 
         top: 0px;
           
 }  
-h2{  
+h1{  
     text-align: center;  
     color: #ffffff;  
     padding: 20px;  
@@ -78,14 +79,8 @@ span{
     color: white;  
     font-size: 17px;  
 }
-body  
-{  
-    margin: 0;  
-    padding-top: 180px;
-    padding-left:650px;
-    background-color:#6abadeba;  
-    font-family: 'Arial';  
-}  
+
+
 
 </style>
 
