@@ -1,34 +1,31 @@
 <template>
-  <div class="login">
-    <h1>Login</h1>
-    <br /><br />
-    <form id="login" method="get" action="">
-      <label><b>User Name</b></label>
-      <input type="text" name="Username" id="Username" />
-      <br /><br />
-      <label><b>Password</b></label>
-      <input type="Password" name="Password" id="Password" />
-      <br /><br />
-      <input
-        type="button"
-        name="log_button"
-        id="log_button"
-        value="Log In"
-        @click="login"
-      />
-      <br /><br />
-      <input type="checkbox" id="check" /><span>Remember me</span>
-    </form>
-  </div>
+    <div class="login"> 
+    <h1>Login Form</h1> 
+    <br><br>
+    <form id="login" method="get" action="">    
+        <label><b>User Name</b></label>       
+        <input type="text" name="Username" id="Username" >    
+        <br><br>    
+        <label><b>Password</b></label>        
+        <input type="Password" name="Password" id="Password" >    
+        <br><br>    
+        <input type="button" name="log_button" id="log_button" value="Log In" v-on:click="login">       
+        <br><br>    
+        <input type="checkbox" id="check"><span>Remember me</span>     
+    </form>     
+    </div> 
 </template> 
 
 <script>
 export default {
   name: "LoginBase",
   methods: {
-    login() {},
-  },
-};
+      login() {
+         this.$router.push('/api'); 
+      },
+    },
+  }
+  
 </script>
 
 <style scoped>
@@ -80,6 +77,5 @@ span {
   font-size: 17px;
 }
 </style>
-
 
 
