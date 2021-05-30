@@ -2,7 +2,7 @@
   <div id="nav">
     <SideNavButton />
     <Title />
-    <hr class="separator" />
+    <!-- <hr class="separator" /> -->
 	<SideNavBar />
   </div>
 </template>

@@ -25,7 +25,4 @@ export default {
 </script>
 
 <style scoped>
-.note {
-  text-align: center;
-}
 </style>
