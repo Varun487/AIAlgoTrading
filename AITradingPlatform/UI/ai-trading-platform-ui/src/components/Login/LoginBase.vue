@@ -1,14 +1,14 @@
 <template>
   <div class="login">
     <h1>LOGIN</h1>
-    <form id="login" method="get" action="">
+    <form id="login" method="get" action="" @submit.prevent="login">
       <label><b>User Name</b></label>
       <br /><br />
-      <input type="text" name="Username" id="Username" />
+      <input type="text" name="Username" id="Username" v-model="username" />
       <br /><br />
       <label><b>Password</b></label>
       <br /><br />
-      <input type="Password" name="Password" id="Password" /> <br /><br />
+      <input type="Password" name="Password" id="Password"  v-model=" password" /> <br /><br /><br />
       <input
         type="button"
         name="log_button"
@@ -18,32 +18,52 @@
       />
       <br /><br />
     </form>
+
+    <!-- <div>
+    <h3 v-if="user"> Welcome {{user.username}}</h3>
+    <h3 v-if="!user">You are not logged in!</h3>
+    </div> -->
+  
   </div>
+
 </template> 
 
 <script>
-//import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: "LoginBase",
 
   data(){
     return{
-      user_name:"",
-      password:""
+      username:"",
+      password:"",
+       user:null
+      
     }
 
   },
   methods: {
-      login() {
-        const data = {
-          user_name: this.user_name,
-          password: this.password
-        };
-        console.log(data)
+       async login() {
+
         
-        this.$router.push('/api'); 
+      const response =await axios.post('',{
+        username:this.username,
+        password:this.password
+      });
+      
+      console.log(response);
+
+      localStorage.setItem('token',response.data.token);
+       
+      this.$router.push('/api'); 
       },
+      // async created(){
+      //   const response = await axios.get('user');
+      //   this.user=response.data;
+
+      // }
+      
 
     },
   }
