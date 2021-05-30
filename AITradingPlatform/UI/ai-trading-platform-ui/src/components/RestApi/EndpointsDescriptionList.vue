@@ -999,7 +999,7 @@ export default {
                 "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
             },
             {
-              name: "time_period",
+              name: "indicator_time_period",
               type: "Integer",
               desc: "The time period of the indicator to run the strategy on.",
             },
@@ -1148,7 +1148,7 @@ export default {
                 "The column on which indicator was computed. Can take values in ['Close', 'Open', 'High', 'Low', 'Volume'].",
             },
             {
-              name: "time_period",
+              name: "indicator_time_period",
               type: "Integer",
               desc: "The time period of the indicator to run the strategy on.",
             },
