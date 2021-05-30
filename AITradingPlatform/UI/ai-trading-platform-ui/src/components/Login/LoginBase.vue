@@ -1,31 +1,35 @@
 <template>
-    <div class="login"> 
-    <h1>Login Form</h1> 
-    <br><br>
-    <form id="login" method="get" action="">    
-        <label><b>User Name</b></label>       
-        <input type="text" name="Username" id="Username" >    
-        <br><br>    
-        <label><b>Password</b></label>        
-        <input type="Password" name="Password" id="Password" >    
-        <br><br>    
-        <input type="button" name="log_button" id="log_button" value="Log In" v-on:click="login">       
-        <br><br>    
-        <input type="checkbox" id="check"><span>Remember me</span>     
-    </form>     
-    </div> 
+  <div class="login">
+    <h1>LOGIN</h1>
+    <form id="login" method="get" action="">
+      <label><b>User Name</b></label>
+      <br /><br />
+      <input type="text" name="Username" id="Username" />
+      <br /><br />
+      <label><b>Password</b></label>
+      <br /><br />
+      <input type="Password" name="Password" id="Password" /> <br /><br />
+      <input
+        type="button"
+        name="log_button"
+        id="log_button"
+        value="Log In"
+        v-on:click="login"
+      />
+      <br /><br />
+    </form>
+  </div>
 </template> 
 
 <script>
 export default {
   name: "LoginBase",
   methods: {
-      login() {
-         this.$router.push('/api'); 
-      },
+    login() {
+      this.$router.push("/api");
     },
-  }
-  
+  },
+};
 </script>
 
 <style scoped>
@@ -53,16 +57,22 @@ label {
 #Username {
   width: 300px;
   height: 30px;
-  border: none;
-  border-radius: 3px;
+  border-color: lightblue;
+  border-radius: 10px;
   padding-left: 8px;
+  color: white;
+  background: transparent;
 }
 #Password {
   width: 300px;
   height: 30px;
-  border: none;
   border-radius: 3px;
   padding-left: 8px;
+  border-color: lightblue;
+  border-radius: 10px;
+  padding-left: 8px;
+  color: white;
+  background: transparent;
 }
 #log_button {
   width: 300px;

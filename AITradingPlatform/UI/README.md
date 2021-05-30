@@ -14,6 +14,11 @@
 ### Login ![HRITIKINCOMPLETE]
 
 - Uses `Django Auth`
+	- create login auth REST API
+- Fix login button `CSS`
+- Don't render sidebar in login page
+- Don't render sidebar nav button on top-left in login page
+- Redirect all other urls to login page if not logged in
 
 ---
 
