@@ -100,6 +100,7 @@ label {
   padding-left: 8px;
   color: white;
   background: transparent;
+  outline: none;
 }
 #Password {
   width: 300px;
@@ -111,6 +112,7 @@ label {
   padding-left: 8px;
   color: white;
   background: transparent;
+  outline: none;
 }
 #log_button {
   width: 300px;

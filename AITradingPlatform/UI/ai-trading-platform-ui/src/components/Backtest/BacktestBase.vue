@@ -1,13 +1,21 @@
 <template>
   <div>
-    <h1>Sample Backtest page</h1>
+    <BacktestMain v-if="$store.getters.getBacktestMain" />
+    <BacktestReport v-else />
   </div>
 </template>
 
 <script>
+import BacktestMain from "./Main/MainBase.vue";
+import BacktestReport from "./Report/ReportBase.vue";
+
 export default {
-  name: 'BacktestBase',
-}
+  name: "BacktestBase",
+  components: {
+    BacktestMain,
+    BacktestReport,
+  },
+};
 </script>
 
 <style scoped>
