@@ -1,5 +1,4 @@
 <template>
-<body>
     <div class="login"> 
     <h1>Login Form</h1> 
     <br><br>
@@ -14,8 +13,7 @@
         <br><br><br>
         <input type="checkbox" id="check"><span>Remember me</span>     
     </form>     
-    </div>
-</body>    
+    </div> 
 </template> 
 
 <script>
@@ -47,59 +45,53 @@ export default {
   
 </script>
 
-
-
-
-
-<style scoped> 
-.login{  
-        width: 382px;  
-        overflow: hidden;
-        margin: auto;  
-        margin: 20 300 300 450px;
-        padding: 80px;  
-        background: #000000;  
-        border-radius: 15px ; 
-        top: 0px;
-          
-}  
-h1{  
-    text-align: center;  
-    color: #ffffff;  
-    padding: 20px;  
-}  
-label{  
-    color: yellow;  
-    font-size: 17px;  
-}  
-#Username{  
-    width: 300px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 3px;  
-    padding-left: 8px;  
-}  
-#Password{  
-    width: 300px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 3px;  
-    padding-left: 8px;  
-      
-}  
-#log_button{  
-    width: 300px;  
-    height: 30px;  
-    border: none;  
-    border-radius: 17px;  
-    padding-left: 7px;  
-    color: #000000; 
-  
+<style scoped>
+.login {
+  width: 382px;
+  overflow: hidden;
+  margin: auto;
+  padding: 80px;
+  background: #111111;
+  border-radius: 15px;
+  top: 0px;
+  box-shadow: 0px 0px 5px lightblue;
 }
 
-span{  
-    color: white;  
-    font-size: 17px;  
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+label {
+  opacity: 0.8;
+  font-size: 17px;
+  padding-bottom: 20px;
+}
+#Username {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+#Password {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+#log_button {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  color: #000000;
+}
+span {
+  color: white;
+  font-size: 17px;
 }
 </style>
 
