@@ -1,5 +1,5 @@
 <template>
-
+<body>
     <div class="login"> 
     <h1>Login Form</h1> 
     <br><br>
@@ -10,12 +10,12 @@
         <label><b>Password</b></label>        
         <input type="Password" name="Password" id="Password" >    
         <br><br>    
-        <input type="button" name="log_button" id="log_button" value="Log In" @click="login">       
+        <input type="button" name="log_button" id="log_button" value="Log In" v-on:click="login">       
         <br><br>    
         <input type="checkbox" id="check"><span>Remember me</span>     
     </form>     
     </div>
-   
+</body>    
 </template> 
 
 <script>
@@ -23,7 +23,7 @@ export default {
   name: "LoginBase",
   methods: {
       login() {
-        
+         this.$router.push('/api'); 
       },
     },
   }
@@ -84,10 +84,6 @@ span{
     color: white;  
     font-size: 17px;  
 }
-
-
-
 </style>
-
 
 
