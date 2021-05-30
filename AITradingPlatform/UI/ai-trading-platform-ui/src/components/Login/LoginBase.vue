@@ -5,13 +5,13 @@
     <br><br>
     <form id="login" method="get" action="">    
         <label><b>User Name</b></label>       
-        <input type="text" name="Username" id="Username" >    
+        <input type="text" name="Username" id="Username" v-model='user_name' >    
         <br><br>    
         <label><b>Password</b></label>        
-        <input type="Password" name="Password" id="Password" >    
-        <br><br>    
-        <input type="button" name="log_button" id="log_button" value="Log In" v-on:click="login">       
-        <br><br>    
+        <input type="Password" name="Password" id="Password" v-model='password' >    
+        <br><br><br><br>   
+        <input type="button" name="log_button" id="log_button" value="Log In" v-on:click="login"> 
+        <br><br><br>
         <input type="checkbox" id="check"><span>Remember me</span>     
     </form>     
     </div>
@@ -19,12 +19,29 @@
 </template> 
 
 <script>
+//import axios from 'axios'
+
 export default {
   name: "LoginBase",
+
+  data(){
+    return{
+      user_name:"",
+      password:""
+    }
+
+  },
   methods: {
       login() {
-         this.$router.push('/api'); 
+        const data = {
+          user_name: this.user_name,
+          password: this.password
+        };
+        console.log(data)
+        
+        this.$router.push('/api'); 
       },
+
     },
   }
   
@@ -78,8 +95,8 @@ label{
     padding-left: 7px;  
     color: #000000; 
   
-  
-}  
+}
+
 span{  
     color: white;  
     font-size: 17px;  
