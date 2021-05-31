@@ -47,7 +47,7 @@ export default {
        async login() {
 
         
-      const response =await axios.post('',{
+      const response =await axios.post(process.env.VUE_APP_BASE_URL+'',{
         username:this.username,
         password:this.password
       });
