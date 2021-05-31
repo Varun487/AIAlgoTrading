@@ -1,23 +1,25 @@
 <template>
   <div class="login">
     <h1>LOGIN</h1>
-    <form id="login" method="get" action="">
-      <label><b>User Name</b></label>
-      <br /><br />
-      <input type="text" name="Username" id="Username" />
-      <br /><br />
-      <label><b>Password</b></label>
-      <br /><br />
-      <input type="Password" name="Password" id="Password" /> <br /><br />
+    <label><b>User Name</b></label>
+    <br /><br />
+    <input type="text" name="Username" id="Username" />
+    <br /><br />
+    <label><b>Password</b></label>
+    <br /><br />
+    <input type="Password" name="Password" id="Password" />
+    <br /><br />
+    <br /><br />
+    <div class="login-button-div">
       <input
         type="button"
         name="log_button"
-        id="log_button"
-        value="Log In"
+        id="log-button"
+        value="LOGIN"
         v-on:click="login"
       />
-      <br /><br />
-    </form>
+    </div>
+    <br /><br />
   </div>
 </template> 
 
@@ -37,11 +39,16 @@ export default {
   width: 382px;
   overflow: hidden;
   margin: auto;
-  padding: 80px;
+  padding: 70px;
   background: #111111;
   border-radius: 15px;
   top: 0px;
   box-shadow: 0px 0px 5px lightblue;
+}
+
+.login:hover {
+	/* box-shadow: 0px 0px 10px #fa8072; */
+	box-shadow: 0px 0px 10px cyan;
 }
 
 h1 {
@@ -76,13 +83,16 @@ label {
   background: transparent;
   outline: none;
 }
-#log_button {
-  width: 300px;
-  height: 30px;
-  border: none;
+#log-button {
+  padding: 20px;
   border-radius: 17px;
-  padding-left: 7px;
-  color: #000000;
+  text-align: center;
+  color: lightblue;
+  background-color: transparent;
+  border-color: #fa8072;
+}
+.login-button-div {
+  text-align: center;
 }
 span {
   color: white;

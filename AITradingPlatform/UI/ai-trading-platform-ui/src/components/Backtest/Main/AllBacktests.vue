@@ -2,9 +2,9 @@
   <div>
     <h2>BACKTESTS</h2>
     <hr />
-    <!-- <div class="all-backtests-text">
-      All backtests that fit above filter criteria
-    </div> -->
+    <p class="no-backtests" v-if="!$store.getters.getBacktestReports.length">
+      NO BACKTESTS AVAILABLE
+    </p>
     <ul
       v-for="report in $store.getters.getBacktestReports"
       :key="report.start_date + report.end_date"
@@ -111,4 +111,12 @@ h2 {
 .backtest {
   color: lightgreen;
 }
+
+.no-backtests{
+	font-size: 25px;
+	opacity: 0.5;
+	text-align: center;
+	padding: 50px;
+}
+
 </style>
