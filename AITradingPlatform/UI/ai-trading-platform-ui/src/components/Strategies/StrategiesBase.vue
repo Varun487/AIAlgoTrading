@@ -1,40 +1,52 @@
 <template>
   <div>
+    
     <h1><center>Strategies</center></h1>
+    <p><center>Description: </center></p>
     <hr class="separator" />
     <h2>BackTested Strategies</h2>
+    <h3>Simple Bollinger Bands Strategy</h3>
     <p> Description: </p>
     <hr class="separator" />
     
 
-    <div class="dropdown">
-    <button class="dropbtn">Company:TCS BSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Indicator_time_period: 5, Sigma: 1</button>
-    <div class="dropdown-content">
-    <a href="/backtest">Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
-    <a href="/backtest">Link 2</a>
-    <a href="/backtest">Link 3</a>
-    </div>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="dropdown">
-    <button class="dropbtn">Company:TCS NSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Indicator_time_period: 5, Sigma: 1</button>
-    <div class="dropdown-content">
-    <a href="/backtest">Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
-    <a href="/backtest">Link 2</a>
-    <a href="/backtest">Link 3</a>
-    </div>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br>
+    <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Company:TCS BSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Indicator_time_period: 5, Sigma: 1</a>
+      <div class="dropdown-content">
+        <a href="/backtest">Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
+        <a href="/backtest">Link 2</a>
+        <a href="/backtest">Link 3</a>
+      </div>
+    </li>
+    </ul>
+
+    <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Company:TCS NSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Indicator_time_period: 5, Sigma: 1</a>
+      <div class="dropdown-content">
+        <a href="/backtest">Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
+        <a href="/backtest">Link 2</a>
+        <a href="/backtest">Link 3</a>
+      </div>
+    </li>
+    </ul>
+    
+    <br><br><br><br><br>
     <hr class="separator" />
     <h2>PaperTraded Strategies</h2>
+    <h3>Simple Bollinger Bands Strategy</h3>
     <p> Description: </p>
     <hr class="separator" />
-    <div class="dropdown">
-    <button class="dropbtn">Company:TCS BSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Time_period: 5, Sigma: 1, Name: "tcs bse bb close 5 1"</button>
-    <div class="dropdown-content">
-    <a href="#">Company:TCS BSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Time_period: 5, Sigma: 1, Name: "tcs bse bb close 5 1"</a>
-    </div>
-    </div>
+    <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Company:TCS BSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Time_period: 5, Sigma: 1, Name: "tcs bse bb close 5 1"</a>
+      <div class="dropdown-content">
+        <a href="#">Company:TCS BSE, Strategy: "Simple Bollinger Bands Strategy", Column: "Close", Time_period: 5, Sigma: 1, Name: "tcs bse bb close 5 1"</a>
+      </div>
+    </li>
+    </ul>
+
     
   </div>
 </template>
@@ -50,22 +62,32 @@ export default {
 .separator {
   opacity: 1.0;
 }
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-.dropdown {
-  
+li {
+  float: left;
+}
+
+li a, .dropbtn {
   display: inline-block;
-  position: fixed; /* or absolute */
-  left: 25%;
-  width: 50000px;
-  height: 400px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #228B22;
+}
+
+li.dropdown {
+  display: inline-block;
 }
 
 .dropdown-content {
@@ -82,16 +104,13 @@ export default {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #f1f1f1;}
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
 }
 
 </style>
