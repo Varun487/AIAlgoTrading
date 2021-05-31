@@ -13,12 +13,8 @@
         <input class="inp" type="date" />
       </div>
       <div class="filter-item">
-        <label>Maximum risk percentage</label>
-        <input class="inp" type="number" />
-      </div>
-      <div class="filter-item">
-        <label>Initial account size</label>
-        <input class="inp" type="number" />
+        <label>Maximum risk </label>
+        <input class="inp" type="number" /> %
       </div>
       <div class="filter-item">
         <label>Company</label>
@@ -37,7 +33,7 @@
         </select>
       </div>
       <div class="filter-item">
-        <label>Column</label>
+        <label>Dimension</label>
         <select name="Column" class="inp">
           <option value="Any">Any</option>
           <option value="Close">Close</option>
@@ -47,11 +43,7 @@
         </select>
       </div>
       <div class="filter-item">
-        <label>Indicator</label>
-        <input class="inp" type="number" />
-      </div>
-      <div class="filter-item">
-        <label>Sigma</label>
+        <label>Time period</label>
         <input class="inp" type="number" />
       </div>
       <button class="filter-button">FILTER</button>
