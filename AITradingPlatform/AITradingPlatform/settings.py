@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Strategies',
     'BackTester',
     'PaperTrader',
+    'Auth',
 ]
 
 MIDDLEWARE = [
