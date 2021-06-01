@@ -95,6 +95,7 @@
   - Orders filter form
   - Table of orders
 - Fix duplicate keys in REST API docs ![BUGFIXED]
+- Cards don't show up in production ![BUG]
 
 ---
 
