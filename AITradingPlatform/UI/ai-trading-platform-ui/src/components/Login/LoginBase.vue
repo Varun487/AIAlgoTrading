@@ -63,7 +63,7 @@ export default {
 
    
   }
-
+}
 </script>
 
 <style scoped>
@@ -131,5 +131,3 @@ span {
   font-size: 17px;
 }
 </style>
-
-
