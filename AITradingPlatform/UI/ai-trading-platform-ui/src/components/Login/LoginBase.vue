@@ -28,7 +28,7 @@ export default {
   name: "LoginBase",
   methods: {
     login() {
-      this.$router.push("/api");
+      this.$router.push("/strategies");
     },
   },
 };

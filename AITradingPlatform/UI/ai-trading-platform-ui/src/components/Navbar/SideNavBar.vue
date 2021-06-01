@@ -6,13 +6,13 @@
           <Link link="/" />
         </slot>
         <slot>
-          <Link link="/api" name="REST API Docs" class="link-item" />
+          <Link link="/strategies" name="Strategies" class="link-item" />
         </slot>
         <slot>
           <Link link="/backtest" name="Back Tests" class="link-item" />
         </slot>
         <slot>
-          <Link link="/strategies" name="Strategies" class="link-item" />
+          <Link link="/api" name="REST API Docs" class="link-item" />
         </slot>
       </div>
     </transition>
