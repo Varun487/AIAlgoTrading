@@ -52,7 +52,7 @@ export default {
 
       localStorage.setItem('token',response.data.token);
        
-      this.$router.push('/api'); 
+      this.$router.push('/strategies'); 
       },
       // async created(){
       //   const response = await axios.get('user');
@@ -61,7 +61,7 @@ export default {
       // }
       
 
-    },
+   
   }
 
 </script>

@@ -57,12 +57,12 @@
 - Click on a strategy
   - List all back tests made in strategy `Links`
   - List all orders currently paper traded `Links`
-  - Visualizations `Update each min` `Toggle b/w companies`
+  <!-- - Visualizations `Update each min` `Toggle b/w companies`
     - Company data
     - Indicators
     - Live orders
     - Visualization of past orders of strategy
-    - Visualization of model predictions `if any`
+    - Visualization of model predictions `if any` -->
   - Description
   - ML Models description `if used`
 
