@@ -22896,3 +22896,34 @@
 
 ----- x ----- x ----- x ----- x -----
 
+2021-06-01 17:30:01.564615: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-22 00:00:00+00:00 to 2021-06-01 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-22 00:00:00+00:00 to 2021-06-01 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-22 00:00:00+00:00 to 2021-06-01 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ NO new orders generated for tcs bse on 2021-06-01 00:00:00+00:00, using Paper Traded Strategy tcs bse bb close 5 1
+
+ ----- ----- ----- ----- -----
+
+ EXECUTION SUCCESS!
+
+----- x ----- x ----- x ----- x -----
+
