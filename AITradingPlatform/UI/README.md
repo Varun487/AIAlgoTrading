@@ -84,7 +84,7 @@
 	- set global state ![DONE]
 	- display all data sourced in cards ![DONE]
   - Display multiple cards side by side ![DONE]
-  - Fiter cards function ![INCOMPLETE]
+  - Filter cards function ![INCOMPLETE]
   - Click on a card function - leads to backtest report page of that backtest
 - Build backtest report page
   - Title
@@ -95,7 +95,6 @@
   - Orders filter form
   - Table of orders
 - Fix duplicate keys in REST API docs ![BUGFIXED]
-- Cards don't show up in production ![BUG]
 
 ---
 
