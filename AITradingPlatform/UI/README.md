@@ -116,6 +116,7 @@
 
 ### Paper trades Tab ![DISHAINCOMPLETE]
 
+- Decide basic layout and design of Paper Trader Tab
 - List all orders being paper traded `Live update each day`
   - Filter according to attr
 - Visualize orders `Update according to filter`
