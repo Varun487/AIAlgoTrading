@@ -7,37 +7,83 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     sidenavtoggle: false,
-    backtestmain: true,
-    backtestreports: [],
+    backtests: {
+      mainpage: true,
+      reports: [],
+      filteredreports: [],
+      backtestid: null,
+    },
   },
   mutations: {
     flipSideNavToggle(state) {
       state.sidenavtoggle = !state.sidenavtoggle;
     },
-    flipBacktestMain(state) {
-      state.backtestmain = !state.backtestmain;
+    flipBacktestsMainPage(state) {
+      state.backtests.mainpage = !state.backtests.mainpage;
     },
-    setBacktestReports(state, payload) {
-      state.backtestreports = payload;
+    setBacktestsReports(state, payload) {
+      state.backtests.reports = payload;
+      state.backtests.filteredreports = payload;
+    },
+    filterBacktestsReportsByStartDate(state, payload) {
+      console.log(payload);
+    },
+    filterBacktestsReportsByEndDate(state, payload) {
+      console.log(payload);
+    },
+    filterBacktestsReportsByMaxRisk(state, payload) {
+      console.log(payload);
+    },
+    setBacktestId(state, payload) {
+      state.backtests.backtestid = payload;
+    },
+    resetBacktestId(state) {
+      state.backtests.backtestid = null;
     },
   },
   actions: {
     flipSideNavToggle({ commit }) {
       commit("flipSideNavToggle");
     },
-    flipBacktestMain({ commit }) {
-      commit("flipBacktestMain");
+    flipBacktestsMainPage({ commit }) {
+      commit("flipBacktestsMainPage");
     },
-    setBacktestReports(state) {
+    setBacktestsReports(state) {
       axios
         .get(process.env.VUE_APP_BASE_URL + "api/backtester/viewallreports/")
-        .then((res) => state.commit("setBacktestReports", res.data))
+        .then((res) => state.commit("setBacktestsReports", res.data))
         .catch((err) => console.log(err));
+    },
+    filterBacktestsReportsByStartDate({ commit }, payload) {
+      commit("filterBacktestReportsByStartDate", payload);
+    },
+    filterBacktestsReportsByEndDate({ commit }, payload) {
+      commit("filterBacktestReportsByEndDate", payload);
+    },
+    filterBacktestsReportsByMaxRisk({ commit }, payload) {
+      commit("filterBacktestReportsByMaxRisk", payload);
+    },
+    filterBacktestsReportsByCompany({ commit }, payload) {
+      commit("filterBacktestReportsByCompany", payload);
+    },
+    filterBacktestsReportsByStrategy({ commit }, payload) {
+      commit("filterBacktestReportsByStrategy", payload);
+    },
+    filterBacktestsReportsByDimension({ commit }, payload) {
+      commit("filterBacktestReportsByDimension", payload);
+    },
+    filterBacktestsReportsByTimePeriod({ commit }, payload) {
+      commit("filterBacktestReportsByTimePeriod", payload);
+    },
+    setBacktestId({ commit }, payload) {
+      commit("setBacktestId", payload);
     },
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
-    getBacktestMain: (state) => state.backtestmain,
-    getBacktestReports: (state) => state.backtestreports,
+    getBacktestsMainPage: (state) => state.backtests.mainpage,
+    getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
+    getBacktestsReports: (state) => state.backtests.reports,
+    getBacktestId: (state) => state.backtests.backtestid,
   },
 });

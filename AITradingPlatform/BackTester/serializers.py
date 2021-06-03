@@ -28,5 +28,5 @@ class BackTestReportSerializer(serializers.ModelSerializer):
 class ViewReportsSerializer(serializers.ModelSerializer):
     class Meta:
         model = BackTestReport
-        fields = ['start_date_time', 'end_date_time', 'risk_ratio', 'max_risk', 'initial_account_size', 'final_account_size', 'total_profit_loss', 'company', 'strategy', 'column', 'indicator_time_period', 'sigma']
+        fields = ['id', 'start_date_time', 'end_date_time', 'risk_ratio', 'max_risk', 'initial_account_size', 'final_account_size', 'total_profit_loss', 'company', 'strategy', 'column', 'indicator_time_period', 'sigma']
         depth = 1

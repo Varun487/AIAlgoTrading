@@ -80,13 +80,29 @@
   - Info about page and intro to backtests ![DONE]
   - Filter criteria `Form` ![DONE]
   - All backtests conducted `Cards` ![DONE]
-	- api call to get all backtests ![DONE]
-	- set global state ![DONE]
-	- display all data sourced in cards ![DONE]
+  - api call to get all backtests ![DONE]
+  - set global state ![DONE]
+  - display all data sourced in cards ![DONE]
   - Display multiple cards side by side ![DONE]
-  - Filter cards function ![INCOMPLETE]
-  - Click on a card function - leads to backtest report page of that backtest
+  - Turn cursor to pointer on hover over cards ![DONE]
+  - Click on a card function - leads to backtest report page of that backtest ![DONE]
+    - Make API return backtest id ![DONE]
+	- Give id as key while rendering cards in v-for loop ![DONE]
+    - Make an API to return backtest info given id ![DONE]
+    - Set backtest id in state when clicking on backtest ![DONE]
+  - Filter cards function `filter by` ![INCOMPLETE]
+    - Start date ![INCOMPLETE]
+    - End Date
+    - Max Risk
+    - Company
+    - Strategy
+    - Dimension
+    - Time Period
 - Build backtest report page
+  - Go back button ![DONE]
+  - Get data of backtest from id in state
+  - Get company, indicators orders and other data on backtest
+    - Set state with that data
   - Title
   - Backtest report info
   - Visualization of account growth

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BacktestMain v-if="$store.getters.getBacktestMain" />
+    <BacktestMain v-if="$store.getters.getBacktestsMainPage" />
     <BacktestReport v-else />
   </div>
 </template>
