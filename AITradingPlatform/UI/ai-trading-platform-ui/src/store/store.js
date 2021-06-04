@@ -25,20 +25,17 @@ export const store = new Vuex.Store({
       state.backtests.reports = payload;
       state.backtests.filteredreports = payload;
     },
-    filterBacktestsReportsByStartDate(state, payload) {
-      console.log(payload);
-    },
-    filterBacktestsReportsByEndDate(state, payload) {
-      console.log(payload);
-    },
-    filterBacktestsReportsByMaxRisk(state, payload) {
-      console.log(payload);
-    },
     setBacktestId(state, payload) {
       state.backtests.backtestid = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
+    },
+    setFilteredBacktestsReports(state, payload) {
+      state.backtests.filteredreports = payload;
+    },
+    resetFilteredBacktestReports(state) {
+      state.backtests.filteredreports = state.backtests.reports;
     },
   },
   actions: {
@@ -54,29 +51,14 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setBacktestsReports", res.data))
         .catch((err) => console.log(err));
     },
-    filterBacktestsReportsByStartDate({ commit }, payload) {
-      commit("filterBacktestReportsByStartDate", payload);
-    },
-    filterBacktestsReportsByEndDate({ commit }, payload) {
-      commit("filterBacktestReportsByEndDate", payload);
-    },
-    filterBacktestsReportsByMaxRisk({ commit }, payload) {
-      commit("filterBacktestReportsByMaxRisk", payload);
-    },
-    filterBacktestsReportsByCompany({ commit }, payload) {
-      commit("filterBacktestReportsByCompany", payload);
-    },
-    filterBacktestsReportsByStrategy({ commit }, payload) {
-      commit("filterBacktestReportsByStrategy", payload);
-    },
-    filterBacktestsReportsByDimension({ commit }, payload) {
-      commit("filterBacktestReportsByDimension", payload);
-    },
-    filterBacktestsReportsByTimePeriod({ commit }, payload) {
-      commit("filterBacktestReportsByTimePeriod", payload);
-    },
     setBacktestId({ commit }, payload) {
       commit("setBacktestId", payload);
+    },
+    setFilteredBacktestsReports({ commit }, payload) {
+      commit("setFilteredBacktestsReports", payload);
+    },
+    resetFilteredBacktestReports({ commit }) {
+      commit("resetFilteredBacktestReports");
     },
   },
   getters: {

@@ -10,7 +10,7 @@
           class="inp"
           type="date"
           v-model="start_date"
-          @change="filterByStartDate"
+          @change="filterBacktests"
         />
       </div>
       <div class="filter-item">
@@ -19,7 +19,7 @@
           class="inp"
           type="date"
           v-model="end_date"
-          @change="filterByEndDate"
+          @change="filterBacktests"
         />
       </div>
       <div class="filter-item">
@@ -28,7 +28,7 @@
           class="inp"
           type="number"
           v-model="max_risk"
-          @change="filterByMaxRisk"
+          @change="filterBacktests"
         />
         %
       </div>
@@ -38,7 +38,7 @@
           name="Company"
           class="inp"
           v-model="company"
-          @change="filterByCompany"
+          @change="filterBacktests"
         >
           <option value="Any">Any</option>
           <option value="Apple">Apple</option>
@@ -52,19 +52,21 @@
           name="Strategy"
           class="inp"
           v-model="strategy"
-          @change="filterByStrategy"
+          @change="filterBacktests"
         >
           <option value="Any">Any</option>
-          <option value="SBB">Simple bollinger band test strategy</option>
+          <option value="Simple Bollinger Bands Strategy">
+            Simple Bollinger Bands Strategy
+          </option>
         </select>
       </div>
       <div class="filter-item">
         <label>Dimension</label>
         <select
-          name="Column"
+          name="Dimension"
           class="inp"
           v-model="dimension"
-          @change="filterByDimension"
+          @change="filterBacktests"
         >
           <option value="Any">Any</option>
           <option value="Close">Close</option>
@@ -79,10 +81,10 @@
           class="inp"
           type="number"
           v-model="time_period"
-          @change="filterByTimePeriod"
+          @change="filterBacktests"
         />
       </div>
-      <!-- <button class="filter-button">FILTER</button> -->
+      <button class="reset-button" @click="reset">RESET</button>
     </div>
   </div>
 </template>
@@ -102,26 +104,72 @@ export default {
     };
   },
   methods: {
-    filterByStartDate() {
-      console.log("Start Date Changed: ", this.start_date);
+    reset() {
+      this.start_date = "";
+      this.end_date = "";
+      this.max_risk = "";
+      this.time_period = "";
+      this.company = "";
+      this.strategy = "";
+      this.dimension = "";
+      this.$store.dispatch("resetFilteredBacktestReports");
     },
-    filterByEndDate() {
-      console.log("End Date Changed: ", this.end_date);
-    },
-    filterByMaxRisk() {
-      console.log("Max Risk Changed: ", this.max_risk);
-    },
-    filterByCompany() {
-      console.log("Company Changed: ", this.company);
-    },
-    filterByStrategy() {
-      console.log("Strategy Changed: ", this.strategy);
-    },
-    filterByDimension() {
-      console.log("Dimension Changed: ", this.dimension);
-    },
-    filterByTimePeriod() {
-      console.log("Time period Changed: ", this.time_period);
+    filterBacktests() {
+      let filtered_bt = this.$store.getters.getBacktestsReports;
+
+      if (this.start_date != "") {
+        const start_dt = new Date(this.start_date);
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_start_dt = new Date(report.start_date_time);
+          return report_start_dt >= start_dt;
+        });
+      }
+
+      if (this.end_date != "") {
+        const end_dt = new Date(this.end_date);
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_end_dt = new Date(report.end_date_time);
+          return report_end_dt <= end_dt;
+        });
+      }
+
+      if (this.max_risk != "" && this.max_risk != "0") {
+        const max_risk = Number(this.max_risk);
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_max_risk = Number(report.max_risk);
+          return report_max_risk == max_risk;
+        });
+      }
+
+      if (this.company != "" && this.company != "Any") {
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_company = report.company.name;
+          return report_company == this.company;
+        });
+      }
+
+      if (this.strategy != "" && this.strategy != "Any") {
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_strategy = report.strategy.name;
+          return report_strategy == this.strategy;
+        });
+      }
+
+      if (this.dimension != "" && this.dimension != "Any") {
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_column = report.column;
+          return report_column == this.dimension;
+        });
+      }
+
+      if (this.time_period != "" && this.time_period != "0") {
+        filtered_bt = filtered_bt.filter((report) => {
+          const report_time_period = Number(report.indicator_time_period);
+          return report_time_period == this.time_period;
+        });
+      }
+
+      this.$store.dispatch("setFilteredBacktestsReports", filtered_bt);
     },
   },
 };
@@ -153,7 +201,7 @@ label {
   border-radius: 7px;
 }
 
-.filter-button {
+.reset-button {
   color: lightblue;
   background-color: transparent;
   border-radius: 20px;

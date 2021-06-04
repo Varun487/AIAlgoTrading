@@ -75,7 +75,7 @@
 - install axios ![DONE]
 - Decide exactly how page is going to look and work ![DONE]
 - Decide all REST APIs needed ![DONE]
-- Build Main backtests page ![INCOMPLETE]
+- Build Main backtests page ![DONE]
   - Title ![DONE]
   - Info about page and intro to backtests ![DONE]
   - Filter criteria `Form` ![DONE]
@@ -87,20 +87,23 @@
   - Turn cursor to pointer on hover over cards ![DONE]
   - Click on a card function - leads to backtest report page of that backtest ![DONE]
     - Make API return backtest id ![DONE]
-	- Give id as key while rendering cards in v-for loop ![DONE]
+  - Give id as key while rendering cards in v-for loop ![DONE]
     - Make an API to return backtest info given id ![DONE]
     - Set backtest id in state when clicking on backtest ![DONE]
-  - Filter cards function `filter by` ![INCOMPLETE]
-    - Start date ![INCOMPLETE]
-    - End Date
-    - Max Risk
-    - Company
-    - Strategy
-    - Dimension
-    - Time Period
-- Build backtest report page
+  - Make reset button function ![DONE]
+	- Empty out all fields ![DONE]
+	- Reset filtered reports to reports ![DONE]
+  - Filter cards function `filter by` ![DONE]
+    - Start date ![DONE]
+    - End Date ![DONE]
+    - Max Risk ![DONE]
+    - Time Period ![DONE]
+    - Company ![DONE]
+    - Strategy ![DONE]
+    - Dimension ![DONE]
+- Build backtest report page ![INCOMPLETE]
   - Go back button ![DONE]
-  - Get data of backtest from id in state
+  - Get data of backtest from id in state ![INCOMPLETE]
   - Get company, indicators orders and other data on backtest
     - Set state with that data
   - Title
