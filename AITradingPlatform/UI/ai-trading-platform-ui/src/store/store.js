@@ -11,7 +11,13 @@ export const store = new Vuex.Store({
       mainpage: true,
       reports: [],
       filteredreports: [],
-      backtestid: null,
+      backtestid: "",
+      summaryloading: false,
+      accountsizeloading: false,
+      backtestreportdata: {},
+      backtestorders: [],
+      accountsizes: [],
+      timestamps: [],
     },
   },
   mutations: {
@@ -37,6 +43,19 @@ export const store = new Vuex.Store({
     resetFilteredBacktestReports(state) {
       state.backtests.filteredreports = state.backtests.reports;
     },
+    setReportInfo(state, data) {
+      state.backtests.backtestreportdata = data;
+    },
+    setOrdersData(state, data) {
+      state.backtests.backtestorders = data;
+      state.backtests.accountsizes = [];
+      state.backtests.timestamps = [];
+      data.map((order) => {
+        state.backtests.accountsizes.push(order.account_size);
+        state.backtests.timestamps.push(new Date(order.order.time_stamp));
+      });
+      state.backtests.accountsizeloading = false;
+    },
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -60,6 +79,29 @@ export const store = new Vuex.Store({
     resetFilteredBacktestReports({ commit }) {
       commit("resetFilteredBacktestReports");
     },
+    setReportInfo({ commit }, id) {
+      this.state.backtests.summaryloading = true;
+      axios
+        .get(
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getreportbyid/${id}`
+        )
+        .then((res) => {
+          commit("setReportInfo", res.data[0]);
+          this.state.backtests.summaryloading = false;
+        })
+        .catch((err) => console.log(err));
+    },
+    setOrdersData({ commit }, id) {
+      this.state.backtests.accountsizeloading = true;
+      axios
+        .get(
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getordersbyreportid/${id}`
+        )
+        .then((res) => {
+          commit("setOrdersData", res.data);
+        })
+        .catch((err) => console.log(err));
+    },
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
@@ -67,5 +109,11 @@ export const store = new Vuex.Store({
     getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
     getBacktestsReports: (state) => state.backtests.reports,
     getBacktestId: (state) => state.backtests.backtestid,
+    getBacktestReportData: (state) => state.backtests.backtestreportdata,
+    getBacktestsSummaryLoading: (state) => state.backtests.summaryloading,
+    getBacktestsAccountSizeLoading: (state) =>
+      state.backtests.accountsizeloading,
+    getBacktestsAccountSizes: (state) => state.backtests.accountsizes,
+    getBacktestsTimeStamps: (state) => state.backtests.timestamps,
   },
 });

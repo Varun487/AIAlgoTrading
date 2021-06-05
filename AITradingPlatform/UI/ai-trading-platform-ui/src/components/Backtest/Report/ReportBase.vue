@@ -1,15 +1,26 @@
 <template>
   <div class="report-base">
-    <div class="go-back" @click="$store.dispatch('flipBacktestsMainPage')">
-      <b>←</b> BACK
-    </div>
-    <h1>Backtest Report page</h1>
+    <BackButton />
+    <Title />
+    <Summary />
+    <AccountSize />
   </div>
 </template>
 
 <script>
+import BackButton from "./BackButton.vue";
+import Title from "./Title.vue";
+import Summary from "./Summary.vue";
+import AccountSize from "./AccountSize.vue";
+
 export default {
   name: "BacktestReport",
+  components: {
+    BackButton,
+    Title,
+    Summary,
+    AccountSize,
+  },
 };
 </script>
 
@@ -17,16 +28,5 @@ export default {
 .report-base {
   width: 90%;
   margin: auto;
-}
-
-.go-back {
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.go-back:hover {
-  font-size: 22px;
-  color: lightblue;
-  cursor: pointer;
 }
 </style>
