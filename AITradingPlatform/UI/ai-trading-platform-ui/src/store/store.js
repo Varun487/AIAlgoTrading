@@ -7,11 +7,19 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     sidenavtoggle: false,
+    papertrademain: true,
+    papertradereports: [],
     backtests: {
       mainpage: true,
       reports: [],
       filteredreports: [],
-      backtestid: null,
+      backtestid: "",
+      summaryloading: false,
+      accountsizeloading: false,
+      backtestreportdata: {},
+      backtestorders: [],
+      accountsizes: [],
+      timestamps: [],
     },
   },
   mutations: {
@@ -37,7 +45,25 @@ export const store = new Vuex.Store({
     resetFilteredBacktestReports(state) {
       state.backtests.filteredreports = state.backtests.reports;
     },
-   
+    setReportInfo(state, data) {
+      state.backtests.backtestreportdata = data;
+    },
+    setOrdersData(state, data) {
+      state.backtests.backtestorders = data;
+      state.backtests.accountsizes = [];
+      state.backtests.timestamps = [];
+      data.map((order) => {
+        state.backtests.accountsizes.push(order.account_size);
+        state.backtests.timestamps.push(new Date(order.order.time_stamp));
+      });
+      state.backtests.accountsizeloading = false;
+    },
+    flipPapertradeMain(state) {
+      state.papertrademain = !state.papertrademain;
+    },
+    setPapertradeReports(state, payload) {
+      state.papertradereports = payload;
+    },
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -61,12 +87,52 @@ export const store = new Vuex.Store({
     resetFilteredBacktestReports({ commit }) {
       commit("resetFilteredBacktestReports");
     },
+    setReportInfo({ commit }, id) {
+      this.state.backtests.summaryloading = true;
+      axios
+        .get(
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getreportbyid/${id}`
+        )
+        .then((res) => {
+          commit("setReportInfo", res.data[0]);
+          this.state.backtests.summaryloading = false;
+        })
+        .catch((err) => console.log(err));
+    },
+    setOrdersData({ commit }, id) {
+      this.state.backtests.accountsizeloading = true;
+      axios
+        .get(
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getordersbyreportid/${id}`
+        )
+        .then((res) => {
+          commit("setOrdersData", res.data);
+        })
+        .catch((err) => console.log(err));
+    },
+    flipPapertradeMain({ commit }) {
+      commit("flipPapertradeMain");
+    },
+    setPapertradeReports(state) {
+      axios
+        .get(process.env.VUE_APP_BASE_URL + "api/papertrader/getstrategies/")
+        .then((res) => state.commit("setPapertradeReports", res.data))
+        .catch((err) => console.log(err));
+    },
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
+    getPapertradeMain: (state) => state.papertrademain,
+    getPapertradeReports: (state) => state.papertradereports,
     getBacktestsMainPage: (state) => state.backtests.mainpage,
     getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
     getBacktestsReports: (state) => state.backtests.reports,
     getBacktestId: (state) => state.backtests.backtestid,
+    getBacktestReportData: (state) => state.backtests.backtestreportdata,
+    getBacktestsSummaryLoading: (state) => state.backtests.summaryloading,
+    getBacktestsAccountSizeLoading: (state) =>
+      state.backtests.accountsizeloading,
+    getBacktestsAccountSizes: (state) => state.backtests.accountsizes,
+    getBacktestsTimeStamps: (state) => state.backtests.timestamps,
   },
 });

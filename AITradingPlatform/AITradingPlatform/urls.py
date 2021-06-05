@@ -24,7 +24,7 @@ urlpatterns = [
     path('api/backtester/', include('BackTester.urls')),
     path('api/papertrader/', include('PaperTrader.urls')),
     path('api/auth/', include('Auth.urls')),
-    path('api/accounts',include('django.contrib.auth.urls'))
+    path('api/accounts', include('django.contrib.auth.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

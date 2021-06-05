@@ -91,8 +91,8 @@
     - Make an API to return backtest info given id ![DONE]
     - Set backtest id in state when clicking on backtest ![DONE]
   - Make reset button function ![DONE]
-	- Empty out all fields ![DONE]
-	- Reset filtered reports to reports ![DONE]
+  - Empty out all fields ![DONE]
+  - Reset filtered reports to reports ![DONE]
   - Filter cards function `filter by` ![DONE]
     - Start date ![DONE]
     - End Date ![DONE]
@@ -103,17 +103,31 @@
     - Dimension ![DONE]
 - Build backtest report page ![INCOMPLETE]
   - Go back button ![DONE]
-  - Get data of backtest from id in state ![INCOMPLETE]
-  - Get company, indicators orders and other data on backtest
-    - Set state with that data
-  - Title
-  - Backtest report info
-  - Visualization of account growth
-  - Visualization of company data + indicators
-  - Visualization or orders placed
+  - Title ![DONE]
+  - Backtest report info ![DONE]
+    - Create section ![DONE]
+    - Make API call to get report info ![DONE]
+    - Set global state ![DONE]
+    - create getters ![DONE]
+    - Display info ![DONE]
+  - Visualization of account growth ![DONE]
+	- Decide data required ![DONE]
+	- Create API `backtester/getordersbyreportid` ![DONE]
+	- Make API call ![DONE]
+	- Set global state ![DONE]
+	- Create getter ![DONE]
+	- Chart account size ![DONE]
+  - Visualization of company data + indicators + Orders placed ![INCOMPLETE]
+	- Run Multiple backtests to test data ![INCOMPLETE]
+	- Title 
+	- Visualize company data
+		- Get company data
+		- Set global state
+		- Create a getter
   - Orders filter form
   - Table of orders
 - Fix duplicate keys in REST API docs ![BUGFIXED]
+- Account size chart size doesn't revert back after side nav is removed ![BUG]
 
 ---
 

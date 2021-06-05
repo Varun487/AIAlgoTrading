@@ -1,30 +1,29 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
-
   {
-    path: '/',
-    name: 'Login',
-    component: () => import('../views/Login.vue'),
+    path: "/",
+    name: "Login",
+    component: () => import("../views/Login.vue"),
   },
   {
-	path: '/api',
-    name: 'APIDocs',
+    path: "/api",
+    name: "APIDocs",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../views/RestApiDocs.vue')
+    component: () => import("../views/RestApiDocs.vue"),
   },
   {
-	path: '/backtest',
-    name: 'Backtest',
+    path: "/backtest",
+    name: "Backtest",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../views/Backtest.vue')
+    component: () => import("../views/Backtest.vue"),
   },
   {
     path: '/strategies',
@@ -33,13 +32,21 @@ const routes = [
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Strategies.vue')
+  },
+  {
+    path: '/papertrader',
+      name: 'Papertrader',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/Papertrader.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

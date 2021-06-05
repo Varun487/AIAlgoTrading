@@ -17,10 +17,10 @@ from pandas_datareader._utils import RemoteDataError
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Login
+from .models import ExampleAuthModel
 
 
-# REST API VIEWS
+
 
 
 @api_view(['POST', ])
@@ -37,8 +37,9 @@ def login_auth(req):
         return JsonResponse(res)
 
     username = req_body['username']
+    print(username)
     password = req_body['password']
-
+    print(password)
     user = auth.authenticate(username=username, password=password)
 
     if user is not None:
@@ -49,5 +50,4 @@ def login_auth(req):
 
     else:
         res['status'] = "invalid credentials"
-        return JsonResponse()
-
+    return JsonResponse(res)
