@@ -20,6 +20,7 @@ export const store = new Vuex.Store({
     setBacktestReports(state, payload) {
       state.backtestreports = payload;
     },
+   
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -34,6 +35,7 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setBacktestReports", res.data))
         .catch((err) => console.log(err));
     },
+
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
