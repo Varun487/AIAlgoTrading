@@ -7,20 +7,56 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     sidenavtoggle: false,
-    backtestmain: true,
-    backtestreports: [],
     papertrademain: true,
     papertradereports: [],
+    backtests: {
+      mainpage: true,
+      reports: [],
+      filteredreports: [],
+      backtestid: "",
+      summaryloading: false,
+      accountsizeloading: false,
+      backtestreportdata: {},
+      backtestorders: [],
+      accountsizes: [],
+      timestamps: [],
+    },
   },
   mutations: {
     flipSideNavToggle(state) {
       state.sidenavtoggle = !state.sidenavtoggle;
     },
-    flipBacktestMain(state) {
-      state.backtestmain = !state.backtestmain;
+    flipBacktestsMainPage(state) {
+      state.backtests.mainpage = !state.backtests.mainpage;
     },
-    setBacktestReports(state, payload) {
-      state.backtestreports = payload;
+    setBacktestsReports(state, payload) {
+      state.backtests.reports = payload;
+      state.backtests.filteredreports = payload;
+    },
+    setBacktestId(state, payload) {
+      state.backtests.backtestid = payload;
+    },
+    resetBacktestId(state) {
+      state.backtests.backtestid = null;
+    },
+    setFilteredBacktestsReports(state, payload) {
+      state.backtests.filteredreports = payload;
+    },
+    resetFilteredBacktestReports(state) {
+      state.backtests.filteredreports = state.backtests.reports;
+    },
+    setReportInfo(state, data) {
+      state.backtests.backtestreportdata = data;
+    },
+    setOrdersData(state, data) {
+      state.backtests.backtestorders = data;
+      state.backtests.accountsizes = [];
+      state.backtests.timestamps = [];
+      data.map((order) => {
+        state.backtests.accountsizes.push(order.account_size);
+        state.backtests.timestamps.push(new Date(order.order.time_stamp));
+      });
+      state.backtests.accountsizeloading = false;
     },
     flipPapertradeMain(state) {
       state.papertrademain = !state.papertrademain;
@@ -33,13 +69,45 @@ export const store = new Vuex.Store({
     flipSideNavToggle({ commit }) {
       commit("flipSideNavToggle");
     },
-    flipBacktestMain({ commit }) {
-      commit("flipBacktestMain");
+    flipBacktestsMainPage({ commit }) {
+      commit("flipBacktestsMainPage");
     },
-    setBacktestReports(state) {
+    setBacktestsReports(state) {
       axios
         .get(process.env.VUE_APP_BASE_URL + "api/backtester/viewallreports/")
-        .then((res) => state.commit("setBacktestReports", res.data))
+        .then((res) => state.commit("setBacktestsReports", res.data))
+        .catch((err) => console.log(err));
+    },
+    setBacktestId({ commit }, payload) {
+      commit("setBacktestId", payload);
+    },
+    setFilteredBacktestsReports({ commit }, payload) {
+      commit("setFilteredBacktestsReports", payload);
+    },
+    resetFilteredBacktestReports({ commit }) {
+      commit("resetFilteredBacktestReports");
+    },
+    setReportInfo({ commit }, id) {
+      this.state.backtests.summaryloading = true;
+      axios
+        .get(
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getreportbyid/${id}`
+        )
+        .then((res) => {
+          commit("setReportInfo", res.data[0]);
+          this.state.backtests.summaryloading = false;
+        })
+        .catch((err) => console.log(err));
+    },
+    setOrdersData({ commit }, id) {
+      this.state.backtests.accountsizeloading = true;
+      axios
+        .get(
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getordersbyreportid/${id}`
+        )
+        .then((res) => {
+          commit("setOrdersData", res.data);
+        })
         .catch((err) => console.log(err));
     },
     flipPapertradeMain({ commit }) {
@@ -54,9 +122,17 @@ export const store = new Vuex.Store({
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
-    getBacktestMain: (state) => state.backtestmain,
-    getBacktestReports: (state) => state.backtestreports,
     getPapertradeMain: (state) => state.papertrademain,
     getPapertradeReports: (state) => state.papertradereports,
+    getBacktestsMainPage: (state) => state.backtests.mainpage,
+    getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
+    getBacktestsReports: (state) => state.backtests.reports,
+    getBacktestId: (state) => state.backtests.backtestid,
+    getBacktestReportData: (state) => state.backtests.backtestreportdata,
+    getBacktestsSummaryLoading: (state) => state.backtests.summaryloading,
+    getBacktestsAccountSizeLoading: (state) =>
+      state.backtests.accountsizeloading,
+    getBacktestsAccountSizes: (state) => state.backtests.accountsizes,
+    getBacktestsTimeStamps: (state) => state.backtests.timestamps,
   },
 });

@@ -49,23 +49,33 @@ def api_generate_report(req):
     res = {'status': 'invalid request, please check the documentation for this request here'}
 
     # list of allowed slices
-    allowed_slices = [f'year{year}month{month}' for year in range(1, 3) for month in range(1, 13)]
+    allowed_slices = [f'year{year}month{month}' for year in range(
+        1, 3) for month in range(1, 13)]
 
     try:
-        valid_risk_ratio = 'risk_ratio' in req_body and type(req_body['risk_ratio']) == str
-        valid_max_risk = 'max_risk' in req_body and type(req_body['max_risk']) == float
-        valid_initial_acc = 'initial_acc' in req_body and type(req_body['initial_acc']) == float
-        valid_strategy = 'strategy' in req_body and req_body['strategy'] in ['Simple Bollinger Bands Strategy']
+        valid_risk_ratio = 'risk_ratio' in req_body and type(
+            req_body['risk_ratio']) == str
+        valid_max_risk = 'max_risk' in req_body and type(
+            req_body['max_risk']) == float
+        valid_initial_acc = 'initial_acc' in req_body and type(
+            req_body['initial_acc']) == float
+        valid_strategy = 'strategy' in req_body and req_body['strategy'] in [
+            'Simple Bollinger Bands Strategy']
         valid_company = type(req_body['candlestick_data']['company']) == str
-        valid_provider = req_body['candlestick_data']['company'] in ['Yahoo', 'Alpha']
-        start_dt = make_aware(datetime.strptime(req_body['candlestick_data']['start_date'], '%Y-%m-%d %H:%M:%S'))
-        end_dt = make_aware(datetime.strptime(req_body['candlestick_data']['end_date'], '%Y-%m-%d %H:%M:%S'))
+        valid_provider = req_body['candlestick_data']['company'] in [
+            'Yahoo', 'Alpha']
+        start_dt = make_aware(datetime.strptime(
+            req_body['candlestick_data']['start_date'], '%Y-%m-%d %H:%M:%S'))
+        end_dt = make_aware(datetime.strptime(
+            req_body['candlestick_data']['end_date'], '%Y-%m-%d %H:%M:%S'))
         valid_time_period = req_body['candlestick_data']['time_period'] in ['daily', '60min', '30min', '15min', '10min',
                                                                             '5min', '1min']
         valid_slice = req_body['candlestick_data']['slice'] in allowed_slices
-        valid_column = req_body['indicators_data']['column'] in ['Close', 'Open', 'High', 'Low', 'Volume']
+        valid_column = req_body['indicators_data']['column'] in [
+            'Close', 'Open', 'High', 'Low', 'Volume']
         valid_sigma = type(req_body['indicators_data']['sigma']) == int
-        valid_indicator_time_period = type(req_body['indicators_data']['time_period']) == int
+        valid_indicator_time_period = type(
+            req_body['indicators_data']['time_period']) == int
 
     except Exception as e:
 
@@ -130,14 +140,16 @@ def api_generate_report(req):
 
             date1 = df.index[i].to_pydatetime()
             date1 += timedelta(days=1)
-            data1 = ImmutableData.objects.filter(company=company_obj, time_stamp=date1)
+            data1 = ImmutableData.objects.filter(
+                company=company_obj, time_stamp=date1)
 
             if data1.exists():
                 print("exists")
             else:
                 while (data1.exists() == False):
                     date1 += timedelta(days=1)
-                    data1 = ImmutableData.objects.filter(company=company_obj, time_stamp=date1)
+                    data1 = ImmutableData.objects.filter(
+                        company=company_obj, time_stamp=date1)
             close_get_out_position = []
             close_get_out_position.append(data1.values('close')[0])
             close_get_out_position1 = []
@@ -158,12 +170,14 @@ def api_generate_report(req):
                 #                                                     slice)
                 # print(collected_data,data_not_found)
 
-                data = ImmutableData.objects.filter(company=company_obj, time_stamp=date)
+                data = ImmutableData.objects.filter(
+                    company=company_obj, time_stamp=date)
 
                 if (data.exists() == False):
                     while (data.exists() == False):
                         date += timedelta(days=1)
-                        data = ImmutableData.objects.filter(company=company_obj, time_stamp=date)
+                        data = ImmutableData.objects.filter(
+                            company=company_obj, time_stamp=date)
                         # print(date,data)
                 print(date, data)
                 # print(df[column][pos[j]])
@@ -190,12 +204,14 @@ def api_generate_report(req):
                     if price < 0:
                         df['profit'][pos[j]] = "Loss"
                     if pos[j] == 0:
-                        df['quantity'][pos[j]] = int(((max_risk * initial_acc) / 100) / close_price)
+                        df['quantity'][pos[j]] = int(
+                            ((max_risk * initial_acc) / 100) / close_price)
                         # df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price ) + initial_acc
                         df['acc_size'][pos[j]] = initial_acc
                         calc += price * df['quantity'][pos[j]]
                     else:
-                        df['quantity'][pos[j]] = int(((max_risk * df['acc_size'][pos[j] - 1]) / 100) / close_price)
+                        df['quantity'][pos[j]] = int(
+                            ((max_risk * df['acc_size'][pos[j] - 1]) / 100) / close_price)
                         # df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price) + df['acc_size'][pos[j] - 1]
                         df['acc_size'][pos[j]] = df['acc_size'][pos[j] - 1]
                         calc += price * df['quantity'][pos[j]]
@@ -209,15 +225,20 @@ def api_generate_report(req):
                     if price < 0:
                         df['profit'][pos[j]] = "Loss"
                     if pos[j] == 0:
-                        df['quantity'][pos[j]] = int(((max_risk * initial_acc) / 100) / close_price)
+                        df['quantity'][pos[j]] = int(
+                            ((max_risk * initial_acc) / 100) / close_price)
                         # df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price ) + initial_acc
-                        df['acc_size'][pos[j]] = initial_acc - (close_price * df['quantity'][pos[j]])
+                        df['acc_size'][pos[j]] = initial_acc - \
+                            (close_price * df['quantity'][pos[j]])
                         calc_b += price + close_price
                     else:
-                        df['quantity'][pos[j]] = int(((max_risk * df['acc_size'][pos[j] - 1]) / 100) / close_price)
+                        df['quantity'][pos[j]] = int(
+                            ((max_risk * df['acc_size'][pos[j] - 1]) / 100) / close_price)
                         # df['acc_size'][pos[j]] = (df['quantity'][pos[j]] * price) + df['acc_size'][pos[j] - 1]
-                        df['acc_size'][pos[j]] = df['acc_size'][pos[j] - 1] - (close_price * df['quantity'][pos[j]])
-                        calc_b += (price + close_price) * df['quantity'][pos[j]]
+                        df['acc_size'][pos[j]] = df['acc_size'][pos[j] -
+                            1] - (close_price * df['quantity'][pos[j]])
+                        calc_b += (price + close_price) * \
+                                   df['quantity'][pos[j]]
 
             # df['acc_size'][i] = df['acc_size'][i - 1]
 
@@ -243,9 +264,9 @@ def api_generate_report(req):
     print(df.head(5))
 
     if not BackTestReport.objects.filter(company=company_obj, start_date_time=start_dt, end_date_time=end_dt,
-                                         max_risk=max_risk, risk_ratio=risk_ratio, \
+                                         max_risk=max_risk, risk_ratio=risk_ratio,
                                          initial_account_size=initial_acc, final_account_size=final_acc_size,
-                                         total_profit_loss=total_PF, strategy=strategy_obj, \
+                                         total_profit_loss=total_PF, strategy=strategy_obj,
                                          indicator_time_period=indicator_time_period, sigma=sigma):
         BackTestReport(
             start_date_time=start_dt,
@@ -264,7 +285,7 @@ def api_generate_report(req):
 
     for i in range(len(df)):
         if not Orders.objects.filter(order_type=df['Orders'][i][0], order_category='M', company=company_obj,
-                                     time_stamp=df.index[i].to_pydatetime(), \
+                                     time_stamp=df.index[i].to_pydatetime(),
                                      profit_loss=df['price'][i], quantity=df['quantity'][i]):
             Orders(
 
@@ -277,10 +298,10 @@ def api_generate_report(req):
             ).save()
 
         order_obj = Orders.objects.get(order_type=df['Orders'][i][0], order_category='M', company=company_obj,
-                                       time_stamp=df.index[i].to_pydatetime(), \
+                                       time_stamp=df.index[i].to_pydatetime(),
                                        profit_loss=df['price'][i], quantity=df['quantity'][i])
         backtest_obj = BackTestReport.objects.get(company=company_obj, start_date_time=start_dt, end_date_time=end_dt,
-                                                  max_risk=max_risk, risk_ratio=risk_ratio, \
+                                                  max_risk=max_risk, risk_ratio=risk_ratio,
                                                   initial_account_size=initial_acc, final_account_size=final_acc_size,
                                                   total_profit_loss=total_PF, strategy=strategy_obj)
 
@@ -320,11 +341,15 @@ def api_get_orders(req):
     # checking validity of post req body
 
     valid_company = 'company' in req_body and type(req_body['company']) == str
-    valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
-    valid_column = 'column' in req_body and req_body['column'] in ['Open', 'High', 'Low', 'Close', 'Volume']
-    valid_indicator_time_period = 'indicator_time_period' in req_body and type(req_body['indicator_time_period']) == int
+    valid_strategy = 'strategy' in req_body and type(
+        req_body['strategy']) == str
+    valid_column = 'column' in req_body and req_body['column'] in [
+        'Open', 'High', 'Low', 'Close', 'Volume']
+    valid_indicator_time_period = 'indicator_time_period' in req_body and type(
+        req_body['indicator_time_period']) == int
     valid_sigma = 'sigma' in req_body and type(req_body['sigma']) == int
-    valid_max_risk = 'max_risk' in req_body and type(req_body['max_risk']) == float
+    valid_max_risk = 'max_risk' in req_body and type(
+        req_body['max_risk']) == float
 
     if not (valid_column and valid_company and valid_strategy and valid_indicator_time_period and valid_sigma
             and valid_max_risk):
@@ -332,8 +357,10 @@ def api_get_orders(req):
 
     # check if correct date and time
     try:
-        start_dt = make_aware(datetime.strptime(req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
-        end_dt = make_aware(datetime.strptime(req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
+        start_dt = make_aware(datetime.strptime(
+            req_body['start_date'], '%Y-%m-%d %H:%M:%S'))
+        end_dt = make_aware(datetime.strptime(
+            req_body['end_date'], '%Y-%m-%d %H:%M:%S'))
     except:
         return JsonResponse(res)
 
@@ -348,10 +375,12 @@ def api_get_orders(req):
                                                            sigma=req_body['sigma'], max_risk=req_body['max_risk'],
                                                            start_date_time=start_dt, end_date_time=end_dt)[0]
 
-        backtestorder_obj = BackTestOrder.objects.filter(backtestreport=backtestreport_obj)
+        backtestorder_obj = BackTestOrder.objects.filter(
+            backtestreport=backtestreport_obj)
 
         res = {}
-        res['backtestorders'] = BackTestOrderSerializer(backtestorder_obj, many=True).data
+        res['backtestorders'] = BackTestOrderSerializer(
+            backtestorder_obj, many=True).data
 
         res["status"] = "Success"
 
@@ -366,7 +395,7 @@ def api_get_orders(req):
 def api_view_all_reports(req):
     try:
         reports = BackTestReport.objects.all()
-        print("Reports: ", reports)
+        # print("Reports: ", reports)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -383,21 +412,29 @@ def api_filter_report(req):
 
     # verify whether date and time are correct
     try:
-        valid_start_date_time = make_aware(datetime.strptime(req_body['start_date_time'], '%Y-%m-%d %H:%M:%S'))
-        valid_end_date_time = make_aware(datetime.strptime(req_body['end_date_time'], '%Y-%m-%d %H:%M:%S'))
+        valid_start_date_time = make_aware(datetime.strptime(
+            req_body['start_date_time'], '%Y-%m-%d %H:%M:%S'))
+        valid_end_date_time = make_aware(datetime.strptime(
+            req_body['end_date_time'], '%Y-%m-%d %H:%M:%S'))
     except:
         return JsonResponse(res)
 
     # validate request parameters
     try:
-        valid_risk_ratio = 'risk_ratio' in req_body and type(req_body['risk_ratio']) == str
-        valid_max_risk = 'max_risk' in req_body and type(req_body['max_risk']) == float
-        valid_initial_account_size = 'initial_account_size' in req_body and type(req_body['initial_account_size']) == float
+        valid_risk_ratio = 'risk_ratio' in req_body and type(
+            req_body['risk_ratio']) == str
+        valid_max_risk = 'max_risk' in req_body and type(
+            req_body['max_risk']) == float
+        valid_initial_account_size = 'initial_account_size' in req_body and type(
+            req_body['initial_account_size']) == float
         valid_column = 'column' in req_body and type(req_body['column']) == str
-        valid_indicator_time_period = 'indicator_time_period' in req_body and type(req_body['indicator_time_period']) == int
+        valid_indicator_time_period = 'indicator_time_period' in req_body and type(
+            req_body['indicator_time_period']) == int
         valid_sigma = 'sigma' in req_body and type(req_body['sigma']) == int
-        valid_company = 'company' in req_body and type(req_body['company']) == str
-        valid_strategy = 'strategy' in req_body and type(req_body['strategy']) == str
+        valid_company = 'company' in req_body and type(
+            req_body['company']) == str
+        valid_strategy = 'strategy' in req_body and type(
+            req_body['strategy']) == str
     except:
         return JsonResponse(res)
 
@@ -432,3 +469,30 @@ def api_filter_report(req):
         }
 
     return JsonResponse(res)
+
+
+@api_view(['GET', ])
+def api_get_backtest_report_by_id(req, id):
+    try:
+        print(id)
+        reports = BackTestReport.objects.filter(id=id)
+        # print("Reports: ", reports)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    return Response(ViewReportsSerializer(reports, many=True).data)
+
+
+@api_view(['GET', ])
+def api_get_orders_by_report_id(req, id):
+    try:
+        print(id)
+        backtest = BackTestReport.objects.get(id=id)
+        print(backtest)
+        orders = BackTestOrder.objects.filter(backtestreport=backtest)
+        # orders = BackTestOrder.objects.all()
+        print(orders)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    return Response(BackTestOrderSerializer(orders, many=True).data)

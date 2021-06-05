@@ -75,32 +75,65 @@
 - install axios ![DONE]
 - Decide exactly how page is going to look and work ![DONE]
 - Decide all REST APIs needed ![DONE]
-- Build Main backtests page ![INCOMPLETE]
+- Build Main backtests page ![DONE]
   - Title ![DONE]
   - Info about page and intro to backtests ![DONE]
   - Filter criteria `Form` ![DONE]
   - All backtests conducted `Cards` ![DONE]
-	- api call to get all backtests ![DONE]
-	- set global state ![DONE]
-	- display all data sourced in cards ![DONE]
+  - api call to get all backtests ![DONE]
+  - set global state ![DONE]
+  - display all data sourced in cards ![DONE]
   - Display multiple cards side by side ![DONE]
-  - Fiter cards function ![INCOMPLETE]
-  - Click on a card function - leads to backtest report page of that backtest
-- Build backtest report page
-  - Title
-  - Backtest report info
-  - Visualization of account growth
-  - Visualization of company data + indicators
-  - Visualization or orders placed
+  - Turn cursor to pointer on hover over cards ![DONE]
+  - Click on a card function - leads to backtest report page of that backtest ![DONE]
+    - Make API return backtest id ![DONE]
+  - Give id as key while rendering cards in v-for loop ![DONE]
+    - Make an API to return backtest info given id ![DONE]
+    - Set backtest id in state when clicking on backtest ![DONE]
+  - Make reset button function ![DONE]
+  - Empty out all fields ![DONE]
+  - Reset filtered reports to reports ![DONE]
+  - Filter cards function `filter by` ![DONE]
+    - Start date ![DONE]
+    - End Date ![DONE]
+    - Max Risk ![DONE]
+    - Time Period ![DONE]
+    - Company ![DONE]
+    - Strategy ![DONE]
+    - Dimension ![DONE]
+- Build backtest report page ![INCOMPLETE]
+  - Go back button ![DONE]
+  - Title ![DONE]
+  - Backtest report info ![DONE]
+    - Create section ![DONE]
+    - Make API call to get report info ![DONE]
+    - Set global state ![DONE]
+    - create getters ![DONE]
+    - Display info ![DONE]
+  - Visualization of account growth ![DONE]
+	- Decide data required ![DONE]
+	- Create API `backtester/getordersbyreportid` ![DONE]
+	- Make API call ![DONE]
+	- Set global state ![DONE]
+	- Create getter ![DONE]
+	- Chart account size ![DONE]
+  - Visualization of company data + indicators + Orders placed ![INCOMPLETE]
+	- Run Multiple backtests to test data ![INCOMPLETE]
+	- Title 
+	- Visualize company data
+		- Get company data
+		- Set global state
+		- Create a getter
   - Orders filter form
   - Table of orders
 - Fix duplicate keys in REST API docs ![BUGFIXED]
-- Cards don't show up in production ![BUG]
+- Account size chart size doesn't revert back after side nav is removed ![BUG]
 
 ---
 
 ### Paper trades Tab ![DISHAINCOMPLETE]
 
+- Decide basic layout and design of Paper Trader Tab
 - List all orders being paper traded `Live update each day`
   - Filter according to attr
 - Visualize orders `Update according to filter`

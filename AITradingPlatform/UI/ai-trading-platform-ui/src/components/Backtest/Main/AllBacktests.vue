@@ -2,14 +2,17 @@
   <div>
     <h2>BACKTESTS</h2>
     <hr />
-    <p class="no-backtests" v-if="!$store.getters.getBacktestReports.length">
+    <p
+      class="no-backtests"
+      v-if="!$store.getters.getBacktestsFilteredReports.length"
+    >
       NO BACKTESTS AVAILABLE
     </p>
     <ul
-      v-for="report in $store.getters.getBacktestReports"
-      :key="report.start_date + report.end_date"
+      v-for="report in $store.getters.getBacktestsFilteredReports"
+      :key="report.id"
     >
-      <div class="card">
+      <div class="card" @click="showBacktestReport(report.id)">
         <h3>
           <span class="backtest-heading">BACKTEST</span>
           {{ report.strategy.name }} - {{ report.company.name }}
@@ -63,8 +66,14 @@
 <script>
 export default {
   name: "AllBacktests",
+  methods: {
+    showBacktestReport(id) {
+      this.$store.dispatch("setBacktestId", id);
+      this.$store.dispatch("flipBacktestsMainPage");
+    },
+  },
   mounted() {
-    this.$store.dispatch("setBacktestReports");
+    this.$store.dispatch("setBacktestsReports");
   },
 };
 </script>
@@ -90,6 +99,7 @@ h2 {
   font-size: 20px;
   float: left;
   margin: 40px;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -112,11 +122,10 @@ h2 {
   color: lightgreen;
 }
 
-.no-backtests{
-	font-size: 25px;
-	opacity: 0.5;
-	text-align: center;
-	padding: 50px;
+.no-backtests {
+  font-size: 25px;
+  opacity: 0.5;
+  text-align: center;
+  padding: 50px;
 }
-
 </style>

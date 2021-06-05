@@ -3,8 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import axios from "axios";
 
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-
 import { store } from "./store/store";
 Vue.config.productionTip = false;
 
