@@ -10,50 +10,68 @@
       <hr class="separator" />
       <h2>BackTested Strategies</h2><br>
       <div class="box">
-        <h3>Simple Bollinger Bands Strategy</h3>
-        <p> Description:  Bollinger Bands consist of three bands—an upper, middle and lower band—that are used to spotlight extreme short-term prices in a security. 
-          The upper band represents overbought territory, while the lower band can show you when a security is oversold. </p>
-              
-
-        <ul>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Column: "Close", Indicator_time_period: 5, Sigma: 1</a>
-          <div class="dropdown-content">
-            <a href="/backtest">Company:TCS BSE, Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
-            <a href="/backtest">Company:TCS BSE, Start_date_time: "2021-04-1 00:00:00", End_date_time: "2021-04-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 10000</a>
-            <a href="/backtest">Company:TCS BSE, Start_date_time: "2021-03-1 00:00:00", End_date_time: "2021-03-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 100000</a>
-          </div>
-        </li>
-        </ul>
-        <br>
-        <ul>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Column: "Open", Indicator_time_period: 5, Sigma: 1</a>
-          <div class="dropdown-content" style="margin-top:50px;">
-            <a href="/backtest">Company:TCS NSE, Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
-            &nbsp;
-            <a href="/backtest">Company:TCS NSE, Start_date_time: "2021-04-1 00:00:00", End_date_time: "2021-04-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 10000</a>
-            <a href="/backtest">Company:TCS NSE, Start_date_time: "2021-03-1 00:00:00", End_date_time: "2021-03-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 100000</a>
-          </div>
-        </li>
-        </ul>
+        <p class="no-backtests" v-if="!$store.getters.getBacktestReports.length">
+          NO BACKTESTS STRATEGIES AVAILABLE
+        </p>
+        <div >
+          <h3 >Simple Bollinger Bands</h3>
+          <p> Description:  Bollinger Bands consist of three bands—an upper, middle and lower band—that are used to spotlight extreme short-term prices in a security. 
+            The upper band represents overbought territory, while the lower band can show you when a security is oversold. </p>
+                
+          
+          <ul v-for="report in $store.getters.getBacktestReports" :key="report">
+          <li class="dropdown" >
+            <a href="javascript:void(0)" class="dropbtn">Column: {{ report.column }}, Indicator_time_period: {{ report.indicator_time_period }}, Sigma: {{ report.sigma }}</a>
+            <div class="dropdown-content">
+              <a href="/backtest">Company: {{ report.company.name }}, Start_date_time: {{
+          report.start_date_time.split("T")[0] +
+          "  " +
+          report.start_date_time.split("T")[1].slice(0, -1)
+        }}, End_date_time: {{
+          report.end_date_time.split("T")[0] +
+          "  " +
+          report.end_date_time.split("T")[1].slice(0, -1)
+        }}, Risk_ratio: {{ report.risk_ratio }}, Max_risk : {{ report.max_risk }}%, Initial_account_size: {{ report.initial_account_size }}, Final_account_size: {{ report.final_account_size }},
+        Total profit: {{ Math.round(report.total_profit_loss) }}</a>
+              <!-- <a href="/backtest">Company:TCS BSE, Start_date_time: "2021-04-1 00:00:00", End_date_time: "2021-04-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 10000</a>
+              <a href="/backtest">Company:TCS BSE, Start_date_time: "2021-03-1 00:00:00", End_date_time: "2021-03-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 100000</a> -->
+            </div>
+          </li>
+          </ul>
+          <br>
+          <!-- <ul>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Column: "Open", Indicator_time_period: 5, Sigma: 1</a>
+            <div class="dropdown-content" style="margin-top:50px;">
+              <a href="/backtest">Company:TCS NSE, Start_date_time: "2021-05-1 00:00:00", End_date_time: "2021-05-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 1000000</a>
+              <a href="/backtest">Company:TCS NSE, Start_date_time: "2021-04-1 00:00:00", End_date_time: "2021-04-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 10000</a>
+              <a href="/backtest">Company:TCS NSE, Start_date_time: "2021-03-1 00:00:00", End_date_time: "2021-03-20 00:00:00", Risk_ratio: "10:10", Max_risk : 2, Initial_acc: 100000</a>
+            </div>
+          </li>
+          </ul> -->
+        </div>
       </div>
       
       <br><br><br>
       <h2>PaperTraded Strategies</h2><br>
       <div class="box">
+        <p class="no-backtests" v-if="!$store.getters.getPapertradeReports.length">
+          NO PAPERTRADE STRATEGIES AVAILABLE
+        </p>
         <h3>Simple Bollinger Bands Strategy</h3>
         <p> Description: Bollinger Bands consist of three bands—an upper, middle and lower band—that are used to spotlight extreme short-term prices in a security.
           The upper band represents overbought territory, while the lower band can show you when a security is oversold.  </p>
         
-        <ul>
+        <!-- <ul v-for="report in $store.getters.getPapertradeReports" :key="report">
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Column: "Close", Time_period: 5, Sigma: 1, Name: "tcs bse bb close 5 1"</a>
+          <a href="javascript:void(0)" class="dropbtn">Column: {{ report.column }}, Time_period: {{ report.time_period }}, Sigma: {{ report.sigma }}, 
+            Name: {{ report.name }}</a>
           <div class="dropdown-content">
-            <a href="#">Company:TCS BSE,Column: "Close", Time_period: 5, Sigma: 1, Name: "tcs bse bb close 5 1"</a>
+            <a href="#">Company:{{ report.company.name }},Column: {{ report.column }}, Time_period: {{ report.time_period }}, Sigma: {{ report.sigma }}, 
+            Name: {{ report.name }}</a>
           </div>
         </li>
-        </ul>
+        </ul> -->
       </div>
       <br><br>
     
@@ -66,6 +84,10 @@
 <script>
 export default {
   name: 'StrategiesBase',
+  mounted() {
+    this.$store.dispatch("setBacktestReports");
+    this.$store.dispatch("setPapertradeReports");
+  },
 }
 </script>
 <!--  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

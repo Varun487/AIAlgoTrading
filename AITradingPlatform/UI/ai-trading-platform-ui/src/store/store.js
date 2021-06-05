@@ -9,6 +9,8 @@ export const store = new Vuex.Store({
     sidenavtoggle: false,
     backtestmain: true,
     backtestreports: [],
+    papertrademain: true,
+    papertradereports: [],
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -19,6 +21,12 @@ export const store = new Vuex.Store({
     },
     setBacktestReports(state, payload) {
       state.backtestreports = payload;
+    },
+    flipPapertradeMain(state) {
+      state.papertrademain = !state.papertrademain;
+    },
+    setPapertradeReports(state, payload) {
+      state.papertradereports = payload;
     },
   },
   actions: {
@@ -34,10 +42,21 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setBacktestReports", res.data))
         .catch((err) => console.log(err));
     },
+    flipPapertradeMain({ commit }) {
+      commit("flipPapertradeMain");
+    },
+    setPapertradeReports(state) {
+      axios
+        .get(process.env.VUE_APP_BASE_URL + "api/papertrader/getstrategies/")
+        .then((res) => state.commit("setPapertradeReports", res.data))
+        .catch((err) => console.log(err));
+    },
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
     getBacktestMain: (state) => state.backtestmain,
     getBacktestReports: (state) => state.backtestreports,
+    getPapertradeMain: (state) => state.papertrademain,
+    getPapertradeReports: (state) => state.papertradereports,
   },
 });

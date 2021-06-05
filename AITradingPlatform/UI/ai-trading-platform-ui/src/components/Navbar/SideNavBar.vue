@@ -12,6 +12,9 @@
           <Link link="/backtest" name="Back Tests" class="link-item" />
         </slot>
         <slot>
+          <Link link="/papertrader" name="Paper Trader" class="link-item" />
+        </slot>
+        <slot>
           <Link link="/api" name="REST API Docs" class="link-item" />
         </slot>
       </div>
