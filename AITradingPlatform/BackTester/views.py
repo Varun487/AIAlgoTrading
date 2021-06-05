@@ -126,6 +126,7 @@ def api_generate_report(req):
     pos = []
     calc = 0
     calc_b = 0
+    pos_of_get = 0
     for i in range(len(df)):
 
         flag += 1
@@ -257,8 +258,16 @@ def api_generate_report(req):
             if (df['Orders'][i - 1] == "BUY"):
                 df['acc_size'][i] = calc_b + df['acc_size'][i - 1]
 
-    final_acc_size = df['acc_size'][len(df) - 1]
-    total_PF = df['acc_size'][len(df) - 1] - initial_acc
+            pos_of_get = i
+            # if(i==len(df)-1):
+            #     print("last")
+            #     final_acc_size = df['acc_size'][i - 1]
+            #     total_PF = df['acc_size'][i - 1] - initial_acc
+
+
+    final_acc_size = df['acc_size'][pos_of_get]
+    total_PF = df['acc_size'][pos_of_get] - initial_acc
+    # print(final_acc_size,total_PF)
 
     # print(df.columns.tolist())
     print(df.head(5))
