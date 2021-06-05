@@ -7,18 +7,35 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     sidenavtoggle: false,
-    backtestmain: true,
-    backtestreports: [],
+    backtests: {
+      mainpage: true,
+      reports: [],
+      filteredreports: [],
+      backtestid: null,
+    },
   },
   mutations: {
     flipSideNavToggle(state) {
       state.sidenavtoggle = !state.sidenavtoggle;
     },
-    flipBacktestMain(state) {
-      state.backtestmain = !state.backtestmain;
+    flipBacktestsMainPage(state) {
+      state.backtests.mainpage = !state.backtests.mainpage;
     },
-    setBacktestReports(state, payload) {
-      state.backtestreports = payload;
+    setBacktestsReports(state, payload) {
+      state.backtests.reports = payload;
+      state.backtests.filteredreports = payload;
+    },
+    setBacktestId(state, payload) {
+      state.backtests.backtestid = payload;
+    },
+    resetBacktestId(state) {
+      state.backtests.backtestid = null;
+    },
+    setFilteredBacktestsReports(state, payload) {
+      state.backtests.filteredreports = payload;
+    },
+    resetFilteredBacktestReports(state) {
+      state.backtests.filteredreports = state.backtests.reports;
     },
    
   },
@@ -26,20 +43,30 @@ export const store = new Vuex.Store({
     flipSideNavToggle({ commit }) {
       commit("flipSideNavToggle");
     },
-    flipBacktestMain({ commit }) {
-      commit("flipBacktestMain");
+    flipBacktestsMainPage({ commit }) {
+      commit("flipBacktestsMainPage");
     },
-    setBacktestReports(state) {
+    setBacktestsReports(state) {
       axios
         .get(process.env.VUE_APP_BASE_URL + "api/backtester/viewallreports/")
-        .then((res) => state.commit("setBacktestReports", res.data))
+        .then((res) => state.commit("setBacktestsReports", res.data))
         .catch((err) => console.log(err));
     },
-
+    setBacktestId({ commit }, payload) {
+      commit("setBacktestId", payload);
+    },
+    setFilteredBacktestsReports({ commit }, payload) {
+      commit("setFilteredBacktestsReports", payload);
+    },
+    resetFilteredBacktestReports({ commit }) {
+      commit("resetFilteredBacktestReports");
+    },
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
-    getBacktestMain: (state) => state.backtestmain,
-    getBacktestReports: (state) => state.backtestreports,
+    getBacktestsMainPage: (state) => state.backtests.mainpage,
+    getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
+    getBacktestsReports: (state) => state.backtests.reports,
+    getBacktestId: (state) => state.backtests.backtestid,
   },
 });

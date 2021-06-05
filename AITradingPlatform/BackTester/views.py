@@ -366,7 +366,7 @@ def api_get_orders(req):
 def api_view_all_reports(req):
     try:
         reports = BackTestReport.objects.all()
-        print("Reports: ", reports)
+        # print("Reports: ", reports)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
@@ -432,3 +432,15 @@ def api_filter_report(req):
         }
 
     return JsonResponse(res)
+
+
+@api_view(['GET', ])
+def api_get_backtest_report_by_id(req, id):
+    try:
+        print(id)
+        reports = BackTestReport.objects.filter(id=id)
+        # print("Reports: ", reports)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    return Response(ViewReportsSerializer(reports, many=True).data)
