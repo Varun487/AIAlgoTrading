@@ -1,22 +1,13 @@
 import json
 import sys
-from datetime import datetime
 from datetime import timedelta
-import pandas as pd
 
-from django.http import JsonResponse
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
 from django.utils.timezone import make_aware
 
-from .models import ExampleBackTesterModel, BackTestReport, BackTestOrder
-from .serializers import ExampleBackTesterSerializer, ViewReportsSerializer
+from .serializers import ViewReportsSerializer
 from Strategies.utils import simple_bollinger_bands_strategy
-from Strategies.models import Strategy, Orders
 
-from DataFeeder.models import Company, ImmutableData, Indicators
-from DataFeeder.utils import get_data_on_demand, push_indicators_to_db
+from DataFeeder.models import ImmutableData
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -24,7 +15,7 @@ from django.http import JsonResponse
 from .models import ExampleBackTesterModel, BackTestOrder, BackTestReport
 from Strategies.models import Orders, Strategy
 from DataFeeder.models import Company
-from .serializers import ExampleBackTesterSerializer, BackTestReportSerializer, BackTestOrderSerializer
+from .serializers import ExampleBackTesterSerializer, BackTestOrderSerializer
 from datetime import datetime
 
 

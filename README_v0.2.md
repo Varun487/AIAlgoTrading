@@ -150,35 +150,27 @@ This project can be pursued in the future to build a fully integrated trading sy
 
 # TODO
 
-**PROJECT PHASE 1** _-> COMPLETE BEFORE ESA BEGINS_
-
-1. Final presentation ![DOCCOMPLETE]
-2. FILL WEEKLY PROGRESS PAGE ![DOCCOMPLETE]
-3. 2 Research papers per person ![DOCCOMPLETE]
-
-**PROJECT PHASE 2** _-> COMPLETE BY JULY END_
-
-1. CONFIG WORK ![VARUNCOMPLETE]
-   - Build all docker containers and run it locally ![DONE]
-     - REST API ![DONE]
-     - DB ![DONE]
-     - Server ![DONE]
-       - Setup Nginx server ![DONE]
-       - Make it serve Django files ![DONE]
-   - Separate development and production environments ![DONE]
-   - Add custom domain to firebase for UI ![DONE]
-2. DATAFEEDER WORK ![COMPONENTCOMPLETE]
+1. DATAFEEDER WORK ![COMPONENTINCOMPLETE]
    - [Link to Datafeeder README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/DataFeeder)
-3. STRATEGIES WORK ![COMPONENTCOMPLETE]
+2. STRATEGIES WORK ![COMPONENTINCOMPLETE]
    - [Link to Strategies README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/Strategies)
-4. BACKTESTER WORK ![COMPONENTCOMPLETE]
+3. BACKTESTER WORK ![COMPONENTINCOMPLETE]
    - [Link to BackTester README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/BackTester)
-5. PAPER TRADER ![COMPONENTCOMPLETE]
+4. PAPER TRADER ![COMPONENTINCOMPLETE]
    - [Link to PaperTrader README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/PaperTrader)
-6. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
+5. UI WORK `Vue js` ![COMPONENTINCOMPLETE]
    - [Link to UI README](https://github.com/Varun487/CapstoneProject_AITradingPlatform/tree/main/AITradingPlatform/UI)
+6. Automated testing ![FEATUREINCOMPLETE]
+   - Build Infra, decide and setup tools
+   - Complete writing tests for all functions, REST APIs and UI
+7. Run Django in a Production environment on the VM ![FEATUREINCOMPLETE]
+   - Buy a domain ![DONE]
+   - SSL certification
+   - Host the REST API
+   - Decide deployment workflow
+   - Make a deployment script
 
-### VERSION 0.1.0 LAUNCH !
+### VERSION 0.2.0 LAUNCH !
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
