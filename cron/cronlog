@@ -57546,3 +57546,453 @@
 
 ----- x ----- x ----- x ----- x -----
 
+2021-06-07 17:34:03.283830: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-25 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-25 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-25 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:35:01.294437: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:36:01.960531: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:37:01.239955: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:38:01.131906: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:39:02.253232: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:40:01.129995: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:41:01.371242: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:42:01.904417: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:43:01.590320: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:44:01.652766: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:45:01.242896: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:46:01.659700: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:47:01.453008: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
+2021-06-07 17:48:02.131886: CRON JOB EXECUTED
+
+ DJANGO STAND ALONE APP SETUP SUCCESSFUL!
+
+ ----- ----- ----- ----- -----
+
+ DATAFEEDER - REAL TIME SOURCING
+
+ Collected data for AAPL from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.NS from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+ Collected data for TCS.BO from 2021-05-28 00:00:00+00:00 to 2021-06-07 00:00:00+00:00 and pushed to DB.
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - TRACK ORDERS REAL TIME
+
+ Success: profit_loss parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+ Success: percentage_change parameter set for live paper trade order Order Type: S, Company: tcs bse, TimeStamp: 2021-05-27 00:00:00+00:00. 
+
+ ----- ----- ----- ----- -----
+
+ PAPERTRADER - GENERATE ORDERS REAL TIME
+
+ Orders matching query does not exist.
+ Exception type:  <class 'Strategies.models.Orders.DoesNotExist'>
+ File name:  /home/app/microservice/cron/periodic_job.py
+ Line number:  218
+
+----- x ----- x ----- x ----- x -----
+
