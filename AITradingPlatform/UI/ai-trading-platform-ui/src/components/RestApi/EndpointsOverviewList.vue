@@ -6,6 +6,8 @@
     <EndpointOverviewItem heading="Strategies" :links="StrategiesLinks" />
     <EndpointOverviewItem heading="Back Tester" :links="BackTesterLinks" />
     <EndpointOverviewItem heading="Paper Trader" :links="PaperTraderLinks" />
+    <EndpointOverviewItem heading="Auth" :links="AuthLinks" />
+
   </div>
 </template>
 
@@ -126,6 +128,14 @@ export default {
           code: "GET /papertrader/getpapertradeorders",
           link: "#get-papertrade-orders",
         },
+
+      ],
+      AuthLinks: [
+        {
+          code: "GET /auth/login",
+          link: "#get-login",
+        },
+        
 
       ],
     };

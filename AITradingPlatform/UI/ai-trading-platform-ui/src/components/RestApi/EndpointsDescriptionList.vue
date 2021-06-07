@@ -6,6 +6,7 @@
     <EndpointDescriptionItem heading="Strategies" :apis="StrategiesApis" />
     <EndpointDescriptionItem heading="Back Tester" :apis="BackTesterApis" />
     <EndpointDescriptionItem heading="Paper Trader" :apis="PaperTraderApis" />
+    <EndpointDescriptionItem heading="Auth" :apis="AuthApis" />
   </div>
 </template>
 
@@ -1590,6 +1591,40 @@ export default {
 }`,
         },
       ],
+      AuthApis: [
+        {
+          type: "POST",
+          code: "/auth/login",
+          link: "get-login",
+          description:
+            "An example api to enter the login credentials of a user to login to the website ",
+          parameters: [
+            {
+              name: "username",
+              type: "String",
+              desc: "The username of the user",
+            },
+            {
+              name: "password",
+              type: "String",
+              desc: "The password of the user",
+            },
+          ],
+          req_url: "/auth/login/",
+          req_body: `{
+    "username": "hritik",
+    "password": "24-07-2000"
+
+}`,
+          correct_output: `{
+    "status": "you have successfully logged in"
+}`,
+          failed_output: `{
+    "status": "invalid credentials"
+}`,
+        },
+        
+      ]
     };
   },
 };
