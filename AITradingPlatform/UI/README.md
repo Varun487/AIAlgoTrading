@@ -52,10 +52,10 @@
 
 ### Strategies Tab ![SAMRUDHIINCOMPLETE]
 
-- selected on default `Home page`
-- All strategies and descriptions listed `cards`
+- selected on default `Home page` ![DONE]
+- All strategies and descriptions listed `cards` ![DONE]
 - Click on a strategy
-  - List all back tests made in strategy `Links`
+  - List all back tests made in strategy `Links` 
   - List all orders currently paper traded `Links`
   <!-- - Visualizations `Update each min` `Toggle b/w companies`
     - Company data
@@ -63,7 +63,7 @@
     - Live orders
     - Visualization of past orders of strategy
     - Visualization of model predictions `if any` -->
-  - Description
+  - Description ![DONE]
   - ML Models description `if used`
 
 ---

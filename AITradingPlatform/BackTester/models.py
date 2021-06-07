@@ -34,7 +34,7 @@ class BackTestReport(models.Model):
 class BackTestOrder(models.Model):
     order = models.ForeignKey(to=Orders, on_delete=models.CASCADE)
     backtestreport = models.ForeignKey(to=BackTestReport, on_delete=models.CASCADE)
-    account_size = models.FloatField()
+    account_size = models.FloatField(null=True)
 
     def __str__(self):
         return f"Order: {self.order }, Backtestreport: {self.backtestreport}"
