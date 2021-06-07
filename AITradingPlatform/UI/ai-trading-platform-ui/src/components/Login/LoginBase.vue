@@ -26,7 +26,7 @@
 </template> 
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
   name: "LoginBase",
 
@@ -38,18 +38,18 @@ export default {
   },
   methods: {
     async login() {
-      //this.$router.push("/strategies");
-      const data = {
-        user_name: this.username,
-        password: this.password,
-      };
-      //console.log(data)
+      this.$router.push("/strategies");
+      // const data = {
+      //   user_name: this.username,
+      //   password: this.password,
+      // };
+      // //console.log(data)
 
-      const res = await axios.post(
-        process.env.VUE_APP_BASE_URL + "api/auth/login/",
-        data
-      );
-      console.log(res);
+      // const res = await axios.post(
+      //   process.env.VUE_APP_BASE_URL + "api/auth/login/",
+      //   data
+      // );
+      // console.log(res);
     },
   },
 };

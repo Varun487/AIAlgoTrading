@@ -2,11 +2,11 @@
   <div class="Endpoints">
     <h2>REST API Endpoints</h2>
     <hr />
+    <EndpointDescriptionItem heading="Auth" :apis="AuthApis" />
     <EndpointDescriptionItem heading="Data Feeder" :apis="DataFeederApis" />
     <EndpointDescriptionItem heading="Strategies" :apis="StrategiesApis" />
     <EndpointDescriptionItem heading="Back Tester" :apis="BackTesterApis" />
     <EndpointDescriptionItem heading="Paper Trader" :apis="PaperTraderApis" />
-    <EndpointDescriptionItem heading="Auth" :apis="AuthApis" />
   </div>
 </template>
 
@@ -922,8 +922,9 @@ export default {
     "data": [
         {
             "name": "Simple Bollinger Bands Strategy",
-            "desc": "Bollinger Bands consist of three bands—an upper, middle and lower band—that are 
-                      used to spotlight extreme short-term prices in a security.",
+            "desc": "Bollinger Bands consist of three bands—an upper, middle and lower 
+                      band—that are used to spotlight extreme short-term prices in a 
+                      security.",
             "sector": "Tech"
         }
     ]

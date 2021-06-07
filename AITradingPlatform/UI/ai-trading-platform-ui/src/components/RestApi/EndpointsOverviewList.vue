@@ -2,12 +2,12 @@
   <div class="Endpoints">
     <h2>REST API Endpoints Overview</h2>
     <hr />
+    <EndpointOverviewItem heading="Auth" :links="AuthLinks" />
     <EndpointOverviewItem heading="Data Feeder" :links="DataFeederLinks" />
     <EndpointOverviewItem heading="Strategies" :links="StrategiesLinks" />
     <EndpointOverviewItem heading="Back Tester" :links="BackTesterLinks" />
     <EndpointOverviewItem heading="Paper Trader" :links="PaperTraderLinks" />
-    <EndpointOverviewItem heading="Auth" :links="AuthLinks" />
-
+    
   </div>
 </template>
 
@@ -132,7 +132,7 @@ export default {
       ],
       AuthLinks: [
         {
-          code: "GET /auth/login",
+          code: "POST /auth/login",
           link: "#get-login",
         },
         
