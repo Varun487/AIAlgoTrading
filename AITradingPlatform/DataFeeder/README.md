@@ -45,7 +45,14 @@
     - Verify if company already exists in DB ![DONE]
     - Return error message `Invalid request. Company already exists in Database` if company data not found. ![DONE]
 - Delete a company ![DONE]
+    - Create an endpoint `deletecompany/` ![DONE]
+    - Verify if company already exists in DB ![DONE]
+    - Return error message `Invalid request. Company already exists in Database` if company data not found. ![DONE]
 - Modify attr of a company ![DONE]
+    - Create an endpoint `modifycompanyattr/` ![DONE]
+    - Validate post request parameters and check request validity![DONE]
+    - Return error message `Invalid request. Company already exists in Database` if company data not found. ![DONE]
+
 #### Immutable data ![HRITIKCOMPLETE]
 
 - List immutable data in DB ![DONE] 
