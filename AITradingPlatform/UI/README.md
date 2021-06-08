@@ -133,7 +133,7 @@
 
 ### Paper trades Tab ![DISHAINCOMPLETE]
 
-- Decide basic layout and design of paper trader tab [DONE]
+- Decide basic layout and design of paper trader tab ![DONE]
 - Add a paper trader tab in side nav bar ![DONE]
 - Layout (Main)![DONE] 
   - Title ![DONE]
@@ -143,7 +143,12 @@
   - Live Trades Section (Cards) ![DONE]
 - Layout (Report)
 - List all orders being paper traded `Live update each day`
-  - Filter according to attr
+- Filter cards function `filter by` 
+    - Start date ![DONE]
+    - End Date ![DONE]
+    - Order Type ![DONE]
+    - Company ![DONE]
+    - Strategy ![DONE]
 - Visualize orders `Update according to filter`
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
