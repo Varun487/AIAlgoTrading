@@ -140,7 +140,7 @@
   - About ![DONE]
   - Mid Section ![DONE]
   - Filter Section ![DONE]
-  - Live Trades Section (Cards) ![DONE
+  - Live Trades Section (Cards) ![DONE]
 - Layout (Report)
 - List all orders being paper traded `Live update each day`
 - Filter cards function `filter by` 
