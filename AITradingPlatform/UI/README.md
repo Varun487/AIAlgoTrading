@@ -135,7 +135,7 @@
 
 - Decide basic layout and design of paper trader tab ![DONE]
 - Add a paper trader tab in side nav bar ![DONE]
-- Layout (Main)![DONE] 
+- Layout (Main) ![DONE] 
   - Title ![DONE]
   - About ![DONE]
   - Mid Section ![DONE]
