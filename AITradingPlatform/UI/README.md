@@ -144,11 +144,11 @@
 - Layout (Report)
 - List all orders being paper traded `Live update each day`
 - Filter cards function `filter by` 
-    - Start date ![DONE]
-    - End Date ![DONE]
-    - Order Type ![DONE]
-    - Company ![DONE]
-    - Strategy ![DONE]
+    - Start date 
+    - End Date 
+    - Order Type 
+    - Company
+    - Strategy
 - Visualize orders `Update according to filter`
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
