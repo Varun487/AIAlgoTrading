@@ -1,0 +1,45 @@
+version: "3.3"
+
+services:
+
+  db:
+    image: postgres
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ../postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  rest_api:
+    build: ../restapi
+    environment:
+      - API_KEY=9IJF3E893E4E2Q2M
+    command: bash -c "cd ../restapi
+      && python3 manage.py makemigrations backtester
+      && python3 manage.py makemigrations strategies
+      && python3 manage.py migrate
+      && echo yes | python3 manage.py collectstatic
+      && python3 manage.py runserver 0.0.0.0:8000
+      "
+    volumes:
+      - ../restapi:/home/app/restapi
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+
+  ui:
+    build: ../ui
+    command: bash -c "npm install
+      && npm run serve
+      "
+    volumes:
+      - ../ui:/home/app/ui
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rest_api

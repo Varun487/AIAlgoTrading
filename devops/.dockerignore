@@ -1,0 +1,9 @@
+..git/
+..idea/
+../venv/
+__pycache__
+migrations/
+../postgres-data/
+../.gitignore
+../README
+../LICENSE

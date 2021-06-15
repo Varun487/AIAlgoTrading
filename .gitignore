@@ -137,10 +137,9 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# Capstone Project stuff
+# Custom
 .idea/
 .vscode/
 migrations/
 postgres-data/
-staticfiles/
-AITradingPlatform/staticfiles/
+restapi/staticfiles/
