@@ -58,14 +58,15 @@
 ## REST API endpoints
 - `GET` All Strategies
   - Returns all strategies and their info in DB
+- `GET` Strategy data
+  - Returns all data pertaining to a strategy and their info in DB
 - `GET` All backtests
   - All backtests and their info to be displayed in short form
 - `GET` Backtest data 
   - input = id, img height, img width
   - Given id, returns all information about a backtest
-- `GET` backtest visualizations
+- `GET` Backtest visualizations
   - Generates and returns all images for a given backtest id
-- Should REST API docs be in DB with a REST API or hard coded with UI??
 
 ## REST API PAGE
 - Yml file to read data from
