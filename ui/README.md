@@ -8,16 +8,25 @@
 
 # TODO
 
-###### To be filled by UI team
+## All strategies page ![dishaincomplete]
+- design 
+- implementation 
 
-## All strategies page
+## Strategy page ![samrudhiincomplete]
+- design 
+- implementation 
 
-## REST API Documentation page
+## REST API Documentation page ![varunincomplete]
+- design 
+- implementation
 
-## Backtest report page
+## Backtest report page ![incomplete]
+- design ![samrudhiincomplete]
+- implementation ![hritikincomplete]
 
 ## Automated testing
 - All strategies page
+- Strategy page
 - REST API docs
 - Backtest report page
 

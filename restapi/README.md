@@ -9,68 +9,60 @@
 # TODO
 
 ## Services
-- Utils
-  - Converters
+- Utils ![incomplete]
+  - Converters ![varunincomplete]
     - DF to DB Objects
     - DB Objects to DF
-  - Push obj to DB
+  - Push obj to DB ![hritikincomplete]
     - Converts from DF to list of objects 
     - Accepts list of objects / df as input 
     - For an object
       - If correct attributes given
       - Checks If data already present in DB
       - Else Pushes the data to DB
-    - Get objects from DB 
-      - Filters / gets data according to parameters 
-      - Convert to DF
-- Indicator Calc
+  - Get objects from DB ![dishaincomplete]
+    - Filters / gets data according to parameters 
+    - Convert to DF
+- Indicator Calc ![samrudhiincomplete]
   - Input is column and Triples of (Indicator type, time period, Dimension)
   - Returns DF with Dimension and Indicators cols
-- Model predictions 
-  - Input is Strategy type, strategy config and data + Indicators 
-  - Generates predictions for the models 
-  - Returns DF with predictions required for strategy
-- Signal generation 
+- Signal generation ![hritikincomplete]
   - Run the strategy on given data + indicators + predictions and generate Buy / Short signals
   - Input as Strategy type, Strategy config,  data + Indicators required by strategy 
   - Pushes all signals to DB, add their ids as a column in DF
   - Returns a DF with all signals for data
-- Order execution 
+- Order execution ![varunincomplete]
   - Executes all signals according to execution assumptions, notes execution candlestick
   - Closes all possible orders according to strategy config given, notes candlestick which closes order
   - Pushes all orders to DB, add their ids as a column in DF 
   - Returns DF for executed and closed orders 
-- Trade evaluation 
+- Trade evaluation ![dishaincomplete]
   - Evaluates all pairs of orders and calculates, net returns, returns %, duration, etc. 
   - Pushes all Trades to DB, add their ids as a column in DB 
   - Returns DF with All trade pairs
-- Backtesting Report generation 
+- Backtesting Report generation ![samrudhiincomplete]
   - Pushes the backtest report to DB with status Running / Pending 
   - Orchestrates calling of various services to run the backtest 
   - Calculates net returns across all trades, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
   - Pushes Backtest Trades to DB 
   - Pushes Final report to DB
-- Generate Visualization 
+- Generate Visualization ![varunincomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req 
   - Generates visualization as an image 
   - Returns image
 
 ## REST API endpoints
-- `GET` All Strategies
+- `GET` All Strategies ![dishaincomplete]
   - Returns all strategies and their info in DB
-- `GET` Strategy data
+- `GET` Strategy data ![samrudhiincomplete]
   - Returns all data pertaining to a strategy and their info in DB
-- `GET` All backtests
+- `GET` All backtests ![hritikincomplete]
   - All backtests and their info to be displayed in short form
-- `GET` Backtest data 
+- `GET` Backtest data ![varunincomplete]
   - input = id, img height, img width
   - Given id, returns all information about a backtest
-- `GET` Backtest visualizations
+- `GET` Backtest visualizations ![hritikincomplete]
   - Generates and returns all images for a given backtest id
-
-## REST API PAGE
-- Yml file to read data from
-- Ginger html file to render the page
 
 ## Automated testing
 ###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class

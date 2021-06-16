@@ -23,7 +23,7 @@
 - Containers ![done]
   - db ![done]
   - rest api ![done]
-  - ui ![incomplete]
+  - ui 
   - nginx 
 - Make nginx serve both ui and rest api 
 - Buy a domain 
@@ -33,7 +33,8 @@
 - See how to add domain
 
 ## Initialization and deployment scripts ![varunincomplete]
-- Initialize DB with required data
+- Initialize DB with required data ![incomplete]
+  - 1 company data from yahoo finance
 - Run required backtests
 - Automated build and deployment to VM
 
