@@ -1,6 +1,6 @@
 # REST API v0.1.0
 
-![COMPONENTINCOMPLETE]
+![componentincomplete]
 
 - Contains the business logic of the project
 
@@ -9,10 +9,81 @@
 # TODO
 
 ## Services
+- Utils
+  - Converters
+    - DF to DB Objects
+    - DB Objects to DF
+  - Push obj to DB
+    - Converts from DF to list of objects 
+    - Accepts list of objects / df as input 
+    - For an object
+      - If correct attributes given
+      - Checks If data already present in DB
+      - Else Pushes the data to DB
+    - Get objects from DB 
+      - Filters / gets data according to parameters 
+      - Convert to DF
+- Indicator Calc
+  - Input is column and Triples of (Indicator type, time period, Dimension)
+  - Returns DF with Dimension and Indicators cols
+- Model predictions 
+  - Input is Strategy type, strategy config and data + Indicators 
+  - Generates predictions for the models 
+  - Returns DF with predictions required for strategy
+- Signal generation 
+  - Run the strategy on given data + indicators + predictions and generate Buy / Short signals
+  - Input as Strategy type, Strategy config,  data + Indicators required by strategy 
+  - Pushes all signals to DB, add their ids as a column in DF
+  - Returns a DF with all signals for data
+- Order execution 
+  - Executes all signals according to execution assumptions, notes execution candlestick
+  - Closes all possible orders according to strategy config given, notes candlestick which closes order
+  - Pushes all orders to DB, add their ids as a column in DF 
+  - Returns DF for executed and closed orders 
+- Trade evaluation 
+  - Evaluates all pairs of orders and calculates, net returns, returns %, duration, etc. 
+  - Pushes all Trades to DB, add their ids as a column in DB 
+  - Returns DF with All trade pairs
+- Backtesting Report generation 
+  - Pushes the backtest report to DB with status Running / Pending 
+  - Orchestrates calling of various services to run the backtest 
+  - Calculates net returns across all trades, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
+  - Pushes Backtest Trades to DB 
+  - Pushes Final report to DB
+- Generate Visualization 
+  - Input - Visualization type, DF with correct data for Visualization, image size req 
+  - Generates visualization as an image 
+  - Returns image
 
 ## REST API endpoints
+- `GET` All Strategies
+  - Returns all strategies and their info in DB
+- `GET` All backtests
+  - All backtests and their info to be displayed in short form
+- `GET` Backtest data 
+  - input = id, img height, img width
+  - Given id, returns all information about a backtest
+- `GET` backtest visualizations
+  - Generates and returns all images for a given backtest id
+- Should REST API docs be in DB with a REST API or hard coded with UI??
 
 ## Automated testing
+###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class
+- restapi
+  - backtester apis
+  - strategy apis
+- services
+  - Utils
+    - Converters
+    - Pushers
+    - Getters
+  - Indicator calc
+  - Model predictions
+  - Signal generation
+  - Order Execution
+  - Trade evaluation
+  - Backtest Report Generation
+  - Generate Visualization
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

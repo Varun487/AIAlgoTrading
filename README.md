@@ -101,9 +101,9 @@ docker-compose -f devops/docker-compose.dev.yml run ui npm install
 
 ```
 
-7. To build a production version
+7. To build a production version of the frontend
 ```
-docker-compose -f devops/docker-compose.dev.yml run ui npm ruin build
+docker-compose -f devops/docker-compose.dev.yml run ui npm run build
 ```
 
 ###### NOTE: To run in production, the commands are the same, but the file is `docker-compose.prod.yml`

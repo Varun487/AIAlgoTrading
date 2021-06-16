@@ -1,6 +1,6 @@
 # DEV OPS v0.1.0
 
-![COMPONENTINCOMPLETE]
+![componentincomplete]
 
 - Building the development and production environments
 
@@ -20,8 +20,21 @@
 - Update READMEs ![done]
 
 ## Production ![varunincomplete]
+- Containers
+  - db
+  - rest api
+  - ui
+  - nginx
+- Make nginx serve both ui and rest api
+- Make changes to run django in a production environment
+- Buy a domain ![done]
+- SSL certification
+- deploy on VM
 
 ## Initialization and deployment scripts ![varunincomplete]
+- Initialize DB with required data
+- Run required backtests
+- Automated build and deployment to VM
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

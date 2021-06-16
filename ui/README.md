@@ -1,6 +1,6 @@
 # UI v0.1.0
 
-![COMPONENTINCOMPLETE]
+![componentincomplete]
 
 - This service is a website which provides a GUI for the user to interact with all the other services.
 
@@ -12,11 +12,14 @@
 
 ## All strategies page
 
-## REST API Documnetation page
+## REST API Documentation page
 
 ## Backtest report page
 
 ## Automated testing
+- All strategies page
+- REST API docs
+- Backtest report page
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
