@@ -13,7 +13,7 @@ services:
     ports:
       - "5432:5432"
 
-  rest_api:
+  restapi:
     build: ../restapi
     environment:
       - API_KEY=9IJF3E893E4E2Q2M
@@ -42,4 +42,4 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - rest_api
+      - restapi

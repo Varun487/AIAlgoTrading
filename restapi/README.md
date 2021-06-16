@@ -67,6 +67,10 @@
   - Generates and returns all images for a given backtest id
 - Should REST API docs be in DB with a REST API or hard coded with UI??
 
+## REST API PAGE
+- Yml file to read data from
+- Ginger html file to render the page
+
 ## Automated testing
 ###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class
 - restapi

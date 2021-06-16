@@ -20,16 +20,17 @@
 - Update READMEs ![done]
 
 ## Production ![varunincomplete]
-- Containers
-  - db
-  - rest api
-  - ui
-  - nginx
-- Make nginx serve both ui and rest api
-- Make changes to run django in a production environment
-- Buy a domain ![done]
+- Containers ![done]
+  - db ![done]
+  - rest api ![done]
+  - ui ![incomplete]
+  - nginx 
+- Make nginx serve both ui and rest api 
+- Buy a domain 
+- Make changes to run django in a production environment 
 - SSL certification
 - deploy on VM
+- See how to add domain
 
 ## Initialization and deployment scripts ![varunincomplete]
 - Initialize DB with required data

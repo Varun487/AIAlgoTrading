@@ -9,37 +9,45 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - ../postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
-  rest_api:
-    build: .
+  restapi:
+    build: ../restapi
     environment:
       - API_KEY=9IJF3E893E4E2Q2M
-    command: bash -c "cron
-      && cd restapi
-      && python3 manage.py makemigrations datafeeder
-      && python3 manage.py makemigrations backtester
-      && python3 manage.py makemigrations papertrader
+    command: bash -c "python3 manage.py makemigrations backtester
       && python3 manage.py makemigrations strategies
       && python3 manage.py migrate
       && echo yes | python3 manage.py collectstatic
       && gunicorn restapi.wsgi:application --bind 0.0.0.0:8000
       "
     volumes:
-      - .:/home/app/microservice
+      - ../restapi:/home/app/restapi/
     expose:
       - 8000
     depends_on:
       - db
 
+  ui:
+    build: ../ui
+    command: bash -c "npm install
+      && npm run serve
+      "
+    volumes:
+      - ../ui:/home/app/ui
+    expose:
+      - 8080
+    depends_on:
+      - restapi
+
   server:
     build: ./nginx
     ports:
-      - 1300:80
+      - 80:80
     volumes:
-      - ./restapi/staticfiles/:/home/app/microservice/static/
+      - ../restapi/staticfiles/:/home/app/restapi/static/
     depends_on:
-      - rest_api
+      - restapi
     restart: "on-failure"
