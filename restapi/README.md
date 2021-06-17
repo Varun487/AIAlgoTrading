@@ -11,8 +11,8 @@
 ## Services
 - Utils ![incomplete]
   - Converters ![varunincomplete]
-    - DF to DB Objects
-    - DB Objects to DF
+    - DF to DB Objects ![incomplete]
+    - DB Objects to DF ![done]
   - Push obj to DB ![hritikincomplete]
     - Converts from DF to list of objects 
     - Accepts list of objects / df as input 

@@ -17,10 +17,10 @@
 - implementation 
 
 ## REST API Documentation page ![varunincomplete]
-- design 
+- design ![incomplete]
 - implementation
 
-## Backtest report page ![incomplete]
+## Backtest report page ![featureincomplete]
 - design ![samrudhiincomplete]
 - implementation ![hritikincomplete]
 

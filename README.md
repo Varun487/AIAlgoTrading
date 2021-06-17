@@ -90,20 +90,13 @@ docker-compose -f devops/docker-compose.dev.yml up --build
 
 ```
 
-docker-compose -f devops/docker-compose.dev.yml run rest_api python3 manage.py createsuperuser
+docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py createsuperuser
 
 ```
 
-6. To install all node modules
+6. To run all restapi tests
 ```
-
-docker-compose -f devops/docker-compose.dev.yml run ui npm install
-
-```
-
-7. To build a production version of the frontend
-```
-docker-compose -f devops/docker-compose.dev.yml run ui npm run build
+docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py test
 ```
 
 ###### NOTE: To run in production, the commands are the same, but the file is `docker-compose.prod.yml`
