@@ -7,11 +7,11 @@ class Converter(object):
     def __init__(self, df=None, obj_list=None):
         self.df = df
         self.obj_list = obj_list
-        self.is_valid_obj_list = None
-        self.is_valid_df = None
+        self.__is_valid_obj_list = None
+        self.__is_valid_df = None
 
     def __set_is_valid_obj_list(self):
-        self.is_valid_obj_list = (self.obj_list is not None) and (type(self.obj_list) == list) and (self.obj_list != [])
+        self.__is_valid_obj_list = (self.obj_list is not None) and (type(self.obj_list) == list) and (self.obj_list != [])
 
     def __get_df(self):
         # Decide columns
@@ -43,7 +43,7 @@ class Converter(object):
         self.__set_is_valid_obj_list()
 
         # return df
-        if self.is_valid_obj_list:
+        if self.__is_valid_obj_list:
             self.df = self.__get_df()
             return self.df
 
@@ -51,7 +51,7 @@ class Converter(object):
             raise ValueError("Object List given is not valid! Ensure that the object list is of type 'list' and is not empty.")
 
     def __set_is_valid_df(self):
-        self.is_valid_df = (self.df is not None) and (type(self.df) == pd.DataFrame) and (not self.df.empty)
+        self.__is_valid_df = (self.df is not None) and (type(self.df) == pd.DataFrame) and (not self.df.empty)
 
     def __get_obj_list(self, base_obj):
 
@@ -76,7 +76,7 @@ class Converter(object):
         self.__set_is_valid_df()
 
         # return obj_list
-        if self.is_valid_df:
+        if self.__is_valid_df:
             self.obj_list = self.__get_obj_list(base_obj)
             return self.obj_list
 
