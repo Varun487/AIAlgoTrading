@@ -9,7 +9,7 @@
 # TODO
 
 ## All strategies page ![dishaincomplete]
-- design 
+- design ![DONE]
 - implementation 
 
 ## Strategy page ![samrudhiincomplete]
