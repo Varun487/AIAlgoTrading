@@ -10,8 +10,8 @@
 
 ## Services
 - Utils ![incomplete]
-  - Converters ![varunincomplete]
-    - DF to DB Objects ![incomplete]
+  - Converters ![varuncomplete]
+    - DF to DB Objects ![done]
     - DB Objects to DF ![done]
   - Push obj to DB ![hritikincomplete]
     - Converts from DF to list of objects 
