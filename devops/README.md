@@ -33,21 +33,14 @@
 - See how to add domain
 
 ## Initialization and deployment scripts ![varunincomplete]
-- Initialize DB with required data `script`
+- Initialize DB with required data `script` ![incomplete]
   - Initialize schema in Django ![done]
-  - Initial script ![incomplete]
-    - Add TCS Company info 
-    - Add TCS data from yahoo finance 
-    - Add all indicator types for BB strategy 
-    - Add strategy type for BB strategy 
-    - Add strategy config for BB strategy 
-  - Final script
-    - Add all Nifty 50 companies info
-    - Add all Nifty 50 companies data from Yahoo Finance
-    - Add all different strategy configs
-    - Run all backtests on data
-- Automated build on VM
-- Automated deployment to VM from local machine
+  - Add all Nifty 50 companies info 
+  - Add all Nifty 50 companies data from Yahoo Finance
+  - Add strategy type for BB
+  - Add all different strategy configs
+  - Run all backtests on data
+- Automated deployment to VM from local machine `script`
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
