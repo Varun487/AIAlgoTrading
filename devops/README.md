@@ -26,17 +26,28 @@
   - ui 
   - nginx 
 - Make nginx serve both ui and rest api 
-- Buy a domain 
+- Buy a domain ![done]
 - Make changes to run django in a production environment 
 - SSL certification
 - deploy on VM
 - See how to add domain
 
 ## Initialization and deployment scripts ![varunincomplete]
-- Initialize DB with required data ![incomplete]
-  - 1 company data from yahoo finance
-- Run required backtests
-- Automated build and deployment to VM
+- Initialize DB with required data `script`
+  - Initialize schema in Django ![done]
+  - Initial script ![incomplete]
+    - Add TCS Company info 
+    - Add TCS data from yahoo finance 
+    - Add all indicator types for BB strategy 
+    - Add strategy type for BB strategy 
+    - Add strategy config for BB strategy 
+  - Final script
+    - Add all Nifty 50 companies info
+    - Add all Nifty 50 companies data from Yahoo Finance
+    - Add all different strategy configs
+    - Run all backtests on data
+- Automated build on VM
+- Automated deployment to VM from local machine
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
