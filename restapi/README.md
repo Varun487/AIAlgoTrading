@@ -1,4 +1,4 @@
-~~****~~# REST API v0.1.0
+# REST API v0.1.0
 
 ![componentincomplete]
 
@@ -9,20 +9,23 @@
 # TODO
 
 ## Services
-- Utils ![incomplete]
+- Utils ![done]
   - Converters ![varuncomplete]
     - DF to DB Objects ![done]
     - DB Objects to DF ![done]
   - Push obj to DB ![hritikcomplete]
-    - Converts from DF to list of objects 
-    - Accepts list of objects / df as input 
-    - For an object
-      - If correct attributes given
-      - Checks If data already present in DB
-      - Else Pushes the data to DB
-  - Get objects from DB ![dishaincomplete]
-    - Filters / gets data according to parameters 
-    - Convert to DF
+    - Converts from DF to list of objects ![done]
+    - Accepts list of objects / df as input ![done]
+    - For an object ![done]
+      - If correct attributes given ![done]
+      - Checks If data already present in DB ![done]
+      - Else Pushes the data to DB ![done]
+    - Tests ![varuncomplete]
+    - Push multiple objects not working ![bugfixed] ![varuncomplete]
+  - Get objects from DB ![dishacomplete]
+    - Filters / gets data according to parameters ![done]
+    - Convert to DF ![done]
+    - Testing ![varuncomplete]
 - Indicator Calc ![samrudhiincomplete]
   - Input is column and Triples of (Indicator type, time period, Dimension)
   - Returns DF with Dimension and Indicators cols
