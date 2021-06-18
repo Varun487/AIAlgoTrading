@@ -1,4 +1,4 @@
-# REST API v0.1.0
+~~****~~# REST API v0.1.0
 
 ![componentincomplete]
 
@@ -13,7 +13,7 @@
   - Converters ![varuncomplete]
     - DF to DB Objects ![done]
     - DB Objects to DF ![done]
-  - Push obj to DB ![hritikincomplete]
+  - Push obj to DB ![hritikcomplete]
     - Converts from DF to list of objects 
     - Accepts list of objects / df as input 
     - For an object

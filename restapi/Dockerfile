@@ -16,4 +16,21 @@ WORKDIR $REST_API
 
 COPY . $REST_API
 
+
+
+# RUN pip install numpy
+# RUN pip install pandas
+# RUN pip install sqlalchemy
+# # TA-Lib
+# RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz \
+#   && sudo tar -xzf ta-lib-0.4.0-src.tar.gz \
+#   && sudo rm ta-lib-0.4.0-src.tar.gz \
+#   && cd ta-lib/ \
+#   && sudo ./configure --prefix=/usr \
+#   && sudo make \
+#   && sudo make install \
+#   && cd ~ \
+#   && sudo rm -rf ta-lib/ \
+#   && pip install ta-lib
+
 RUN pip install -r requirements.txt
