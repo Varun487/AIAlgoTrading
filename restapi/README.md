@@ -27,8 +27,8 @@
     - Convert to DF ![done]
     - Testing ![varuncomplete]
 - Indicator Calc ![samrudhicomplete]
-  - Input is column and Triples of (time period, Dimension)
-  - Returns DF with Dimension and Indicators cols
+  - Input is column and Triples of (time period, Dimension) ![done]
+  - Returns DF with Dimension and Indicators cols ![done]
 - Signal generation ![hritikincomplete]
   - Run the strategy on given data + indicators + predictions and generate Buy / Short signals
   - Input as Strategy type, Strategy config,  data + Indicators required by strategy 
