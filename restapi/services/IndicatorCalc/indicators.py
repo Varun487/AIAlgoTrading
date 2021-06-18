@@ -15,6 +15,7 @@ class Indicator(object):
         self.valid_df = False
         self.valid_time_period = False
         self.valid_dimension = False
+        self.valid = False
 
     def validate_df(self):
         return Converter(df=self.df).validate_df()
@@ -32,19 +33,40 @@ class Indicator(object):
 
     def is_valid(self):
         self.validate()
-        return self.valid_df and self.valid_time_period and self.valid_dimension
+        self.valid = self.valid_df and self.valid_time_period and self.valid_dimension
 
     def business_logic(self):
-        pass
+        return self.df
 
     def calc(self):
-        if self.is_valid():
+        self.is_valid()
+        if self.valid:
             return self.business_logic()
+        else:
+            raise TypeError("Inputs are invalid!")
 
-class Bollinger(Indicator):
+class BollingerIndicator(Indicator):
+    
+    def __init__(self, df=None, time_period = -1, dimension = "", sigma = -1):
+        super().__init__(df, time_period, dimension)
+        self.sigma = sigma
+        self.valid_sigma = False
+        
+    def validate_sigma(self):
+        return (type(self.sigma) == int) and (self.sigma > 0)
+    
+    def validate(self):
+        super().validate()
+        self.valid_sigma = self.validate_sigma()
+        
+    def is_valid(self):
+        super().is_valid()
+        self.valid = self.valid and self.valid_sigma
+        
+        
     def business_logic(self):
         # Initialize Bollinger Bands Indicator
-        indicator_bb = BollingerBands(close=self.df["Close"], window=20, window_dev=2)
+        indicator_bb = BollingerBands(close=self.df[self.dimension], window= self.time_period, window_dev=self.sigma)
 
         # Add Bollinger Bands features
         self.df['bb_bbm'] = indicator_bb.bollinger_mavg()
@@ -56,5 +78,8 @@ class Bollinger(Indicator):
 
         # Add Bollinger Band low indicator
         self.df['bb_bbli'] = indicator_bb.bollinger_lband_indicator()
+        self.df = self.df.dropna()
+        self.df.set_index([self.dimension], inplace = True)
+        self.df.reset_index(inplace = True)
 
-        return self.df, self.dimension
+        return self.df

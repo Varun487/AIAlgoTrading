@@ -26,7 +26,7 @@
     - Filters / gets data according to parameters ![done]
     - Convert to DF ![done]
     - Testing ![varuncomplete]
-- Indicator Calc ![samrudhiincomplete]
+- Indicator Calc ![samrudhicomplete]
   - Input is column and Triples of (time period, Dimension)
   - Returns DF with Dimension and Indicators cols
 - Signal generation ![hritikincomplete]
