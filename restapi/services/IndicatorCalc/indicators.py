@@ -5,9 +5,10 @@ from services.Utils.converter import Converter
 from ta.utils import dropna
 from ta.volatility import BollingerBands
 
+
 class Indicator(object):
 
-    def __init__(self, df=None, time_period = -1, dimension = ""):
+    def __init__(self, df=None, time_period=-1, dimension=""):
         self.df = df
         self.time_period = time_period
         self.dimension = dimension
@@ -23,7 +24,7 @@ class Indicator(object):
         return (type(self.time_period) == int) and (self.time_period > 0)
 
     def validate_dimension(self):
-        return (self.dimension in ["open","low","high","close"])
+        return (self.dimension in ["open", "low", "high", "close"])
 
     def validate(self):
         self.valid_df = self.validate_df()
@@ -40,6 +41,7 @@ class Indicator(object):
     def calc(self):
         if self.is_valid():
             return self.business_logic()
+
 
 class Bollinger(Indicator):
     def business_logic(self):
