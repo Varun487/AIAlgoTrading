@@ -21,7 +21,15 @@ class Pusher(object):
         self.obj_list = self.get_obj_list(base_obj)
         try:
             for obj in self.obj_list:
-                if not (obj in base_obj.objects.all()):
+                obj_attrs = obj.__dict__.copy()
+                obj_attrs.pop("id", None)
+                obj_attrs.pop("_state", None)
+
+                for attr in obj_attrs:
+                    if not obj_attrs[attr]:
+                        raise ValueError(f"Value of {attr} for Object {obj} is empty!")
+
+                if not base_obj.objects.filter(**obj_attrs):
                     obj.save()
 
         except Exception as e:

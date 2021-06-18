@@ -4,7 +4,16 @@ import pandas as pd
 from .pusher import Pusher
 
 from strategies.models import Company
-from strategies.models import IndicatorType
+
+
+def convert_to_dicts(obj_list):
+    processed_list = [i.__dict__ for i in obj_list]
+
+    for i in processed_list:
+        i.pop("id", None)
+        i.pop("_state", None)
+
+    return processed_list
 
 
 class PushersTestCase(TestCase):
@@ -24,20 +33,9 @@ class PushersTestCase(TestCase):
                                         "ticker": self.company_tickers,
                                         "description": self.company_descriptions})
 
-        # Dummy indicator data
-        IndicatorType.objects.create(name='abc', description='desc')
-        IndicatorType.objects.create(name='abcd', description='desc')
-        IndicatorType.objects.create(name='abce', description='desc')
-
-        # To build the data frame
-        self.indicator_type_ids = [i.id for i in IndicatorType.objects.all()]
-        self.indicator_type_names = [i.name for i in IndicatorType.objects.all()]
-        self.indicator_type_descriptions = [i.description for i in IndicatorType.objects.all()]
-
-        # Dataframe for Indicator Type data
-        self.indicator_type_df = pd.DataFrame({"id": self.indicator_type_ids,
-                                               "name": self.indicator_type_names,
-                                               "description": self.indicator_type_descriptions})
+        self.incorrect_company_data = [Company(name='abc', description='desc'),
+                                       Company(ticker='ABCD'),
+                                       Company(name='abce', ticker='ABCE', description='desc')]
 
     def test_input_none(self):
         """No inputs are given"""
@@ -72,12 +70,20 @@ class PushersTestCase(TestCase):
         self.assertEquals(company_tickers, self.company_tickers)
         self.assertEquals(company_descriptions, self.company_descriptions)
 
-    # def test_pusher(self):
-    #     converted_company_obj_list = Pusher(df=self.company_df).get_obj_list(Company)
-    #     company_names = [i.name for i in converted_company_obj_list]
-    #     company_tickers = [i.ticker for i in converted_company_obj_list]
-    #     company_descriptions = [i.description for i in converted_company_obj_list]
-    #     Pusher(obj_list=self.company_data).push(Company)
-    #     self.assertEquals(Company.objects.all())
-    #     self.assertEquals(Pusher()
-    #
+    def test_pusher(self):
+        """Ensure data is pushed properly to DB"""
+        # pushing data correctly
+        self.assertEquals(list(Company.objects.all()), [])
+        Pusher(df=self.company_df).push(Company)
+        data_in_db = convert_to_dicts(list(Company.objects.all()))
+        pushed_data = convert_to_dicts(self.company_data)
+        self.assertEquals(data_in_db, pushed_data)
+
+        # pushing same data multiple times
+        Pusher(df=self.company_df).push(Company)
+        prev_data_in_db = data_in_db
+        current_data_in_db = convert_to_dicts(list(Company.objects.all()))
+        self.assertEquals(prev_data_in_db, current_data_in_db)
+
+        # Pushing incorrect objects
+        self.assertRaises(ValueError, Pusher(obj_list=self.incorrect_company_data).push, Company)

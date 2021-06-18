@@ -24,7 +24,7 @@ SIGNAL_TYPE_CHOICES = (
 
 # Example model of no consequence
 class ExampleStrategiesModel(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, blank=False, null=False)
 
     def __str__(self):
         return self.name
@@ -32,9 +32,9 @@ class ExampleStrategiesModel(models.Model):
 
 # Company data - ticker is always Yahoo Finance tickers
 class Company(models.Model):
-    name = models.CharField(max_length=100)
-    ticker = models.CharField(max_length=20)
-    description = models.TextField()
+    name = models.CharField(max_length=100, blank=False, null=False)
+    ticker = models.CharField(max_length=20, blank=False, null=False)
+    description = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name
@@ -42,20 +42,22 @@ class Company(models.Model):
 
 # Raw sourced data from Yahoo Finance
 class TickerData(models.Model):
-    open = models.FloatField()
-    high = models.FloatField()
-    low = models.FloatField()
-    close = models.FloatField()
-    volume = models.IntegerField()
-    time_stamp = models.DateTimeField()
+    open = models.FloatField(blank=False, null=False)
+    high = models.FloatField(blank=False, null=False)
+    low = models.FloatField(blank=False, null=False)
+    close = models.FloatField(blank=False, null=False)
+    volume = models.IntegerField(blank=False, null=False)
+    time_stamp = models.DateTimeField(blank=False, null=False)
     company = models.ForeignKey(
         to=Company,
         on_delete=models.CASCADE,
+        blank=False, null=False
     )
     time_period = models.CharField(
         max_length=20,
         choices=TICK_DATA_TIME_PERIOD_CHOICES,
         default="1",
+        blank=False, null=False
     )
 
     def __str__(self):
@@ -64,8 +66,8 @@ class TickerData(models.Model):
 
 # Indicator Type and description
 class IndicatorType(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    name = models.CharField(max_length=100, blank=False, null=False)
+    description = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name
@@ -73,13 +75,13 @@ class IndicatorType(models.Model):
 
 # Strategy type info
 class StrategyType(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    stock_selection = models.TextField()
-    entry_criteria = models.TextField()
-    exit_criteria = models.TextField()
-    stop_loss_method = models.TextField()
-    take_profit_method = models.TextField()
+    name = models.CharField(max_length=100, blank=False, null=False)
+    description = models.TextField(blank=False, null=False)
+    stock_selection = models.TextField(blank=False, null=False)
+    entry_criteria = models.TextField(blank=False, null=False)
+    exit_criteria = models.TextField(blank=False, null=False)
+    stop_loss_method = models.TextField(blank=False, null=False)
+    take_profit_method = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name
@@ -87,16 +89,17 @@ class StrategyType(models.Model):
 
 # Strategy configuration
 class StrategyConfig(models.Model):
-    strategy_type = models.ForeignKey(to=StrategyType, on_delete=models.CASCADE)
-    indicator_time_period = models.IntegerField()
-    max_holding_period = models.IntegerField()
-    take_profit_factor = models.IntegerField()
-    stop_loss_factor = models.IntegerField()
-    sigma = models.IntegerField()
+    strategy_type = models.ForeignKey(to=StrategyType, on_delete=models.CASCADE, blank=False, null=False)
+    indicator_time_period = models.IntegerField(blank=False, null=False)
+    max_holding_period = models.IntegerField(blank=False, null=False)
+    take_profit_factor = models.IntegerField(blank=False, null=False)
+    stop_loss_factor = models.IntegerField(blank=False, null=False)
+    sigma = models.IntegerField(blank=False, null=False)
     dimension = models.CharField(
         max_length=20,
         choices=STRATEGY_CONFIG_DIMENSION_CHOICES,
         default="1",
+        blank=False, null=False
     )
 
     def __str__(self):
@@ -108,9 +111,10 @@ class Signal(models.Model):
     type = models.CharField(
         max_length=20,
         choices=SIGNAL_TYPE_CHOICES,
+        blank=False, null=False
     )
-    ticker_data = models.ForeignKey(to=TickerData, on_delete=models.CASCADE)
-    strategy_config = models.ForeignKey(to=StrategyConfig, on_delete=models.CASCADE)
+    ticker_data = models.ForeignKey(to=TickerData, on_delete=models.CASCADE, blank=False, null=False)
+    strategy_config = models.ForeignKey(to=StrategyConfig, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
         return self.type
@@ -118,8 +122,8 @@ class Signal(models.Model):
 
 # Order - execution of signal
 class Order(models.Model):
-    signal = models.ForeignKey(to=Signal, on_delete=models.CASCADE)
-    ticker_data = models.ForeignKey(to=TickerData, on_delete=models.CASCADE)
+    signal = models.ForeignKey(to=Signal, on_delete=models.CASCADE, blank=False, null=False)
+    ticker_data = models.ForeignKey(to=TickerData, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
         return self.signal
@@ -127,8 +131,8 @@ class Order(models.Model):
 
 # Trade - Pair of entry and exit orders per signal
 class Trade(models.Model):
-    entry_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="entry_order")
-    exit_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="exit_order")
+    entry_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="entry_order", blank=False, null=False)
+    exit_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="exit_order", blank=False, null=False)
     net_return = models.FloatField()
     return_percent = models.FloatField()
 
@@ -138,8 +142,8 @@ class Trade(models.Model):
 
 # Visualization Type
 class VisualizationType(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
+    name = models.CharField(max_length=100, blank=False, null=False)
+    description = models.TextField(blank=False, null=False)
 
     def __str__(self):
         return self.name
