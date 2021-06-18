@@ -56,7 +56,6 @@ class Converter(object):
     def validate_df(self):
         return (self.df is not None) and (type(self.df) == pd.DataFrame) and (not self.df.empty)
 
-
     def __set_is_valid_df(self):
         self.__is_valid_df = self.validate_df()
 
