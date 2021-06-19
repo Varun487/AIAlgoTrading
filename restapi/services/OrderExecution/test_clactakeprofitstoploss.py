@@ -109,4 +109,3 @@ class TakeProfitAndStopLossBBTestCase(TestCase):
         """Tests price generation method"""
         self.assertEquals(TakeProfitAndStopLossBB(df=self.signals_df, factor=1, dimension="close").get_calc_df().equals
                           (self.temp_df), True)
-
