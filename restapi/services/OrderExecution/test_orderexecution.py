@@ -61,5 +61,5 @@ class OrderExecutionTestCase(TestCase):
 
     def test_execute_correct(self):
         """Tests if execute method validates"""
-        OrderExecution(df=self.tp_sl_df, max_holding_period=5, dimension="close").execute()
+        OrderExecution(df=self.tp_sl_df, max_holding_period=2, dimension="close").execute()
         # print(self.tp_sl_df)

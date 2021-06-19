@@ -73,7 +73,7 @@
 ## Automated testing
 ###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class
 - restapi
-  - backtester apis
+  - backtest apis
   - strategy apis
 - services
   - Utils
