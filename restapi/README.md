@@ -62,9 +62,10 @@
 - `GET` All backtests ![hritikincomplete]
   - All backtests and their info to be displayed in short form
 - `GET` Backtest data ![varunincomplete]
-  - input = id, img height, img width
+  - input = id
   - Given id, returns all information about a backtest
 - `GET` Backtest visualizations ![hritikincomplete]
+  - input = id, img height, img width
   - Generates and returns all images for a given backtest id
 
 ## Automated testing
