@@ -29,26 +29,26 @@
 - Indicator Calc ![samrudhicomplete]
   - Input is column and Triples of (time period, Dimension) ![done]
   - Returns DF with Dimension and Indicators cols ![done]
-- Signal generation ![hritikincomplete]
-  - Run the strategy on given data + indicators + predictions and generate Buy / Short signals
-  - Input as Strategy type, Strategy config,  data + Indicators required by strategy 
-  - Pushes all signals to DB, add their ids as a column in DF
-  - Returns a DF with all signals for data
-- Order execution ![varunincomplete]
+- Signal generation ![varuncomplete]
+  - Run the strategy on given data + indicators + predictions and generate Buy / Sell / Flat signals ![done]
+  - Input as Strategy config ![done] 
+  - Returns a DF with all signals for data ![done]
+- Order execution ![hritikincomplete]
   - Executes all signals according to execution assumptions, notes execution candlestick
   - Closes all possible orders according to strategy config given, notes candlestick which closes order
-  - Pushes all orders to DB, add their ids as a column in DF 
   - Returns DF for executed and closed orders 
 - Trade evaluation ![dishaincomplete]
   - Evaluates all pairs of orders and calculates, net returns, returns %, duration, etc. 
-  - Pushes all Trades to DB, add their ids as a column in DB 
   - Returns DF with All trade pairs
 - Backtesting Report generation ![samrudhiincomplete]
   - Pushes the backtest report to DB with status Running / Pending 
   - Orchestrates calling of various services to run the backtest 
   - Calculates net returns across all trades, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
-  - Pushes Backtest Trades to DB 
-  - Pushes Final report to DB
+  - Pushes all signals to DB, gets their ids
+  - Pushes all orders to DB, gets their ids
+  - Pushes all Trades to DB, gets their ids
+  - Pushes Backtest report to DB, gets its id
+  - Pushes Backtest Trades to DB
 - Generate Visualization ![varunincomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req 
   - Generates visualization as an image 

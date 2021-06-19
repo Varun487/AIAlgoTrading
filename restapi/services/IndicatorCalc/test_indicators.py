@@ -59,7 +59,6 @@ class BollingerIndicatorTestCase(TestCase):
 
     def setUp(self) -> None:
         # Dummy data
-
         self.df = pd.DataFrame()
         self.df["close"] = [i for i in range(100, 1000, 5)]
         indicator_bb = BollingerBands(close=self.df["close"], window=5, window_dev=2)

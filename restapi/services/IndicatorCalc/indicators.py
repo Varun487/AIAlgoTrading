@@ -21,7 +21,7 @@ class Indicator(object):
         return (type(self.time_period) == int) and (self.time_period > 0)
 
     def validate_dimension(self):
-        return (self.dimension in ["open", "low", "high", "close"])
+        return self.dimension in ["open", "low", "high", "close"]
 
     def validate(self):
         self.valid_df = self.validate_df()
@@ -75,6 +75,7 @@ class BollingerIndicator(Indicator):
 
         # Add Bollinger Band low indicator
         self.df['bb_bbli'] = indicator_bb.bollinger_lband_indicator()
+
         self.df = self.df.dropna()
         self.df.set_index([self.dimension], inplace=True)
         self.df.reset_index(inplace=True)
