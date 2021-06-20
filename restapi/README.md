@@ -33,7 +33,7 @@
   - Run the strategy on given data + indicators + predictions and generate Buy / Sell / Flat signals ![done]
   - Input as Strategy config ![done] 
   - Returns a DF with all signals for data ![done]
-- Order execution ![hritikincomplete]
+- Order execution ![hritikcomplete] ![varuncomplete]
   - Input = SignalGenerator, take_profit(method and factors), stop_loss(method and factors), max_holding_period
   - Take Profit and stop loss criteria - Classes which put 2 columns per order on where to take profit and stop loss
   - Executes all signals according to execution assumptions, notes execution candlestick
