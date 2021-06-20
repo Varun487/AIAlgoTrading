@@ -73,8 +73,8 @@ class TakeProfitAndStopLossBB(CalcTakeProfitStopLoss):
                 take_profit.append(-1)
                 stop_loss.append(-1)
 
-        temp_df["takeprofit"] = take_profit
-        temp_df["stoploss"] = stop_loss
+        temp_df["take_profit"] = take_profit
+        temp_df["stop_loss"] = stop_loss
 
         # print()
         # print(temp_df)
