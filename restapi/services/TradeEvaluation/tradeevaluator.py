@@ -26,6 +26,7 @@ class TradeEvaluator(object):
         exit_index = self.calc_df['order_exit_index'][index]
 
         net_return = exit_price - entry_price
+
         if signal == "SELL":
             net_return *= -1
 
