@@ -35,8 +35,8 @@
 ## Initialization and deployment scripts ![varunincomplete]
 - Initialize DB with required data `script` ![incomplete]
   - Initialize schema in Django ![done]
-  - Add all Nifty 50 companies info 
-  - Add all Nifty 50 companies data from Yahoo Finance
+  - Add all Nifty 50 companies info ![done]
+  - Add all Nifty 50 companies data from Yahoo Finance ![incomplete]
   - Add strategy type for BB
   - Add all different strategy configs
   - Run all backtests on data

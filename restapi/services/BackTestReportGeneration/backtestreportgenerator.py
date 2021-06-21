@@ -54,7 +54,29 @@ class BackTestReportGenerator(object):
 
     def run_backtest(self):
         """Orchestrates calling of services to run back test"""
-        pass
+        # Evaluate all trades
+        self.calc_df = self.trade_evaluator(
+            # execute orders from signals
+            df=self.order_executor(
+                max_holding_period=self.max_holding_period,
+                dimension=self.dimension,
+                # calculate take profit and stop loss prices
+                df=self.take_profit_stop_loss(
+                    dimension=self.dimension,
+                    factor=self.factor,
+                    # generate signals
+                    df=self.signal_generator(
+                        # calculate indicators from input data
+                        indicator=self.indicator(
+                            df=self.df,
+                            time_period=self.time_period,
+                            dimension=self.dimension,
+                            sigma=self.sigma,
+                        )
+                    ).generate_signals()
+                ).get_calc_df()
+            ).execute()
+        ).get_evaluated_df()
 
     def calc_metrics(self):
         """Calculates metrics based on output of run back test"""
@@ -67,6 +89,9 @@ class BackTestReportGenerator(object):
     def generate_backtest_report(self):
         self.validate()
         if self.valid:
+            self.run_backtest()
+            self.calc_metrics()
             self.push_data()
+            # print(self.calc_df)
         else:
             raise ValueError("Dataframe value given is invalid!")
