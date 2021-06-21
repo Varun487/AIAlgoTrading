@@ -86,8 +86,8 @@ class TakeProfitAndStopLossBBTestCase(TestCase):
                 self.take_profit.append(-1)
                 self.stop_loss.append(-1)
 
-        self.temp_df["takeprofit"] = self.take_profit
-        self.temp_df["stoploss"] = self.stop_loss
+        self.temp_df["take_profit"] = self.take_profit
+        self.temp_df["stop_loss"] = self.stop_loss
 
 
     def test_input_dimension(self):

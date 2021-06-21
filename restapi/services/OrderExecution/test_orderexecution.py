@@ -10,9 +10,8 @@ from .orderexecution import OrderExecution
 class OrderExecutionTestCase(TestCase):
 
     def setUp(self) -> None:
-        self.df = pd.DataFrame()
-        self.df["close"] = [3114.00, 3158.50, 3180.00, 3143.60, 3159.15, 3153.00, 3129.45, 3141.25, 3143.75, 3183.20,
-                            3200.15]
+        self.df = pd.read_csv('/home/app/restapi/services/TCS_Yahoo_data.csv')
+        self.df.rename(columns={'Close': 'close'}, inplace=True)
 
         self.signals_df = BBSignalGenerator(
             indicator=BollingerIndicator(df=self.df, time_period=5, dimension="close", sigma=1)
@@ -46,20 +45,23 @@ class OrderExecutionTestCase(TestCase):
 
     def test_all_inputs(self):
         """All inputs are given"""
-        self.assertEquals(OrderExecution(df=self.tp_sl_df, max_holding_period=20, dimension="close").df.equals(self.tp_sl_df), True)
-        self.assertEquals(OrderExecution(df=self.tp_sl_df, max_holding_period=20, dimension="close").max_holding_period, 20)
+        self.assertEquals(
+            OrderExecution(df=self.tp_sl_df, max_holding_period=20, dimension="close").df.equals(self.tp_sl_df), True)
+        self.assertEquals(OrderExecution(df=self.tp_sl_df, max_holding_period=20, dimension="close").max_holding_period,
+                          20)
         self.assertEquals(OrderExecution(df=self.tp_sl_df, max_holding_period=20, dimension="close").dimension, "close")
 
     def test_execute_errors(self):
         """Tests if execute method validates"""
         # raises errors if input is not valid
-        self.assertRaises(ValueError, OrderExecution(df=self.tp_sl_df, max_holding_period=-1,dimension="close").execute)
-        self.assertRaises(ValueError, OrderExecution(df=self.tp_sl_df, max_holding_period=0,dimension="close").execute)
-        self.assertRaises(ValueError, OrderExecution(df="abc", max_holding_period=20,dimension="close").execute)
-        self.assertRaises(ValueError, OrderExecution(df="abc", max_holding_period=-20,dimension="close").execute)
-        self.assertRaises(ValueError, OrderExecution(df=self.tp_sl_df, max_holding_period=20,dimension="closss").execute)
+        self.assertRaises(ValueError,
+                          OrderExecution(df=self.tp_sl_df, max_holding_period=-1, dimension="close").execute)
+        self.assertRaises(ValueError, OrderExecution(df=self.tp_sl_df, max_holding_period=0, dimension="close").execute)
+        self.assertRaises(ValueError, OrderExecution(df="abc", max_holding_period=20, dimension="close").execute)
+        self.assertRaises(ValueError, OrderExecution(df="abc", max_holding_period=-20, dimension="close").execute)
+        self.assertRaises(ValueError,
+                          OrderExecution(df=self.tp_sl_df, max_holding_period=20, dimension="closss").execute)
 
     def test_execute_correct(self):
         """Tests if execute method validates"""
         OrderExecution(df=self.tp_sl_df, max_holding_period=2, dimension="close").execute()
-        # print(self.tp_sl_df)

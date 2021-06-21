@@ -33,17 +33,19 @@
   - Run the strategy on given data + indicators + predictions and generate Buy / Sell / Flat signals ![done]
   - Input as Strategy config ![done] 
   - Returns a DF with all signals for data ![done]
-- Order execution ![hritikincomplete]
-  - Input = SignalGenerator, take_profit(method and factors), stop_loss(method and factors), max_holding_period
-  - Take Profit and stop loss criteria - Classes which put 2 columns per order on where to take profit and stop loss
-  - Executes all signals according to execution assumptions, notes execution candlestick
-  - Closes all possible orders according to strategy config given, notes candlestick which closes order
-  - Returns DF for executed and closed orders 
-- Trade evaluation ![dishaincomplete]
-  - Evaluates all pairs of orders and calculates, net returns, returns %, duration, etc. 
-  - Returns DF with All trade pairs
+- Order execution ![hritikcomplete] ![varuncomplete]
+  - Input = SignalGenerator, take_profit(method and factors), stop_loss(method and factors), max_holding_period ![done]
+  - Take Profit and stop loss criteria - Classes which put 2 columns per order on where to take profit and stop loss ![done]
+  - Executes all signals according to execution assumptions, notes execution candlestick ![done]
+  - Closes all possible orders according to strategy config given, notes candlestick which closes order ![done]
+  - Returns DF for executed and closed orders ![done]
+- Trade evaluation ![dishacomplete]
+   - Input ![done]
+      - df with columns 'order_entry_price', 'order_exit_price', 'order_entry_index', 'order_exit_index' ![done]
+   - Evaluates all pairs of orders (entry and exit orders) and calculates, net returns, returns % and duration of trade. ![done]
+   - Returns DF with columns 'trade_net_return', 'trade_return_percentage' and 'trade_duration' ![done]
+   - Merge all code ![varuncomplete]
 - Backtesting Report generation ![samrudhiincomplete]
-  - Pushes the backtest report to DB with status Running / Pending 
   - Orchestrates calling of various services to run the backtest 
   - Calculates net returns across all trades, net %, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
   - Pushes all signals to DB, gets their ids
@@ -63,10 +65,10 @@
   - Returns all data pertaining to a strategy and their info in DB
 - `GET` All backtests ![hritikincomplete]
   - All backtests and their info to be displayed in short form
-- `GET` Backtest data ![varunincomplete]
+- `GET` Backtest data ![hritikincomplete]
   - input = id
   - Given id, returns all information about a backtest
-- `GET` Backtest visualizations ![hritikincomplete]
+- `GET` Backtest visualizations ![varunincomplete]
   - input = id, img height, img width
   - Generates and returns all images for a given backtest id
 
@@ -81,7 +83,6 @@
     - Pushers
     - Getters
   - Indicator calc
-  - Model predictions
   - Signal generation
   - Order Execution
   - Trade evaluation
