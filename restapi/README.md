@@ -45,7 +45,7 @@
 - Backtesting Report generation ![samrudhiincomplete]
   - Pushes the backtest report to DB with status Running / Pending 
   - Orchestrates calling of various services to run the backtest 
-  - Calculates net returns across all trades, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
+  - Calculates net returns across all trades, net %, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
   - Pushes all signals to DB, gets their ids
   - Pushes all orders to DB, gets their ids
   - Pushes all Trades to DB, gets their ids
