@@ -17,20 +17,6 @@ class BackTestReportGeneratorTestCase(TestCase):
         self.df.drop(['Volume', 'Adj Close'], axis=1, inplace=True)
         self.df.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low'}, inplace=True)
 
-        # # generate signals
-        # self.signals_df = BBSignalGenerator(
-        #     indicator=BollingerIndicator(df=self.df, time_period=5, dimension="close", sigma=1)
-        # ).generate_signals()
-        #
-        # # calc take profit and stop loss
-        # self.tp_sl_df = TakeProfitAndStopLossBB(df=self.signals_df, dimension="close", factor=1).get_calc_df()
-        #
-        # # Execute orders
-        # self.orders_df = OrderExecution(df=self.tp_sl_df, max_holding_period=3, dimension="close").execute()
-        #
-        # # Evaluate trades
-        # self.eval_trades_df = TradeEvaluator(df=self.orders_df).get_evaluated_df()
-
     def test_inputs_none(self):
         """No inputs are given"""
         self.assertEquals(BackTestReportGenerator().df, None)
@@ -69,7 +55,7 @@ class BackTestReportGeneratorTestCase(TestCase):
 
     def test_generate_backtest_report_correct(self):
         """Checks if the generate_backtest_report method works correctly"""
-        BackTestReportGenerator(df=self.df, time_period=5, dimension="close", sigma=1, factor=1, max_holding_period=5,
+        BackTestReportGenerator(df=self.df, time_period=5, dimension="close", sigma=1, factor=1, max_holding_period=2,
                                 indicator=BollingerIndicator, signal_generator=BBSignalGenerator,
                                 take_profit_stop_loss=TakeProfitAndStopLossBB, order_executor=OrderExecution,
                                 trade_evaluator=TradeEvaluator).generate_backtest_report()
