@@ -39,12 +39,12 @@
   - Executes all signals according to execution assumptions, notes execution candlestick ![done]
   - Closes all possible orders according to strategy config given, notes candlestick which closes order ![done]
   - Returns DF for executed and closed orders ![done]
-- Trade evaluation ![dishaincomplete]
+- Trade evaluation ![dishacomplete]
    - Input ![done]
       - df with columns 'order_entry_price', 'order_exit_price', 'order_entry_index', 'order_exit_index' ![done]
    - Evaluates all pairs of orders (entry and exit orders) and calculates, net returns, returns % and duration of trade. ![done]
    - Returns DF with columns 'trade_net_return', 'trade_return_percentage' and 'trade_duration' ![done]
-   - Merge all code ![varunincomplete]
+   - Merge all code ![varuncomplete]
 - Backtesting Report generation ![samrudhiincomplete]
   - Orchestrates calling of various services to run the backtest 
   - Calculates net returns across all trades, P&L trades number, P&L trades %, overall outlook, different ratios, etc. 
