@@ -12,11 +12,6 @@ class OrderExecutionTestCase(TestCase):
     def setUp(self) -> None:
         self.df = pd.read_csv('/home/app/restapi/services/TCS_Yahoo_data.csv')
         self.df.rename(columns={'Close': 'close'}, inplace=True)
-        # self.df.drop(['Adj Close', 'High', 'Low', 'Open', 'Volume', 'Date'], axis=1, inplace=True)
-        # print(self.df)
-
-        # self.df["close"] = [3114.00, 3158.50, 3180.00, 3143.60, 3159.15, 3153.00, 3129.45, 3141.25, 3143.75, 3130.0,
-        #                     3183.20, 3200.15, 3223.7, 3227.8]
 
         self.signals_df = BBSignalGenerator(
             indicator=BollingerIndicator(df=self.df, time_period=5, dimension="close", sigma=1)
