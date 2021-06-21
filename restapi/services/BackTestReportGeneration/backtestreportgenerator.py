@@ -34,6 +34,14 @@ class BackTestReportGenerator(object):
         self.valid_trade_evaluator = False
         self.valid = False
 
+        self.net_returns = 0
+        self.net_percent = 0
+        self.pf_trades = 0
+        self.ls_trades = 0
+        self.total_trades = 0
+        self.pf_percent = 0
+        self.ls_percent = 0
+
     def validate_df(self):
         self.valid_df = Converter(df=self.df).validate_df() and all(col in self.df.columns for col in
                                                                     ['Date', 'open', 'high', 'low', 'close'])
@@ -80,7 +88,30 @@ class BackTestReportGenerator(object):
 
     def calc_metrics(self):
         """Calculates metrics based on output of run back test"""
-        pass
+
+        # Creating a copy of calc_df
+        temp_df = self.calc_df.copy()
+        temp_df.dropna(inplace= True)
+
+        # Calculating net returns
+        self.net_returns = sum(temp_df['trade_net_return'])
+
+        # Calculating Net Return Percent
+        self.net_percent = (self.net_returns/sum(temp_df['order_entry_price'])) * 100
+
+        # Calculating total trades
+        self.total_trades = len(temp_df)
+
+        # Calculating number of profitable trades
+        self.pf_trades = sum(temp_df['trade_net_return']>0)
+
+        # Calculating number of loss trades
+        self.ls_trades = self.total_trades - self.pf_trades
+
+        # Calculating percentage of profit and loss trades
+        self.pf_percent = (self.pf_trades / self.total_trades) * 100
+        self.ls_percent = (self.ls_trades / self.total_trades) * 100
+
 
     def push_data(self):
         """Pushes data after calculation of metrics"""

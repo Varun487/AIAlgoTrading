@@ -46,8 +46,8 @@
    - Returns DF with columns 'trade_net_return', 'trade_return_percentage' and 'trade_duration' ![done]
    - Merge all code ![varuncomplete]
 - Backtesting Report generation ![samrudhiincomplete]
-  - Orchestrates calling of various services to run the backtest ![done]
-  - Calculates net returns across all trades, net return % across all trades, number of profit trades, number of loss trades, total trades, % of profitable trades, % of loss trades, sharpe ratio.
+  - Orchestrates calling of various services to run the backtest ![varuncomplete]
+  - Calculates net returns across all trades, net return % across all trades, number of profit trades, number of loss trades, total trades, % of profitable trades, % of loss trades. ![done]
   - Pushes all signals to DB, gets their ids
   - Pushes all orders to DB, gets their ids
   - Pushes all Trades to DB, gets their ids
