@@ -96,7 +96,16 @@ docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py cr
 
 6. To run all restapi tests
 ```
+
 docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py test
+
+```
+
+7. Command to Initialize the database
+```
+
+docker-compose -f devops/docker-compose.dev.yml run restapi python3 services/Initialization/initialize_database.py
+
 ```
 
 ###### NOTE: To run in production, the commands are the same, but the file is `docker-compose.prod.yml`

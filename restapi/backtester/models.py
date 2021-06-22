@@ -32,6 +32,7 @@ class BackTestReport(models.Model):
     strategy_type = models.ForeignKey(to=StrategyType, on_delete=models.CASCADE, blank=False, null=False)
     strategy_config = models.ForeignKey(to=StrategyConfig, on_delete=models.CASCADE, blank=False, null=False)
     total_returns = models.FloatField(blank=False, null=False)
+    total_returns_percent = models.FloatField(blank=False, null=False, default=0.0)
     total_trades = models.IntegerField(blank=False, null=False)
     profit_trades = models.IntegerField(blank=False, null=False)
     profit_trades_percent = models.FloatField(blank=False, null=False)

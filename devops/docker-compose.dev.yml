@@ -18,7 +18,6 @@ services:
     environment:
       - API_KEY=9IJF3E893E4E2Q2M
     command: bash -c "cd ../restapi
-      && pip install -r requirements.txt
       && python3 manage.py makemigrations backtester
       && python3 manage.py makemigrations strategies
       && python3 manage.py migrate
