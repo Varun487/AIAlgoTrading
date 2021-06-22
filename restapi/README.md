@@ -48,11 +48,13 @@
 - Backtesting Report generation ![samrudhiincomplete]
   - Orchestrates calling of various services to run the backtest ![varuncomplete]
   - Calculates net returns across all trades, net return % across all trades, number of profit trades, number of loss trades, total trades, % of profitable trades, % of loss trades. ![done]
-  - Pushes all signals to DB, gets their ids
-  - Pushes all orders to DB, gets their ids
+  - Rebuild the backtestreportgenerator class with new inputs and validators ![done]
+  - Pushes all signals to DB, gets their ids ![done]
+  - Pushes all orders to DB, gets their ids 
   - Pushes all Trades to DB, gets their ids
   - Pushes Backtest report to DB, gets its id
   - Pushes Backtest Trades to DB
+  - Testing
 - Generate Visualization ![varunincomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req 
   - Generates visualization as an image 
