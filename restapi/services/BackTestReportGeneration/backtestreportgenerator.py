@@ -1,4 +1,6 @@
 from services.Utils.converter import Converter
+from services.Utils.pusher import Pusher
+from services.Utils.getters import Getter
 
 valid_indicators = ['BollingerIndicator']
 valid_signal_generators = ['BBSignalGenerator']
@@ -115,6 +117,11 @@ class BackTestReportGenerator(object):
 
     def push_data(self):
         """Pushes data after calculation of metrics"""
+
+        # Pusher(obj_list=self.signal_generator).push()
+        # Pusher(obj_list=self.order_executor).push()
+        # Pusher(obj_list=self.trade_evaluator).push()
+
         pass
 
     def generate_backtest_report(self):
