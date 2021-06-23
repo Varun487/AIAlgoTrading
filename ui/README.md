@@ -24,9 +24,9 @@
 - design ![incomplete]
 - implementation
 
-## Backtest report page ![featureincomplete]
-- design ![samrudhiincomplete]
-- implementation ![hritikincomplete]
+## Backtest report page ![hritikincomplete]
+- design 
+- implementation 
 
 ## Login page ![featureincomplete]
 - design ![dishaincomplete]
