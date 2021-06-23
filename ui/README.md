@@ -8,6 +8,10 @@
 
 # TODO
 
+## Common ![dishaincomplete]
+- Header
+- Footer
+
 ## All strategies page ![dishaincomplete]
 - design ![DONE]
 - implementation 
@@ -24,11 +28,21 @@
 - design ![samrudhiincomplete]
 - implementation ![hritikincomplete]
 
+## Login page ![featureincomplete]
+- design ![dishaincomplete]
+- implementation ![hritikincomplete]
+
+## Landing page ![samrudhiincomplete]
+- design 
+- implementation 
+
 ## Automated testing
 - All strategies page
 - Strategy page
 - REST API docs
 - Backtest report page
+- Login page
+- Landing Page
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
