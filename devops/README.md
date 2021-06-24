@@ -35,12 +35,13 @@
 ## Initialization and deployment scripts ![varunincomplete]
 - Initialize DB with required data `script` 
   - Initialize schema in Django ![done]
-  - Clean up all previous data in DB ![done]
-  - Add all Nifty 50 companies info ![done]
-  - Add all Nifty 50 companies data from Yahoo Finance ![done]
-  - Add indicator type for BB ![done]
-  - Add strategy type for BB ![done]
-  - Add all different strategy configs ![done]
+  - Create a stand alone Django app
+  - Clean up all previous data in DB 
+  - Add all Nifty 50 companies info 
+  - Add all Nifty 50 companies data from Yahoo Finance 
+  - Add indicator type for BB 
+  - Add strategy type for BB 
+  - Add all different strategy configs 
   - Run all backtests on data 
   - Add visualization types 
 - Automated deployment to VM from local machine `script`

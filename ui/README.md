@@ -48,13 +48,20 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
+# Paper trading page ![featureincomplete]
+- **To be completed later**
+
+# Paper trading section in Strategy page ![featureincomplete]
+- **To be completed later**
+
 ## Automated testing
 - All strategies page
 - Strategy page
 - REST API docs
 - Backtest report page
 - Login page
-- Landing Page
+- Landing page
+- Paper trading page
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

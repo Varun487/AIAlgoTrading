@@ -171,12 +171,14 @@ class BackTestReportGenerator(object):
         Pusher(df=signals_df).push(Signal)
 
         # get signal ids of signals just pushed
-        signals_df['signal_id'] = list(Signal.objects.filter(ticker_data__company=self.company,
-                                                             strategy_config=self.strategy_config))
+        signals_df['signal'] = list(Signal.objects.filter(ticker_data__company=self.company,
+                                                          strategy_config=self.strategy_config))
         return signals_df
 
-    def push_orders(self):
-        pass
+    def push_orders(self, signals_df):
+        print()
+        print(signals_df)
+        print(self.calc_df)
 
     def push_trades(self):
         pass
@@ -189,10 +191,11 @@ class BackTestReportGenerator(object):
 
     def push_data(self):
         """Pushes data after calculation of metrics"""
-        # push signals data
         signals_df = self.push_signals()
-
-        # push orders data
+        self.push_orders(signals_df)
+        self.push_trades()
+        self.push_backtest_report()
+        self.push_backtest_trades()
 
     def generate_backtest_report(self):
         self.validate()

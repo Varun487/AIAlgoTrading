@@ -45,8 +45,8 @@
    - Evaluates all pairs of orders (entry and exit orders) and calculates, net returns, returns % and duration of trade. ![done]
    - Returns DF with columns 'trade_net_return', 'trade_return_percentage' and 'trade_duration' ![done]
    - Merge all code ![varuncomplete]
-- Backtesting Report generation ![samrudhiincomplete]
-  - Orchestrates calling of various services to run the backtest ![varuncomplete]
+- Backtesting Report generation ![samrudhiincomplete] ![varunincomplete]
+  - Orchestrates calling of various services to run the backtest ![done]
   - Calculates net returns across all trades, net return % across all trades, number of profit trades, number of loss trades, total trades, % of profitable trades, % of loss trades. ![done]
   - Rebuild the backtestreportgenerator class with new inputs and validators ![done]
   - Pushes all signals to DB, gets their ids ![done]
@@ -59,6 +59,10 @@
   - Input - Visualization type, DF with correct data for Visualization, image size req 
   - Generates visualization as an image 
   - Returns image
+- Sourcing Data real-time ![varunincomplete]
+  - design
+- Paper trading ![varunincomplete]
+  - design
 
 ## REST API endpoints
 - `GET` All Strategies ![dishaincomplete]
@@ -73,6 +77,10 @@
 - `GET` Backtest visualizations ![varunincomplete]
   - input = id, img height, img width
   - Generates and returns all images for a given backtest id
+- `GET` Paper trades ![varunincomplete]
+  - design
+- `GET` Current Quote ![varunincomplete]
+  - design
 
 ## Automated testing
 ###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class
