@@ -59,6 +59,12 @@
   - Input - Visualization type, DF with correct data for Visualization, image size req 
   - Generates visualization as an image 
   - Returns image
+  - Visualization 1 - SIGNALS
+    - Company data, Indicators, Signals
+  - Visualization 2 - ORDERS
+    - Company data, Indicators, Orders
+  - Visualization 3 - PER TRADE
+    - Company data, Indicators, Signal, Entry order, Exit order
 - User Auth ![varunincomplete]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**

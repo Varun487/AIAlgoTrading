@@ -33,9 +33,9 @@
 - See how to add domain
 
 ## Initialization and deployment scripts ![varunincomplete]
-- Initialize DB with required data `script` 
+- Initialize DB with required data `script` ![incomplete]
   - Initialize schema in Django ![done]
-  - Create a stand alone Django app
+  - Create a stand alone Django app 
   - Clean up all previous data in DB 
   - Add all Nifty 50 companies info 
   - Add all Nifty 50 companies data from Yahoo Finance 
