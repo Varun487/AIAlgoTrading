@@ -60,9 +60,9 @@
   - Generates visualization as an image 
   - Returns image
 - Sourcing Data real-time ![varunincomplete]
-  - design
+  - design **To be done later**
 - Paper trading ![varunincomplete]
-  - design
+  - design **To be done later**
 
 ## REST API endpoints
 - `GET` All Strategies ![dishaincomplete]
@@ -78,9 +78,17 @@
   - input = id, img height, img width
   - Generates and returns all images for a given backtest id
 - `GET` Paper trades ![varunincomplete]
-  - design
+  - design **To be done later**
 - `GET` Current Quote ![varunincomplete]
-  - design
+  - design **To be done later**
+
+# Strategies 
+- Demo 1 - Simple bollinger band strategy ![varunincomplete]
+- Demo 2 - LSTM predictions strategy ![varunincomplete]
+- Custom Strategy 1 
+  - **To be done later**
+- Custom Strategy 2
+  - **To be done later**
 
 ## Automated testing
 ###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class
