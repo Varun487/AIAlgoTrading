@@ -25,7 +25,7 @@
   - backend (Vuex and REST API)
 
 ## REST API Documentation page ![dishaincomplete]
-- design ![incomplete]
+- design
 - implementation
   - frontend (VueJS)
   - backend (Vuex and REST API)
