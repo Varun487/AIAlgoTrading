@@ -16,27 +16,37 @@
 - design ![DONE]
 - implementation
   - frontend (VueJS)
-  - backend (VueX and REST API)
+  - backend (Vuex and REST API)
 
 ## Strategy page ![samrudhiincomplete]
 - design 
-- implementation 
+- implementation
+  - frontend (VueJS)
+  - backend (Vuex and REST API)
 
 ## REST API Documentation page ![dishaincomplete]
 - design ![incomplete]
 - implementation
+  - frontend (VueJS)
+  - backend (Vuex and REST API)
 
 ## Backtest report page ![hritikincomplete]
 - design 
-- implementation 
+- implementation
+  - frontend (VueJS)
+  - backend (Vuex and REST API)
 
 ## Login page ![featureincomplete]
 - design ![dishaincomplete]
-- implementation ![hritikincomplete]
+- implementation
+  - frontend (VueJS) ![dishaincomplete]
+  - backend (Vuex and REST API) ![hritikincomplete]
 
 ## Landing page ![samrudhiincomplete]
 - design 
-- implementation 
+- implementation
+  - frontend (VueJS)
+  - backend (Vuex and REST API)
 
 ## Automated testing
 - All strategies page
