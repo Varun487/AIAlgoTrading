@@ -2,15 +2,14 @@ import pandas as pd
 
 from services.Utils.converter import Converter
 from services.Utils.pusher import Pusher
-from services.Utils.getters import Getter
 
-from strategies.models import Company
 from strategies.models import TickerData
-from strategies.models import StrategyType
-from strategies.models import StrategyConfig
 from strategies.models import Signal
 from strategies.models import Order
 from strategies.models import Trade
+
+from backtester.models import BackTestReport
+from backtester.models import BackTestTrade
 
 valid_indicators = ['BollingerIndicator']
 valid_signal_generators = ['BBSignalGenerator']
@@ -54,6 +53,12 @@ class BackTestReportGenerator(object):
         self.trade_evaluator = trade_evaluator
 
         self.calc_df = df
+        self.signals_df = None
+        self.entry_orders_df = None
+        self.exit_orders_df = None
+        self.trades_df = None
+        self.backtest_report = None
+        self.backtest_trades_df = None
 
         self.valid_df = False
         self.valid_company = False
@@ -167,32 +172,105 @@ class BackTestReportGenerator(object):
                                                             company=self.company)
                                      for time_stamp in self.calc_df.dropna().reset_index()['time_stamp']]
 
-        # print(signals_df)
         Pusher(df=signals_df).push(Signal)
 
         # get signal ids of signals just pushed
         signals_df['signal'] = list(Signal.objects.filter(ticker_data__company=self.company,
                                                           strategy_config=self.strategy_config))
-        return signals_df
+        self.signals_df = signals_df
 
-    def push_orders(self, signals_df):
-        print()
-        print(signals_df)
-        print(self.calc_df)
+    def push_orders(self):
+        orders_df = self.calc_df.dropna().set_index('time_stamp').reset_index()
+
+        # all entry orders
+        entry_orders_df = pd.DataFrame()
+        entry_orders_df['signal'] = self.signals_df['signal']
+        entry_orders_df['ticker_data'] = [TickerData.objects.get(time_stamp=self.calc_df['time_stamp'][i],
+                                                                 time_period=self.ticker_time_period,
+                                                                 company=self.company)
+                                          for i in orders_df['order_entry_index']]
+        self.entry_orders_df = entry_orders_df
+        Pusher(df=entry_orders_df).push(Order)
+
+        # all exit orders
+        exit_orders_df = pd.DataFrame()
+        exit_orders_df['signal'] = self.signals_df['signal']
+        exit_orders_df['ticker_data'] = [TickerData.objects.get(time_stamp=self.calc_df['time_stamp'][i],
+                                                                time_period=self.ticker_time_period,
+                                                                company=self.company)
+                                         for i in orders_df['order_exit_index']]
+
+        self.exit_orders_df = exit_orders_df
+        Pusher(df=exit_orders_df).push(Order)
+
+        # get pushed orders
+        for df in [self.entry_orders_df, self.exit_orders_df]:
+            orders = [Order.objects.get(signal=df['signal'][i], ticker_data=df['ticker_data'][i]) for i in
+                      range(len(df))]
+            df['order'] = orders
 
     def push_trades(self):
-        pass
+        calc_df = self.calc_df.dropna().reset_index()
+
+        # Push trades to DB
+        trades_df = pd.DataFrame()
+        trades_df['entry_order'] = self.entry_orders_df['order']
+        trades_df['exit_order'] = self.exit_orders_df['order']
+        trades_df['duration'] = calc_df['trade_duration']
+        trades_df['net_return'] = calc_df['trade_net_return']
+        trades_df['return_percent'] = calc_df['trade_return_percentage']
+        Pusher(df=trades_df).push(Trade)
+
+        # Get pushed trades from DB
+        trades_df['trade'] = [
+            Trade.objects.get(entry_order=trades_df['entry_order'][i], exit_order=trades_df['exit_order'][i],
+                              duration=trades_df['duration'][i], net_return=trades_df['net_return'][i],
+                              return_percent=trades_df['return_percent'][i])
+            for i in range(len(trades_df))
+        ]
+
+        self.trades_df = trades_df
 
     def push_backtest_report(self):
-        pass
+        # push backtest report to DB
+        BackTestReport(
+            status="3",
+            start_date_time=self.df['time_stamp'][0],
+            end_date_time=self.df['time_stamp'][len(self.df) - 1],
+            strategy_type=self.strategy_type,
+            strategy_config=self.strategy_config,
+            total_returns=self.net_returns,
+            total_returns_percent=self.net_percent,
+            total_trades=self.total_trades,
+            profit_trades=self.pf_trades,
+            profit_trades_percent=self.pf_percent
+        ).save()
+
+        # get backtest report from DB
+        self.backtest_report = BackTestReport.objects.get(
+            status="3",
+            start_date_time=self.df['time_stamp'][0],
+            end_date_time=self.df['time_stamp'][len(self.df) - 1],
+            strategy_type=self.strategy_type,
+            strategy_config=self.strategy_config,
+            total_returns=self.net_returns,
+            total_returns_percent=self.net_percent,
+            total_trades=self.total_trades,
+            profit_trades=self.pf_trades,
+            profit_trades_percent=self.pf_percent
+        )
 
     def push_backtest_trades(self):
-        pass
+        # push backtest trades
+        self.backtest_trades_df = pd.DataFrame()
+        self.backtest_trades_df['trade'] = self.trades_df['trade']
+        self.backtest_trades_df['back_test_report'] = self.backtest_report
+        Pusher(df=self.backtest_trades_df).push(BackTestTrade)
 
     def push_data(self):
         """Pushes data after calculation of metrics"""
-        signals_df = self.push_signals()
-        self.push_orders(signals_df)
+        self.push_signals()
+        self.push_orders()
         self.push_trades()
         self.push_backtest_report()
         self.push_backtest_trades()
@@ -203,6 +281,5 @@ class BackTestReportGenerator(object):
             self.run_backtest()
             self.calc_metrics()
             self.push_data()
-            # print(self.calc_df)
         else:
             raise ValueError("Dataframe value given is invalid!")

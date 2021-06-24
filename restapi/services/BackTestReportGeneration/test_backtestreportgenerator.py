@@ -103,7 +103,7 @@ class BackTestReportGeneratorTestCase(TestCase):
     def test_generate_backtest_report_correct(self):
         """Checks if the generate_backtest_report method works correctly"""
         BackTestReportGenerator(df=self.df, ticker_time_period="1", indicator_time_period=5, dimension="close", sigma=1,
-                                factor=1, max_holding_period=2, company=Company.objects.get(id=2),
+                                factor=1, max_holding_period=5, company=Company.objects.get(id=2),
                                 strategy_config=StrategyConfig.objects.get(id=2),
                                 strategy_type=StrategyType.objects.get(id=2),
                                 indicator=BollingerIndicator, signal_generator=BBSignalGenerator,

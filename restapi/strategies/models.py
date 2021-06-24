@@ -126,15 +126,16 @@ class Order(models.Model):
     ticker_data = models.ForeignKey(to=TickerData, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
-        return self.signal
+        return f"{self.signal} {self.ticker_data}"
 
 
 # Trade - Pair of entry and exit orders per signal
 class Trade(models.Model):
     entry_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="entry_order", blank=False, null=False)
     exit_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="exit_order", blank=False, null=False)
-    net_return = models.FloatField()
-    return_percent = models.FloatField()
+    duration = models.IntegerField(blank=False, null=False, default=0)
+    net_return = models.FloatField(blank=False, null=False)
+    return_percent = models.FloatField(blank=False, null=False)
 
     def __str__(self):
         return f"{self.entry_order} {self.exit_order} {self.return_percent}"
