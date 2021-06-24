@@ -91,7 +91,7 @@
   - design **To be done later**
 
 # Strategies 
-- Demo 1 - Simple bollinger band strategy ![varunincomplete]
+- Demo 1 - Simple bollinger band strategy ![varuncomplete]
 - Demo 2 - LSTM predictions strategy ![varunincomplete]
 - Custom Strategy 1 
   - **To be done later**
