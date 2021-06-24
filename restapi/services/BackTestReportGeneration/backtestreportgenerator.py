@@ -71,13 +71,13 @@ class BackTestReportGenerator(object):
         self.valid_trade_evaluator = False
         self.valid = False
 
-        self.net_returns = 0
-        self.net_percent = 0
+        self.net_returns = 0.0
+        self.net_percent = 0.0
         self.pf_trades = 0
         self.ls_trades = 0
         self.total_trades = 0
-        self.pf_percent = 0
-        self.ls_percent = 0
+        self.pf_percent = 0.0
+        self.ls_percent = 0.0
 
     def validate_df(self):
         self.valid_df = Converter(df=self.df).validate_df() and all(col in self.df.columns for col in
@@ -243,7 +243,8 @@ class BackTestReportGenerator(object):
             total_returns_percent=self.net_percent,
             total_trades=self.total_trades,
             profit_trades=self.pf_trades,
-            profit_trades_percent=self.pf_percent
+            profit_trades_percent=self.pf_percent,
+            company=self.company,
         ).save()
 
         # get backtest report from DB
@@ -257,7 +258,8 @@ class BackTestReportGenerator(object):
             total_returns_percent=self.net_percent,
             total_trades=self.total_trades,
             profit_trades=self.pf_trades,
-            profit_trades_percent=self.pf_percent
+            profit_trades_percent=self.pf_percent,
+            company=self.company,
         )
 
     def push_backtest_trades(self):
@@ -279,7 +281,10 @@ class BackTestReportGenerator(object):
         self.validate()
         if self.valid:
             self.run_backtest()
-            self.calc_metrics()
-            self.push_data()
+            if not self.calc_df.dropna().empty:
+                self.calc_metrics()
+                self.push_data()
+            else:
+                self.push_backtest_report()
         else:
             raise ValueError("Dataframe value given is invalid!")

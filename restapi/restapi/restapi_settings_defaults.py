@@ -26,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -74,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'restapi.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -114,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -128,9 +125,20 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = './staticfiles/'
+
+# Added Defaults
+LOGGING = None
+LOGGING_CONFIG = None
+FORCE_SCRIPT_NAME = None
+DEFAULT_TABLESPACE = ''
+ABSOLUTE_URL_OVERRIDES = {}
+AUTH_USER_MODEL = 'auth.user'
+LOCALE_PATHS = []
+DEFAULT_INDEX_TABLESPACE = ''
+DEFAULT_HASHING_ALGORITHM = 'sha256'
+DATABASE_ROUTERS = []

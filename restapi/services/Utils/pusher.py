@@ -27,7 +27,8 @@ class Pusher(object):
 
                 for attr in obj_attrs:
                     if not obj_attrs[attr]:
-                        raise ValueError(f"Value of {attr} for Object {obj} is empty!")
+                        if not (obj_attrs[attr] == 0.0):
+                            raise ValueError(f"Value of {attr} for Object {obj} is empty!")
 
                 if not base_obj.objects.filter(**obj_attrs):
                     obj.save()

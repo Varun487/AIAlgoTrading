@@ -1,6 +1,6 @@
 from django.db import models
 
-from strategies.models import StrategyType, StrategyConfig, Trade
+from strategies.models import StrategyType, StrategyConfig, Trade, Company
 
 # specify TickData time_period choices
 BACK_TEST_REPORT_STATUS_CHOICES = (
@@ -36,9 +36,10 @@ class BackTestReport(models.Model):
     total_trades = models.IntegerField(blank=False, null=False)
     profit_trades = models.IntegerField(blank=False, null=False)
     profit_trades_percent = models.FloatField(blank=False, null=False)
+    company = models.ForeignKey(to=Company, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):
-        return f"{self.status}"
+        return f"{self.company} {self.start_date_time} {self.end_date_time} {self.total_returns}"
 
 
 # BackTest Trade - Linking each trade to a BackTest Report

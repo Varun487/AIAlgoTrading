@@ -43,7 +43,7 @@ class Getter(object):
             try:
                 obj_list = list(self.table_name.objects.filter(**self.param_list))
 
-                if self.df_flag:
+                if obj_list and self.df_flag:
                     return Converter(obj_list=obj_list).to_df()
                 else:
                     return obj_list

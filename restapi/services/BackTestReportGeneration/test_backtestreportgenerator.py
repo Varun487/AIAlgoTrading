@@ -1,21 +1,17 @@
-from django.test import TestCase
 import pandas as pd
+from django.test import TestCase
 
-from strategies.models import Company
-from strategies.models import TickerData
-from strategies.models import StrategyType
-from strategies.models import StrategyConfig
-from strategies.models import Signal
-from strategies.models import Order
-from strategies.models import Trade
-
-
-from services.Utils.pusher import Pusher
-from services.TradeEvaluation.tradeevaluator import TradeEvaluator
-from services.OrderExecution.orderexecution import OrderExecution
 from services.IndicatorCalc.indicators import BollingerIndicator
 from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
+from services.OrderExecution.orderexecution import OrderExecution
 from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
+from services.TradeEvaluation.tradeevaluator import TradeEvaluator
+from services.Utils.pusher import Pusher
+
+from strategies.models import Company
+from strategies.models import StrategyConfig
+from strategies.models import StrategyType
+from strategies.models import TickerData
 
 from .backtestreportgenerator import BackTestReportGenerator
 
