@@ -59,6 +59,7 @@
   - Input - Visualization type, DF with correct data for Visualization, image size req 
   - Generates visualization as an image 
   - Returns image
+- User Auth ![varunincomplete]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
@@ -77,6 +78,7 @@
 - `GET` Backtest visualizations ![varunincomplete]
   - input = id, img height, img width
   - Generates and returns all images for a given backtest id
+- `POST` Authorization ![varunincomplete]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]
