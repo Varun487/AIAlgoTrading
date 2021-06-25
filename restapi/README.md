@@ -55,16 +55,13 @@
   - Pushes Backtest report to DB, gets its id ![done]
   - Pushes Backtest Trades to DB ![done]
   - Testing ![done]
-- Generate Visualization ![varunincomplete]
-  - Input - Visualization type, DF with correct data for Visualization, image size req 
-  - Generates visualization as an image 
-  - Returns image
-  - Visualization 1 - SIGNALS
-    - Company data, Indicators, Signals
-  - Visualization 2 - ORDERS
-    - Company data, Indicators, Orders
-  - Visualization 3 - PER TRADE
-    - Company data, Indicators, Signal, Entry order, Exit order
+- Generate Visualization ![varuncomplete]
+  - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
+  - Generates visualization as an image ![done]
+  - Visualization 1 - SIGNALS ![done]
+    - Company data, Indicators, Signals ![done]
+  - Visualization 2 - PER TRADE ![done]
+    - Company data, Indicators, Signal, Entry order, Exit order ![done]
 - User Auth ![varunincomplete]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
@@ -84,6 +81,7 @@
 - `GET` Backtest visualizations ![varunincomplete]
   - input = id, img height, img width
   - Generates and returns all images for a given backtest id
+  - How to return images ??
 - `POST` Authorization ![varunincomplete]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
@@ -93,13 +91,14 @@
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
 - Demo 2 - LSTM predictions strategy ![varunincomplete]
+  - **To be done later**
 - Custom Strategy 1 
   - **To be done later**
 - Custom Strategy 2
   - **To be done later**
 
 ## Automated testing
-###### Using unit tests in-built in django-each class created must have unit tests-which cover all test cases of a class
+###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
 - restapi
   - backtest apis
   - strategy apis

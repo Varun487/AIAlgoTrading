@@ -1,0 +1,48 @@
+import datetime
+import matplotlib.pyplot as plt
+from .visualization import Visualization
+
+
+class SignalVisualization(Visualization):
+    def __init__(self, df=None, columns=None, height=-1, width=-1):
+        super().__init__(df, columns, height, width)
+
+    def generate_visualization(self):
+
+        # convert timestamps to datetime objects if strings
+        if type(self.df['time_stamp'][0]) == str:
+            self.df['time_stamp'] = list(
+                map(lambda dt: datetime.datetime.strptime(dt, '%Y-%m-%d %H:%M:%S+00:00'), self.df['time_stamp']))
+
+        # create the graph
+        fig, ax1 = plt.subplots(figsize=(self.width, self.height))
+
+        ax1.set_xlabel("Time")
+        ax1.set_ylabel("Price")
+        ax1.set_title(f'Signals generated on company data')
+
+        buy_markers = list(self.df[self.df['SIGNAL'] == 'BUY'].index)
+        ax1.plot(self.df['time_stamp'], self.df['close'], label='Buy signal', marker='^', color='lime',
+                 alpha=1, markevery=buy_markers, markersize=15)
+
+        sell_markers = list(self.df[self.df['SIGNAL'] == 'SELL'].index)
+        ax1.plot(self.df['time_stamp'], self.df['close'], label='Sell signal', marker='v', color='r',
+                 alpha=1, markevery=sell_markers, markersize=15)
+
+        ax1.plot(self.df['time_stamp'], self.df['bb_bbm'], label='Simple moving Average', color='g')
+        ax1.plot(self.df['time_stamp'], self.df['bb_bbh'], label='', color='r')
+        ax1.plot(self.df['time_stamp'], self.df['bb_bbl'], label='Bollinger bands', color='r')
+        ax1.plot(self.df['time_stamp'], self.df['close'], label='Price', color='b')
+
+        ax1.tick_params(axis='y')
+
+        ax2 = ax1.twinx()  # set up the 2nd axis
+
+        ax2.set_ylabel("Volume")
+        ax2.bar(self.df['time_stamp'], self.df['volume'], width=0.5, alpha=0.15)
+        ax2.grid(b=False)
+
+        ax1.legend()
+        fig.tight_layout()
+
+        plt.savefig("/home/app/restapi/services/Visualizations/test_signals_visualization.png", dpi=100)
