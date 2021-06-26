@@ -30,8 +30,8 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-## Backtest report page ![hritikcomplete]
-- design 
+## Backtest report page ![hritikincomplete]
+- design ![DONE]
 - implementation
   - frontend (VueJS)
   - backend (Vuex and REST API)
