@@ -14,8 +14,8 @@
 
 ## All strategies page ![dishaincomplete]
 - design ![DONE]
-- implementation
-  - frontend (VueJS)
+- implementation 
+  - frontend (VueJS) ![DONE]
   - backend (Vuex and REST API)
 
 ## Strategy page ![samrudhiincomplete]
