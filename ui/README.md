@@ -9,7 +9,7 @@
 # TODO
 
 ## Common ![dishaincomplete]
-- Header
+- Header ![DONE]
 - Footer
 
 ## All strategies page ![dishaincomplete]
