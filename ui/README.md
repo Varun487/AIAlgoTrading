@@ -37,7 +37,7 @@
   - backend (Vuex and REST API)
 
 ## Login page ![featureincomplete]
-- design ![dishaincomplete]
+- design ![DONE]
 - implementation
   - frontend (VueJS) ![dishaincomplete]
   - backend (Vuex and REST API) ![hritikincomplete]
