@@ -54,7 +54,7 @@ class TradeVisualization(Visualization):
 
         # mark order entry and exit
         ax1.axvline(self.df['time_stamp'][trades_df['order_entry_index'][self.trade_number - 1]], label="Order entry",
-                    color='black')
+                    color='white')
         ax1.axvline(self.df['time_stamp'][trades_df['order_exit_index'][self.trade_number - 1]], label="Order exit",
                     color='orange')
         ax1.tick_params(axis='y')

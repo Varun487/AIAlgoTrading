@@ -8,6 +8,7 @@ class SignalVisualization(Visualization):
         super().__init__(df, columns, height, width)
 
     def generate_visualization(self):
+        plt.style.use('dark_background')
 
         # convert timestamps to datetime objects if strings
         if type(self.df['time_stamp'][0]) == str:
