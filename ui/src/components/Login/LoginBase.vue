@@ -1,7 +1,7 @@
 <template>
   <div class="parent">
     <div class="login">
-      <h1>LOGIN</h1>
+      <h1>Sign In</h1>
       <label><b>User Name</b></label>
       <br /><br />
       <input type="text" name="Username" id="Username" v-model="username" />
