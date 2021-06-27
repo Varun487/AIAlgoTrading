@@ -8,14 +8,14 @@
 
 # TODO
 
-## Common ![dishaincomplete]
-- Header
-- Footer
+## Common ![dishacomplete]
+- Header ![DONE]
+- Footer ![DONE]
 
 ## All strategies page ![dishaincomplete]
 - design ![DONE]
-- implementation
-  - frontend (VueJS)
+- implementation 
+  - frontend (VueJS) ![DONE]
   - backend (Vuex and REST API)
 
 ## Strategy page ![samrudhiincomplete]
@@ -31,13 +31,13 @@
   - backend (Vuex and REST API)
 
 ## Backtest report page ![hritikincomplete]
-- design 
+- design ![DONE]
 - implementation
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
 ## Login page ![featureincomplete]
-- design ![dishaincomplete]
+- design ![DONE] ![dishacomplete]
 - implementation
   - frontend (VueJS) ![dishaincomplete]
   - backend (Vuex and REST API) ![hritikincomplete]
