@@ -62,7 +62,9 @@
     - Company data, Indicators, Signals ![done]
   - Visualization 2 - PER TRADE ![done]
     - Company data, Indicators, Signal, Entry order, Exit order ![done]
-- User Auth ![varunincomplete]
+- User Auth ![varuncomplete]
+  - Token returned on signin ![done]
+  - Authorization to access all APIs ![done]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
@@ -82,7 +84,8 @@
   - input = id, img height, img width
   - Generates and returns all images for a given backtest id
   - How to return images ??
-- `POST` Authorization ![varunincomplete]
+- `POST` Authorization ![varuncomplete]
+  - Token returned on signin ![done]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]

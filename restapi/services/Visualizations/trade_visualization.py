@@ -9,6 +9,8 @@ class TradeVisualization(Visualization):
         self.trade_number = trade_number
 
     def generate_visualization(self):
+        plt.style.use('dark_background')
+
         trades_df = self.df.dropna().reset_index()
 
         if len(trades_df) == 0:
