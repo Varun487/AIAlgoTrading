@@ -1,6 +1,8 @@
 import datetime
 import matplotlib.pyplot as plt
 from .visualization import Visualization
+import io
+import base64
 
 
 class TradeVisualization(Visualization):
@@ -18,7 +20,8 @@ class TradeVisualization(Visualization):
 
         if not ((type(self.trade_number) == int) and (self.trade_number > 0) and (
                 self.trade_number <= len(self.df.dropna()))):
-            raise ValueError(f"Trade number specified is incorrect! It should be between 1 and {len(self.df.dropna())} inclusive.")
+            raise ValueError(
+                f"Trade number specified is incorrect! It should be between 1 and {len(self.df.dropna())} inclusive.")
 
         # determine type of trade
         trade_type = trades_df['SIGNAL'][self.trade_number - 1]
@@ -70,4 +73,12 @@ class TradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/test_trade_visualization.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/test_trade_visualization.png", dpi=100)
+
+        pic_io_bytes = io.BytesIO()
+
+        plt.savefig(pic_io_bytes, format='png')
+        pic_io_bytes.seek(0)
+        pic_hash = base64.b64encode(pic_io_bytes.read())
+
+        return pic_hash

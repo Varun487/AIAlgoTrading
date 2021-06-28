@@ -85,12 +85,13 @@
   - Given backtest id, returns all backtest trades pertaining to BT ![done]
 - `GET` Trade data ![varuncomplete]
   - Given trade id, get in depth data for a trade ![done]
-- `GET` Backtest Signals visualization ![varunincomplete]
-  - Given backtest id, Generates and returns signals visualization of backtest
-  - How to return images ??
+- `GET` Backtest Signals visualization ![varuncomplete]
+  - Given backtest id, Generates and returns signals visualization of backtest ![done]
+  - Generate correct viz ![done]
+  - Return a base 64 string with image data ![done]
 - `GET` Backtest Trade visualization ![varunincomplete]
   - Given backtest trade id, Generates and returns visualization of trade
-  - How to return images ??
+  - How to return images - Base 64 string
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]
