@@ -10,7 +10,7 @@ const routes = [
     component: () => import("../views/Login.vue"),
   },
   {
-    path: "/api",
+    path: "/apidocs",
     name: "APIDocs",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
