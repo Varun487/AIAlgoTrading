@@ -89,9 +89,9 @@
   - Given backtest id, Generates and returns signals visualization of backtest ![done]
   - Generate correct viz ![done]
   - Return a base 64 string with image data ![done]
-- `GET` Backtest Trade visualization ![varunincomplete]
-  - Given backtest trade id, Generates and returns visualization of trade
-  - How to return images - Base 64 string
+- `GET` Backtest Trade visualization ![varuncomplete]
+  - Given backtest trade id, Generates and returns visualization of trade ![done]
+  - How to return images - Base 64 string ![done]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]

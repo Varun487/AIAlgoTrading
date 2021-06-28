@@ -9,6 +9,8 @@ urlpatterns = [
 
     path('allbacktesttrades/<int:backtest_id>/', views.api_get_all_backtest_trades, name='api_get_backtest_data'),
     path('backtesttradedata/<int:backtest_trade_id>/', views.api_get_backtest_trade_data, name='api_get_backtest_data'),
+    path('backtesttradevisualization/<int:backtest_trade_id>/', views.api_get_backtest_trade_visualization,
+         name='api_get_backtest_trade_visualization'),
 
     path('<slug>/', views.api_index, name='api_index')
 ]

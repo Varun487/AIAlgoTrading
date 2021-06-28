@@ -26,6 +26,18 @@ class TradeVisualization(Visualization):
         # determine type of trade
         trade_type = trades_df['SIGNAL'][self.trade_number - 1]
 
+        # determine start and end indexes
+        start_index = self.trade_number - 1 - 10
+        end_index = trades_df['order_exit_index'][self.trade_number - 1] + 10
+
+        if start_index < 0:
+            start_index = 0
+
+        if end_index > (len(self.df) - 1):
+            end_index = len(self.df) - 1
+
+        self.df = self.df.iloc[start_index:end_index+1].reset_index()
+
         # convert timestamps to datetime objects if strings
         if type(self.df['time_stamp'][0]) == str:
             self.df['time_stamp'] = list(
@@ -73,7 +85,7 @@ class TradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        # plt.savefig("/home/app/restapi/services/Visualizations/test_trade_visualization.png", dpi=100)
+        plt.savefig("/home/app/restapi/services/Visualizations/test_trade_visualization.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 
@@ -81,4 +93,4 @@ class TradeVisualization(Visualization):
         pic_io_bytes.seek(0)
         pic_hash = base64.b64encode(pic_io_bytes.read())
 
-        return pic_hash
+        return str(pic_hash)[2:-1]
