@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     # project apps
     'strategies',
     'backtester',
-    'authapi',
 ]
 
 REST_FRAMEWORK = {

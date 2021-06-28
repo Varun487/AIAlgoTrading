@@ -2,8 +2,10 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .models import ExampleBackTesterModel, BackTestTrade, BackTestReport
-from .serializers import ExampleBackTesterSerializer, BackTestTradeSerializer, BackTestReportSerializer
+from .models import ExampleBackTesterModel, BackTestReport, BackTestTrade
+from .serializers import ExampleBackTesterSerializer, AllBacktestsSerializer, BacktestDataSerializer, \
+    AllBacktestTradesSerializer, BacktestTradeDataSerializer
+from strategies.models import StrategyType
 
 
 @api_view(['GET', ])
@@ -19,22 +21,38 @@ def api_index(req, slug):
 
 
 @api_view(['GET', ])
-def api_listbacktests(req):
+def api_get_all_backtests(req, strategy_type_id):
     try:
-        backtest = BackTestTrade.objects.all()
-        print("Backtests:", backtest)
+        strategy_type = StrategyType.objects.get(id=strategy_type_id)
+        backtests = BackTestReport.objects.filter(strategy_type=strategy_type)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    return Response(BackTestTradeSerializer(backtest, many=True).data)
+    return Response(AllBacktestsSerializer(backtests, many=True).data)
 
 
 @api_view(['GET', ])
-def api_listreports(req, id):
+def api_get_backtest_data(req, backtest_id):
     try:
-        reports = BackTestReport.objects.get(reports=id)
-        print("reportdata:", reports)
+        backtest = BackTestReport.objects.get(id=backtest_id)
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    return Response(BackTestReportSerializer(reports, many=True).data)
+    return Response(BacktestDataSerializer(backtest).data)
+
+
+@api_view(['GET', ])
+def api_get_all_backtest_trades(req, backtest_id):
+    try:
+        backtest_trades = BackTestTrade.objects.filter(back_test_report__id=backtest_id)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    return Response(AllBacktestTradesSerializer(backtest_trades, many=True).data)
+
+@api_view(['GET', ])
+def api_get_backtest_trade_data(req, backtest_trade_id):
+    try:
+        backtest_trades = BackTestTrade.objects.get(id=backtest_trade_id)
+    except:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    return Response(BacktestTradeDataSerializer(backtest_trades).data)

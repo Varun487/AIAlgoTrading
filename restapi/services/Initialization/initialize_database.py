@@ -133,6 +133,9 @@ for ticker in range(len(nifty_companies)):
             time_period=ticker_time_period,
         ).save()
 
+    if ticker == 2:
+        break
+
 print("Sourced ticker data from Yahoo! Finance and pushed to DB")
 
 # #################### ADD INDICATOR TYPES TO DB ####################
