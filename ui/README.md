@@ -39,7 +39,7 @@
 ## Login page ![featureincomplete]
 - design ![DONE] ![dishacomplete]
 - implementation
-  - frontend (VueJS) ![dishaincomplete]
+  - frontend (VueJS) ![DONE] ![dishacomplete]
   - backend (Vuex and REST API) ![hritikincomplete]
 
 ## Landing page ![samrudhiincomplete]

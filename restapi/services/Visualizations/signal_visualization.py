@@ -1,6 +1,8 @@
 import datetime
 import matplotlib.pyplot as plt
 from .visualization import Visualization
+import io
+import base64
 
 
 class SignalVisualization(Visualization):
@@ -46,4 +48,12 @@ class SignalVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/test_signals_visualization.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/test_signals_visualization.png", dpi=100)
+
+        pic_io_bytes = io.BytesIO()
+
+        plt.savefig(pic_io_bytes, format='png')
+        pic_io_bytes.seek(0)
+        pic_hash = base64.b64encode(pic_io_bytes.read())
+
+        return str(pic_hash)[2:-1]

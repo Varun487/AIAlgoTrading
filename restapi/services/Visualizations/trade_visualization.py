@@ -1,6 +1,8 @@
 import datetime
 import matplotlib.pyplot as plt
 from .visualization import Visualization
+import io
+import base64
 
 
 class TradeVisualization(Visualization):
@@ -9,6 +11,8 @@ class TradeVisualization(Visualization):
         self.trade_number = trade_number
 
     def generate_visualization(self):
+        plt.style.use('dark_background')
+
         trades_df = self.df.dropna().reset_index()
 
         if len(trades_df) == 0:
@@ -16,10 +20,23 @@ class TradeVisualization(Visualization):
 
         if not ((type(self.trade_number) == int) and (self.trade_number > 0) and (
                 self.trade_number <= len(self.df.dropna()))):
-            raise ValueError(f"Trade number specified is incorrect! It should be between 1 and {len(self.df.dropna())} inclusive.")
+            raise ValueError(
+                f"Trade number specified is incorrect! It should be between 1 and {len(self.df.dropna())} inclusive.")
 
         # determine type of trade
         trade_type = trades_df['SIGNAL'][self.trade_number - 1]
+
+        # determine start and end indexes
+        start_index = self.trade_number - 1 - 10
+        end_index = trades_df['order_exit_index'][self.trade_number - 1] + 10
+
+        if start_index < 0:
+            start_index = 0
+
+        if end_index > (len(self.df) - 1):
+            end_index = len(self.df) - 1
+
+        self.df = self.df.iloc[start_index:end_index+1].reset_index()
 
         # convert timestamps to datetime objects if strings
         if type(self.df['time_stamp'][0]) == str:
@@ -69,3 +86,11 @@ class TradeVisualization(Visualization):
         fig.tight_layout()
 
         plt.savefig("/home/app/restapi/services/Visualizations/test_trade_visualization.png", dpi=100)
+
+        pic_io_bytes = io.BytesIO()
+
+        plt.savefig(pic_io_bytes, format='png')
+        pic_io_bytes.seek(0)
+        pic_hash = base64.b64encode(pic_io_bytes.read())
+
+        return str(pic_hash)[2:-1]

@@ -62,27 +62,36 @@
     - Company data, Indicators, Signals ![done]
   - Visualization 2 - PER TRADE ![done]
     - Company data, Indicators, Signal, Entry order, Exit order ![done]
-- User Auth ![varunincomplete]
+- User Auth ![varuncomplete]
+  - Token returned on signin ![done]
+  - Authorization to access all APIs ![done]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
   - design **To be done later**
 
 ## REST API endpoints
-- `GET` All Strategies ![dishaincomplete]
-  - Returns all strategies and their info in DB
-- `GET` Strategy data ![samrudhiincomplete]
-  - Returns all data pertaining to a strategy and their info in DB
-- `GET` All backtests ![hritikincomplete]
-  - All backtests and their info to be displayed in short form
-- `GET` Backtest data ![hritikincomplete]
-  - input = id
-  - Given id, returns all information about a backtest
-- `GET` Backtest visualizations ![varunincomplete]
-  - input = id, img height, img width
-  - Generates and returns all images for a given backtest id
-  - How to return images ??
-- `POST` Authorization ![varunincomplete]
+- `POST` Authorization ![varuncomplete]
+  - Token returned on signin ![done]
+- `GET` All Strategies ![varuncomplete]
+  - Returns all strategies and their info in DB ![done]
+- `GET` Strategy data ![varuncomplete]
+  - Returns all data pertaining to a strategy in DB ![done]
+- `GET` All backtests of a strategy ![varuncomplete]
+  - All backtests pertaining to a strategy and their info to be displayed in short form ![done]
+- `GET` Backtest data ![varuncomplete]
+  - Given backtest id, returns all information about a backtest ![done]
+- `GET` All Backtest trades ![varuncomplete]
+  - Given backtest id, returns all backtest trades pertaining to BT ![done]
+- `GET` Trade data ![varuncomplete]
+  - Given trade id, get in depth data for a trade ![done]
+- `GET` Backtest Signals visualization ![varuncomplete]
+  - Given backtest id, Generates and returns signals visualization of backtest ![done]
+  - Generate correct viz ![done]
+  - Return a base 64 string with image data ![done]
+- `GET` Backtest Trade visualization ![varuncomplete]
+  - Given backtest trade id, Generates and returns visualization of trade ![done]
+  - How to return images - Base 64 string ![done]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]

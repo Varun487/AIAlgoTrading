@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/strategies/', include('strategies.urls')),
     path('api/backtester/', include('backtester.urls')),
+    path('api/auth/', include('djoser.urls.authtoken')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

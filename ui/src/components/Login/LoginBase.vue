@@ -1,7 +1,209 @@
 <template>
+    <div class="container">
+      <div class="header">
+        <div class="login-wrapper">
+            <div class="login-content">
+                <h3 class="signin-title">
+                    Sign In
+                </h3>
+                <form action="#">
+                    <input type="text" name="login-username" placeholder="Username" class="login-username">
+                    <input type="password" name="login-password" placeholder="Password" class="login-password">
+                    <button>Go</button>
+                </form>
+                <a href="#" class="signin-back"> ←Back</a>
+            </div>
+            <div class="login-vector">
+
+            </div>
+        </div>
+      </div>
+      <div class="footer">
+          <div class="footer-content">
+              Made with ♡ from VSDH
+          </div>
+      </div>
+    </div>
+</template>
+<script>
+export default {
+    name: 'LoginBase',
+};
+</script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+.header {
+  background:url('~@/assets/v1.jpeg');
+  position: absolute;
+  width: 100%;
+  height: 835px;
+  left: 0px;
+  top: 0px;
+  background-size:cover;
+  margin-top:-10px;
+  
+}
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    left: 0px;
+    top: 780px;
+    background-color:transparent;
+    background-size: cover;
+}
+.footer-content {
+    position: absolute;
+    width: 344px;
+    height: 45px;
+    left: 630px;
+    top: 0px;
+    margin-bottom: 0px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+.login-wrapper {
+    position: absolute;
+    width: 788px;
+    height: 400px;
+    left: 326px;
+    top: 200px;
+    border: 1px solid transparent;
+    filter: drop-shadow(10px 10px 100px rgba(0, 0, 0, 0.7));
+ 
+}
+.login-content {
+    position: absolute;
+    width: 394px;
+    height: 400px;
+    left: 27%;
+    top: 0px;
+    margin: 0px; 
+    background-color: transparent;
+    border:1px solid #FFFFFF;
+    box-shadow: 0px 0px 8px #FFFFFF;
+    transition: 0.2s;
+}
+.login-content:hover {
+    box-shadow: 0px 0px 15px #FFFFFF;
+}
+/*
+.login-vector {
+    position: absolute;
+    width: 394px;
+    height: 400px;
+    right: 0px;
+    top: 0px;
+    background-image: url('~@/assets/v14.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin: 0px; 
+    background-color: transparent;
+
+}
+*/
+.signin-title {
+    position: absolute;
+    width: 271px;
+    height: 42px;
+    left: 60px;
+    top: 30px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+input {
+    width: 298px;
+    height: 44px;
+    border: 1px solid rgba(196, 196, 196, 0.2);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 15px;
+    border-radius: 30px;
+   
+}
+input:focus {
+    border-radius: 0px;
+    border:none;
+    background-color: transparent;
+    color: #FFFFFF;
+    opacity: 90%;
+
+}
+.login-username {
+    position: absolute;
+    left: 45px;
+    top: 120px;
+}
+.login-password {
+    position: absolute;
+    left: 45px;
+    top: 190px;
+}
+button {
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    margin-left:10px;
+    margin-top:10px;
+    padding: 4px 70px;
+    font-family: Poppins;
+    border-radius: 50px;
+    background-image: linear-gradient(270deg, dodgerblue,blue);
+    color: #fff;
+    opacity: 0.9;
+    transition: 0.4s;
+    border: 1px solid transparent;
+    width: auto;
+    top: 260px;
+    left: 25%;
+}
+button:hover{
+    opacity: 1;
+    background-image: linear-gradient(200deg, dodgerblue,blue);
+    font-weight: bold;
+    box-shadow: 0px 0px 5px #fff;
+    border-color: #fff;
+}
+.signin-back {
+    position: absolute;
+    width: 78px;
+    height: 27px;
+    left: 300px;
+    top: 360px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.signin-back:hover {
+  font-size: 19px;
+}
+</style>
+
+<!--Old Code-->
+<!--
+<template>
   <div class="parent">
     <div class="login">
-      <h1>LOGIN</h1>
+      <h1>Login</h1>
       <label><b>User Name</b></label>
       <br /><br />
       <input type="text" name="Username" id="Username" v-model="username" />
@@ -129,3 +331,4 @@ span {
   background-color: #1111;
 }
 </style>
+-->
