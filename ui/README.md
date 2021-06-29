@@ -8,9 +8,9 @@
 
 # TODO
 
-## Common ![dishaincomplete]
+## Common ![dishacomplete]
 - Header ![DONE]
-- Footer 
+- Footer ![DONE]
 
 ## All strategies page ![dishaincomplete]
 - design ![DONE]
