@@ -1,23 +1,21 @@
 <template>
   <div id="nav">
-    <SideNavButton />
-    <Title />
+    
+    <Navbar />
     <!-- <hr class="separator" /> -->
-	<SideNavBar />
+	
   </div>
 </template>
 
 <script>
-import Title from "./Title.vue";
-import SideNavButton from "./SideNavButton.vue";
-import SideNavBar from '../Navbar/SideNavBar.vue';
+import Navbar from "./Navbar.vue";
+
 
 export default {
   name: "TopBanner",
   components: {
-    Title,
-    SideNavButton,
-    SideNavBar,
+    Navbar,
+    
   },
 };
 </script>
