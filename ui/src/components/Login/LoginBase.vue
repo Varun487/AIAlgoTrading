@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     async login() {
-      this.$router.push("/strategies");
+      this.$router.push("/backtestreport");
       // const data = {
       //   user_name: this.username,
       //   password: this.password,
