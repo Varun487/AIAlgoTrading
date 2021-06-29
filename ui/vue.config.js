@@ -1,5 +1,5 @@
 module.exports = {
 	devServer: {
-		proxy: 'http://restapi:8000/'
+		proxy: 'http://localhost:8000/'
 	}
 }

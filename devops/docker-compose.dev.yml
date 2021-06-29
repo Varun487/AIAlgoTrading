@@ -26,8 +26,8 @@ services:
       "
     volumes:
       - ../restapi:/home/app/restapi
-    expose:
-      - 8000
+    ports:
+      - "8000:8000"
     depends_on:
       - db
 

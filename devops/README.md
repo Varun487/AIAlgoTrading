@@ -18,7 +18,7 @@
 - Hot restart functionality for ui and restapi ![done]
 - rebuild from scratch test ![done]
 - Update READMEs ![done]
-- UI unable to call restapis ![bugfixed]
+- UI unable to call restapis ![BUG]
 
 ## Production ![varunincomplete]
 - Containers ![done]
