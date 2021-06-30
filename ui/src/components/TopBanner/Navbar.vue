@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="logo">
-        </div>
+        <!-- <div class="logo">
+        </div> -->
         <div class="title">AI ALGO TRADER</div> 
         <!--<div class="logout">
         </div>

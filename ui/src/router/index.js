@@ -40,6 +40,22 @@ const routes = [
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Papertrader.vue')
+  },
+  {
+    path: "/main",
+    name: "LandingPage",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/LandingPage.vue"),
+  },
+  {
+    path: "/strategy",
+    name: "StrategyPage",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/StrategyPage.vue"),
   }
 ]
 
