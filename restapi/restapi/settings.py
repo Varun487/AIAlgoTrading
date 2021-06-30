@@ -24,7 +24,7 @@ SECRET_KEY = 'm(5+#i$uv7y%n9ey!r+mp@jjn(@7*s4*c23er9@&lbiz#55=6a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['restapi']
 
 
 # Application definition
