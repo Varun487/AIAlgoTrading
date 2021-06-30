@@ -7,6 +7,11 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     sidenavtoggle: false,
+    allstrategy: {
+      mainpage: true,
+      strategy: [],
+      strategyid: "",
+    },
     papertrademain: true,
     papertradereports: [],
     backtests: {
@@ -29,12 +34,21 @@ export const store = new Vuex.Store({
     flipBacktestsMainPage(state) {
       state.backtests.mainpage = !state.backtests.mainpage;
     },
+    flipAllStrategiesMainPage(state) {
+      state.allstrategy.mainpage = !state.allstrategy.mainpage;
+    },
     setBacktestsReports(state, payload) {
       state.backtests.reports = payload;
       state.backtests.filteredreports = payload;
     },
     setBacktestId(state, payload) {
       state.backtests.backtestid = payload;
+    },
+    setAllStrategies(state, payload) {
+      state.allstrategy.strategy = payload;
+    },
+    setStrategyId(state, payload) {
+      state.allstrategy.strategyid = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
@@ -72,14 +86,26 @@ export const store = new Vuex.Store({
     flipBacktestsMainPage({ commit }) {
       commit("flipBacktestsMainPage");
     },
+    flipAllStrategiesMainPage({ commit }) {
+      commit("flipAllStrategiesMainPage");
+    },
     setBacktestsReports(state) {
       axios
         .get(process.env.VUE_APP_BASE_URL + "api/backtester/viewallreports/")
         .then((res) => state.commit("setBacktestsReports", res.data))
         .catch((err) => console.log(err));
     },
+    setAllStrategies(state) {
+      axios
+        .get(process.env.VUE_APP_BASE_URL + "api/strategy/allstrategies/")
+        .then((res) => state.commit("setAllStrategies", res.data))
+        .catch((err) => console.log(err));
+    },
     setBacktestId({ commit }, payload) {
       commit("setBacktestId", payload);
+    },
+    setStrategyId({ commit }, payload) {
+      commit("setStrategyId", payload);
     },
     setFilteredBacktestsReports({ commit }, payload) {
       commit("setFilteredBacktestsReports", payload);
@@ -134,5 +160,8 @@ export const store = new Vuex.Store({
       state.backtests.accountsizeloading,
     getBacktestsAccountSizes: (state) => state.backtests.accountsizes,
     getBacktestsTimeStamps: (state) => state.backtests.timestamps,
+    getAllStrategies: (state) => state.allstrategy.strategy,
+    getStrategyId: (state) => state.allstrategy.strategyid,
+    getAllStrategiesMainPage: (state) => state.allstrategy.mainpage,
   },
 });

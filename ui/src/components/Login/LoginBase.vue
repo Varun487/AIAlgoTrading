@@ -13,15 +13,9 @@
                 </form>
                 <a href="#" class="signin-back"> ←Back</a>
             </div>
-            <div class="login-vector">
-
-            </div>
+            <div class="login-vector"></div>
         </div>
-      </div>
-      <div class="footer">
-          <div class="footer-content">
-              Made with ♡ from VSDH
-          </div>
+        <div class="footer">Made with ♡ from VSDH</div> 
       </div>
     </div>
 </template>
@@ -36,56 +30,40 @@ export default {
   background:url('~@/assets/v1.jpeg');
   position: absolute;
   width: 100%;
-  height: 835px;
+  height: 100%;
   left: 0px;
   top: 0px;
   background-size:cover;
-  margin-top:-10px;
+  margin: 0;
   
 }
 .footer {
-    position: absolute;
-    width: 100%;
-    height: 45px;
-    left: 0px;
-    top: 780px;
-    background-color:transparent;
-    background-size: cover;
-}
-.footer-content {
-    position: absolute;
-    width: 344px;
-    height: 45px;
-    left: 630px;
-    top: 0px;
-    margin-bottom: 0px;
+    text-align: center;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
-    line-height: 37px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     color: #FFFFFF;
+    margin-top: 12%;
+    
 }
+
+/*
 .login-wrapper {
-    position: absolute;
     width: 788px;
     height: 400px;
-    left: 326px;
-    top: 200px;
+    margin: 0 auto;
     border: 1px solid transparent;
     filter: drop-shadow(10px 10px 100px rgba(0, 0, 0, 0.7));
  
 }
+*/
 .login-content {
-    position: absolute;
+    position: relative;
     width: 394px;
     height: 400px;
-    left: 27%;
-    top: 0px;
-    margin: 0px; 
+    margin: 0 auto;
+    margin-top:14%;
     background-color: transparent;
     border:1px solid #FFFFFF;
     box-shadow: 0px 0px 8px #FFFFFF;

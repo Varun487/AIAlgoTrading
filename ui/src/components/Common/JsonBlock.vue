@@ -16,6 +16,10 @@ export default {
 <style scoped>
 pre{
 	background-color: #222222;
+  color: #FFFFFF;
 	padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 600px;
 }
 </style>
