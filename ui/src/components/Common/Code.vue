@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 code {
-  background-color: #333333;
+  background-color: transparent;
   padding: 5px;
   border: 1px solid var(--nc-bg-3);
   border-radius: 6px;
