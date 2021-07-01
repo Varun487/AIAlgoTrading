@@ -2,53 +2,105 @@
   
   <div id="main_frame">
     <h1 id="header">Backtester Report</h1>
-    <div id="base">
-      <div id="attributes" >
-        Start Date Time :
-				<input type="text" name="Username" id="textbox" />
-       </div>
-      <div id="attributes" >
-        End Date Time :
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Strategy Type : 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Strategy Config : 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Total return % : 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Total Number of Trades:
-				<input type="text" name="Username" id="textbox" />  
-      </div>
-      <div id="attributes" >
-        Profit Trades: 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Loss Trades: 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Profit Trades % : 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Loss Trades % : 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-      <div id="attributes" >
-        Company : 
-				<input type="text" name="Username" id="textbox" />
-      </div>
-            
+    
+    <div id="base"
+    v-for="report in $store.getters.getBacktestReportData"
+                :key="report.id">
+      <p id="attributes" >
+        Start Date Time : {{report.start_date_time}}
+				
+       </p>
+      <p id="attributes" >
+        End Date Time :{{report.end_date_time}}
+			
+      </p>
+      <p id="attributes" >
+        Strategy Type : {{report.strategy_type}}
+				
+      </p>
+      <p id="attributes" >
+        Strategy Config : {{report.strategy_config}}
+				
+      </p>
+      <p id="attributes" >
+        Total return % : {{report.total_returns_percent}}
+				
+      </p>
+      <p id="attributes" >
+        Total Number of Trades: {{report.total_trades}}
+				
+      </p>
+      <p id="attributes" >
+        Profit Trades: {{report.profit_trades}}
+				
+      </p>
+      <p id="attributes" >
+        Loss Trades: {{report.total_returns_percent}} - {{report.profit_trades}}
+				
+      </p>
+      <p id="attributes" >
+        Profit Trades % : {{report.profit_trades_percent}}
+			
+      </p>
+      <p id="attributes" >
+        Loss Trades % :[{{report.total_returns_percent}} - {{report.profit_trades}}] / {{report.total_trades}} *100
+				
+      </p>
+      <p id="attributes" >
+        Company : {{report.company}}
+				
+      </p>
     </div>
+
+    <div id="base">
+    
+      <p id="attributes" >
+        Start Date Time : 
+       </p>
+      <p id="attributes" >
+        End Date Time :
+			
+      </p>
+      <p id="attributes" >
+        Strategy Type : 
+				
+      </p>
+      <p id="attributes" >
+        Strategy Config : 
+				
+      </p>
+      <p id="attributes" >
+        Total return % : 
+				
+      </p>
+      <p id="attributes" >
+        Total Number of Trades: 
+				
+      </p>
+      <p id="attributes" >
+        Profit Trades: 
+				
+      </p>
+      <p id="attributes" >
+        Loss Trades: 
+				
+      </p>
+      <p id="attributes" >
+        Profit Trades % : 
+			
+      </p>
+      <p id="attributes" >
+        Loss Trades % : 
+				
+      </p>
+      <p id="attributes" >
+        Company : 
+				
+      </p>
+    </div>             
+   
+
+    
         
     <div id="title"  >
       <div id="__p__trades" >
@@ -56,17 +108,24 @@
       </div>
       <div id="line_1"  ></div>
       <div id="line_2"  ></div> 
+      <div id="image">
+      v-for="image in $store.getters."
+                :key="report.id">
+      </div>
     </div>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+
 		
     <div id="title"  >
-      <div id="__p__trades" >
+      <div id="__p__tradess" >
         Trades 
       </div>
       <div id="line_1"  ></div>
       <div id="line_2"  ></div> 
     </div>
 		
+    
+    
     <div id="trades_group"  >
 			
 			<table id="table">
@@ -76,24 +135,16 @@
           <th id="th">Return</th>
         </tr>
         <tr>
-          <td><input type="text" name="Signal" id="textboxx" /></td>
-          <td><input type="text" name="Return %" id="textboxx" /></td>
-          <td><input type="text" name="Return" id="textboxx" /></td>
+          
         </tr>
          <tr>
-          <td><input type="text" name="Signal" id="textboxx" /></td>
-          <td><input type="text" name="Return %" id="textboxx" /></td>
-          <td><input type="text" name="Return" id="textboxx" /></td>
+          
         </tr>
          <tr>
-          <td><input type="text" name="Signal" id="textboxx" /></td>
-          <td><input type="text" name="Return %" id="textboxx" /></td>
-          <td><input type="text" name="Return" id="textboxx" /></td>
+          
         </tr>
          <tr>
-          <td><input type="text" name="Signal" id="textboxx" /></td>
-          <td><input type="text" name="Return %" id="textboxx" /></td>
-          <td><input type="text" name="Return" id="textboxx" /></td>
+         
         </tr>
       </table>
 
@@ -105,17 +156,18 @@
 
 
 <script>
+//  import axios from "axios";
 export default {
   name: "LoginBase",
-
-  data() {
-    return {
-      
-    };
-  },
   methods: {
-    
-}
+    showBacktestReport(id){
+      this.$store.dispatch("setBacktestId", id);
+      
+    }
+  },
+    mounted() {
+    this.$store.dispatch("setBacktestsReports");
+  },
 }
 
 </script>
@@ -153,6 +205,18 @@ export default {
 	text-align: left;
 	color:#000000;
 } 
+#attributess{
+	top: 485px;
+	left: 213px;
+	width: 688.2px;
+	height: 69.64px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+} 
 #textbox {
   width: 300px;
   height: 30px;
@@ -172,7 +236,22 @@ export default {
 }
 #__p__trades {
 	
-	margin: 100px 500px 75px 0px;  ;
+	margin: 500px 500px 75px 0px;  ;
+	width: 572px;
+	height: 144.5px;
+	overflow: hidden;
+	font-family: Poppins;
+	font-size: 55px;
+	text-align: center;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #ffffff;
+	text-shadow: 0 0 2px #ffffff;
+	color:#000000;
+	background:rgb(255, 255, 255);
+}
+#__p__tradess {
+	
+	margin: 1000px 500px 75px 0px;  ;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -238,6 +317,7 @@ export default {
 }
 #table{
   margin: 100px auto;
+  color: black;
 
 }
 tr{
@@ -255,7 +335,15 @@ tr{
 	-webkit-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
 	-moz-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
 	box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	background:rgb(245, 245, 245);
+	background:white;
+}
+#image{
+  margin:auto;
+	
+	width: 800px;
+	height: 800px;
+	
+  background-color: black;
 }
 
 

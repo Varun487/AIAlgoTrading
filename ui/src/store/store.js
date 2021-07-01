@@ -89,9 +89,9 @@ export const store = new Vuex.Store({
     flipAllStrategiesMainPage({ commit }) {
       commit("flipAllStrategiesMainPage");
     },
-    setBacktestsReports(state) {
+    setBacktestsReports(state,id) {
       axios
-        .get(process.env.VUE_APP_BASE_URL + "api/backtester/viewallreports/")
+        .get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`)
         .then((res) => state.commit("setBacktestsReports", res.data))
         .catch((err) => console.log(err));
     },
