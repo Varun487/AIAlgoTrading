@@ -97,7 +97,7 @@ export const store = new Vuex.Store({
     },
     setAllStrategies(state) {
       axios
-        .get(process.env.VUE_APP_BASE_URL + "api/strategy/allstrategies/")
+        .get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/")
         .then((res) => state.commit("setAllStrategies", res.data))
         .catch((err) => console.log(err));
     },
