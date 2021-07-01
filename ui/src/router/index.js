@@ -10,7 +10,7 @@ const routes = [
     component: () => import("../views/Login.vue"),
   },
   {
-    path: "/api",
+    path: "/apidocs",
     name: "APIDocs",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -32,6 +32,14 @@ const routes = [
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Strategies.vue')
+  },
+  {
+    path: '/allstrategies',
+      name: 'AllStrategies',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AllStrategies.vue')
   },
   {
     path: '/papertrader',

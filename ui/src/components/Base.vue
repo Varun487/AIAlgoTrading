@@ -17,6 +17,18 @@ export default {
 </script>
 
 <style scoped>
+
+#main-content {
+  margin-top: 80px;
+  padding-top: 10px;
+  background-color: white;
+  color: black;
+}
+.sidenavactive{
+	margin-left: 150px;
+	transition: all 0.5s;
+}
+/* 
 #main-content {
   margin-top: 100px;
 }
@@ -24,4 +36,5 @@ export default {
 	margin-left: 150px;
 	transition: all 0.5s;
 }
+*/
 </style>
