@@ -26,6 +26,16 @@ export const store = new Vuex.Store({
       accountsizes: [],
       timestamps: [],
     },
+    strategydata: {
+      mainpage: true,
+      strategy_id: "",
+      strategy_name: "",
+      strategy_desc:"",
+      stock_selection: "",
+      exit_criteria: "",
+      stop_loss_method: "",
+      take_profit_method: "",
+    },
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -77,6 +87,27 @@ export const store = new Vuex.Store({
     },
     setPapertradeReports(state, payload) {
       state.papertradereports = payload;
+    },
+    setPerStrategyId(state, payload) {
+      state.strategydata.strategy_id = payload;
+    },
+    setStrategyName(state, payload) {
+      state.strategydata.strategy_name = payload;
+    },
+    setStrategyDesc(state, payload) {
+      state.strategydata.strategy_desc = payload;
+    },
+    setStrategyStockSelection(state, payload) {
+      state.strategydata.stock_selection = payload;
+    },
+    setExitCriteria(state, payload) {
+      state.strategydata.exit_criteria = payload;
+    },
+    setStopLoss(state, payload) {
+      state.strategydata.stop_loss_method = payload;
+    },
+    setTakeProfit(state, payload) {
+      state.strategydata.take_profit_method = payload;
     },
   },
   actions: {
@@ -144,6 +175,15 @@ export const store = new Vuex.Store({
         .get(process.env.VUE_APP_BASE_URL + "api/papertrader/getstrategies/")
         .then((res) => state.commit("setPapertradeReports", res.data))
         .catch((err) => console.log(err));
+    },
+    setStrategyName(state) {
+      axios
+        .get(process.env.VUE_APP_BASE_URL + "api/strategies/strategydata/2/")
+        .then((res) => state.commit("setStrategyName", res.data))
+        .catch((err) => console.log(err));
+    },
+    setPerStrategyId({ commit }, payload) {
+      commit("setPerStrategyId", payload);
     },
   },
   getters: {
