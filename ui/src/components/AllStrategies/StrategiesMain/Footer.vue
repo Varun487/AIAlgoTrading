@@ -1,8 +1,6 @@
 <template>
-    <div class="container">
-        <div class="content">
+    <div class="footer-container">
             Made with ♥ from VSDH
-        </div>
     </div>
 </template>
 
@@ -35,32 +33,19 @@ export default {
     border-radius: 50%;
 }
 */
-.container {
+.footer-container {
     position: absolute;
     width: 100%;
     height: 45px;
-    left: 0px;
     top: 100%;
     background-color: #2876f9;
     background-image: linear-gradient(-90deg, #2876f9 0%, #6d17cb 74%);
-    background-size: cover;
-   
-}
-.content {
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    height: 45px;
-    left: 550px;
-    top: 0px;
-    margin-bottom: 0px;
+    border: 1px solid transparent;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
-    line-height: 37px;
-    display: flex;
-    align-items: center;
+    line-height: 45px;
     text-align: center;
     color: #FFFFFF;
 }

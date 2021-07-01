@@ -11,12 +11,14 @@
 ## Common ![dishacomplete]
 - Header ![DONE]
 - Footer ![DONE]
-
-## All strategies page ![dishaincomplete]
+  - To use: import FooterBase from "relative path"
+      
+## All strategies page ![dishacomplete]
 - design ![DONE]
+- content ![DONE]
 - implementation 
   - frontend (VueJS) ![DONE]
-  - backend (Vuex and REST API)
+  - backend (Vuex and REST API) ![DONE]
 
 ## Strategy page ![samrudhiincomplete]
 - design 

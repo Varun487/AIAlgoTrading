@@ -7,6 +7,7 @@
         </div>
         <div class="line2">
         </div>
+        <!--
         <div class="strat1">
             <div class="strat1-img"></div>
             <div class="strat1-content">
@@ -31,7 +32,7 @@
                 <button>Start</button>
             </div>
         </div>
-          <!--
+        -->
         <div class="strat1">
             <div class="strat1-img"></div>
             <div 
@@ -41,9 +42,10 @@
             >
                 <p class="strat-name">{{ strategy.name }}</p>
                 <p class="strat-desc">{{ strategy.description }}</p>
-                <button @click="showStrategy(strategy.id)">Start</button>
+                <button @click="showStrategy(strategy.id)">Go</button>
             </div>
         </div>
+        <!--
         <div class="strat2">
             <div class="strat2-img"></div>
             <div class="strat2-content">
@@ -59,7 +61,8 @@
                 <p class="strat-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
                 <button>Start</button>
             </div>
-        </div>-->
+        </div>
+        -->
     </div>
 </template>
 

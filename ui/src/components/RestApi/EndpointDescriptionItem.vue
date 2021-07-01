@@ -107,7 +107,8 @@ table {
 }
 
 .api-type {
-  color: lightgreen;
+  color: #8fda8f;
+  
 }
 
 .api-correct-url {
