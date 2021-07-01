@@ -17,10 +17,9 @@
     </h3></div>
     
     <div class = "right2">
-    <h5>  Lorem Ipsum has been the industry's standard <br>
-        dummy text ever since the 1500s,<br> 
-        when an unknown printer took a galley of <br>
-        type and scrambled it to make a type specimen book. </h5>
+    <h5>  Strategies read data from the <br>database and can use multiple indicators, 
+        <br>machine learning models, or a <br> combination to generate orders according 
+        <br>to the rules mentioned in the strategy. </h5>
         </div>
     <div style="clear: both;"></div>
     <br><br><br><br>
@@ -29,17 +28,21 @@
     </h3>
     <br>
     <div class = "left2">
-    <h5>  Lorem Ipsum has been the industry's standard <br>
-        dummy text ever since the 1500s,<br> 
-        when an unknown printer took a galley of <br>
-        type and scrambled it to make a type specimen book. </h5>
+    <h5>This service helps in building Strategies. 
+        <br>It allows us test how a strategy would have performed over 
+        <br>past data over previous weeks, months and years.
+        <br>
+        It takes a parameterised strategy and data over the period 
+        <br>of the back test as input. It generates orders over the 
+        <br>previous data according to the strategy's rules 
+        <br>and outputs a detailed report on the performance of the strategy. </h5>
         </div></div>
     <div class = "right">
     <img src="https://image.freepik.com/free-vector/business-man-described-showing-graph-stock-financial-trade-market-diagram-vector-illustration-flat-design_1150-39768.jpg" alt="image" >
     </div>
     <div style="clear: both;"></div>
     <br><br><br><br>
-    <div class = "left">
+    <!-- <div class = "left">
     <img src="https://image.freepik.com/free-vector/stock-market-analysis-illustration_23-2148588123.jpg" alt="image" >
     </div>
     <div class="right1">
@@ -52,7 +55,7 @@
         when an unknown printer took a galley of <br>
         type and scrambled it to make a type specimen book. </h5>
         </div>
-    <div style="clear: both;"></div>
+    <div style="clear: both;"></div> -->
     </div>
     
     

@@ -1,7 +1,7 @@
 <template>
 
     <div class="about-wrapper">
-        
+        <h1>Simple Bollinger Band Strategy</h1>
     
     
     </div>
