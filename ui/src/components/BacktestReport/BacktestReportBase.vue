@@ -109,8 +109,7 @@
       <div id="line_1"  ></div>
       <div id="line_2"  ></div> 
       <div id="image">
-      v-for="image in $store.getters."
-                :key="report.id">
+     
       </div>
     </div>
 		
@@ -129,24 +128,27 @@
     <div id="trades_group"  >
 			
 			<table id="table">
-        <tr bordercolor="red">
-          <th id="th">Signal</th>
+        <tr>
+          <th id="th">Signal </th>
           <th id="th">Return %</th>
           <th id="th">Return</th>
         </tr>
         <tr>
-          
+          <td>drefdre</td>
+          <td>drefdre</td>
+          <td>drefdre</td>
         </tr>
-         <tr>
-          
+        <tr>
+          <td>drefdre</td>
+          <td>drefdre</td>
+          <td>drefdre</td>
         </tr>
-         <tr>
-          
+        <tr>
+          <td>drefdre</td>
+          <td>drefdre</td>
+          <td>drefdre</td>
         </tr>
-         <tr>
-         
-        </tr>
-      </table>
+         </table>
 
 			
 		</div>
@@ -177,6 +179,7 @@ export default {
   text-align: center;
   padding: 20px;
   color:black;
+  font-family: Poppins;
   background-color: rgb(255, 255, 255);
 }
 #main_frame {
@@ -314,37 +317,55 @@ export default {
 }
 #th{
   color:#000000;
+  font-family: Poppins;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 24px;
 }
-#table{
+table{
+  height:300px;
+  width:700px;
   margin: 100px auto;
+  padding:10px;
   color: black;
-
-}
-tr{
-  margin:auto ;
-	width: 800px;
-	height: 75px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50000px;
-  border: 5px solid #941dcb;
-	-ms-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
+  border:5px solid black;
+  text-align:center;
+  border-spacing: 0 30px;
+  -ms-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
 	-o-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
 	-webkit-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
 	-moz-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
 	box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	background:white;
+  
+
 }
+tr{
+   border: 5px solid #941dcb;
+}
+
+td{
+  padding: 10px;
+   
+ border-radius: 50px;
+  border-collapse: collapse;
+  border: 5px solid #941dcb;
+}
+
 #image{
   margin:auto;
 	
 	width: 800px;
 	height: 800px;
 	
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
+#vector {
+	top: 3165px;
+	left: 263px;
+	width: 50px;
+	height: 71.05px;
+}
+
 
 
 
