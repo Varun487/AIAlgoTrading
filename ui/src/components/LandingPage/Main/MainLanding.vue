@@ -32,8 +32,8 @@ html {
 }
 img {
   
-  width: 1835px;
-  height: 870px;
+  width: 100%;
+  height: 890px;
 }
 .top-left1 {
   position: absolute;
