@@ -103,11 +103,11 @@
     
         
     <div id="title"  >
+      <div id="line_1"  ></div>
       <div id="__p__trades" >
         Trades Visulaization
       </div>
-      <div id="line_1"  ></div>
-      <div id="line_2"  ></div> 
+     <div id="line_2"  ></div> 
       <div id="image">
      
       </div>
@@ -116,11 +116,11 @@
 
 		
     <div id="title"  >
+      <div id="line_3"  ></div>
       <div id="__p__tradess" >
         Trades 
       </div>
-      <div id="line_1"  ></div>
-      <div id="line_2"  ></div> 
+      <div id="line_4"  ></div> 
     </div>
 		
     
@@ -239,7 +239,7 @@ export default {
 }
 #__p__trades {
 	
-	margin: 500px 500px 75px 0px;  ;
+	margin: 500px 500px 75px 0px;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -267,18 +267,38 @@ export default {
 	color:#000000;
 	background:rgb(255, 255, 255);
 }
-/* #line_1 {
-	margin:10px 1000px 75px 500px;
-	width: 472px;
-	height: 10px;
-	background:#ee0808;
+#line_1 {
+    position: absolute;
+    width: 600px;
+    height: 0px;
+    left: 0px;
+    top: 1640px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_2 {
-	margin:0px 0px 0px 0px;
-	width: 434px;
-	height: 10px;
-	background:#ffffff;
-} */
+    position: absolute;
+    width: 670px;
+    height: 0px;
+    left: 1170px;
+    top: 1645px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#line_3 {
+    position: absolute;
+    width: 750px;
+    height: 0px;
+    left: 0px;
+    top: 2750px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#line_4 {
+    position: absolute;
+    width: 900px;
+    height: 0px;
+    left: 1000px;
+    top: 2750px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
 #trades_group {
 	margin: auto;
 	width: 1305px;
@@ -325,7 +345,7 @@ export default {
 table{
   height:300px;
   width:700px;
-  margin: 100px auto;
+  margin: 200px auto;
   padding:10px;
   color: black;
   border:5px solid black;
