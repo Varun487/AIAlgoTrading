@@ -55,16 +55,22 @@
   - Pushes Backtest report to DB, gets its id ![done]
   - Pushes Backtest Trades to DB ![done]
   - Testing ![done]
-- Generate Visualization ![varuncomplete]
+- User Auth ![varuncomplete]
+  - Token returned on signin ![done]
+  - Authorization to access all APIs ![done]
+- Generate Visualization ![varunincomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
   - Visualization 1 - SIGNALS ![done]
     - Company data, Indicators, Signals ![done]
   - Visualization 2 - PER TRADE ![done]
     - Company data, Indicators, Signal, Entry order, Exit order ![done]
-- User Auth ![varuncomplete]
-  - Token returned on signin ![done]
-  - Authorization to access all APIs ![done]
+  - Redesign module ![incomplete]
+      - Create dataframe, taking backtest report object as input ![incomplete]
+      - complete the visualization class
+  - Complete signals visualization
+  - Complete per trade visualization
+  - Testing
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
@@ -85,13 +91,15 @@
   - Given backtest id, returns all backtest trades pertaining to BT ![done]
 - `GET` Trade data ![varuncomplete]
   - Given trade id, get in depth data for a trade ![done]
-- `GET` Backtest Signals visualization ![varuncomplete]
-  - Given backtest id, Generates and returns signals visualization of backtest ![done]
-  - Generate correct viz ![done]
-  - Return a base 64 string with image data ![done]
-- `GET` Backtest Trade visualization ![varuncomplete]
+- `GET` Backtest Signals Visualization ![varunincomplete]
+  - Extract backtest report, Generate visualization
+  - Given backtest id, Generates and returns signals visualization of backtest
+  - Generate correct viz 
+  - Return a base 64 string with image data
+- `GET` Backtest Trade visualization ![varunincomplete]
+  - Extract trade from given id
   - Given backtest trade id, Generates and returns visualization of trade ![done]
-  - How to return images - Base 64 string ![done]
+  - Return a base 64 string
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]
