@@ -98,7 +98,7 @@
   - Return a base 64 string with image data
 - `GET` Backtest Trade visualization ![varunincomplete]
   - Extract trade from given id
-  - Given backtest trade id, Generates and returns visualization of trade ![done]
+  - Given backtest trade id, Generates and returns visualization of trade
   - Return a base 64 string
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
