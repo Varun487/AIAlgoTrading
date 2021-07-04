@@ -11,6 +11,9 @@ export default {
     components: {
         StrategyPageMain,
     },
+    mounted() {
+    this.$store.dispatch("setSelectedStrategy",2);
+  },
 };
 </script>
 <style scoped>
