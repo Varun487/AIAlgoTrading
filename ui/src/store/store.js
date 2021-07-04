@@ -109,6 +109,10 @@ export const store = new Vuex.Store({
     setTakeProfit(state, payload) {
       state.strategydata.take_profit_method = payload;
     },
+    setBacktestsReportdata(state, payload) {
+      state.backtests.backtestreportdata = payload;
+      
+    },
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -120,9 +124,13 @@ export const store = new Vuex.Store({
     flipAllStrategiesMainPage({ commit }) {
       commit("flipAllStrategiesMainPage");
     },
-    setBacktestsReports(state,id) {
+    setBacktestsReportdata(state,id) {
       axios
-        .get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`)
+        .get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
+          headers: {
+            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+          }
+        })
         .then((res) => state.commit("setBacktestsReports", res.data))
         .catch((err) => console.log(err));
     },

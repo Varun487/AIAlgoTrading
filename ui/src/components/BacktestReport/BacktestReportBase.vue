@@ -50,54 +50,10 @@
         Company : {{report.company}}
 				
       </p>
+      
     </div>
 
-    <div id="base">
-    
-      <p id="attributes" >
-        Start Date Time : 
-       </p>
-      <p id="attributes" >
-        End Date Time :
-			
-      </p>
-      <p id="attributes" >
-        Strategy Type : 
-				
-      </p>
-      <p id="attributes" >
-        Strategy Config : 
-				
-      </p>
-      <p id="attributes" >
-        Total return % : 
-				
-      </p>
-      <p id="attributes" >
-        Total Number of Trades: 
-				
-      </p>
-      <p id="attributes" >
-        Profit Trades: 
-				
-      </p>
-      <p id="attributes" >
-        Loss Trades: 
-				
-      </p>
-      <p id="attributes" >
-        Profit Trades % : 
-			
-      </p>
-      <p id="attributes" >
-        Loss Trades % : 
-				
-      </p>
-      <p id="attributes" >
-        Company : 
-				
-      </p>
-    </div>             
+         
    
 
     
@@ -168,7 +124,7 @@ export default {
     }
   },
     mounted() {
-    this.$store.dispatch("setBacktestsReports");
+    this.$store.dispatch("setBacktestsReportdata",id);
   },
 }
 
