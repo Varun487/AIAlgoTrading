@@ -18,6 +18,7 @@ from services.TradeEvaluation.tradeevaluator import TradeEvaluator
 from services.Utils.pusher import Pusher
 from services.BackTestReportGeneration.backtestreportgenerator import BackTestReportGenerator
 
+
 class SignalVisualizationTestCase(TestCase):
     def setUp(self) -> None:
         # create a company

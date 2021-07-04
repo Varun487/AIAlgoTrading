@@ -1,4 +1,3 @@
-# from ..Utils.converter import Converter
 from backtester.models import BackTestReport
 
 

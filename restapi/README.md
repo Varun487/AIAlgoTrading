@@ -69,7 +69,7 @@
       - Create dataframe, taking backtest report object as input ![done]
       - complete the visualization class ![done]
   - Complete signals visualization ![done]
-  - Complete per trade visualization ![incomplete]
+  - Complete per trade visualization ![done]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
@@ -95,10 +95,10 @@
   - Given backtest id, Generates and returns signals visualization of backtest ![done]
   - Generate correct viz ![done]
   - Return a base 64 string with image data ![done]
-- `GET` Backtest Trade visualization ![varunincomplete]
-  - Extract trade from given id
-  - Given backtest trade id, Generates and returns visualization of trade
-  - Return a base 64 string
+- `GET` Backtest Trade visualization ![varuncomplete]
+  - Extract trade from given id ![done]
+  - Given backtest trade id, Generates and returns visualization of trade ![done]
+  - Return a base 64 string ![done]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]
@@ -148,7 +148,9 @@
   - Generate Visualization ![done]
     - Generic visualization ![done]
     - Signals visualization ![done]
-    - Per trade visualization 
+    - Per trade visualization ![done]
+  - Paper trading
+    - **To be completed later**
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

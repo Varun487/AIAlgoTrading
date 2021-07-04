@@ -75,7 +75,7 @@ class SignalVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/test_signals_visualization.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/test_signals_visualization.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 
