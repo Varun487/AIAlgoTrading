@@ -58,7 +58,7 @@
 - User Auth ![varuncomplete]
   - Token returned on signin ![done]
   - Authorization to access all APIs ![done]
-- Generate Visualization ![varunincomplete]
+- Generate Visualization ![varuncomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
   - Visualization 1 - SIGNALS ![done]
