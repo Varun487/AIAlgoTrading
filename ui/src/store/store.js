@@ -26,16 +26,7 @@ export const store = new Vuex.Store({
       accountsizes: [],
       timestamps: [],
     },
-    strategydata: {
-      mainpage: true,
-      strategy_id: "",
-      strategy_name: "",
-      strategy_desc:"",
-      stock_selection: "",
-      exit_criteria: "",
-      stop_loss_method: "",
-      take_profit_method: "",
-    },
+    selected_strategy: undefined,
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -59,6 +50,9 @@ export const store = new Vuex.Store({
     },
     setStrategyId(state, payload) {
       state.allstrategy.strategyid = payload;
+    },
+    setSelectedStrategy(state, payload) {
+      state.selected_strategy = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
@@ -88,31 +82,6 @@ export const store = new Vuex.Store({
     setPapertradeReports(state, payload) {
       state.papertradereports = payload;
     },
-    setPerStrategyId(state, payload) {
-      state.strategydata.strategy_id = payload;
-    },
-    setStrategyName(state, payload) {
-      state.strategydata.strategy_name = payload;
-    },
-    setStrategyDesc(state, payload) {
-      state.strategydata.strategy_desc = payload;
-    },
-    setStrategyStockSelection(state, payload) {
-      state.strategydata.stock_selection = payload;
-    },
-    setExitCriteria(state, payload) {
-      state.strategydata.exit_criteria = payload;
-    },
-    setStopLoss(state, payload) {
-      state.strategydata.stop_loss_method = payload;
-    },
-    setTakeProfit(state, payload) {
-      state.strategydata.take_profit_method = payload;
-    },
-    setBacktestsReportdata(state, payload) {
-      state.backtests.backtestreportdata = payload;
-      
-    },
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -124,7 +93,10 @@ export const store = new Vuex.Store({
     flipAllStrategiesMainPage({ commit }) {
       commit("flipAllStrategiesMainPage");
     },
-    setBacktestsReportdata(state,id) {
+    flipPerStrategiesMainPage({ commit }) {
+      commit("flipPerStrategiesMainPage");
+    },
+    setBacktestsReports(state,id) {
       axios
         .get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
           headers: {
@@ -140,11 +112,22 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setAllStrategies", res.data))
         .catch((err) => console.log(err));
     },
+    async setSelectedStrategy(state,id) {
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}`,{
+        headers: {
+          'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
+        }
+      });
+      state.commit("setSelectedStrategy", res.data)
+    },
     setBacktestId({ commit }, payload) {
       commit("setBacktestId", payload);
     },
     setStrategyId({ commit }, payload) {
       commit("setStrategyId", payload);
+    },
+    setselected_strategyId({ commit }, payload) {
+      commit("setselected_strategyId", payload);
     },
     setFilteredBacktestsReports({ commit }, payload) {
       commit("setFilteredBacktestsReports", payload);
@@ -184,15 +167,6 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setPapertradeReports", res.data))
         .catch((err) => console.log(err));
     },
-    setStrategyName(state) {
-      axios
-        .get(process.env.VUE_APP_BASE_URL + "api/strategies/strategydata/2/")
-        .then((res) => state.commit("setStrategyName", res.data))
-        .catch((err) => console.log(err));
-    },
-    setPerStrategyId({ commit }, payload) {
-      commit("setPerStrategyId", payload);
-    },
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
@@ -211,5 +185,7 @@ export const store = new Vuex.Store({
     getAllStrategies: (state) => state.allstrategy.strategy,
     getStrategyId: (state) => state.allstrategy.strategyid,
     getAllStrategiesMainPage: (state) => state.allstrategy.mainpage,
+    getSelectedStrategy: (state) => state.selected_strategy,
+    // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },
 });
