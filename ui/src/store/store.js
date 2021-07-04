@@ -27,6 +27,7 @@ export const store = new Vuex.Store({
       timestamps: [],
     },
     selected_strategy: undefined,
+    backtest_data:undefined,
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -82,6 +83,9 @@ export const store = new Vuex.Store({
     setPapertradeReports(state, payload) {
       state.papertradereports = payload;
     },
+    setBacktestReportdata(state, payload) {
+      state.backtest_data = payload;
+    },
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -96,15 +100,15 @@ export const store = new Vuex.Store({
     flipPerStrategiesMainPage({ commit }) {
       commit("flipPerStrategiesMainPage");
     },
-    setBacktestsReports(state,id) {
-      axios
-        .get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
+    async setBacktestReportdata(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
           headers: {
             'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
           }
-        })
-        .then((res) => state.commit("setBacktestsReports", res.data))
-        .catch((err) => console.log(err));
+        });
+        state.commit("setBacktestReportdata", res.data)
+        
     },
     setAllStrategies(state) {
       axios
@@ -176,7 +180,7 @@ export const store = new Vuex.Store({
     getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
     getBacktestsReports: (state) => state.backtests.reports,
     getBacktestId: (state) => state.backtests.backtestid,
-    getBacktestReportData: (state) => state.backtests.backtestreportdata,
+    getBacktestReportData: (state) => state.backtest_data,
     getBacktestsSummaryLoading: (state) => state.backtests.summaryloading,
     getBacktestsAccountSizeLoading: (state) =>
       state.backtests.accountsizeloading,

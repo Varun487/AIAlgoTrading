@@ -3,51 +3,52 @@
   <div id="main_frame">
     <h1 id="header">Backtester Report</h1>
     
-    <div id="base"
+    <!-- <div id="base"
     v-for="report in $store.getters.getBacktestReportData"
-                :key="report.id">
+                :key="report.id"> -->
+      <div id="base">         
       <p id="attributes" >
-        Start Date Time : {{report.start_date_time}}
+        <b>Start Date Time</b> : {{$store.getters.getBacktestReportData.start_date_time}}
 				
        </p>
       <p id="attributes" >
-        End Date Time :{{report.end_date_time}}
+        End Date Time : {{$store.getters.getBacktestReportData.end_date_time}}
+			
+      </p>
+      <p id="attributess" >
+        Strategy Type :  {{$store.getters.getBacktestReportData.strategy_type}}
+				
+      </p>
+      <p id="attributes" >
+        Strategy Config :  {{$store.getters.getBacktestReportData.strategy_config}}
+				
+      </p>
+      <p id="attributes" >
+        Total return % :  {{$store.getters.getBacktestReportData.total_returns_percent}}
+				
+      </p>
+      <p id="attributes" >
+        Total Number of Trades:  {{$store.getters.getBacktestReportData.total_trades}}
+				
+      </p>
+      <p id="attributes" >
+        Profit Trades:  {{$store.getters.getBacktestReportData.profit_trades}}
+				
+      </p>
+      <p id="attributes" >
+        Loss Trades:  {{$store.getters.getBacktestReportData.total_trades}} - {{$store.getters.getBacktestReportData.profit_trades}}
+				
+      </p>
+      <p id="attributes" >
+        Profit Trades % :  {{$store.getters.getBacktestReportData.profit_trades_percent}}
 			
       </p>
       <p id="attributes" >
-        Strategy Type : {{report.strategy_type}}
+        Loss Trades % : [{{$store.getters.getBacktestReportData.total_trades}} - {{$store.getters.getBacktestReportData.profit_trades}}] / {{$store.getters.getBacktestReportData.total_trades}} *100
 				
       </p>
       <p id="attributes" >
-        Strategy Config : {{report.strategy_config}}
-				
-      </p>
-      <p id="attributes" >
-        Total return % : {{report.total_returns_percent}}
-				
-      </p>
-      <p id="attributes" >
-        Total Number of Trades: {{report.total_trades}}
-				
-      </p>
-      <p id="attributes" >
-        Profit Trades: {{report.profit_trades}}
-				
-      </p>
-      <p id="attributes" >
-        Loss Trades: {{report.total_returns_percent}} - {{report.profit_trades}}
-				
-      </p>
-      <p id="attributes" >
-        Profit Trades % : {{report.profit_trades_percent}}
-			
-      </p>
-      <p id="attributes" >
-        Loss Trades % :[{{report.total_returns_percent}} - {{report.profit_trades}}] / {{report.total_trades}} *100
-				
-      </p>
-      <p id="attributes" >
-        Company : {{report.company}}
+        Company :  {{$store.getters.getBacktestReportData.company}}
 				
       </p>
       
@@ -61,7 +62,7 @@
     <div id="title"  >
       <div id="line_1"  ></div>
       <div id="__p__trades" >
-        Trades Visulaization
+        Trades Visualization
       </div>
      <div id="line_2"  ></div> 
       <div id="image">
@@ -124,7 +125,7 @@ export default {
     }
   },
     mounted() {
-    this.$store.dispatch("setBacktestsReportdata",id);
+    this.$store.dispatch("setBacktestReportdata",31);
   },
 }
 
@@ -155,8 +156,8 @@ export default {
 #attributes{
 	top: 485px;
 	left: 213px;
-	width: 688.2px;
-	height: 69.64px;
+	width: 1200.2px;
+	height: 100.64px;
 	overflow: hidden;
 	font-family: Poppins;
 	font-size: 25px;
@@ -167,8 +168,8 @@ export default {
 #attributess{
 	top: 485px;
 	left: 213px;
-	width: 688.2px;
-	height: 69.64px;
+	width: 1200.2px;
+	height:300.64px;
 	overflow: hidden;
 	font-family: Poppins;
 	font-size: 25px;
@@ -195,7 +196,7 @@ export default {
 }
 #__p__trades {
 	
-	margin: 500px 500px 75px 0px;
+	margin: 900px 500px 75px 0px;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -228,7 +229,7 @@ export default {
     width: 600px;
     height: 0px;
     left: 0px;
-    top: 1640px;
+    top: 2050px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_2 {
@@ -236,15 +237,15 @@ export default {
     width: 670px;
     height: 0px;
     left: 1170px;
-    top: 1645px;
+    top: 2050px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_3 {
     position: absolute;
-    width: 750px;
+    width: 775px;
     height: 0px;
     left: 0px;
-    top: 2750px;
+    top: 3150px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -252,7 +253,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 2750px;
+    top: 3150px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
