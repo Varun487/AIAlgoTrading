@@ -73,40 +73,40 @@ def api_get_backtest_trade_data(req, backtest_trade_id):
     return Response(BacktestTradeDataSerializer(backtest_trades).data)
 
 
+@api_view(['GET', ])
 def api_get_backtest_signal_visualization(req, backtest_id):
     try:
-        backtest = BackTestReport.objects.get(id=backtest_id)
+        backtest_report = BackTestReport.objects.get(id=backtest_id)
 
-        df = Getter(table_name=TickerData, df_flag=True, param_list={'company': backtest.company,
-                                                                     'time_stamp__range': [backtest.start_date_time,
-                                                                                           backtest.end_date_time]}) \
-            .get_data()
+        # set height if present
+        try:
+            height = int(req.GET['height'])
+        except:
+            height = 20
 
-        df.drop(['id', 'company_id', 'time_period'], axis=1, inplace=True)
-
-        df = BBSignalGenerator(
-            indicator=BollingerIndicator(
-                df=df,
-                time_period=backtest.strategy_config.indicator_time_period,
-                dimension=backtest.strategy_config.get_dimension_display(),
-                sigma=backtest.strategy_config.sigma,
-            )
-        ).generate_signals()
+        # set width if present
+        try:
+            width = int(req.GET['width'])
+        except:
+            width = 100
 
         res = {
-            "img": SignalVisualization(df=df, columns=list(df.columns), height=20, width=100).get_visualization()
+            "img": SignalVisualization(backtest_report=backtest_report, height=height, width=width).get_visualization()
         }
 
         return JsonResponse(res)
+
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
 
+@api_view(['GET', ])
 def api_get_backtest_trade_visualization(req, backtest_trade_id):
     try:
         bt_trade = BackTestTrade.objects.get(id=backtest_trade_id)
 
-        trade_number = list(BackTestTrade.objects.filter(back_test_report=bt_trade.back_test_report)).index(bt_trade) + 1
+        trade_number = list(BackTestTrade.objects.filter(back_test_report=bt_trade.back_test_report)).index(
+            bt_trade) + 1
 
         df = Getter(table_name=TickerData, df_flag=True, param_list={'company': bt_trade.back_test_report.company,
                                                                      'time_stamp__range': [

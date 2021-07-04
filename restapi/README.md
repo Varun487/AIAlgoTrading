@@ -65,12 +65,11 @@
     - Company data, Indicators, Signals ![done]
   - Visualization 2 - PER TRADE ![done]
     - Company data, Indicators, Signal, Entry order, Exit order ![done]
-  - Redesign module ![incomplete]
-      - Create dataframe, taking backtest report object as input ![incomplete]
-      - complete the visualization class
-  - Complete signals visualization
-  - Complete per trade visualization
-  - Testing
+  - Redesign module ![done]
+      - Create dataframe, taking backtest report object as input ![done]
+      - complete the visualization class ![done]
+  - Complete signals visualization ![done]
+  - Complete per trade visualization ![incomplete]
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
@@ -91,11 +90,11 @@
   - Given backtest id, returns all backtest trades pertaining to BT ![done]
 - `GET` Trade data ![varuncomplete]
   - Given trade id, get in depth data for a trade ![done]
-- `GET` Backtest Signals Visualization ![varunincomplete]
-  - Extract backtest report, Generate visualization
-  - Given backtest id, Generates and returns signals visualization of backtest
-  - Generate correct viz 
-  - Return a base 64 string with image data
+- `GET` Backtest Signals Visualization ![varuncomplete]
+  - Extract backtest report, Generate visualization ![done]
+  - Given backtest id, Generates and returns signals visualization of backtest ![done]
+  - Generate correct viz ![done]
+  - Return a base 64 string with image data ![done]
 - `GET` Backtest Trade visualization ![varunincomplete]
   - Extract trade from given id
   - Given backtest trade id, Generates and returns visualization of trade
@@ -114,22 +113,42 @@
 - Custom Strategy 2
   - **To be done later**
 
-## Automated testing
+## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
 - restapi
-  - backtest apis
-  - strategy apis
+  - Auth apis
+    - `POST` Authorization
+  - Strategy apis
+    - `GET` All Strategies
+    - `GET` Strategy data
+  - Backtest apis
+    - `GET` All backtests of a strategy
+    - `GET` Backtest data
+    - `GET` All Backtest trades
+    - `GET` Trade data
+    - `GET` Backtest Signals Visualization
+    - `GET` Backtest Trade visualization
+  - Paper trade apis
+    - **To be completed later**
 - services
-  - Utils
-    - Converters
-    - Pushers
-    - Getters
-  - Indicator calc
-  - Signal generation
-  - Order Execution
-  - Trade evaluation
-  - Backtest Report Generation
-  - Generate Visualization
+  - Utils ![done]
+    - Converters ![done]
+    - Pushers ![done]
+    - Getters ![done]
+  - Indicator calc ![done]
+  - Signal generation ![done]
+    - Generic Signal Generator ![done]
+    - BBSignalGenerator ![done]
+  - Order Execution ![done]
+    - Generic Take profit stop loss ![done]
+    - Take profit stop loss BB ![done]
+    - Order Execution ![done]
+  - Trade evaluation ![done]
+  - Backtest Report Generation ![done]
+  - Generate Visualization ![done]
+    - Generic visualization ![done]
+    - Signals visualization ![done]
+    - Per trade visualization 
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

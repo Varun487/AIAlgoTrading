@@ -32,16 +32,16 @@ class TradeVisualizationTestCase(TestCase):
         # Evaluate trades
         self.trades_df = TradeEvaluator(df=self.orders_df).get_evaluated_df()
 
-    def test_generate_visualization_errors(self):
-        """Checks if the generate_visualization method works correctly"""
-        self.assertRaises(ValueError, TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
-                                                         width=15).generate_visualization)
-        self.assertRaises(ValueError, TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
-                                                         width=15, trade_number=0).generate_visualization)
-        self.assertRaises(ValueError, TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
-                                                         width=15, trade_number=-3).generate_visualization)
-
-    def test_generate_visualization(self):
-        """Checks if the generate_visualization method works correctly"""
-        TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
-                           width=15, trade_number=7).generate_visualization()
+    # def test_generate_visualization_errors(self):
+    #     """Checks if the generate_visualization method works correctly"""
+    #     self.assertRaises(ValueError, TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
+    #                                                      width=15).generate_visualization)
+    #     self.assertRaises(ValueError, TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
+    #                                                      width=15, trade_number=0).generate_visualization)
+    #     self.assertRaises(ValueError, TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
+    #                                                      width=15, trade_number=-3).generate_visualization)
+    #
+    # def test_generate_visualization(self):
+    #     """Checks if the generate_visualization method works correctly"""
+    #     TradeVisualization(df=self.trades_df, columns=self.signals_df.columns, height=6,
+    #                        width=15, trade_number=7).generate_visualization()

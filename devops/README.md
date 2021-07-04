@@ -19,6 +19,7 @@
 - rebuild from scratch test ![done]
 - Update READMEs ![done]
 - UI unable to call restapis ![bugfixed]
+- Unable to see /admin from UI ![bug]
 
 ## Production ![varunincomplete]
 - Containers ![done]
