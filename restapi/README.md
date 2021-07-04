@@ -55,6 +55,9 @@
   - Pushes Backtest report to DB, gets its id ![done]
   - Pushes Backtest Trades to DB ![done]
   - Testing ![done]
+- User Auth ![varuncomplete]
+  - Token returned on signin ![done]
+  - Authorization to access all APIs ![done]
 - Generate Visualization ![varuncomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
@@ -62,9 +65,13 @@
     - Company data, Indicators, Signals ![done]
   - Visualization 2 - PER TRADE ![done]
     - Company data, Indicators, Signal, Entry order, Exit order ![done]
-- User Auth ![varuncomplete]
-  - Token returned on signin ![done]
-  - Authorization to access all APIs ![done]
+  - Redesign module ![done]
+      - Create dataframe, taking backtest report object as input ![done]
+      - complete the visualization class ![done]
+  - Complete signals visualization ![done]
+  - Complete per trade visualization ![done]
+  - Make all visualizations strategy independent 
+    - **To be done later**
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
@@ -85,13 +92,15 @@
   - Given backtest id, returns all backtest trades pertaining to BT ![done]
 - `GET` Trade data ![varuncomplete]
   - Given trade id, get in depth data for a trade ![done]
-- `GET` Backtest Signals visualization ![varuncomplete]
+- `GET` Backtest Signals Visualization ![varuncomplete]
+  - Extract backtest report, Generate visualization ![done]
   - Given backtest id, Generates and returns signals visualization of backtest ![done]
   - Generate correct viz ![done]
   - Return a base 64 string with image data ![done]
 - `GET` Backtest Trade visualization ![varuncomplete]
+  - Extract trade from given id ![done]
   - Given backtest trade id, Generates and returns visualization of trade ![done]
-  - How to return images - Base 64 string ![done]
+  - Return a base 64 string ![done]
 - `GET` Paper trades ![varunincomplete]
   - design **To be done later**
 - `GET` Current Quote ![varunincomplete]
@@ -106,22 +115,44 @@
 - Custom Strategy 2
   - **To be done later**
 
-## Automated testing
+## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
 - restapi
-  - backtest apis
-  - strategy apis
+  - Auth apis
+    - `POST` Authorization
+  - Strategy apis
+    - `GET` All Strategies
+    - `GET` Strategy data
+  - Backtest apis
+    - `GET` All backtests of a strategy
+    - `GET` Backtest data
+    - `GET` All Backtest trades
+    - `GET` Trade data
+    - `GET` Backtest Signals Visualization
+    - `GET` Backtest Trade visualization
+  - Paper trade apis
+    - **To be completed later**
 - services
-  - Utils
-    - Converters
-    - Pushers
-    - Getters
-  - Indicator calc
-  - Signal generation
-  - Order Execution
-  - Trade evaluation
-  - Backtest Report Generation
-  - Generate Visualization
+  - Utils ![done]
+    - Converters ![done]
+    - Pushers ![done]
+    - Getters ![done]
+  - Indicator calc ![done]
+  - Signal generation ![done]
+    - Generic Signal Generator ![done]
+    - BBSignalGenerator ![done]
+  - Order Execution ![done]
+    - Generic Take profit stop loss ![done]
+    - Take profit stop loss BB ![done]
+    - Order Execution ![done]
+  - Trade evaluation ![done]
+  - Backtest Report Generation ![done]
+  - Generate Visualization ![done]
+    - Generic visualization ![done]
+    - Signals visualization ![done]
+    - Per trade visualization ![done]
+  - Paper trading
+    - **To be completed later**
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
