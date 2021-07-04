@@ -70,6 +70,8 @@
       - complete the visualization class ![done]
   - Complete signals visualization ![done]
   - Complete per trade visualization ![done]
+  - Make all visualizations strategy independent 
+    - **To be done later**
 - Sourcing Data real-time ![varunincomplete]
   - design **To be done later**
 - Paper trading ![varunincomplete]
