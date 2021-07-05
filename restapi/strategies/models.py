@@ -132,7 +132,7 @@ class Order(models.Model):
 # Trade - Pair of entry and exit orders per signal
 class Trade(models.Model):
     entry_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="entry_order", blank=False, null=False)
-    exit_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="exit_order", blank=False, null=False)
+    exit_order = models.ForeignKey(to=Order, on_delete=models.CASCADE, related_name="exit_order", blank=True, null=True)
     duration = models.IntegerField(blank=False, null=False, default=0)
     net_return = models.FloatField(blank=False, null=False)
     return_percent = models.FloatField(blank=False, null=False)

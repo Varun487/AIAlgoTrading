@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # project apps
     'strategies',
     'backtester',
+    'papertrader',
 ]
 
 REST_FRAMEWORK = {

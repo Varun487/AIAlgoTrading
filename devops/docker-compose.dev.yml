@@ -20,6 +20,7 @@ services:
     command: bash -c "cd ../restapi
       && python3 manage.py makemigrations backtester
       && python3 manage.py makemigrations strategies
+      && python3 manage.py makemigrations papertrader
       && python3 manage.py migrate
       && echo yes | python3 manage.py collectstatic
       && python3 manage.py runserver 0.0.0.0:8000

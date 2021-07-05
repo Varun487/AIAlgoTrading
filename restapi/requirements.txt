@@ -22,3 +22,4 @@ urllib3==1.26.4
 ta==0.7.0
 matplotlib==3.4.0
 djoser==2.1.0
+yfinance==0.1.60
