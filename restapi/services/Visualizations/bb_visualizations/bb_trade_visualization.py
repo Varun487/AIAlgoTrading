@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import io
 import base64
 
-from .visualization import Visualization
+from services.Visualizations.visualization import Visualization
 
 from backtester.models import BackTestTrade
 from strategies.models import TickerData
@@ -16,7 +16,7 @@ from services.TradeEvaluation.tradeevaluator import TradeEvaluator
 from services.Utils.getters import Getter
 
 
-class TradeVisualization(Visualization):
+class BBTradeVisualization(Visualization):
     def __init__(self, backtest_report=None, backtest_trade=None, height=-1, width=-1):
         super().__init__(backtest_report, height, width)
 

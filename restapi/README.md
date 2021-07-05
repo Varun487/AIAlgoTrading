@@ -70,12 +70,10 @@
       - complete the visualization class ![done]
   - Complete signals visualization ![done]
   - Complete per trade visualization ![done]
-  - Make all visualizations strategy independent 
-    - **To be done later**
-- Sourcing Data real-time ![varunincomplete]
-  - design **To be done later**
-- Paper trading ![varunincomplete]
-  - design **To be done later**
+  - Make all visualizations strategy dependent ![done]
+    - Signals ![done]
+    - Per trade ![done]
+- Design paper trader services ![incomplete]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -101,19 +99,13 @@
   - Extract trade from given id ![done]
   - Given backtest trade id, Generates and returns visualization of trade ![done]
   - Return a base 64 string ![done]
-- `GET` Paper trades ![varunincomplete]
-  - design **To be done later**
-- `GET` Current Quote ![varunincomplete]
-  - design **To be done later**
+- Design paper traded REST APIs
 
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
 - Demo 2 - LSTM predictions strategy ![varunincomplete]
-  - **To be done later**
-- Custom Strategy 1 
-  - **To be done later**
-- Custom Strategy 2
-  - **To be done later**
+- Custom Strategy 1 ![varunincomplete]
+- Custom Strategy 2 ![varunincomplete]
 
 ## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
@@ -130,8 +122,7 @@
     - `GET` Trade data
     - `GET` Backtest Signals Visualization
     - `GET` Backtest Trade visualization
-  - Paper trade apis
-    - **To be completed later**
+  - Design paper trader REST API tests
 - services
   - Utils ![done]
     - Converters ![done]
@@ -151,8 +142,7 @@
     - Generic visualization ![done]
     - Signals visualization ![done]
     - Per trade visualization ![done]
-  - Paper trading
-    - **To be completed later**
+  - Design paper trader services tests
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
