@@ -140,11 +140,20 @@ export const store = new Vuex.Store({
       
     },
     
-    setAllStrategies(state) {
+    
+    async setAllStrategies(state) {
+      /*
       axios
         .get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/")
         .then((res) => state.commit("setAllStrategies", res.data))
         .catch((err) => console.log(err));
+      */
+     const res = await axios.get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/", {
+       headers: {
+         'Authorization': 'Token 4e60ea42fc7ea9942bee0cbfb72c1ca1b718a6d5'
+       }
+     });
+     state.commit("setAllStrategies", res.data)
     },
     async setSelectedStrategy(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}`,{

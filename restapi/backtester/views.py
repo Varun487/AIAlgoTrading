@@ -4,8 +4,8 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from services.Visualizations.signal_visualization import SignalVisualization
-from services.Visualizations.trade_visualization import TradeVisualization
+from services.Visualizations.bb_visualizations.bb_signal_visualization import BBSignalVisualization
+from services.Visualizations.bb_visualizations.bb_trade_visualization import BBTradeVisualization
 from strategies.models import StrategyType
 
 from .models import ExampleBackTesterModel, BackTestReport, BackTestTrade
@@ -69,6 +69,11 @@ def api_get_backtest_signal_visualization(req, backtest_id):
     try:
         backtest_report = BackTestReport.objects.get(id=backtest_id)
 
+        visualization = None
+
+        if backtest_report.strategy_type.name == "Simple Bollinger Band Strategy":
+            visualization = BBSignalVisualization
+
         # set height if present
         try:
             height = int(req.GET['height'])
@@ -82,7 +87,7 @@ def api_get_backtest_signal_visualization(req, backtest_id):
             width = 100
 
         res = {
-            "img": SignalVisualization(backtest_report=backtest_report, height=height, width=width).get_visualization()
+            "img": visualization(backtest_report=backtest_report, height=height, width=width).get_visualization()
         }
 
         return JsonResponse(res)
@@ -95,6 +100,11 @@ def api_get_backtest_signal_visualization(req, backtest_id):
 def api_get_backtest_trade_visualization(req, backtest_trade_id):
     try:
         bt_trade = BackTestTrade.objects.get(id=backtest_trade_id)
+
+        visualization = None
+
+        if bt_trade.back_test_report.strategy_type.name == "Simple Bollinger Band Strategy":
+            visualization = BBTradeVisualization
 
         # set height if present
         try:
@@ -109,8 +119,9 @@ def api_get_backtest_trade_visualization(req, backtest_trade_id):
             width = 15
 
         res = {
-            "img": TradeVisualization(backtest_report=bt_trade.back_test_report, backtest_trade=bt_trade, height=height,
-                                      width=width).get_visualization()
+            "img": visualization(backtest_report=bt_trade.back_test_report, backtest_trade=bt_trade,
+                                 height=height,
+                                 width=width).get_visualization()
         }
 
         return JsonResponse(res)

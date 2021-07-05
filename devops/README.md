@@ -46,6 +46,7 @@
   - Add all different strategy configs ![done]
   - Add visualization types ![done]
   - Run all backtests on data ![done]
+- Modify initialization script
 - Automated deployment to VM from local machine `script`
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
