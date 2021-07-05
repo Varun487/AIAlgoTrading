@@ -1,6 +1,10 @@
 from django.utils.timezone import make_aware
-from pandas_datareader import data as pd_data_reader
+from pandas_datareader import data as pdr
+import yfinance as yf
 import pandas as pd
+
+# Override default pandas data reader downloader
+yf.pdr_override()
 
 print()
 print("INITIALIZING DB")
@@ -106,8 +110,8 @@ for ticker in range(len(nifty_companies)):
     print()
 
     # source data for these companies from Yahoo finance from 2017-01-01 to 2020-12-31
-    sourced_data = pd_data_reader.DataReader(nifty_companies['Symbol'][ticker] + '.NS', 'yahoo', '2017-01-01',
-                                             '2020-12-30')
+    sourced_data = pdr.get_data_yahoo(nifty_companies['Symbol'][ticker] + '.NS', start='2017-01-01',
+                                      end='2020-12-30')
 
     for ticker_data in range(len(sourced_data)):
         # extract company data

@@ -58,7 +58,32 @@
 - User Auth ![varuncomplete]
   - Token returned on signin ![done]
   - Authorization to access all APIs ![done]
-- Generate Visualization ![varuncomplete]
+- Design paper trader services ![varuncomplete]
+- Source Data ![varunincomplete]
+  - Given company ticker, start date, end date 
+  - Sources data, returns df 
+- Update Company Quotes ![varunincomplete]
+  - For all companies in DB 
+    - Source latest data 
+    - Update company quote in DB
+- Evaluate Live Paper Trades ![varunincomplete]
+  - For each live paper trade 
+    - Check whether stop loss or take profit limit is hit 
+      - If hit, then 
+        - Exit position 
+        - Evaluate closed trade 
+        - Remove from live trades 
+- Execute Live Paper Signals ![varunincomplete]
+  - For each signal in live generated signals 
+    - Execute entry orders and create a paper trade 
+    - Push to everything to DB 
+- Generate Paper Signals ![varunincomplete]
+  - For each strategy config currently paper traded
+    - Generate signals
+- Paper Trade ![varunincomplete]
+  - Executed periodically
+  - Synchronises and calls all services above
+- Generate Visualization ![varunincomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
   - Visualization 1 - SIGNALS ![done]
@@ -73,7 +98,7 @@
   - Make all visualizations strategy dependent ![done]
     - Signals ![done]
     - Per trade ![done]
-- Design paper trader services ![incomplete]
+  - Paper Trade Visualization Per Paper Trade (Live and Historical)
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -99,7 +124,22 @@
   - Extract trade from given id ![done]
   - Given backtest trade id, Generates and returns visualization of trade ![done]
   - Return a base 64 string ![done]
-- Design paper traded REST APIs
+- Design paper traded REST APIs ![varuncomplete]
+- `GET` All Paper Trades ![varunincomplete]
+  - Input = Strategy id
+  - Get all paper trades corresponding to the strategy
+  - Priority to live trades
+- `GET` Paper Trade data ![varunincomplete]
+  - Input = Paper Trade id
+  - In depth information on paper trade
+- `GET` Current Quote ![varunincomplete]
+  - Input = Paper Trade id
+  - Get the latest company data with last updated date
+  - According to paper trade id's company
+- `GET` Paper Trade Visualization ![varunincomplete]
+  - Input = Paper Trade id
+  - Generate picture for paper trade visualizations
+  - Return base 64 string
 
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
@@ -122,7 +162,11 @@
     - `GET` Trade data
     - `GET` Backtest Signals Visualization
     - `GET` Backtest Trade visualization
-  - Design paper trader REST API tests
+  - Paper Trade apis
+    - `GET` All Paper Trades
+    - `GET` Paper Trade data
+    - `GET` Current Quote
+    - `GET` Paper Trade Visualization
 - services
   - Utils ![done]
     - Converters ![done]
@@ -138,11 +182,17 @@
     - Order Execution ![done]
   - Trade evaluation ![done]
   - Backtest Report Generation ![done]
-  - Generate Visualization ![done]
+  - Generate Visualization 
     - Generic visualization ![done]
     - Signals visualization ![done]
     - Per trade visualization ![done]
-  - Design paper trader services tests
+    - Paper trade visualization
+  - Source Data 
+  - Update Company Quotes
+  - Evaluate Live Paper Trades
+  - Execute Live Paper Signals
+  - Generate Paper Signals
+  - Paper Trade
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
