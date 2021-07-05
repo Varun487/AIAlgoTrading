@@ -35,7 +35,9 @@ class BackTestReport(models.Model):
     total_returns_percent = models.FloatField(blank=False, null=False, default=0.0)
     total_trades = models.IntegerField(blank=False, null=False)
     profit_trades = models.IntegerField(blank=False, null=False)
+    # loss_trades = models.IntegerField(blank=False, null=False)
     profit_trades_percent = models.FloatField(blank=False, null=False)
+    # loss_trades_percent = models.FloatField(blank=False, null=False)
     company = models.ForeignKey(to=Company, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):

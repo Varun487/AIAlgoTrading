@@ -3,12 +3,10 @@
   <div id="main_frame">
     <h1 id="header">Backtester Report</h1>
     
-    <!-- <div id="base"
-    v-for="report in $store.getters.getBacktestReportData"
-                :key="report.id"> -->
+    
       <div id="base">         
       <p id="attributes" >
-        <b>Start Date Time</b> : {{$store.getters.getBacktestReportData.start_date_time}}
+        Start Date Time : {{$store.getters.getBacktestReportData.start_date_time}}
 				
        </p>
       <p id="attributes" >
@@ -16,11 +14,45 @@
 			
       </p>
       <p id="attributess" >
-        Strategy Type :  {{$store.getters.getBacktestReportData.strategy_type}}
+        Strategy Type  <br><br>
+        
+        Name: {{$store.getters.getBacktestReportData.strategy_type.name}}<br>
+        Description:    {{$store.getters.getBacktestReportData.strategy_type.description}}<br>
+        Stock Selection: {{$store.getters.getBacktestReportData.strategy_type.stock_selection}}<br>
+        Entry Criteria: {{$store.getters.getBacktestReportData.strategy_type.entry_criteria}}<br>
+        Exit Criteria: {{$store.getters.getBacktestReportData.strategy_type.exit_criteria}}<br>
+        Stop Loss Method: {{$store.getters.getBacktestReportData.strategy_type.stop_loss_method}}<br>
+        Take Profit Method: {{$store.getters.getBacktestReportData.strategy_type.take_profit_method}}<br>
 				
       </p>
-      <p id="attributes" >
-        Strategy Config :  {{$store.getters.getBacktestReportData.strategy_config}}
+      <p id="attributess" 
+      v-if='$store.getters.getBacktestReportData.strategy_config.strategy_type=== "1"'>
+        Strategy Config   <br><br>
+
+        Indicator Time Period :  {{$store.getters.getBacktestReportData.strategy_config.indicator_time_period}}<br>
+        Max Holding  Period: {{$store.getters.getBacktestReportData.strategy_config.max_holding_period}}<br>
+        Take Profit Factor: {{$store.getters.getBacktestReportData.strategy_config.take_profit_factor}}<br>
+        Stop Loss Factor: {{$store.getters.getBacktestReportData.strategy_config.stop_loss_factor}}<br>
+        Sigma:{{$store.getters.getBacktestReportData.strategy_config.sigma}}<br>
+        Dimension:{{$store.getters.getBacktestReportData.strategy_config.dimension}}<br>
+        Strategy_type: Buy<br>
+
+
+				
+      </p>
+      <p id="attributess" 
+      v-else>
+        Strategy Config   <br><br>
+
+        Indicator Time Period :  {{$store.getters.getBacktestReportData.strategy_config.indicator_time_period}}<br>
+        Max Holding Time Period: {{$store.getters.getBacktestReportData.strategy_config.max_holding_period}}<br>
+        Take Profit Factor: {{$store.getters.getBacktestReportData.strategy_config.take_profit_factor}}<br>
+        Stop Loss Factor: {{$store.getters.getBacktestReportData.strategy_config.stop_loss_factor}}<br>
+        Sigma:{{$store.getters.getBacktestReportData.strategy_config.sigma}}<br>
+        Dimension:{{$store.getters.getBacktestReportData.strategy_config.dimension}}<br>
+        Strategy Type: Sell<br>
+
+
 				
       </p>
       <p id="attributes" >
@@ -36,7 +68,7 @@
 				
       </p>
       <p id="attributes" >
-        Loss Trades:  {{$store.getters.getBacktestReportData.total_trades}} - {{$store.getters.getBacktestReportData.profit_trades}}
+        Loss Trades:  {{$store.getters.getBacktestReportData.total_trades - $store.getters.getBacktestReportData.profit_trades}}
 				
       </p>
       <p id="attributes" >
@@ -44,11 +76,16 @@
 			
       </p>
       <p id="attributes" >
-        Loss Trades % : [{{$store.getters.getBacktestReportData.total_trades}} - {{$store.getters.getBacktestReportData.profit_trades}}] / {{$store.getters.getBacktestReportData.total_trades}} *100
+        Loss Trades % : {{100-$store.getters.getBacktestReportData.profit_trades_percent}}
 				
       </p>
-      <p id="attributes" >
-        Company :  {{$store.getters.getBacktestReportData.company}}
+      <p id="attributess" >
+        
+        Company   <br><br>
+        
+              Name :{{$store.getters.getBacktestReportData.company.name}} <br>
+              Ticker:{{$store.getters.getBacktestReportData.company.ticker}}<br>
+        Description: {{$store.getters.getBacktestReportData.company.description}}<br>
 				
       </p>
       
@@ -66,7 +103,10 @@
       </div>
      <div id="line_2"  ></div> 
       <div id="image">
-     
+        
+          <img v-bind:src="'data:image/png;base64,'+$store.getters.getTradeVisualization.img" />
+        <!-- {{$store.getters.getTradeVisualization.img}} -->
+       
       </div>
     </div>
 		
@@ -90,21 +130,16 @@
           <th id="th">Return %</th>
           <th id="th">Return</th>
         </tr>
-        <tr>
-          <td>drefdre</td>
-          <td>drefdre</td>
-          <td>drefdre</td>
+        <tr
+        v-for="trade in $store.getters. getTrades"
+                :key="trade.id">
+          <td v-if='trade.trade_type=== "1"'>Buy</td>
+          <td v-else>Sell</td>
+          
+          <td>{{trade.trade_return_percent}}</td>
+          <td>{{trade.trade_net_return}}</td>
         </tr>
-        <tr>
-          <td>drefdre</td>
-          <td>drefdre</td>
-          <td>drefdre</td>
-        </tr>
-        <tr>
-          <td>drefdre</td>
-          <td>drefdre</td>
-          <td>drefdre</td>
-        </tr>
+       
          </table>
 
 			
@@ -126,6 +161,8 @@ export default {
   },
     mounted() {
     this.$store.dispatch("setBacktestReportdata",31);
+    this.$store.dispatch("setTradeVisualization",31);
+    this.$store.dispatch("setTrades",31);
   },
 }
 
@@ -140,9 +177,10 @@ export default {
   background-color: rgb(255, 255, 255);
 }
 #main_frame {
+  position:relative;
 	margin: 100px auto;
-	width: 1500px;
-	height: 3000px;
+	width: 100%;
+	height: 100%;
 	background:rgb(255, 255, 255);
 }
  #base{
@@ -168,8 +206,8 @@ export default {
 #attributess{
 	top: 485px;
 	left: 213px;
-	width: 1200.2px;
-	height:300.64px;
+	width: 1400.2px;
+	height:500.64px;
 	overflow: hidden;
 	font-family: Poppins;
 	font-size: 25px;
@@ -196,7 +234,7 @@ export default {
 }
 #__p__trades {
 	
-	margin: 900px 500px 75px 0px;
+	margin: 1600px 500px 75px 0px;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -211,7 +249,7 @@ export default {
 }
 #__p__tradess {
 	
-	margin: 1000px 500px 75px 0px;  ;
+	margin: 1200px 500px 75px 0px;  ;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -229,7 +267,7 @@ export default {
     width: 600px;
     height: 0px;
     left: 0px;
-    top: 2050px;
+    top: 2750px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_2 {
@@ -237,7 +275,7 @@ export default {
     width: 670px;
     height: 0px;
     left: 1170px;
-    top: 2050px;
+    top: 2750px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_3 {
@@ -245,7 +283,7 @@ export default {
     width: 775px;
     height: 0px;
     left: 0px;
-    top: 3150px;
+    top: 4050px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -253,7 +291,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 3150px;
+    top: 4050px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
@@ -302,7 +340,7 @@ export default {
 table{
   height:300px;
   width:700px;
-  margin: 200px auto;
+  margin: 100px auto;
   padding:10px;
   color: black;
   border:5px solid black;
@@ -329,9 +367,11 @@ td{
 }
 
 #image{
-  margin:auto;
+  position:absolute;
+  left:50px;
+  top:2850px;
 	
-	width: 800px;
+	width: 900px;
 	height: 800px;
 	
   background-color: rgb(255, 255, 255);
@@ -341,6 +381,11 @@ td{
 	left: 263px;
 	width: 50px;
 	height: 71.05px;
+}
+img{
+  
+  width:1750px;
+  height:1000px
 }
 
 
