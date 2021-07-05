@@ -154,7 +154,7 @@ export const store = new Vuex.Store({
       */
      const res = await axios.get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/", {
        headers: {
-         'Authorization': 'Token 4e60ea42fc7ea9942bee0cbfb72c1ca1b718a6d5'
+         'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
        }
      });
      state.commit("setAllStrategies", res.data)

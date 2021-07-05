@@ -19,11 +19,16 @@
             <tr class="hover1"
             v-for="report in $store.getters.getAllBacktests"
       :key="report.id">
-      
-                <td>
-                    <a href="/backtestreport">{{ report.company_ticker }}</a></td>
-                <td><a href="/backtestreport">{{ report.total_returns }}</a></td>
-                <td><a href="/backtestreport">{{ report.total_returns_percent }}</a></td>
+                <td><a href="/backtestreport">
+                    {{ report.company_ticker }}</a></td>
+
+                <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
+                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
+                <td class="black" v-else>{{ report.total_returns_percent }}</td>
+
+                <td class="red" v-if='report.total_returns < 0'>{{ report.total_returns }}</td>
+                <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
+                <td class="black" v-else>{{ report.total_returns }}</td>
             </tr>
             <br><br>
             <!-- <tr class="hover1">
@@ -168,6 +173,31 @@ a{
 a:hover {
     background-color: #941dcb;
     color: white;
+}
+.green{
+  padding: 10px;
+  color:green;
+   
+ /* border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb; */
+}
+.red{
+  padding: 10px;
+  color:rgb(255, 0, 0);
+   
+ /* border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb; */
+}
+
+.black{
+  padding: 10px;
+  color:rgb(0, 0, 0);
+   
+ /* border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb; */
 }
 
 /* th:hover {
