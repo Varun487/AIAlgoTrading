@@ -130,14 +130,21 @@
           <th id="th">Return %</th>
           <th id="th">Return</th>
         </tr>
-        <tr
+        <tr class="hover1"
         v-for="trade in $store.getters. getTrades"
                 :key="trade.id">
           <td v-if='trade.trade_type=== "1"'>Buy</td>
           <td v-else>Sell</td>
           
-          <td>{{trade.trade_return_percent}}</td>
-          <td>{{trade.trade_net_return}}</td>
+          <td class="red" v-if='trade.trade_return_percent < 0'>{{trade.trade_return_percent}}</td>
+          <td  class="green" v-else-if='trade.trade_return_percent > 0'>{{trade.trade_return_percent}}</td>
+          
+          <td  class="black" v-else>{{trade.trade_return_percent}}</td>
+          
+         <td class="red" v-if='trade.trade_net_return < 0'>{{trade.trade_net_return}}</td>
+         <td  class="green" v-else-if='trade.trade_net_return > 0'>{{trade.trade_net_return}}</td> 
+         <td  class="black" v-else>{{trade.trade_net_return}}</td>
+        
         </tr>
        
          </table>
@@ -332,39 +339,70 @@ export default {
 }
 #th{
   color:#000000;
-  font-family: Poppins;
+  
+  border-radius: 50px;
+  
     font-style: normal;
     font-weight: bolder;
     font-size: 24px;
 }
 table{
   height:300px;
-  width:700px;
+  width:100%;
   margin: 100px auto;
-  padding:10px;
+  padding:25px;
   color: black;
-  border:5px solid black;
+  border:2px solid black;
+  border-radius: 25px;
   text-align:center;
   border-spacing: 0 30px;
-  -ms-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	-o-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	-webkit-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	-moz-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
+  -ms-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+	-o-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+	-webkit-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+	-moz-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+	box-shadow:4px 10px 10px 10px rgba(0,0,0,0.25);
   
 
 }
 tr{
    border: 5px solid #941dcb;
+   padding: 10px;
+}
+td{
+   padding: 10px;
+  
+ border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb;
 }
 
-td{
+.green{
   padding: 10px;
+  color:green;
    
  border-radius: 50px;
   border-collapse: collapse;
-  border: 5px solid #941dcb;
+  border: 2px solid #941dcb;
 }
+
+.red{
+  padding: 10px;
+  color:rgb(255, 0, 0);
+   
+ border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb;
+}
+
+.black{
+  padding: 10px;
+  color:rgb(0, 0, 0);
+   
+ border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb;
+}
+
 
 #image{
   position:absolute;
@@ -386,6 +424,14 @@ img{
   
   width:1750px;
   height:1000px
+}
+.hover1:hover {
+    background-color: #941dcb;
+    color: white;
+    border-radius: 50px;
+}
+h1{
+  font-size:50px;
 }
 
 
