@@ -1,7 +1,7 @@
 import pandas as pd
 from django.test import TestCase
 
-from .signal_visualization import SignalVisualization
+from .bb_trade_visualization import BBTradeVisualization
 
 from strategies.models import Company
 from strategies.models import StrategyType
@@ -9,17 +9,18 @@ from strategies.models import StrategyConfig
 from strategies.models import TickerData
 
 from backtester.models import BackTestReport
+from backtester.models import BackTestTrade
 
 from services.IndicatorCalc.indicators import BollingerIndicator
+from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
 from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
 from services.OrderExecution.orderexecution import OrderExecution
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
 from services.TradeEvaluation.tradeevaluator import TradeEvaluator
 from services.Utils.pusher import Pusher
 from services.BackTestReportGeneration.backtestreportgenerator import BackTestReportGenerator
 
 
-class SignalVisualizationTestCase(TestCase):
+class BBTradeVisualizationTestCase(TestCase):
     def setUp(self) -> None:
         # create a company
         Company(name="TCS", ticker="TCS.NS", description="No description").save()
@@ -63,7 +64,23 @@ class SignalVisualizationTestCase(TestCase):
             trade_evaluator=TradeEvaluator,
         ).generate_backtest_report()
 
+    def test_inputs_none(self):
+        """No inputs are given"""
+        self.assertEquals(BBTradeVisualization().backtest_trade, None)
+
+    def test_all_inputs(self):
+        """All inputs given as input"""
+        self.assertEquals(BBTradeVisualization(backtest_trade=BackTestTrade.objects.all()[0]).backtest_trade,
+                          BackTestTrade.objects.all()[0])
+
+    def test_generate_visualization_errors(self):
+        """Checks if the generate_visualization method works correctly"""
+        self.assertRaises(ValueError, BBTradeVisualization(backtest_report=BackTestReport.objects.all()[0],
+                                                         backtest_trade="abc",
+                                                         height=6, width=15).get_visualization)
+
     def test_generate_visualization(self):
         """Checks if the generate_visualization method works correctly"""
-        self.assertEquals(type(SignalVisualization(backtest_report=BackTestReport.objects.all()[0], height=6, width=15)
-                          .generate_visualization()), str)
+        self.assertEquals(type(BBTradeVisualization(backtest_report=BackTestReport.objects.all()[0],
+                                                  backtest_trade=BackTestTrade.objects.all()[6], height=6,
+                                                  width=15).get_visualization()), str)

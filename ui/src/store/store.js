@@ -28,6 +28,9 @@ export const store = new Vuex.Store({
     },
     selected_strategy: undefined,
     all_backtests: undefined,
+    backtest_data:undefined,
+    trade_visualization:undefined,
+    trades:undefined,
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -86,6 +89,15 @@ export const store = new Vuex.Store({
     setPapertradeReports(state, payload) {
       state.papertradereports = payload;
     },
+    setBacktestReportdata(state, payload) {
+      state.backtest_data = payload;
+    },
+    setTradeVisualization(state,payload){
+      state.trade_visualization=payload;
+    },
+    setTrades(state,payload){
+      state.trades=payload;
+    },
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -100,17 +112,52 @@ export const store = new Vuex.Store({
     flipPerStrategiesMainPage({ commit }) {
       commit("flipPerStrategiesMainPage");
     },
-    setBacktestsReports(state,id) {
-      axios
-        .get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`)
-        .then((res) => state.commit("setBacktestsReports", res.data))
-        .catch((err) => console.log(err));
+    async setBacktestReportdata(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
+          headers: {
+            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+          }
+        });
+        state.commit("setBacktestReportdata", res.data)
+        
     },
-    setAllStrategies(state) {
+    async  setTradeVisualization(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestsignalvisualization/${id}`,{
+          headers: {
+            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+          }
+        });
+        state.commit("setTradeVisualization", res.data)
+        
+    },
+
+    async  setTrades(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktesttrades/${id}`,{
+          headers: {
+            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+          }
+        });
+        state.commit("setTrades", res.data)
+      
+    },
+    
+    
+    async setAllStrategies(state) {
+      /*
       axios
         .get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/")
         .then((res) => state.commit("setAllStrategies", res.data))
         .catch((err) => console.log(err));
+      */
+     const res = await axios.get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/", {
+       headers: {
+         'Authorization': 'Token 4e60ea42fc7ea9942bee0cbfb72c1ca1b718a6d5'
+       }
+     });
+     state.commit("setAllStrategies", res.data)
     },
     async setSelectedStrategy(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}`,{
@@ -184,7 +231,7 @@ export const store = new Vuex.Store({
     getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
     getBacktestsReports: (state) => state.backtests.reports,
     getBacktestId: (state) => state.backtests.backtestid,
-    getBacktestReportData: (state) => state.backtests.backtestreportdata,
+    getBacktestReportData: (state) => state.backtest_data,
     getBacktestsSummaryLoading: (state) => state.backtests.summaryloading,
     getBacktestsAccountSizeLoading: (state) =>
       state.backtests.accountsizeloading,
@@ -195,6 +242,8 @@ export const store = new Vuex.Store({
     getAllStrategiesMainPage: (state) => state.allstrategy.mainpage,
     getSelectedStrategy: (state) => state.selected_strategy,
     getAllBacktests: (state) => state.all_backtests,
+    getTradeVisualization: (state)=> state.trade_visualization,
+    getTrades: (state)=> state.trades,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },
 });

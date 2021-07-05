@@ -1,16 +1,19 @@
 <template>
     <div class="main-container">
         <SBase v-if="$store.getters.getAllStrategiesMainPage"/>
+        <StrategyPageBase v-else/>
     </div>
 </template>
 
 <script>
 import SBase from './StrategiesMain/SBase.vue'
+import StrategyPageBase from '../StrategyPage/StrategyPageBase.vue'
 
 export default {
     name: 'AllStrategiesBase',
     components: {
         SBase,
+        StrategyPageBase,
     }
 }
 </script>

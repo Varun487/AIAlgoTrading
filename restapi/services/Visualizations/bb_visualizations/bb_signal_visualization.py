@@ -3,17 +3,19 @@ import matplotlib.pyplot as plt
 import io
 import base64
 
-from .visualization import Visualization
+from services.Visualizations.visualization import Visualization
 
 from strategies.models import TickerData
 
 from services.Utils.getters import Getter
 
-from ..IndicatorCalc.indicators import BollingerIndicator
-from ..SignalGeneration.bbsignalgeneration import BBSignalGenerator
+from backtester.models import BackTestTrade
+
+from services.IndicatorCalc.indicators import BollingerIndicator
+from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
 
 
-class SignalVisualization(Visualization):
+class BBSignalVisualization(Visualization):
     def __init__(self, backtest_report=None, height=-1, width=-1):
         super().__init__(backtest_report, height, width)
 
@@ -27,6 +29,12 @@ class SignalVisualization(Visualization):
         # Remove df cols
         df.drop(['id', 'company_id', 'time_period'], axis=1, inplace=True)
 
+        # To get signals in df
+
+        # Get all trades corresponding to backtest report
+        backtest_trades = list(BackTestTrade.objects.filter(back_test_report=self.backtest_report))
+
+
         # Get signals df
         df = BBSignalGenerator(
             indicator=BollingerIndicator(
@@ -37,6 +45,22 @@ class SignalVisualization(Visualization):
             )
         ).generate_signals()
 
+        # Add signal of each trade to a signals list
+        signals = ['FLAT' for i in range(len(df))]
+
+        time_stamps = list(df['time_stamp'])
+
+        for backtest_trade in backtest_trades:
+            i = time_stamps.index(backtest_trade.trade.entry_order.signal.ticker_data.time_stamp)
+            if backtest_trade.trade.entry_order.signal.type == "1":
+                signals[i] = 'BUY'
+            else:
+                signals[i] = 'SELL'
+
+        # Add signal col to df
+        df['SIGNAL'] = signals
+
+        # Create the visualization
         plt.style.use('dark_background')
 
         # convert timestamps to datetime objects if strings

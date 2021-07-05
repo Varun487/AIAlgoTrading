@@ -21,8 +21,8 @@ export default {
 #main-content {
   margin-top: 80px;
   padding-top: 10px;
-  background-color: white;
-  color: black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .sidenavactive{
 	margin-left: 150px;
