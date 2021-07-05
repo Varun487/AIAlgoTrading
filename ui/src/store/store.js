@@ -27,6 +27,7 @@ export const store = new Vuex.Store({
       timestamps: [],
     },
     selected_strategy: undefined,
+    all_backtests: undefined,
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -53,6 +54,9 @@ export const store = new Vuex.Store({
     },
     setSelectedStrategy(state, payload) {
       state.selected_strategy = payload;
+    },
+    setAllBacktests(state, payload) {
+      state.all_backtests = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
@@ -115,6 +119,14 @@ export const store = new Vuex.Store({
         }
       });
       state.commit("setSelectedStrategy", res.data)
+    },
+    async setAllBacktests(state,id) {
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktests/${id}`,{
+        headers: {
+          'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
+        }
+      });
+      state.commit("setAllBacktests", res.data)
     },
     setBacktestId({ commit }, payload) {
       commit("setBacktestId", payload);
@@ -182,6 +194,7 @@ export const store = new Vuex.Store({
     getStrategyId: (state) => state.allstrategy.strategyid,
     getAllStrategiesMainPage: (state) => state.allstrategy.mainpage,
     getSelectedStrategy: (state) => state.selected_strategy,
+    getAllBacktests: (state) => state.all_backtests,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },
 });
