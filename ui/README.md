@@ -25,6 +25,9 @@
 - implementation
   - frontend (VueJS)
   - backend (Vuex and REST API)
+- Paper Trade Section
+  - frontend (VueJS)
+  - backend (Vuex and REST API)
 
 ## REST API Documentation page ![dishacomplete]
 - design
@@ -51,10 +54,10 @@
   - backend (Vuex and REST API)
 
 # Paper trading page ![featureincomplete]
-- **To be completed later**
-
-# Paper trading section in Strategy page ![featureincomplete]
-- **To be completed later**
+- design ![dishaincomplete]
+- implementation ![hritikincomplete]
+  - frontend (VueJS)
+  - backend (Vuex and REST API)
 
 ## Automated testing
 - All strategies page
