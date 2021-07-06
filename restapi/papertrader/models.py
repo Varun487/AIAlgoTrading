@@ -23,6 +23,9 @@ class PaperTradedStrategy(models.Model):
     )
     live = models.BooleanField()
 
+    def __str__(self):
+        return f"{self.strategy_config} {self.company} {self.live}"
+
 
 class CurrentQuote(models.Model):
     company = models.ForeignKey(
@@ -36,6 +39,9 @@ class CurrentQuote(models.Model):
         blank=False, null=False
     )
     last_updated = models.DateTimeField(blank=False, null=False)
+
+    def __str__(self):
+        return f"{self.company} {self.ticker_data} {self.last_updated}"
 
 
 class PaperTrade(models.Model):
@@ -51,6 +57,9 @@ class PaperTrade(models.Model):
     )
     live = models.BooleanField()
 
+    def __str__(self):
+        return f"{self.paper_traded_strategy} {self.trade} {self.live}"
+
 
 class PaperSignal(models.Model):
     signal = models.ForeignKey(
@@ -64,3 +73,6 @@ class PaperSignal(models.Model):
         blank=False, null=False
     )
     executed = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.paper_traded_strategy} {self.signal} {self.executed}"

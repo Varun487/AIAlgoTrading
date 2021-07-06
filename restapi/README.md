@@ -62,10 +62,10 @@
 - Source Data ![varuncomplete]
   - Given company ticker, start date, end date ![done]
   - Sources data, returns df ![done]
-- Update Company Quotes ![varunincomplete]
-  - For all companies in DB 
-    - Source latest data 
-    - Update company quote in DB
+- Update Company Quotes ![varuncomplete]
+  - For all companies in DB (or given as input)  ![done]
+    - Source latest data ![done]
+    - Update company quote in DB (create quote if not present) ![done]
 - Evaluate Live Paper Trades ![varunincomplete]
   - For each live paper trade 
     - Check whether stop loss or take profit limit is hit 
