@@ -59,9 +59,9 @@
   - Token returned on signin ![done]
   - Authorization to access all APIs ![done]
 - Design paper trader services ![varuncomplete]
-- Source Data ![varunincomplete]
-  - Given company ticker, start date, end date 
-  - Sources data, returns df 
+- Source Data ![varuncomplete]
+  - Given company ticker, start date, end date ![done]
+  - Sources data, returns df ![done]
 - Update Company Quotes ![varunincomplete]
   - For all companies in DB 
     - Source latest data 
@@ -187,7 +187,7 @@
     - Signals visualization ![done]
     - Per trade visualization ![done]
     - Paper trade visualization
-  - Source Data 
+  - Source Data ![done]
   - Update Company Quotes
   - Evaluate Live Paper Trades
   - Execute Live Paper Signals
