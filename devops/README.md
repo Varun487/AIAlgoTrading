@@ -35,7 +35,7 @@
 - See how to add domain
 
 ## Initialization and deployment scripts ![varunincomplete]
-- Initialize DB with required data `script` ![done]
+- Initialize DB with required data `script` 
   - Initialize schema in Django ![done]
   - Create a stand alone Django app ![done]
   - Clean up all previous data in DB ![done]
@@ -46,7 +46,7 @@
   - Add all different strategy configs ![done]
   - Add visualization types ![done]
   - Run all backtests on data ![done]
-- Modify initialization script
+  - Modify initialization script
 - Automated deployment to VM from local machine `script`
 
 [done]: https://img.shields.io/badge/DONE-brightgreen

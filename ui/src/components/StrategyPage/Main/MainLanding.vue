@@ -10,18 +10,28 @@
         <!-- <div id="tab"> -->
             <table class="center">
             <tr>
-                <th>Company</th>
+                <th>Company Ticker</th>
                 <th>Return %</th>
                 <th>Returns</th>
             </tr>
             <br><br>
-            <tr class="hover1">
-                <td>Apple</td>
-                <td>5</td>
-                <td>90.0</td>
+            
+            <tr class="hover1"
+            v-for="report in $store.getters.getAllBacktests"
+      :key="report.id">
+                <td><a href="/backtestreport">
+                    {{ report.company_ticker }}</a></td>
+
+                <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
+                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
+                <td class="black" v-else>{{ report.total_returns_percent }}</td>
+
+                <td class="red" v-if='report.total_returns < 0'>{{ report.total_returns }}</td>
+                <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
+                <td class="black" v-else>{{ report.total_returns }}</td>
             </tr>
             <br><br>
-            <tr class="hover1">
+            <!-- <tr class="hover1">
                 <td>Apple</td>
                 <td>- 5</td>
                 <td>-90.0</td>
@@ -31,7 +41,7 @@
                 <td>Apple</td>
                 <td>0.0</td>
                 <td>0.0</td>
-            </tr>
+            </tr> -->
             
             
             </table>
@@ -45,6 +55,9 @@
 <script>
 export default {
     name: 'MainLanding',
+    mounted() {
+    this.$store.dispatch("setAllBacktests",2);
+  },
 };
 </script>
 
@@ -88,7 +101,7 @@ p{
     width: 675px;
     height: 0px;
     left: 0px;
-    top: 1200px;
+    top: 1750px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .title {
@@ -96,7 +109,7 @@ p{
     width: 1000px;
     height: 78px;
     left: 750px;
-    top: 1165px;
+    top: 1710px;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
@@ -113,7 +126,7 @@ p{
     width: 735px;
     height: 0px;
     left: 1100px;
-    top: 1200px;
+    top: 1750px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 table {
@@ -152,6 +165,39 @@ td{
 table.center {
   margin-left: auto; 
   margin-right: auto;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #941dcb;
+    color: white;
+}
+.green{
+  padding: 10px;
+  color:green;
+   
+ /* border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb; */
+}
+.red{
+  padding: 10px;
+  color:rgb(255, 0, 0);
+   
+ /* border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb; */
+}
+
+.black{
+  padding: 10px;
+  color:rgb(0, 0, 0);
+   
+ /* border-radius: 50px;
+  border-collapse: collapse;
+  border: 2px solid #941dcb; */
 }
 
 /* th:hover {
