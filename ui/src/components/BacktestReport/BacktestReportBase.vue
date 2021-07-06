@@ -6,7 +6,7 @@
     
       <div id="base">         
       <p id="attributes" >
-        Start Date Time : {{$store.getters.getBacktestReportData.start_date_time}}
+        <strong>Start Date Time</strong> : {{$store.getters.getBacktestReportData.start_date_time}}
 				
        </p>
       <p id="attributes" >
@@ -274,7 +274,7 @@ export default {
     width: 600px;
     height: 0px;
     left: 0px;
-    top: 2750px;
+    top: 2790px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_2 {
@@ -282,7 +282,7 @@ export default {
     width: 670px;
     height: 0px;
     left: 1170px;
-    top: 2750px;
+    top: 2790px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_3 {
@@ -290,7 +290,7 @@ export default {
     width: 775px;
     height: 0px;
     left: 0px;
-    top: 4050px;
+    top: 4090px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -298,7 +298,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 4050px;
+    top: 4090px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
@@ -307,23 +307,7 @@ export default {
 	height: 800px;
 	background:rgb(255, 255, 255);
 }
-/* #tr{
-	margin:auto ;
-	width: 800px;
-	height: 75px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-  border: 5px solid #941dcb;
-	-ms-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	-o-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	-webkit-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	-moz-box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	box-shadow:4px 10px 10px 1px rgba(0,0,0,0.25);
-	background:rgba(255,255,255,1);
-} */
+
 #textboxx {
   margin:auto;
   left:20px;
@@ -364,17 +348,19 @@ table{
   
 
 }
-tr{
-   border: 5px solid #941dcb;
-   padding: 10px;
-}
+
 td{
-   padding: 10px;
-  
- border-radius: 50px;
-  border-collapse: collapse;
-  border: 2px solid #941dcb;
+   border: 2px solid #941dcb;
+    text-align: center;
+    padding: 10px;
+    width: 750px;
+    height: 0px;
+    left: 1100px;
+    top: 1200px;
+    border-radius: 50px; 
+    font-size:25px;
 }
+
 
 .green{
   padding: 10px;
@@ -393,6 +379,9 @@ td{
   border-collapse: collapse;
   border: 2px solid #941dcb;
 }
+.red:hover{
+  color:white;
+}
 
 .black{
   padding: 10px;
@@ -407,32 +396,33 @@ td{
 #image{
   position:absolute;
   left:50px;
-  top:2850px;
+  top:2900px;
 	
 	width: 900px;
 	height: 800px;
 	
   background-color: rgb(255, 255, 255);
 }
-#vector {
-	top: 3165px;
-	left: 263px;
-	width: 50px;
-	height: 71.05px;
-}
+
 img{
   
   width:1750px;
   height:1000px
 }
-.hover1:hover {
-    background-color: #941dcb;
-    color: white;
-    border-radius: 50px;
-}
+
 h1{
   font-size:50px;
 }
+p{
+  font-weight:bold;
+}
+
+.hover1:hover td {
+   color: white;
+    background-color:  #941dcb;
+}
+
+
 
 
 
