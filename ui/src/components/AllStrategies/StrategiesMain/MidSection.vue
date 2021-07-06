@@ -121,20 +121,21 @@ export default {
 
 .strat-name {
     position: absolute;
-    width: 422.8px;
-    height: 54.71px;
-    left: 30%;
+    width: 470px;
+    height: 58px;
+    left: 8%;
     top: 0px;
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 60px;
     display: flex;
     align-items: center;
     color: #000000;
     margin-top:20px;
-    margin-right: 0px;
+    text-align: center;
+    
 }
 .strat-desc {
     position: absolute;
