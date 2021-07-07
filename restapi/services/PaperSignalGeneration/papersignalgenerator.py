@@ -11,8 +11,11 @@ from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
 from services.SourceData.sourcedata import SourceData
 from services.IndicatorCalc.indicators import BollingerIndicator
 
+from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
+
 all_strategies = {"Simple Bollinger Band Strategy": BBSignalGenerator}
 all_indicators = {"Simple Bollinger Band Strategy": BollingerIndicator}
+all_take_profit_stop_loss_methods = {"Simple Bollinger Band Strategy": TakeProfitAndStopLossBB}
 
 
 class PaperSignalGenerator(object):
@@ -27,6 +30,7 @@ class PaperSignalGenerator(object):
         self.strategy_config = None
         self.indicator = None
         self.signal_generator = None
+        self.take_profit_stop_loss_method = None
 
         self.start_date = None
         self.end_date = end_date
@@ -35,6 +39,9 @@ class PaperSignalGenerator(object):
         # Set indicator and signal generator
         self.indicator = all_indicators[self.strategy_config.strategy_type.name]
         self.signal_generator = all_strategies[self.strategy_config.strategy_type.name]
+
+    def set_take_profit_stop_loss_method(self):
+        self.take_profit_stop_loss_method = all_take_profit_stop_loss_methods[self.strategy_config.strategy_type.name]
 
     def set_df(self):
         # Set start date and end date according to indicator time period
@@ -62,6 +69,13 @@ class PaperSignalGenerator(object):
                 sigma=self.strategy_config.sigma
             )
         ).get_signals()
+
+        if not self.df.empty:
+            self.df = TakeProfitAndStopLossBB(
+                df=self.df,
+                factor=self.strategy_config.take_profit_factor,
+                dimension="close"
+            ).get_calc_df()
 
     def push_ticker_data(self):
         # Push TickerData
@@ -118,7 +132,6 @@ class PaperSignalGenerator(object):
 
                 # Check if signal is not FLAT
                 if self.df_last_row['SIGNAL'] != 'FLAT':
-
                     # Push ticker data
                     self.push_ticker_data()
 
@@ -128,8 +141,10 @@ class PaperSignalGenerator(object):
                     # Push Paper Traded Signal
                     PaperSignal(
                         signal=self.signal,
-                        paper_traded_strategy = self.paper_traded_strategy,
+                        paper_traded_strategy=self.paper_traded_strategy,
                         executed=False,
+                        take_profit=self.df_last_row['take_profit'],
+                        stop_loss=self.df_last_row['stop_loss']
                     ).save()
 
     def run(self):
@@ -148,6 +163,9 @@ class PaperSignalGenerator(object):
 
             # Identify signal generator
             self.set_signal_generator()
+
+            # Identify take profit and stop loss method
+            self.set_take_profit_stop_loss_method()
 
             # Source latest data for company according to strategy config
             self.set_df()

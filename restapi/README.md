@@ -66,13 +66,12 @@
   - For all companies in DB (or given as input)  ![done]
     - Source latest data ![done]
     - Update company quote in DB (create quote if not present) ![done]
-- Evaluate Live Paper Trades ![varunincomplete]
-  - For each live paper trade 
-    - Check whether stop loss or take profit limit is hit 
-      - If hit, then 
-        - Exit position 
-        - Evaluate closed trade 
-        - Remove from live trades 
+- Evaluate Live Paper Trades ![varuncomplete]
+  - For each live paper trade ![done]
+    - If stop loss or take profit limit is reached ![done]
+      - Exit position ![done]
+      - Evaluate closed trade ![done]
+      - Remove from live trades ![done]
 - Execute Live Paper Signals ![varuncomplete]
   - For each signal in live generated signals ![done]
     - Execute entry orders and create a paper trade ![done]

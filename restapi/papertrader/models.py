@@ -56,6 +56,8 @@ class PaperTrade(models.Model):
         blank=False, null=False
     )
     live = models.BooleanField()
+    take_profit = models.FloatField(default=0.0)
+    stop_loss = models.FloatField(default=0.0)
 
     def __str__(self):
         return f"{self.paper_traded_strategy} {self.trade} {self.live}"
@@ -73,6 +75,8 @@ class PaperSignal(models.Model):
         blank=False, null=False
     )
     executed = models.BooleanField()
+    take_profit = models.FloatField(default=0.0)
+    stop_loss = models.FloatField(default=0.0)
 
     def __str__(self):
         return f"{self.paper_traded_strategy} {self.signal} {self.executed}"
