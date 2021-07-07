@@ -77,9 +77,9 @@
   - For each signal in live generated signals 
     - Execute entry orders and create a paper trade 
     - Push to everything to DB 
-- Generate Paper Signals ![varunincomplete]
-  - For each strategy config currently paper traded
-    - Generate signals
+- Generate Paper Signals ![varuncomplete]
+  - For each strategy config currently paper traded ![done]
+    - Generate signals ![done]
 - Paper Trade ![varunincomplete]
   - Executed periodically
   - Synchronises and calls all services above
