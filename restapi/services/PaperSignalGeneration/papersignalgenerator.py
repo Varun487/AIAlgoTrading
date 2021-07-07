@@ -109,26 +109,28 @@ class PaperSignalGenerator(object):
             self.signal = signal[0]
 
     def push_paper_signal(self):
-        self.df_last_row = self.df.iloc[len(self.df) - 1]
+        # Check if dataframe exists
+        if not self.df.empty:
+            self.df_last_row = self.df.iloc[len(self.df) - 1]
 
-        # Check if last timestamp in df is today's timestamp
-        if self.df_last_row['time_stamp'].date() == datetime.datetime.today().date():
+            # Check if last timestamp in df is today's timestamp
+            if self.df_last_row['time_stamp'].date() == datetime.datetime.today().date():
 
-            # Check if signal is not FLAT
-            if self.df_last_row['SIGNAL'] != 'FLAT':
+                # Check if signal is not FLAT
+                if self.df_last_row['SIGNAL'] != 'FLAT':
 
-                # Push ticker data
-                self.push_ticker_data()
+                    # Push ticker data
+                    self.push_ticker_data()
 
-                # Push Signal
-                self.push_signal()
+                    # Push Signal
+                    self.push_signal()
 
-                # Push Paper Traded Signal
-                PaperSignal(
-                    signal=self.signal,
-                    paper_traded_strategy = self.paper_traded_strategy,
-                    executed=False,
-                ).save()
+                    # Push Paper Traded Signal
+                    PaperSignal(
+                        signal=self.signal,
+                        paper_traded_strategy = self.paper_traded_strategy,
+                        executed=False,
+                    ).save()
 
     def run(self):
         # Get all live traded strategies

@@ -12,10 +12,15 @@ from papertrader.models import PaperSignal
 
 from services.Utils.pusher import Pusher
 
-from .papersignalgenerator import PaperSignalGenerator
+from .papersignalexecutor import PaperSignalExecutor
+
+from services.PaperSignalGeneration.papersignalgenerator import PaperSignalGenerator
+from services.CompanyQuotes.companyquotes import CompanyQuotes
+
+from papertrader.models import CurrentQuote
 
 
-class PaperSignalGeneratorTestCase(TestCase):
+class ExecutePaperSignalTestCase(TestCase):
     def setUp(self) -> None:
         # create a company
         Company(name="TCS", ticker="TCS.NS", description="No description").save()
@@ -44,29 +49,32 @@ class PaperSignalGeneratorTestCase(TestCase):
                        take_profit_factor=1, stop_loss_factor=1, sigma=1, dimension="1").save()
         StrategyConfig(strategy_type=StrategyType.objects.all()[0], indicator_time_period=20, max_holding_period=5,
                        take_profit_factor=1, stop_loss_factor=1, sigma=1, dimension="1").save()
+        StrategyConfig(strategy_type=StrategyType.objects.all()[0], indicator_time_period=5, max_holding_period=5,
+                       take_profit_factor=1, stop_loss_factor=1, sigma=2, dimension="1").save()
+        StrategyConfig(strategy_type=StrategyType.objects.all()[0], indicator_time_period=10, max_holding_period=5,
+                       take_profit_factor=1, stop_loss_factor=1, sigma=2, dimension="1").save()
+        StrategyConfig(strategy_type=StrategyType.objects.all()[0], indicator_time_period=20, max_holding_period=5,
+                       take_profit_factor=1, stop_loss_factor=1, sigma=2, dimension="1").save()
 
-    def test_run(self):
-        """Checks if signals are generated properly"""
-        psg = PaperSignalGenerator(end_date=datetime.datetime(2021, 7, 8))
-
-        # No live strategies
-        psg.run()
-        self.assertEquals(len(list(PaperSignal.objects.all())), 0)
-
-        # Single live strategy, no signal produced
         PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[0], company=Company.objects.all()[0],
                             live=True).save()
-        psg.run()
-        self.assertEquals(len(list(PaperSignal.objects.all())), 0)
-
-        # 2 strategies, 1 live one not live
-        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[2], company=Company.objects.all()[0],
-                            live=False).save()
-        psg.run()
-        self.assertEquals(len(list(PaperSignal.objects.all())), 0)
-
-        # 3 strategies, 2 live, 1 signal generated
         PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[1], company=Company.objects.all()[0],
                             live=True).save()
-        psg.run()
-        self.assertEquals(len(list(PaperSignal.objects.all())), 1)
+        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[2], company=Company.objects.all()[0],
+                            live=True).save()
+        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[3], company=Company.objects.all()[0],
+                            live=True).save()
+        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[4], company=Company.objects.all()[0],
+                            live=True).save()
+        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[5], company=Company.objects.all()[0],
+                            live=False).save()
+
+        PaperSignalGenerator(end_date=datetime.datetime(2021, 7, 8)).run()
+
+        CompanyQuotes().update()
+
+    def test_run(self):
+        """Checks if all live paper signals are executed properly"""
+        self.assertEquals(len(list(PaperSignal.objects.filter(executed=False))), 1)
+        PaperSignalExecutor().run()
+        self.assertEquals(len(list(PaperSignal.objects.filter(executed=False))), 0)
