@@ -1,26 +1,9 @@
-import datetime
-
-from django.utils.timezone import make_aware
-
-from papertrader.models import PaperTradedStrategy
-from papertrader.models import PaperSignal
-
-from strategies.models import TickerData, Signal
-
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
-from services.SourceData.sourcedata import SourceData
-from services.IndicatorCalc.indicators import BollingerIndicator
-
 from papertrader.models import CurrentQuote
-
+from papertrader.models import PaperSignal
 from papertrader.models import PaperTrade
 
 from strategies.models import Order
-
 from strategies.models import Trade
-
-all_strategies = {"Simple Bollinger Band Strategy": BBSignalGenerator}
-all_indicators = {"Simple Bollinger Band Strategy": BollingerIndicator}
 
 
 class PaperSignalExecutor(object):

@@ -73,10 +73,10 @@
         - Exit position 
         - Evaluate closed trade 
         - Remove from live trades 
-- Execute Live Paper Signals ![varunincomplete]
-  - For each signal in live generated signals 
-    - Execute entry orders and create a paper trade 
-    - Push to everything to DB 
+- Execute Live Paper Signals ![varuncomplete]
+  - For each signal in live generated signals ![done]
+    - Execute entry orders and create a paper trade ![done]
+    - Push to everything to DB ![done]
 - Generate Paper Signals ![varuncomplete]
   - For each strategy config currently paper traded ![done]
     - Generate signals ![done]

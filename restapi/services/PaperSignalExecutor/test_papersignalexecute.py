@@ -3,6 +3,8 @@ import datetime
 import pandas as pd
 from django.test import TestCase
 
+from .papersignalexecutor import PaperSignalExecutor
+
 from strategies.models import Company
 from strategies.models import TickerData
 from strategies.models import StrategyConfig, StrategyType
@@ -11,13 +13,8 @@ from papertrader.models import PaperTradedStrategy
 from papertrader.models import PaperSignal
 
 from services.Utils.pusher import Pusher
-
-from .papersignalexecutor import PaperSignalExecutor
-
 from services.PaperSignalGeneration.papersignalgenerator import PaperSignalGenerator
 from services.CompanyQuotes.companyquotes import CompanyQuotes
-
-from papertrader.models import CurrentQuote
 
 
 class ExecutePaperSignalTestCase(TestCase):
