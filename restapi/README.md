@@ -187,11 +187,11 @@
     - Per trade visualization ![done]
     - Paper trade visualization
   - Source Data ![done]
-  - Update Company Quotes
-  - Evaluate Live Paper Trades
-  - Execute Live Paper Signals
-  - Generate Paper Signals
-  - Paper Trade Synchronization
+  - Update Company Quotes ![done]
+  - Evaluate Live Paper Trades ![done]
+  - Execute Live Paper Signals ![done]
+  - Generate Paper Signals ![done]
+  - Paper Trade Synchronization ![done]
   - cron job execution
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
