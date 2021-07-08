@@ -125,21 +125,21 @@
   - Given backtest trade id, Generates and returns visualization of trade ![done]
   - Return a base 64 string ![done]
 - Design paper traded REST APIs ![varuncomplete]
-- `GET` All Paper Trades ![varunincomplete]
-  - Input = Strategy id
-  - Get all paper trades corresponding to the strategy
-  - Priority to live trades
-- `GET` Paper Trade data ![varunincomplete]
-  - Input = Paper Trade id
-  - In depth information on paper trade
-- `GET` Current Quote ![varunincomplete]
-  - Input = Paper Trade id
-  - Get the latest company data with last updated date
-  - According to paper trade id's company
-- `GET` Paper Trade Visualization ![varunincomplete]
-  - Input = Paper Trade id
-  - Generate picture for paper trade visualizations
-  - Return base 64 string
+- `GET` All Paper Trades ![varuncomplete]
+  - Input = Strategy id ![done]
+  - Get all paper trades corresponding to the strategy ![done]
+  - Priority to live trades ![done]
+- `GET` Paper Trade data ![varuncomplete]
+  - Input = Paper Trade id ![done]
+  - In depth information on paper trade ![done]
+- `GET` Current Quote ![varuncomplete]
+  - Input = Paper Trade id ![done]
+  - Get the latest company data with last updated date ![done]
+  - According to paper trade id's company ![done]
+- `GET` Paper Trade Visualization ![varuncomplete]
+  - Input = Paper Trade id ![done]
+  - Generate picture for paper trade visualizations ![done]
+  - Return base 64 string ![done]
 
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
