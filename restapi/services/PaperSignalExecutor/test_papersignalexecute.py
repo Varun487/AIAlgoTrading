@@ -66,7 +66,10 @@ class ExecutePaperSignalTestCase(TestCase):
         PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[5], company=Company.objects.all()[0],
                             live=False).save()
 
-        PaperSignalGenerator(end_date=datetime.datetime(2021, 7, 8)).run()
+        PaperSignalGenerator(
+            test_end_date=datetime.datetime(2021, 7, 8),
+            test_today=datetime.datetime(2021, 7, 7)
+        ).run()
 
         CompanyQuotes().update()
 

@@ -1,26 +1,23 @@
-import copy
 import datetime
 
 import pandas as pd
 from django.test import TestCase
 
-from papertrader.models import CurrentQuote
-from papertrader.models import PaperTrade
-from papertrader.models import PaperTradedStrategy
-
-from services.CompanyQuotes.companyquotes import CompanyQuotes
-from services.PaperSignalExecutor.papersignalexecutor import PaperSignalExecutor
-from services.PaperSignalGeneration.papersignalgenerator import PaperSignalGenerator
 from services.Utils.pusher import Pusher
 
 from strategies.models import Company
 from strategies.models import StrategyConfig, StrategyType
 from strategies.models import TickerData
 
-from .papertradeevaluator import PaperTradeEvaluator
+from papertrader.models import PaperTradedStrategy
+
+from .papertradesynchronizer import PaperTradeSynchronizer
+from papertrader.models import PaperTrade
+from papertrader.models import PaperSignal
+from papertrader.models import CurrentQuote
 
 
-class PaperTradeEvaluatorTestCase(TestCase):
+class PaperTradeSynchronizerTestCase(TestCase):
     def setUp(self) -> None:
         # create a company
         Company(name="TCS", ticker="TCS.NS", description="No description").save()
@@ -69,32 +66,26 @@ class PaperTradeEvaluatorTestCase(TestCase):
         PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[5], company=Company.objects.all()[0],
                             live=True).save()
 
-        PaperSignalGenerator(
+    def test_run(self):
+        """Checks if all services work together in paper trade synchronizer"""
+        self.assertEquals(len(list(CurrentQuote.objects.all())), 0)
+        self.assertEquals(len(list(PaperSignal.objects.all())), 0)
+        self.assertEquals(len(list(PaperTrade.objects.all())), 0)
+
+        PaperTradeSynchronizer(
             test_end_date=datetime.datetime(2021, 7, 8),
             test_today=datetime.datetime(2021, 7, 7)
         ).run()
 
-        CompanyQuotes().update()
+        self.assertEquals(len(list(CurrentQuote.objects.all())), 1)
+        self.assertEquals(len(list(PaperSignal.objects.all())), 1)
+        self.assertEquals(len(list(PaperTrade.objects.all())), 0)
 
-        PaperSignalExecutor().run()
+        PaperTradeSynchronizer(
+            test_end_date=datetime.datetime(2021, 7, 8),
+            test_today=datetime.datetime(2021, 7, 7)
+        ).run()
 
-    def test_run(self):
-        """Checks if all live paper signals are executed properly"""
-
-        self.assertEquals(len(list(PaperTrade.objects.filter(live=True))), 1)
-
-        PaperTradeEvaluator().run()
-
-        self.assertEquals(len(list(PaperTrade.objects.filter(live=True))), 1)
-
-        # Change the close price to check if update is correct
-        td = CurrentQuote.objects.all()[0].ticker_data
-        updated_td = copy.copy(td)
-        updated_td.close = 3000
-        updated_td.save()
-        CurrentQuote.objects.all()[0].ticker_data = updated_td
-        CurrentQuote.objects.all()[0].save()
-
-        PaperTradeEvaluator().run()
-
-        self.assertEquals(len(list(PaperTrade.objects.filter(live=True))), 0)
+        self.assertEquals(len(list(CurrentQuote.objects.all())), 1)
+        self.assertEquals(len(list(PaperSignal.objects.all())), 2)
+        self.assertEquals(len(list(PaperTrade.objects.all())), 1)

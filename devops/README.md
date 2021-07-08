@@ -47,6 +47,7 @@
   - Add visualization types ![done]
   - Run all backtests on data ![done]
   - Modify initialization script
+  - Run initialization script with custom django admin command
 - Automated deployment to VM from local machine `script`
 
 [done]: https://img.shields.io/badge/DONE-brightgreen

@@ -45,9 +45,49 @@ class PaperSignalGeneratorTestCase(TestCase):
         StrategyConfig(strategy_type=StrategyType.objects.all()[0], indicator_time_period=20, max_holding_period=5,
                        take_profit_factor=1, stop_loss_factor=1, sigma=1, dimension="1").save()
 
+    def test_end_date_values(self):
+        self.assertEquals(
+            PaperSignalGenerator(
+                test_end_date=datetime.datetime(2021, 7, 8),
+                test_today=datetime.datetime(2021, 7, 7)
+            ).end_date,
+            datetime.datetime(2021, 7, 8)
+        )
+        self.assertEquals(
+            PaperSignalGenerator().end_date,
+            None
+        )
+
+        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[1], company=Company.objects.all()[0],
+                            live=True).save()
+
+        psg = PaperSignalGenerator()
+        psg.run()
+        self.assertEqual(psg.end_date.date(), datetime.datetime.today().date())
+
+    def test_today_date_values(self):
+        self.assertEquals(
+            PaperSignalGenerator(
+                test_end_date=datetime.datetime(2021, 7, 8),
+                test_today=datetime.datetime(2021, 7, 7)
+            ).today,
+            datetime.datetime(2021, 7, 7)
+        )
+        self.assertEquals(
+            PaperSignalGenerator().today,
+            None
+        )
+
+        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[1], company=Company.objects.all()[0],
+                            live=True).save()
+
+        psg = PaperSignalGenerator()
+        psg.run()
+        self.assertEqual(psg.today.date(), datetime.datetime.today().date())
+
     def test_run(self):
         """Checks if signals are generated properly"""
-        psg = PaperSignalGenerator(end_date=datetime.datetime(2021, 7, 8))
+        psg = PaperSignalGenerator(test_end_date=datetime.datetime(2021, 7, 8), test_today=datetime.datetime(2021, 7, 7))
 
         # No live strategies
         psg.run()

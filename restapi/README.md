@@ -79,9 +79,10 @@
 - Generate Paper Signals ![varuncomplete]
   - For each strategy config currently paper traded ![done]
     - Generate signals ![done]
-- Paper Trade ![varunincomplete]
-  - Executed periodically
-  - Synchronises and calls all services above
+- Paper Trade ![varuncomplete]
+  - Execute periodically ![done]
+  - Custom Django admin command for paper trade execution ![done]
+  - Synchronises and calls all services above ![done]
 - Generate Visualization ![varunincomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
@@ -97,7 +98,7 @@
   - Make all visualizations strategy dependent ![done]
     - Signals ![done]
     - Per trade ![done]
-  - Paper Trade Visualization Per Paper Trade (Live and Historical)
+  - Paper Trade Visualization Per Paper Trade (Live and Historical) ![incomplete]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -144,7 +145,6 @@
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
 - Demo 2 - LSTM predictions strategy ![varunincomplete]
 - Custom Strategy 1 ![varunincomplete]
-- Custom Strategy 2 ![varunincomplete]
 
 ## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
@@ -192,6 +192,7 @@
   - Execute Live Paper Signals
   - Generate Paper Signals
   - Paper Trade
+  - cron job execution
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

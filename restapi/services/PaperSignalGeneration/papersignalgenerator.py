@@ -19,7 +19,7 @@ all_take_profit_stop_loss_methods = {"Simple Bollinger Band Strategy": TakeProfi
 
 
 class PaperSignalGenerator(object):
-    def __init__(self, end_date=None):
+    def __init__(self, test_end_date=None, test_today=None):
         self.df = None
         self.df_last_row = None
         self.ticker_data = None
@@ -33,7 +33,8 @@ class PaperSignalGenerator(object):
         self.take_profit_stop_loss_method = None
 
         self.start_date = None
-        self.end_date = end_date
+        self.end_date = test_end_date
+        self.today = test_today
 
     def set_signal_generator(self):
         # Set indicator and signal generator
@@ -127,8 +128,11 @@ class PaperSignalGenerator(object):
         if not self.df.empty:
             self.df_last_row = self.df.iloc[len(self.df) - 1]
 
+            if self.today is None:
+                self.today = datetime.datetime.today()
+
             # Check if last timestamp in df is today's timestamp
-            if self.df_last_row['time_stamp'].date() == datetime.datetime.today().date():
+            if self.df_last_row['time_stamp'].date() == self.today.date():
 
                 # Check if signal is not FLAT
                 if self.df_last_row['SIGNAL'] != 'FLAT':
