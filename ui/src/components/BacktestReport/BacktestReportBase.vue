@@ -1,3 +1,6 @@
+
+
+
 <template> 
   
   <div id="main_frame">
@@ -5,16 +8,16 @@
     
     
       <div id="base">         
-      <p id="attributes" >
-        <strong>Start Date Time</strong> : {{$store.getters.getBacktestReportData.start_date_time}}
+      <div id="attributes" >
+        <b>Start Date Time</b> : {{$store.getters.getBacktestReportData.start_date_time}}
 				
-       </p>
-      <p id="attributes" >
-        End Date Time : {{$store.getters.getBacktestReportData.end_date_time}}
+       </div>
+      <div id="attributes" >
+        <b>End Date Time</b> : {{$store.getters.getBacktestReportData.end_date_time}}
 			
-      </p>
-      <p id="attributess" >
-        Strategy Type  <br><br>
+      </div>
+      <div id="attributess" >
+        <b>Strategy Type</b>  <br><br>
         
         Name: {{$store.getters.getBacktestReportData.strategy_type.name}}<br>
         Description:    {{$store.getters.getBacktestReportData.strategy_type.description}}<br>
@@ -24,10 +27,10 @@
         Stop Loss Method: {{$store.getters.getBacktestReportData.strategy_type.stop_loss_method}}<br>
         Take Profit Method: {{$store.getters.getBacktestReportData.strategy_type.take_profit_method}}<br>
 				
-      </p>
-      <p id="attributess" 
+      </div>
+      <div id="attributess" 
       v-if='$store.getters.getBacktestReportData.strategy_config.strategy_type=== "1"'>
-        Strategy Config   <br><br>
+        <b>Strategy Config</b>   <br><br>
 
         Indicator Time Period :  {{$store.getters.getBacktestReportData.strategy_config.indicator_time_period}}<br>
         Max Holding  Period: {{$store.getters.getBacktestReportData.strategy_config.max_holding_period}}<br>
@@ -39,10 +42,10 @@
 
 
 				
-      </p>
-      <p id="attributess" 
+      </div>
+      <div id="attributess" 
       v-else>
-        Strategy Config   <br><br>
+        <b>Strategy Config</b>   <br><br>
 
         Indicator Time Period :  {{$store.getters.getBacktestReportData.strategy_config.indicator_time_period}}<br>
         Max Holding Time Period: {{$store.getters.getBacktestReportData.strategy_config.max_holding_period}}<br>
@@ -54,40 +57,40 @@
 
 
 				
-      </p>
-      <p id="attributes" >
-        Total return % :  {{$store.getters.getBacktestReportData.total_returns_percent}}
+      </div>
+      <div id="attributes" >
+        <b>Total return % </b>:  {{$store.getters.getBacktestReportData.total_returns_percent}}
 				
-      </p>
-      <p id="attributes" >
-        Total Number of Trades:  {{$store.getters.getBacktestReportData.total_trades}}
+      </div>
+      <div id="attributes" >
+        <b>Total Number of Trades</b>:  {{$store.getters.getBacktestReportData.total_trades}}
 				
-      </p>
-      <p id="attributes" >
-        Profit Trades:  {{$store.getters.getBacktestReportData.profit_trades}}
+      </div>
+      <div id="attributes" >
+        <b>Profit Trades</b>:  {{$store.getters.getBacktestReportData.profit_trades}}
 				
-      </p>
-      <p id="attributes" >
-        Loss Trades:  {{$store.getters.getBacktestReportData.total_trades - $store.getters.getBacktestReportData.profit_trades}}
+      </div>
+      <div id="attributes" >
+        <b>Loss Trades</b> :  {{$store.getters.getBacktestReportData.total_trades - $store.getters.getBacktestReportData.profit_trades}}
 				
-      </p>
-      <p id="attributes" >
-        Profit Trades % :  {{$store.getters.getBacktestReportData.profit_trades_percent}}
+      </div>
+      <div id="attributes" >
+        <b>Profit Trades %</b> :  {{$store.getters.getBacktestReportData.profit_trades_percent}}
 			
-      </p>
-      <p id="attributes" >
-        Loss Trades % : {{100-$store.getters.getBacktestReportData.profit_trades_percent}}
+      </div>
+      <div id="attributes" >
+        <b>Loss Trades %</b> : {{100-$store.getters.getBacktestReportData.profit_trades_percent}}
 				
-      </p>
-      <p id="attributess" >
+      </div>
+      <div id="attributess" >
         
-        Company   <br><br>
+        <b>Company</b>   <br><br>
         
               Name :{{$store.getters.getBacktestReportData.company.name}} <br>
               Ticker:{{$store.getters.getBacktestReportData.company.ticker}}<br>
         Description: {{$store.getters.getBacktestReportData.company.description}}<br>
 				
-      </p>
+      </div>
       
     </div>
 
@@ -103,10 +106,10 @@
       </div>
      <div id="line_2"  ></div> 
       <div id="image">
-        
+          <v-zoomer style="width: 1800px; height: 1000px; border: solid 1px silver;">
           <img v-bind:src="'data:image/png;base64,'+$store.getters.getTradeVisualization.img" />
-        <!-- {{$store.getters.getTradeVisualization.img}} -->
-       
+        {{$store.getters.getTradeVisualization.img}} -->
+           </v-zoomer>
       </div>
     </div>
 		
@@ -133,8 +136,8 @@
         <tr class="hover1"
         v-for="trade in $store.getters. getTrades"
                 :key="trade.id">
-          <td v-if='trade.trade_type=== "1"'>Buy</td>
-          <td v-else>Sell</td>
+          <td  calss= "ded" v-if='trade.trade_type=== "1"'>Buy</td>
+          <td class="ded" v-else>Sell</td>
           
           <td class="red" v-if='trade.trade_return_percent < 0'>{{trade.trade_return_percent}}</td>
           <td  class="green" v-else-if='trade.trade_return_percent > 0'>{{trade.trade_return_percent}}</td>
@@ -204,9 +207,9 @@ export default {
 	width: 1200.2px;
 	height: 100.64px;
 	overflow: hidden;
-	font-family: Poppins;
+	/* font-family: Poppins; */
 	font-size: 25px;
-	font-weight: bold;
+	/* font-weight: bold; */
 	text-align: left;
 	color:#000000;
 } 
@@ -214,11 +217,11 @@ export default {
 	top: 485px;
 	left: 213px;
 	width: 1400.2px;
-	height:500.64px;
+	height:420.64px;
 	overflow: hidden;
-	font-family: Poppins;
+	/* font-family: Poppins; */
 	font-size: 25px;
-	font-weight: bold;
+	/* font-weight: bold; */
 	text-align: left;
 	color:#000000;
 } 
@@ -241,7 +244,7 @@ export default {
 }
 #__p__trades {
 	
-	margin: 1600px 500px 75px 0px;
+	margin: 1200px 500px 75px 0px;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -274,7 +277,7 @@ export default {
     width: 600px;
     height: 0px;
     left: 0px;
-    top: 2790px;
+    top: 2380px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_2 {
@@ -282,7 +285,7 @@ export default {
     width: 670px;
     height: 0px;
     left: 1170px;
-    top: 2790px;
+    top: 2380px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_3 {
@@ -290,7 +293,7 @@ export default {
     width: 775px;
     height: 0px;
     left: 0px;
-    top: 4090px;
+    top: 3690px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -298,7 +301,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 4090px;
+    top: 3690px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
@@ -325,29 +328,43 @@ export default {
   color:#000000;
   
   border-radius: 50px;
+  padding:20px;
   
     font-style: normal;
     font-weight: bolder;
-    font-size: 24px;
+    font-size: 30px;
 }
 table{
   height:300px;
   width:100%;
-  margin: 100px auto;
-  padding:25px;
+  margin: 0px auto;
+  padding:5px;
   color: black;
-  border:2px solid black;
+  /* border:2px solid black; */
   border-radius: 25px;
   text-align:center;
   border-spacing: 0 30px;
-  -ms-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+  /* -ms-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
 	-o-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
 	-webkit-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
 	-moz-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
-	box-shadow:4px 10px 10px 10px rgba(0,0,0,0.25);
+	box-shadow:4px 10px 10px 10px rgba(0,0,0,0.25); */
   
 
 }
+.red{
+  width:750px;
+}
+.green{
+  width:750px;
+}
+.black{
+  width:750px;
+}
+.ded{
+  width:1500px;
+}
+
 
 td{
    border: 2px solid #941dcb;
@@ -358,8 +375,9 @@ td{
     left: 1100px;
     top: 1200px;
     border-radius: 50px; 
-    font-size:25px;
+    font-size:30px;
 }
+
 
 
 .green{
@@ -396,7 +414,7 @@ td{
 #image{
   position:absolute;
   left:50px;
-  top:2900px;
+  top:2500px;
 	
 	width: 900px;
 	height: 800px;
@@ -421,11 +439,6 @@ p{
    color: white;
     background-color:  #941dcb;
 }
-
-
-
-
-
 
 </style>
 

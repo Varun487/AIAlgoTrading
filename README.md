@@ -107,6 +107,12 @@ docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py te
 docker-compose -f devops/docker-compose.dev.yml run restapi python3 services/Initialization/initialize_database.py
 
 ```
+8. Command to run all paper trade services
+```
+
+docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py papertrade
+
+```
 
 ###### NOTE: To run in production, the commands are the same, but the file is `docker-compose.prod.yml`
 

@@ -62,28 +62,28 @@
 - Source Data ![varuncomplete]
   - Given company ticker, start date, end date ![done]
   - Sources data, returns df ![done]
-- Update Company Quotes ![varunincomplete]
-  - For all companies in DB 
-    - Source latest data 
-    - Update company quote in DB
-- Evaluate Live Paper Trades ![varunincomplete]
-  - For each live paper trade 
-    - Check whether stop loss or take profit limit is hit 
-      - If hit, then 
-        - Exit position 
-        - Evaluate closed trade 
-        - Remove from live trades 
-- Execute Live Paper Signals ![varunincomplete]
-  - For each signal in live generated signals 
-    - Execute entry orders and create a paper trade 
-    - Push to everything to DB 
-- Generate Paper Signals ![varunincomplete]
-  - For each strategy config currently paper traded
-    - Generate signals
-- Paper Trade ![varunincomplete]
-  - Executed periodically
-  - Synchronises and calls all services above
-- Generate Visualization ![varunincomplete]
+- Update Company Quotes ![varuncomplete]
+  - For all companies in DB (or given as input)  ![done]
+    - Source latest data ![done]
+    - Update company quote in DB (create quote if not present) ![done]
+- Evaluate Live Paper Trades ![varuncomplete]
+  - For each live paper trade ![done]
+    - If stop loss or take profit limit is reached ![done]
+      - Exit position ![done]
+      - Evaluate closed trade ![done]
+      - Remove from live trades ![done]
+- Execute Live Paper Signals ![varuncomplete]
+  - For each signal in live generated signals ![done]
+    - Execute entry orders and create a paper trade ![done]
+    - Push to everything to DB ![done]
+- Generate Paper Signals ![varuncomplete]
+  - For each strategy config currently paper traded ![done]
+    - Generate signals ![done]
+- Paper Trade Synchronization ![varuncomplete]
+  - Execute periodically ![done]
+  - Custom Django admin command for paper trade execution ![done]
+  - Synchronises and calls all services above ![done]
+- Generate Visualization ![varuncomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
   - Visualization 1 - SIGNALS ![done]
@@ -98,7 +98,22 @@
   - Make all visualizations strategy dependent ![done]
     - Signals ![done]
     - Per trade ![done]
-  - Paper Trade Visualization Per Paper Trade (Live and Historical)
+  - Paper Trade Visualization Per Paper Trade (Live and Historical) ![done]
+- Initialization ![varunincomplete]
+  - Initialize schema in Django ![done]
+  - Create custom django admin command
+  - Clean up all previous data in DB 
+  - Add all Nifty 50 companies info 
+  - Add all Nifty 50 companies data from Yahoo Finance 
+  - Add indicator type for BB 
+  - Add strategy type for BB 
+  - Add all different strategy configs 
+  - Add visualization types 
+  - Run all backtests on data 
+  - Add all paper traded live strategies
+  - Run paper trade synchronization service
+  - Run initialization script with custom django admin command
+- Make cron run each week day at 10 pm IST ![bug]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -125,27 +140,26 @@
   - Given backtest trade id, Generates and returns visualization of trade ![done]
   - Return a base 64 string ![done]
 - Design paper traded REST APIs ![varuncomplete]
-- `GET` All Paper Trades ![varunincomplete]
-  - Input = Strategy id
-  - Get all paper trades corresponding to the strategy
-  - Priority to live trades
-- `GET` Paper Trade data ![varunincomplete]
-  - Input = Paper Trade id
-  - In depth information on paper trade
-- `GET` Current Quote ![varunincomplete]
-  - Input = Paper Trade id
-  - Get the latest company data with last updated date
-  - According to paper trade id's company
-- `GET` Paper Trade Visualization ![varunincomplete]
-  - Input = Paper Trade id
-  - Generate picture for paper trade visualizations
-  - Return base 64 string
+- `GET` All Paper Trades ![varuncomplete]
+  - Input = Strategy id ![done]
+  - Get all paper trades corresponding to the strategy ![done]
+  - Priority to live trades ![done]
+- `GET` Paper Trade data ![varuncomplete]
+  - Input = Paper Trade id ![done]
+  - In depth information on paper trade ![done]
+- `GET` Current Quote ![varuncomplete]
+  - Input = Paper Trade id ![done]
+  - Get the latest company data with last updated date ![done]
+  - According to paper trade id's company ![done]
+- `GET` Paper Trade Visualization ![varuncomplete]
+  - Input = Paper Trade id ![done]
+  - Generate picture for paper trade visualizations ![done]
+  - Return base 64 string ![done]
 
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
 - Demo 2 - LSTM predictions strategy ![varunincomplete]
 - Custom Strategy 1 ![varunincomplete]
-- Custom Strategy 2 ![varunincomplete]
 
 ## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
@@ -188,11 +202,12 @@
     - Per trade visualization ![done]
     - Paper trade visualization
   - Source Data ![done]
-  - Update Company Quotes
-  - Evaluate Live Paper Trades
-  - Execute Live Paper Signals
-  - Generate Paper Signals
-  - Paper Trade
+  - Update Company Quotes ![done]
+  - Evaluate Live Paper Trades ![done]
+  - Execute Live Paper Signals ![done]
+  - Generate Paper Signals ![done]
+  - Paper Trade Synchronization ![done]
+  - cron job execution
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

@@ -23,6 +23,7 @@ services:
       && python3 manage.py makemigrations papertrader
       && python3 manage.py migrate
       && echo yes | python3 manage.py collectstatic
+      && cron
       && python3 manage.py runserver 0.0.0.0:8000
       "
     volumes:
