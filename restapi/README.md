@@ -99,6 +99,21 @@
     - Signals ![done]
     - Per trade ![done]
   - Paper Trade Visualization Per Paper Trade (Live and Historical) ![done]
+- Initialization ![varunincomplete]
+  - Initialize schema in Django ![done]
+  - Create custom django admin command
+  - Clean up all previous data in DB 
+  - Add all Nifty 50 companies info 
+  - Add all Nifty 50 companies data from Yahoo Finance 
+  - Add indicator type for BB 
+  - Add strategy type for BB 
+  - Add all different strategy configs 
+  - Add visualization types 
+  - Run all backtests on data 
+  - Add all paper traded live strategies
+  - Run paper trade synchronization service
+  - Run initialization script with custom django admin command
+- Make cron run each week day at 10 pm IST ![bug]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
