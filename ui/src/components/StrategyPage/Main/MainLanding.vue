@@ -56,7 +56,7 @@
 export default {
     name: 'MainLanding',
     mounted() {
-    this.$store.dispatch("setAllBacktests",2);
+    this.$store.dispatch("setAllBacktests",31);
   },
 };
 </script>

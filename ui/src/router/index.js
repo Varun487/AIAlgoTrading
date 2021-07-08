@@ -70,6 +70,11 @@ const routes = [
     name: "BacktestReport",
     component: () => import("../views/BacktestReport.vue"),
   },
+  {
+    path: "/papertrades",
+    name: "Papertrades",
+    component: () => import("../views/Papertrades.vue"),
+  },
 ]
 
 const router = new VueRouter({

@@ -12,7 +12,7 @@ export default {
         StrategyPageMain,
     },
     mounted() {
-    this.$store.dispatch("setSelectedStrategy",2);
+    this.$store.dispatch("setSelectedStrategy",31);
   },
 };
 </script>

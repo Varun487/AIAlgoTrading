@@ -1,8 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+// import VueZoomer from 'vue-zoomer'
 
 Vue.use(Vuex);
+// Vue.use(VueZoomer);
+
 
 export const store = new Vuex.Store({
   state: {
@@ -154,7 +157,7 @@ export const store = new Vuex.Store({
       */
      const res = await axios.get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/", {
        headers: {
-         'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
+         'Authorization': 'Token d40a6303a338022c7610b913eb9d7d4122039dfa'
        }
      });
      state.commit("setAllStrategies", res.data)
@@ -162,7 +165,7 @@ export const store = new Vuex.Store({
     async setSelectedStrategy(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}`,{
         headers: {
-          'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
+          'Authorization': 'Token d40a6303a338022c7610b913eb9d7d4122039dfa'
         }
       });
       state.commit("setSelectedStrategy", res.data)
@@ -170,7 +173,7 @@ export const store = new Vuex.Store({
     async setAllBacktests(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktests/${id}`,{
         headers: {
-          'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
+          'Authorization': 'Token d40a6303a338022c7610b913eb9d7d4122039dfa'
         }
       });
       state.commit("setAllBacktests", res.data)
