@@ -45,13 +45,13 @@
             <div id="attributes1">
             <b>Strategy Config</b>   <br><br>
 
+            Strategy Name: <br><br>
             Indicator Time Period :  <br><br>
             Max Holding  Period: <br><br>
             Take Profit Factor: <br><br>
             Stop Loss Factor: <br><br>
             Sigma:<br><br>
-            Dimension:<br><br>
-            Strategy_type: <br><br>
+            
             
             </div>
 
