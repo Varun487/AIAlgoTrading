@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-// import VueZoomer from 'vue-zoomer'
+import VueZoomer from 'vue-zoomer'
 
 Vue.use(Vuex);
-// Vue.use(VueZoomer);
+Vue.use(VueZoomer);
 
 
 export const store = new Vuex.Store({

@@ -106,10 +106,10 @@
       </div>
      <div id="line_2"  ></div> 
       <div id="image">
-          <!-- <v-zoomer style="width: 500px; height: 500px; border: solid 1px silver;"> -->
+          <v-zoomer style="width: 1800px; height: 1000px; border: solid 1px silver;">
           <img v-bind:src="'data:image/png;base64,'+$store.getters.getTradeVisualization.img" />
-        <!-- {{$store.getters.getTradeVisualization.img}} -->
-          <!-- </v-zoomer> -->
+        {{$store.getters.getTradeVisualization.img}} -->
+           </v-zoomer>
       </div>
     </div>
 		
