@@ -79,7 +79,7 @@
 - Generate Paper Signals ![varuncomplete]
   - For each strategy config currently paper traded ![done]
     - Generate signals ![done]
-- Paper Trade ![varuncomplete]
+- Paper Trade Synchronization ![varuncomplete]
   - Execute periodically ![done]
   - Custom Django admin command for paper trade execution ![done]
   - Synchronises and calls all services above ![done]
@@ -191,7 +191,7 @@
   - Evaluate Live Paper Trades
   - Execute Live Paper Signals
   - Generate Paper Signals
-  - Paper Trade
+  - Paper Trade Synchronization
   - cron job execution
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
