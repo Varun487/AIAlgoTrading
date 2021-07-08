@@ -83,7 +83,7 @@
   - Execute periodically ![done]
   - Custom Django admin command for paper trade execution ![done]
   - Synchronises and calls all services above ![done]
-- Generate Visualization ![varunincomplete]
+- Generate Visualization ![varuncomplete]
   - Input - Visualization type, DF with correct data for Visualization, image size req ![done] 
   - Generates visualization as an image ![done]
   - Visualization 1 - SIGNALS ![done]
@@ -98,7 +98,7 @@
   - Make all visualizations strategy dependent ![done]
     - Signals ![done]
     - Per trade ![done]
-  - Paper Trade Visualization Per Paper Trade (Live and Historical) ![incomplete]
+  - Paper Trade Visualization Per Paper Trade (Live and Historical) ![done]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
