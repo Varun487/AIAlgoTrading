@@ -62,24 +62,23 @@
 - Source Data ![varuncomplete]
   - Given company ticker, start date, end date ![done]
   - Sources data, returns df ![done]
-- Update Company Quotes ![varunincomplete]
-  - For all companies in DB 
-    - Source latest data 
-    - Update company quote in DB
-- Evaluate Live Paper Trades ![varunincomplete]
-  - For each live paper trade 
-    - Check whether stop loss or take profit limit is hit 
-      - If hit, then 
-        - Exit position 
-        - Evaluate closed trade 
-        - Remove from live trades 
-- Execute Live Paper Signals ![varunincomplete]
-  - For each signal in live generated signals 
-    - Execute entry orders and create a paper trade 
-    - Push to everything to DB 
-- Generate Paper Signals ![varunincomplete]
-  - For each strategy config currently paper traded
-    - Generate signals
+- Update Company Quotes ![varuncomplete]
+  - For all companies in DB (or given as input)  ![done]
+    - Source latest data ![done]
+    - Update company quote in DB (create quote if not present) ![done]
+- Evaluate Live Paper Trades ![varuncomplete]
+  - For each live paper trade ![done]
+    - If stop loss or take profit limit is reached ![done]
+      - Exit position ![done]
+      - Evaluate closed trade ![done]
+      - Remove from live trades ![done]
+- Execute Live Paper Signals ![varuncomplete]
+  - For each signal in live generated signals ![done]
+    - Execute entry orders and create a paper trade ![done]
+    - Push to everything to DB ![done]
+- Generate Paper Signals ![varuncomplete]
+  - For each strategy config currently paper traded ![done]
+    - Generate signals ![done]
 - Paper Trade ![varunincomplete]
   - Executed periodically
   - Synchronises and calls all services above
