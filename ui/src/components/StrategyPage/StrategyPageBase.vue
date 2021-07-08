@@ -13,6 +13,7 @@ export default {
     },
     mounted() {
     this.$store.dispatch("setSelectedStrategy",2);
+    this.$store.dispatch("setAllBacktests",2);
   },
 };
 </script>

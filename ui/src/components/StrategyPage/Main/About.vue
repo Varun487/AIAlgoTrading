@@ -7,7 +7,6 @@
                 :key="strategy.id"> -->
         <div class= "attributes">
         <center><p>Description: {{ $store.getters.getSelectedStrategy.description }}</p></center>
-        <center><p>Id: {{ $store.getters.getSelectedStrategy.id }}</p></center>
         <center><p>Stock Selection: {{ $store.getters.getSelectedStrategy.stock_selection }}</p></center>
         <center><p>Entry Criteria: {{ $store.getters.getSelectedStrategy.entry_criteria }}</p></center>
         <center><p>Exit Criteria: {{ $store.getters.getSelectedStrategy.exit_criteria }}</p></center>	

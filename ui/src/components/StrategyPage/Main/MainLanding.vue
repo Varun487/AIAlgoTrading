@@ -17,8 +17,10 @@
             <br><br>
             
             <tr class="hover1"
-            v-for="report in $store.getters.getAllBacktests"
-      :key="report.id">
+            v-for="report in $store.getters.getAllBacktests.slice(0, 5)"
+      v-bind:key="report.id">
+            
+      <!-- <tr class="hover1" v-for="report in computedObj" :key="report.id"> -->
                 <td><a href="/backtestreport">
                     {{ report.company_ticker }}</a></td>
 
@@ -31,6 +33,8 @@
                 <td class="black" v-else>{{ report.total_returns }}</td>
             </tr>
             <br><br>
+            
+            <!-- <button @click="report in $store.getters.getAllBacktests">Show more</button> -->
             <!-- <tr class="hover1">
                 <td>Apple</td>
                 <td>- 5</td>
@@ -46,6 +50,16 @@
             
             </table>
             <br><br><br><br>
+            <div class="card text-center m-3">
+        <h1 class="card-header">Vue.js Pagination Tutorial  Example</h1>
+        <div class="card-body">
+            <div v-for="item in pageOfItems" :key="item.id">
+                <p>{{item.name}}</p></div>
+        </div>
+        <div class="card-footer pb-0 pt-3">
+            <p><jw-pagination :items="exampleItems" @changePage="onChangePage" :labels="customLabels"></jw-pagination></p>
+        </div>
+    </div>
         <!-- </div> -->
     
 </div>
@@ -53,11 +67,47 @@
 </template>
 
 <script>
+const exampleItems = [...Array(150).keys()].map(i => ({ id: (i+1), name: 'Item ' + (i+1) }));
+const customLabels = {
+    first: '<<',
+    last: '>>',
+    previous: '<',
+    next: '>'
+};
+
 export default {
     name: 'MainLanding',
-    mounted() {
-    this.$store.dispatch("setAllBacktests",2);
-  },
+//     mounted() {
+//         return {
+//     object:this.$store.dispatch("setAllBacktests",2), // your original data
+//     limit: 5 // or any number you wish to limit to
+//   }
+//     // this.$store.dispatch("setAllBacktests",2);
+//   },
+//   data(){
+//   return {
+//     object:this.$store.dispatch("setAllBacktests",2), // your original data
+//     limit: 5 // or any number you wish to limit to
+//   }
+// },
+//   computed:{
+//   computedObj(){
+//     return this.limit ? this.object.slice(0,this.limit) : this.object
+//   }
+// }
+data() {
+        return {
+            exampleItems,
+            customLabels,
+            pageOfItems: [],
+        };
+    },
+    methods: {
+        onChangePage(pageOfItems) {
+            // update page of items
+            this.pageOfItems = pageOfItems;
+        }
+    }
 };
 </script>
 
@@ -101,7 +151,7 @@ p{
     width: 675px;
     height: 0px;
     left: 0px;
-    top: 1750px;
+    top: 1570px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .title {
@@ -109,7 +159,7 @@ p{
     width: 1000px;
     height: 78px;
     left: 750px;
-    top: 1710px;
+    top: 1530px;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
@@ -126,7 +176,7 @@ p{
     width: 735px;
     height: 0px;
     left: 1100px;
-    top: 1750px;
+    top: 1570px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 table {
@@ -158,7 +208,8 @@ td{
     top: 1200px;
     border-radius: 25px; 
 }
-.hover1:hover {
+
+.hover1:hover td {
     background-color: #941dcb;
     color: white;
 }
