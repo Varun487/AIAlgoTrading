@@ -99,21 +99,23 @@
     - Signals ![done]
     - Per trade ![done]
   - Paper Trade Visualization Per Paper Trade (Live and Historical) ![done]
-- Initialization ![varunincomplete]
+- Initialization ![varuncomplete]
   - Initialize schema in Django ![done]
-  - Create custom django admin command
-  - Clean up all previous data in DB 
-  - Add all Nifty 50 companies info 
-  - Add all Nifty 50 companies data from Yahoo Finance 
-  - Add indicator type for BB 
-  - Add strategy type for BB 
-  - Add all different strategy configs 
-  - Add visualization types 
-  - Run all backtests on data 
-  - Add all paper traded live strategies
-  - Run paper trade synchronization service
-  - Run initialization script with custom django admin command
+  - Create custom django admin command ![done]
+  - Clean up all previous data in DB ![done]
+  - Add all Nifty 50 companies info ![done]
+  - Add all Nifty 50 companies data from Yahoo Finance ![done]
+  - Add indicator type for BB ![done]
+  - Add strategy type for BB ![done]
+  - Add all different strategy configs ![done]
+  - Add visualization types ![done]
+  - Run all backtests on data ![done]
+  - Add all paper traded live strategies ![done]
+  - Run paper trade synchronization service ![done]
+  - Add user and super user ![done]
+  - Run initialization script with custom django admin command![done]
 - Make cron run each week day at 10 pm IST ![bug]
+- Order executed on next day regardless of whether it is a trading day ![bug]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -163,7 +165,7 @@
 
 ## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
-- restapi
+- restapi 
   - Auth apis
     - `POST` Authorization
   - Strategy apis
@@ -207,7 +209,9 @@
   - Execute Live Paper Signals ![done]
   - Generate Paper Signals ![done]
   - Paper Trade Synchronization ![done]
-  - cron job execution
+  - Write reproducible tests for paper trader services ![bug]
+  - cron job execution 
+  - Initialization 
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

@@ -104,7 +104,7 @@ docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py te
 7. Command to Initialize the database
 ```
 
-docker-compose -f devops/docker-compose.dev.yml run restapi python3 services/Initialization/initialize_database.py
+docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py initialize
 
 ```
 8. Command to run all paper trade services
