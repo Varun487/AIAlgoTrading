@@ -38,15 +38,16 @@ class CompanyQuotes(object):
 
             # Source data for company
             self.df = SourceData(company=company, start_date=self.start_date, end_date=self.end_date).get_df()
+            self.df.reset_index(inplace=True)
 
             # Create a new ticker data object and push to DB
             updated_ticker = TickerData(
-                time_stamp=make_aware(self.df.index[1]),
-                open=self.df.iloc[1].Open,
-                high=self.df.iloc[1].High,
-                low=self.df.iloc[1].Low,
-                close=self.df.iloc[1].Close,
-                volume=self.df.iloc[1].Volume,
+                time_stamp=make_aware(self.df['Date'][0]),
+                open=self.df.iloc[0].Open,
+                high=self.df.iloc[0].High,
+                low=self.df.iloc[0].Low,
+                close=self.df.iloc[0].Close,
+                volume=self.df.iloc[0].Volume,
                 company=company,
                 time_period="1"
             )

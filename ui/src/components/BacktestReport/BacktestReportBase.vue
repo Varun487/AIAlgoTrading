@@ -1,3 +1,6 @@
+
+
+
 <template> 
   
   <div id="main_frame">
@@ -103,10 +106,10 @@
       </div>
      <div id="line_2"  ></div> 
       <div id="image">
-        
+          <v-zoomer style="width: 1800px; height: 1000px; border: solid 1px silver;">
           <img v-bind:src="'data:image/png;base64,'+$store.getters.getTradeVisualization.img" />
-        <!-- {{$store.getters.getTradeVisualization.img}} -->
-       
+        {{$store.getters.getTradeVisualization.img}} -->
+           </v-zoomer>
       </div>
     </div>
 		
@@ -290,7 +293,7 @@ export default {
     width: 775px;
     height: 0px;
     left: 0px;
-    top: 4090px;
+    top: 3690px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -298,7 +301,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 4090px;
+    top: 3690px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
@@ -334,18 +337,18 @@ export default {
 table{
   height:300px;
   width:100%;
-  margin: 100px auto;
-  padding:25px;
+  margin: 0px auto;
+  padding:5px;
   color: black;
-  border:2px solid black;
+  /* border:2px solid black; */
   border-radius: 25px;
   text-align:center;
   border-spacing: 0 30px;
-  -ms-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
+  /* -ms-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
 	-o-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
 	-webkit-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
 	-moz-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
-	box-shadow:4px 10px 10px 10px rgba(0,0,0,0.25);
+	box-shadow:4px 10px 10px 10px rgba(0,0,0,0.25); */
   
 
 }
@@ -436,11 +439,6 @@ p{
    color: white;
     background-color:  #941dcb;
 }
-
-
-
-
-
 
 </style>
 

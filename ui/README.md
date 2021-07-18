@@ -54,7 +54,7 @@
   - backend (Vuex and REST API)
 
 # Paper trading page ![featureincomplete]
-- design ![dishaincomplete]
+- design ![dishacomplete]
 - implementation ![hritikincomplete]
   - frontend (VueJS)
   - backend (Vuex and REST API)
