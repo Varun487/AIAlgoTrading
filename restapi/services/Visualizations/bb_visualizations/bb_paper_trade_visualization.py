@@ -56,10 +56,15 @@ class BBPaperTradeVisualization(Visualization):
             days=self.strategy_config.indicator_time_period + 10
         )
 
+        # print(self.paper_trade.trade.entry_order.signal.ticker_data.time_stamp)
+        # print(self.start_date)
+
         # Set end date
         self.end_date = self.paper_trade.trade.entry_order.ticker_data.time_stamp + datetime.timedelta(
-            days=self.strategy_config.indicator_time_period + 10
+            days=self.strategy_config.max_holding_period + 10
         )
+
+        # print(self.end_date)
 
         # Source data
         self.df = SourceData(
@@ -68,12 +73,16 @@ class BBPaperTradeVisualization(Visualization):
             end_date=self.end_date,
         ).get_df()
 
+        # print(self.df)
+
         # Modify df
         self.df.drop(['Adj Close'], axis=1, inplace=True)
         self.df.reset_index(inplace=True)
         self.df.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low', 'Date': 'time_stamp',
                                 'Volume': 'volume'},
                        inplace=True)
+
+        # print(self.df)
 
         # Calculate indicators
         self.df = BollingerIndicator(
@@ -82,6 +91,8 @@ class BBPaperTradeVisualization(Visualization):
             dimension=self.strategy_config.get_dimension_display(),
             sigma=self.strategy_config.sigma,
         ).calc()
+
+        # print(self.df)
 
         # create the graph
 
@@ -129,6 +140,10 @@ class BBPaperTradeVisualization(Visualization):
         for i in range(len(self.df)):
             if self.df['time_stamp'][i].date() == self.paper_trade.trade.entry_order.ticker_data.time_stamp.date():
                 entry_order_index = i
+
+        # print(self.df)
+        # print(self.paper_trade.trade.entry_order.ticker_data.time_stamp.date())
+        # print(entry_order_index)
 
         # Plot entry order
         ax1.axvline(self.df['time_stamp'][entry_order_index], label="Entry Order", color='white')

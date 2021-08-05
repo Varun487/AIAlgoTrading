@@ -1,0 +1,1955 @@
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:01:11.367919
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:01:18.032013
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:02:50.125794
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:02:56.060430
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:03:23.218656
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:03:29.370381
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:04:28.437611
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:04:30.344219
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:05:01.051673
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:05:03.502786
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:04.283481
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:11.259402
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:13.580630
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:17.996269
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:20.302311
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:23.845897
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:27.558748
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:30.241595
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:06:45.014579
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:13:54.280079
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:13:59.092755
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:00.911300
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:05.907425
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:11.859661
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:17.220723
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:18.549373
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:23.464298
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:14:29.914307
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:16.160543
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:19.912088
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:22.427308
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:30.673166
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:34.854903
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:41.084193
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:43.316798
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:51.283385
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 16:15:53.323553
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:06.505988
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:07.489652
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:13.019347
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:19.530903
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:21.307480
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:22.497635
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:26.038037
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:27.577945
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:29.229283
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:13:30.121508
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:21.369436
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:22.690684
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:25.912479
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:27.691665
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:30.111829
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:36.880120
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:44.646899
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:46.281674
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:47.434628
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:36:53.608788
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:25.945299
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:27.004690
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:33.128601
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:36.179209
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:40.681536
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:42.058140
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:44.788314
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:46.682876
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:52.525906
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:47:53.365333
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:49:26.662446
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:49:29.638194
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:50:54.342371
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:50:56.170528
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:04.721213
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:07.433661
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:08.944107
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:10.356852
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:12.899503
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:17.224104
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:18.919077
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 17:51:20.575657
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 18:36:42.427693
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 18:36:44.991123
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 18:36:45.462966
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 18:36:46.092856
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-15 18:36:46.556108
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:06:29.955139
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:06:31.389571
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:06:31.842947
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:06:32.271767
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:06:32.678466
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:15.916506
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:16.854885
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:19.091635
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:19.906131
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:21.037161
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:21.741330
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:23.068421
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:24.083721
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:25.330720
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:18:26.094976
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:02.641583
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:04.587674
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:05.834968
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:06.738252
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:08.204987
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:09.031331
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:10.149971
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:19:11.010931
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:07.674290
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:09.436126
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:10.727798
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:11.521666
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:12.886154
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:14.244610
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:15.981360
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:17.615636
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:45.160779
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:48.845576
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:51.382791
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:25:56.947183
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:26:02.079047
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:26:03.006355
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:26:04.223285
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:26:05.025358
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:07.348685
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:09.078140
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:10.294917
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:11.117486
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:12.618474
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:13.518849
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:14.638389
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:15.371724
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:56.535581
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:58.224019
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:27:59.498531
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:28:00.495390
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:28:01.796483
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:28:02.741118
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:28:03.862159
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:28:04.798837
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:47.362895
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:48.630099
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:49.848165
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:50.713300
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:52.054891
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:52.839287
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:54.002293
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:31:54.747919
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:25.523286
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:27.205684
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:28.721352
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:29.507614
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:30.933805
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:31.860021
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:33.054878
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:33:33.826291
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:21.012663
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:22.500969
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:23.889907
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:24.826709
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:26.205582
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:26.959847
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:27.980352
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:34:28.895239
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:06.699773
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:10.064344
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:11.707434
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:13.601002
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:16.389880
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:18.507722
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:25.678860
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:35:38.432473
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:53.438924
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:54.757525
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:55.923620
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:56.671128
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:58.200641
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:58.867063
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:38:59.902168
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:39:00.810191
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:22.767306
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:24.784106
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:26.830608
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:29.445731
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:33.435152
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:34.954861
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:38.734117
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:40:40.857703
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:26.179975
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:27.731067
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:29.282758
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:30.139756
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:31.927644
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:32.772680
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:33.916922
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:42:34.734539
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:47.783096
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:50.340499
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:51.502862
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:52.734561
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:54.778460
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:55.535764
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:56.819004
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:43:57.616634
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:20.789918
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:22.436648
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:27.721437
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:29.830611
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:33.546504
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:36.976177
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:45.355793
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:49.901722
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:52.859720
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:45:58.395680
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:52:58.118183
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:52:58.944564
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:01.232770
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:02.266810
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:03.551430
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:04.424282
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:06.410760
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:07.655734
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:08.879676
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-16 04:53:09.929748
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:39.679933
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:41.297455
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:44.786378
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:46.356385
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:48.304236
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:49.928339
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:52.137043
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:53.833749
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:55.816749
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:21:57.511385
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:25:50.959538
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:25:52.633200
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:25:56.271662
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:25:57.908979
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:25:59.866611
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:01.498149
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:03.716354
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:05.408707
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:07.360616
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:09.022960
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:26.697109
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:28.467588
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:30.441625
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:32.012579
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:34.269267
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:35.844167
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:37.750630
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:26:39.334051
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:27:09.594214
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-07-22 10:27:11.494038
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:45:16.091973
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:45:18.589142
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:45:19.207850
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:45:19.833389
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:45:20.389955
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:20.114573
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:21.660691
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:25.530067
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:27.217880
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:29.323299
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:31.135785
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:34.198819
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:35.974151
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:37.930005
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 10:53:39.639623
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:36.783764
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:38.502277
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:42.621951
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:44.371523
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:46.598049
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:48.452623
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:51.249039
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:53.304065
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:55.506636
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-01 19:42:57.243693
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:02:56.514951
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:01.122690
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:09.857181
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:11.897549
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:14.300577
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:16.228495
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:19.086524
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:20.584619
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:22.176370
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals
+
+--------- RUN PAPER TRADE SYNCHRONIZER ----------
+Date Time: 2021-08-05 14:03:23.298478
+Updated Company Quotes to latest data
+Evaluated current paper trades
+Executed paper signals
+Generated Paper signals

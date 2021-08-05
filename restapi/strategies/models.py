@@ -94,7 +94,11 @@ class StrategyConfig(models.Model):
     max_holding_period = models.IntegerField(blank=False, null=False)
     take_profit_factor = models.IntegerField(blank=False, null=False)
     stop_loss_factor = models.IntegerField(blank=False, null=False)
-    sigma = models.IntegerField(blank=False, null=False)
+    sigma = models.IntegerField(blank=True, null=True)
+    # lstm_buy_threshold = models.FloatField(blank=True, null=True)
+    # lstm_sell_threshold = models.FloatField(blank=True, null=True)
+    # lstm_test_train_factor = models.FloatField(blank=True, null=True)
+    # lstm_model = models.CharField(blank=True, null=True, max_length=1000)
     dimension = models.CharField(
         max_length=20,
         choices=STRATEGY_CONFIG_DIMENSION_CHOICES,

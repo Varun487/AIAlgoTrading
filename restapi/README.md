@@ -161,7 +161,16 @@
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
 - Demo 2 - LSTM predictions strategy ![varunincomplete]
-- Custom Strategy 1 ![varunincomplete]
+  - Design ![done]
+    - LSTM models predict returns, based on these, buy/sell signals are generated ![done]
+  - Build a test model ![done]
+  - Create predictions service
+  - Decide all config parameters
+  - Change DB tables, migrate
+  - Add test strategy config to DB
+  - Complete LSTM Strategy logic
+  - Generate and save 5 models per company
+  - Create rules to generate signals
 
 ## Automated testing ![varunincomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
@@ -188,7 +197,7 @@
     - Converters ![done]
     - Pushers ![done]
     - Getters ![done]
-  - Indicator calc ![done]
+  - Indicator calc 
   - Signal generation ![done]
     - Generic Signal Generator ![done]
     - BBSignalGenerator ![done]
