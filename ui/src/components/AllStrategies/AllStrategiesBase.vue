@@ -1,5 +1,6 @@
 <template>
     <div class="main-container">
+        <Navbar />
         <SBase v-if="$store.getters.getAllStrategiesMainPage"/>
         <StrategyPageBase v-else/>
     </div>
@@ -8,10 +9,12 @@
 <script>
 import SBase from './StrategiesMain/SBase.vue'
 import StrategyPageBase from '../StrategyPage/StrategyPageBase.vue'
+import Navbar from "../TopNavbar/NavPostLogin.vue"
 
 export default {
     name: 'AllStrategiesBase',
     components: {
+        Navbar,
         SBase,
         StrategyPageBase,
     }
@@ -23,7 +26,6 @@ export default {
     width: 100%;
     height: 160%;
     left: 0px;
-    top: 0px;
-    margin-top:10px;
+    top: 80px;
 }
 </style>

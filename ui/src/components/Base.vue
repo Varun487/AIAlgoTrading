@@ -1,17 +1,14 @@
 <template>
   <div>
-    <TopBanner />
     <router-view id="main-content" :class="{ sidenavactive: $store.getters.getSideNavToggle }" />
   </div>
 </template>
 
 <script>
-import TopBanner from "./TopBanner/TopBanner.vue";
 
 export default {
   name: "Base",
   components: {
-    TopBanner,
   },
 };
 </script>
@@ -19,7 +16,7 @@ export default {
 <style scoped>
 
 #main-content {
-  margin-top: 80px;
+  margin-top: 10px;
   padding-top: 10px;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);

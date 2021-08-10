@@ -1,5 +1,13 @@
 <template>
-    <div class="container">
+    <div class="main">
+      <div class="nav">
+        <div class="title">AI ALGO TRADER</div>
+        <router-link to="/">
+        <div class="home">
+            Home
+        </div>
+        </router-link>
+      </div>
       <div class="header">
         <div class="login-wrapper">
             <div class="login-content">
@@ -9,9 +17,11 @@
                 <form action="#">
                     <input type="text" name="login-username" placeholder="Username" class="login-username">
                     <input type="password" name="login-password" placeholder="Password" class="login-password">
-                    <button>Go</button>
+                    <router-link to="/allstrategies"><button>Go</button></router-link>
                 </form>
+                <router-link to="/">
                 <a href="#" class="signin-back"> ←Back</a>
+                </router-link>
             </div>
             <div class="login-vector"></div>
         </div>
@@ -20,14 +30,72 @@
     </div>
 </template>
 <script>
+import router from '../../router'
 export default {
     name: 'LoginBase',
+    methods: {
+      back2landing(){
+        router.push({ name: "LandingPage" });
+      }
+    },
 };
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+.nav {
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0px;
+    height: 80px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.50));
+    background-image: url("~@/assets/v1s.jpg");
+    background-repeat: repeat;
+    background-size:cover;
+    background-position: center right;
+    /*background-image: url("~@/assets/logo.jpg");
+    background-size:100%;*/
+}
+.title {
+    position: absolute;
+    font-family: Poppins;
+    font-size: 40px;
+    top:10px;
+    left: 120px;
+    margin-top: 0px;
+    color:#fff;
+    transform: 0.4s;
+    
+}
+
+.home {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    right: 40px;
+    top: 16px;
+    background-color: transparent;
+    border:1px solid #FFFFFF;
+    box-shadow: 0px 0px 0px #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    transition: 0.2s;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.home:hover {
+    box-shadow: 0px 0px 5px #FFFFFF;
+    
+}
 .header {
-  background:url('~@/assets/v1.jpeg');
+  background:url('~@/assets/v10s.jpeg');
   position: absolute;
   width: 100%;
   height: 100%;
