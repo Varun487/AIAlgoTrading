@@ -11,6 +11,7 @@ from papertrader.models import PaperTradedStrategy
 from papertrader.models import PaperSignal
 
 from services.Utils.pusher import Pusher
+from services.SourceData.sourcedata import SourceData
 
 from .papersignalgenerator import PaperSignalGenerator
 
@@ -49,7 +50,6 @@ class PaperSignalGeneratorTestCase(TestCase):
         self.assertEquals(
             PaperSignalGenerator(
                 test_end_date=datetime.datetime(2021, 7, 8),
-                test_today=datetime.datetime(2021, 7, 7)
             ).end_date,
             datetime.datetime(2021, 7, 8)
         )
@@ -65,29 +65,12 @@ class PaperSignalGeneratorTestCase(TestCase):
         psg.run()
         self.assertEqual(psg.end_date.date(), datetime.datetime.today().date())
 
-    def test_today_date_values(self):
-        self.assertEquals(
-            PaperSignalGenerator(
-                test_end_date=datetime.datetime(2021, 7, 8),
-                test_today=datetime.datetime(2021, 7, 7)
-            ).today,
-            datetime.datetime(2021, 7, 7)
-        )
-        self.assertEquals(
-            PaperSignalGenerator().today,
-            None
-        )
-
-        PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[1], company=Company.objects.all()[0],
-                            live=True).save()
-
-        psg = PaperSignalGenerator()
-        psg.run()
-        self.assertEqual(psg.today.date(), datetime.datetime.today().date())
-
     def test_run(self):
         """Checks if signals are generated properly"""
-        psg = PaperSignalGenerator(test_end_date=datetime.datetime(2021, 7, 8), test_today=datetime.datetime(2021, 7, 7))
+        psg = PaperSignalGenerator(
+            test_end_date=datetime.datetime(2021, 7, 8),
+            test_today = datetime.datetime(2021, 7, 7),
+        )
 
         # No live strategies
         psg.run()
@@ -99,7 +82,7 @@ class PaperSignalGeneratorTestCase(TestCase):
         psg.run()
         self.assertEquals(len(list(PaperSignal.objects.all())), 0)
 
-        # 2 strategies, 1 live one not live
+        # 2 strategies, 1 live, 1 not live
         PaperTradedStrategy(strategy_config=StrategyConfig.objects.all()[2], company=Company.objects.all()[0],
                             live=False).save()
         psg.run()

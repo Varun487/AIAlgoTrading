@@ -48,9 +48,10 @@ class PaperSignalGenerator(object):
         # Set start date and end date according to indicator time period
         if self.end_date is None:
             self.end_date = datetime.datetime.now()
-        self.start_date = datetime.datetime.now() - datetime.timedelta(
+        
+        self.start_date = self.end_date - datetime.timedelta(
             days=self.strategy_config.indicator_time_period + 5)
-
+                
         # Source data
         self.df = SourceData(company=self.company, start_date=self.start_date, end_date=self.end_date).get_df()
 

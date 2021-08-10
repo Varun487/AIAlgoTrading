@@ -2,7 +2,9 @@ import copy
 import datetime
 
 import pandas as pd
+
 from django.test import TestCase
+from django.utils.timezone import make_aware
 
 from papertrader.models import CurrentQuote
 from papertrader.models import PaperTrade
@@ -74,7 +76,26 @@ class PaperTradeEvaluatorTestCase(TestCase):
             test_today=datetime.datetime(2021, 7, 7)
         ).run()
 
-        CompanyQuotes().update()
+        td = TickerData(
+            open=12.0,
+            high=12.0,
+            low=12.0,
+            close=3270.00,
+            volume=12,
+            time_stamp=make_aware(datetime.datetime.now()),
+            company=Company.objects.all()[0],
+            time_period="1"
+        )
+
+        td.save()
+
+        CurrentQuote(
+            company=Company.objects.all()[0],
+            ticker_data=td,
+            last_updated=make_aware(datetime.datetime.now()),
+        ).save()
+
+        # CompanyQuotes().update()
 
         PaperSignalExecutor().run()
 
@@ -84,6 +105,8 @@ class PaperTradeEvaluatorTestCase(TestCase):
         self.assertEquals(len(list(PaperTrade.objects.filter(live=True))), 1)
 
         PaperTradeEvaluator().run()
+
+        # print(CurrentQuote.objects.all())
 
         self.assertEquals(len(list(PaperTrade.objects.filter(live=True))), 1)
 
