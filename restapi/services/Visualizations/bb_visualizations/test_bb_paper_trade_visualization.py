@@ -120,8 +120,8 @@ class BBPaperTradeVisualizationTestCase(TestCase):
         # print(PaperSignal.objects.all())
         # print(PaperTrade.objects.all())
 
-        # self.assertEquals(BBPaperTradeVisualization(paper_trade=PaperTrade.objects.all()[0]).paper_trade,
-        #                   PaperTrade.objects.all()[0])
+        self.assertEquals(BBPaperTradeVisualization(paper_trade=PaperTrade.objects.all()[0]).paper_trade,
+                          PaperTrade.objects.all()[0])
 
     def test_generate_visualization_errors(self):
         """Checks if the generate_visualization method works correctly"""
@@ -137,5 +137,4 @@ class BBPaperTradeVisualizationTestCase(TestCase):
 
         self.assertEquals(type(BBPaperTradeVisualization(backtest_report=BackTestReport.objects.all()[0],
                                                          paper_trade=PaperTrade.objects.all()[0], height=6,
-                                                         width=15).get_visualization()
-                               ), str)
+                                                         width=15).get_visualization()), str)

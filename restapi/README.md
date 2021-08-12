@@ -114,8 +114,14 @@
   - Run paper trade synchronization service ![done]
   - Add user and super user ![done]
   - Run initialization script with custom django admin command![done]
-- Make cron run each week day at 10 pm IST ![bug]
-- Order executed on next day regardless of whether it is a trading day ![bug]
+- Make cron run each week day at 10 pm IST ![bugfixed]
+  - Is cron running? `YES`
+  - Check Server timezone `localtime = IST`
+  - Make it run at 10 pm IST `OK`
+- Order executed on next day regardless of whether it is a trading day ![bugfixed]
+- Re-Initialization after LSTM Strategy completion ![varunincomplete]
+  - Initialize DB with basic info ![done]
+  - Run Automated Backtests 
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -160,39 +166,23 @@
 
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
-- Demo 2 - LSTM predictions strategy ![varunincomplete]
+- Demo 2 - LSTM predictions strategy ![varuncomplete]
   - Design ![done]
     - LSTM models predict returns, based on these, buy/sell signals are generated ![done]
   - Build a test model ![done]
-  - Create predictions service
-  - Decide all config parameters
-  - Change DB tables, migrate
-  - Add test strategy config to DB
-  - Complete LSTM Strategy logic
-  - Generate and save 5 models per company
-  - Create rules to generate signals
+  - Generate all models ![done]
+  - Create predictions service ![done]
+  - Strategy ![done]
+    - Decide backtest config parameters ![done]
+    - Decide rules ![done]
+    - Change DB tables, migrate ![done]
+    - Code LSTM Strategy logic ![done]
+  - Conduct test backtests ![done]
 
-## Automated testing ![varunincomplete]
+## Automated testing ![varuncomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
-- restapi 
-  - Auth apis
-    - `POST` Authorization
-  - Strategy apis
-    - `GET` All Strategies
-    - `GET` Strategy data
-  - Backtest apis
-    - `GET` All backtests of a strategy
-    - `GET` Backtest data
-    - `GET` All Backtest trades
-    - `GET` Trade data
-    - `GET` Backtest Signals Visualization
-    - `GET` Backtest Trade visualization
-  - Paper Trade apis
-    - `GET` All Paper Trades
-    - `GET` Paper Trade data
-    - `GET` Current Quote
-    - `GET` Paper Trade Visualization
-- services
+- restapi endpoints `Manual testing` ![done]
+- services ![done]
   - Utils ![done]
     - Converters ![done]
     - Pushers ![done]
@@ -218,9 +208,6 @@
   - Execute Live Paper Signals ![done]
   - Generate Paper Signals ![done]
   - Paper Trade Synchronization ![done]
-  - Write reproducible tests for paper trader services ![bug]
-  - cron job execution 
-  - Initialization 
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

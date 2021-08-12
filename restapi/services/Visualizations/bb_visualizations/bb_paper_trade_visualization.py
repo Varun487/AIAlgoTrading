@@ -146,7 +146,8 @@ class BBPaperTradeVisualization(Visualization):
         # print(entry_order_index)
 
         # Plot entry order
-        ax1.axvline(self.df['time_stamp'][entry_order_index], label="Entry Order", color='white')
+        if entry_order_index != -1:
+            ax1.axvline(self.df['time_stamp'][entry_order_index], label="Entry Order", color='white')
 
         # Get exit order index (if it exists)
         exit_order_index = -1

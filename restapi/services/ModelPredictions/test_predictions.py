@@ -33,58 +33,35 @@ class PredictionsTestCase(TestCase):
         """No inputs are given"""
         self.assertEquals(Predictions().ticker, None)
         self.assertEquals(Predictions().period, None)
-        self.assertEquals(Predictions().split_factor, None)
-        self.assertEquals(Predictions().epochs, None)
         self.assertEquals(Predictions().df, None)
 
     def test_all_inputs(self):
         """All inputs are given"""
-        p = Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=0.8, epochs=10)
+        p = Predictions(df=self.df, ticker="ONGC.NS", period=2)
         self.assertEquals(p.ticker, "ONGC.NS")
         self.assertEquals(p.period, 2)
-        self.assertEquals(p.split_factor, 0.8)
-        self.assertEquals(p.epochs, 10)
         self.assertEquals(p.df.equals(self.df), True)
 
     def test_get_prediction_errors(self):
         """Tests get_predictions method"""
         # Invalid period
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=-1, split_factor=0.8, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=0, split_factor=0.8, epochs=10)
-                          .get_prediction)
-
-        # Invalid epochs
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=0.8, epochs=-1)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=0.8, epochs=0)
-                          .get_prediction)
-
-        # Invalid split factor
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=0, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=1, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=-3, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=7, epochs=10)
-                          .get_prediction)
+        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=-1).get_prediction)
+        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=0).get_prediction)
+        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=12).get_prediction)
+        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ONGC.NS", period=4).get_prediction)
 
         # Invalid tickers
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker=9, period=2, split_factor=0.8, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ABCD.NS", period=2, split_factor=0.8, epochs=10)
-                          .get_prediction)
+        self.assertRaises(ValueError, Predictions(df=self.df, ticker=9, period=2).get_prediction)
+        self.assertRaises(ValueError, Predictions(df=self.df, ticker="ABCD.NS", period=2).get_prediction)
 
         # Invalid dataframe
-        self.assertRaises(ValueError, Predictions(df="abc", ticker="ONGC.NS", period=2, split_factor=0.8, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=5, ticker="ONGC.NS", period=2, split_factor=0.8, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(df=pd.DataFrame(), ticker="ONGC.NS", period=0.8, split_factor=0, epochs=10)
-                          .get_prediction)
-        self.assertRaises(ValueError, Predictions(ticker="ONGC.NS", period=2, split_factor=0.8, epochs=10)
-                          .get_prediction)
+        self.assertRaises(ValueError, Predictions(df="abc", ticker="ONGC.NS", period=2).get_prediction)
+        self.assertRaises(ValueError, Predictions(df=5, ticker="ONGC.NS", period=2).get_prediction)
+        self.assertRaises(ValueError, Predictions(df=pd.DataFrame(), ticker="ONGC.NS", period=2).get_prediction)
+        self.assertRaises(ValueError, Predictions(ticker="ONGC.NS", period=2).get_prediction)
 
-    # def test_get_prediction(self):
-    #     Predictions(df=self.df, ticker="ONGC.NS", period=2, split_factor=0.8, epochs=10).get_prediction()
+    def test_get_prediction(self):
+        pred_df = Predictions(df=self.df, ticker="ONGC.NS", period=5).get_prediction()
+        # print()
+        assert 'prediction' in pred_df.columns
+        # self.assertEquals()

@@ -1,4 +1,5 @@
 from services.Utils.converter import Converter
+from ta import add_all_ta_features
 from ta.volatility import BollingerBands
 
 
@@ -82,6 +83,7 @@ class BollingerIndicator(Indicator):
 
         return self.df
 
+
 class AllIndicators(Indicator):
 
     def __init__(self, df=None, time_period=-1, dimension="", sigma=-1):
@@ -102,22 +104,24 @@ class AllIndicators(Indicator):
 
     def business_logic(self):
         # Initialize Bollinger Bands Indicator
-        indicator_bb = BollingerBands(close=self.df[self.dimension], window=self.time_period, window_dev=self.sigma)
+        # indicator_bb = BollingerBands(close=self.df[self.dimension], window=self.time_period, window_dev=self.sigma)
 
-        # Add Bollinger Bands features
-        self.df['bb_bbm'] = indicator_bb.bollinger_mavg()
-        self.df['bb_bbh'] = indicator_bb.bollinger_hband()
-        self.df['bb_bbl'] = indicator_bb.bollinger_lband()
+        self.df = add_all_ta_features(self.df, open="open", high="high", low="low", close="close",
+                            volume="volume", fillna=True)
 
-        # Add Bollinger Band high indicator
-        self.df['bb_bbhi'] = indicator_bb.bollinger_hband_indicator()
-
-        # Add Bollinger Band low indicator
-        self.df['bb_bbli'] = indicator_bb.bollinger_lband_indicator()
+        # # Add Bollinger Bands features
+        # self.df['bb_bbm'] = indicator_bb.bollinger_mavg()
+        # self.df['bb_bbh'] = indicator_bb.bollinger_hband()
+        # self.df['bb_bbl'] = indicator_bb.bollinger_lband()
+        #
+        # # Add Bollinger Band high indicator
+        # self.df['bb_bbhi'] = indicator_bb.bollinger_hband_indicator()
+        #
+        # # Add Bollinger Band low indicator
+        # self.df['bb_bbli'] = indicator_bb.bollinger_lband_indicator()
 
         self.df = self.df.dropna()
         self.df.set_index([self.dimension], inplace=True)
         self.df.reset_index(inplace=True)
 
         return self.df
-
