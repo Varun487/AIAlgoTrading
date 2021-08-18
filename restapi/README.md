@@ -1,6 +1,6 @@
 # REST API v0.1.0
 
-![componentincomplete]
+![componentcomplete]
 
 - Contains the business logic of the project
 
@@ -197,7 +197,7 @@
     - LSTM Signal ![done]
     - LSTM Trade ![done]
     - LSTM Paper Trade ![done]
-  - Re-initialize paper trading signals ![varunincomplete]
+  - Re-initialize paper trading signals ![varuncomplete]
 
 ## Automated testing ![varuncomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
