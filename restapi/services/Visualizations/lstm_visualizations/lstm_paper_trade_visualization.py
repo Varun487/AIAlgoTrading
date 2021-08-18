@@ -44,18 +44,13 @@ class LSTMPaperTradeVisualization(Visualization):
 
         # Set start date
         self.start_date = self.paper_trade.trade.entry_order.signal.ticker_data.time_stamp - datetime.timedelta(
-            days=self.strategy_config.indicator_time_period + 10
+            days=self.strategy_config.indicator_time_period + 50
         )
-
-        # print(self.paper_trade.trade.entry_order.signal.ticker_data.time_stamp)
-        # print(self.start_date)
 
         # Set end date
         self.end_date = self.paper_trade.trade.entry_order.ticker_data.time_stamp + datetime.timedelta(
             days=self.strategy_config.max_holding_period + 10
         )
-
-        # print(self.end_date)
 
         # Source data
         self.df = SourceData(
@@ -64,16 +59,11 @@ class LSTMPaperTradeVisualization(Visualization):
             end_date=self.end_date,
         ).get_df()
 
-        # print(self.df)
-
         # Modify df
-        # self.df.drop(['Adj Close'], axis=1, inplace=True)
         self.df.reset_index(inplace=True)
         self.df.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low', 'Date': 'time_stamp',
                                 'Volume': 'volume'},
                        inplace=True)
-
-        # print(self.df)
 
         # Calculate indicators
         self.df = AllIndicators(
@@ -83,7 +73,10 @@ class LSTMPaperTradeVisualization(Visualization):
             sigma=self.strategy_config.sigma,
         ).calc()
 
-        # print(self.df)
+        # Adjust dataframe for graphing
+        self.df = self.df.iloc[20:]
+        self.df.reset_index(inplace=True)
+        print(self.df)
 
         # create the graph
 
@@ -133,10 +126,6 @@ class LSTMPaperTradeVisualization(Visualization):
             if self.df['time_stamp'][i].date() == self.paper_trade.trade.entry_order.ticker_data.time_stamp.date():
                 entry_order_index = i
 
-        # print(self.df)
-        # print(self.paper_trade.trade.entry_order.ticker_data.time_stamp.date())
-        # print(entry_order_index)
-
         # Plot entry order
         if entry_order_index != -1:
             ax1.axvline(self.df['time_stamp'][entry_order_index], label="Entry Order", color='white')
@@ -162,7 +151,7 @@ class LSTMPaperTradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/lstm_visualizations/test_lstm_paper_trade_visualization_image.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/lstm_visualizations/test_lstm_paper_trade_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

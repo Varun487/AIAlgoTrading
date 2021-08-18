@@ -47,15 +47,10 @@ class BBPaperTradeVisualization(Visualization):
             days=self.strategy_config.indicator_time_period + 10
         )
 
-        # print(self.paper_trade.trade.entry_order.signal.ticker_data.time_stamp)
-        # print(self.start_date)
-
         # Set end date
         self.end_date = self.paper_trade.trade.entry_order.ticker_data.time_stamp + datetime.timedelta(
             days=self.strategy_config.max_holding_period + 10
         )
-
-        # print(self.end_date)
 
         # Source data
         self.df = SourceData(
@@ -64,16 +59,12 @@ class BBPaperTradeVisualization(Visualization):
             end_date=self.end_date,
         ).get_df()
 
-        # print(self.df)
-
         # Modify df
         self.df.drop(['Adj Close'], axis=1, inplace=True)
         self.df.reset_index(inplace=True)
         self.df.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low', 'Date': 'time_stamp',
                                 'Volume': 'volume'},
                        inplace=True)
-
-        # print(self.df)
 
         # Calculate indicators
         self.df = BollingerIndicator(
@@ -82,8 +73,6 @@ class BBPaperTradeVisualization(Visualization):
             dimension=self.strategy_config.get_dimension_display(),
             sigma=self.strategy_config.sigma,
         ).calc()
-
-        # print(self.df)
 
         # create the graph
 
@@ -114,6 +103,11 @@ class BBPaperTradeVisualization(Visualization):
             signal_label = 'Sell Signal'
             signal_marker = 'v'
             signal_color = 'red'
+
+        print('signal_label', signal_label)
+        print('signal_marker', signal_marker)
+        print('signal_color', signal_color)
+        print('signal_marker_index', signal_marker_index)
 
         # Plot signal
         ax1.plot(self.df['time_stamp'], self.df['close'], label=signal_label, marker=signal_marker, color=signal_color,
@@ -161,7 +155,7 @@ class BBPaperTradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_paper_trade_visualization_image.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_paper_trade_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

@@ -67,6 +67,7 @@ def api_get_company_quote(req, papertrade_id):
 @api_view(['GET', ])
 def api_get_paper_trade_visualization(req, papertrade_id):
     try:
+
         paper_trade = PaperTrade.objects.get(id=papertrade_id)
         # print(paper_trade)
 

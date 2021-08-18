@@ -107,7 +107,7 @@ class LSTMSignalVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/lstm_visualizations/test_lstm_signal_visualization_image.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/lstm_visualizations/test_lstm_signal_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

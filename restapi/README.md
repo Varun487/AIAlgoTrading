@@ -190,13 +190,14 @@
     - Backtest Signals ![done]
     - Backtest Trade ![done]
     - Paper Trade ![done]
-  - TEST ALL VISUALIZATIONS ![varunincomplete]
+  - TEST ALL VISUALIZATIONS ![varuncomplete]
     - BB Signal ![done]
     - BB Trade ![done]
-    - BB Paper trade ![incomplete]
+    - BB Paper Trade ![done]
     - LSTM Signal ![done]
     - LSTM Trade ![done]
-    - LSTM Paper Trade ![incomplete]
+    - LSTM Paper Trade ![done]
+  - Re-initialize paper trading signals ![varunincomplete]
 
 ## Automated testing ![varuncomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
