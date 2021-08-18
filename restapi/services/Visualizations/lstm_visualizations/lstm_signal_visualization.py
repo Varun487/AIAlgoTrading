@@ -11,21 +11,28 @@ from services.Utils.getters import Getter
 
 from backtester.models import BackTestTrade
 
-from services.IndicatorCalc.indicators import BollingerIndicator
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
+from services.IndicatorCalc.indicators import AllIndicators
+from services.SignalGeneration.lstmsignalgenerator import LSTMSignalGenerator
 
 
-class BBSignalVisualization(Visualization):
+class LSTMSignalVisualization(Visualization):
     def __init__(self, backtest_report=None, height=-1, width=-1):
         super().__init__(backtest_report, height, width)
 
     def generate_visualization(self):
         # Get ticker data in db
-        df = Getter(table_name=TickerData, df_flag=True, param_list={'company': self.backtest_report.company,
-                                                                     'time_stamp__range': [
-                                                                         self.backtest_report.start_date_time,
-                                                                         self.backtest_report.end_date_time]
-                                                                     }).get_data()
+        df = Getter(
+            table_name=TickerData,
+            df_flag=True,
+            param_list={
+                'company': self.backtest_report.company,
+                'time_stamp__range': [
+                    self.backtest_report.start_date_time,
+                    self.backtest_report.end_date_time
+                ]
+            }
+        ).get_data()
+
         # Remove df cols
         df.drop(['id', 'company_id', 'time_period'], axis=1, inplace=True)
 
@@ -35,13 +42,14 @@ class BBSignalVisualization(Visualization):
         backtest_trades = list(BackTestTrade.objects.filter(back_test_report=self.backtest_report))
 
         # Get signals df
-        df = BBSignalGenerator(
-            indicator=BollingerIndicator(
+        df = LSTMSignalGenerator(
+            indicator=AllIndicators(
                 df=df,
                 time_period=self.backtest_report.strategy_config.indicator_time_period,
                 dimension=self.backtest_report.strategy_config.get_dimension_display(),
                 sigma=self.backtest_report.strategy_config.sigma,
-            )
+            ),
+            strategy_config=self.backtest_report.strategy_config,
         ).generate_signals()
 
         # Add signal of each trade to a signals list
@@ -72,7 +80,7 @@ class BBSignalVisualization(Visualization):
 
         ax1.set_xlabel("Time")
         ax1.set_ylabel("Price")
-        ax1.set_title(f'Signals generated on company data')
+        ax1.set_title("Signals generated on company data")
 
         buy_markers = list(df[df['SIGNAL'] == 'BUY'].index)
         ax1.plot(df['time_stamp'], df['close'], label='Buy signal', marker='^', color='lime',
@@ -82,10 +90,11 @@ class BBSignalVisualization(Visualization):
         ax1.plot(df['time_stamp'], df['close'], label='Sell signal', marker='v', color='r',
                  alpha=1, markevery=sell_markers, markersize=15)
 
-        ax1.plot(df['time_stamp'], df['bb_bbm'], label='Simple moving Average', color='g')
-        ax1.plot(df['time_stamp'], df['bb_bbh'], label='', color='r')
-        ax1.plot(df['time_stamp'], df['bb_bbl'], label='Bollinger bands', color='r')
-        ax1.plot(df['time_stamp'], df['close'], label='Price', color='b')
+        ax1.plot(df['time_stamp'], df['trend_sma_fast'], label='Simple Moving Average Fast', color='g')
+        ax1.plot(df['time_stamp'], df['trend_sma_slow'], label='Simple Moving Average Slow', color='maroon')
+        ax1.plot(df['time_stamp'], df['trend_ema_fast'], label='Exponential Moving Average Fast', color='b')
+        ax1.plot(df['time_stamp'], df['trend_ema_slow'], label='Exponential Moving Average Slow', color='purple')
+        ax1.plot(df['time_stamp'], df['close'], label='Price', color='lightblue')
 
         ax1.tick_params(axis='y')
 
@@ -98,7 +107,7 @@ class BBSignalVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        # plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_signal_visualization_image.png", dpi=100)
+        plt.savefig("/home/app/restapi/services/Visualizations/lstm_visualizations/test_lstm_signal_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

@@ -62,6 +62,9 @@ class PaperSignalExecutor(object):
         # Get all live paper signals
         live_paper_signals = list(PaperSignal.objects.filter(executed=False))
 
+        total = len(live_paper_signals)
+        count = 0
+
         for paper_signal in live_paper_signals:
             # Set paper signal
             self.paper_signal = paper_signal
@@ -80,3 +83,6 @@ class PaperSignalExecutor(object):
 
             # Execute paper signal
             self.execute_signal()
+
+            count += 1
+            print(f"Paper Signals executed for {count}/{total} - {paper_signal}")

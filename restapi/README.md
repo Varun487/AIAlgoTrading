@@ -119,9 +119,6 @@
   - Check Server timezone `localtime = IST`
   - Make it run at 10 pm IST `OK`
 - Order executed on next day regardless of whether it is a trading day ![bugfixed]
-- Re-Initialization after LSTM Strategy completion ![varunincomplete]
-  - Initialize DB with basic info ![done]
-  - Run Automated Backtests 
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -178,6 +175,27 @@
     - Change DB tables, migrate ![done]
     - Code LSTM Strategy logic ![done]
   - Conduct test backtests ![done]
+  - Re-Initialization after LSTM Strategy completion ![varuncomplete]
+    - Initialize DB with basic info ![done]
+    - Run Automated Backtests ![done]
+    - Run paper trading algorithm ![done]
+      - Add logging ![done]
+      - Fix Company quotes ![done]
+      - Fix Paper signal generator ![done]
+      - Fix Paper trade evaluator ![done]
+      - Fix Paper Signal executor ![done]
+  - INITIALIZE DB ![varuncomplete]
+  - LSTM Visualizations ![varunincomplete]
+    - Backtest Signals ![done]
+    - Backtest Trade ![incomplete]
+    - Paper Trade ![incomplete]
+  - TEST ALL VISUALIZATIONS ![varunincomplete]
+    - BB Signal ![done]
+    - BB Trade ![done]
+    - BB Paper trade ![incomplete]
+    - LSTM Signal ![done]
+    - LSTM Trade ![incomplete]
+    - LSTM Paper Trade ![incomplete]
 
 ## Automated testing ![varuncomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
@@ -187,7 +205,7 @@
     - Converters ![done]
     - Pushers ![done]
     - Getters ![done]
-  - Indicator calc 
+  - Indicator calc ![done]
   - Signal generation ![done]
     - Generic Signal Generator ![done]
     - BBSignalGenerator ![done]
@@ -197,11 +215,11 @@
     - Order Execution ![done]
   - Trade evaluation ![done]
   - Backtest Report Generation ![done]
-  - Generate Visualization 
+  - Generate Visualization ![done]
     - Generic visualization ![done]
     - Signals visualization ![done]
     - Per trade visualization ![done]
-    - Paper trade visualization
+    - Paper trade visualization ![done]
   - Source Data ![done]
   - Update Company Quotes ![done]
   - Evaluate Live Paper Trades ![done]

@@ -18,17 +18,33 @@ class PaperTradeSynchronizer(object):
         print("--------- RUN PAPER TRADE SYNCHRONIZER ----------", file=self.log_file)
         print(f"Date Time: {datetime.datetime.now()}", file=self.log_file)
 
+        print()
+        print("UPDATING COMPANY QUOTES")
+        print()
+
         CompanyQuotes().update()
 
         print(f"Updated Company Quotes to latest data", file=self.log_file)
+
+        print()
+        print("EVALUATING PAPER TRADES")
+        print()
 
         PaperTradeEvaluator().run()
 
         print(f"Evaluated current paper trades", file=self.log_file)
 
+        print()
+        print("EXECUTING PAPER SIGNALS")
+        print()
+
         PaperSignalExecutor().run()
 
         print(f"Executed paper signals", file=self.log_file)
+
+        print()
+        print("GENERATING PAPER SIGNALS")
+        print()
 
         PaperSignalGenerator(test_end_date=self.test_end_date, test_today=self.test_today).run()
 

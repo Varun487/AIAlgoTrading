@@ -1,21 +1,12 @@
-import datetime
-import matplotlib.pyplot as plt
-import io
 import base64
+import datetime
+import io
 
-from backtester.models import BackTestTrade
-from strategies.models import TickerData
+import matplotlib.pyplot as plt
 from papertrader.models import PaperTrade
-
-from services.Visualizations.visualization import Visualization
 from services.IndicatorCalc.indicators import BollingerIndicator
-from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
-from services.OrderExecution.orderexecution import OrderExecution
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
-from services.TradeEvaluation.tradeevaluator import TradeEvaluator
-from services.Utils.getters import Getter
-
 from services.SourceData.sourcedata import SourceData
+from services.Visualizations.visualization import Visualization
 
 
 class BBPaperTradeVisualization(Visualization):
@@ -170,7 +161,7 @@ class BBPaperTradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        # plt.savefig("/home/app/restapi/services/Visualizations/test_paper_trade_visualization.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_paper_trade_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

@@ -35,6 +35,9 @@ class CompanyQuotes(object):
                          self.validate_each_company_in_companies()
 
     def create_or_update_current_quote(self):
+        count = 0
+        total = len(self.companies)
+
         for company in self.companies:
 
             # Source data for company
@@ -69,6 +72,9 @@ class CompanyQuotes(object):
             else:
                 # Update current quote
                 quote.update(ticker_data=updated_ticker, last_updated=make_aware(datetime.datetime.now()))
+
+            count += 1
+            print(f"Updating quote for {count}/{total} - {company}")
 
     def update(self):
         self.validate()

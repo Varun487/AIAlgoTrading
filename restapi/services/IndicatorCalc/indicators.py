@@ -103,22 +103,9 @@ class AllIndicators(Indicator):
         self.valid = self.valid and self.valid_sigma
 
     def business_logic(self):
-        # Initialize Bollinger Bands Indicator
-        # indicator_bb = BollingerBands(close=self.df[self.dimension], window=self.time_period, window_dev=self.sigma)
-
-        self.df = add_all_ta_features(self.df, open="open", high="high", low="low", close="close",
-                            volume="volume", fillna=True)
-
-        # # Add Bollinger Bands features
-        # self.df['bb_bbm'] = indicator_bb.bollinger_mavg()
-        # self.df['bb_bbh'] = indicator_bb.bollinger_hband()
-        # self.df['bb_bbl'] = indicator_bb.bollinger_lband()
-        #
-        # # Add Bollinger Band high indicator
-        # self.df['bb_bbhi'] = indicator_bb.bollinger_hband_indicator()
-        #
-        # # Add Bollinger Band low indicator
-        # self.df['bb_bbli'] = indicator_bb.bollinger_lband_indicator()
+        # Initialize All Indicators
+        self.df = add_all_ta_features(self.df, open="open", high="high", low="low", close="close", volume="volume",
+                                      fillna=True)
 
         self.df = self.df.dropna()
         self.df.set_index([self.dimension], inplace=True)

@@ -8,15 +8,15 @@ from services.Visualizations.visualization import Visualization
 from backtester.models import BackTestTrade
 from strategies.models import TickerData
 
-from services.IndicatorCalc.indicators import BollingerIndicator
+from services.IndicatorCalc.indicators import AllIndicators
 from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
 from services.OrderExecution.orderexecution import OrderExecution
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
+from services.SignalGeneration.lstmsignalgenerator import LSTMSignalGenerator
 from services.TradeEvaluation.tradeevaluator import TradeEvaluator
 from services.Utils.getters import Getter
 
 
-class BBTradeVisualization(Visualization):
+class LSTMTradeVisualization(Visualization):
     def __init__(self, backtest_report=None, backtest_trade=None, height=-1, width=-1):
         super().__init__(backtest_report, height, width)
 
@@ -37,21 +37,28 @@ class BBTradeVisualization(Visualization):
             back_test_report=self.backtest_report
         )).index(self.backtest_trade) + 1
 
-        df = Getter(table_name=TickerData, df_flag=True, param_list={'company': self.backtest_report.company,
-                                                                     'time_stamp__range': [
-                                                                         self.backtest_trade.back_test_report.start_date_time,
-                                                                         self.backtest_trade.back_test_report.end_date_time
-                                                                     ]}).get_data()
+        df = Getter(
+            table_name=TickerData,
+            df_flag=True,
+            param_list={
+                'company': self.backtest_report.company,
+                'time_stamp__range': [
+                    self.backtest_trade.back_test_report.start_date_time,
+                    self.backtest_trade.back_test_report.end_date_time,
+                ],
+            },
+        ).get_data()
 
         df.drop(['id', 'company_id', 'time_period'], axis=1, inplace=True)
 
-        df = BBSignalGenerator(
-            indicator=BollingerIndicator(
+        df = LSTMSignalGenerator(
+            indicator=AllIndicators(
                 df=df,
                 time_period=self.backtest_report.strategy_config.indicator_time_period,
                 dimension=self.backtest_report.strategy_config.get_dimension_display(),
                 sigma=self.backtest_report.strategy_config.sigma,
-            )
+            ),
+            strategy_config=self.backtest_report.strategy_config,
         ).generate_signals()
 
         # Add take profit and stop loss price
@@ -118,10 +125,11 @@ class BBTradeVisualization(Visualization):
         ax1.plot(df['time_stamp'], df['close'], label=signal_label, marker=signal_marker, color=signal_color,
                  alpha=1, markevery=signal_marker_index, markersize=15)
 
-        ax1.plot(df['time_stamp'], df['bb_bbm'], label='Simple moving Average', color='g')
-        ax1.plot(df['time_stamp'], df['bb_bbh'], label='', color='r')
-        ax1.plot(df['time_stamp'], df['bb_bbl'], label='Bollinger bands', color='r')
-        ax1.plot(df['time_stamp'], df['close'], label='Price', color='b')
+        ax1.plot(df['time_stamp'], df['trend_sma_fast'], label='Simple Moving Average Fast', color='g')
+        ax1.plot(df['time_stamp'], df['trend_sma_slow'], label='Simple Moving Average Slow', color='maroon')
+        ax1.plot(df['time_stamp'], df['trend_ema_fast'], label='Exponential Moving Average Fast', color='b')
+        ax1.plot(df['time_stamp'], df['trend_ema_slow'], label='Exponential Moving Average Slow', color='purple')
+        ax1.plot(df['time_stamp'], df['close'], label='Price', color='lightblue')
 
         # mark order entry and exit
         ax1.axvline(df['time_stamp'][trades_df['order_entry_index'][trade_number - 1]], label="Order entry",
@@ -139,7 +147,7 @@ class BBTradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_trade_visualization_image.png", dpi=100)
+        plt.savefig("/home/app/restapi/services/Visualizations/lstm_visualizations/test_lstm_trade_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 
