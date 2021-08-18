@@ -161,7 +161,7 @@ class BBPaperTradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        # plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_paper_trade_visualization_image.png", dpi=100)
+        plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_paper_trade_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

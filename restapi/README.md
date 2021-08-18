@@ -185,10 +185,11 @@
       - Fix Paper trade evaluator ![done]
       - Fix Paper Signal executor ![done]
   - INITIALIZE DB ![varuncomplete]
-  - LSTM Visualizations ![varunincomplete]
+  - Test all paper trade apis ![varuncomplete]
+  - LSTM Visualizations ![varuncomplete]
     - Backtest Signals ![done]
     - Backtest Trade ![done]
-    - Paper Trade ![incomplete]
+    - Paper Trade ![done]
   - TEST ALL VISUALIZATIONS ![varunincomplete]
     - BB Signal ![done]
     - BB Trade ![done]
@@ -196,7 +197,6 @@
     - LSTM Signal ![done]
     - LSTM Trade ![done]
     - LSTM Paper Trade ![incomplete]
-  - Test all paper trade apis ![varunincomplete]
 
 ## Automated testing ![varuncomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
