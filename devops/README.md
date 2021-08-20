@@ -25,14 +25,19 @@
 - Containers ![done]
   - db ![done]
   - rest api ![done]
-  - ui 
-  - nginx 
-- Make nginx serve both ui and rest api 
+  - ui ![done]
+  - nginx ![done]
+- Make nginx serve both ui and rest api ![done]
 - Buy a domain ![done]
-- Make changes to run django in a production environment 
-- SSL certification
-- deploy on VM
-- See how to add domain
+- SSL certification 
+- deploy on VM 
+- See how to add domain 
+- Run paper trade script, test paper trade APIs 
+- Point domain to VM's IP Address 
+- Create a 404 error page 
+- local settings file for productions and development env 
+  - Allow admin only in development env 
+  - Change allowed hosts according to dev and prod env 
 
 ## Deployment scripts ![varunincomplete]
 - Automated deployment to VM from local machine `script`
