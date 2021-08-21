@@ -64,7 +64,7 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-## 404 Not Found Error page ![featureincomplete]
+## 404 Not Found Error page ![hritikincomplete]
 - design
 - Implementation
 
