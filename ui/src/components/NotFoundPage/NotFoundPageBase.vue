@@ -24,7 +24,7 @@ export default {
 }
 #link{
     position:absolute;
-    top:500px;
+    top:250px;
     left:870px;
     
     
