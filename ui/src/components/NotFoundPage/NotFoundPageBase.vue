@@ -5,7 +5,9 @@
             <h3>THE PAGE YOU WERE LOOKING FOR DOES NOT EXIST</h3>
             <h6>YOU MAY HAVE MISTYPED THE ADDRESS OR THE PAGE MAY HAVE MOVED</h6>
             <div id=link>
+                
              <a href="http://localhost:8080/">Take me back</a> 
+             
              </div>
         </center>
     </div>
@@ -24,7 +26,7 @@ export default {
 }
 #link{
     position:absolute;
-    top:250px;
+    top:200px;
     left:870px;
     
     
