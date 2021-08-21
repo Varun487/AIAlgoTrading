@@ -100,12 +100,14 @@ export default {
 </script>
 
 <style scoped>
+h1{
+    font-size:50px;
+}
 #header{
   text-align: center;
-
   padding: 20px;
   color:black;
-  /* font-family: Poppins; */
+  font-family: Poppins;
   background-color: rgb(255, 255, 255);
 }
 #main_frame {
@@ -321,5 +323,6 @@ export default {
 	
   background-color: rgb(255, 255, 255);
 }
+
 
 </style>

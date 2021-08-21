@@ -6,10 +6,10 @@
                 <h3 class="signin-title">
                     Sign In
                 </h3>
-                <form action="#">
-                    <input type="text" name="login-username" placeholder="Username" class="login-username">
-                    <input type="password" name="login-password" placeholder="Password" class="login-password">
-                    <button>Go</button>
+                <form action="#" >
+                    <input type="text" name="login-username" placeholder="Username" class="login-username" v-mode="username">
+                    <input type="password" name="login-password" placeholder="Password" class="login-password" v-model="password">
+                    <button @click="login">Go</button>
                 </form>
                 <a href="#" class="signin-back"> ←Back</a>
             </div>
@@ -22,6 +22,28 @@
 <script>
 export default {
     name: 'LoginBase',
+    data(){
+        return{
+          username:"",
+          password:""
+        }
+    },
+    methods:{
+      login: function () {
+        let username = this.username
+        let password = this.password
+        this.$store.dispatch('login', { username, password })
+       .then(() => this.$router.push('/allstrategies'))
+       .catch(err => console.log(err))
+      },
+      
+      logout: function () {
+        this.$store.dispatch('logout')
+        .then(() => {
+          this.$router.push('/login')
+        })
+      }
+    }
 };
 </script>
 <style scoped>
