@@ -12,6 +12,8 @@ from strategies.models import TickerData
 
 from papertrader.models import PaperTrade
 from papertrader.models import PaperTradedStrategy
+from papertrader.models import CurrentQuote
+from papertrader.models import PaperSignal
 
 from backtester.models import BackTestReport
 from backtester.models import BackTestTrade
@@ -107,7 +109,17 @@ class BBPaperTradeVisualizationTestCase(TestCase):
         self.assertEquals(BBPaperTradeVisualization().paper_trade, None)
 
     def test_all_inputs(self):
-        """All inputs given as input"""
+        """All inputs given"""
+        # print(Company.objects.all())
+        # print(TickerData.objects.all())
+        # print(StrategyType.objects.all())
+        # print(StrategyConfig.objects.all())
+        # print(PaperTrade.objects.all())
+        # print(PaperTradedStrategy.objects.all())
+        # print(CurrentQuote.objects.all())
+        # print(PaperSignal.objects.all())
+        # print(PaperTrade.objects.all())
+
         self.assertEquals(BBPaperTradeVisualization(paper_trade=PaperTrade.objects.all()[0]).paper_trade,
                           PaperTrade.objects.all()[0])
 
@@ -119,7 +131,10 @@ class BBPaperTradeVisualizationTestCase(TestCase):
 
     def test_generate_visualization(self):
         """Checks if the generate_visualization method works correctly"""
+        # print(PaperTrade.objects.all()[0].trade.entry_order)
+        # print(PaperTrade.objects.all()[0].trade.exit_order)
+        # print(PaperTrade.objects.all()[0].trade.entry_order.ticker_data.time_stamp.date())
+
         self.assertEquals(type(BBPaperTradeVisualization(backtest_report=BackTestReport.objects.all()[0],
                                                          paper_trade=PaperTrade.objects.all()[0], height=6,
-                                                         width=15).get_visualization()
-                               ), str)
+                                                         width=15).get_visualization()), str)

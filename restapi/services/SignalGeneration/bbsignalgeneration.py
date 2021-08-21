@@ -3,7 +3,7 @@ from .signalgenerator import SignalGenerator
 
 class BBSignalGenerator(SignalGenerator):
     """Generates signals for BB strategy, returns empty df if no signals produced"""
-    def __init__(self, indicator=None):
+    def __init__(self, indicator=None, strategy_config=None):
         super().__init__(indicator)
 
     def generate_signals(self):

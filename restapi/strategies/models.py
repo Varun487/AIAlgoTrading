@@ -94,7 +94,17 @@ class StrategyConfig(models.Model):
     max_holding_period = models.IntegerField(blank=False, null=False)
     take_profit_factor = models.IntegerField(blank=False, null=False)
     stop_loss_factor = models.IntegerField(blank=False, null=False)
-    sigma = models.IntegerField(blank=False, null=False)
+    sigma = models.IntegerField(blank=True, null=True)
+
+    lstm_buy_threshold = models.FloatField(blank=True, null=True)
+    lstm_sell_threshold = models.FloatField(blank=True, null=True)
+    lstm_model_time_period = models.IntegerField(blank=True, null=True)
+    lstm_company = models.ForeignKey(
+        to=Company,
+        on_delete=models.CASCADE,
+        blank=True, null=True
+    )
+
     dimension = models.CharField(
         max_length=20,
         choices=STRATEGY_CONFIG_DIMENSION_CHOICES,

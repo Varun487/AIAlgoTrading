@@ -12,7 +12,6 @@ class AutomatedBacktests(object):
         self.backtest_count = 0
         self.df = None
         self.companies = list(Company.objects.all())
-        self.strategy_configs = list(StrategyConfig.objects.all())
         self.step = step
         self.msg = msg
 
@@ -23,9 +22,16 @@ class AutomatedBacktests(object):
         # Conduct backtests for each company
         for company in self.companies:
 
-            # Conduct each company conduct a backtest with all possible strategy configurations
-            for i in range(len(self.strategy_configs)):
+            company_strategy_configs = list(StrategyConfig.objects.filter(
+                                                strategy_type__name='Simple Bollinger Band Strategy'
+                                       )) + \
+                                       list(StrategyConfig.objects.filter(
+                                                strategy_type__name='LSTM Strategy',
+                                                lstm_company=company,
+                                       ))
 
+            # Conduct backtests with all possible strategy configurations for that company
+            for i in range(len(company_strategy_configs)):
                 # Getter returns a dataframe if data is present
                 # Getter returns an empty list if no data is present
                 self.df = Getter(TickerData, True, {
@@ -45,22 +51,22 @@ class AutomatedBacktests(object):
                     self.backtest_count += 1
 
                     # Output Current Status
-                    print(f"    Running Backtest: {self.backtest_count}/{len(self.companies)*len(self.strategy_configs)}"
-                          f" - {company} {self.strategy_configs[i]}")
+                    print(f"    Running Backtest: {self.backtest_count}/2000"
+                          f" - {company} {company_strategy_configs[i]}")
 
                     # Run backtest
                     BackTestReportGenerator(
                         df=self.df,
                         ticker_time_period=self.data['ticker_time_periods'][i],
-                        indicator_time_period=self.strategy_configs[i].indicator_time_period,
-                        dimension=self.strategy_configs[i].get_dimension_display(),
-                        sigma=self.strategy_configs[i].sigma,
-                        factor=self.strategy_configs[i].take_profit_factor,
-                        max_holding_period=self.strategy_configs[i].max_holding_period,
+                        indicator_time_period=company_strategy_configs[i].indicator_time_period,
+                        dimension=company_strategy_configs[i].get_dimension_display(),
+                        sigma=company_strategy_configs[i].sigma,
+                        factor=company_strategy_configs[i].take_profit_factor,
+                        max_holding_period=company_strategy_configs[i].max_holding_period,
                         company=company,
-                        strategy_type=self.strategy_configs[i].strategy_type,
+                        strategy_type=company_strategy_configs[i].strategy_type,
                         indicator=self.data['indicators'][i],
-                        strategy_config=self.strategy_configs[i],
+                        strategy_config=company_strategy_configs[i],
                         signal_generator=self.data['signal_generators'][i],
                         take_profit_stop_loss=self.data['take_profit_and_stop_losses'][i],
                         order_executor=self.data['order_executors'][i],

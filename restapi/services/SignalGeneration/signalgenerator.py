@@ -1,8 +1,8 @@
-valid_indicator_list = ["Indicator", "BollingerIndicator"]
+valid_indicator_list = ["Indicator", "BollingerIndicator", "AllIndicators"]
 
 
 class SignalGenerator(object):
-    def __init__(self, indicator=None):
+    def __init__(self, indicator=None, strategy_config=None):
         self.indicator = indicator
         self.valid_indicator = False
         self.indicator_df = None

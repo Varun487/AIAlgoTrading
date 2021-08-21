@@ -1,21 +1,12 @@
-import datetime
-import matplotlib.pyplot as plt
-import io
 import base64
+import datetime
+import io
 
-from backtester.models import BackTestTrade
-from strategies.models import TickerData
+import matplotlib.pyplot as plt
 from papertrader.models import PaperTrade
-
-from services.Visualizations.visualization import Visualization
 from services.IndicatorCalc.indicators import BollingerIndicator
-from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
-from services.OrderExecution.orderexecution import OrderExecution
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
-from services.TradeEvaluation.tradeevaluator import TradeEvaluator
-from services.Utils.getters import Getter
-
 from services.SourceData.sourcedata import SourceData
+from services.Visualizations.visualization import Visualization
 
 
 class BBPaperTradeVisualization(Visualization):
@@ -58,7 +49,7 @@ class BBPaperTradeVisualization(Visualization):
 
         # Set end date
         self.end_date = self.paper_trade.trade.entry_order.ticker_data.time_stamp + datetime.timedelta(
-            days=self.strategy_config.indicator_time_period + 10
+            days=self.strategy_config.max_holding_period + 10
         )
 
         # Source data
@@ -113,6 +104,11 @@ class BBPaperTradeVisualization(Visualization):
             signal_marker = 'v'
             signal_color = 'red'
 
+        print('signal_label', signal_label)
+        print('signal_marker', signal_marker)
+        print('signal_color', signal_color)
+        print('signal_marker_index', signal_marker_index)
+
         # Plot signal
         ax1.plot(self.df['time_stamp'], self.df['close'], label=signal_label, marker=signal_marker, color=signal_color,
                  alpha=1, markevery=signal_marker_index, markersize=15)
@@ -130,8 +126,13 @@ class BBPaperTradeVisualization(Visualization):
             if self.df['time_stamp'][i].date() == self.paper_trade.trade.entry_order.ticker_data.time_stamp.date():
                 entry_order_index = i
 
+        # print(self.df)
+        # print(self.paper_trade.trade.entry_order.ticker_data.time_stamp.date())
+        # print(entry_order_index)
+
         # Plot entry order
-        ax1.axvline(self.df['time_stamp'][entry_order_index], label="Entry Order", color='white')
+        if entry_order_index != -1:
+            ax1.axvline(self.df['time_stamp'][entry_order_index], label="Entry Order", color='white')
 
         # Get exit order index (if it exists)
         exit_order_index = -1
@@ -154,7 +155,7 @@ class BBPaperTradeVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        # plt.savefig("/home/app/restapi/services/Visualizations/test_paper_trade_visualization.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_paper_trade_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 
