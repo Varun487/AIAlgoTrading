@@ -58,13 +58,13 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-# Paper trading page ![featureincomplete]
+## Paper trading page ![featureincomplete]
 - design ![dishacomplete]
 - implementation
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-# 404 Not Found Error page ![featureincomplete]
+## 404 Not Found Error page ![featureincomplete]
 - design
 - Implementation
 
