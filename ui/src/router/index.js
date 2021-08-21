@@ -51,6 +51,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/RestApiDocs.vue"),
   },
+  {
+    path: "*",
+    name: "NotFoundPage",
+    component: () => import("../views/NotFoundPage.vue"),
+  },
 
   //<---------------------------------------Version 1 Code--------------------------------------->
 
