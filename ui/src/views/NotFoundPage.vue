@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import LoginBase from '@/components/NotFoundPage/NotFoundPageBase.vue'
+import NotFoundPageBase  from '@/components/NotFoundPage/NotFoundPageBase.vue'
 
 export default {
   name: 'NotFoundPage ',
