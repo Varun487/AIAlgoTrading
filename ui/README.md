@@ -64,6 +64,10 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
+# 404 Not Found Error page ![featureincomplete]
+- design
+- Implementation
+
 ## Automated testing
 - All strategies page
 - Strategy page
@@ -72,6 +76,7 @@
 - Login page
 - Landing page
 - Paper trading page
+- 404 Not Found error page
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

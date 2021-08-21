@@ -76,7 +76,7 @@ class LSTMPaperTradeVisualization(Visualization):
         # Adjust dataframe for graphing
         self.df = self.df.iloc[20:]
         self.df.reset_index(inplace=True)
-        print(self.df)
+        # print(self.df)
 
         # create the graph
 

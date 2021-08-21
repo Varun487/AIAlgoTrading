@@ -29,18 +29,21 @@
   - nginx ![done]
 - Make nginx serve both ui and rest api ![done]
 - Buy a domain ![done]
-- SSL certification 
-- deploy on VM 
-- See how to add domain 
-- Run paper trade script, test paper trade APIs 
-- Point domain to VM's IP Address 
-- Create a 404 error page 
-- local settings file for productions and development env 
-  - Allow admin only in development env 
-  - Change allowed hosts according to dev and prod env 
+- Run paper trade script, test paper trade APIs ![done]
+- Serve ui from static files ![done]
+- Get Django ready for production ![done]
+  - Checklist on website ![done]
+  - Check command ![done]
+  - Settings.py changes ![done]
+  - Different settings for production and development ![done]
+- SSL certification on django ![incomplete]
+  - Take care of ssl checks in django ![incomplete]
+- deploy on VM ![incomplete]
+  - Change allowed hosts ![incomplete]
+- Testing ![incomplete]
 
-## Deployment scripts ![varunincomplete]
-- Automated deployment to VM from local machine `script`
+## Deployment scripts ![varuncomplete]
+- Automated deployment to VM from local machine `firebase` ![done]
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
