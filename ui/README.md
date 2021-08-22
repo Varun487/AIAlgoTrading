@@ -64,9 +64,10 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-## 404 Not Found Error page ![hritikincomplete]
-- design
-- Implementation
+## 404 Not Found Error page ![hritikcomplete]
+- design ![hritikcomplete]
+- Implementation ![hritikcomplete]
+
 
 ## Automated testing
 - All strategies page
