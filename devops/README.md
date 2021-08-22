@@ -36,11 +36,17 @@
   - Check command ![done]
   - Settings.py changes ![done]
   - Different settings for production and development ![done]
-- SSL certification on django ![incomplete]
-  - Take care of ssl checks in django ![incomplete]
 - deploy on VM ![incomplete]
-  - Change allowed hosts ![incomplete]
-- Testing ![incomplete]
+  - Check for all data to be sent to vm not in git ![incomplete]
+    - Push db data ![done]
+    - Push Models data ![done]
+  - Install docker ![done]
+  - Install docker compose ![incomplete]
+  - Change allowed hosts variable 
+  - test 
+- SSL certification for server 
+  - Take care of ssl checks in django 
+  - Testing 
 
 ## Deployment scripts ![varuncomplete]
 - Automated deployment to VM from local machine `firebase` ![done]
