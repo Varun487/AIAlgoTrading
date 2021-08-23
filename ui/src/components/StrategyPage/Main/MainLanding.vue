@@ -8,6 +8,7 @@
         <div class="line2">
         </div>
         <!-- <div id="tab"> -->
+            
             <table class="center">
             <tr>
                 <th>Company Ticker</th>
@@ -17,12 +18,12 @@
             <br><br>
             
             <tr class="hover1"
-            v-for="report in $store.getters.getAllBacktests.slice(0, 5)"
+            v-for="(report) in $store.getters.getAllBacktests.slice(0, 5)"
       v-bind:key="report.id">
             
       <!-- <tr class="hover1" v-for="report in computedObj" :key="report.id"> -->
-                <td><a href="/backtestreport">
-                    {{ report.company_ticker }}</a></td>
+                <td v-on:click.stop="Backtest(report.id)">
+                    {{ report.company_ticker }}</td>
 
                 <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
                 <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
@@ -32,6 +33,21 @@
                 <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
                 <td class="black" v-else>{{ report.total_returns }}</td>
             </tr>
+            <br>
+            <br> <input type="search" v-model="filterInput">
+            <!-- <tr class="hover1" tr  v-for="(report1) in filteredList"
+      v-bind:key="report1.total_returns_percent">
+                <td><a href="/backtestreport">
+                    {{ report1.company_ticker }}</a></td>
+
+                <td class="red" v-if='report.total_returns_percent < 0'>{{ report1.total_returns_percent }}</td>
+                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report1.total_returns_percent }}</td>
+                <td class="black" v-else>{{ report1.total_returns_percent }}</td>
+
+                <td class="red" v-if='report.total_returns < 0'>{{ report1.total_returns }}</td>
+                <td class="green" v-else-if='report.total_returns > 0'>{{ report1.total_returns }}</td>
+                <td class="black" v-else>{{ report1.total_returns }}</td>
+            </tr> -->
             <br><br>
             
             <!-- <button @click="report in $store.getters.getAllBacktests">Show more</button> -->
@@ -47,19 +63,9 @@
                 <td>0.0</td>
             </tr> -->
             
-            
             </table>
+            
             <br><br><br><br>
-            <div class="card text-center m-3">
-        <h1 class="card-header">Vue.js Pagination Tutorial  Example</h1>
-        <div class="card-body">
-            <div v-for="item in pageOfItems" :key="item.id">
-                <p>{{item.name}}</p></div>
-        </div>
-        <div class="card-footer pb-0 pt-3">
-            <p><jw-pagination :items="exampleItems" @changePage="onChangePage" :labels="customLabels"></jw-pagination></p>
-        </div>
-    </div>
         <!-- </div> -->
     
 </div>
@@ -67,47 +73,50 @@
 </template>
 
 <script>
-const exampleItems = [...Array(150).keys()].map(i => ({ id: (i+1), name: 'Item ' + (i+1) }));
-const customLabels = {
-    first: '<<',
-    last: '>>',
-    previous: '<',
-    next: '>'
-};
 
 export default {
     name: 'MainLanding',
-//     mounted() {
-//         return {
-//     object:this.$store.dispatch("setAllBacktests",2), // your original data
-//     limit: 5 // or any number you wish to limit to
-//   }
-//     // this.$store.dispatch("setAllBacktests",2);
-//   },
-//   data(){
-//   return {
-//     object:this.$store.dispatch("setAllBacktests",2), // your original data
-//     limit: 5 // or any number you wish to limit to
-//   }
-// },
-//   computed:{
-//   computedObj(){
-//     return this.limit ? this.object.slice(0,this.limit) : this.object
-//   }
-// }
-data() {
-        return {
-            exampleItems,
-            customLabels,
-            pageOfItems: [],
-        };
-    },
     methods: {
-        onChangePage(pageOfItems) {
-            // update page of items
-            this.pageOfItems = pageOfItems;
-        }
+        Backtest(id) {
+            this.$store.dispatch("setBacktestsId", id);
+            console.log(this.$store.getters.getBacktestsId);
+            console.log(this.$store.getters.getAllBackTestMainPage);
+            this.$store.dispatch("flipAllBacktestsMainPage");
+    },
+  },
+  mounted() {
+    this.$store.dispatch("setAllBacktests");
+  },
+    data: function() {
+    return {
+      filterInput:''
     }
+  },
+//   computed: {
+//     filteredCats() {
+//       return this.$store.dispatch("setAllBacktests",2).filter(c => {
+//         if(this.filter == '') return true;
+//         return c.total_returns_percent.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0;
+//       })
+//     },
+//   },
+    computed: {
+  filteredList() {
+    const value= this.filterInput.charAt(0).toUpperCase() + this.filterInput.slice(1);
+    // const value= this.filterInput
+    
+    return this.$store.dispatch("setAllBacktests",2).filter(function(report1){
+      return (
+        report1.total_returns_percent.indexOf(value) > -1 ||
+        report1.company_ticker.indexOf(value) > -1 ||
+        report1.total_returns.indexOf(value) > -1 
+      )
+    });
+    // return this.$store.dispatch("setAllBacktests",2).filter(c => {
+    //     return c.company_ticker.toLowerCase().indexOf(value) >= 0;
+    //   });
+  }
+}
 };
 </script>
 

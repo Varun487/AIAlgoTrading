@@ -32,7 +32,11 @@ export const store = new Vuex.Store({
       timestamps: [],
     },
     selected_strategy: undefined,
-    all_backtests: undefined,
+    all_backtests: {
+      mainpage: true,
+      all_backtests: [],
+      backtestid: "",
+    },
     backtest_data:undefined,
     trade_visualization:undefined,
     trades:undefined,
@@ -64,7 +68,13 @@ export const store = new Vuex.Store({
       state.selected_strategy = payload;
     },
     setAllBacktests(state, payload) {
-      state.all_backtests = payload;
+      state.all_backtests.all_backtests = payload;
+    },
+    flipAllBacktestsMainPage(state) {
+      state.all_backtests.mainpage = !state.all_backtests.mainpage;
+    },
+    setBacktestsId(state, payload) {
+      state.all_backtests.backtestid = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
@@ -117,6 +127,9 @@ export const store = new Vuex.Store({
     flipPerStrategiesMainPage({ commit }) {
       commit("flipPerStrategiesMainPage");
     },
+    flipAllBacktestsMainPage({ commit }) {
+      commit("flipAllBacktestsMainPage");
+    },
     async setBacktestReportdata(state,id) {
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
@@ -159,7 +172,7 @@ export const store = new Vuex.Store({
       */
      const res = await axios.get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/", {
        headers: {
-         'Authorization': 'Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+         'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
        }
      });
      state.commit("setAllStrategies", res.data)
@@ -167,7 +180,7 @@ export const store = new Vuex.Store({
     async setSelectedStrategy(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}`,{
         headers: {
-          'Authorization': 'Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+          'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
         }
       });
       state.commit("setSelectedStrategy", res.data)
@@ -175,7 +188,7 @@ export const store = new Vuex.Store({
     async setAllBacktests(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktests/${id}`,{
         headers: {
-          'Authorization': 'Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+          'Authorization': 'Token 337db84a329e2d65f3426fe577ddb72332d14f51'
         }
       });
       state.commit("setAllBacktests", res.data)
@@ -185,6 +198,9 @@ export const store = new Vuex.Store({
     },
     setStrategyId({ commit }, payload) {
       commit("setStrategyId", payload);
+    },
+    setBacktestsId({ commit }, payload) {
+      commit("setBacktestsId", payload);
     },
     setselected_strategyId({ commit }, payload) {
       commit("setselected_strategyId", payload);
@@ -232,7 +248,7 @@ export const store = new Vuex.Store({
     getSideNavToggle: (state) => state.sidenavtoggle,
     getPapertradeMain: (state) => state.papertrademain,
     getPapertradeReports: (state) => state.papertradereports,
-    getBacktestsMainPage: (state) => state.backtests.mainpage,
+    // getBacktestsMainPage: (state) => state.backtests.mainpage,
     getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
     getBacktestsReports: (state) => state.backtests.reports,
     getBacktestId: (state) => state.backtests.backtestid,
@@ -246,7 +262,9 @@ export const store = new Vuex.Store({
     getStrategyId: (state) => state.allstrategy.strategyid,
     getAllStrategiesMainPage: (state) => state.allstrategy.mainpage,
     getSelectedStrategy: (state) => state.selected_strategy,
-    getAllBacktests: (state) => state.all_backtests,
+    getAllBacktests: (state) => state.all_backtests.all_backtests,
+    getBacktestsId: (state) => state.all_backtests.backtestid,
+    getAllBackTestMainPage: (state) => state.all_backtests.mainpage,
     getTradeVisualization: (state)=> state.trade_visualization,
     getTrades: (state)=> state.trades,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
