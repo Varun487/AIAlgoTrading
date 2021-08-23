@@ -1,6 +1,6 @@
 # REST API v0.1.0
 
-![componentincomplete]
+![componentcomplete]
 
 - Contains the business logic of the project
 
@@ -99,21 +99,26 @@
     - Signals ![done]
     - Per trade ![done]
   - Paper Trade Visualization Per Paper Trade (Live and Historical) ![done]
-- Initialization ![varunincomplete]
+- Initialization ![varuncomplete]
   - Initialize schema in Django ![done]
-  - Create custom django admin command
-  - Clean up all previous data in DB 
-  - Add all Nifty 50 companies info 
-  - Add all Nifty 50 companies data from Yahoo Finance 
-  - Add indicator type for BB 
-  - Add strategy type for BB 
-  - Add all different strategy configs 
-  - Add visualization types 
-  - Run all backtests on data 
-  - Add all paper traded live strategies
-  - Run paper trade synchronization service
-  - Run initialization script with custom django admin command
-- Make cron run each week day at 10 pm IST ![bug]
+  - Create custom django admin command ![done]
+  - Clean up all previous data in DB ![done]
+  - Add all Nifty 50 companies info ![done]
+  - Add all Nifty 50 companies data from Yahoo Finance ![done]
+  - Add indicator type for BB ![done]
+  - Add strategy type for BB ![done]
+  - Add all different strategy configs ![done]
+  - Add visualization types ![done]
+  - Run all backtests on data ![done]
+  - Add all paper traded live strategies ![done]
+  - Run paper trade synchronization service ![done]
+  - Add user and super user ![done]
+  - Run initialization script with custom django admin command![done]
+- Make cron run each week day at 10 pm IST ![bugfixed]
+  - Is cron running? `YES`
+  - Check Server timezone `localtime = IST`
+  - Make it run at 10 pm IST `OK`
+- Order executed on next day regardless of whether it is a trading day ![bugfixed]
 
 ## REST API endpoints
 - `POST` Authorization ![varuncomplete]
@@ -158,30 +163,46 @@
 
 # Strategies 
 - Demo 1 - Simple bollinger band strategy ![varuncomplete]
-- Demo 2 - LSTM predictions strategy ![varunincomplete]
-- Custom Strategy 1 ![varunincomplete]
+- Demo 2 - LSTM predictions strategy ![varuncomplete]
+  - Design ![done]
+    - LSTM models predict returns, based on these, buy/sell signals are generated ![done]
+  - Build a test model ![done]
+  - Generate all models ![done]
+  - Create predictions service ![done]
+  - Strategy ![done]
+    - Decide backtest config parameters ![done]
+    - Decide rules ![done]
+    - Change DB tables, migrate ![done]
+    - Code LSTM Strategy logic ![done]
+  - Conduct test backtests ![done]
+  - Re-Initialization after LSTM Strategy completion ![varuncomplete]
+    - Initialize DB with basic info ![done]
+    - Run Automated Backtests ![done]
+    - Run paper trading algorithm ![done]
+      - Add logging ![done]
+      - Fix Company quotes ![done]
+      - Fix Paper signal generator ![done]
+      - Fix Paper trade evaluator ![done]
+      - Fix Paper Signal executor ![done]
+  - INITIALIZE DB ![varuncomplete]
+  - Test all paper trade apis ![varuncomplete]
+  - LSTM Visualizations ![varuncomplete]
+    - Backtest Signals ![done]
+    - Backtest Trade ![done]
+    - Paper Trade ![done]
+  - TEST ALL VISUALIZATIONS ![varuncomplete]
+    - BB Signal ![done]
+    - BB Trade ![done]
+    - BB Paper Trade ![done]
+    - LSTM Signal ![done]
+    - LSTM Trade ![done]
+    - LSTM Paper Trade ![done]
+  - Re-initialize paper trading signals ![varuncomplete]
 
-## Automated testing ![varunincomplete]
+## Automated testing ![varuncomplete]
 ###### Using unit tests in-built in django - each class created must have unit tests which cover all test cases of a class
-- restapi
-  - Auth apis
-    - `POST` Authorization
-  - Strategy apis
-    - `GET` All Strategies
-    - `GET` Strategy data
-  - Backtest apis
-    - `GET` All backtests of a strategy
-    - `GET` Backtest data
-    - `GET` All Backtest trades
-    - `GET` Trade data
-    - `GET` Backtest Signals Visualization
-    - `GET` Backtest Trade visualization
-  - Paper Trade apis
-    - `GET` All Paper Trades
-    - `GET` Paper Trade data
-    - `GET` Current Quote
-    - `GET` Paper Trade Visualization
-- services
+- restapi endpoints `Manual testing` ![done]
+- services ![done]
   - Utils ![done]
     - Converters ![done]
     - Pushers ![done]
@@ -196,18 +217,17 @@
     - Order Execution ![done]
   - Trade evaluation ![done]
   - Backtest Report Generation ![done]
-  - Generate Visualization 
+  - Generate Visualization ![done]
     - Generic visualization ![done]
     - Signals visualization ![done]
     - Per trade visualization ![done]
-    - Paper trade visualization
+    - Paper trade visualization ![done]
   - Source Data ![done]
   - Update Company Quotes ![done]
   - Evaluate Live Paper Trades ![done]
   - Execute Live Paper Signals ![done]
   - Generate Paper Signals ![done]
   - Paper Trade Synchronization ![done]
-  - cron job execution
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

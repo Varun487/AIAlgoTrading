@@ -29,7 +29,9 @@ export default {
 </script>
 
 <style scoped>
-
+.topbanner-container {
+    margin-top:80px;
+}
 .topbanner-title {
     position: absolute;
     width: 344px;

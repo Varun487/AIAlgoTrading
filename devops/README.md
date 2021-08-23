@@ -25,17 +25,31 @@
 - Containers ![done]
   - db ![done]
   - rest api ![done]
-  - ui 
-  - nginx 
-- Make nginx serve both ui and rest api 
+  - ui ![done]
+  - nginx ![done]
+- Make nginx serve both ui and rest api ![done]
 - Buy a domain ![done]
-- Make changes to run django in a production environment 
-- SSL certification
-- deploy on VM
-- See how to add domain
+- Run paper trade script, test paper trade APIs ![done]
+- Serve ui from static files ![done]
+- Get Django ready for production ![done]
+  - Checklist on website ![done]
+  - Check command ![done]
+  - Settings.py changes ![done]
+  - Different settings for production and development ![done]
+- deploy on VM ![incomplete]
+  - Check for all data to be sent to vm not in git ![incomplete]
+    - Push db data ![done]
+    - Push Models data ![done]
+  - Install docker ![done]
+  - Install docker compose ![incomplete]
+  - Change allowed hosts variable 
+  - test 
+- SSL certification for server 
+  - Take care of ssl checks in django 
+  - Testing 
 
-## Deployment scripts ![varunincomplete]
-- Automated deployment to VM from local machine `script`
+## Deployment scripts ![varuncomplete]
+- Automated deployment to VM from local machine `firebase` ![done]
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

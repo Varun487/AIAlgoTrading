@@ -40,6 +40,13 @@ export const store = new Vuex.Store({
     backtest_data:undefined,
     trade_visualization:undefined,
     trades:undefined,
+    i:0,
+    status: '',
+    token: localStorage.getItem('token') || '',
+    user : {
+
+    },
+    
   },
   mutations: {
     flipSideNavToggle(state) {
@@ -113,6 +120,27 @@ export const store = new Vuex.Store({
     setTrades(state,payload){
       state.trades=payload;
     },
+    // incrementRows(state,payload){
+    //   state.i+=payload;
+      
+    // },
+    auth_request(state){
+      state.status = 'loading'
+    },
+    auth_success(state, token, user){
+      state.status = 'success'
+      state.token = token
+      state.user = user
+    },
+    auth_error(state){
+      state.status = 'error'
+    },
+    logout(state){
+      state.status = ''
+      state.token = ''
+    },
+
+    
   },
   actions: {
     flipSideNavToggle({ commit }) {
@@ -243,6 +271,37 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setPapertradeReports", res.data))
         .catch((err) => console.log(err));
     },
+    // incrementRows(state,payload){
+    //   state.commit("incrementRows",payload)
+    // },
+    login({commit}, user){
+      return new Promise((resolve, reject) => {
+        commit('auth_request')
+        axios
+        .get({url: process.env.VUE_APP_BASE_URL + "api/auth/token/login/", data: user})
+        .then(resp => {
+          const token = resp.data.token
+          const user = resp.data.user
+          localStorage.setItem('token', token)
+          axios.defaults.headers.common['Authorization'] = token
+          commit('auth_success', token, user)
+          resolve(resp)
+        })
+        .catch(err => {
+          commit('auth_error')
+          localStorage.removeItem('token')
+          reject(err)
+        })
+      })
+  },
+  logout({commit}){
+    return new Promise((resolve) => {
+      commit('logout')
+      localStorage.removeItem('token')
+      delete axios.defaults.headers.common['Authorization']
+      resolve()
+    })
+  }
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
@@ -267,6 +326,9 @@ export const store = new Vuex.Store({
     getAllBackTestMainPage: (state) => state.all_backtests.mainpage,
     getTradeVisualization: (state)=> state.trade_visualization,
     getTrades: (state)=> state.trades,
+    // getincrementRows: (state)=> state.i,
+    isLoggedIn: (state) => !!state.token,
+    authStatus: (state) => state.status,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },
 });

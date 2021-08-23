@@ -34,7 +34,6 @@ class BBSignalVisualization(Visualization):
         # Get all trades corresponding to backtest report
         backtest_trades = list(BackTestTrade.objects.filter(back_test_report=self.backtest_report))
 
-
         # Get signals df
         df = BBSignalGenerator(
             indicator=BollingerIndicator(
@@ -99,7 +98,7 @@ class BBSignalVisualization(Visualization):
         ax1.legend()
         fig.tight_layout()
 
-        # plt.savefig("/home/app/restapi/services/Visualizations/test_signals_visualization.png", dpi=100)
+        # plt.savefig("/home/app/restapi/services/Visualizations/bb_visualizations/test_bb_signal_visualization_image.png", dpi=100)
 
         pic_io_bytes = io.BytesIO()
 

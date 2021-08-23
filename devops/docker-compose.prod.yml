@@ -17,6 +17,12 @@ services:
     build: ../restapi
     environment:
       - API_KEY=9IJF3E893E4E2Q2M
+      - SECRET_KEY=m(5+#i$uv7y%n9ey!r+mp@jjn(@7*s4*c23er9@&lbiz#55=6a
+      - DEBUG=False
+      - ALLOWED_HOSTS=localhost
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     command: bash -c "python3 manage.py makemigrations backtester
       && python3 manage.py makemigrations strategies
       && python3 manage.py migrate
@@ -29,18 +35,6 @@ services:
       - 8000
     depends_on:
       - db
-
-  ui:
-    build: ../ui
-    command: bash -c "npm install
-      && npm run serve
-      "
-    volumes:
-      - ../ui:/home/app/ui
-    expose:
-      - 8080
-    depends_on:
-      - restapi
 
   server:
     build: ./nginx

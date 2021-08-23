@@ -14,6 +14,7 @@ from .serializers import ExamplePaperTraderSerializer, AllPaperTradesSerializer,
     CompanyQuoteSerializer
 
 from services.Visualizations.bb_visualizations.bb_paper_trade_visualization import BBPaperTradeVisualization
+from services.Visualizations.lstm_visualizations.lstm_paper_trade_visualization import LSTMPaperTradeVisualization
 
 
 @api_view(['GET', ])
@@ -55,7 +56,7 @@ def api_get_papertrade_data(req, papertrade_id):
 def api_get_company_quote(req, papertrade_id):
     try:
         current_quote = CurrentQuote.objects.get(
-            company=PaperTrade.objects.get(id=papertrade_id).trade.exit_order.ticker_data.company
+            company=PaperTrade.objects.get(id=papertrade_id).trade.entry_order.ticker_data.company
         )
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
@@ -66,13 +67,14 @@ def api_get_company_quote(req, papertrade_id):
 @api_view(['GET', ])
 def api_get_paper_trade_visualization(req, papertrade_id):
     try:
+
         paper_trade = PaperTrade.objects.get(id=papertrade_id)
         # print(paper_trade)
 
-        visualization = None
-
         if paper_trade.paper_traded_strategy.strategy_config.strategy_type.name == "Simple Bollinger Band Strategy":
             visualization = BBPaperTradeVisualization
+        else:
+            visualization = LSTMPaperTradeVisualization
 
         # set height if present
         try:

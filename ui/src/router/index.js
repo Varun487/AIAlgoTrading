@@ -10,28 +10,12 @@ const routes = [
     component: () => import("../views/LandingPage.vue"),
   },
   {
-    path: "/apidocs",
-    name: "APIDocs",
+    path: "/login",
+    name: "Login",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("../views/RestApiDocs.vue"),
-  },
-  {
-    path: "/backtest",
-    name: "Backtest",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import("../views/Backtest.vue"),
-  },
-  {
-    path: '/strategies',
-      name: 'Strategies',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Strategies.vue')
+    component: () => import("../views/Login.vue"),
   },
   {
     path: '/allstrategies',
@@ -40,22 +24,6 @@ const routes = [
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AllStrategies.vue')
-  },
-  {
-    path: '/papertrader',
-      name: 'Papertrader',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/Papertrader.vue')
-  },
-  {
-    path: "/login",
-    name: "Login",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import("../views/Login.vue"),
   },
   {
     path: "/strategy",
@@ -74,6 +42,46 @@ const routes = [
     path: "/papertrades",
     name: "Papertrades",
     component: () => import("../views/Papertrades.vue"),
+  },
+  {
+    path: "/apidocs",
+    name: "APIDocs",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/RestApiDocs.vue"),
+  },
+  {
+    path: "*",
+    name: "NotFoundPage",
+    component: () => import("../views/NotFoundPage.vue"),
+  },
+
+  //<---------------------------------------Version 1 Code--------------------------------------->
+
+  {
+    path: '/strategiesv1',
+      name: 'Strategies',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/Strategies.vue')
+  },
+  {
+    path: "/backtestv1",
+    name: "Backtest",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/Backtest.vue"),
+  },
+  {
+    path: '/papertraderv1',
+      name: 'Papertrader',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/Papertrader.vue')
   },
 ]
 

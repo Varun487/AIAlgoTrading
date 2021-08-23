@@ -6,6 +6,9 @@ from rest_framework.response import Response
 
 from services.Visualizations.bb_visualizations.bb_signal_visualization import BBSignalVisualization
 from services.Visualizations.bb_visualizations.bb_trade_visualization import BBTradeVisualization
+from services.Visualizations.lstm_visualizations.lstm_signal_visualization import LSTMSignalVisualization
+from services.Visualizations.lstm_visualizations.lstm_trade_visualization import LSTMTradeVisualization
+
 from strategies.models import StrategyType
 
 from .models import ExampleBackTesterModel, BackTestReport, BackTestTrade
@@ -69,10 +72,10 @@ def api_get_backtest_signal_visualization(req, backtest_id):
     try:
         backtest_report = BackTestReport.objects.get(id=backtest_id)
 
-        visualization = None
-
         if backtest_report.strategy_type.name == "Simple Bollinger Band Strategy":
             visualization = BBSignalVisualization
+        else:
+            visualization = LSTMSignalVisualization
 
         # set height if present
         try:
@@ -105,6 +108,8 @@ def api_get_backtest_trade_visualization(req, backtest_trade_id):
 
         if bt_trade.back_test_report.strategy_type.name == "Simple Bollinger Band Strategy":
             visualization = BBTradeVisualization
+        else:
+            visualization = LSTMTradeVisualization
 
         # set height if present
         try:

@@ -10,12 +10,22 @@ from strategies.models import TickerData, Signal
 from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
 from services.SourceData.sourcedata import SourceData
 from services.IndicatorCalc.indicators import BollingerIndicator
-
 from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
+from services.SignalGeneration.lstmsignalgenerator import LSTMSignalGenerator
+from services.IndicatorCalc.indicators import AllIndicators
 
-all_strategies = {"Simple Bollinger Band Strategy": BBSignalGenerator}
-all_indicators = {"Simple Bollinger Band Strategy": BollingerIndicator}
-all_take_profit_stop_loss_methods = {"Simple Bollinger Band Strategy": TakeProfitAndStopLossBB}
+all_strategies = {
+    "Simple Bollinger Band Strategy": BBSignalGenerator,
+    'LSTM Strategy': LSTMSignalGenerator
+}
+all_indicators = {
+    "Simple Bollinger Band Strategy": BollingerIndicator,
+    'LSTM Strategy': AllIndicators
+}
+all_take_profit_stop_loss_methods = {
+    "Simple Bollinger Band Strategy": TakeProfitAndStopLossBB,
+    'LSTM Strategy': TakeProfitAndStopLossBB
+}
 
 
 class PaperSignalGenerator(object):
@@ -48,15 +58,16 @@ class PaperSignalGenerator(object):
         # Set start date and end date according to indicator time period
         if self.end_date is None:
             self.end_date = datetime.datetime.now()
-        self.start_date = datetime.datetime.now() - datetime.timedelta(
-            days=self.strategy_config.indicator_time_period + 5)
+        
+        self.start_date = self.end_date - datetime.timedelta(
+            days=self.strategy_config.indicator_time_period + 40)
 
         # Source data
         self.df = SourceData(company=self.company, start_date=self.start_date, end_date=self.end_date).get_df()
 
         # Modify df
         self.df.reset_index(inplace=True)
-        self.df.drop(['Adj Close'], axis=1, inplace=True)
+        # self.df.drop(['Adj Close'], axis=1, inplace=True)
         self.df.rename(columns={'Close': 'close', 'Open': 'open', 'High': 'high', 'Low': 'low', 'Date': 'time_stamp',
                                 'Volume': 'volume'},
                        inplace=True)
@@ -67,8 +78,9 @@ class PaperSignalGenerator(object):
                 df=self.df,
                 dimension=self.strategy_config.get_dimension_display(),
                 time_period=self.strategy_config.indicator_time_period,
-                sigma=self.strategy_config.sigma
-            )
+                sigma=self.strategy_config.sigma,
+            ),
+            strategy_config=self.strategy_config,
         ).get_signals()
 
         if not self.df.empty:
@@ -155,6 +167,9 @@ class PaperSignalGenerator(object):
         # Get all live traded strategies
         live_traded_strategies = list(PaperTradedStrategy.objects.filter(live=True))
 
+        total = len(live_traded_strategies)
+        count = 0
+
         for strategy in live_traded_strategies:
             # Set paper traded strategy
             self.paper_traded_strategy = strategy
@@ -179,3 +194,6 @@ class PaperSignalGenerator(object):
 
             # Push signals and paper signals to DB if not FLAT
             self.push_paper_signal()
+
+            count += 1
+            print(f"Paper Signals generated for {count}/{total} - {strategy}")

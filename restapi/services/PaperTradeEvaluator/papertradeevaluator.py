@@ -79,6 +79,9 @@ class PaperTradeEvaluator(object):
         # Get all live paper trades
         live_paper_trades = list(PaperTrade.objects.filter(live=True))
 
+        total = len(live_paper_trades)
+        count = 0
+
         for paper_trade in live_paper_trades:
 
             # Set paper trade
@@ -104,3 +107,6 @@ class PaperTradeEvaluator(object):
 
             # Exit trade (if required)
             self.exit_trade()
+
+            count += 1
+            print(f"Paper Trade evaluated for {count}/{total} - {paper_trade}")

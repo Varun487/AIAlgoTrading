@@ -1,344 +1,369 @@
-from django.utils.timezone import make_aware
-from pandas_datareader import data as pdr
-import yfinance as yf
-import pandas as pd
+import time
 
-# Override default pandas data reader downloader
-yf.pdr_override()
-
-print()
-print("INITIALIZING DB")
-
-#################### SETUP STANDALONE DJANGO APP ####################
-print()
-print("----------STEP 1----------")
-print()
-
-from django import setup
-from django.conf import settings
-
-import sys
-
-sys.path.append('/home/app/restapi/')
-
-from restapi import restapi_settings_defaults
-
-# Configuring settings to run a stand alone django application
-settings.configure(restapi_settings_defaults)
-
-# To initialize the new app
-setup()
-
-# Get all required models
-from strategies.models import Company
-from strategies.models import TickerData
-from strategies.models import IndicatorType
-from strategies.models import StrategyType
-from strategies.models import StrategyConfig
-from strategies.models import Signal
-from strategies.models import Order
-from strategies.models import Trade
-from strategies.models import VisualizationType
-from backtester.models import BackTestReport
-from backtester.models import BackTestTrade
-
-print("Set up Stand Alone Django App")
-
-#################### CLEAN UP ALL PREVIOUS DATA IN DB ####################
-print()
-print("----------STEP 2----------")
-print()
-
-
-def delete_table_data(table_obj):
-    table_obj.objects.all().delete()
-
-
-all_tables = [
-    BackTestTrade,
-    BackTestReport,
-    VisualizationType,
-    Trade,
-    Order,
-    Signal,
-    StrategyConfig,
-    StrategyType,
-    IndicatorType,
-    TickerData,
-    Company,
-]
-
-for table in all_tables:
-    delete_table_data(table)
-
-print("Removed all previous data in DB")
-
-##################### SETUP COMPANY TABLE IN DB ####################
-print()
-print("----------STEP 3----------")
-print()
-
-# get all nifty 50 companies
-nifty_companies = pd.read_csv('/home/app/restapi/services/Initialization/nifty50list.csv')
-
-# iterate through all companies and insert them into database
-for company in range(len(nifty_companies)):
-    # extract data for each company
-    company_name = nifty_companies['Company Name'][company] + " NSE"
-    company_ticker = nifty_companies['Symbol'][company] + ".NS"
-    company_description = f"Industry: {nifty_companies['Industry'][company]} " \
-                          f"Series: {nifty_companies['Series'][company]} " \
-                          f"ISIN Code: {nifty_companies['ISIN Code'][company]}"
-
-    # insert company data to db
-    Company(name=company_name, ticker=company_ticker, description=company_description).save()
-
-print("Added companies to DB")
-
-#################### SOURCE DATA FROM YAHOO FINANCE AND PUSH TO DB ####################
-print()
-print("----------STEP 4----------")
-print()
-
-print("Sourcing ticker data...")
-print()
-
-# iterate through all companies
-for ticker in range(len(nifty_companies)):
-    print(f"Company {ticker + 1}/50")
-    print(f"Sourcing data for: {nifty_companies['Symbol'][ticker] + '.NS'}")
-    print()
-
-    # source data for these companies from Yahoo finance from 2017-01-01 to 2020-12-31
-    sourced_data = pdr.get_data_yahoo(nifty_companies['Symbol'][ticker] + '.NS', start='2017-01-01',
-                                      end='2020-12-30')
-
-    for ticker_data in range(len(sourced_data)):
-        # extract company data
-        ticker_open_price = sourced_data['Open'][ticker_data]
-        ticker_high_price = sourced_data['High'][ticker_data]
-        ticker_low_price = sourced_data['Low'][ticker_data]
-        ticker_close_price = sourced_data['Close'][ticker_data]
-        ticker_volume = sourced_data['Volume'][ticker_data]
-        ticker_time_stamp = sourced_data.index[ticker_data]
-        ticker_time_stamp = make_aware(ticker_time_stamp)
-        ticker_company = Company.objects.get(ticker=nifty_companies['Symbol'][ticker] + '.NS')
-        ticker_time_period = "1"
-
-        # push data to db
-        TickerData(
-            open=ticker_open_price,
-            high=ticker_high_price,
-            low=ticker_low_price,
-            close=ticker_close_price,
-            volume=ticker_volume,
-            time_stamp=ticker_time_stamp,
-            company=ticker_company,
-            time_period=ticker_time_period,
-        ).save()
-
-    if ticker == 2:
-        break
-
-print("Sourced ticker data from Yahoo! Finance and pushed to DB")
-
-# #################### ADD INDICATOR TYPES TO DB ####################
-print()
-print("----------STEP 5----------")
-print()
-
-indicator_names = ['Bollinger Bands Indicator']
-indicator_description = [
-    'The indicator used for the Simple Bollinger bands strategy. Calculates the Simple Moving Average and n standard deviations above and below the simple moving average',
-]
-
-for indicator in range(len(indicator_names)):
-    IndicatorType(name=indicator_names[indicator], description=indicator_description[indicator]).save()
-
-print("Added indicator types to DB")
-
-#################### ADD STRATEGY TYPES TO DB ####################
-print()
-print("----------STEP 6----------")
-print()
-
-strategy_names = [
-    'Simple Bollinger Band Strategy',
-]
-strategy_descriptions = [
-    'This strategy uses the Bollinger Bands indicator to generate signals.',
-]
-strategy_stock_selections = [
-    'All Stocks / Crypto / Forex / Commodities applicable.',
-]
-strategy_entry_criterias = [
-    'BUY signal if stock price < n std. dev below SMA. SELL signal if stock price > n std. dev above SMA.',
-]
-strategy_exit_criterias = [
-    'If stock held for the max holding period or price crosses take profit or stop loss limits.',
-]
-strategy_stop_loss_methods = [
-    '((close price of previous candlestick - current close price) * factor) is added or subtracted from current close price',
-]
-strategy_take_profit_methods = [
-    '((close price of previous candlestick - current close price) * factor) is added or subtracted from current close price',
-]
-
-for strategy_type in range(len(strategy_names)):
-    StrategyType(
-        name=strategy_names[strategy_type],
-        description=strategy_descriptions[strategy_type],
-        stock_selection=strategy_stock_selections[strategy_type],
-        entry_criteria=strategy_entry_criterias[strategy_type],
-        exit_criteria=strategy_exit_criterias[strategy_type],
-        stop_loss_method=strategy_stop_loss_methods[strategy_type],
-        take_profit_method=strategy_take_profit_methods[strategy_type],
-    ).save()
-
-print("Added strategy types to DB")
-
-#################### ADD STRATEGY CONFIGS TO DB ####################
-print()
-print("----------STEP 7----------")
-print()
-
-strategy_types = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-indicator_time_periods = [5, 5, 5, 10, 10, 10, 15, 20, 20, 20]
-max_holding_periods = [5, 5, 5, 7, 7, 7, 14, 14, 14, 21]
-take_profit_factors = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
-stop_loss_factors = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
-sigmas = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
-dimensions = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2]
-
-for strategy_config in range(len(strategy_types)):
-    strategy_type = StrategyType.objects.get(name=strategy_names[strategy_types[strategy_config]])
-    StrategyConfig(
-        strategy_type=strategy_type,
-        indicator_time_period=indicator_time_periods[strategy_config],
-        max_holding_period=max_holding_periods[strategy_config],
-        take_profit_factor=take_profit_factors[strategy_config],
-        stop_loss_factor=stop_loss_factors[strategy_config],
-        sigma=sigmas[strategy_config],
-        dimension=dimensions[strategy_config],
-    ).save()
-
-print("Added strategy configs to DB")
-
-# #################### ADD VISUALIZATION TYPES TO DB ####################
-print()
-print("----------STEP 8----------")
-print()
-
-visualization_names = [
-    "SIGNALS",
-    "ORDERS",
-    "PER TRADE",
-]
-visualization_descriptions = [
-    "Contains Company data, Indicators and Signals generated in the backtest",
-    "Contains Company data, Indicators and Orders generated in the backtest",
-    "Contains Company data, Indicators, Signals, Entry orders and Exit orders generated in the backtest",
-]
-
-for visualization in range(len(visualization_names)):
-    VisualizationType(
-        name=visualization_names[visualization],
-        description=visualization_descriptions[visualization],
-    ).save()
-
-print("Added Visualization Types to DB")
-
-#################### RUN BACKTESTS ####################
-print()
-print("----------STEP 9----------")
-print()
-
-from services.BackTestReportGeneration.backtestreportgenerator import BackTestReportGenerator
-from services.Utils.getters import Getter
+# Get all services required
 from services.IndicatorCalc.indicators import BollingerIndicator
-from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
+from services.Initialization.add_companies import AddCompanies
+from services.Initialization.add_companies_data import AddCompaniesData
+from services.Initialization.add_db_object import AddDBObject
+from services.Initialization.automated_backtests import AutomatedBacktests
+from services.Initialization.clean_database import CleanDatabase
 from services.OrderExecution.calctakeprofitstoploss import TakeProfitAndStopLossBB
 from services.OrderExecution.orderexecution import OrderExecution
+from services.PaperTradeSynchronizer.papertradesynchronizer import PaperTradeSynchronizer
+from services.SignalGeneration.bbsignalgeneration import BBSignalGenerator
 from services.TradeEvaluation.tradeevaluator import TradeEvaluator
 
-print("Running backtests...")
+# Get all models required
+from strategies.models import Company
+from strategies.models import ExampleStrategiesModel
+from strategies.models import IndicatorType
+from strategies.models import StrategyConfig
+from strategies.models import StrategyType
+from strategies.models import VisualizationType
 
-backtest_date_ranges = [
-    ['2017-01-01 00:00:00+00:00', '2020-12-30 00:00:00+00:00']
-    for i in range(10)
-]
-backtest_strategy_types = [
-    StrategyType.objects.get(name='Simple Bollinger Band Strategy')
-    for i in range(10)
-]
-backtest_ticker_time_periods = [
-    "1"
-    for i in range(10)
-]
-backtest_dimensions = ["close", "open", "high", "low", "close", "open", "high", "low", "close", "close"]
-backtest_indicators = [
-    BollingerIndicator
-    for i in range(10)
-]
-backtest_signal_generators = [
-    BBSignalGenerator
-    for i in range(10)
-]
-backtest_strategy_configs = list(StrategyConfig.objects.all())
-backtest_take_profit_and_stop_losses = [
-    TakeProfitAndStopLossBB
-    for i in range(10)
-]
-backtest_order_executors = [
-    OrderExecution
-    for i in range(10)
-]
-backtest_trade_evaluators = [
-    TradeEvaluator
-    for i in range(10)
-]
+from django.contrib.auth.models import User
 
-backtest_count = 0
+from backtester.models import ExampleBackTesterModel
 
-# Conduct backtests for each company
-for company in Company.objects.all():
+from papertrader.models import ExamplePaperTraderModel
+from papertrader.models import PaperTradedStrategy
 
-    # 10 backtests per company
-    for i in range(10):
-        df = Getter(TickerData, True, {
-            "company": company,
-            "time_stamp__range": backtest_date_ranges[i],
-        }).get_data()
-        if type(df) != list:
-            df.drop(['id', 'company_id', 'time_period'], axis=1, inplace=True)
-            df.set_index('time_stamp', inplace=True)
-            df.reset_index(inplace=True)
-            # print(df)
-            backtest_count += 1
-            print(f"Backtest: {backtest_count}/500 - {company} {backtest_strategy_configs[i]}")
-            BackTestReportGenerator(
-                df=df,
-                ticker_time_period=backtest_ticker_time_periods[i],
-                indicator_time_period=indicator_time_periods[i],
-                dimension=backtest_dimensions[i],
-                sigma=sigmas[i],
-                factor=take_profit_factors[i],
-                max_holding_period=max_holding_periods[i],
-                company=company,
-                strategy_type=backtest_strategy_types[i],
-                indicator=backtest_indicators[i],
-                strategy_config=backtest_strategy_configs[i],
-                signal_generator=BBSignalGenerator,
-                take_profit_stop_loss=backtest_take_profit_and_stop_losses[i],
-                order_executor=backtest_order_executors[i],
-                trade_evaluator=backtest_trade_evaluators[i]
-            ).generate_backtest_report()
+# EXAMPLE STRATEGIES DATA
+example_strategies_data = {
+    'name': [
+        'hello-strategies'
+    ]
+}
 
-print("Ran all backtests")
+# INDICATOR TYPES DATA
+indicator_types_data = {
+    'name': [
+        'Bollinger Bands Indicator',
+        'All Indicators',
+    ],
+    'description': [
+        'The indicator is used for the Simple Bollinger bands strategy. Calculates the Simple Moving Average and n '
+        'standard deviations above and below the simple moving average',
+        'The indicator is used for the LSTM strategy. Calculates all indicators provided by ta module with default '
+        'values',
+    ]
+}
 
-#################### INTIALIZATION COMPLETE ####################
-print()
-print("--------------------------")
-print()
-print("DB INITIALIZATION COMPLETE")
-print()
+# STRATEGY TYPES DATA
+strategy_types_data = {
+    'name': [
+        'Simple Bollinger Band Strategy',
+        'LSTM Strategy',
+    ],
+    'description': [
+        'This strategy uses the Bollinger Bands indicator to generate signals.',
+        'This strategy uses the predictions from a custom built LSTM model to generate signals.',
+    ],
+    'stock_selection': [
+        'All Stocks / Crypto / Forex / Commodities applicable.',
+        'Only NIFTY 50 Stocks applicable.',
+    ],
+    'entry_criteria': [
+        'BUY signal if stock price < n std. dev below SMA. SELL signal if stock price > n std. dev above SMA.',
+        'BUY signal if the predicted price percentage increase > BUY threshold. '
+        'SELL signal if the if the predicted price percentage decrease < SELL threshold.',
+    ],
+    'exit_criteria': [
+        'If stock held for the max holding period or price crosses take profit or stop loss limits.',
+        'If stock held for the max holding period or price crosses take profit or stop loss limits.',
+    ],
+    'stop_loss_method': [
+        '((close price of previous candlestick - current close price) * factor) is added or subtracted from current '
+        'close price',
+        '((close price of previous candlestick - current close price) * factor) is added or subtracted from current '
+        'close price',
+    ],
+    'take_profit_method': [
+        '((close price of previous candlestick - current close price) * factor) is added or subtracted from current '
+        'close price',
+        '((close price of previous candlestick - current close price) * factor) is added or subtracted from current '
+        'close price',
+    ],
+}
+
+# BB STRATEGY CONFIGS DATA
+bb_strategy_configs_data = {
+    'indicator_time_period': [item for sublist in
+                              [[5 for i in range(5)] +
+                               [10 for i in range(5)] +
+                               [15 for i in range(5)] +
+                               [25 for i in range(5)]]
+                              for item in sublist],
+    'max_holding_period': [item for sublist in [[5, 7, 10, 14, 21] for i in range(4)] for item in sublist],
+    'take_profit_factor': [item for sublist in [[1, 2] for i in range(10)] for item in sublist],
+    'stop_loss_factor': [item for sublist in [[1, 2] for i in range(10)] for item in sublist],
+    'sigma': [item for sublist in [[1, 2] for i in range(10)] for item in sublist],
+    'dimension': [item for sublist in [[1, 2, 3, 4] for i in range(5)] for item in sublist],
+    'lstm_buy_threshold': [0 for i in range(20)],
+    'lstm_sell_threshold': [0 for i in range(20)],
+    'lstm_model_time_period': [0 for i in range(20)],
+}
+
+# LSTM STRATEGY CONFIGS DATA
+lstm_strategy_configs_data = {
+    'indicator_time_period': [item for sublist in
+                              [[5, 7, 10, 15, 25] for i in range(500)]
+                              for item in sublist],
+    'max_holding_period': [item for sublist in [[2, 3, 5, 7, 10, 12, 15, 17, 20, 21] for i in range(250)] for item in
+                           sublist],
+    'take_profit_factor': [item for sublist in [[1, 2] for i in range(1250)] for item in sublist],
+    'stop_loss_factor': [item for sublist in [[2, 1, 1, 2] for i in range(625)] for item in sublist],
+    'sigma': [item for sublist in [[1, 2, 2, 1] for i in range(625)] for item in sublist],
+    'dimension': [item for sublist in [[1, 2, 3, 4] for i in range(625)] for item in sublist],
+    'lstm_buy_threshold': [item for sublist in
+                           [[0.01, 0.015, 0.03, 0.08, 0.1, 0.15, 0.08, 0.02, 0.2, 1.0,
+                             0.07, 0.06, 0.05, 0.09, 0.2, 0.3, 0.5, 0.17, 0.25, 0.19]
+                            for i in range(125)]
+                           for item in sublist],
+    'lstm_sell_threshold': [item for sublist in
+                            [[-0.013, -0.015, -0.035, -0.085, -0.1, -0.15, -0.08, -0.02, -0.2, -1.0,
+                              -0.06, -0.065, -0.05, -0.023, -0.2, -0.3, -0.5, -0.17, -0.25, -0.19]
+                             for i in range(125)]
+                            for item in sublist],
+    'lstm_model_time_period': [item for sublist in
+                               [[2, 3, 5, 7, 9, 3, 2, 7, 5, 9]
+                                for i in range(250)]
+                               for item in sublist],
+}
+
+# VISUALIZATION TYPES
+visualization_types_data = {
+    'name': [
+        "BACKTEST_SIGNALS",
+        "BACKTEST_TRADE",
+        "PAPER_TRADE",
+    ],
+    'description': [
+        "Contains Company data, Indicators and Signals generated in a backtest",
+        "Contains Company data, Indicators and Trade data (entry and exit orders) of a backtest trade",
+        "Contains Company data, Indicators and Trade data (entry and exit orders) of a paper trade"
+    ],
+}
+
+# EXAMPLE BACKTESTER DATA
+example_backtester_data = {
+    'name': [
+        'hello-backtester'
+    ]
+}
+
+# RUN BACKTESTS DATA FOR BB STRATEGY
+run_backtests_data = {
+    'date_ranges': [
+        ['2017-01-01 00:00:00+00:00', '2020-12-30 00:00:00+00:00']
+        for i in range(40)
+    ],
+    'ticker_time_periods': [
+        "1"
+        for i in range(40)
+    ],
+    'indicators': [
+        BollingerIndicator
+        for i in range(40)
+    ],
+    'signal_generators': [
+        BBSignalGenerator
+        for i in range(40)
+    ],
+    'take_profit_and_stop_losses': [
+        TakeProfitAndStopLossBB
+        for i in range(40)
+    ],
+    'order_executors': [
+        OrderExecution
+        for i in range(40)
+    ],
+    'trade_evaluators': [
+        TradeEvaluator
+        for i in range(40)
+    ],
+}
+
+# EXAMPLE PAPERTRADER DATA
+example_papertrader_data = {
+    'name': [
+        'hello-papertrader'
+    ]
+}
+
+# PAPER TRADED STRATEGY DATA
+paper_traded_strategy_data = {}
+
+
+class InitializeDatabase(object):
+
+    def run(self):
+        # Set starting time
+        start = time.time()
+
+        print("STARTING DATABASE INITIALIZATION SERVICE")
+        print("Please be patient, this may take a while...")
+
+        # Cleaning DB of all data
+        CleanDatabase().run()
+
+        # Initialize DB Users
+        User.objects.create_superuser(
+            username='superuser',
+            password='superuser1234'
+        )
+
+        User.objects.create_superuser(
+            username='guest',
+            password='guest1234'
+        )
+
+        print("STEP 2: Added a guest user and a super user")
+
+        # Initialize strategies models
+
+        # Add example strategies data to DB
+        AddDBObject(
+            step=3,
+            msg="Added Example Strategy to DB",
+            obj=ExampleStrategiesModel,
+            obj_data=example_strategies_data,
+        ).run()
+
+        # Add companies to DB
+        AddCompanies(
+            step=4,
+        ).run()
+
+        # Add companies data to DB
+        AddCompaniesData(
+            step=5,
+            # stop_point=1,
+        ).run()
+
+        # Add indicator types to DB
+        AddDBObject(
+            step=6,
+            msg="Added Indicator Types to DB",
+            obj=IndicatorType,
+            obj_data=indicator_types_data,
+        ).run()
+
+        # Add Strategy Types to DB
+        AddDBObject(
+            step=7,
+            msg="Added Strategy Types to DB",
+            obj=StrategyType,
+            obj_data=strategy_types_data,
+        ).run()
+
+        # Fix BB strategy config foreign keys
+        st = StrategyType.objects.all()[0]
+        c = Company.objects.all()[0]
+        bb_strategy_configs_data['strategy_type'] = [st for i in range(20)]
+        bb_strategy_configs_data['lstm_company'] = [c for i in range(20)]
+
+        # Add Strategy Configs for BB Strategy to DB
+        AddDBObject(
+            step=8,
+            msg="Added BB Strategy Configs to DB",
+            obj=StrategyConfig,
+            obj_data=bb_strategy_configs_data,
+        ).run()
+
+        # Fix LSTM strategy config foreign keys
+        st = StrategyType.objects.all()[1]
+        lstm_strategy_configs_data['strategy_type'] = [st for i in range(2500)]
+        lstm_strategy_configs_data['lstm_company'] = [item for sublist in
+                                                      [[Company.objects.all()[i] for j in range(50)] for i in range(50)]
+                                                      for item in sublist]
+
+        # Add Strategy Configs for LSTM Strategy to DB
+        AddDBObject(
+            step=9,
+            msg="Added LSTM Strategy Configs to DB",
+            obj=StrategyConfig,
+            obj_data=lstm_strategy_configs_data,
+        ).run()
+
+        # Initialize Backtester Models
+
+        # Add example backtester data to DB
+        AddDBObject(
+            step=10,
+            msg="Added Example Backtester to DB",
+            obj=ExampleBackTesterModel,
+            obj_data=example_backtester_data,
+        ).run()
+
+        # Add Visualization Types to DB
+        AddDBObject(
+            step=11,
+            msg="Added Visualization Types to DB",
+            obj=VisualizationType,
+            obj_data=visualization_types_data,
+        ).run()
+
+        # Run Backtests
+        AutomatedBacktests(
+            step=12,
+            msg="Ran Backtests and added reports to DB",
+            data=run_backtests_data,
+        ).run()
+
+        # Initialize Paper traded Models
+
+        # Add example papertrader data to DB
+        AddDBObject(
+            step=13,
+            msg="Added Example PaperTrader to DB",
+            obj=ExamplePaperTraderModel,
+            obj_data=example_papertrader_data,
+        ).run()
+
+        # Update paper trade strategies
+        num_of_paper_traded_strategies = 2000
+
+        paper_traded_strategy_data['company'] = [item for sublist in
+                                                 [[item for sublist in
+                                                   [[company for i in range(20)]
+                                                    for company in list(Company.objects.all())]
+                                                   for item in sublist]
+                                                  for i in range(2)]
+                                                 for item in sublist]
+
+        paper_traded_strategy_data['strategy_config'] = [item for sublist in
+                                                         [list(StrategyConfig.objects.filter(
+                                                             strategy_type__name='Simple Bollinger Band Strategy'
+                                                         ))
+                                                             for i in range(len(list(Company.objects.all())))]
+                                                         for item in sublist]
+
+        paper_traded_strategy_data['strategy_config'] += [item for sublist in
+                                                          [list(StrategyConfig.objects.filter(
+                                                              strategy_type__name='LSTM Strategy',
+                                                              lstm_company=company,
+                                                          ))
+                                                              for company in list(Company.objects.all())]
+                                                          for item in sublist]
+
+        paper_traded_strategy_data['live'] = [True for i in range(num_of_paper_traded_strategies)]
+
+        # Add Live Paper Traded Strategies
+        AddDBObject(
+            step=14,
+            msg="Added PaperTradedStrategy to DB",
+            obj=PaperTradedStrategy,
+            obj_data=paper_traded_strategy_data,
+        ).run()
+
+        # Run Paper Trade Synchronizer once
+        print("STEP 15: Runnning the paper trade algorithm. Please wait, this may take a while...")
+        PaperTradeSynchronizer().run()
+        print("STEP 15: Successfully Ran Paper Trade Algorithm")
+
+        # Set end time
+        end = time.time()
+
+        # print time taken
+        print(f"Completed Database Initialization in {end - start} seconds")

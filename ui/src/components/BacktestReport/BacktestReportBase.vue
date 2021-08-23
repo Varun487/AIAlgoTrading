@@ -2,7 +2,8 @@
 
 
 <template> 
-  
+  <div>
+    <Navbar />
   <div id="main_frame">
     <h1 id="header">Backtester Report</h1>
     
@@ -93,7 +94,7 @@
       </div>
       
     </div>
-
+  </div>
          
    
 
@@ -108,7 +109,7 @@
       <div id="image">
           <v-zoomer style="width: 1800px; height: 1000px; border: solid 1px silver;">
           <img v-bind:src="'data:image/png;base64,'+$store.getters.getTradeVisualization.img" />
-        {{$store.getters.getTradeVisualization.img}} -->
+        
            </v-zoomer>
       </div>
     </div>
@@ -126,7 +127,9 @@
     
     
     <div id="trades_group"  >
-			
+      <!-- <h3>{{store.getters.getincrementRows}}</h3> -->
+      <!-- store.getters.getincrementRows,store.getters.getincrementRows+5 -->
+			<button @clcik="addRows">Add rows</button>
 			<table id="table">
         <tr>
           <th id="th">Signal </th>
@@ -134,7 +137,7 @@
           <th id="th">Return</th>
         </tr>
         <tr class="hover1"
-        v-for="trade in $store.getters. getTrades"
+        v-for="trade in $store.getters.getTrades.slice(store.getters.getincrementRows,store.getters.getincrementRows+5)"
                 :key="trade.id">
           <td  calss= "ded" v-if='trade.trade_type=== "1"'>Buy</td>
           <td class="ded" v-else>Sell</td>
@@ -161,18 +164,24 @@
 
 <script>
 //  import axios from "axios";
+import Navbar from "../TopNavbar/NavPostLogin.vue"
+
 export default {
   name: "LoginBase",
+  components: {
+    Navbar,
+  },
   methods: {
-    showBacktestReport(id){
-      this.$store.dispatch("setBacktestId", id);
-      
+    addRows(){
+      this.$store.commit('incrementRows',5);
     }
   },
     mounted() {
     this.$store.dispatch("setBacktestReportdata",31);
     this.$store.dispatch("setTradeVisualization",31);
     this.$store.dispatch("setTrades",31);
+    this.$store.dispatch("incrementRows",5);
+    
   },
 }
 

@@ -1,4 +1,5 @@
 from services.Utils.converter import Converter
+from ta import add_all_ta_features
 from ta.volatility import BollingerBands
 
 
@@ -75,6 +76,36 @@ class BollingerIndicator(Indicator):
 
         # Add Bollinger Band low indicator
         self.df['bb_bbli'] = indicator_bb.bollinger_lband_indicator()
+
+        self.df = self.df.dropna()
+        self.df.set_index([self.dimension], inplace=True)
+        self.df.reset_index(inplace=True)
+
+        return self.df
+
+
+class AllIndicators(Indicator):
+
+    def __init__(self, df=None, time_period=-1, dimension="", sigma=-1):
+        super().__init__(df, time_period, dimension)
+        self.sigma = sigma
+        self.valid_sigma = False
+
+    def validate_sigma(self):
+        return (type(self.sigma) == int) and (self.sigma > 0)
+
+    def validate(self):
+        super().validate()
+        self.valid_sigma = self.validate_sigma()
+
+    def is_valid(self):
+        super().is_valid()
+        self.valid = self.valid and self.valid_sigma
+
+    def business_logic(self):
+        # Initialize All Indicators
+        self.df = add_all_ta_features(self.df, open="open", high="high", low="low", close="close", volume="volume",
+                                      fillna=True)
 
         self.df = self.df.dropna()
         self.df.set_index([self.dimension], inplace=True)

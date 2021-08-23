@@ -21,5 +21,6 @@ export default {
   color: #FFFFFF;
   margin: 0px;
   padding: 0px;
+  background-color: whitesmoke;
 }
 </style>

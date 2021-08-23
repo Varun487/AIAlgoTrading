@@ -11,8 +11,8 @@ from strategies.models import Trade
 from backtester.models import BackTestReport
 from backtester.models import BackTestTrade
 
-valid_indicators = ['BollingerIndicator']
-valid_signal_generators = ['BBSignalGenerator']
+valid_indicators = ['BollingerIndicator', 'AllIndicators']
+valid_signal_generators = ['BBSignalGenerator', 'LSTMSignalGenerator']
 valid_take_profit_and_stop_losses = ['TakeProfitAndStopLossBB']
 valid_order_executors = ['OrderExecution']
 valid_trade_evaluators = ['TradeEvaluator']
@@ -125,7 +125,9 @@ class BackTestReportGenerator(object):
                             time_period=self.indicator_time_period,
                             dimension=self.dimension,
                             sigma=self.sigma,
-                        )
+                        ),
+
+                        strategy_config=self.strategy_config,
 
                     ).generate_signals()
 
@@ -181,6 +183,8 @@ class BackTestReportGenerator(object):
 
     def push_orders(self):
         orders_df = self.calc_df.dropna().set_index('time_stamp').reset_index()
+        # print(self.signals_df)
+        # print(orders_df)
 
         # all entry orders
         entry_orders_df = pd.DataFrame()
@@ -190,6 +194,11 @@ class BackTestReportGenerator(object):
                                                                  company=self.company)
                                           for i in orders_df['order_entry_index']]
         self.entry_orders_df = entry_orders_df
+        # print(self.calc_df)
+        # print(orders_df['order_entry_index'])
+        # print(orders_df['order_entry_index'])
+        # print(self.entry_orders_df)
+
         Pusher(df=entry_orders_df).push(Order)
 
         # all exit orders

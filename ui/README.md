@@ -12,6 +12,10 @@
 - Header ![DONE]
 - Footer ![DONE]
   - To use: import FooterBase from "relative path"
+- Add and configure all the pages with header ![DONE]
+- Add and configure the logout button for all pages ![DONE]
+- Logically connected the Landing and Login pages ![DONE]
+- Adjustments to the framework to incorporate uniform design ![DONE]
       
 ## All strategies page ![dishacomplete]
 - design ![DONE]
@@ -19,6 +23,7 @@
 - implementation 
   - frontend (VueJS) ![DONE]
   - backend (Vuex and REST API) ![DONE]
+  - Minor modification to render uniform dynamic layout
 
 ## Strategy page ![samrudhiincomplete]
 - design 
@@ -30,9 +35,9 @@
   - backend (Vuex and REST API)
 
 ## REST API Documentation page ![dishacomplete]
-- design
-- implementation
-  - frontend (VueJS)
+- design ![DONE]
+- implementation ![DONE]
+  - frontend (VueJS) ![DONE]
   - backend (Vuex and REST API)
 
 ## Backtest report page ![hritikincomplete]
@@ -53,11 +58,16 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-# Paper trading page ![featureincomplete]
+## Paper trading page ![featureincomplete]
 - design ![dishacomplete]
-- implementation ![hritikincomplete]
+- implementation
   - frontend (VueJS)
   - backend (Vuex and REST API)
+
+## 404 Not Found Error page ![hritikcomplete]
+- design ![hritikcomplete]
+- Implementation ![hritikcomplete]
+
 
 ## Automated testing
 - All strategies page
@@ -67,6 +77,7 @@
 - Login page
 - Landing page
 - Paper trading page
+- 404 Not Found error page
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

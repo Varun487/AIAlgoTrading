@@ -17,6 +17,12 @@ services:
     build: ../restapi
     environment:
       - API_KEY=9IJF3E893E4E2Q2M
+      - SECRET_KEY=m(5+#i$uv7y%n9ey!r+mp@jjn(@7*s4*c23er9@&lbiz#55=6a
+      - DEBUG=True
+      - ALLOWED_HOSTS=restapi
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     command: bash -c "cd ../restapi
       && python3 manage.py makemigrations backtester
       && python3 manage.py makemigrations strategies
