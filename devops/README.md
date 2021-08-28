@@ -1,6 +1,6 @@
 # DEV OPS v0.1.0
 
-![componentincomplete]
+![componentcomplete]
 
 - Building the development and production environments
 
@@ -21,7 +21,7 @@
 - UI unable to call restapis ![bugfixed]
 - Unable to see /admin from UI ![bugfixed]
 
-## Production ![varunincomplete]
+## Production ![varuncomplete]
 - Containers ![done]
   - db ![done]
   - rest api ![done]
@@ -36,20 +36,26 @@
   - Check command ![done]
   - Settings.py changes ![done]
   - Different settings for production and development ![done]
-- deploy on VM ![incomplete]
-  - Check for all data to be sent to vm not in git ![incomplete]
+- deploy on VM ![done]
+  - Check for all data to be sent to vm not in git ![done]
     - Push db data ![done]
     - Push Models data ![done]
   - Install docker ![done]
-  - Install docker compose ![incomplete]
-  - Change allowed hosts variable 
-  - test 
-- SSL certification for server 
-  - Take care of ssl checks in django 
-  - Testing 
+  - Install docker compose ![done]
+  - Build images ![done]
+  - Run the server ![done]
+  - Change allowed hosts variable ![done]
+  - Run docker process in background ![done]
+  - test ![done]
 
 ## Deployment scripts ![varuncomplete]
 - Automated deployment to VM from local machine `firebase` ![done]
+
+## Good to have
+- SSL certification for server
+  - Take care of ssl checks in django
+  - Testing
+
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
