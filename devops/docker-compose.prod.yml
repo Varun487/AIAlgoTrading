@@ -19,7 +19,7 @@ services:
       - API_KEY=9IJF3E893E4E2Q2M
       - SECRET_KEY=m(5+#i$uv7y%n9ey!r+mp@jjn(@7*s4*c23er9@&lbiz#55=6a
       - DEBUG=False
-      - ALLOWED_HOSTS=localhost
+      - ALLOWED_HOSTS=*
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
