@@ -1,23 +1,34 @@
 <template>
     <div>
-        <div class="title">Paper Trades</div>
-        <div class="stub">Historical</div>
-        <div class="current-trade-update">
-            <table>
-                <tr>
-                    <th>Company</th>
-                    <th>Open</th>
-                    <th>High</th>
-                </tr>
-            </table>
-            <div id="historical">Historical:</div>
-            <div id="company">Company:</div>
-            <div id="open">Open:</div>
-            <div id="high">High:</div>
-            <div id="low">Low:</div>
-            <div id="close">Close:</div>
-            <div id="last_updated">Last Updated:</div>
+        <div class="pt-title">PAPER TRADES</div>
+        <div class="pt-type">Historical</div>
+        <div class="pt-t-info">
+            <h3>General Information</h3>
+            <div class="t-company">Company:</div>
+            <div class="t-last_updated">Last Updated:</div>
+            <div class="t-open">Open:</div>
+            <div class="t-high">High:</div>
+            <div class="t-close">Close:</div>
+            <div class="t-low">Low:</div>
         </div>
+       <h4>TRADE DETAILS</h4>
+       <div class="pt-m-info">
+           <h3>Strategy Configuration</h3>
+            <div class="m-sname">Strategy Name:</div>
+            <div class="m-itp">Indicator Time Period:</div>
+            <div class="m-mhp">Maximum Holding Period:</div>
+            <div class="m-tpf">Take Profit Factor:</div>
+            <div class="m-slf">Stop Loss Factor:</div>
+            <div class="m-sigma">Sigma:</div>
+            <h3>Trade</h3>
+            <div class="m-entry-order">Entry Order:</div>
+            <div class="m-exit-order">Exit Order:</div>
+            <div class="m-duration">Duartion:</div>
+            <div class="m-net-returns">Net Returns:</div>
+            <div class="m-return-percentage">Return Percentage:</div>
+       </div>
+       <h4>TRADE VISUALIZATION</h4>
+       <div class="pt-b-info"></div>
     </div>
 </template>
 <script>
@@ -30,226 +41,40 @@ export default {
 }
 </script>
 <style scoped>
-.title {
+.pt-title{
+    margin-top: 70px;
     text-align: center;
-    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
+.pt-type{
+    text-align: center;
+    font-size: 30px;
+    font-weight: light;
+    margin-bottom: 20px;
+}
+.pt-t-info{
+    margin-top: 50px;
+    margin-left: 15%;
+    font-weight: lighter;
+    font-size: 24px;
+}
+h4 {
+    display: flex;
+    flex-direction: row;
     font-size: 40px;
-    margin-top: 80px;
-    font-family: Poppins;
+    font-weight: lighter;
 }
-.stub {
-    height: 50px;
-    width: 150px;
-    border-radius: 30px;
-    border: 1px solid black;
-    line-height: 50px;
-    text-align: center;
+h4:before, h4:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid #000;
+    margin: auto;
 }
-.current-trade-update{
-    position:relative;
-    top:0px;
-    left:0px;
-    width: 1900px;
-	height: 400px;
-	background:rgb(255, 255, 255);
-    border-radius: 25px;
+.pt-m-info {
+    margin-top: 50px;
+    margin-left: 15%;
+    font-weight: lighter;
+    font-size: 24px;
 }
-#historical{
-    position:absolute;
-    top:10px;
-    left:820px;
-    width:200px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#E8BF2D;
-    border: 2px solid #E8BF2D;
-    border-radius:20px;
-    
-}
-#company{
-    position:absolute;
-    top:120px;
-    left:200px;
-    width:200px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#C4C4C4;
-    border: 2px solid #C4C4C4;
-    border-radius:20px;
-
-}
-#open{
-    position:absolute;
-    top:120px;
-    left:820px;
-    width:150px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#C4C4C4;
-    border: 2px solid #C4C4C4;
-    border-radius:20px;
-
-}
-#high{
-    position:absolute;
-    top:120px;
-    left:1350px;
-    width:150px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#C4C4C4;
-    border: 2px solid #C4C4C4;
-    border-radius:20px;
-
-}
-#last_updated{
-    position:absolute;
-    top:300px;
-    left:200px;
-    width:200px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#C4C4C4;
-    border: 2px solid #C4C4C4;
-    border-radius:20px;
-
-}
-#close{
-    position:absolute;
-    top:300px;
-    left:820px;
-    width:150px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#C4C4C4;
-    border: 2px solid #C4C4C4;
-    border-radius:20px;
-
-}
-#low{
-    position:absolute;
-    top:300px;
-    left:1350px;
-    width:150px;
-    height:40px;
-    font-size:25px;
-    text-align: center;
-    background-color:#C4C4C4;
-    border: 2px solid #C4C4C4;
-    border-radius:20px;
-
-}
-#__p__trades {
-	
-	margin: 140px 900px 75px 610px;
-	width: 572px;
-	height: 144.5px;
-	overflow: hidden;
-	font-family: Poppins;
-	font-size: 55px;
-	text-align: center;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #ffffff;
-	text-shadow: 0 0 2px #ffffff;
-	color:#000000;
-	background:rgb(255, 255, 255);
-}
-#base{
-	position:relative;
-	margin: 100px 50px 75px 400px;  
-	
-	width: 800px;
-	height: 800px;
-	background:rgb(255, 255, 255)
-}
-#line_1 {
-    position: absolute;
-    width: 690px;
-    height: 0px;
-    left: 0px;
-    top: 800px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-#line_2 {
-    position: absolute;
-    width: 730px;
-    height: 0px;
-    left: 1100px;
-    top: 802px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-#attributes1{
-    position:absolute;
-	left:0px;
-    top:0px;
-	width: 1400.2px;
-	height:500.64px;
-	overflow: hidden;
-	/* font-family: Poppins; */
-	font-size: 25px;
-	/* font-weight: bold; */
-	text-align: left;
-	color:#000000;
-} 
-#attributes2{
-    position:absolute;
-	top:600px;
-    left:0px;
-	width: 1400.2px;
-	height:420.64px;
-	overflow: hidden;
-	/* font-family: Poppins; */
-	font-size: 25px;
-	/* font-weight: bold; */
-	text-align: left;
-	color:#000000;
-} 
-#__p__tradess {
-	
-	margin: 300px 900px 75px 610px;
-	width: 572px;
-	height: 144.5px;
-	overflow: hidden;
-	font-family: Poppins;
-	font-size: 55px;
-	text-align: center;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #ffffff;
-	text-shadow: 0 0 2px #ffffff;
-	color:#000000;
-	background:rgb(255, 255, 255);
-}
-#line_3 {
-    position: absolute;
-    width: 610px;
-    height: 0px;
-    left: 0px;
-    top: 2145px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-#line_4 {
-    position: absolute;
-    width: 670px;
-    height: 0px;
-    left: 1175px;
-    top: 2145px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-#image{
-  position:absolute;
-  left:50px;
-  top:2250px;
-	
-	width: 1750px;
-	height: 800px;
-	
-  background-color: rgb(255, 255, 255);
-}
-
 </style>
