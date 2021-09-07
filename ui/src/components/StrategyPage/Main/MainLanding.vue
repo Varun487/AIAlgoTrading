@@ -8,6 +8,7 @@
         <div class="line2">
         </div>
         <!-- <div id="tab"> -->
+            
             <table class="center">
             <tr>
                 <th>Company Ticker</th>
@@ -17,10 +18,12 @@
             <br><br>
             
             <tr class="hover1"
-            v-for="report in $store.getters.getAllBacktests"
-      :key="report.id">
-                <td><a href="/backtestreport">
-                    {{ report.company_ticker }}</a></td>
+            v-for="(report) in $store.getters.getAllBacktests.slice(0, 5)"
+      v-bind:key="report.id">
+            
+      <!-- <tr class="hover1" v-for="report in computedObj" :key="report.id"> -->
+                <td v-on:click.stop="Backtest(report.id)">
+                    {{ report.company_ticker }}</td>
 
                 <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
                 <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
@@ -30,7 +33,24 @@
                 <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
                 <td class="black" v-else>{{ report.total_returns }}</td>
             </tr>
+            <br>
+            <br> <input type="search" v-model="filterInput">
+            <!-- <tr class="hover1" tr  v-for="(report1) in filteredList"
+      v-bind:key="report1.total_returns_percent">
+                <td><a href="/backtestreport">
+                    {{ report1.company_ticker }}</a></td>
+
+                <td class="red" v-if='report.total_returns_percent < 0'>{{ report1.total_returns_percent }}</td>
+                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report1.total_returns_percent }}</td>
+                <td class="black" v-else>{{ report1.total_returns_percent }}</td>
+
+                <td class="red" v-if='report.total_returns < 0'>{{ report1.total_returns }}</td>
+                <td class="green" v-else-if='report.total_returns > 0'>{{ report1.total_returns }}</td>
+                <td class="black" v-else>{{ report1.total_returns }}</td>
+            </tr> -->
             <br><br>
+            
+            <!-- <button @click="report in $store.getters.getAllBacktests">Show more</button> -->
             <!-- <tr class="hover1">
                 <td>Apple</td>
                 <td>- 5</td>
@@ -43,8 +63,8 @@
                 <td>0.0</td>
             </tr> -->
             
-            
             </table>
+            
             <br><br><br><br>
         <!-- </div> -->
     
@@ -53,11 +73,50 @@
 </template>
 
 <script>
+
 export default {
     name: 'MainLanding',
-    mounted() {
-    this.$store.dispatch("setAllBacktests",31);
+    methods: {
+        Backtest(id) {
+            this.$store.dispatch("setBacktestsId", id);
+            console.log(this.$store.getters.getBacktestsId);
+            console.log(this.$store.getters.getAllBackTestMainPage);
+            this.$store.dispatch("flipAllBacktestsMainPage");
+    },
   },
+  mounted() {
+    this.$store.dispatch("setAllBacktests");
+  },
+    data: function() {
+    return {
+      filterInput:''
+    }
+  },
+//   computed: {
+//     filteredCats() {
+//       return this.$store.dispatch("setAllBacktests",2).filter(c => {
+//         if(this.filter == '') return true;
+//         return c.total_returns_percent.toLowerCase().indexOf(this.filter.toLowerCase()) >= 0;
+//       })
+//     },
+//   },
+    computed: {
+  filteredList() {
+    const value= this.filterInput.charAt(0).toUpperCase() + this.filterInput.slice(1);
+    // const value= this.filterInput
+    
+    return this.$store.dispatch("setAllBacktests",2).filter(function(report1){
+      return (
+        report1.total_returns_percent.indexOf(value) > -1 ||
+        report1.company_ticker.indexOf(value) > -1 ||
+        report1.total_returns.indexOf(value) > -1 
+      )
+    });
+    // return this.$store.dispatch("setAllBacktests",2).filter(c => {
+    //     return c.company_ticker.toLowerCase().indexOf(value) >= 0;
+    //   });
+  }
+}
 };
 </script>
 
@@ -101,7 +160,7 @@ p{
     width: 675px;
     height: 0px;
     left: 0px;
-    top: 1750px;
+    top: 1570px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .title {
@@ -109,7 +168,7 @@ p{
     width: 1000px;
     height: 78px;
     left: 750px;
-    top: 1710px;
+    top: 1530px;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
@@ -126,7 +185,7 @@ p{
     width: 735px;
     height: 0px;
     left: 1100px;
-    top: 1750px;
+    top: 1570px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 table {
@@ -158,7 +217,8 @@ td{
     top: 1200px;
     border-radius: 25px; 
 }
-.hover1:hover {
+
+.hover1:hover td {
     background-color: #941dcb;
     color: white;
 }

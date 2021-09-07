@@ -1,5 +1,12 @@
 <template>
     <div>
+        
+        <!-- <div v-for="strategy in $store.getters.getAllStrategies"
+                :key="strategy.id"
+            >
+            <h1>{{ strategy.id }}</h1>
+            <div @onload="showStrategy(strategy.id)">Go</div>
+        </div> -->
         <Navbar/>
         <StrategyPageMain />
     </div>
@@ -15,8 +22,17 @@ export default {
         Navbar,
         StrategyPageMain,
     },
+    methods: {
+        showStrategy(id) {
+            this.$store.dispatch("setSelectedStrategy",id);
+        this.$store.dispatch("setAllBacktests",id);
+    },
+  },
     mounted() {
-    this.$store.dispatch("setSelectedStrategy",31);
+        this.$store.dispatch("setAllStrategies");
+        // console.log(this.$store.getters.getStrategyId);
+        this.$store.dispatch("setSelectedStrategy",this.$store.getters.getStrategyId);
+        this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
   },
 };
 </script>

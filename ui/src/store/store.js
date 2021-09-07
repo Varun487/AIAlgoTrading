@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+import JwPagination from 'jw-vue-pagination';
+Vue.component('jw-pagination', JwPagination);
 import VueZoomer from 'vue-zoomer'
 
 
@@ -31,8 +33,12 @@ export const store = new Vuex.Store({
       accountsizes: [],
       timestamps: [],
     },
-    selected_strategy: [],
-    all_backtests: undefined,
+    selected_strategy: undefined,
+    all_backtests: {
+      mainpage: true,
+      all_backtests: [],
+      backtestid: "",
+    },
     backtest_data:undefined,
     trade_visualization:undefined,
     trades:undefined,
@@ -68,7 +74,13 @@ export const store = new Vuex.Store({
       state.selected_strategy = payload;
     },
     setAllBacktests(state, payload) {
-      state.all_backtests = payload;
+      state.all_backtests.all_backtests = payload;
+    },
+    flipAllBacktestsMainPage(state) {
+      state.all_backtests.mainpage = !state.all_backtests.mainpage;
+    },
+    setBacktestsId(state, payload) {
+      state.all_backtests.backtestid = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
@@ -129,6 +141,9 @@ export const store = new Vuex.Store({
     },
     flipPerStrategiesMainPage({ commit }) {
       commit("flipPerStrategiesMainPage");
+    },
+    flipAllBacktestsMainPage({ commit }) {
+      commit("flipAllBacktestsMainPage");
     },
     async setBacktestReportdata(state,id) {
       
@@ -192,6 +207,7 @@ export const store = new Vuex.Store({
           'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
         }
       });
+      console.log(res.data)
       state.commit("setAllBacktests", res.data)
     },
     setBacktestId({ commit }, payload) {
@@ -199,6 +215,9 @@ export const store = new Vuex.Store({
     },
     setStrategyId({ commit }, payload) {
       commit("setStrategyId", payload);
+    },
+    setBacktestsId({ commit }, payload) {
+      commit("setBacktestsId", payload);
     },
     setselected_strategyId({ commit }, payload) {
       commit("setselected_strategyId", payload);
@@ -272,7 +291,7 @@ export const store = new Vuex.Store({
     getSideNavToggle: (state) => state.sidenavtoggle,
     getPapertradeMain: (state) => state.papertrademain,
     getPapertradeReports: (state) => state.papertradereports,
-    getBacktestsMainPage: (state) => state.backtests.mainpage,
+    // getBacktestsMainPage: (state) => state.backtests.mainpage,
     getBacktestsFilteredReports: (state) => state.backtests.filteredreports,
     getBacktestsReports: (state) => state.backtests.reports,
     getBacktestId: (state) => state.backtests.backtestid,
@@ -286,7 +305,9 @@ export const store = new Vuex.Store({
     getStrategyId: (state) => state.allstrategy.strategyid,
     getAllStrategiesMainPage: (state) => state.allstrategy.mainpage,
     getSelectedStrategy: (state) => state.selected_strategy,
-    getAllBacktests: (state) => state.all_backtests,
+    getAllBacktests: (state) => state.all_backtests.all_backtests,
+    getBacktestsId: (state) => state.all_backtests.backtestid,
+    getAllBackTestMainPage: (state) => state.all_backtests.mainpage,
     getTradeVisualization: (state)=> state.trade_visualization,
     getTrades: (state)=> state.trades,
     getToken: (state)=> state.token,

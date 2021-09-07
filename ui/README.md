@@ -85,6 +85,22 @@
 - Paper trading page
 - 404 Not Found error page
 
+## Remaining work
+- BACK BUTTON
+- Both strategies need to be displayed
+- When clicking `go` on a strategy, id of both strategies must be updated in state
+- In strategy data page
+  - Limit backtests displayed
+  - Display live paper trades
+  - Id of backtest for backtest report should be updated
+- Backtest report trades -> DEBUG
+- Paper Trade page -> NOT COMPLETE
+- Filter button and navigation of backtests and paper trades `LOW Priority`
+- Trade data Page
+- Intimate user in case of wrong User id, password
+- Cookie for persistent login
+- HTML and CSS work
+
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
 [varunincomplete]: https://img.shields.io/badge/VARUN-INCOMPLETE-red

@@ -6,13 +6,12 @@
         v-for="strategy in $store.getters.getSelectedStrategy"
                 :key="strategy.id"> -->
         <div class= "attributes">
-        <center><p>Description: {{ $store.getters.getSelectedStrategy.description }}</p></center>
-        <center><p>Id: {{ $store.getters.getSelectedStrategy.id }}</p></center>
-        <center><p>Stock Selection: {{ $store.getters.getSelectedStrategy.stock_selection }}</p></center>
-        <center><p>Entry Criteria: {{ $store.getters.getSelectedStrategy.entry_criteria }}</p></center>
-        <center><p>Exit Criteria: {{ $store.getters.getSelectedStrategy.exit_criteria }}</p></center>	
-        <center><p>Stop Loss Method: {{ $store.getters.getSelectedStrategy.stop_loss_method }}</p></center>	
-        <center><p>Take Profit Method: {{ $store.getters.getSelectedStrategy.take_profit_method }}</p></center><br><br>
+        <center><p><strong>Description</strong> <br />{{ $store.getters.getSelectedStrategy.description }}</p></center>
+        <center><p>Stock Selection <br/>{{ $store.getters.getSelectedStrategy.stock_selection }}</p></center>
+        <center><p>Entry Criteria <br/>{{ $store.getters.getSelectedStrategy.entry_criteria }}</p></center>
+        <center><p>Exit Criteria <br/>{{ $store.getters.getSelectedStrategy.exit_criteria }}</p></center>	
+        <center><p>Stop Loss Method <br/>{{ $store.getters.getSelectedStrategy.stop_loss_method }}</p></center>	
+        <center><p>Take Profit Method <br/>{{ $store.getters.getSelectedStrategy.take_profit_method }}</p></center><br><br>
         </div>
     
     
