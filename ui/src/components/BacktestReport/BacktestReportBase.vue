@@ -129,7 +129,7 @@
     <div id="trades_group"  >
       <!-- <h3>{{store.getters.getincrementRows}}</h3> -->
       <!-- store.getters.getincrementRows,store.getters.getincrementRows+5 -->
-			<button @clcik="addRows">Add rows</button>
+			<!-- <button @clcik="addRows">Add rows</button> -->
 			<table id="table">
         <tr>
           <th id="th">Signal </th>
@@ -167,20 +167,20 @@
 import Navbar from "../TopNavbar/NavPostLogin.vue"
 
 export default {
-  name: "LoginBase",
+  name: "BacktestReportBase",
   components: {
     Navbar,
   },
   methods: {
-    addRows(){
-      this.$store.commit('incrementRows',5);
-    }
+    // addRows(){
+    //   this.$store.commit('incrementRows',5);
+    // }
   },
     mounted() {
     this.$store.dispatch("setBacktestReportdata",31);
     this.$store.dispatch("setTradeVisualization",31);
     this.$store.dispatch("setTrades",31);
-    this.$store.dispatch("incrementRows",5);
+    // this.$store.dispatch("incrementRows",5);
     
   },
 }
