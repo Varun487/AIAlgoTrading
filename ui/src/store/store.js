@@ -31,7 +31,7 @@ export const store = new Vuex.Store({
       accountsizes: [],
       timestamps: [],
     },
-    selected_strategy: undefined,
+    selected_strategy: [],
     all_backtests: undefined,
     backtest_data:undefined,
     trade_visualization:undefined,
@@ -134,7 +134,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb'
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
 
           }
         });

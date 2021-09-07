@@ -3,7 +3,7 @@
 
 <template> 
   <div>
-    <Navbar />
+    <!-- <Navbar /> -->
   <div id="main_frame">
     <h1 id="header">Backtester Report</h1>
     
@@ -164,12 +164,12 @@
 
 <script>
 //  import axios from "axios";
-import Navbar from "../TopNavbar/NavPostLogin.vue"
+// import Navbar from "../TopNavbar/NavPostLogin.vue"
 
 export default {
   name: "BacktestReportBase",
   components: {
-    Navbar,
+    // Navbar,
   },
   methods: {
     // addRows(){
