@@ -28,8 +28,5 @@ export default {
     position:absolute;
     top:200px;
     left:870px;
-    
-    
-   
 }
 </style>

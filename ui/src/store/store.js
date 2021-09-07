@@ -5,6 +5,7 @@ import JwPagination from 'jw-vue-pagination';
 Vue.component('jw-pagination', JwPagination);
 import VueZoomer from 'vue-zoomer'
 
+
 Vue.use(Vuex);
 Vue.use(VueZoomer);
 
@@ -17,6 +18,7 @@ export const store = new Vuex.Store({
       strategy: [],
       strategyid: "",
     },
+    token: localStorage.getItem('auth_token')|| null,
     papertrademain: true,
     papertradereports: [],
     backtests: {
@@ -40,12 +42,9 @@ export const store = new Vuex.Store({
     backtest_data:undefined,
     trade_visualization:undefined,
     trades:undefined,
-    i:0,
-    status: '',
-    token: localStorage.getItem('token') || '',
-    user : {
-
-    },
+    //i:0,
+    
+    
     
   },
   mutations: {
@@ -124,21 +123,9 @@ export const store = new Vuex.Store({
     //   state.i+=payload;
       
     // },
-    auth_request(state){
-      state.status = 'loading'
-    },
-    auth_success(state, token, user){
-      state.status = 'success'
-      state.token = token
-      state.user = user
-    },
-    auth_error(state){
-      state.status = 'error'
-    },
-    logout(state){
-      state.status = ''
-      state.token = ''
-    },
+    retrieveToken(state,token){
+      state.token=token
+    }
 
     
   },
@@ -160,9 +147,10 @@ export const store = new Vuex.Store({
     },
     async setBacktestReportdata(state,id) {
       
-      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}`,{
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}/`,{
           headers: {
-            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb'
+
           }
         });
         state.commit("setBacktestReportdata", res.data)
@@ -170,9 +158,9 @@ export const store = new Vuex.Store({
     },
     async  setTradeVisualization(state,id) {
       
-      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestsignalvisualization/${id}`,{
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestsignalvisualization/${id}/`,{
           headers: {
-            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
           }
         });
         state.commit("setTradeVisualization", res.data)
@@ -181,9 +169,9 @@ export const store = new Vuex.Store({
 
     async  setTrades(state,id) {
       
-      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktesttrades/${id}`,{
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktesttrades/${id}/`,{
           headers: {
-            'Authorization': ' Token d40a6303a338022c7610b913eb9d7d4122039dfa'
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
           }
         });
         state.commit("setTrades", res.data)
@@ -198,7 +186,7 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setAllStrategies", res.data))
         .catch((err) => console.log(err));
       */
-     const res = await axios.get(process.env.VUE_APP_BASE_URL + "api/strategies/allstrategies/", {
+     const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/allstrategies/`, {
        headers: {
          'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
        }
@@ -206,7 +194,7 @@ export const store = new Vuex.Store({
      state.commit("setAllStrategies", res.data)
     },
     async setSelectedStrategy(state,id) {
-      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}`,{
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}/`,{
         headers: {
           'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
         }
@@ -214,7 +202,7 @@ export const store = new Vuex.Store({
       state.commit("setSelectedStrategy", res.data)
     },
     async setAllBacktests(state,id) {
-      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktests/${id}`,{
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktests/${id}/`,{
         headers: {
           'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
         }
@@ -243,7 +231,7 @@ export const store = new Vuex.Store({
       this.state.backtests.summaryloading = true;
       axios
         .get(
-          `${process.env.VUE_APP_BASE_URL}api/backtester/getreportbyid/${id}`
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getreportbyid/${id}/`
         )
         .then((res) => {
           commit("setReportInfo", res.data[0]);
@@ -255,7 +243,7 @@ export const store = new Vuex.Store({
       this.state.backtests.accountsizeloading = true;
       axios
         .get(
-          `${process.env.VUE_APP_BASE_URL}api/backtester/getordersbyreportid/${id}`
+          `${process.env.VUE_APP_BASE_URL}api/backtester/getordersbyreportid/${id}/`
         )
         .then((res) => {
           commit("setOrdersData", res.data);
@@ -271,37 +259,32 @@ export const store = new Vuex.Store({
         .then((res) => state.commit("setPapertradeReports", res.data))
         .catch((err) => console.log(err));
     },
-    // incrementRows(state,payload){
-    //   state.commit("incrementRows",payload)
-    // },
-    login({commit}, user){
-      return new Promise((resolve, reject) => {
-        commit('auth_request')
-        axios
-        .get({url: process.env.VUE_APP_BASE_URL + "api/auth/token/login/", data: user})
-        .then(resp => {
-          const token = resp.data.token
-          const user = resp.data.user
-          localStorage.setItem('token', token)
-          axios.defaults.headers.common['Authorization'] = token
-          commit('auth_success', token, user)
-          resolve(resp)
-        })
-        .catch(err => {
-          commit('auth_error')
-          localStorage.removeItem('token')
-          reject(err)
-        })
+    
+    
+      retrieveToken(context,credentials){
+
+      return new Promise((resolve,reject)=>{ 
+      axios.post(process.env.VUE_APP_BASE_URL + "api/auth/token/login/",{
+        username: credentials.username,
+        password: credentials.password,
       })
-  },
-  logout({commit}){
-    return new Promise((resolve) => {
-      commit('logout')
-      localStorage.removeItem('token')
-      delete axios.defaults.headers.common['Authorization']
-      resolve()
+      .then(response => {
+        const token=response.data.auth_token
+        
+        localStorage.setItem('auth_token',token)
+        context.commit('retrieveToken',token)
+        resolve(response)
+      })
+      .catch(error => {
+        console.log(error)
+        reject(error)
+  
+      })
     })
   }
+    
+    
+
   },
   getters: {
     getSideNavToggle: (state) => state.sidenavtoggle,
@@ -326,9 +309,9 @@ export const store = new Vuex.Store({
     getAllBackTestMainPage: (state) => state.all_backtests.mainpage,
     getTradeVisualization: (state)=> state.trade_visualization,
     getTrades: (state)=> state.trades,
+    getToken: (state)=> state.token,
+    getloggedIn:(state)=> state.token != null 
     // getincrementRows: (state)=> state.i,
-    isLoggedIn: (state) => !!state.token,
-    authStatus: (state) => state.status,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },
 });

@@ -14,10 +14,13 @@
                 <h3 class="signin-title">
                     Sign In
                 </h3>
-                <form action="#">
+                <form action="#" v-on:submit.prevent="login" >
+                  <v-alert v-if="alert" type="error" dismissible v-model="alert">Invalid email and/or password.</v-alert>
+
                     <input type="text" name="login-username" placeholder="Username" class="login-username" v-model="username">
-                    <input type="password" name="login-password" placeholder="Password" class="login-password" v-mode="password">
-                    <router-link to="/allstrategies"><button>Go</button></router-link>
+                    <input type="password" name="login-password" placeholder="Password" class="login-password" v-model="password">
+                    <!-- <router-link to="/allstrategies"><button>Go</button></router-link> -->
+                    <button>Go</button>
                 </form>
                 <router-link to="/">
                 <a href="#" class="signin-back"> ←Back</a>
@@ -30,33 +33,40 @@
     </div>
 </template>
 <script>
-import router from '../../router'
+ 
 export default {
+  
     name: 'LoginBase',
     data(){
         return{
           username:"",
-          password:""
+          password:"",
+          alert:false
         }
     },
     methods:{
-      // login: function () {
-      //   let username = this.username
-      //   let password = this.password
-      //   this.$store.dispatch('login', { username, password })
-      //  .then(() => this.$router.push('/allstrategies'))
-      //  .catch(err => console.log(err))
-      // },
-      
-      // logout: function () {
-      //   this.$store.dispatch('logout')
-      //   .then(() => {
-      //     this.$router.push('/login')
-      //   })
-      // }
-      back2landing(){
-        router.push({ name: "LandingPage" });
+       login(){
+        this.$store.dispatch('retrieveToken',{
+          username:this.username,
+          password:this.password,
+        })
+        
+      .then(response => {
+        //console.log(response)
+          if (response.status == 400) {
+          this.alert = true;
+        }
+          this.$router.push({name:'AllStrategies'})
+         
+        })
+        
       },
+      // loggedIn(){
+      //   return this.$store.getters.getloggedIn
+
+      // }
+     
+
     }
     
 };
