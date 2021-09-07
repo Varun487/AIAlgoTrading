@@ -20,10 +20,14 @@
 ## All strategies page ![dishacomplete]
 - design ![DONE]
 - content ![DONE]
-- implementation 
-  - frontend (VueJS) ![DONE]
-  - backend (Vuex and REST API) ![DONE]
-  - Minor modification to render uniform dynamic layout
+- implementation - frontend (VueJS) ![DONE]
+  - Add scaled layout designs ![DONE]
+  - Minor modification to render uniform dynamic layout ![DONE]
+- implementation - backend (Vuex and REST API) ![DONE]
+  - Re-adjust to accomodate new strategy 
+  - Implement backend logic for lstm strategy
+  - Implement common logic for rendering uniform design
+  
 
 ## Strategy page ![samrudhiincomplete]
 - design 
@@ -58,11 +62,13 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-## Paper trading page ![featureincomplete]
-- design ![dishacomplete]
-- implementation
-  - frontend (VueJS)
-  - backend (Vuex and REST API)
+## Paper trading page ![dishaincomplete]
+- design ![DONE]
+- implementation - frontend (VueJS) ![DONE]
+   - Redo design ![DONE]
+   - Fix front-end layout ![DONE]
+   - Implemenet final elements ![DONE]
+- implementation - backend (Vuex and REST API)
 
 ## 404 Not Found Error page ![hritikcomplete]
 - design ![hritikcomplete]

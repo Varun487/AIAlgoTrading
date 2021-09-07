@@ -31,6 +31,7 @@ if os.environ['DEBUG'] == 'True':
     DEBUG = True
 
 ALLOWED_HOSTS = [os.environ['ALLOWED_HOSTS']]
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'corsheaders',
     # project apps
     'strategies',
     'backtester',
@@ -70,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'restapi.urls'
