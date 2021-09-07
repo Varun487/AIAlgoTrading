@@ -207,6 +207,7 @@ export const store = new Vuex.Store({
           'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
         }
       });
+      console.log(res.data)
       state.commit("setAllBacktests", res.data)
     },
     setBacktestId({ commit }, payload) {
