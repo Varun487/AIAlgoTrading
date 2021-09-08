@@ -3,6 +3,7 @@
         <Navbar />
         <SBase v-if="$store.getters.getAllStrategiesMainPage"/>
         <StrategyPageBase v-else/>
+        <FooterBase />
     </div>
 </template>
 
@@ -10,6 +11,7 @@
 import SBase from './StrategiesMain/SBase.vue'
 import StrategyPageBase from '../StrategyPage/StrategyPageBase.vue'
 import Navbar from "../TopNavbar/NavPostLogin.vue"
+import FooterBase from '../Footer/FooterBase.vue'
 
 export default {
     name: 'AllStrategiesBase',
@@ -17,6 +19,7 @@ export default {
         Navbar,
         SBase,
         StrategyPageBase,
+        FooterBase,
     }
 }
 </script>
