@@ -135,7 +135,7 @@
           <th id="th">Return</th>
         </tr>
         <tr class="hover1"
-        v-for="(trade) in $store.getters.getTrades.slice(0,5)"
+          v-for="(trade) in $store.getters.getTrades.slice(0,5)" 
                 :key="trade.id">
           <td  calss= "ded" v-if='trade.trade_type=== "1"'>Buy</td>
           <td class="ded" v-else>Sell</td>

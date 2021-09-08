@@ -56,6 +56,11 @@ const routes = [
     name: "NotFoundPage",
     component: () => import("../views/NotFoundPage.vue"),
   },
+  {
+    path: "/trades",
+    name: "Trades",
+    component: () => import("../views/Trades.vue"),
+  },
 
   //<---------------------------------------Version 1 Code--------------------------------------->
 
