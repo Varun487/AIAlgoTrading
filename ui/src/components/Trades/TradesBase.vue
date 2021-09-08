@@ -12,13 +12,35 @@
         <div id="attributes" >
           <b>Trade</b>  <br><br>
 
-          Name: {{$store.getters.getBacktestReportData.strategy_type.name}}<br>
-          Description:    {{$store.getters.getBacktestReportData.strategy_type.description}}<br>
-          Stock Selection: {{$store.getters.getBacktestReportData.strategy_type.stock_selection}}<br>
-          Entry Criteria: {{$store.getters.getBacktestReportData.strategy_type.entry_criteria}}<br>
-          Exit Criteria: {{$store.getters.getBacktestReportData.strategy_type.exit_criteria}}<br>
-          Stop Loss Method: {{$store.getters.getBacktestReportData.strategy_type.stop_loss_method}}<br>
-          Take Profit Method: {{$store.getters.getBacktestReportData.strategy_type.take_profit_method}}<br>
+          Id: <br>
+          Duration:   <br>
+          Net Return:<br>
+          Return percentage:<br>
+          Entry order
+          <div id="attributess">
+            Id : <br>
+            Signal
+            <div id="attributesss">
+              Id : <br>
+              Type: <br>
+              Ticker data : <br>
+              Strategy config : <br>
+            </div>
+            Ticker data :
+            <div id="attributesss">
+              Id : <br>
+              Open : <br>
+              High : <br>
+              Low : <br>
+              Close : <br>
+              Volume : <br>
+              Time Stamp : <br>
+              Time period : <br>
+              Company: <br>
+            </div>
+          </div>  
+          Stop Loss Method: <br>
+          Take Profit Method: <br>
         </div>
 
 
