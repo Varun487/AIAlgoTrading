@@ -34,10 +34,10 @@ export default {
 }
 */
 .footer-container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 45px;
-    top: 100%;
+    top: auto;
     background-color: #2876f9;
     background-image: linear-gradient(-90deg, #2876f9 0%, #6d17cb 74%);
     border: 1px solid transparent;
@@ -48,5 +48,6 @@ export default {
     line-height: 45px;
     text-align: center;
     color: #FFFFFF;
+    margin-top:100px;
 }
 </style>
