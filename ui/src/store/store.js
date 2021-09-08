@@ -1,7 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+<<<<<<< HEAD
 import VueZoomer from 'vue-zoomer';
+=======
+
+import VueZoomer from 'vue-zoomer'
+>>>>>>> f7a78631a63c0301dd5c06f9d574a42e59823458
 
 
 Vue.use(Vuex);
@@ -147,7 +152,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb'
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
 
           }
         });

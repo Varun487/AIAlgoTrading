@@ -53,7 +53,7 @@ export default {
         
       .then(response => {
         //console.log(response)
-          if (response.status == 400) {
+          if (response.status != 200) {
           this.alert = true;
         }
           this.$router.push({name:'AllStrategies'})
