@@ -1,9 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-import JwPagination from 'jw-vue-pagination';
-Vue.component('jw-pagination', JwPagination);
-import VueZoomer from 'vue-zoomer'
+import VueZoomer from 'vue-zoomer';
 
 
 Vue.use(Vuex);

@@ -1,12 +1,10 @@
 <template>
     <div class="container">
-        <div class="line1">
-        </div>
+        
         <div class="title">
             All Strategies
         </div>
-        <div class="line2">
-        </div>
+        
         <!--
         <div class="strat1">
             <div class="strat1-img"></div>
@@ -33,7 +31,8 @@
             </div>
         </div>
         -->
-        <div class="strat1">
+        <!--
+        <div class="strat1thissssss">
             <div class="strat1-img"></div>
             <div 
                 class="strat1-content"
@@ -42,6 +41,24 @@
             >
                 <p class="strat-name">{{ strategy.name }}</p>
                 <p class="strat-desc">{{ strategy.description }}</p>
+                <button @click="showStrategy(strategy.id)">Go</button>
+            </div>
+        </div>
+        -->
+        <!--
+        <div class="strat1-img"></div>
+        <div class="strat2-img"></div>
+        -->
+        <div class="strat3-img"></div>
+        <div class="strat2-img"></div>
+        <div class="strat">
+            <div 
+                class="strat1-content"
+                v-for="strategy in $store.getters.getAllStrategies"
+                :key="strategy.id"
+            >
+                <div class="strat-name">{{ strategy.name }}</div>
+                <div class="strat-desc">{{ strategy.description }}</div>
                 <button @click="showStrategy(strategy.id)">Go</button>
             </div>
         </div>
@@ -83,8 +100,9 @@ export default {
 
 <style scoped>
 .container {
-    background-color: purple;
+    background-color: #FFFFFF;
 }
+/*
 .line1 {
     position: absolute;
     width: 521px;
@@ -93,10 +111,9 @@ export default {
     top: 691px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+*/
 .title {
-    position: absolute;
-    width: 769px;
-    height: 78px;
+    margin-top: 40%;
     left: 530px;
     top: 652px;
     font-family: Poppins;
@@ -108,8 +125,17 @@ export default {
     align-items: center;
     text-align: center;
     color: #000000;
+    display: flex;
+    flex-direction: row;
+    font-weight: lighter;
 }
-
+.title:before, .title:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+/*
 .line2 {
     position: absolute;
     width: 465px;
@@ -118,23 +144,27 @@ export default {
     top: 691px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+*/
+.strat1-content {
+    position: relative;
+    width: 512px;
+    height: 300px;
+    left:760px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-align: center;
+    margin: 40px;
+    margin-top:180px;
+}
 .strat-name {
-    position: absolute;
-    width: 470px;
-    height: 58px;
-    left: 8%;
-    top: 0px;
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
-    line-height: 60px;
-    display: flex;
-    align-items: center;
     color: #000000;
-    margin-top:20px;
     text-align: center;
+    padding: 20px;
     
 }
 .strat-desc {
@@ -158,27 +188,19 @@ export default {
     width: 495px;
     height: 482px;
     left: 101px;
-    top: 756px;
+    top: 650px;
     background-image: url('~@/assets/v9.jpg');
     background-size: cover;
 }
-.strat1-content {
-    position: absolute;
-    width: 512px;
-    height: 300px;
-    left: 750px;
-    top: 847px;
-    background: #FFFFFF;
-    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-}
+
 .strat2-img {
     position: absolute;
     width: 670px;
     height: 440px;
-    left: 675px;
-    top: 1239px;
-    background-image: url('~@/assets/v5.jpg');
+    /*left: 675px;*/
+    left: 100px;
+    top: 1250px;
+    background-image: url('~@/assets/v5.jpeg');
     background-size: cover;
 }
 
@@ -187,7 +209,7 @@ export default {
     width: 512px;
     height: 300px;
     left: 93px;
-    top: 1329px;
+    top: 1250px;
     background: #FFFFFF;
     box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -195,10 +217,14 @@ export default {
 
 .strat3-img {
     position: absolute;
-    width: 590px;
+    width: 589px;
     height: 628px;
+    /*
     left: 68px;
     top: 1650px;
+    */
+    left: 120px;
+    top: 650px;
     background-image: url('~@/assets/v4.png');
     background-size: cover;
 }

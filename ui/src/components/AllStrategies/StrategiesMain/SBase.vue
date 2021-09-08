@@ -4,7 +4,7 @@
     <Topbanner />
     <MidSection />
     
-    <FooterBase />
+    
 </div>
     
 </template>
@@ -13,7 +13,7 @@
 import Topbanner from './Topbanner.vue'
 import MidSection from './MidSection.vue'
 
-import FooterBase from '../../Footer/FooterBase.vue'
+
 
 export default {
     name : 'SBase',
@@ -22,7 +22,7 @@ export default {
         Topbanner,
         MidSection,
         
-        FooterBase,
+        
   }
 }
 </script>
