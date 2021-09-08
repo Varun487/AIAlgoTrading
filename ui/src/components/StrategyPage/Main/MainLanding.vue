@@ -16,14 +16,17 @@
                 <th>Returns</th>
             </tr>
             <br><br>
-            
+            <!-- <router-link to="/"> -->
             <tr class="hover1"
             v-for="(report) in $store.getters.getAllBacktests.slice(0, 5)"
-      v-bind:key="report.id">
+      v-bind:key="report.id" @click="Backtest(report.id)">
+      <!-- <router-link to="/"> -->
             
       <!-- <tr class="hover1" v-for="report in computedObj" :key="report.id"> -->
-                <td v-on:click.stop="Backtest(report.id)">
-                    {{ report.company_ticker }}</td>
+                <!-- <td v-on:click.stop="Backtest(report.id)">
+                    {{ report.company_ticker }}</td> -->
+                  <router-link to="/"><td>
+                    {{ report.company_ticker }}</td></router-link>
 
                 <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
                 <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
@@ -32,9 +35,10 @@
                 <td class="red" v-if='report.total_returns < 0'>{{ report.total_returns }}</td>
                 <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
                 <td class="black" v-else>{{ report.total_returns }}</td>
+                <!-- </router-link> -->
             </tr>
             <br>
-            <br> <input type="search" v-model="filterInput">
+            <!-- <br> <input type="search" v-model="filterInput"> -->
             <!-- <tr class="hover1" tr  v-for="(report1) in filteredList"
       v-bind:key="report1.total_returns_percent">
                 <td><a href="/backtestreport">
@@ -79,9 +83,10 @@ export default {
     methods: {
         Backtest(id) {
             this.$store.dispatch("setBacktestsId", id);
+            this.$store.dispatch("flipAllBacktestsMainPage");
             console.log(this.$store.getters.getBacktestsId);
             console.log(this.$store.getters.getAllBackTestMainPage);
-            this.$store.dispatch("flipAllBacktestsMainPage");
+            this.$router.push({name:'BacktestReport'})
     },
   },
   mounted() {
@@ -195,7 +200,7 @@ table {
   width: 75%;
   color: black;
   font-size: 23px;
-  border-radius: 25px;
+  /* border-radius: 25px; */
 }
 
 th{
@@ -209,6 +214,16 @@ th{
 }
 td{
     border: 1px solid #941dcb;
+    text-align: center;
+    padding: 25px;
+    width: 750px;
+    height: 0px;
+    left: 1100px;
+    top: 1200px;
+    border-radius: 25px; 
+}
+.hover1{
+  border: 1px solid #941dcb;
     text-align: center;
     padding: 25px;
     width: 750px;
