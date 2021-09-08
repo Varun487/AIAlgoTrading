@@ -24,9 +24,11 @@
   - Add scaled layout designs ![DONE]
   - Minor modification to render uniform dynamic layout ![DONE]
 - implementation - backend (Vuex and REST API) ![DONE]
-  - Re-adjust to accomodate new strategy 
-  - Implement backend logic for lstm strategy
-  - Implement common logic for rendering uniform design
+  - Re-adjust to accomodate both strategy ![DONE]
+  - Implement backend logic for lstm strategy ![DONE]
+  - Implement common logic for rendering uniform design ![DONE]
+  - Fix footer to adjust to the lower border of the page ![DONE]
+  - Rebuidl layout of the midsection ![DONE]
   
 
 ## Strategy page ![samrudhiincomplete]

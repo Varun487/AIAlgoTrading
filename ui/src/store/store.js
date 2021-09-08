@@ -1,12 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
-<<<<<<< HEAD
-import VueZoomer from 'vue-zoomer';
-=======
 
 import VueZoomer from 'vue-zoomer'
->>>>>>> f7a78631a63c0301dd5c06f9d574a42e59823458
 
 
 Vue.use(Vuex);
