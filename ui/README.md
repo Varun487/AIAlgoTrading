@@ -49,9 +49,9 @@
   - frontend (VueJS) ![DONE]
   - backend (Vuex and REST API)
 
-## Backtest report page ![hritikincomplete]
+## Backtest report page ![hritikcomplete]
 - design ![DONE]
-- implementation
+- implementation ![DONE]
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
@@ -59,7 +59,7 @@
 - design ![DONE] ![dishacomplete]
 - implementation
   - frontend (VueJS) ![DONE] ![dishacomplete]
-  - backend (Vuex and REST API) ![hritikincomplete]
+  - backend (Vuex and REST API)![DONE] ![hritikcomplete]
 
 ## Landing page ![samrudhiincomplete]
 - design 
