@@ -207,7 +207,7 @@
     - Converters ![done]
     - Pushers ![done]
     - Getters ![done]
-  - Indicator calc ![done]
+  - Indicator calc ![done] ![samrudhicomplete]
   - Signal generation ![done]
     - Generic Signal Generator ![done]
     - BBSignalGenerator ![done]
