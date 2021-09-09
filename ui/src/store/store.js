@@ -46,6 +46,7 @@ export const store = new Vuex.Store({
     backtest_data:undefined,
     trade_visualization:undefined,
     trades:undefined,
+    trades_data:undefined
     //i:0,
     
   },
@@ -129,6 +130,9 @@ export const store = new Vuex.Store({
     },
     setTrades(state,payload){
       state.trades=payload;
+    },
+    setTradesData(state,payload){
+      state.trades_data=payload;
     },
     // incrementRows(state,payload){
     //   state.i+=payload;
@@ -233,6 +237,19 @@ export const store = new Vuex.Store({
       console.log(res.data)
       state.commit("setAllPapertrades", res.data)
     },
+
+    async  setTradesData(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtesttradedata/${id}/`,{
+          headers: {
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+          }
+        });
+        state.commit("setTradesData", res.data)
+        
+    },
+
+
     setBacktestId({ commit }, payload) {
       commit("setBacktestId", payload);
     },
@@ -335,6 +352,7 @@ export const store = new Vuex.Store({
     getBacktestsId: (state) => state.all_backtests.backtestid,
     getAllBackTestMainPage: (state) => state.all_backtests.mainpage,
     getTradeVisualization: (state)=> state.trade_visualization,
+    getTradesData: (state)=> state.trades_data,
     getTrades: (state)=> state.trades,
     getToken: (state)=> state.token,
     getloggedIn:(state)=> state.token != null,
