@@ -66,7 +66,7 @@ export default {
   padding: 20px;
   color:black;
   font-family: Poppins;
-  font-size: 50px;
+  font-size: 20px;
   background-color: rgb(255, 255, 255);
 }
 #main_frame {
