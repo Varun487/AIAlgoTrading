@@ -6,48 +6,37 @@
     <h1 id="header">Trades</h1>
       <div id="base">
         <div id="attributes" >
-          <b>Id</b> : 
+          <b>Id</b> : {{$store.getters.getTradesData.id}}
         </div>
 
         <div id="attributes" >
-          <b>Trade</b>  <br><br>
-
-          Id: <br>
-          Duration:   <br>
-          Net Return:<br>
-          Return percentage:<br>
-          Entry order
-          <div id="attributess">
-            Id : <br>
-            Signal
-            <div id="attributesss">
-              Id : <br>
-              Type: <br>
-              Ticker data : <br>
-              Strategy config : <br>
-            </div>
-            Ticker data :
-            <div id="attributesss">
-              Id : <br>
-              Open : <br>
-              High : <br>
-              Low : <br>
-              Close : <br>
-              Volume : <br>
-              Time Stamp : <br>
-              Time period : <br>
-              Company: <br>
-            </div>
-          </div>  
-          Stop Loss Method: <br>
-          Take Profit Method: <br>
+          <b>Duration</b>: {{$store.getters.getTradesData.trade.duration}}
         </div>
 
+        <div id="attributes">
+          <b>Net Return</b> : {{$store.getters.getTradesData.trade.net_return}}
+        </div>
 
+        <div id="attributes">
+          <b>Return Percentage</b> : {{$store.getters.getTradesData.trade.return_percent}}
+        </div>
 
+        <div id="attributess">
+          <b>Entry Order</b> <br><br>
 
+          Close Price:  {{$store.getters.getTradesData.trade.entry_order.ticker_data.time_stamp}}  <br><br>
+          Time Stamp: {{$store.getters.getTradesData.trade.entry_order.ticker_data.time_stamp}} <br>
+        </div>
 
-    </div>
+        <div id="attributess">
+          <b>Exit Order</b> <br><br>
+
+          
+          Close Price:  {{$store.getters.getTradesData.trade.exit_order.ticker_data.time_stamp}}  <br><br>
+          Time Stamp: {{$store.getters.getTradesData.trade.exit_order.ticker_data.time_stamp}} <br>
+        </div>
+
+      </div>
     
   </div>
 
@@ -63,6 +52,10 @@ export default {
   components: {
     Navbar,
   },
+  mounted (){
+    this.$store.dispatch("setTradesData",this.$store.getters.getBacktestsId);
+    // this.$store.dispatch("setTradesData",21);
+  },
  
 }
 </script>
@@ -73,6 +66,7 @@ export default {
   padding: 20px;
   color:black;
   font-family: Poppins;
+  font-size: 50px;
   background-color: rgb(255, 255, 255);
 }
 #main_frame {
@@ -94,7 +88,19 @@ export default {
 	top: 485px;
 	left: 213px;
 	width: 1200.2px;
-	height: 100.64px;
+	height: 150.64px;
+	overflow: hidden;
+	/* font-family: Poppins; */
+	font-size: 25px;
+	/* font-weight: bold; */
+	text-align: left;
+	color:#000000;
+} 
+#attributess{
+	top: 485px;
+	left: 213px;
+	width: 1200.2px;
+	height: 250.64px;
 	overflow: hidden;
 	/* font-family: Poppins; */
 	font-size: 25px;
