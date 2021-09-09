@@ -70,6 +70,39 @@
             </table>
             
             <br><br><br><br>
+            <!-- <div class="line3">
+        </div>
+        <div class="title2">
+            PAPER TRADES
+        </div>
+        <div class="line4">
+        </div> -->
+        <!-- <table class="center">
+            <tr>
+                <th>Company Ticker</th>
+                <th>Return %</th>
+                <th>Returns</th>
+            </tr>
+            <br><br>
+            <tr class="hover1"
+            v-for="(report) in $store.getters.getAllBacktests.slice(0, 5)"
+      v-bind:key="report.id" @click="Backtest(report.id)">
+            
+                  <router-link to="/"><td>
+                    {{ report.company_ticker }}</td></router-link>
+
+                <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
+                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
+                <td class="black" v-else>{{ report.total_returns_percent }}</td>
+
+                <td class="red" v-if='report.total_returns < 0'>{{ report.total_returns }}</td>
+                <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
+                <td class="black" v-else>{{ report.total_returns }}</td>
+            </tr>
+            <br>
+            <br><br>
+            
+            </table> -->
         <!-- </div> -->
     
 </div>
@@ -191,6 +224,38 @@ p{
     height: 0px;
     left: 1100px;
     top: 1570px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.line3 {
+    position: absolute;
+    width: 675px;
+    height: 0px;
+    left: 0px;
+    top: 2300px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.title2 {
+    position: absolute;
+    width: 1000px;
+    height: 78px;
+    left: 750px;
+    top: 2260px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    line-height: 82px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.line4 {
+    position: absolute;
+    width: 660px;
+    height: 0px;
+    left: 1175px;
+    top: 2300px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 table {

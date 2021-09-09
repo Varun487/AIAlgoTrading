@@ -38,13 +38,17 @@ export const store = new Vuex.Store({
       all_backtests: [],
       backtestid: "",
     },
+    all_papertrades: {
+      mainpage: true,
+      all_papertrades: [],
+      papertradeid: "",
+    },
     backtest_data:undefined,
     trade_visualization:undefined,
     trades:undefined,
-    trades_data:undefined
+    trades_data:undefined,
+    tradespage_visualization:undefined,
     //i:0,
-    
-    
     
   },
   mutations: {
@@ -76,11 +80,20 @@ export const store = new Vuex.Store({
     setAllBacktests(state, payload) {
       state.all_backtests.all_backtests = payload;
     },
+    setAllPapertrades(state, payload) {
+      state.all_papertrades.all_papertrades = payload;
+    },
     flipAllBacktestsMainPage(state) {
       state.all_backtests.mainpage = !state.all_backtests.mainpage;
     },
+    flipAllPapertradesMainPage(state) {
+      state.all_papertrades.mainpage = !state.all_papertrades.mainpage;
+    },
     setBacktestsId(state, payload) {
       state.all_backtests.backtestid = payload;
+    },
+    setPapertradesId(state, payload) {
+      state.all_papertrades.papertradeid = payload;
     },
     resetBacktestId(state) {
       state.backtests.backtestid = null;
@@ -122,6 +135,9 @@ export const store = new Vuex.Store({
     setTradesData(state,payload){
       state.trades_data=payload;
     },
+    setTradespageVisualization(state,payload){
+      state.tradespage_visualization=payload;
+    },
     // incrementRows(state,payload){
     //   state.i+=payload;
       
@@ -147,6 +163,9 @@ export const store = new Vuex.Store({
     },
     flipAllBacktestsMainPage({ commit }) {
       commit("flipAllBacktestsMainPage");
+    },
+    flipAllPapertradesMainPage({ commit }) {
+      commit("flipAllPapertradesMainPage");
     },
     async setBacktestReportdata(state,id) {
       
@@ -213,6 +232,15 @@ export const store = new Vuex.Store({
       console.log(res.data)
       state.commit("setAllBacktests", res.data)
     },
+    async setAllPapertrades(state,id) {
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/allpapertrades/${id}/`,{
+        headers: {
+          'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+        }
+      });
+      console.log(res.data)
+      state.commit("setAllPapertrades", res.data)
+    },
 
     async  setTradesData(state,id) {
       
@@ -224,6 +252,17 @@ export const store = new Vuex.Store({
         state.commit("setTradesData", res.data)
         
     },
+    async  setTradespageVisualization(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtesttradevisualization/${id}/`,{
+          headers: {
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+          }
+        });
+        state.commit("setTradespageVisualization", res.data)
+        
+    },
+
 
 
     setBacktestId({ commit }, payload) {
@@ -234,6 +273,9 @@ export const store = new Vuex.Store({
     },
     setBacktestsId({ commit }, payload) {
       commit("setBacktestsId", payload);
+    },
+    setPapertradesId({ commit }, payload) {
+      commit("setPapertradesId", payload);
     },
     setselected_strategyId({ commit }, payload) {
       commit("setselected_strategyId", payload);
@@ -326,9 +368,13 @@ export const store = new Vuex.Store({
     getAllBackTestMainPage: (state) => state.all_backtests.mainpage,
     getTradeVisualization: (state)=> state.trade_visualization,
     getTradesData: (state)=> state.trades_data,
+    getTradespageVisualization: (state)=> state.tradespage_visualization,
     getTrades: (state)=> state.trades,
     getToken: (state)=> state.token,
-    getloggedIn:(state)=> state.token != null 
+    getloggedIn:(state)=> state.token != null,
+    getAllPapertrades: (state) => state.all_papertrades.all_papertrades,
+    getPapertradesId: (state) => state.all_papertrades.papertradeid,
+    getAllPapertradesMainPage: (state) => state.all_papertrades.mainpage 
     // getincrementRows: (state)=> state.i,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },
