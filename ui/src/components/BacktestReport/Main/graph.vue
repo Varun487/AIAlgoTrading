@@ -34,7 +34,7 @@
     
     
     <div id="trades_group"  >
-      
+      <router-link to="/"></router-link>
 			<table id="table">
         <tr>
           <th id="th">Signal </th>
@@ -43,10 +43,11 @@
         </tr>
         <tr class="hover1"
           v-for="(trade) in $store.getters.getTrades.slice(0,5)" 
-                :key="trade.id">
+                :key="trade.id" @click="Trades(trade.id)">
           <td  calss= "ded" v-if='trade.trade_type=== "1"'>Buy</td>
           <td class="ded" v-else>Sell</td>
           
+           
           <td class="red" v-if='trade.trade_return_percent < 0'>{{trade.trade_return_percent}}</td>
           <td  class="green" v-else-if='trade.trade_return_percent > 0'>{{trade.trade_return_percent}}</td>
           
@@ -77,6 +78,10 @@ export default {
     // addRows(){
     //   this.$store.commit('incrementRows',5);
     // }
+    Trades(){
+      this.$router.push({name:'Trades'})
+    }
+    
   },
     mounted() {
     // this.$store.dispatch("setBacktestReportdata",21);

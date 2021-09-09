@@ -108,12 +108,7 @@
 - HTML and CSS work
 - Change the picture in Landing Page
 
-## Work for today
-- graph in trades page
-- paper trader section in strategies page
-- link backtester page to trades page
-- format the files - Backtester report
-- distribute the ppt work
+
 
 
 
