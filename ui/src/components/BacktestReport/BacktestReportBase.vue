@@ -103,7 +103,7 @@
     <div id="title"  >
       <div id="line_1"  ></div>
       <div id="__p__trades" >
-        Trades Visualization
+        Signal Visualization
       </div>
      <div id="line_2"  ></div> 
       <div id="image">

@@ -57,9 +57,13 @@
                 v-for="strategy in $store.getters.getAllStrategies"
                 :key="strategy.id"
             >
+            
                 <div class="strat-name">{{ strategy.name }}</div>
                 <div class="strat-desc">{{ strategy.description }}</div>
+                
                 <button @click="showStrategy(strategy.id)">Go</button>
+                <router-link to="/">
+                </router-link>>
             </div>
         </div>
         <!--
@@ -89,11 +93,13 @@ export default {
     methods: {
         showStrategy(id) {
             this.$store.dispatch("setStrategyId", id);
-            this.$store.dispatch("flipAllStrategiesMainPage");
+            // this.$store.dispatch("flipAllStrategiesMainPage");
+            this.$router.push({name:'StrategyPage'});
     },
   },
     mounted() {
     this.$store.dispatch("setAllStrategies");
+    
   },
 };
 </script>

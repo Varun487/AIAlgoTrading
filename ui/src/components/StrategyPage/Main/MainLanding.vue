@@ -70,13 +70,13 @@
             </table>
             
             <br><br><br><br>
-            <div class="line3">
+            <!-- <div class="line3">
         </div>
         <div class="title2">
             PAPER TRADES
         </div>
         <div class="line4">
-        </div>
+        </div> -->
         <!-- <table class="center">
             <tr>
                 <th>Company Ticker</th>

@@ -106,6 +106,16 @@
 - Intimate user in case of wrong User id, password
 - Cookie for persistent login
 - HTML and CSS work
+- Change the picture in Landing Page
+
+## Work for today
+- graph in trades page
+- paper trader section in strategies page
+- link backtester page to trades page
+- format the files - Backtester report
+- distribute the ppt work
+
+
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
