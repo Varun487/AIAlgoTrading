@@ -1,22 +1,22 @@
 <template>
     <div class="strategy">
         <br>
-        <About />
+        <Data />
         <br><br><br><br><br><br><br><br>
-        <MainLanding />
+        <Graph />
     </div>
 </template>
 
 <script>
-import MainLanding from "./graph.vue"
-import About from "./data.vue"
+import Graph from "./graph.vue"
+import Data from "./data.vue"
 
 export default {
-    name: "StrategyPageMain",
+    name: "BacktesterMain",
     components: {
         
-        About,
-        MainLanding,
+        Data,
+        Graph,
     },
 };
 </script>

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import BacktesterMain from "./main/MainBase.vue"
+import BacktesterMain from "./Main/MainBase.vue"
 import Navbar from "../TopNavbar/NavPostLogin.vue"
 
 export default {

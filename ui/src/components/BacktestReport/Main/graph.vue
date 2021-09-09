@@ -3,7 +3,7 @@
 
 <template> 
   <div>
-    <Navbar />
+    
 
     
         
@@ -69,13 +69,10 @@
 
 <script>
 //  import axios from "axios";
-import Navbar from "../TopNavbar/NavPostLogin.vue"
+
 
 export default {
-  name: "MainLanding",
-  components: {
-    Navbar,
-  },
+  name: "Graph",
   methods: {
     // addRows(){
     //   this.$store.commit('incrementRows',5);

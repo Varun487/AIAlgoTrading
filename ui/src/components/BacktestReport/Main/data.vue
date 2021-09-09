@@ -3,7 +3,7 @@
 
 <template> 
   <div>
-    <Navbar />
+    
   <div id="main_frame">
     <h1 id="header">Backtester Report</h1>
     
@@ -103,13 +103,10 @@
 
 <script>
 //  import axios from "axios";
-import Navbar from "../TopNavbar/NavPostLogin.vue"
+
 
 export default {
-  name: "About",
-  components: {
-    Navbar,
-  },
+  name: "Data",
   methods: {
     // addRows(){
     //   this.$store.commit('incrementRows',5);
