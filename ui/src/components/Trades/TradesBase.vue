@@ -139,10 +139,10 @@ export default {
 }
   
 #title {
-	/* margin: 100px 1000px 75px 600px; */
+	margin: 100px 1000px 75px 630px;
 	width: 440px;
 	height: 104px;
-	background:rgb(0, 0, 0);
+	background:rgb(255, 255, 255);
 }
 .title2 {
     position: absolute;
@@ -160,26 +160,10 @@ export default {
     text-align: center;
     color: #000000;
 }
+
 #__p__trades {
 	
-	margin: 1200px 700px 75px 0px;
-  /* top: 3000px; */
-	width: 572px;
-	height: 144.5px;
-	overflow: hidden;
-	font-family: Poppins;
-	font-size: 55px;
-	text-align: center;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: #ffffff;
-	text-shadow: 0 0 2px #ffffff;
-	color:#000000;
-	background:rgb(255, 255, 255);
-  
-}
-#__p__tradess {
-	
-	margin: 1200px 500px 75px 0px;  ;
+	margin: 320px 50px 75px 0px;  ;
 	width: 572px;
 	height: 144.5px;
 	overflow: hidden;
@@ -194,17 +178,18 @@ export default {
 }
 #line_1 {
     position: absolute;
-    width: 600px;
+    width: 645px;
     height: 0px;
     left: 0px;
     top: 1500px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+     border: 1px solid rgba(0, 0, 0, 0.1);
+    
 }
 #line_2 {
     position: absolute;
-    width: 670px;
+    width: 660px;
     height: 0px;
-    left: 1170px;
+    left: 1190px;
     top: 1500px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
