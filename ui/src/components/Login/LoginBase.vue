@@ -17,6 +17,7 @@
                 <form action="#" v-on:submit.prevent="login" >
                   <div class="alert">
                   <v-alert v-if="alert" dense outlined type="error">Wrong Username or Password.</v-alert>
+                 
                   </div>
                     <input type="text" name="login-username" placeholder="Username" class="login-username" v-model="username">
                     <input type="password" name="login-password" placeholder="Password" class="login-password" v-model="password">
@@ -43,6 +44,7 @@ export default {
           username:"",
           password:"",
           alert:false,
+        
         }
     },
     methods:{
@@ -55,6 +57,7 @@ export default {
       .then(response => {
         console.log(response)
         console.log(response.status)
+        
         this.$router.push({name:'AllStrategies'})
          
         })

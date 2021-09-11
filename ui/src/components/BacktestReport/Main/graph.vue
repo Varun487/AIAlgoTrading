@@ -7,7 +7,7 @@
 
     
         
-    <div id="title"  >
+    <div id="title1"  >
       <div id="line_1"  ></div>
       <div id="__p__trades" >
         Signal Visualization
@@ -23,7 +23,7 @@
 		
 
 		
-    <div id="title"  >
+    <div id="title2"  >
       <div id="line_3"  ></div>
       <div id="__p__tradess" >
         Trades 
@@ -101,7 +101,7 @@ export default {
 
 </script>
 
-<style>
+<style scopeds>
 #header{
   text-align: center;
   padding: 20px;
@@ -159,16 +159,23 @@ export default {
   outline: none;
 }
   
-#title {
-	margin: 100px 1000px 75px 600px;
-	width: 640px;
+#title1 {
+	margin: 0px 1200px 75px 600px;
+	width: 3040px;
+	height: 104px;
+	background:rgb(0, 0, 0);
+}
+  
+#title2 {
+	margin: 100px 1200px 75px 600px;
+	width: 60px;
 	height: 104px;
 	background:rgb(0, 0, 0);
 }
 #__p__trades {
 	
-	margin: 1200px 500px 75px 0px;
-	width: 572px;
+
+	width: 1072px;
 	height: 144.5px;
 	overflow: hidden;
 	font-family: Poppins;
@@ -216,7 +223,7 @@ export default {
     width: 775px;
     height: 0px;
     left: 0px;
-    top: 3690px;
+    top: 3950px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -224,7 +231,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 3690px;
+    top: 3950px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
