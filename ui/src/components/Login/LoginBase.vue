@@ -15,7 +15,7 @@
                     Sign In
                 </h3>
                 <form action="#" v-on:submit.prevent="login" >
-                  <v-alert v-if="alert" type="error" dismissible v-model="alert">Invalid email and/or password.</v-alert>
+                  <v-alert v-if="alert"  dense outlined type="error">Invalid email and/or password.</v-alert>
 
                     <input type="text" name="login-username" placeholder="Username" class="login-username" v-model="username">
                     <input type="password" name="login-password" placeholder="Password" class="login-password" v-model="password">
@@ -41,7 +41,7 @@ export default {
         return{
           username:"",
           password:"",
-          alert:false
+          alert:false,
         }
     },
     methods:{
@@ -52,13 +52,17 @@ export default {
         })
         
       .then(response => {
-        //console.log(response)
-          if (response.status != 200) {
-          this.alert = true;
-        }
-          this.$router.push({name:'AllStrategies'})
+        console.log(response)
+        console.log(response.status)
+        this.$router.push({name:'AllStrategies'})
          
         })
+      
+      .catch(error => {
+        console.log(error)
+        this.alert=true
+        
+      })
         
       },
       // loggedIn(){

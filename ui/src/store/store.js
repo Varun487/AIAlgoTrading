@@ -332,10 +332,12 @@ export const store = new Vuex.Store({
         
         localStorage.setItem('auth_token',token)
         context.commit('retrieveToken',token)
+        
         resolve(response)
       })
       .catch(error => {
-        console.log(error)
+        console.log("Invalid email and/or password.")
+        
         reject(error)
   
       })
