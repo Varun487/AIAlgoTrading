@@ -15,8 +15,9 @@
                     Sign In
                 </h3>
                 <form action="#" v-on:submit.prevent="login" >
-                  <v-alert v-if="alert"  dense outlined type="error">Invalid email and/or password.</v-alert>
-
+                  <div class="alert">
+                  <v-alert v-if="alert" dense outlined type="error">Wrong Username or Password.</v-alert>
+                  </div>
                     <input type="text" name="login-username" placeholder="Username" class="login-username" v-model="username">
                     <input type="password" name="login-password" placeholder="Password" class="login-password" v-model="password">
                     <!-- <router-link to="/allstrategies"><button>Go</button></router-link> -->
@@ -59,6 +60,7 @@ export default {
         })
       
       .catch(error => {
+        
         console.log(error)
         this.alert=true
         
@@ -95,6 +97,11 @@ export default {
     background-position: center right;
     /*background-image: url("~@/assets/logo.jpg");
     background-size:100%;*/
+}
+.alert{
+  color:red;
+  text-align:center;
+  background-color: white;
 }
 .title {
     position: absolute;
