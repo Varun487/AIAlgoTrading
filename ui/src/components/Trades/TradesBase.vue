@@ -70,10 +70,9 @@ export default {
     Navbar,
   },
   mounted (){
-    // this.$store.dispatch("setTradesData",this.$store.getters.getBacktestsId);
-    // this.$store.dispatch("setTradespageVisualization",this.$store.getters.getBacktestsId);
-    this.$store.dispatch("setTradesData",21);
-    this.$store.dispatch("setTradespageVisualization",21);
+    this.$store.dispatch("setTradesData",this.$store.getters.getBacktestsId);
+    this.$store.dispatch("setTradespageVisualization",this.$store.getters.getBacktestsId);
+   
   },
  
 }

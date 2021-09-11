@@ -78,7 +78,11 @@ export default {
     // addRows(){
     //   this.$store.commit('incrementRows',5);
     // }
-    Trades(){
+    Trades(id){
+      this.$store.dispatch("setBacktestsId", id);
+      this.$store.dispatch("setBacktestReportdata",id);
+      this.$store.dispatch("setTradeVisualization",id);
+      this.$store.dispatch("setTrades",id);
       this.$router.push({name:'Trades'})
     }
     
@@ -88,10 +92,10 @@ export default {
     // this.$store.dispatch("setTradeVisualization",21);
     // this.$store.dispatch("setTrades",21);
     // this.$store.dispatch("incrementRows",5);
-    this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
-    this.$store.dispatch("setBacktestReportdata",this.$store.getters.getBacktestsId);
-    this.$store.dispatch("setTradeVisualization",this.$store.getters.getBacktestsId);
-    this.$store.dispatch("setTrades",this.$store.getters.getBacktestsId);
+    // this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
+    // this.$store.dispatch("setBacktestReportdata",this.$store.getters.getBacktestsId);
+    // this.$store.dispatch("setTradeVisualization",this.$store.getters.getBacktestsId);
+    // this.$store.dispatch("setTrades",this.$store.getters.getBacktestsId);
   },
 }
 
@@ -101,7 +105,7 @@ export default {
 #header{
   text-align: center;
   padding: 20px;
-  color:black;
+  color:rgb(0, 0, 0);
   font-family: Poppins;
   background-color: rgb(255, 255, 255);
 }
@@ -157,7 +161,7 @@ export default {
   
 #title {
 	margin: 100px 1000px 75px 600px;
-	width: 440px;
+	width: 640px;
 	height: 104px;
 	background:rgb(0, 0, 0);
 }
