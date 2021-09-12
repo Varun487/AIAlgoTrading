@@ -1,24 +1,24 @@
 <template>
 <div class="strategy">
-    <div class="line1">
+    <div class="line3">
         </div>
-        <div class="title">
-            BACKTESTS
+        <div class="title2">
+            PAPER TRADES
         </div>
-        <div class="line2">
-        </div>
+        <div class="line4">
+        </div><br />
         <!-- <div id="tab"> -->
             
-            <table class="center"><br>
+            <table class="center"><br />
             <tr>
                 <th>Company Ticker</th>
                 <th>Return %</th>
-                <th>Returns</th>
+                <th>Live</th>
             </tr>
             <br><br>
             <!-- <router-link to="/"> -->
             <tr class="hover1"
-            v-for="(report) in $store.getters.getAllBacktests.slice(0, 5)"
+            v-for="(report) in $store.getters.getAllPapertrades.slice(0, 5)"
       v-bind:key="report.id" @click="Backtest(report.id)">
       <!-- <router-link to="/"> -->
             
@@ -28,13 +28,15 @@
                   <router-link to="/"><td>
                     {{ report.company_ticker }}</td></router-link>
 
-                <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
-                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
-                <td class="black" v-else>{{ report.total_returns_percent }}</td>
+                <td class="red" v-if='report.return_percent < 0'>{{ report.return_percent }}</td>
+                <td class="green" v-else-if='report.return_percent > 0'>{{ report.return_percent }}</td>
+                <td class="black" v-else>{{ report.return_percent }}</td>
 
-                <td class="red" v-if='report.total_returns < 0'>{{ report.total_returns }}</td>
-                <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
-                <td class="black" v-else>{{ report.total_returns }}</td>
+                <!-- <td>{{ report.live }}</td> -->
+
+                <td class="red" v-if='report.live == false'>{{ report.live }}</td>
+                <td class="green" v-else-if='report.live == true'>{{ report.live }}</td>
+                <td class="black" v-else>{{ report.live }}</td>
                 <!-- </router-link> -->
             </tr>
             <br>
@@ -70,13 +72,7 @@
             </table>
             
             <br><br><br><br>
-            <!-- <div class="line3">
-        </div>
-        <div class="title2">
-            PAPER TRADES
-        </div>
-        <div class="line4">
-        </div> -->
+            
         <!-- <table class="center">
             <tr>
                 <th>Company Ticker</th>
@@ -112,18 +108,24 @@
 <script>
 
 export default {
-    name: 'MainLanding',
+    name: 'Papertrader',
     methods: {
         Backtest(id) {
             this.$store.dispatch("setBacktestsId", id);
+            this.$store.dispatch("setPapertradesId", id);
             this.$store.dispatch("flipAllBacktestsMainPage");
-            console.log(this.$store.getters.getBacktestsId);
-            console.log(this.$store.getters.getAllBackTestMainPage);
+            this.$store.dispatch("flipAllPapertradesMainPage");
+            // console.log(this.$store.getters.getBacktestsId);
+            // console.log(this.$store.getters.getAllBackTestMainPage);
+            console.log("hello")
+            console.log(this.$store.getters.getPapertradesId);
+            console.log(this.$store.getters.getAllPapertrades);
             this.$router.push({name:'BacktestReport'})
     },
   },
   mounted() {
     this.$store.dispatch("setAllBacktests");
+    this.$store.dispatch("setAllPapertrades");
   },
     data: function() {
     return {

@@ -98,17 +98,17 @@
 
 ## Remaining work
 - BACK BUTTON
-- Both strategies need to be displayed
-- When clicking `go` on a strategy, id of both strategies must be updated in state 
-- In strategy data page
+- Both strategies need to be displayed ![DONE]
+- When clicking `go` on a strategy, id of both strategies must be updated in state  ![DONE]
+- In strategy data page ![DONE]
   - Limit backtests displayed 
   - Display live paper trades
   - Id of backtest for backtest report should be updated 
-- Backtest report trades -> DEBUG
-- Paper Trade page -> NOT COMPLETE
+- Backtest report trades -> DEBUG ![DONE]
+- Paper Trade page -> NOT COMPLETE 
 - Filter button and navigation of backtests and paper trades `LOW Priority`
-- Trade data Page
-- Intimate user in case of wrong User id, password
+- Trade data Page  ![DONE]
+- Intimate user in case of wrong User id, password ![DONE]
 - Cookie for persistent login
 - HTML and CSS work
 - Change the picture in Landing Page

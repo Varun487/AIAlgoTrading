@@ -4,12 +4,14 @@
         <About />
         <br><br><br><br><br><br><br><br>
         <MainLanding />
+        <Papertrader />
     </div>
 </template>
 
 <script>
 import MainLanding from "./MainLanding.vue"
 import About from "./About.vue"
+import Papertrader from "./Papertrader.vue"
 
 export default {
     name: "StrategyPageMain",
@@ -17,6 +19,7 @@ export default {
         
         About,
         MainLanding,
+        Papertrader,
     },
 };
 </script>
