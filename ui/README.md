@@ -55,7 +55,7 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-## Login page ![featureincomplete]
+## Login page 
 - design ![DONE] ![dishacomplete]
 - implementation
   - frontend (VueJS) ![DONE] ![dishacomplete]
@@ -80,6 +80,12 @@
 - design ![hritikcomplete]
 - Implementation ![hritikcomplete]
 
+## Trades page ![done]  ![hritikcomplete] ![samrudhicomplete]
+- design  ![hritikcomplete] ![samrudhicomplete]
+- implementation 
+  - backend (Vuex and REST API)
+        - trades ![hritikcomplete]
+        - visualization ![samrudhicomplete]
 
 ## Automated testing
 - All strategies page
