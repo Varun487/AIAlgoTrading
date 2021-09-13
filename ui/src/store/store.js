@@ -48,6 +48,9 @@ export const store = new Vuex.Store({
     trades:undefined,
     trades_data:undefined,
     tradespage_visualization:undefined,
+    paper_trade_top:undefined,
+    paper_trade_mid:undefined,
+    paper_trade_bottom: undefined,
     //i:0,
     
   },
@@ -122,6 +125,15 @@ export const store = new Vuex.Store({
     },
     setPapertradeReports(state, payload) {
       state.papertradereports = payload;
+    },
+    setPaperTradeTopData(state, payload) {
+      state.paper_trade_top = payload;
+    },
+    setPaperTradeMidData(state, payload) {
+      state.paper_trade_mid = payload;
+    },
+    setPaperTradeBottomData(state, payload) {
+      state.paper_trade_bottom = payload;
     },
     setBacktestReportdata(state, payload) {
       state.backtest_data = payload;
@@ -200,7 +212,39 @@ export const store = new Vuex.Store({
       
     },
     
-    
+    async setPaperTradeTopData(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/companyquote/${id}/`,{
+          headers: {
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+
+          }
+        });
+        state.commit("setPaperTradeTopData", res.data)
+        
+    },
+    async setPaperTradeMidData(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/papertradedata/${id}/`,{
+          headers: {
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+
+          }
+        });
+        state.commit("setPaperTradeMidData", res.data)
+        
+    },
+    async setPaperTradeBottomData(state,id) {
+      
+      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/papertradevisualization/${id}/`,{
+          headers: {
+            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+
+          }
+        });
+        state.commit("setPaperTradeBottomData", res.data)
+        
+    },
     async setAllStrategies(state) {
       /*
       axios
@@ -376,7 +420,10 @@ export const store = new Vuex.Store({
     getloggedIn:(state)=> state.token != null,
     getAllPapertrades: (state) => state.all_papertrades.all_papertrades,
     getPapertradesId: (state) => state.all_papertrades.papertradeid,
-    getAllPapertradesMainPage: (state) => state.all_papertrades.mainpage 
+    getAllPapertradesMainPage: (state) => state.all_papertrades.mainpage,
+    getPaperTradeTopData: (state) => state.paper_trade_top,
+    getPaperTradeMidData: (state) => state.paper_trade_mid,
+    getPaperTradeBottomData: (state) => state.paper_trade_bottom,
     // getincrementRows: (state)=> state.i,
     // getselected_strategyId: (state) => state.selected_strategy.selected_strategyid,
   },

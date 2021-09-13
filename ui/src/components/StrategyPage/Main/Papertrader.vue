@@ -19,7 +19,7 @@
             <!-- <router-link to="/"> -->
             <tr class="hover1"
             v-for="(report) in $store.getters.getAllPapertrades.slice(0, 5)"
-      v-bind:key="report.id" @click="Backtest(report.id)">
+      v-bind:key="report.id" @click="PaperTrade(report.id)">
       <!-- <router-link to="/"> -->
             
       <!-- <tr class="hover1" v-for="report in computedObj" :key="report.id"> -->
@@ -110,7 +110,7 @@
 export default {
     name: 'Papertrader',
     methods: {
-        Backtest(id) {
+        PaperTrade(id) {
             this.$store.dispatch("setBacktestsId", id);
             this.$store.dispatch("setPapertradesId", id);
             this.$store.dispatch("flipAllBacktestsMainPage");
@@ -120,7 +120,7 @@ export default {
             console.log("hello")
             console.log(this.$store.getters.getPapertradesId);
             console.log(this.$store.getters.getAllPapertrades);
-            this.$router.push({name:'BacktestReport'})
+            this.$router.push({name:'Papertrades'})
     },
   },
   mounted() {
