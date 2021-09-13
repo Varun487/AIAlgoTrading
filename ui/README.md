@@ -11,7 +11,7 @@
 ## Common ![dishacomplete]
 - Header ![DONE]
 - Footer ![DONE]
-  - To use: import FooterBase from "relative path"
+  - To use: import FooterBase from "relative path" ![DONE]
 - Add and configure all the pages with header ![DONE]
 - Add and configure the logout button for all pages ![DONE]
 - Logically connected the Landing and Login pages ![DONE]
@@ -24,9 +24,9 @@
   - Add scaled layout designs ![DONE]
   - Minor modification to render uniform dynamic layout ![DONE]
 - implementation - backend (Vuex and REST API) ![DONE]
-  - Re-adjust to accomodate new strategy 
-  - Implement backend logic for lstm strategy
-  - Implement common logic for rendering uniform design
+  - Re-adjust to accomodate new strategy ![DONE]
+  - Implement backend logic for lstm strategy ![DONE]
+  - Implement common logic for rendering uniform design ![DONE]
   
 
 ## Strategy page ![samrudhiincomplete]
@@ -55,7 +55,7 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
 
-## Login page 
+## Login page ![dishacomplete] ![hritikcomplete] 
 - design ![DONE] ![dishacomplete]
 - implementation
   - frontend (VueJS) ![DONE] ![dishacomplete]
@@ -68,13 +68,14 @@
   - backend (Vuex and REST API)
   - Cookie for persistent login
 
-## Paper trading page ![dishaincomplete]
+## Paper trading page ![dishacomplete]
 - design ![DONE]
 - implementation - frontend (VueJS) ![DONE]
    - Redo design ![DONE]
    - Fix front-end layout ![DONE]
    - Implemenet final elements ![DONE]
-- implementation - backend (Vuex and REST API)
+- implementation - backend (Vuex and REST API) ![DONE]
+  - Add visualization to the page ![DONE]
 
 ## 404 Not Found Error page ![hritikcomplete]
 - design ![hritikcomplete]

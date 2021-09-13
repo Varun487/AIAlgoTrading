@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="pt-title">PAPER TRADES</div>
-        <div class="pt-type" v-if='$store.getters.getPaperTradeTopData.live== "True"'>LIVE</div>
+        <div class="pt-type" v-if='$store.getters.getPaperTradeTopData.live=== "true"'>LIVE</div>
         <div class="pt-type" v-else>HISTORICAL</div>
         <div class="pt-t-info">
             <h3>General Information</h3>
@@ -15,7 +15,9 @@
        <h4>TRADE DETAILS</h4>
        <div class="pt-m-info">
            <h3>Strategy Configuration</h3>
-            <div class="m-sname"><b>Strategy Name: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.strategy_type.name}}</div>
+            <!--<div class="m-sname"><b>Strategy Type: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.strategy_type.name}}</div>-->
+            <div class="m-sname" v-if='$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.strategy_type==="1"'><b>Strategy Type: </b>BUY</div>
+            <div class="m-sname" v-else><b>Strategy Type: </b>SELL</div>
             <div class="m-itp"><b>Indicator Time Period: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.indicator_time_period}}</div>
             <div class="m-mhp"><b>Maximum Holding Period: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.max_holding_period}}</div>
             <div class="m-tpf"><b>Take Profit Factor: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.take_profit_factor}}</div>
@@ -29,7 +31,9 @@
             <div class="m-return-percentage"><b>Return Percentage: </b>{{$store.getters.getPaperTradeMidData.trade.return_percent}}</div>
        </div>
        <h4>TRADE VISUALIZATION</h4>
-       <div class="pt-b-info"></div>
+       <div class="pt-b-info">
+           <img v-bind:src="'data:image/png;base64,'+$store.getters.getPaperTradeBottomData.img" />
+       </div>
     </div>
 </template>
 <script>
@@ -85,5 +89,14 @@ h4:before, h4:after {
     margin-left: 15%;
     font-weight: lighter;
     font-size: 24px;
+}
+.pt-b-info {
+    text-align: center;
+}
+img {
+    margin: -15px;
+    width: 1300px; 
+    height: 500px; 
+    border: solid 1px silver;
 }
 </style>
