@@ -24,8 +24,9 @@
             <div class="m-slf"><b>Stop Loss Factor: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.stop_loss_factor}}</div>
             <div class="m-sigma"><b>Sigma: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.sigma}}</div>
             <h3>Trade</h3>
+            <!--
             <div class="m-entry-order"><b>Entry Order: </b>{{$store.getters.getPaperTradeMidData.trade.entry_order}}</div>
-            <div class="m-exit-order"><b>Exit Order: </b>{{$store.getters.getPaperTradeMidData.trade.exit_order}}</div>
+            <div class="m-exit-order"><b>Exit Order: </b>{{$store.getters.getPaperTradeMidData.trade.exit_order}}</div>-->
             <div class="m-duration"><b>Duration: </b>{{$store.getters.getPaperTradeMidData.trade.duration}}</div>
             <div class="m-net-returns"><b>Net Returns: </b>{{$store.getters.getPaperTradeMidData.trade.net_return}}</div>
             <div class="m-return-percentage"><b>Return Percentage: </b>{{$store.getters.getPaperTradeMidData.trade.return_percent}}</div>
