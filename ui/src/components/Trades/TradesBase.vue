@@ -5,9 +5,9 @@
   <div id ="main_frame">
     <h1 id="header">Trades</h1>
       <div id="base">
-        <div id="attributes" >
+        <!-- <div id="attributes" >
           <b>Id</b> : {{$store.getters.getTradesData.id}}
-        </div>
+        </div> -->
 
         <div id="attributes" >
           <b>Duration</b>: {{$store.getters.getTradesData.trade.duration}}
@@ -24,7 +24,7 @@
         <div id="attributess">
           <b>Entry Order</b> <br><br>
 
-          Close Price:  {{$store.getters.getTradesData.trade.entry_order.ticker_data.time_stamp}}  <br><br>
+          Close Price:  {{$store.getters.getTradesData.trade.entry_order.close}}  <br><br>
           Time Stamp: {{$store.getters.getTradesData.trade.entry_order.ticker_data.time_stamp}} <br>
         </div>
 
@@ -32,7 +32,7 @@
           <b>Exit Order</b> <br><br>
 
           
-          Close Price:  {{$store.getters.getTradesData.trade.exit_order.ticker_data.time_stamp}}  <br><br>
+          Close Price:  {{$store.getters.getTradesData.trade.exit_order.close}}  <br><br>
           Time Stamp: {{$store.getters.getTradesData.trade.exit_order.ticker_data.time_stamp}} <br>
         </div>
 

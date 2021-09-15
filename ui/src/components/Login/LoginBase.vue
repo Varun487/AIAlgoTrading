@@ -70,10 +70,10 @@ export default {
       })
         
       },
-      // loggedIn(){
-      //   return this.$store.getters.getloggedIn
+      loggedIn(){
+        return this.$store.getters.getloggedIn
 
-      // }
+      }
      
 
     }
