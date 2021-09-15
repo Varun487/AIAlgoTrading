@@ -24,7 +24,7 @@
         <div id="attributess">
           <b>Entry Order</b> <br><br>
 
-          Close Price:  {{$store.getters.getTradesData.trade.entry_order.close}}  <br><br>
+          Close Price:  {{$store.getters.getTradesData.trade.entry_order.ticker_data.close}}  <br><br>
           Time Stamp: {{$store.getters.getTradesData.trade.entry_order.ticker_data.time_stamp}} <br>
         </div>
 
@@ -32,7 +32,7 @@
           <b>Exit Order</b> <br><br>
 
           
-          Close Price:  {{$store.getters.getTradesData.trade.exit_order.close}}  <br><br>
+          Close Price:  {{$store.getters.getTradesData.trade.exit_order.ticker_data.close}}  <br><br>
           Time Stamp: {{$store.getters.getTradesData.trade.exit_order.ticker_data.time_stamp}} <br>
         </div>
 
