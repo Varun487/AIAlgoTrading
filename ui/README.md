@@ -106,7 +106,7 @@
   - Display live paper trades
   - Id of backtest for backtest report should be updated 
 - Backtest report trades -> DEBUG ![DONE]
-- Paper Trade page -> NOT COMPLETE 
+- Paper Trade page -> COMPLETE ![DONE]
 - Filter button and navigation of backtests and paper trades `LOW Priority`
 - Trade data Page  ![DONE]
 - Intimate user in case of wrong User id, password ![DONE]
