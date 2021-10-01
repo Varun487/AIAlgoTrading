@@ -98,25 +98,45 @@
 - 404 Not Found error page
 
 ## Remaining work
-- BACK BUTTON
-- Both strategies need to be displayed ![DONE]
-- When clicking `go` on a strategy, id of both strategies must be updated in state  ![DONE]
-- In strategy data page ![DONE]
-  - Limit backtests displayed 
-  - Display live paper trades
-  - Id of backtest for backtest report should be updated 
-- Backtest report trades -> DEBUG ![DONE]
-- Paper Trade page -> COMPLETE ![DONE]
-- Filter button and navigation of backtests and paper trades `LOW Priority`
-- Trade data Page  ![DONE]
-- Intimate user in case of wrong User id, password ![DONE]
-- Cookie for persistent login
-- HTML and CSS work
-- Change the picture in Landing Page
-
-
-
-
+- Landing page
+  - Change landing page picture
+- Login page
+  - Change forgot password CSS
+  - Username, password should not become transparent on clicking (optional)
+- AllStrategies
+  - Remove stray `<` character in strategy card
+- Strategy
+  - Bold all headings in strategy description (optional)
+  - Round returns and return %
+  - Nav buttons and filter for backtests and paper trades
+- Backtest page
+  - Change date time representation
+  - Put only name in strategy type
+  - Add description to each strategy config, remove strategy type
+  - Color total returns, profit trades, loss trades, profit trades %, loss trades %
+  - Put only company name in Company
+  - Handle loss trades calc in case of 0 trades
+  - Mention if no trades available
+  - Decrease Load time of all pages
+  - Visualization and Trades heading CSS fix
+  - increase bubble size of trades
+  - Round returns and return %
+  - Nav buttons and filter for trades
+- Trades
+  - Color net return and return %
+  - Entry and Exit orders - Round close price and fix time stamps
+  - Mention whether sell/buy signal
+- Paper trades page
+  - CSS for mentioning Historical / Live - Is it being checked through exit orders?
+  - Fix Last Updated TimeStamp
+  - Round all prices
+  - Mention desctiption of strategy config
+  - Put name of strategy in strategy type
+  - Mention signal type
+- General
+  - Make CSS responsive to different screen sizes
+  - Loading symbol in all places where data in called
+  - BACK BUTTON
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
