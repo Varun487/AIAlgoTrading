@@ -51,7 +51,7 @@
 ## Deployment scripts ![varuncomplete]
 - Automated deployment to VM from local machine `firebase` ![done]
 
-## Good to have
+## Remaining
 - SSL certification for server
   - Take care of ssl checks in django
   - Testing
