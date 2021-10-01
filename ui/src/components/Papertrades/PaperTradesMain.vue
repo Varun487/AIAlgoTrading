@@ -2,7 +2,7 @@
     <div>
         <div class="pt-title">PAPER TRADES</div>
         <div class="pt-type" v-if='$store.getters.getPaperTradeTopData.live=== "true"'>LIVE</div>
-        <div class="pt-type" v-else>HISTORICAL</div>
+        <div class="pt-type" v-else>LIVE</div>
         <div class="pt-t-info">
             <h3>General Information</h3>
             <div class="t-company"><b>Company:</b> {{$store.getters.getPaperTradeTopData.company.name}}</div>
