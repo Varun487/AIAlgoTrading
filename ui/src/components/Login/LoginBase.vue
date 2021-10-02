@@ -14,11 +14,12 @@
                 <h3 class="signin-title">
                     Sign In
                 </h3>
-                <form action="#" v-on:submit.prevent="login" >
-                  <div class="alert">
-                  <v-alert v-if="alert" dense outlined type="error">Wrong Username or Password.</v-alert>
+                <div class="alert">
+                  <v-alert v-if="alert" dense outlined type="error"><b>Wrong Username or Password</b></v-alert>
                  
                   </div>
+                <form action="#" v-on:submit.prevent="login" >
+                  
                     <input type="text" name="login-username" placeholder="Username" class="login-username" v-model="username">
                     <input type="password" name="login-password" placeholder="Password" class="login-password" v-model="password">
                     <!-- <router-link to="/allstrategies"><button>Go</button></router-link> -->
@@ -102,9 +103,14 @@ export default {
     background-size:100%;*/
 }
 .alert{
+  position:absolute;
   color:red;
   text-align:center;
-  background-color: white;
+  
+  top:93px;
+  left:0px;
+  width:395px;
+  
 }
 .title {
     position: absolute;
