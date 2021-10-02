@@ -113,6 +113,12 @@ docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py in
 docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py papertrade
 
 ```
+9. Command to extract and store all data from DB in a csv format
+```
+
+docker-compose -f devops/docker-compose.dev.yml run restapi python3 manage.py extractDBdata
+
+```
 
 ###### NOTE: To run in production, the commands are the same, but the file is `docker-compose.prod.yml`
 
