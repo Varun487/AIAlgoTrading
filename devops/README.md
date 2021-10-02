@@ -55,7 +55,7 @@
 - SSL certification for server
   - Take care of ssl checks in django
   - Testing
-
+- Host updated restapi
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

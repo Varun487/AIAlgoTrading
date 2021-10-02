@@ -104,7 +104,7 @@
   - Change forgot password CSS
   - Username, password should not become transparent on clicking (optional)
 - AllStrategies
-  - Remove stray `<` character in strategy card
+  - Remove stray `>` character in strategy card
 - Strategy
   - Bold all headings in strategy description (optional)
   - Round returns and return %
@@ -113,6 +113,7 @@
   - Change date time representation
   - Put only name in strategy type
   - Add description to each strategy config, remove strategy type
+  - Round returns and return %
   - Color total returns, profit trades, loss trades, profit trades %, loss trades %
   - Put only company name in Company
   - Handle loss trades calc in case of 0 trades
@@ -126,6 +127,7 @@
   - Color net return and return %
   - Entry and Exit orders - Round close price and fix time stamps
   - Mention whether sell/buy signal
+  - Decrease load time
 - Paper trades page
   - CSS for mentioning Historical / Live - Is it being checked through exit orders?
   - Fix Last Updated TimeStamp
@@ -135,6 +137,7 @@
   - Mention signal type
 - General
   - Make CSS responsive to different screen sizes
+  - Standardize fonts and sizes
   - Loading symbol in all places where data in called
   - BACK BUTTON
 

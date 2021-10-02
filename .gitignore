@@ -144,3 +144,4 @@ migrations/
 postgres-data/
 restapi/staticfiles/
 Storage/
+STORAGE/

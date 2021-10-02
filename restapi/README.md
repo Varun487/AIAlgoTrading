@@ -229,10 +229,11 @@
   - Generate Paper Signals ![done]
   - Paper Trade Synchronization ![done]
 
-## Remaining work
-- Increase depth for /api/papertrader/papertradedata/paper_trade_id/ to include signal
-- Make cron job work
+## Remaining work ![varunincomplete]
+- Increase depth for /api/papertrader/papertradedata/paper_trade_id/ to include signal ![done]
 - Initialize new DB with latest paper trades
+- Extract data from DB
+- Make cron job work
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
