@@ -1,0 +1,42 @@
+# RESEARCH
+
+![componentincomplete]
+
+- Contains scripts and notebooks used for research
+
+- Inferences drawn from research to be put in a paper
+
+# TODO
+1. Divide data on a few broad categories
+	- Company
+	- Time period
+	- Backtest config
+2. Also, find data and draw global inferences based on these categories
+	- Strategy
+	- Company
+	- Monthly
+3. Experiment by filtering with indicators, other ways to improve strategy
+4. Build a good profitable portfolio based on backtests over a certain period of time, compare with current data
+5. Under what scenarios did the backtest work? When did it not work? Why? How to decide which company to put on what strategy when?
+
+[done]: https://img.shields.io/badge/DONE-brightgreen
+[incomplete]: https://img.shields.io/badge/INCOMPLETE-red
+[varunincomplete]: https://img.shields.io/badge/VARUN-INCOMPLETE-red
+[varuncomplete]: https://img.shields.io/badge/VARUN-COMPLETE-brightgreen
+[dishaincomplete]: https://img.shields.io/badge/DISHA-INCOMPLETE-red
+[dishacomplete]: https://img.shields.io/badge/DISHA-COMPLETE-brightgreen
+[samrudhiincomplete]: https://img.shields.io/badge/SAMRUDHI-INCOMPLETE-red
+[samrudhicomplete]: https://img.shields.io/badge/SAMRUDHI-COMPLETE-brightgreen
+[hritikincomplete]: https://img.shields.io/badge/HRITIK-INCOMPLETE-red
+[hritikcomplete]: https://img.shields.io/badge/HRITIK-COMPLETE-brightgreen
+[bug]: https://img.shields.io/badge/BUG-red
+[bugfixed]: https://img.shields.io/badge/BUG-FIXED-brightgreen
+[featureincomplete]: https://img.shields.io/badge/FEATURE-INCOMPLETE-red
+[featurecomplete]: https://img.shields.io/badge/FEATURE-COMPLETE-brightgreen
+[componentincomplete]: https://img.shields.io/badge/COMPONENT-INCOMPLETE-red
+[componentcomplete]: https://img.shields.io/badge/COMPONENT-COMPLETE-brightgreen
+[phasecomplete]: https://img.shields.io/badge/PHASE-COMPLETE-brightgreen
+[phaseincomplete]: https://img.shields.io/badge/PHASE-INCOMPLETE-red
+[meetingincomplete]: https://img.shields.io/badge/MEETING-INCOMPLETE-red
+[docincomplete]: https://img.shields.io/badge/DOC-INCOMPLETE-red
+[doccomplete]: https://img.shields.io/badge/DOC-COMPLETE-brightgreen
