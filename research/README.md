@@ -8,6 +8,10 @@
 
 # TODO
 1. For any company, does any strategy config beat the baseline in any time period? (Try 4 time periods ->  Entire 3 years, Yearly, Quaterly, Monthly) ![varunincomplete]
+   - Calculate company baselines
+   - Calculate backtest baselines
+   - Comparison + inferences
+   - Visualization
 2. Does any strategy work better when another indicator is used? (Try 5 indicators with varying time periods)
 3. Write Research paper ![docincomplete]
 
