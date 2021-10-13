@@ -7,17 +7,9 @@
 - Inferences drawn from research to be put in a paper
 
 # TODO
-1. Divide data on a few broad categories
-	- Company
-	- Time period
-	- Backtest config
-2. Also, find data and draw global inferences based on these categories
-	- Strategy
-	- Company
-	- Monthly
-3. Experiment by filtering with indicators, other ways to improve strategy
-4. Build a good profitable portfolio based on backtests over a certain period of time, compare with current data
-5. Under what scenarios did the backtest work? When did it not work? Why? How to decide which company to put on what strategy when?
+1. For any company, does any strategy config beat the baseline in any time period? (Try 4 time periods ->  Entire 3 years, Yearly, Quaterly, Monthly) ![varunincomplete]
+2. Does any strategy work better when another indicator is used? (Try 5 indicators with varying time periods)
+3. Write Research paper ![docincomplete]
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

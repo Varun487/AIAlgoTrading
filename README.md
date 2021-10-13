@@ -86,7 +86,7 @@ docker-compose -f devops/docker-compose.dev.yml up --build
 
 ```
 
-5. To create a super user for the database
+5. To create a superuser for the database
 
 ```
 
