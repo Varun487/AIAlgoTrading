@@ -10,23 +10,17 @@
     
       <div id="base">         
       <div id="attributes" >
-        <b>Start Date Time</b> : {{$store.getters.getBacktestReportData.start_date_time}}
+        <b>Start Date Time</b> : 2017-01-01
 				
        </div>
       <div id="attributes" >
-        <b>End Date Time</b> : {{$store.getters.getBacktestReportData.end_date_time}}
-			
+        <b>End Date Time</b> : 2020-12-30
       </div>
-      <div id="attributess" >
+      <div id="attributesss" >
         <b>Strategy Type</b>  <br><br>
         
         Name: {{$store.getters.getBacktestReportData.strategy_type.name}}<br>
-        Description:    {{$store.getters.getBacktestReportData.strategy_type.description}}<br>
-        Stock Selection: {{$store.getters.getBacktestReportData.strategy_type.stock_selection}}<br>
-        Entry Criteria: {{$store.getters.getBacktestReportData.strategy_type.entry_criteria}}<br>
-        Exit Criteria: {{$store.getters.getBacktestReportData.strategy_type.exit_criteria}}<br>
-        Stop Loss Method: {{$store.getters.getBacktestReportData.strategy_type.stop_loss_method}}<br>
-        Take Profit Method: {{$store.getters.getBacktestReportData.strategy_type.take_profit_method}}<br>
+        
 				
       </div>
       <div id="attributess" 
@@ -54,7 +48,7 @@
         Stop Loss Factor: {{$store.getters.getBacktestReportData.strategy_config.stop_loss_factor}}<br>
         Sigma:{{$store.getters.getBacktestReportData.strategy_config.sigma}}<br>
         Dimension:{{$store.getters.getBacktestReportData.strategy_config.dimension}}<br>
-        Strategy Type: Sell<br>
+        
 
 
 				
@@ -67,19 +61,19 @@
         <b>Total Number of Trades</b>:  {{$store.getters.getBacktestReportData.total_trades}}
 				
       </div>
-      <div id="attributes" >
+      <div id="attributes-profit" >
         <b>Profit Trades</b>:  {{$store.getters.getBacktestReportData.profit_trades}}
 				
       </div>
-      <div id="attributes" >
+      <div id="attributes-loss" >
         <b>Loss Trades</b> :  {{$store.getters.getBacktestReportData.total_trades - $store.getters.getBacktestReportData.profit_trades}}
 				
       </div>
-      <div id="attributes" >
+      <div id="attributes-profit" >
         <b>Profit Trades %</b> :  {{$store.getters.getBacktestReportData.profit_trades_percent}}
 			
       </div>
-      <div id="attributes" >
+      <div id="attributes-loss" >
         <b>Loss Trades %</b> : {{100-$store.getters.getBacktestReportData.profit_trades_percent}}
 				
       </div>
@@ -173,6 +167,42 @@ export default {
 	text-align: left;
 	color:#000000;
 } 
+#attributesss{
+	top: 485px;
+	left: 213px;
+	width: 1400.2px;
+	height:140.64px;
+	overflow: hidden;
+	/* font-family: Poppins; */
+	font-size: 25px;
+	/* font-weight: bold; */
+	text-align: left;
+	color:#000000;
+} 
+#attributes-profit{
+	top: 485px;
+	left: 213px;
+	width: 1200.2px;
+	height: 100.64px;
+	overflow: hidden;
+	/* font-family: Poppins; */
+	font-size: 25px;
+	/* font-weight: bold; */
+	text-align: left;
+	color:green;
+}
+#attributes-loss{
+	top: 485px;
+	left: 213px;
+	width: 1200.2px;
+	height: 100.64px;
+	overflow: hidden;
+	/* font-family: Poppins; */
+	font-size: 25px;
+	/* font-weight: bold; */
+	text-align: left;
+	color:red;
+}
 #textbox {
   width: 300px;
   height: 30px;
@@ -241,7 +271,7 @@ export default {
     width: 775px;
     height: 0px;
     left: 0px;
-    top: 3690px;
+    top: 3950px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_4 {
@@ -249,7 +279,7 @@ export default {
     width: 900px;
     height: 0px;
     left: 1000px;
-    top: 3690px;
+    top: 3950px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #trades_group {
@@ -289,7 +319,7 @@ table{
   padding:5px;
   color: black;
   /* border:2px solid black; */
-  border-radius: 25px;
+  border-radius: 50 px;
   text-align:center;
   border-spacing: 0 30px;
   /* -ms-box-shadow:10px 10px 10px 10px rgba(0,0,0,0.25);
@@ -317,7 +347,7 @@ table{
 td{
    border: 2px solid #941dcb;
     text-align: center;
-    padding: 10px;
+    padding: 30px;
     width: 750px;
     height: 0px;
     left: 1100px;

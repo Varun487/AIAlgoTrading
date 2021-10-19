@@ -19,7 +19,7 @@ services:
 #      - API_KEY=9IJF3E893E4E2Q2M
 #      - SECRET_KEY=m(5+#i$uv7y%n9ey!r+mp@jjn(@7*s4*c23er9@&lbiz#55=6a
 #      - DEBUG=True
-#      - ALLOWED_HOSTS=restapi
+#      - ALLOWED_HOSTS=localhost
 #      - POSTGRES_DB=postgres
 #      - POSTGRES_USER=postgres
 #      - POSTGRES_PASSWORD=postgres
@@ -34,8 +34,10 @@ services:
 #      "
 #    volumes:
 #      - ../restapi:/home/app/restapi
-#    expose:
-#      - 8000
+#    ports:
+#      - "8000:8000"
+##    expose:
+##      - 8000
 #    depends_on:
 #      - db
 

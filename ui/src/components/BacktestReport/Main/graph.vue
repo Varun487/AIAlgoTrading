@@ -160,10 +160,10 @@ export default {
 }
   
 #title1 {
-	margin: 0px 1200px 75px 600px;
-	width: 3040px;
+	margin: 10px 500px 75px 630px;
+	width: 440px;
 	height: 104px;
-	background:rgb(0, 0, 0);
+	background:rgb(255, 255, 255);
 }
   
 #title2 {
@@ -207,7 +207,7 @@ export default {
     width: 600px;
     height: 0px;
     left: 0px;
-    top: 2380px;
+    top: 2080px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 #line_2 {
@@ -344,7 +344,7 @@ td{
 #image{
   position:absolute;
   left:50px;
-  top:2500px;
+  top:2800px;
 	
 	width: 900px;
 	height: 800px;

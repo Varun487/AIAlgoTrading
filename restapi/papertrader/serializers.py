@@ -22,7 +22,7 @@ class PaperTradeDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = PaperTrade
         fields = ['id', 'trade', 'paper_traded_strategy', 'live', 'take_profit', 'stop_loss']
-        depth = 2
+        depth = 3
 
 
 class CompanyQuoteSerializer(serializers.ModelSerializer):
