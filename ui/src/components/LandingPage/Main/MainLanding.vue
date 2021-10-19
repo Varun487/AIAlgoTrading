@@ -1,7 +1,10 @@
 <template>
+<div>
 <div class="container">
     <!-- <img src="https://image.freepik.com/free-photo/stock-market-forex-trading-graph-graphic-concept_73426-171.jpg" alt="image"> -->
-    <img src="https://www.tinkoff.ru/api/invest-gw/social/file/v1/cache/post/image/6aae5a84-37ae-473e-8611-41e66c4531b9?size=small&appName=invest&platform=web" alt="image">
+    <!-- <img src="https://www.tinkoff.ru/api/invest-gw/social/file/v1/cache/post/image/6aae5a84-37ae-473e-8611-41e66c4531b9?size=small&appName=invest&platform=web" alt="image"> -->
+    <!-- <img src="https://t4.ftcdn.net/jpg/03/12/92/71/240_F_312927167_K2tJynI8TyU87rIeYMHWPWNZW5124MiF.jpg" alt="image"> -->
+    <!-- <img src= "https://img.freepik.com/free-vector/technology-wire-mesh-network-connection-digital-background_1017-28407.jpg?size=338&ext=jpg" alt = "image"> -->
     <h1><div class="top-left1">AI ALGORITHMIC
     </div></h1>
     <h1><div class="top-left2">TRADING
@@ -12,7 +15,7 @@
     <!-- <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a> -->
     <!-- <h1><div class = "section2">hi</div></h1> -->
 </div>
-    
+</div>    
 </template>
 
 <script>
@@ -30,8 +33,14 @@ html {
 .container {
   position: relative;
   text-align: center;
-  color: 8FB6EF;
+  /* color: 8FB6EF; */
+  width: 100%;
+  height: 890px;
   background-image: url("~@/assets/landing.png");
+  background-repeat: repeat;
+  background-size:cover;
+  background-position: center right;
+  background-color: black;
 }
 img {
   
