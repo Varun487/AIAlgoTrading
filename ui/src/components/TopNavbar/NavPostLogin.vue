@@ -2,7 +2,14 @@
     <div class="container">
         <!-- <div class="logo">
         </div> -->
+        <router-link to="/login">
+        <div class="back">
+            BACK
+            </div>
+        </router-link>
+
         <div class="title">AI ALGO TRADER</div>
+        
         <router-link to="/login">
         <div class="logout">
             Logout
@@ -70,7 +77,7 @@ export default {
     font-family: Poppins;
     font-size: 40px;
     top:10px;
-    left: 120px;
+    left: 140px;
     margin-top: 0px;
     color:#fff;
     transform: 0.4s;
@@ -95,6 +102,32 @@ export default {
     font-size: 20px;
 }
 .logout:hover {
+    box-shadow: 0px 0px 1px #FFFFFF;
+    color: black;
+    background-color: whitesmoke;
+}
+
+.back {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    /* right: 40px; */
+    font-family: Poppins;
+    top:10px;
+    left: 15px;
+    margin-top: 0px;
+    background-color: transparent;
+    border:1px solid #FFFFFF;
+    box-shadow: 0px 0px 5px #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    transition: 0.5s;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.back:hover {
     box-shadow: 0px 0px 1px #FFFFFF;
     color: black;
     background-color: whitesmoke;
