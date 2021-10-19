@@ -1,6 +1,7 @@
 <template>
 <div class="container">
-    <img src="https://image.freepik.com/free-photo/stock-market-forex-trading-graph-graphic-concept_73426-171.jpg" alt="image">
+    <!-- <img src="https://image.freepik.com/free-photo/stock-market-forex-trading-graph-graphic-concept_73426-171.jpg" alt="image"> -->
+    <img src="https://www.tinkoff.ru/api/invest-gw/social/file/v1/cache/post/image/6aae5a84-37ae-473e-8611-41e66c4531b9?size=small&appName=invest&platform=web" alt="image">
     <h1><div class="top-left1">AI ALGORITHMIC
     </div></h1>
     <h1><div class="top-left2">TRADING
@@ -21,6 +22,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 html {
   scroll-behavior: smooth;
 }
@@ -29,6 +31,7 @@ html {
   position: relative;
   text-align: center;
   color: 8FB6EF;
+  background-image: url("~@/assets/landing.png");
 }
 img {
   
