@@ -12,9 +12,9 @@ RUN apt-get install cron --fix-missing
 RUN mkdir -p $REST_API
 RUN mkdir -p $REST_API/static
 
-COPY cronjob /etc/cron.d/cronjob
-RUN chmod 0644 /etc/cron.d/cronjob
-RUN crontab /etc/cron.d/cronjob
+#COPY cronjob /etc/cron.d/cronjob
+#RUN chmod 0644 /etc/cron.d/cronjob
+#RUN crontab /etc/cron.d/cronjob
 
 WORKDIR $REST_API
 

@@ -233,6 +233,13 @@
 - Increase depth for /api/papertrader/papertradedata/paper_trade_id/ to include signal ![done]
 - Extract data from DB ![done]
 - Initialize new DB with latest paper trades ![done]
+- Paper trading bug fix ![bugfixed]
+- Fix cron job, ensure it runs on time ![done]
+    - Decided not to fix, will run manually every week day at 10 pm
+- Test ![done]
+  - Dev env ![done]
+  - Prod env ![done]
+  - DB ![done]
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

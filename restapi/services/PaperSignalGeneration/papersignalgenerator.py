@@ -196,4 +196,8 @@ class PaperSignalGenerator(object):
             self.push_paper_signal()
 
             count += 1
-            print(f"Paper Signals generated for {count}/{total} - {strategy}")
+
+            print(f"Paper Signals generated for {count}/1599 - {strategy}")
+
+            if count == 1599:
+                break
