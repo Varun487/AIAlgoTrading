@@ -145,3 +145,5 @@ postgres-data/
 restapi/staticfiles/
 Storage/
 STORAGE/
+/devops/nginx/host*
+/devops/nginx/certs
