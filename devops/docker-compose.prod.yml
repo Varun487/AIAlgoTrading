@@ -39,7 +39,8 @@ services:
   server:
     build: ./nginx
     ports:
-      - 80:80
+      - "80:80"
+      - "443:443"
     volumes:
       - ../restapi/staticfiles/:/home/app/restapi/static/
     depends_on:
