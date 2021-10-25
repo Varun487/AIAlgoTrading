@@ -63,7 +63,7 @@
                 
                 <button @click="showStrategy(strategy.id)">Go</button>
                 <router-link to="/">
-                </router-link>>
+                </router-link>
             </div>
         </div>
         <!--
