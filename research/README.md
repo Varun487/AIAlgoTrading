@@ -7,12 +7,15 @@
 - Inferences drawn from research to be put in a paper
 
 # TODO
-1. For any company, does any strategy config beat the baseline in any time period? (Try 4 time periods ->  Entire 3 years, Yearly, Quaterly, Monthly) ![varunincomplete]
+1. For any company, does any strategy config beat the baseline in any time period? (Try 4 time periods ->  Entire 3 years, Yearly, Quaterly, Monthly) ![varuncomplete]
    - Calculate company baselines ![done]
    - Calculate backtest baselines ![done]
-   - Comparison, inferences, Visualization ![incomplete]
-2. Does any strategy work better when another indicator is used? (Try 5 indicators with varying time periods)
-3. Write Research paper ![docincomplete]
+   - Comparison, inferences, Visualization ![done]
+2. For each company, for each time period, find best strategy ![varunincomplete]
+3. For each company, for each time period, find best model ![varunincomplete]
+4. Search for patterns in that data ![varunincomplete]
+5. Decide results ![varunincomplete]
+6. Write Research paper ![docincomplete]
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red
