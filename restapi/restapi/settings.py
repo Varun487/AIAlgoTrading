@@ -30,7 +30,9 @@ DEBUG = False
 if os.environ['DEBUG'] == 'True':
     DEBUG = True
 
-ALLOWED_HOSTS = [os.environ['ALLOWED_HOSTS']]
+ALLOWED_HOSTS = ['*']
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
