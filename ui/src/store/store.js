@@ -183,7 +183,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestdata/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
 
           }
         });
@@ -194,7 +194,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtestsignalvisualization/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
           }
         });
         state.commit("setTradeVisualization", res.data)
@@ -205,7 +205,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktesttrades/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
           }
         });
         state.commit("setTrades", res.data)
@@ -216,7 +216,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/companyquote/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
 
           }
         });
@@ -227,7 +227,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/papertradedata/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
 
           }
         });
@@ -238,7 +238,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/papertradevisualization/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
 
           }
         });
@@ -254,7 +254,7 @@ export const store = new Vuex.Store({
       */
      const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/allstrategies/`, {
        headers: {
-         'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+         'Authorization': 'Token ef10c7429a075206920590fc1519eaf654aa4888'
        }
      });
      state.commit("setAllStrategies", res.data)
@@ -262,7 +262,7 @@ export const store = new Vuex.Store({
     async setSelectedStrategy(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/strategies/strategydata/${id}/`,{
         headers: {
-          'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+          'Authorization': 'Token ef10c7429a075206920590fc1519eaf654aa4888'
         }
       });
       state.commit("setSelectedStrategy", res.data)
@@ -270,7 +270,7 @@ export const store = new Vuex.Store({
     async setAllBacktests(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/allbacktests/${id}/`,{
         headers: {
-          'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+          'Authorization': 'Token ef10c7429a075206920590fc1519eaf654aa4888'
         }
       });
       console.log(res.data)
@@ -279,7 +279,7 @@ export const store = new Vuex.Store({
     async setAllPapertrades(state,id) {
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/papertrader/allpapertrades/${id}/`,{
         headers: {
-          'Authorization': 'Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+          'Authorization': 'Token ef10c7429a075206920590fc1519eaf654aa4888'
         }
       });
       console.log(res.data)
@@ -290,7 +290,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtesttradedata/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
           }
         });
         state.commit("setTradesData", res.data)
@@ -300,7 +300,7 @@ export const store = new Vuex.Store({
       
       const res = await axios.get(`${process.env.VUE_APP_BASE_URL}api/backtester/backtesttradevisualization/${id}/`,{
           headers: {
-            'Authorization': ' Token 63cf4515ff99c2635ff560fb9f78e15b57916cb6'
+            'Authorization': ' Token ef10c7429a075206920590fc1519eaf654aa4888'
           }
         });
         state.commit("setTradespageVisualization", res.data)
