@@ -29,7 +29,7 @@
   - Implement common logic for rendering uniform design ![DONE]
   
 
-## Strategy page ![samrudhiincomplete]
+## Strategy page ![samrudhicomplete]
 - design ![DONE]
 - Per Strategy Info ![DONE]
   - frontend (VueJS)
@@ -61,7 +61,7 @@
   - frontend (VueJS) ![DONE] ![dishacomplete]
   - backend (Vuex and REST API)![DONE] ![hritikcomplete]
 
-## Landing page ![samrudhiincomplete]
+## Landing page ![samrudhicomplete]
 - design 
 - implementation
   - frontend (VueJS)
