@@ -103,7 +103,7 @@
 - Login page
   - Change forgot password CSS
   - Username, password should not become transparent on clicking (optional)
-- AllStrategies
+- AllStrategies ![DONE]
   - Remove stray `>` character in strategy card
 - Strategy
   - Bold all headings in strategy description (optional)
@@ -133,7 +133,7 @@
   - Fix Last Updated TimeStamp
   - Round all prices
   - Mention desctiption of strategy config
-  - Put name of strategy in strategy type
+  - Put name of strategy in strategy type ![DONE]
   - Mention signal type
 - General
   - Make CSS responsive to different screen sizes
