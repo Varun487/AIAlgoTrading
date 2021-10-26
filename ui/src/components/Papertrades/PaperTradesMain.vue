@@ -15,7 +15,7 @@
        <h4>TRADE DETAILS</h4>
        <div class="pt-m-info">
            <h3>Strategy Configuration</h3>
-            <!--<div class="m-sname"><b>Strategy Type: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.strategy_type.name}}</div>-->
+            <div class="m-sname"><b>Strategy Name: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.strategy_type.name}}</div>
             <div class="m-sname" v-if='$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.strategy_type==="1"'><b>Strategy Type: </b>BUY</div>
             <div class="m-sname" v-else><b>Strategy Type: </b>SELL</div>
             <div class="m-itp"><b>Indicator Time Period: </b>{{$store.getters.getPaperTradeMidData.paper_traded_strategy.strategy_config.indicator_time_period}}</div>
