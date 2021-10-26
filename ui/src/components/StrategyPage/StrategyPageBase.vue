@@ -59,6 +59,18 @@ export default {
         this.$store.dispatch("setSelectedStrategy",this.$store.getters.getStrategyId);
         this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
         this.$store.dispatch("setAllPapertrades",this.$store.getters.getStrategyId);
+        this.$store.dispatch("setPaperTradeTopData",this.$store.getters.getPapertradesId);
+        this.$store.dispatch("setPaperTradeMidData",this.$store.getters.getPapertradesId);
+        this.$store.dispatch("setPaperTradeBottomData",this.$store.getters.getPapertradesId);
+        this.$store.dispatch("flipAllBacktestsMainPage");
+        this.$store.dispatch("setAllBacktests",0);
+        this.$store.dispatch("setBacktestReportdata",0);
+        this.$store.dispatch("setTradeVisualization",0);
+        this.$store.dispatch("setTrades",0);
+        this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
+        this.$store.dispatch("setBacktestReportdata",this.$store.getters.getBacktestsId);
+        this.$store.dispatch("setTradeVisualization",this.$store.getters.getBacktestsId);
+        this.$store.dispatch("setTrades",this.$store.getters.getBacktestsId);
   },
 };
 </script>

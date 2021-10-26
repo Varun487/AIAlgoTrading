@@ -96,6 +96,12 @@ export default {
     // this.$store.dispatch("setBacktestReportdata",this.$store.getters.getBacktestsId);
     // this.$store.dispatch("setTradeVisualization",this.$store.getters.getBacktestsId);
     // this.$store.dispatch("setTrades",this.$store.getters.getBacktestsId);
+    this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
+    this.$store.dispatch("setBacktestReportdata",this.$store.getters.getBacktestsId);
+    this.$store.dispatch("setTradeVisualization",this.$store.getters.getBacktestsId);
+    this.$store.dispatch("setTrades",this.$store.getters.getBacktestsId);
+    this.$store.dispatch("setTradesData",this.$store.getters.getBacktestsId);
+    this.$store.dispatch("setTradespageVisualization",this.$store.getters.getBacktestsId);
   },
 }
 

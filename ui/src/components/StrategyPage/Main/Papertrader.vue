@@ -118,6 +118,12 @@ export default {
             // console.log(this.$store.getters.getBacktestsId);
             // console.log(this.$store.getters.getAllBackTestMainPage);
             console.log("hello")
+            this.$store.dispatch("setPaperTradeTopData",0);
+            this.$store.dispatch("setPaperTradeMidData",0);
+            this.$store.dispatch("setPaperTradeBottomData",0);
+            this.$store.dispatch("setPaperTradeTopData",this.$store.getters.getPapertradesId);
+            this.$store.dispatch("setPaperTradeMidData",this.$store.getters.getPapertradesId);
+            this.$store.dispatch("setPaperTradeBottomData",this.$store.getters.getPapertradesId);
             console.log(this.$store.getters.getPapertradesId);
             console.log(this.$store.getters.getAllPapertrades);
             this.$router.push({name:'Papertrades'})

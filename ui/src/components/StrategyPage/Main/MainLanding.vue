@@ -117,6 +117,14 @@ export default {
         Backtest(id) {
             this.$store.dispatch("setBacktestsId", id);
             this.$store.dispatch("flipAllBacktestsMainPage");
+            this.$store.dispatch("setAllBacktests",0);
+            this.$store.dispatch("setBacktestReportdata",0);
+            this.$store.dispatch("setTradeVisualization",0);
+            this.$store.dispatch("setTrades",0);
+            this.$store.dispatch("setAllBacktests",this.$store.getters.getStrategyId);
+            this.$store.dispatch("setBacktestReportdata",this.$store.getters.getBacktestsId);
+            this.$store.dispatch("setTradeVisualization",this.$store.getters.getBacktestsId);
+            this.$store.dispatch("setTrades",this.$store.getters.getBacktestsId);
             console.log(this.$store.getters.getBacktestsId);
             console.log(this.$store.getters.getAllBackTestMainPage);
             this.$router.push({name:'BacktestReport'})
