@@ -110,7 +110,7 @@
   - Remove stray `>` character in strategy card
 - Strategy
   - Bold all headings in strategy description (optional)
-  - Round returns and return %
+  - Round returns and return % ![DONE]
   - Nav buttons and filter for backtests and paper trades
 - Backtest page
   - Change date time representation

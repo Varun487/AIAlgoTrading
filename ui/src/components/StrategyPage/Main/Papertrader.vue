@@ -28,9 +28,9 @@
                   <router-link to="/"><td>
                     {{ report.company_ticker }}</td></router-link>
 
-                <td class="red" v-if='report.return_percent < 0'>{{ report.return_percent }}</td>
-                <td class="green" v-else-if='report.return_percent > 0'>{{ report.return_percent }}</td>
-                <td class="black" v-else>{{ report.return_percent }}</td>
+                <td class="red" v-if='report.return_percent < 0'>{{ parseFloat(report.return_percent).toFixed(2) }}</td>
+                <td class="green" v-else-if='report.return_percent > 0'>{{ parseFloat(report.return_percent).toFixed(2) }}</td>
+                <td class="black" v-else>{{ parseFloat(report.return_percent).toFixed(2) }}</td>
 
                 <!-- <td>{{ report.live }}</td> -->
 
