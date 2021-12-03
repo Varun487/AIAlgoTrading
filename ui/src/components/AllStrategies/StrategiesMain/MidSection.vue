@@ -155,7 +155,7 @@ export default {
     position: relative;
     width: 512px;
     height: 300px;
-    left:760px;
+    right:-55%;
     background: #FFFFFF;
     box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
