@@ -37,7 +37,7 @@ def api_get_all_papertrades(req, strategy_type_id):
         print(f"Strategy Type: {strategy_type}")
         papertrades = PaperTrade.objects.filter(
             paper_traded_strategy__strategy_config__strategy_type=strategy_type
-        ).order_by('-live')
+        ).order_by('-live')[:20]
         print("Paper trades collected")
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
