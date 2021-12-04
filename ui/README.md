@@ -38,7 +38,7 @@
   - frontend (VueJS)
   - backend (Vuex and REST API)
   - Linking backtester page to the specific backtester report page
-- Paper Trade Section
+- Paper Trade Section ![DONE]
   - frontend (VueJS)
   - backend (Vuex and REST API)
   - Linking backtester page to the specific backtester report page
@@ -87,6 +87,9 @@
   - trades ![hritikcomplete]
   - visualization ![samrudhicomplete]
 
+## BACKBUTTON AND LINKING PAGES ![samrudhicomplete]
+- implementation
+
 ## Automated testing
 - All strategies page
 - Strategy page
@@ -98,7 +101,7 @@
 - 404 Not Found error page
 
 ## Remaining work
-- Landing page
+- Landing page ![DONE]
   - Change landing page picture
 - Login page
   - Change forgot password CSS
@@ -107,7 +110,7 @@
   - Remove stray `>` character in strategy card
 - Strategy
   - Bold all headings in strategy description (optional)
-  - Round returns and return %
+  - Round returns and return % ![DONE]
   - Nav buttons and filter for backtests and paper trades
 - Backtest page
   - Change date time representation
@@ -139,7 +142,7 @@
   - Make CSS responsive to different screen sizes
   - Standardize fonts and sizes
   - Loading symbol in all places where data in called
-  - BACK BUTTON
+  - BACK BUTTON ![DONE]
 
 [done]: https://img.shields.io/badge/DONE-brightgreen
 [incomplete]: https://img.shields.io/badge/INCOMPLETE-red

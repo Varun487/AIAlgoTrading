@@ -28,13 +28,13 @@
                   <router-link to="/"><td>
                     {{ report.company_ticker }}</td></router-link>
 
-                <td class="red" v-if='report.total_returns_percent < 0'>{{ report.total_returns_percent }}</td>
-                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ report.total_returns_percent }}</td>
-                <td class="black" v-else>{{ report.total_returns_percent }}</td>
+                <td class="red" v-if='report.total_returns_percent < 0'>{{ parseFloat(report.total_returns_percent).toFixed(2) }}</td>
+                <td class="green" v-else-if='report.total_returns_percent > 0'>{{ parseFloat(report.total_returns_percent).toFixed(2) }}</td>
+                <td class="black" v-else>{{ parseFloat(report.total_returns_percent).toFixed(2) }}</td>
 
-                <td class="red" v-if='report.total_returns < 0'>{{ report.total_returns }}</td>
-                <td class="green" v-else-if='report.total_returns > 0'>{{ report.total_returns }}</td>
-                <td class="black" v-else>{{ report.total_returns }}</td>
+                <td class="red" v-if='report.total_returns < 0'>{{ parseFloat(report.total_returns).toFixed(2) }}</td>
+                <td class="green" v-else-if='report.total_returns > 0'>{{ parseFloat(report.total_returns).toFixed(2)}}</td>
+                <td class="black" v-else>{{ parseFloat(report.total_returns).toFixed(2) }}</td>
                 <!-- </router-link> -->
             </tr>
             <br>
