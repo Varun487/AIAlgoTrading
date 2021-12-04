@@ -27,7 +27,7 @@ services:
       && python3 manage.py makemigrations strategies
       && python3 manage.py migrate
       && echo yes | python3 manage.py collectstatic
-      && gunicorn restapi.wsgi:application --bind 0.0.0.0:8000
+      && gunicorn --timeout 50 restapi.wsgi:application --bind 0.0.0.0:8000
       "
     volumes:
       - ../restapi:/home/app/restapi/
