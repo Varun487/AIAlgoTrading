@@ -32,13 +32,17 @@ def api_index(req, slug):
 @api_view(['GET', ])
 def api_get_all_papertrades(req, strategy_type_id):
     try:
+        print("Started get all paper trades")
         strategy_type = StrategyType.objects.get(id=strategy_type_id)
+        print(f"Strategy Type: {strategy_type}")
         papertrades = PaperTrade.objects.filter(
             paper_traded_strategy__strategy_config__strategy_type=strategy_type
         ).order_by('-live')
+        print("Paper trades collected")
     except:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+    print("Before return statement")
     return Response(AllPaperTradesSerializer(papertrades, many=True).data)
 
 
