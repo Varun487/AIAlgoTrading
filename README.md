@@ -1,4 +1,7 @@
-# Capstone Project - AI Trading Platform
+# AI Trading Platform
+
+###### Published IEEE paper: https://ieeexplore.ieee.org/document/9734127
+
 
 ### What is the project?
 
